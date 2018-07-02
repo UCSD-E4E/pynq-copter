@@ -36,6 +36,6 @@ BUILD_PATH=../
 IP_PATH=../ip/
 PART=xc7z020clg400-1
 DESIGN=pwm
-IPS=pwm atoi
+IPS=pwm pid mixer synchronizer wire_distributor_1.0 rc_receiver normalizer mixer sensor_confirm
 
 include $(BUILD_PATH)/include.mk
