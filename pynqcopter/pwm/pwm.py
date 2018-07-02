@@ -52,7 +52,7 @@ class pwmOverlay(UcsdOverlay):
         """Initializes this Overlay object.
 
         """
-        super().__init__("hex", bitfile, **kwargs)
+        super().__init__("pwm", bitfile, **kwargs)
         # This example is copied from an image processing application that requires
         # a pointer (data), number of rows (rows), and bumber of colums (columns)
 

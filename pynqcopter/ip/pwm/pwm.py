@@ -97,10 +97,10 @@ class PWM(HlsCore):
 		return self.__hls_reg.read(regs["period"])
 
 	def setMotor(self,motor,power):
-		assert(-1<motor and motor<len(self.__motors),"Motor out of bounds")
+		assert (-1<motor and motor<len(self.__motors)),"Motor out of bounds"
 		self.__motors[motor]=max(0,min(power,0x7FFF)) #clip power to range
 		self.pubMotors()
 
 	def pubMotors(self):
-		for i in range(3);
+		for i in range(3):
 			self.__hls_reg.write(regs["motor_base"]+i*0x4,self.__motors[i*2]+(self.__motors[i*2+1]<<16))

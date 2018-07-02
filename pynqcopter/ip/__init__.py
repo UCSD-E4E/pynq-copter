@@ -33,11 +33,12 @@
 # DAMAGE.
 ###############################################################################
 from .HlsCore import HlsCore
-<<<<<<< HEAD
-from . import sensor_confirm
 
-=======
-from . import ctrlloop
+from . import sensor_confirm
 from . import mixer
 from . import pwm
->>>>>>> bsc
+from . import normalizer
+from . import pid
+from . import pwm
+from . import pwm
+from . import rc_receiver

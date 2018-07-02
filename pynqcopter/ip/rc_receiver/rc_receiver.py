@@ -35,7 +35,7 @@
 from ..HlsCore import HlsCore
 from pynq import MMIO
 
-class RCController(HlsCore):
+class RC_Receiver(HlsCore):
     __IO_REG_LEN = 0x100
 
     def __init__(self, description):

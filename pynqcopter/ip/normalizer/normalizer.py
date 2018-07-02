@@ -39,7 +39,7 @@
 from ..HlsCore import HlsCore
 from pynq import MMIO
 
-class Mixer(HlsCore):
+class Normalizer(HlsCore):
 
 	"""These define the 'reg' argument to the 'pwm' HLS function.
 		The memory space defined here is shared between the HLS core
@@ -84,8 +84,8 @@ class Mixer(HlsCore):
 	def getLow(self):
 		return self.__hls_reg.read(regs["max_high"])
 
-	def writeInputs(in):
-		assert(in==6, "Too many or too few inputs")
+	def writeInputs(self,input):
+		assert input==6, "Too many or too few inputs"
 		for i in range(6):
-			self.__hls_reg.write(regs["input_base"]+i*0x8,in[i])
+			self.__hls_reg.write(regs["input_base"]+i*0x8,input[i])
 		return 0

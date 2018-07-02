@@ -36,4 +36,4 @@
 # USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 # DAMAGE.
 ###############################################################################
-from .rc_receiver import RCReceiver
+from .rc_receiver import RC_Receiver
