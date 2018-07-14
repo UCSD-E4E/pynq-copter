@@ -44,7 +44,7 @@ add_files $target.cpp -cflags "-std=c++0x"
 open_solution "$target"
 set_part $part
 create_clock -period 4 -name default
-csim_design
+csim_design -compiler clang
 csynth_design
 # cosim_design
 export_design -format ip_catalog -library hlsip -description "HLS Core: $name Function" -vendor "UCSD" -version "1.0" -display_name "$name"
