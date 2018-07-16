@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName rpy_to_duty.cpp_pre.cpp.tb.cpp

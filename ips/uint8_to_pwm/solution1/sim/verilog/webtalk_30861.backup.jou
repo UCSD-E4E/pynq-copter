@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Jul 13 12:15:53 2018
+# Process ID: 30861
+# Current directory: /home/brennan/uint8_to_pwm/solution1/sim/verilog
+# Command line: wbtcv -mode batch -source /home/brennan/uint8_to_pwm/solution1/sim/verilog/xsim.dir/uint8_to_pwm/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/brennan/uint8_to_pwm/solution1/sim/verilog/webtalk.log
+# Journal file: /home/brennan/uint8_to_pwm/solution1/sim/verilog/webtalk.jou
+#-----------------------------------------------------------
+source /home/brennan/uint8_to_pwm/solution1/sim/verilog/xsim.dir/uint8_to_pwm/webtalk/xsim_webtalk.tcl -notrace

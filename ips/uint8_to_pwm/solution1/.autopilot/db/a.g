@@ -1,0 +1,4 @@
+#!/bin/sh
+lli=${LLVMINTERP-lli}
+exec $lli \
+    /home/brennan/uint8_to_pwm/solution1/.autopilot/db/a.g.bc ${1+"$@"}

@@ -1,0 +1,4 @@
+sv work "glbl.v"
+sv xil_defaultlib "uint8_to_pwm.autotb.v"
+sv xil_defaultlib "uint8_to_pwm.v"
+
