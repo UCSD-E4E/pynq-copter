@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="rpy_to_duty.h" path="/home/brennan/mixer/mixer/rpy_to_duty.h"/>
+    <originFiles name="rpy_to_duty.cpp" path="/home/brennan/mixer/mixer/rpy_to_duty.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="main.cpp" path="/home/brennan/mixer/mixer/main.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

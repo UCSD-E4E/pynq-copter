@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="uint8_to_pwm.h" path="/home/brennan/uint8_to_pwm/uint8_to_pwm.h"/>
+    <originFiles name="uint8_to_pwm.cpp" path="/home/brennan/uint8_to_pwm/uint8_to_pwm.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="main.cpp" path="/home/brennan/uint8_to_pwm/main.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

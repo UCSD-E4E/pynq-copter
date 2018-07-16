@@ -1,0 +1,7 @@
+vhdl xil_defaultlib "AESL_sim_pkg.vhd"
+sv work "glbl.v"
+vhdl xil_defaultlib "rpy_to_duty_AXILiteS_s_axi.vhd"
+vhdl xil_defaultlib "rpy_to_duty.vhd"
+vhdl xil_defaultlib "rpy_to_duty.autotb.vhd"
+vhdl xil_defaultlib "AESL_axi_slave_AXILiteS.vhd"
+

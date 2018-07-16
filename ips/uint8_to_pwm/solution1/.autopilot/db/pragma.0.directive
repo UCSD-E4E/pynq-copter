@@ -1,0 +1,61 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="uint8_to_pwm" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m0"/>
+<option name="bundle" value="M"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uint8_to_pwm" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m1"/>
+<option name="bundle" value="M"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uint8_to_pwm" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m2"/>
+<option name="bundle" value="M"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uint8_to_pwm" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m3"/>
+<option name="bundle" value="M"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uint8_to_pwm" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m4"/>
+<option name="bundle" value="M"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uint8_to_pwm" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m5"/>
+<option name="bundle" value="M"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uint8_to_pwm" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="out"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uint8_to_pwm" label="">
+<pragma name="INTERFACE">
+<option name="ap_ctrl_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uint8_to_pwm" label="">
+<pragma name="PIPELINE"/>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

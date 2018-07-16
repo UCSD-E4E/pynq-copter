@@ -1,0 +1,7 @@
+Running: xsim.dir/uint8_to_pwm/xsimk -simmode gui -wdb uint8_to_pwm.wdb -simrunnum 0 -socket 55051
+Design successfully loaded
+Design Loading Memory Usage: 40588 KB (Peak: 40588 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 126876 KB (Peak: 179856 KB)
+Simulation CPU Usage: 590 ms

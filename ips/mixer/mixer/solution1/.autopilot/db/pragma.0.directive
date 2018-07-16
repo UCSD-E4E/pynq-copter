@@ -1,0 +1,58 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="rpy_to_duty" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="rpy_to_duty" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="regs_in"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="rpy_to_duty" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="kill"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="rpy_to_duty" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="rpy_to_duty" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="rpy_to_duty" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="rpy_to_duty" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m3"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="rpy_to_duty" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m4"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="rpy_to_duty" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m5"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

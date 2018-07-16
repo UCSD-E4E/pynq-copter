@@ -1,0 +1,7 @@
+Running: xsim.dir/rpy_to_duty/xsimk -simmode gui -wdb rpy_to_duty.wdb -simrunnum 0 -socket 34729
+Design successfully loaded
+Design Loading Memory Usage: 40500 KB (Peak: 40500 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 126788 KB (Peak: 179768 KB)
+Simulation CPU Usage: 500 ms

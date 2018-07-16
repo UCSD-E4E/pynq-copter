@@ -1,0 +1,8 @@
+sv work "glbl.v"
+sv xil_defaultlib "AESL_axi_slave_AXILiteS.v"
+sv xil_defaultlib "rpy_to_duty_mul_mbkb.v"
+sv xil_defaultlib "rpy_to_duty_mul_mcud.v"
+sv xil_defaultlib "rpy_to_duty_AXILiteS_s_axi.v"
+sv xil_defaultlib "rpy_to_duty.autotb.v"
+sv xil_defaultlib "rpy_to_duty.v"
+
