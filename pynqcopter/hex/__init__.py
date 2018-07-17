@@ -32,7 +32,4 @@
 # USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 # DAMAGE.
 ###############################################################################
-from . import base
-from . import hex
-from . import UcsdOverlay
-from . import ip
+from .hex import hexOverlay
