@@ -1,6 +1,6 @@
 
 ################################################################
-# This is a generated script based on design: base
+# This is a generated script based on design: hex
 #
 # Though there are limitations about the generated script,
 # the main purpose of this utility is to make learning
@@ -35,7 +35,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 ################################################################
 
 # To test this script, run the following commands from Vivado Tcl console:
-# source base_script.tcl
+# source hex_script.tcl
 
 set bCheckIPsPassed 1
 ##################################################################
