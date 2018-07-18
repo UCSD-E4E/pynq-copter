@@ -32,7 +32,10 @@
 # USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 # DAMAGE.
 ###############################################################################
-from . import base
-from . import hex
-from . import UcsdOverlay
-from . import ip
+BUILD_PATH=../
+IP_PATH=../ip/
+PART=xc7z020clg400-1
+DESIGN=hex
+IPS=ctrlloop
+
+include $(BUILD_PATH)/include.mk
