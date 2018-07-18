@@ -1,0 +1,216 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Mon Jul 16 15:05:47 2018
+| Host         : fabricant running 64-bit Linux Mint 18 Sarah
+| Command      : report_drc -file base_wrapper_drc_opted.rpt -pb base_wrapper_drc_opted.pb -rpx base_wrapper_drc_opted.rpx
+| Design       : base_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 36
++--------+----------+--------------------------+------------+
+| Rule   | Severity | Description              | Violations |
++--------+----------+--------------------------+------------+
+| BUFC-1 | Warning  | Input Buffer Connections | 36         |
++--------+----------+--------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+BUFC-1#1 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_0/IBUF (in arduino_iobuf_0 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#2 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_1/IBUF (in arduino_iobuf_1 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#3 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_10/IBUF (in arduino_iobuf_10 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#4 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_11/IBUF (in arduino_iobuf_11 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#5 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_12/IBUF (in arduino_iobuf_12 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#6 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_13/IBUF (in arduino_iobuf_13 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#7 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_14/IBUF (in arduino_iobuf_14 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#8 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_15/IBUF (in arduino_iobuf_15 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#9 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_16/IBUF (in arduino_iobuf_16 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#10 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_17/IBUF (in arduino_iobuf_17 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#11 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_18/IBUF (in arduino_iobuf_18 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#12 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_19/IBUF (in arduino_iobuf_19 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#13 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_2/IBUF (in arduino_iobuf_2 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#14 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_3/IBUF (in arduino_iobuf_3 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#15 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_4/IBUF (in arduino_iobuf_4 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#16 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_5/IBUF (in arduino_iobuf_5 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#17 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_6/IBUF (in arduino_iobuf_6 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#18 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_7/IBUF (in arduino_iobuf_7 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#19 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_8/IBUF (in arduino_iobuf_8 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#20 Warning
+Input Buffer Connections  
+Input buffer arduino_iobuf_9/IBUF (in arduino_iobuf_9 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#21 Warning
+Input Buffer Connections  
+Input buffer pmodJA_iobuf_0/IBUF (in pmodJA_iobuf_0 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#22 Warning
+Input Buffer Connections  
+Input buffer pmodJA_iobuf_1/IBUF (in pmodJA_iobuf_1 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#23 Warning
+Input Buffer Connections  
+Input buffer pmodJA_iobuf_2/IBUF (in pmodJA_iobuf_2 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#24 Warning
+Input Buffer Connections  
+Input buffer pmodJA_iobuf_3/IBUF (in pmodJA_iobuf_3 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#25 Warning
+Input Buffer Connections  
+Input buffer pmodJA_iobuf_4/IBUF (in pmodJA_iobuf_4 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#26 Warning
+Input Buffer Connections  
+Input buffer pmodJA_iobuf_5/IBUF (in pmodJA_iobuf_5 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#27 Warning
+Input Buffer Connections  
+Input buffer pmodJA_iobuf_6/IBUF (in pmodJA_iobuf_6 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#28 Warning
+Input Buffer Connections  
+Input buffer pmodJA_iobuf_7/IBUF (in pmodJA_iobuf_7 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#29 Warning
+Input Buffer Connections  
+Input buffer pmodJB_iobuf_0/IBUF (in pmodJB_iobuf_0 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#30 Warning
+Input Buffer Connections  
+Input buffer pmodJB_iobuf_1/IBUF (in pmodJB_iobuf_1 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#31 Warning
+Input Buffer Connections  
+Input buffer pmodJB_iobuf_2/IBUF (in pmodJB_iobuf_2 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#32 Warning
+Input Buffer Connections  
+Input buffer pmodJB_iobuf_3/IBUF (in pmodJB_iobuf_3 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#33 Warning
+Input Buffer Connections  
+Input buffer pmodJB_iobuf_4/IBUF (in pmodJB_iobuf_4 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#34 Warning
+Input Buffer Connections  
+Input buffer pmodJB_iobuf_5/IBUF (in pmodJB_iobuf_5 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#35 Warning
+Input Buffer Connections  
+Input buffer pmodJB_iobuf_6/IBUF (in pmodJB_iobuf_6 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#36 Warning
+Input Buffer Connections  
+Input buffer pmodJB_iobuf_7/IBUF (in pmodJB_iobuf_7 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+

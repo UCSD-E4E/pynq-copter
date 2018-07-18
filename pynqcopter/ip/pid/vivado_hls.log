@@ -1,0 +1,13 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source /data/opt/Xilinx/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/data/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Wed Jul 18 08:21:42 PDT 2018
+INFO: [HLS 200-10] On os Linux Mint 18 Sarah
+INFO: [HLS 200-10] In directory '/home/iavendano/pynq-copter/pynqcopter/ip/pid'
+ERROR: [HLS 200-70] Directory '/home/iavendano/pynq-copter/pynqcopter/ip/pid/' is not a Vivado HLS project.
+INFO: [Common 17-206] Exiting vivado_hls at Wed Jul 18 08:21:42 2018...

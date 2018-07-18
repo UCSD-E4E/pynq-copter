@@ -1,0 +1,6 @@
+<annotationInfo>
+<item  id="23" filename="ctrlloop.cpp" linenumber="83" name="led_state_V_assign" contextFuncName="ctrlloop" moduleName="ctrlloop" rtlName="led_state_V_assign_fu_121_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="13" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/ctrlloop"></item>
+<item  id="26" filename="ctrlloop.cpp" linenumber="88" name="p_s" contextFuncName="ctrlloop" moduleName="ctrlloop" rtlName="regs_V_d0" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/ctrlloop"></item>
+<item  id="34" filename="./ctrlloop.hpp" linenumber="57" name="tmp_1" contextFuncName="delay_until_ms&lt;1000, 100000000&gt;" moduleName="ctrlloop" rtlName="tmp_1_fu_139_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="18" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/ctrlloop"></item>
+<item  id="36" filename="./ctrlloop.hpp" linenumber="57" name="ctr_V" contextFuncName="delay_until_ms&lt;1000, 100000000&gt;" moduleName="ctrlloop" rtlName="ctr_V_fu_145_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="34" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/ctrlloop"></item>
+</annotationInfo>

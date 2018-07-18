@@ -1,0 +1,156 @@
+
+
+================================================================
+== Vivado HLS Report for 'ctrlloop'
+================================================================
+* Date:           Mon Jul 16 14:56:42 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        ctrlloop
+* Solution:       ctrlloop
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|      2.46|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----------+-----------+-----------+-----------+---------+
+    |        Latency        |        Interval       | Pipeline|
+    |    min    |    max    |    min    |    max    |   Type  |
+    +-----------+-----------+-----------+-----------+---------+
+    |  100000001|  100000001|  100000001|  100000001|   none  |
+    +-----------+-----------+-----------+-----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----------+-----------+----------+-----------+-----------+-----------+----------+
+        |          |        Latency        | Iteration|  Initiation Interval  |    Trip   |          |
+        | Loop Name|    min    |    max    |  Latency |  achieved |   target  |   Count   | Pipelined|
+        +----------+-----------+-----------+----------+-----------+-----------+-----------+----------+
+        |- Loop 1  |  100000000|  100000000|         1|          -|          -|  100000000|    no    |
+        +----------+-----------+-----------+----------+-----------+-----------+-----------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	2  / (!tmp_1)
+
+* FSM state operations: 
+
+ <State 1> : 2.29ns
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %IOMEM), !map !54"
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([128 x i32]* %regs_V), !map !60"
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i4 %buttons_V), !map !66"
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1 %interrupt_V), !map !72"
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i4* %leds_V), !map !76"
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%buttons_V_read = call i4 @_ssdm_op_Read.ap_none.i4(i4 %buttons_V)"
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%dummy = alloca i8, align 1"
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @ctrlloop_str) nounwind"
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [ctrlloop.cpp:62]
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecMemCore([128 x i32]* %regs_V, [1 x i8]* @p_str6, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str6, i32 -1, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6)"
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([128 x i32]* %regs_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind"
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %IOMEM, [6 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [6 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %leds_V, [8 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [ctrlloop.cpp:73]
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4 %buttons_V, [8 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [ctrlloop.cpp:76]
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecReset(i4* @led_state_V, i32 1, [1 x i8]* @p_str1) nounwind" [ctrlloop.cpp:82]
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%led_state_V_load = load i4* @led_state_V, align 1" [ctrlloop.cpp:83]
+ST_1 : Operation 19 [1/1] (1.73ns)   --->   "%led_state_V_assign = add i4 %led_state_V_load, 1" [ctrlloop.cpp:83]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "store i4 %led_state_V_assign, i4* @led_state_V, align 1" [ctrlloop.cpp:83]
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_none.i4P(i4* %leds_V, i4 %led_state_V_assign)" [ctrlloop.cpp:85]
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%p_s = zext i4 %buttons_V_read to i32" [ctrlloop.cpp:88]
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%regs_V_addr = getelementptr [128 x i32]* %regs_V, i64 0, i64 0"
+ST_1 : Operation 24 [1/1] (2.28ns)   --->   "store i32 %p_s, i32* %regs_V_addr, align 4" [ctrlloop.cpp:88]   --->   Core 42 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.28> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 128> <RAM>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([45 x i8]* @delay_until_ms_MD_10) nounwind"
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind" [./ctrlloop.hpp:53->ctrlloop.cpp:92]
+ST_1 : Operation 27 [1/1] (1.76ns)   --->   "br label %0" [./ctrlloop.hpp:57->ctrlloop.cpp:92]
+
+ <State 2> : 2.46ns
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%p_014_0_i = phi i27 [ 0, %codeRepl ], [ %ctr_V, %1 ]"
+ST_2 : Operation 29 [1/1] (2.45ns)   --->   "%tmp_1 = icmp eq i27 %p_014_0_i, -34217728" [./ctrlloop.hpp:57->ctrlloop.cpp:92]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100000000, i64 100000000, i64 100000000)"
+ST_2 : Operation 31 [1/1] (2.40ns)   --->   "%ctr_V = add i27 %p_014_0_i, 1" [./ctrlloop.hpp:57->ctrlloop.cpp:92]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.40> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "br i1 %tmp_1, label %"delay_until_ms<1000ull, 100000000ull>.exit", label %1" [./ctrlloop.hpp:57->ctrlloop.cpp:92]
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%dummy_1 = load volatile i8* %dummy, align 1" [./ctrlloop.hpp:58->ctrlloop.cpp:92]
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "store volatile i8 %dummy_1, i8* %dummy, align 1" [./ctrlloop.hpp:58->ctrlloop.cpp:92]
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "br label %0" [./ctrlloop.hpp:57->ctrlloop.cpp:92]
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([45 x i8]* @delay_until_ms_MD_10, i32 %rbegin) nounwind"
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "ret void" [ctrlloop.cpp:93]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 2.29ns
+The critical path consists of the following:
+	wire read on port 'buttons_V' [12]  (0 ns)
+	'store' operation (ctrlloop.cpp:88) of variable 'p_s', ctrlloop.cpp:88 on array 'regs_V' [28]  (2.29 ns)
+
+ <State 2>: 2.46ns
+The critical path consists of the following:
+	'phi' operation ('ctr.V') with incoming values : ('ctr.V', ./ctrlloop.hpp:57->ctrlloop.cpp:92) [33]  (0 ns)
+	'icmp' operation ('tmp_1', ./ctrlloop.hpp:57->ctrlloop.cpp:92) [34]  (2.46 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
