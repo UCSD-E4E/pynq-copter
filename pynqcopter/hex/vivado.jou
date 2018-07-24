@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Jul 20 07:22:52 2018
+# Process ID: 18638
+# Current directory: /home/brennan/Documents/pynq-copter/pynqcopter/hex
+# Command line: vivado -mode batch -source ..//build.tcl -tclargs hex single xc7z020clg400-1
+# Log file: /home/brennan/Documents/pynq-copter/pynqcopter/hex/vivado.log
+# Journal file: /home/brennan/Documents/pynq-copter/pynqcopter/hex/vivado.jou
+#-----------------------------------------------------------
+source ..//build.tcl

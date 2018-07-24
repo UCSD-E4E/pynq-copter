@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="pwm" xd:componentRef="pwm" xd:initiationInterval="9" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="m[]" xd:originalName="m" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x10" xd:arraySize="6" xd:dataWidth="16"/>
+  <xd:arg xd:name="out" xd:originalName="out" xd:direction="out" xd:interfaceRef="out_V" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="6" xd:firstOut="8"/>
+  <xd:latencyEstimates xd:best-case="8" xd:worst-case="8" xd:average-case="8"/>
+  <xd:resourceEstimates xd:LUT="315" xd:FF="186" xd:BRAM="2" xd:DSP="0"/>
+</xd:acceleratorMap>

@@ -34,5 +34,6 @@
 ###############################################################################
 from . import base
 from . import hex
+from . import pwm
 from . import UcsdOverlay
 from . import ip

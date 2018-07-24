@@ -59,5 +59,5 @@ setup(name='pynqcopter',
       packages=find_packages(),
       package_data={'':['*.bit', '*.tcl']},
       install_requires=['pynq'],
-      dependency_links=['http://github.com/xilinx/PYNQ.git@v2.1#egg=pynq'],
+      #dependency_links=['http://github.com/xilinx/PYNQ.git@v2.1#egg=pynq'],
 )

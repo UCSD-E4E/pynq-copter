@@ -1,0 +1,211 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source /home/brennan/Vivado/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/home/brennan/Vivado/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'brennan' on host 'apple' (Linux_x86_64 version 4.13.0-45-generic) on Wed Jul 18 09:42:21 EDT 2018
+INFO: [HLS 200-10] On os Ubuntu 16.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/brennan/Dropbox/Documents/UCSD_Research/pynq-copter/pynqcopter/ip/ctrlloop'
+INFO: [HLS 200-10] Creating and opening project '/home/brennan/Dropbox/Documents/UCSD_Research/pynq-copter/pynqcopter/ip/ctrlloop/ctrlloop'.
+INFO: [HLS 200-10] Adding test bench file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'ctrlloop.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'ctrlloop.cpp' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/brennan/Dropbox/Documents/UCSD_Research/pynq-copter/pynqcopter/ip/ctrlloop/ctrlloop/ctrlloop'.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+make[1]: Entering directory '/home/brennan/Dropbox/Documents/UCSD_Research/pynq-copter/pynqcopter/ip/ctrlloop/ctrlloop/ctrlloop/csim/build'
+   Compiling ../../../../ctrlloop.cpp in debug mode
+   Compiling ../../../../main.cpp in debug mode
+   Generating csim.exe
+make[1]: Leaving directory '/home/brennan/Dropbox/Documents/UCSD_Research/pynq-copter/pynqcopter/ip/ctrlloop/ctrlloop/ctrlloop/csim/build'
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-10] Analyzing design file 'ctrlloop.cpp' ...
+INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:59 ; elapsed = 00:00:44 . Memory (MB): peak = 359.941 ; gain = 13.375 ; free physical = 1042 ; free virtual = 12077
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:00 ; elapsed = 00:00:45 . Memory (MB): peak = 359.941 ; gain = 13.375 ; free physical = 1020 ; free virtual = 12077
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<1000ull, 100000000ull>' into 'ctrlloop' (ctrlloop.cpp:92).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:01 ; elapsed = 00:00:47 . Memory (MB): peak = 360.387 ; gain = 13.820 ; free physical = 1002 ; free virtual = 12064
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:01 ; elapsed = 00:00:47 . Memory (MB): peak = 488.188 ; gain = 141.621 ; free physical = 995 ; free virtual = 12059
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:02 ; elapsed = 00:00:48 . Memory (MB): peak = 488.188 ; gain = 141.621 ; free physical = 964 ; free virtual = 12031
+WARNING: [XFORM 203-803] Cannot bundle argument 'iomem.V' to m_axi port 'IOMEM' since its offset mode is off.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:02 ; elapsed = 00:00:48 . Memory (MB): peak = 488.188 ; gain = 141.621 ; free physical = 953 ; free virtual = 12028
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'ctrlloop' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ctrlloop'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 48.37 seconds; current allocated memory: 86.097 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 86.266 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ctrlloop'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'ctrlloop/IOMEM' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ctrlloop/regs_V' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ctrlloop/buttons_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ctrlloop/interrupt_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ctrlloop/leds_V' to 'ap_none'.
+WARNING: [RTGEN 206-101] Port 'leds_V' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on function 'ctrlloop' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'led_state_V' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'return' and 'regs_V' to AXI-Lite port CTRL.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_ARUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_RVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_RREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_RREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_RDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_RLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_RID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_RUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_RRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_BVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_BREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'ctrlloop/m_axi_IOMEM_BREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_BRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_BID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_BUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'ctrlloop/interrupt_V' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ctrlloop'.
+INFO: [HLS 200-111]  Elapsed time: 1.1 seconds; current allocated memory: 86.752 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:03 ; elapsed = 00:00:50 . Memory (MB): peak = 488.188 ; gain = 141.621 ; free physical = 954 ; free virtual = 12025
+INFO: [SYSC 207-301] Generating SystemC RTL for ctrlloop.
+INFO: [VHDL 208-304] Generating VHDL RTL for ctrlloop.
+INFO: [VLOG 209-307] Generating Verilog RTL for ctrlloop.
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/brennan/Vivado/Vivado/2017.4/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 18 09:43:26 2018...
+INFO: [HLS 200-112] Total elapsed time: 95.99 seconds; peak allocated memory: 86.752 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Wed Jul 18 09:43:57 2018...

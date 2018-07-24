@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="ctrlloop" xd:componentRef="ctrlloop" xd:initiationInterval="100000002" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="iomem[]" xd:originalName="iomem" xd:direction="inout" xd:interfaceRef="m_axi_IOMEM" xd:busTypeRef="aximm" xd:arraySize="4096" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="regs[]" xd:originalName="regs" xd:direction="out" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x200" xd:arraySize="128" xd:dataWidth="32"/>
+  <xd:arg xd:name="buttons" xd:originalName="buttons" xd:direction="in" xd:interfaceRef="buttons_V" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="4" xd:firstOut="0"/>
+  <xd:arg xd:name="interrupt" xd:originalName="interrupt" xd:direction="in" xd:interfaceRef="interrupt_V" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="0"/>
+  <xd:arg xd:name="leds" xd:originalName="leds" xd:direction="out" xd:interfaceRef="leds_V" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="4" xd:firstOut="0"/>
+  <xd:latencyEstimates xd:best-case="100000001" xd:worst-case="100000001" xd:average-case="100000001"/>
+  <xd:resourceEstimates xd:LUT="208" xd:FF="153" xd:BRAM="2" xd:DSP="0"/>
+</xd:acceleratorMap>

@@ -1,0 +1,83 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source /home/brennan/Vivado/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/home/brennan/Vivado/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'brennan' on host 'apple' (Linux_x86_64 version 4.13.0-45-generic) on Mon Jul 23 19:29:26 EDT 2018
+INFO: [HLS 200-10] On os Ubuntu 16.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/brennan/Documents/pynq-copter/pynqcopter/ip/atoi'
+INFO: [HLS 200-10] Creating and opening project '/home/brennan/Documents/pynq-copter/pynqcopter/ip/atoi/atoi'.
+INFO: [HLS 200-10] Adding test bench file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'atoi.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'atoi.cpp' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/brennan/Documents/pynq-copter/pynqcopter/ip/atoi/atoi/atoi'.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+make[2]: Entering directory '/home/brennan/Documents/pynq-copter/pynqcopter/ip/atoi/atoi/atoi/csim/build'
+   Compiling ../../../../atoi.cpp in debug mode
+   Compiling ../../../../main.cpp in debug mode
+   Generating csim.exe
+make[2]: Leaving directory '/home/brennan/Documents/pynq-copter/pynqcopter/ip/atoi/atoi/atoi/csim/build'
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-10] Analyzing design file 'atoi.cpp' ...
+INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:49 ; elapsed = 00:00:27 . Memory (MB): peak = 359.941 ; gain = 13.375 ; free physical = 1872 ; free virtual = 11804
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:50 ; elapsed = 00:00:28 . Memory (MB): peak = 359.941 ; gain = 13.375 ; free physical = 1869 ; free virtual = 11804
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:51 ; elapsed = 00:00:29 . Memory (MB): peak = 360.184 ; gain = 13.617 ; free physical = 1859 ; free virtual = 11796
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:51 ; elapsed = 00:00:29 . Memory (MB): peak = 360.184 ; gain = 13.617 ; free physical = 1854 ; free virtual = 11792
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (atoi.cpp:47) in function 'atoi' completely.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:52 ; elapsed = 00:00:29 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 1826 ; free virtual = 11768
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:52 ; elapsed = 00:00:30 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 1823 ; free virtual = 11766
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'atoi' ...
+WARNING: [SYN 201-107] Renaming port name 'atoi/in' to 'atoi/in_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'atoi'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 29.76 seconds; current allocated memory: 77.992 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 78.092 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'atoi'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'atoi/in_r' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'atoi/out_V' to 'ap_none'.
+WARNING: [RTGEN 206-101] Port 'out_V' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on function 'atoi' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'atoi'.
+INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 78.370 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:53 ; elapsed = 00:00:30 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 1822 ; free virtual = 11765
+INFO: [SYSC 207-301] Generating SystemC RTL for atoi.
+INFO: [VHDL 208-304] Generating VHDL RTL for atoi.
+INFO: [VLOG 209-307] Generating Verilog RTL for atoi.
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/brennan/Vivado/Vivado/2017.4/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 23 19:30:07 2018...
+INFO: [HLS 200-112] Total elapsed time: 63.17 seconds; peak allocated memory: 78.370 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Mon Jul 23 19:30:29 2018...
