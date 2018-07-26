@@ -1,0 +1,4 @@
+<annotationInfo>
+<item  id="15" filename="sensor.cpp" linenumber="49" name="iicData2_sum" contextFuncName="sensor" moduleName="sensor" rtlName="iicData2_sum_fu_99_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="38" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/sensor"></item>
+<item  id="16" filename="sensor.cpp" linenumber="49" name="iicData2_sum_cast" contextFuncName="sensor" moduleName="sensor" rtlName="iicData2_sum_cast_fu_105_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/sensor"></item>
+</annotationInfo>

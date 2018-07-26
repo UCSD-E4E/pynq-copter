@@ -1,0 +1,211 @@
+
+
+================================================================
+== Vivado HLS Report for 'sensor'
+================================================================
+* Date:           Mon Jul 23 10:56:11 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        sensor
+* Solution:       sensor
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|      3.50|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    9|    9|    9|    9|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+
+* FSM state operations: 
+
+ <State 1> : 3.49ns
+ST_1 : Operation 11 [1/1] (1.00ns)   --->   "%iicData_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %iicData)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%tmp = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %iicData_read, i32 2, i32 31)"
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%tmp_cast = zext i30 %tmp to i31"
+ST_1 : Operation 14 [1/1] (1.00ns)   --->   "%iicStatus_load = call i32 @_ssdm_op_Read.s_axilite.volatile.i32P(i32* %iicStatus)" [sensor.cpp:40]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 15 [1/1] (2.49ns)   --->   "%iicData2_sum = add i31 %tmp_cast, 65" [sensor.cpp:49]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.49> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 2> : 3.50ns
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%iicData2_sum_cast = zext i31 %iicData2_sum to i64" [sensor.cpp:49]
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%MASTER_BUS_addr = getelementptr inbounds i32* %MASTER_BUS, i64 %iicData2_sum_cast" [sensor.cpp:49]
+ST_2 : Operation 18 [7/7] (3.50ns)   --->   "%MASTER_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MASTER_BUS_addr, i32 1)" [sensor.cpp:49]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 3> : 3.50ns
+ST_3 : Operation 19 [6/7] (3.50ns)   --->   "%MASTER_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MASTER_BUS_addr, i32 1)" [sensor.cpp:49]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 4> : 3.50ns
+ST_4 : Operation 20 [5/7] (3.50ns)   --->   "%MASTER_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MASTER_BUS_addr, i32 1)" [sensor.cpp:49]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 5> : 3.50ns
+ST_5 : Operation 21 [4/7] (3.50ns)   --->   "%MASTER_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MASTER_BUS_addr, i32 1)" [sensor.cpp:49]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 6> : 3.50ns
+ST_6 : Operation 22 [3/7] (3.50ns)   --->   "%MASTER_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MASTER_BUS_addr, i32 1)" [sensor.cpp:49]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 7> : 3.50ns
+ST_7 : Operation 23 [2/7] (3.50ns)   --->   "%MASTER_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MASTER_BUS_addr, i32 1)" [sensor.cpp:49]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 8> : 3.50ns
+ST_8 : Operation 24 [1/7] (3.50ns)   --->   "%MASTER_BUS_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %MASTER_BUS_addr, i32 1)" [sensor.cpp:49]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 9> : 3.50ns
+ST_9 : Operation 25 [1/1] (3.50ns)   --->   "%MASTER_BUS_addr_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %MASTER_BUS_addr)" [sensor.cpp:49]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 10> : 1.00ns
+ST_10 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %MASTER_BUS), !map !15"
+ST_10 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %iicStatus) nounwind, !map !21"
+ST_10 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([7 x i8]* @sensor_str) nounwind"
+ST_10 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [sensor.cpp:39]
+ST_10 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %iicStatus, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [sensor.cpp:40]
+ST_10 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %MASTER_BUS, [6 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [11 x i8]* @p_str4, [6 x i8]* @p_str5, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [sensor.cpp:41]
+ST_10 : Operation 32 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %iicData, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @bundle, [6 x i8]* @p_str5, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [sensor.cpp:41]
+ST_10 : Operation 33 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %iicStatus, i32 %MASTER_BUS_addr_read)" [sensor.cpp:50]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_10 : Operation 34 [1/1] (0.00ns)   --->   "ret void" [sensor.cpp:52]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 3.49ns
+The critical path consists of the following:
+	s_axi read on port 'iicData' [4]  (1 ns)
+	'add' operation ('iicData2_sum', sensor.cpp:49) [15]  (2.49 ns)
+
+ <State 2>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('MASTER_BUS_addr', sensor.cpp:49) [17]  (0 ns)
+	bus request on port 'MASTER_BUS' (sensor.cpp:49) [18]  (3.5 ns)
+
+ <State 3>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'MASTER_BUS' (sensor.cpp:49) [18]  (3.5 ns)
+
+ <State 4>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'MASTER_BUS' (sensor.cpp:49) [18]  (3.5 ns)
+
+ <State 5>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'MASTER_BUS' (sensor.cpp:49) [18]  (3.5 ns)
+
+ <State 6>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'MASTER_BUS' (sensor.cpp:49) [18]  (3.5 ns)
+
+ <State 7>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'MASTER_BUS' (sensor.cpp:49) [18]  (3.5 ns)
+
+ <State 8>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'MASTER_BUS' (sensor.cpp:49) [18]  (3.5 ns)
+
+ <State 9>: 3.5ns
+The critical path consists of the following:
+	bus read on port 'MASTER_BUS' (sensor.cpp:49) [19]  (3.5 ns)
+
+ <State 10>: 1ns
+The critical path consists of the following:
+	s_axi write on port 'iicStatus' (sensor.cpp:50) [20]  (1 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

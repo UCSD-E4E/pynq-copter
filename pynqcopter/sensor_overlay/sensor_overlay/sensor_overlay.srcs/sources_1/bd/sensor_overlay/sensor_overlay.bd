@@ -844,22 +844,22 @@
       <spirit:adHocConnection>
         <spirit:name>axi_iic_0_scl_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_iic_0" spirit:portRef="scl_o"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In0"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In18"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>axi_iic_0_scl_t</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_iic_0" spirit:portRef="scl_t"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_1" spirit:portRef="In0"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_1" spirit:portRef="In18"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>axi_iic_0_sda_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_iic_0" spirit:portRef="sda_o"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In1"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In19"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>axi_iic_0_sda_t</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_iic_0" spirit:portRef="sda_t"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_1" spirit:portRef="In1"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_1" spirit:portRef="In19"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_CLK0</spirit:name>

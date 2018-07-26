@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Mon Jul 23 14:32:33 2018
+//Date        : Thu Jul 26 13:19:02 2018
 //Host        : fabricant running 64-bit Linux Mint 18 Sarah
 //Command     : generate_target sensor_overlay.bd
 //Design      : sensor_overlay
@@ -715,8 +715,8 @@ module sensor_overlay
         .peripheral_aresetn(S00_ARESETN_2),
         .slowest_sync_clk(processing_system7_0_FCLK_CLK0));
   sensor_overlay_xlconcat_0_0 xlconcat_0
-       (.In0(axi_iic_0_scl_o),
-        .In1(axi_iic_0_sda_o),
+       (.In0(1'b0),
+        .In1(1'b0),
         .In10(1'b0),
         .In11(1'b0),
         .In12(1'b0),
@@ -725,8 +725,8 @@ module sensor_overlay
         .In15(1'b0),
         .In16(1'b0),
         .In17(1'b0),
-        .In18(1'b0),
-        .In19(1'b0),
+        .In18(axi_iic_0_scl_o),
+        .In19(axi_iic_0_sda_o),
         .In2(1'b0),
         .In3(1'b0),
         .In4(1'b0),
@@ -737,8 +737,8 @@ module sensor_overlay
         .In9(1'b0),
         .dout(xlconcat_0_dout));
   sensor_overlay_xlconcat_1_0 xlconcat_1
-       (.In0(axi_iic_0_scl_t),
-        .In1(axi_iic_0_sda_t),
+       (.In0(1'b0),
+        .In1(1'b0),
         .In10(1'b0),
         .In11(1'b0),
         .In12(1'b0),
@@ -747,8 +747,8 @@ module sensor_overlay
         .In15(1'b0),
         .In16(1'b0),
         .In17(1'b0),
-        .In18(1'b0),
-        .In19(1'b0),
+        .In18(axi_iic_0_scl_t),
+        .In19(axi_iic_0_sda_t),
         .In2(1'b0),
         .In3(1'b0),
         .In4(1'b0),

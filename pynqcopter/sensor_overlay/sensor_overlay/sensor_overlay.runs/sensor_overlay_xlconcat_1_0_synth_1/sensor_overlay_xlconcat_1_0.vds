@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Mon Jul 23 14:34:15 2018
-# Process ID: 5953
+# Start of session at: Thu Jul 26 13:22:52 2018
+# Process ID: 1103
 # Current directory: /home/iavendano/pynq-copter/pynqcopter/sensor_overlay/sensor_overlay/sensor_overlay.runs/sensor_overlay_xlconcat_1_0_synth_1
 # Command line: vivado -log sensor_overlay_xlconcat_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sensor_overlay_xlconcat_1_0.tcl
 # Log file: /home/iavendano/pynq-copter/pynqcopter/sensor_overlay/sensor_overlay/sensor_overlay.runs/sensor_overlay_xlconcat_1_0_synth_1/sensor_overlay_xlconcat_1_0.vds
@@ -11,4 +11,4 @@
 #-----------------------------------------------------------
 source sensor_overlay_xlconcat_1_0.tcl -notrace
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP sensor_overlay_xlconcat_1_0, cache-ID = 21a602f7cdb578f8.
-INFO: [Common 17-206] Exiting Vivado at Mon Jul 23 14:34:26 2018...
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 26 13:23:00 2018...

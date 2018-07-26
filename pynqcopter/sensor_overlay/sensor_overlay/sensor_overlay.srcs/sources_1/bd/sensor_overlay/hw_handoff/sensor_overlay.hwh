@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jul 23 14:32:52 2018" VIVADOVERSION="2017.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jul 26 13:19:20 2018" VIVADOVERSION="2017.4">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="sensor_overlay" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -1002,12 +1002,12 @@
         </PORT>
         <PORT DIR="O" NAME="sda_o" SIGIS="undef" SIGNAME="axi_iic_0_sda_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_0" PORT="In1"/>
+            <CONNECTION INSTANCE="xlconcat_0" PORT="In19"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="sda_t" SIGIS="undef" SIGNAME="axi_iic_0_sda_t">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_1" PORT="In1"/>
+            <CONNECTION INSTANCE="xlconcat_1" PORT="In19"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="scl_i" SIGIS="undef" SIGNAME="xlslice_1_Dout">
@@ -1017,12 +1017,12 @@
         </PORT>
         <PORT DIR="O" NAME="scl_o" SIGIS="undef" SIGNAME="axi_iic_0_scl_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_0" PORT="In0"/>
+            <CONNECTION INSTANCE="xlconcat_0" PORT="In18"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="scl_t" SIGIS="undef" SIGNAME="axi_iic_0_scl_t">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_1" PORT="In0"/>
+            <CONNECTION INSTANCE="xlconcat_1" PORT="In18"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="gpo" RIGHT="0" SIGIS="undef"/>
@@ -3631,16 +3631,8 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="axi_iic_0_scl_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_0" PORT="scl_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="axi_iic_0_sda_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_0" PORT="sda_o"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="In2" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="In3" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="In4" RIGHT="0" SIGIS="undef"/>
@@ -3657,8 +3649,16 @@
         <PORT DIR="I" LEFT="0" NAME="In15" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="In16" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="In17" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In18" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In19" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In18" RIGHT="0" SIGIS="undef" SIGNAME="axi_iic_0_scl_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_0" PORT="scl_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In19" RIGHT="0" SIGIS="undef" SIGNAME="axi_iic_0_sda_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_0" PORT="sda_o"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="19" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="arduinoGpioBreakout" PORT="wire_i_o"/>
@@ -3708,16 +3708,8 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="axi_iic_0_scl_t">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_0" PORT="scl_t"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="axi_iic_0_sda_t">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_0" PORT="sda_t"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="In2" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="In3" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="In4" RIGHT="0" SIGIS="undef"/>
@@ -3734,8 +3726,16 @@
         <PORT DIR="I" LEFT="0" NAME="In15" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="In16" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="In17" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In18" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In19" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In18" RIGHT="0" SIGIS="undef" SIGNAME="axi_iic_0_scl_t">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_0" PORT="scl_t"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In19" RIGHT="0" SIGIS="undef" SIGNAME="axi_iic_0_sda_t">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_0" PORT="sda_t"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="19" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_1_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="arduinoGpioBreakout" PORT="wire_i_t"/>

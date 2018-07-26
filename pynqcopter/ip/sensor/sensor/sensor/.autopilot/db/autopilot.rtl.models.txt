@@ -1,0 +1,3 @@
+sensor_CTRL_s_axi
+sensor_MASTER_BUS_m_axi
+sensor

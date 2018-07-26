@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1532381576">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1532636363">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="sensor_overlay_wrapper.drc"/>
   <File Type="BG-BGN" Name="sensor_overlay_wrapper.bgn"/>
@@ -110,13 +110,13 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_arduinoGpioBreakout_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlslice_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlconcat_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_userReset_0"/>
   <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_axi_iic_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_arduinoGpioBreakout_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlconcat_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_userReset_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlslice_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlconcat_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlslice_0_0"/>
 </GenRun>

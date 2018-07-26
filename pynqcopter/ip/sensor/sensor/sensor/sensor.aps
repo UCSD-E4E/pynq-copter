@@ -1,0 +1,25 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <name>
+        <value string="sensor"/>
+    </name>
+    <project>
+        <value string="sensor"/>
+    </project>
+    <targetInfo>
+        <TargetInfo value="xc7z020:clg400:-1"/>
+    </targetInfo>
+    <libraryList>
+        <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
+        <library value="xilinx/zynq/zynq_fpv6" name="DefaultPlatform"/>
+    </libraryList>
+    <clockList>
+        <clock name="default" period="4" default="false"/>
+    </clockList>
+    <config>
+        <schedule model="sensor"/>
+    </config>
+    <ExportDesign askAgain="true" evaluate="false" rtl="verilog" formatName="ip_catalog">
+        <Format formatName="ip_catalog" description="HLS Core: Sensor Function" vendor="UCSD" library="hlsip" ipname="" version="1.0" driver_input_dir="" display_name="Sensor" taxonomy=""/>
+    </ExportDesign>
+</AutoPilot:solution>
+

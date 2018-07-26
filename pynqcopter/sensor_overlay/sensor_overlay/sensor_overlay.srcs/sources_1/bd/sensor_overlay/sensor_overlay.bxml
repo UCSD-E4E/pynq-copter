@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="sensor_overlay" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1532381572"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1532381572"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1532381572"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1532381572"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1532636360"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1532636360"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1532636360"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1532636360"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/sensor_overlay_arduinoGpioBreakout_0/sensor_overlay_arduinoGpioBreakout_0.xci" Type="IP">
         <Instance HierarchyPath="arduinoGpioBreakout"/>
