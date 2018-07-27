@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1532728063">
+  <File Type="VDS-TIMING-PB" Name="hex2_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="hex2_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="hex2_wrapper.dcp"/>
+  <File Type="REPORTS-TCL" Name="hex2_wrapper_reports.tcl"/>
+  <File Type="PA-TCL" Name="hex2_wrapper.tcl"/>
+  <File Type="RDS-RDS" Name="hex2_wrapper.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="hex2_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="hex2_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="hex2_wrapper_utilization_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/hex2/hex2.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/hex2/hdl/hex2_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="hex2_wrapper"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../design.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="hex2_rst_ps7_0_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hex2_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hex2_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hex2_axi_iic_0_0"/>
+</GenRun>

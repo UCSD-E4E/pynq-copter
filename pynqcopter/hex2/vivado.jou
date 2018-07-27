@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Jul 27 14:56:28 2018
+# Process ID: 26130
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/hex2
+# Command line: vivado hex2/hex2.xpr
+# Log file: /home/iavendano/pynq-copter/pynqcopter/hex2/vivado.log
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/hex2/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project hex2/hex2.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/iavendano/pynq-copter/pynqcopter/hex2/hex2/hex2.srcs/sources_1/bd/hex2/hex2.bd}
