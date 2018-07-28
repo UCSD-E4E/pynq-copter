@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Mon Jul 23 20:07:14 2018
+| Date         : Fri Jul 27 19:31:39 2018
 | Host         : apple running 64-bit Ubuntu 16.04.4 LTS
 | Command      : report_drc -file pwm_wrapper_drc_opted.rpt -pb pwm_wrapper_drc_opted.pb -rpx pwm_wrapper_drc_opted.rpx
 | Design       : pwm_wrapper
@@ -24,11 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 20
+             Violations found: 32
 +--------+----------+--------------------------+------------+
 | Rule   | Severity | Description              | Violations |
 +--------+----------+--------------------------+------------+
 | BUFC-1 | Warning  | Input Buffer Connections | 20         |
+| DPOP-1 | Warning  | PREG Output pipelining   | 12         |
 +--------+----------+--------------------------+------------+
 
 2. REPORT DETAILS
@@ -131,6 +132,66 @@ Related violations: <none>
 BUFC-1#20 Warning
 Input Buffer Connections  
 Input buffer arduino_gpio_tri_iobuf_9/IBUF (in arduino_gpio_tri_iobuf_9 macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+DPOP-1#1 Warning
+PREG Output pipelining  
+DSP pwm_i/mixer_0/inst/mixer_mul_59s_61neOg_U5/mixer_mul_59s_61neOg_MulnS_3_U/buff0_reg__0 output pwm_i/mixer_0/inst/mixer_mul_59s_61neOg_U5/mixer_mul_59s_61neOg_MulnS_3_U/buff0_reg__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#2 Warning
+PREG Output pipelining  
+DSP pwm_i/mixer_0/inst/mixer_mul_59s_61neOg_U5/mixer_mul_59s_61neOg_MulnS_3_U/buff0_reg__1 output pwm_i/mixer_0/inst/mixer_mul_59s_61neOg_U5/mixer_mul_59s_61neOg_MulnS_3_U/buff0_reg__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#3 Warning
+PREG Output pipelining  
+DSP pwm_i/mixer_0/inst/mixer_mul_59s_61neOg_U5/mixer_mul_59s_61neOg_MulnS_3_U/tmp_product__0 output pwm_i/mixer_0/inst/mixer_mul_59s_61neOg_U5/mixer_mul_59s_61neOg_MulnS_3_U/tmp_product__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#4 Warning
+PREG Output pipelining  
+DSP pwm_i/mixer_0/inst/mixer_mul_59s_61neOg_U8/mixer_mul_59s_61neOg_MulnS_3_U/buff0_reg__0 output pwm_i/mixer_0/inst/mixer_mul_59s_61neOg_U8/mixer_mul_59s_61neOg_MulnS_3_U/buff0_reg__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#5 Warning
+PREG Output pipelining  
+DSP pwm_i/mixer_0/inst/mixer_mul_59s_61neOg_U8/mixer_mul_59s_61neOg_MulnS_3_U/buff0_reg__1 output pwm_i/mixer_0/inst/mixer_mul_59s_61neOg_U8/mixer_mul_59s_61neOg_MulnS_3_U/buff0_reg__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#6 Warning
+PREG Output pipelining  
+DSP pwm_i/mixer_0/inst/mixer_mul_59s_61neOg_U8/mixer_mul_59s_61neOg_MulnS_3_U/tmp_product__0 output pwm_i/mixer_0/inst/mixer_mul_59s_61neOg_U8/mixer_mul_59s_61neOg_MulnS_3_U/tmp_product__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#7 Warning
+PREG Output pipelining  
+DSP pwm_i/mixer_0/inst/mixer_mul_59s_61nfYi_U6/mixer_mul_59s_61nfYi_MulnS_4_U/buff0_reg__0 output pwm_i/mixer_0/inst/mixer_mul_59s_61nfYi_U6/mixer_mul_59s_61nfYi_MulnS_4_U/buff0_reg__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#8 Warning
+PREG Output pipelining  
+DSP pwm_i/mixer_0/inst/mixer_mul_59s_61nfYi_U6/mixer_mul_59s_61nfYi_MulnS_4_U/buff0_reg__1 output pwm_i/mixer_0/inst/mixer_mul_59s_61nfYi_U6/mixer_mul_59s_61nfYi_MulnS_4_U/buff0_reg__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#9 Warning
+PREG Output pipelining  
+DSP pwm_i/mixer_0/inst/mixer_mul_59s_61nfYi_U6/mixer_mul_59s_61nfYi_MulnS_4_U/tmp_product__0 output pwm_i/mixer_0/inst/mixer_mul_59s_61nfYi_U6/mixer_mul_59s_61nfYi_MulnS_4_U/tmp_product__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#10 Warning
+PREG Output pipelining  
+DSP pwm_i/mixer_0/inst/mixer_mul_59s_61nfYi_U7/mixer_mul_59s_61nfYi_MulnS_4_U/buff0_reg__0 output pwm_i/mixer_0/inst/mixer_mul_59s_61nfYi_U7/mixer_mul_59s_61nfYi_MulnS_4_U/buff0_reg__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#11 Warning
+PREG Output pipelining  
+DSP pwm_i/mixer_0/inst/mixer_mul_59s_61nfYi_U7/mixer_mul_59s_61nfYi_MulnS_4_U/buff0_reg__1 output pwm_i/mixer_0/inst/mixer_mul_59s_61nfYi_U7/mixer_mul_59s_61nfYi_MulnS_4_U/buff0_reg__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#12 Warning
+PREG Output pipelining  
+DSP pwm_i/mixer_0/inst/mixer_mul_59s_61nfYi_U7/mixer_mul_59s_61nfYi_MulnS_4_U/tmp_product__0 output pwm_i/mixer_0/inst/mixer_mul_59s_61nfYi_U7/mixer_mul_59s_61nfYi_MulnS_4_U/tmp_product__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 

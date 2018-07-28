@@ -35,3 +35,4 @@
 from .HlsCore import HlsCore
 from . import ctrlloop
 from . import mixer
+from . import pwm

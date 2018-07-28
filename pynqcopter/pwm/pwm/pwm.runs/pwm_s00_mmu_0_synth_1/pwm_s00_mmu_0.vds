@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Jul 27 15:11:35 2018
+# Process ID: 3789
+# Current directory: /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_s00_mmu_0_synth_1
+# Command line: vivado -log pwm_s00_mmu_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pwm_s00_mmu_0.tcl
+# Log file: /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_s00_mmu_0_synth_1/pwm_s00_mmu_0.vds
+# Journal file: /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_s00_mmu_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source pwm_s00_mmu_0.tcl -notrace
+WARNING: [Vivado 12-818] No files matched '/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_s00_mmu_0/pwm_s00_mmu_0_ooc.xdc'
+ERROR: [Common 17-55] 'set_property' expects at least one object.
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 27 15:11:59 2018...

@@ -62,26 +62,14 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="pwm.bd" FileRelPathName="ip/pwm_processing_system7_0_0/pwm_processing_system7_0_0.xci">
-          <Proxy FileSetName="pwm_processing_system7_0_0"/>
+        <CompFileExtendedInfo CompFileName="pwm.bd" FileRelPathName="ip/pwm_system_ila_0_2/pwm_system_ila_0_2.xci">
+          <Proxy FileSetName="pwm_system_ila_0_2"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="pwm.bd" FileRelPathName="ip/pwm_rst_ps7_0_100M_0/pwm_rst_ps7_0_100M_0.xci">
-          <Proxy FileSetName="pwm_rst_ps7_0_100M_0"/>
+        <CompFileExtendedInfo CompFileName="pwm.bd" FileRelPathName="ip/pwm_pwm_0_1/pwm_pwm_0_1.xci">
+          <Proxy FileSetName="pwm_pwm_0_1"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="pwm.bd" FileRelPathName="ip/pwm_wire_distributor_0_0/pwm_wire_distributor_0_0.xci">
-          <Proxy FileSetName="pwm_wire_distributor_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="pwm.bd" FileRelPathName="ip/pwm_xlconcat_0_0/pwm_xlconcat_0_0.xci">
-          <Proxy FileSetName="pwm_xlconcat_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="pwm.bd" FileRelPathName="ip/pwm_atoi_0_0/pwm_atoi_0_0.xci">
-          <Proxy FileSetName="pwm_atoi_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="pwm.bd" FileRelPathName="ip/pwm_xbar_0/pwm_xbar_0.xci">
-          <Proxy FileSetName="pwm_xbar_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="pwm.bd" FileRelPathName="ip/pwm_xlslice_0_0/pwm_xlslice_0_0.xci">
-          <Proxy FileSetName="pwm_xlslice_0_0"/>
+        <CompFileExtendedInfo CompFileName="pwm.bd" FileRelPathName="ip/pwm_mixer_0_1/pwm_mixer_0_1.xci">
+          <Proxy FileSetName="pwm_mixer_0_1"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/pwm/hdl/pwm_wrapper.v">
@@ -120,45 +108,21 @@
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
-    <FileSet Name="pwm_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pwm_processing_system7_0_0">
+    <FileSet Name="pwm_system_ila_0_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pwm_system_ila_0_2">
       <Config>
-        <Option Name="TopModule" Val="pwm_processing_system7_0_0"/>
+        <Option Name="TopModule" Val="pwm_system_ila_0_2"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="pwm_rst_ps7_0_100M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pwm_rst_ps7_0_100M_0">
+    <FileSet Name="pwm_pwm_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pwm_pwm_0_1">
       <Config>
-        <Option Name="TopModule" Val="pwm_rst_ps7_0_100M_0"/>
+        <Option Name="TopModule" Val="pwm_pwm_0_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="pwm_xlconcat_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pwm_xlconcat_0_0">
+    <FileSet Name="pwm_mixer_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pwm_mixer_0_1">
       <Config>
-        <Option Name="TopModule" Val="pwm_xlconcat_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="pwm_wire_distributor_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pwm_wire_distributor_0_0">
-      <Config>
-        <Option Name="TopModule" Val="pwm_wire_distributor_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="pwm_atoi_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pwm_atoi_0_0">
-      <Config>
-        <Option Name="TopModule" Val="pwm_atoi_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="pwm_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pwm_xbar_0">
-      <Config>
-        <Option Name="TopModule" Val="pwm_xbar_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="pwm_xlslice_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pwm_xlslice_0_0">
-      <Config>
-        <Option Name="TopModule" Val="pwm_xlslice_0_0"/>
+        <Option Name="TopModule" Val="pwm_mixer_0_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -194,7 +158,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="pwm_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="pwm_processing_system7_0_0" Part="xc7z020clg400-1" ConstrsSet="pwm_processing_system7_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/pwm_processing_system7_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="pwm_system_ila_0_2_synth_1" Type="Ft3:Synth" SrcSet="pwm_system_ila_0_2" Part="xc7z020clg400-1" ConstrsSet="pwm_system_ila_0_2" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/pwm_system_ila_0_2_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
@@ -203,34 +167,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="pwm_rst_ps7_0_100M_0_synth_1" Type="Ft3:Synth" SrcSet="pwm_rst_ps7_0_100M_0" Part="xc7z020clg400-1" ConstrsSet="pwm_rst_ps7_0_100M_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/pwm_rst_ps7_0_100M_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="pwm_xlconcat_0_0_synth_1" Type="Ft3:Synth" SrcSet="pwm_xlconcat_0_0" Part="xc7z020clg400-1" ConstrsSet="pwm_xlconcat_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/pwm_xlconcat_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="pwm_wire_distributor_0_0_synth_1" Type="Ft3:Synth" SrcSet="pwm_wire_distributor_0_0" Part="xc7z020clg400-1" ConstrsSet="pwm_wire_distributor_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/pwm_wire_distributor_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="pwm_atoi_0_0_synth_1" Type="Ft3:Synth" SrcSet="pwm_atoi_0_0" Part="xc7z020clg400-1" ConstrsSet="pwm_atoi_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/pwm_atoi_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="pwm_pwm_0_1_synth_1" Type="Ft3:Synth" SrcSet="pwm_pwm_0_1" Part="xc7z020clg400-1" ConstrsSet="pwm_pwm_0_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/pwm_pwm_0_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -241,18 +178,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="pwm_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="pwm_xbar_0" Part="xc7z020clg400-1" ConstrsSet="pwm_xbar_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/pwm_xbar_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="pwm_xlslice_0_0_synth_1" Type="Ft3:Synth" SrcSet="pwm_xlslice_0_0" Part="xc7z020clg400-1" ConstrsSet="pwm_xlslice_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/pwm_xlslice_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="pwm_mixer_0_1_synth_1" Type="Ft3:Synth" SrcSet="pwm_mixer_0_1" Part="xc7z020clg400-1" ConstrsSet="pwm_mixer_0_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/pwm_mixer_0_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -280,7 +206,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="pwm_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="pwm_processing_system7_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="pwm_processing_system7_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="pwm_system_ila_0_2_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="pwm_system_ila_0_2" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="pwm_system_ila_0_2_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
@@ -296,55 +222,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="pwm_rst_ps7_0_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="pwm_rst_ps7_0_100M_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="pwm_rst_ps7_0_100M_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="pwm_xlconcat_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="pwm_xlconcat_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="pwm_xlconcat_0_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="pwm_wire_distributor_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="pwm_wire_distributor_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="pwm_wire_distributor_0_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="pwm_atoi_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="pwm_atoi_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="pwm_atoi_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="pwm_pwm_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="pwm_pwm_0_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="pwm_pwm_0_1_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -362,25 +240,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="pwm_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="pwm_xbar_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="pwm_xbar_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="pwm_xlslice_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="pwm_xlslice_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="pwm_xlslice_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="pwm_mixer_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="pwm_mixer_0_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="pwm_mixer_0_1_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>

@@ -5,8 +5,8 @@ Copyright (C) 1986-2017 Xilinx, Inc. All Rights Reserved.
 
 ==============================================================
 
-INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 INFO: [SIM 211-1] CSim done with 0 errors.
@@ -14,48 +14,60 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'pwm.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:54 ; elapsed = 00:00:32 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 1910 ; free virtual = 11806
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:56 ; elapsed = 00:00:34 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 1907 ; free virtual = 11806
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:00 ; elapsed = 00:00:43 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 432 ; free virtual = 10194
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:02 ; elapsed = 00:00:45 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 422 ; free virtual = 10191
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:57 ; elapsed = 00:00:35 . Memory (MB): peak = 360.355 ; gain = 13.793 ; free physical = 1891 ; free virtual = 11794
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 399 ; free virtual = 10177
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:57 ; elapsed = 00:00:35 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 1885 ; free virtual = 11789
-INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-3' (pwm.cpp:70) in function 'pwm' automatically.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (pwm.cpp:52) in function 'pwm' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-2' (pwm.cpp:58) in function 'pwm' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-3' (pwm.cpp:70) in function 'pwm' completely.
-INFO: [XFORM 203-11] Balancing expressions in function 'pwm' (pwm.cpp:42)...6 expression(s) balanced.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:57 ; elapsed = 00:00:36 . Memory (MB): peak = 488.328 ; gain = 141.766 ; free physical = 1855 ; free virtual = 11764
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:58 ; elapsed = 00:00:36 . Memory (MB): peak = 488.328 ; gain = 141.766 ; free physical = 1853 ; free virtual = 11762
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 389 ; free virtual = 10169
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'pwm' (pwm.cpp:43).
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (pwm.cpp:56) in function 'pwm' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-2' (pwm.cpp:64) in function 'pwm' completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'pwm'... converting 15 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'pwm' (pwm.cpp:43)...14 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:04 ; elapsed = 00:00:47 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 355 ; free virtual = 10140
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:04 ; elapsed = 00:00:48 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 350 ; free virtual = 10136
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'pwm' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'pwm'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'pwm'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('m_V_load_1', pwm.cpp:57) on array 'm_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'm_V'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 19.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 36.09 seconds; current allocated memory: 83.610 MB.
+INFO: [HLS 200-111]  Elapsed time: 48.71 seconds; current allocated memory: 97.368 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 83.845 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 98.186 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'pwm'
 INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'pwm/min_duty_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pwm/max_duty_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pwm/period_V' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'pwm/m_V' to 's_axilite & ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'pwm/out_V' to 'ap_none'.
 WARNING: [RTGEN 206-101] Port 'out_V' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
 INFO: [RTGEN 206-500] Setting interface mode on function 'pwm' to 's_axilite & ap_ctrl_hs'.
 WARNING: [RTGEN 206-101] Register 'accumulator_V' is power-on initialization.
 WARNING: [RTGEN 206-101] Register 'out_p_V' is power-on initialization.
-INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Bundling port 'return', 'max_duty_V', 'period_V' and 'm_V' to AXI-Lite port ctrl.
+INFO: [SYN 201-210] Renamed object name 'pwm_mul_32ns_33s_65_7_1' to 'pwm_mul_32ns_33s_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pwm_add_66s_66ns_66_2_1' to 'pwm_add_66s_66ns_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'pwm_add_66s_66ns_cud': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'pwm_mul_32ns_33s_bkb': 6 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'pwm'.
-INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 84.264 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:58 ; elapsed = 00:00:37 . Memory (MB): peak = 488.328 ; gain = 141.766 ; free physical = 1852 ; free virtual = 11761
+INFO: [HLS 200-111]  Elapsed time: 0.34 seconds; current allocated memory: 99.715 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'pwm_mul_32ns_33s_bkb_MulnS_0'
+INFO: [RTMG 210-283] Generating pipelined adder/subtractor : 'pwm_add_66s_66ns_cud_AddSubnS_0'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:06 ; elapsed = 00:00:51 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 327 ; free virtual = 10130
 INFO: [SYSC 207-301] Generating SystemC RTL for pwm.
 INFO: [VHDL 208-304] Generating VHDL RTL for pwm.
 INFO: [VLOG 209-307] Generating Verilog RTL for pwm.
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-INFO: [HLS 200-112] Total elapsed time: 69.72 seconds; peak allocated memory: 84.264 MB.
+INFO: [HLS 200-112] Total elapsed time: 86.71 seconds; peak allocated memory: 99.715 MB.

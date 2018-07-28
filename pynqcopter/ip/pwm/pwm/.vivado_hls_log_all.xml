@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Register 'out_p_V' is power-on initialization." projectName="pwm" solutionName="pwm" date="2018-07-27T14:51:27.184-0400" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'accumulator_V' is power-on initialization." projectName="pwm" solutionName="pwm" date="2018-07-27T14:51:27.180-0400" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'out_V' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="pwm" solutionName="pwm" date="2018-07-27T14:51:27.164-0400" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

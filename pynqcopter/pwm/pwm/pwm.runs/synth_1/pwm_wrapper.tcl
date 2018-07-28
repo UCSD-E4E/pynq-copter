@@ -16,6 +16,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
+set_param tcl.collectionResultDisplayLimit 0
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -36,9 +38,17 @@ set_property used_in_implementation false [get_files -all /home/brennan/Document
 set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_rst_ps7_0_100M_0/pwm_rst_ps7_0_100M_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_rst_ps7_0_100M_0/pwm_rst_ps7_0_100M_0.xdc]
 set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_rst_ps7_0_100M_0/pwm_rst_ps7_0_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_pwm_0_1/constraints/pwm_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_atoi_0_0/constraints/atoi_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_xbar_0/pwm_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_atoi_0_0/constraints/atoi_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_mixer_0_1/constraints/mixer_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_pwm_0_1/constraints/pwm_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_system_ila_0_2/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_system_ila_0_2/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_system_ila_0_2/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_system_ila_0_2/bd_0/ip/ip_0/bd_a815_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_system_ila_0_2/bd_0/bd_a815_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_system_ila_0_2/pwm_system_ila_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_auto_pc_1/pwm_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_auto_pc_0/pwm_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/pwm_ooc.xdc]
 

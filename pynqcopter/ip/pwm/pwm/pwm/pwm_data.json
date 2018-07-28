@@ -19,8 +19,8 @@
     "ClockName": "ap_clk",
     "ClockPeriod": "4",
     "IsCombLogic": "0",
-    "II": "x",
-    "Latency": "8",
+    "II": "6",
+    "Latency": "18",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -36,14 +36,19 @@
   "Files": {
     "CSource": [
       "..\/..\/pwm.cpp",
-      "..\/..\/main.cpp"
+      "..\/..\/main.cpp",
+      "..\/..\/pwm.hpp"
     ],
     "Vhdl": [
-      "impl\/vhdl\/pwm_AXILiteS_s_axi.vhd",
+      "impl\/vhdl\/pwm_add_66s_66ns_cud.vhd",
+      "impl\/vhdl\/pwm_ctrl_s_axi.vhd",
+      "impl\/vhdl\/pwm_mul_32ns_33s_bkb.vhd",
       "impl\/vhdl\/pwm.vhd"
     ],
     "Verilog": [
-      "impl\/verilog\/pwm_AXILiteS_s_axi.v",
+      "impl\/verilog\/pwm_add_66s_66ns_cud.v",
+      "impl\/verilog\/pwm_ctrl_s_axi.v",
+      "impl\/verilog\/pwm_mul_32ns_33s_bkb.v",
       "impl\/verilog\/pwm.v"
     ],
     "SwDriver": [
@@ -67,7 +72,7 @@
     "ap_clk": {
       "type": "clock",
       "ctype": {"CLK": {"Type": "bool"}},
-      "buses": "s_axi_AXILiteS",
+      "buses": "s_axi_ctrl",
       "reset": "ap_rst_n"
     },
     "ap_rst_n": {
@@ -88,13 +93,13 @@
           "Width": "6"
         }}
     },
-    "s_axi_AXILiteS": {
+    "s_axi_ctrl": {
       "type": "axi4lite",
       "is_adaptor": "true",
       "mode": "slave",
-      "port_prefix": "s_axi_AXILiteS",
-      "param_prefix": "C_S_AXI_AXILITES",
-      "addr_bits": "5",
+      "port_prefix": "s_axi_ctrl",
+      "param_prefix": "C_S_AXI_CTRL",
+      "addr_bits": "7",
       "registers": [
         {
           "offset": "0x00",
@@ -251,9 +256,54 @@
               "description": "Reserved.  0s on read."
             }
           ]
+        },
+        {
+          "offset": "0x10",
+          "name": "min_duty_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of min_duty_V",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "min_duty_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of min_duty_V"
+            }]
+        },
+        {
+          "offset": "0x18",
+          "name": "max_duty_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of max_duty_V",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "max_duty_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of max_duty_V"
+            }]
+        },
+        {
+          "offset": "0x20",
+          "name": "period_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of period_V",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "period_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of period_V"
+            }]
         }
       ],
-      "memories": "m_V {base_address 16 range 16}",
+      "memories": "m_V {base_address 64 range 32}",
       "ctype": {
         "AWVALID": {"Type": "bool"},
         "AWREADY": {"Type": "bool"},
@@ -275,11 +325,11 @@
         },
         "AWADDR": {
           "Type": "integer unsigned",
-          "Width": "5"
+          "Width": "7"
         },
         "WDATA": {
-          "Type": "integer unsigned",
-          "Width": "16"
+          "Type": "real fixed unsigned 31",
+          "Width": "32"
         },
         "WSTRB": {
           "Type": "integer unsigned",
@@ -287,17 +337,17 @@
         },
         "ARADDR": {
           "Type": "integer unsigned",
-          "Width": "5"
+          "Width": "7"
         },
         "RDATA": {
-          "Type": "integer unsigned",
-          "Width": "16"
+          "Type": "real fixed unsigned 31",
+          "Width": "32"
         }
       },
       "data_width": "32",
       "port_width": {
-        "ARADDR": "5",
-        "AWADDR": "5",
+        "ARADDR": "7",
+        "AWADDR": "7",
         "RDATA": "32",
         "WDATA": "32",
         "WSTRB": "4"
@@ -305,71 +355,71 @@
     }
   },
   "RtlPorts": {
-    "s_axi_AXILiteS_AWVALID": {
+    "s_axi_ctrl_AWVALID": {
       "dir": "in",
       "width": "1"
     },
-    "s_axi_AXILiteS_AWREADY": {
+    "s_axi_ctrl_AWREADY": {
       "dir": "out",
       "width": "1"
     },
-    "s_axi_AXILiteS_AWADDR": {
+    "s_axi_ctrl_AWADDR": {
       "dir": "in",
-      "width": "5"
+      "width": "7"
     },
-    "s_axi_AXILiteS_WVALID": {
+    "s_axi_ctrl_WVALID": {
       "dir": "in",
       "width": "1"
     },
-    "s_axi_AXILiteS_WREADY": {
+    "s_axi_ctrl_WREADY": {
       "dir": "out",
       "width": "1"
     },
-    "s_axi_AXILiteS_WDATA": {
+    "s_axi_ctrl_WDATA": {
       "dir": "in",
       "width": "32"
     },
-    "s_axi_AXILiteS_WSTRB": {
+    "s_axi_ctrl_WSTRB": {
       "dir": "in",
       "width": "4"
     },
-    "s_axi_AXILiteS_ARVALID": {
+    "s_axi_ctrl_ARVALID": {
       "dir": "in",
       "width": "1"
     },
-    "s_axi_AXILiteS_ARREADY": {
+    "s_axi_ctrl_ARREADY": {
       "dir": "out",
       "width": "1"
     },
-    "s_axi_AXILiteS_ARADDR": {
+    "s_axi_ctrl_ARADDR": {
       "dir": "in",
-      "width": "5"
+      "width": "7"
     },
-    "s_axi_AXILiteS_RVALID": {
+    "s_axi_ctrl_RVALID": {
       "dir": "out",
       "width": "1"
     },
-    "s_axi_AXILiteS_RREADY": {
+    "s_axi_ctrl_RREADY": {
       "dir": "in",
       "width": "1"
     },
-    "s_axi_AXILiteS_RDATA": {
+    "s_axi_ctrl_RDATA": {
       "dir": "out",
       "width": "32"
     },
-    "s_axi_AXILiteS_RRESP": {
+    "s_axi_ctrl_RRESP": {
       "dir": "out",
       "width": "2"
     },
-    "s_axi_AXILiteS_BVALID": {
+    "s_axi_ctrl_BVALID": {
       "dir": "out",
       "width": "1"
     },
-    "s_axi_AXILiteS_BREADY": {
+    "s_axi_ctrl_BREADY": {
       "dir": "in",
       "width": "1"
     },
-    "s_axi_AXILiteS_BRESP": {
+    "s_axi_ctrl_BRESP": {
       "dir": "out",
       "width": "2"
     },
@@ -392,15 +442,39 @@
     }
   },
   "CPorts": {
-    "m_V": {
-      "interfaceRef": "s_axi_AXILiteS",
+    "min_duty_V": {
+      "interfaceRef": "s_axi_ctrl",
       "dir": "in",
       "offset": "16",
       "statusOffset": "NA",
-      "Object": "AXILiteS"
+      "handshakeRef": "ap_none",
+      "Object": "ctrl"
+    },
+    "max_duty_V": {
+      "interfaceRef": "s_axi_ctrl",
+      "dir": "in",
+      "offset": "24",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "ctrl"
+    },
+    "period_V": {
+      "interfaceRef": "s_axi_ctrl",
+      "dir": "in",
+      "offset": "32",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "ctrl"
+    },
+    "m_V": {
+      "interfaceRef": "s_axi_ctrl",
+      "dir": "in",
+      "offset": "64",
+      "statusOffset": "NA",
+      "Object": "ctrl"
     },
     "ap_ctrl": {
-      "interfaceRef": "s_axi_AXILiteS",
+      "interfaceRef": "s_axi_ctrl",
       "dir": "in",
       "offset": "0"
     },
@@ -409,36 +483,36 @@
       "dir": "out",
       "dataWidth": "6",
       "handshakeRef": "ap_none",
-      "firstOutLatency": "8"
+      "firstOutLatency": "18"
     }
   },
   "ModuleInfo": {
     "Hierarchy": {"ModuleName": "pwm"},
     "Metrics": {"pwm": {
         "Latency": {
-          "LatencyBest": "8",
-          "LatencyAvg": "8",
-          "LatencyWorst": "8",
-          "PipelineII": "9",
-          "PipelineDepth": "",
-          "PipelineType": "none"
+          "LatencyBest": "18",
+          "LatencyAvg": "18",
+          "LatencyWorst": "18",
+          "PipelineII": "6",
+          "PipelineDepth": "19",
+          "PipelineType": "function"
         },
         "Timing": {
           "Target": "4.00",
           "Uncertainty": "0.50",
-          "Estimate": "2.43"
+          "Estimate": "3.40"
         },
         "Area": {
           "BRAM_18K": "2",
-          "FF": "186",
-          "LUT": "315",
-          "DSP48E": "0"
+          "DSP48E": "24",
+          "FF": "5531",
+          "LUT": "2239"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-07-23 19:28:52 EDT",
+    "Time": "2018-07-27 18:14:34 EDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

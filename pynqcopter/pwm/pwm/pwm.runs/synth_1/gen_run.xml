@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1532390632">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1532733933">
   <File Type="VDS-TIMING-PB" Name="pwm_wrapper_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="pwm_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="pwm_wrapper.dcp"/>
@@ -46,11 +46,7 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="pwm_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="pwm_xlslice_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="pwm_wire_distributor_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="pwm_atoi_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="pwm_xlconcat_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="pwm_rst_ps7_0_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="pwm_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_mixer_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_pwm_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_system_ila_0_2"/>
 </GenRun>

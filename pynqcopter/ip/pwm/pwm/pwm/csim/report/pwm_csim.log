@@ -1,9 +1,9 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch CLANG as the compiler.
-make[2]: Entering directory '/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/csim/build'
+make[1]: Entering directory '/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/csim/build'
    Compiling ../../../../pwm.cpp in debug mode
    Compiling ../../../../main.cpp in debug mode
    Generating csim.exe
-make[2]: Leaving directory '/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/csim/build'
+make[1]: Leaving directory '/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/csim/build'
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Mon Jul 23 20:06:06 2018
+| Date         : Fri Jul 27 19:28:47 2018
 | Host         : apple running 64-bit Ubuntu 16.04.4 LTS
 | Command      : report_utilization -file pwm_wrapper_utilization_synth.rpt -pb pwm_wrapper_utilization_synth.pb
 | Design       : pwm_wrapper
@@ -146,9 +146,8 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUFT    |   20 |                  IO |
+| OBUFT    |   24 |                  IO |
 | IBUF     |   20 |                  IO |
-| OBUF     |    4 |                  IO |
 +----------+------+---------------------+
 
 
@@ -158,14 +157,16 @@ Table of Contents
 +----------------------------+------+
 |          Ref Name          | Used |
 +----------------------------+------+
-| pwm_xlslice_0_0            |    1 |
 | pwm_xlconcat_0_1           |    1 |
 | pwm_xlconcat_0_0           |    1 |
 | pwm_xbar_0                 |    1 |
 | pwm_wire_distributor_0_0   |    1 |
+| pwm_system_ila_0_2         |    1 |
 | pwm_rst_ps7_0_100M_0       |    1 |
 | pwm_pwm_0_1                |    1 |
 | pwm_processing_system7_0_0 |    1 |
+| pwm_mixer_0_1              |    1 |
+| pwm_auto_pc_1              |    1 |
 | pwm_auto_pc_0              |    1 |
 | pwm_atoi_0_0               |    1 |
 +----------------------------+------+

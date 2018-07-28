@@ -1,2 +1,4 @@
-pwm_AXILiteS_s_axi
+pwm_mul_32ns_33s_bkb
+pwm_add_66s_66ns_cud
+pwm_ctrl_s_axi
 pwm

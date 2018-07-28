@@ -32809,10 +32809,11 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 
 
-typedef ap_uint<16> N_t;
+typedef ap_ufixed<32,1> F_t;
+typedef ap_uint<32> N_t;
 typedef ap_uint<6> O_t;
 
-void pwm(N_t m[6] , O_t& out);
+void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 # 40 "main.cpp" 2
 
 
@@ -34749,7 +34750,7 @@ int main() {
  char delim = '\t';
  std::ofstream myfile;
  myfile.open("out.csv");
-    N_t regs[6] = { 0x0,0x0,0x0,0x0,0x0,0x0 };
+    F_t regs[6] = { 0x0,0x0,0x0,0x0,0x0,0x0 };
     ap_uint<6> out;
 
     for(long int i =0; i < 65000; i+=10000)
@@ -34759,7 +34760,7 @@ int main() {
    for(int k =0; k<6;++k) {
     regs[k]=i+k*16;
    }
-   pwm(regs, out);
+   pwm(0x0,0xf,0xf,regs, out);
 
    for(int k =0; k<6;++k) {
     myfile << ((out&(1<<k))>>k) << ",";

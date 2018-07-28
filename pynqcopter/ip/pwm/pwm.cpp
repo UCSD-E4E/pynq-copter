@@ -38,38 +38,48 @@
 
 #include "pwm.hpp"
 
+#define duty_range (max_duty-min_duty)
 
-void pwm(N_t m[CHANNELS] , O_t& out) {
-#pragma HLS INTERFACE s_axilite port=m
+void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[CHANNELS] , O_t& out) {
+#pragma HLS INTERFACE s_axilite port=min_duty bundle=ctrl
+#pragma HLS INTERFACE s_axilite port=max_duty bundle=ctrl
+#pragma HLS INTERFACE s_axilite port=period bundle=ctrl
+#pragma HLS INTERFACE s_axilite port=m bundle=ctrl
 #pragma HLS INTERFACE ap_none port=out
-#pragma HLS INTERFACE s_axilite port=return
-
+#pragma HLS INTERFACE s_axilite port=return bundle=ctrl
+#pragma HLS PIPELINE
 	static N_t accumulator=0;
 
 	static N_t in_p[CHANNELS]; //saves input for integrity
 	static O_t out_p=0x3F; //prepares output
 
 	for(char u =0; u <CHANNELS; u++) { //save inputs
-	#pragma HLS UNROLL
-		in_p[u]=m[u];
+		in_p[u]=duty_range*m[u]+min_duty;
 	}
 
-
-	for(int u =0; u <CHANNELS; u++) { // for each pwm, is iteration under{
-	#pragma HLS UNROLL
-		out_p&=~((accumulator>in_p[u])<<u);
-	}
-
-	if(accumulator==0)
+	if(accumulator<min_duty) {
 		out_p=0x3F;
+	}
+	if(min_duty<accumulator and accumulator<max_duty){
+		for(int u =0; u <CHANNELS; u++) { // for each pwm, is iteration under{
+			out_p&=~((accumulator>in_p[u])<<u);
+		}
+	}
+	if(max_duty<accumulator and accumulator<period) {
+		out_p=0;
+	}
+
+
+	if(period<accumulator) {
+		out_p=0x3F;
+		accumulator=0;
+	}
+
+
 
 	accumulator++;
 
 	out=out_p;
-	static bool dummy=true;
-	for(int i = 0; i < DELAY; ++i)
-	{
-		dummy=!dummy;
-	}
+
 }
 

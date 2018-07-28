@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="pwm.cpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm.cpp"/>
+    <originFiles name="main.cpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/main.cpp"/>
+    <originFiles name="pwm.hpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm.hpp"/>
+  </source>
+  <testbench>
+    <originFiles name="pwm.cpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm.cpp"/>
+    <originFiles name="main.cpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/main.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

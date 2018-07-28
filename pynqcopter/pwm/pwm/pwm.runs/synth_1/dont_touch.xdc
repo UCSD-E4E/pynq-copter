@@ -9,9 +9,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm || ORIG_REF
 # IP: bd/pwm/ip/pwm_processing_system7_0_0/pwm_processing_system7_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_processing_system7_0_0 || ORIG_REF_NAME==pwm_processing_system7_0_0} -quiet] -quiet
 
-# IP: bd/pwm/ip/pwm_ps7_0_axi_periph_0/pwm_ps7_0_axi_periph_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_ps7_0_axi_periph_0 || ORIG_REF_NAME==pwm_ps7_0_axi_periph_0} -quiet] -quiet
-
 # IP: bd/pwm/ip/pwm_rst_ps7_0_100M_0/pwm_rst_ps7_0_100M_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_rst_ps7_0_100M_0 || ORIG_REF_NAME==pwm_rst_ps7_0_100M_0} -quiet] -quiet
 
@@ -21,11 +18,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_wire_distri
 # IP: bd/pwm/ip/pwm_xlconcat_0_0/pwm_xlconcat_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_xlconcat_0_0 || ORIG_REF_NAME==pwm_xlconcat_0_0} -quiet] -quiet
 
-# IP: bd/pwm/ip/pwm_pwm_0_1/pwm_pwm_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_pwm_0_1 || ORIG_REF_NAME==pwm_pwm_0_1} -quiet] -quiet
-
-# IP: bd/pwm/ip/pwm_atoi_0_0/pwm_atoi_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_atoi_0_0 || ORIG_REF_NAME==pwm_atoi_0_0} -quiet] -quiet
+# IP: bd/pwm/ip/pwm_axi_interconnect_0_0/pwm_axi_interconnect_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_axi_interconnect_0_0 || ORIG_REF_NAME==pwm_axi_interconnect_0_0} -quiet] -quiet
 
 # IP: bd/pwm/ip/pwm_xlconcat_0_1/pwm_xlconcat_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_xlconcat_0_1 || ORIG_REF_NAME==pwm_xlconcat_0_1} -quiet] -quiet
@@ -33,8 +27,20 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_xlconcat_0_
 # IP: bd/pwm/ip/pwm_xbar_0/pwm_xbar_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_xbar_0 || ORIG_REF_NAME==pwm_xbar_0} -quiet] -quiet
 
-# IP: bd/pwm/ip/pwm_xlslice_0_0/pwm_xlslice_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_xlslice_0_0 || ORIG_REF_NAME==pwm_xlslice_0_0} -quiet] -quiet
+# IP: bd/pwm/ip/pwm_atoi_0_0/pwm_atoi_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_atoi_0_0 || ORIG_REF_NAME==pwm_atoi_0_0} -quiet] -quiet
+
+# IP: bd/pwm/ip/pwm_mixer_0_1/pwm_mixer_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_mixer_0_1 || ORIG_REF_NAME==pwm_mixer_0_1} -quiet] -quiet
+
+# IP: bd/pwm/ip/pwm_pwm_0_1/pwm_pwm_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_pwm_0_1 || ORIG_REF_NAME==pwm_pwm_0_1} -quiet] -quiet
+
+# IP: bd/pwm/ip/pwm_system_ila_0_2/pwm_system_ila_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_system_ila_0_2 || ORIG_REF_NAME==pwm_system_ila_0_2} -quiet] -quiet
+
+# IP: bd/pwm/ip/pwm_auto_pc_1/pwm_auto_pc_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_auto_pc_1 || ORIG_REF_NAME==pwm_auto_pc_1} -quiet] -quiet
 
 # IP: bd/pwm/ip/pwm_auto_pc_0/pwm_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_auto_pc_0 || ORIG_REF_NAME==pwm_auto_pc_0} -quiet] -quiet

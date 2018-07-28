@@ -32829,43 +32829,54 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 
 
-typedef ap_uint<16> N_t;
+typedef ap_ufixed<32,1> F_t;
+typedef ap_uint<32> N_t;
 typedef ap_uint<6> O_t;
 
-void pwm(N_t m[6] , O_t& out);
+void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 #40 "pwm.cpp" 2
 
 
-void pwm(N_t m[6] , O_t& out) {_ssdm_SpecArrayDimSize(m,6);
-#pragma HLS INTERFACE s_axilite port=m
-#pragma HLS INTERFACE ap_none port=&out
-#pragma HLS INTERFACE s_axilite port=return
 
+void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out) {_ssdm_SpecArrayDimSize(m,6);
+#pragma HLS INTERFACE s_axilite port=&min_duty bundle=ctrl
+#pragma HLS INTERFACE s_axilite port=&max_duty bundle=ctrl
+#pragma HLS INTERFACE s_axilite port=&period bundle=ctrl
+#pragma HLS INTERFACE s_axilite port=m bundle=ctrl
+#pragma HLS INTERFACE ap_none port=&out
+#pragma HLS INTERFACE s_axilite port=return bundle=ctrl
+#pragma HLS PIPELINE
  static N_t accumulator=0;
 
  static N_t in_p[6];
  static O_t out_p=0x3F;
 
  for(char u =0; u <6; u++) {
-#pragma HLS UNROLL
- in_p[u]=m[u];
+  in_p[u]=(max_duty-min_duty)*m[u]+min_duty;
  }
 
-
- for(int u =0; u <6; u++) {
-#pragma HLS UNROLL
- out_p&=~((accumulator>in_p[u])<<u);
- }
-
- if(accumulator==0)
+ if(accumulator<min_duty) {
   out_p=0x3F;
+ }
+ if(min_duty<accumulator and accumulator<max_duty){
+  for(int u =0; u <6; u++) {
+   out_p&=~((accumulator>in_p[u])<<u);
+  }
+ }
+ if(max_duty<accumulator and accumulator<period) {
+  out_p=0;
+ }
+
+
+ if(period<accumulator) {
+  out_p=0x3F;
+  accumulator=0;
+ }
+
+
 
  accumulator++;
 
  out=out_p;
- static bool dummy=true;
- for(int i = 0; i < 0; ++i)
- {
-  dummy=!dummy;
- }
+
 }

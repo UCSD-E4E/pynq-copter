@@ -9,16 +9,16 @@ proc generate {drv_handle} {
     xdefine_include_file $drv_handle "xparameters.h" "XPwm" \
         "NUM_INSTANCES" \
         "DEVICE_ID" \
-        "C_S_AXI_AXILITES_BASEADDR" \
-        "C_S_AXI_AXILITES_HIGHADDR"
+        "C_S_AXI_CTRL_BASEADDR" \
+        "C_S_AXI_CTRL_HIGHADDR"
 
     xdefine_config_file $drv_handle "xpwm_g.c" "XPwm" \
         "DEVICE_ID" \
-        "C_S_AXI_AXILITES_BASEADDR"
+        "C_S_AXI_CTRL_BASEADDR"
 
     xdefine_canonical_xpars $drv_handle "xparameters.h" "XPwm" \
         "DEVICE_ID" \
-        "C_S_AXI_AXILITES_BASEADDR" \
-        "C_S_AXI_AXILITES_HIGHADDR"
+        "C_S_AXI_CTRL_BASEADDR" \
+        "C_S_AXI_CTRL_HIGHADDR"
 }
 

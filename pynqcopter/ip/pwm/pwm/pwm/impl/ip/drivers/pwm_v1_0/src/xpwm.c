@@ -14,7 +14,7 @@ int XPwm_CfgInitialize(XPwm *InstancePtr, XPwm_Config *ConfigPtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(ConfigPtr != NULL);
 
-    InstancePtr->Axilites_BaseAddress = ConfigPtr->Axilites_BaseAddress;
+    InstancePtr->Ctrl_BaseAddress = ConfigPtr->Ctrl_BaseAddress;
     InstancePtr->IsReady = XIL_COMPONENT_IS_READY;
 
     return XST_SUCCESS;
@@ -27,8 +27,8 @@ void XPwm_Start(XPwm *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XPwm_ReadReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_AP_CTRL) & 0x80;
-    XPwm_WriteReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_AP_CTRL, Data | 0x01);
+    Data = XPwm_ReadReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_AP_CTRL) & 0x80;
+    XPwm_WriteReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_AP_CTRL, Data | 0x01);
 }
 
 u32 XPwm_IsDone(XPwm *InstancePtr) {
@@ -37,7 +37,7 @@ u32 XPwm_IsDone(XPwm *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XPwm_ReadReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_AP_CTRL);
+    Data = XPwm_ReadReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_AP_CTRL);
     return (Data >> 1) & 0x1;
 }
 
@@ -47,7 +47,7 @@ u32 XPwm_IsIdle(XPwm *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XPwm_ReadReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_AP_CTRL);
+    Data = XPwm_ReadReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_AP_CTRL);
     return (Data >> 2) & 0x1;
 }
 
@@ -57,7 +57,7 @@ u32 XPwm_IsReady(XPwm *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XPwm_ReadReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_AP_CTRL);
+    Data = XPwm_ReadReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_AP_CTRL);
     // check ap_start to see if the pcore is ready for next input
     return !(Data & 0x1);
 }
@@ -66,49 +66,100 @@ void XPwm_EnableAutoRestart(XPwm *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XPwm_WriteReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_AP_CTRL, 0x80);
+    XPwm_WriteReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_AP_CTRL, 0x80);
 }
 
 void XPwm_DisableAutoRestart(XPwm *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XPwm_WriteReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_AP_CTRL, 0);
+    XPwm_WriteReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_AP_CTRL, 0);
+}
+
+void XPwm_Set_min_duty_V(XPwm *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XPwm_WriteReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_MIN_DUTY_V_DATA, Data);
+}
+
+u32 XPwm_Get_min_duty_V(XPwm *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XPwm_ReadReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_MIN_DUTY_V_DATA);
+    return Data;
+}
+
+void XPwm_Set_max_duty_V(XPwm *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XPwm_WriteReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_MAX_DUTY_V_DATA, Data);
+}
+
+u32 XPwm_Get_max_duty_V(XPwm *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XPwm_ReadReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_MAX_DUTY_V_DATA);
+    return Data;
+}
+
+void XPwm_Set_period_V(XPwm *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XPwm_WriteReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_PERIOD_V_DATA, Data);
+}
+
+u32 XPwm_Get_period_V(XPwm *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XPwm_ReadReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_PERIOD_V_DATA);
+    return Data;
 }
 
 u32 XPwm_Get_m_V_BaseAddress(XPwm *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    return (InstancePtr->Axilites_BaseAddress + XPWM_AXILITES_ADDR_M_V_BASE);
+    return (InstancePtr->Ctrl_BaseAddress + XPWM_CTRL_ADDR_M_V_BASE);
 }
 
 u32 XPwm_Get_m_V_HighAddress(XPwm *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    return (InstancePtr->Axilites_BaseAddress + XPWM_AXILITES_ADDR_M_V_HIGH);
+    return (InstancePtr->Ctrl_BaseAddress + XPWM_CTRL_ADDR_M_V_HIGH);
 }
 
 u32 XPwm_Get_m_V_TotalBytes(XPwm *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    return (XPWM_AXILITES_ADDR_M_V_HIGH - XPWM_AXILITES_ADDR_M_V_BASE + 1);
+    return (XPWM_CTRL_ADDR_M_V_HIGH - XPWM_CTRL_ADDR_M_V_BASE + 1);
 }
 
 u32 XPwm_Get_m_V_BitWidth(XPwm *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    return XPWM_AXILITES_WIDTH_M_V;
+    return XPWM_CTRL_WIDTH_M_V;
 }
 
 u32 XPwm_Get_m_V_Depth(XPwm *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    return XPWM_AXILITES_DEPTH_M_V;
+    return XPWM_CTRL_DEPTH_M_V;
 }
 
 u32 XPwm_Write_m_V_Words(XPwm *InstancePtr, int offset, int *data, int length) {
@@ -117,11 +168,11 @@ u32 XPwm_Write_m_V_Words(XPwm *InstancePtr, int offset, int *data, int length) {
 
     int i;
 
-    if ((offset + length)*4 > (XPWM_AXILITES_ADDR_M_V_HIGH - XPWM_AXILITES_ADDR_M_V_BASE + 1))
+    if ((offset + length)*4 > (XPWM_CTRL_ADDR_M_V_HIGH - XPWM_CTRL_ADDR_M_V_BASE + 1))
         return 0;
 
     for (i = 0; i < length; i++) {
-        *(int *)(InstancePtr->Axilites_BaseAddress + XPWM_AXILITES_ADDR_M_V_BASE + (offset + i)*4) = *(data + i);
+        *(int *)(InstancePtr->Ctrl_BaseAddress + XPWM_CTRL_ADDR_M_V_BASE + (offset + i)*4) = *(data + i);
     }
     return length;
 }
@@ -132,11 +183,11 @@ u32 XPwm_Read_m_V_Words(XPwm *InstancePtr, int offset, int *data, int length) {
 
     int i;
 
-    if ((offset + length)*4 > (XPWM_AXILITES_ADDR_M_V_HIGH - XPWM_AXILITES_ADDR_M_V_BASE + 1))
+    if ((offset + length)*4 > (XPWM_CTRL_ADDR_M_V_HIGH - XPWM_CTRL_ADDR_M_V_BASE + 1))
         return 0;
 
     for (i = 0; i < length; i++) {
-        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XPWM_AXILITES_ADDR_M_V_BASE + (offset + i)*4);
+        *(data + i) = *(int *)(InstancePtr->Ctrl_BaseAddress + XPWM_CTRL_ADDR_M_V_BASE + (offset + i)*4);
     }
     return length;
 }
@@ -147,11 +198,11 @@ u32 XPwm_Write_m_V_Bytes(XPwm *InstancePtr, int offset, char *data, int length) 
 
     int i;
 
-    if ((offset + length) > (XPWM_AXILITES_ADDR_M_V_HIGH - XPWM_AXILITES_ADDR_M_V_BASE + 1))
+    if ((offset + length) > (XPWM_CTRL_ADDR_M_V_HIGH - XPWM_CTRL_ADDR_M_V_BASE + 1))
         return 0;
 
     for (i = 0; i < length; i++) {
-        *(char *)(InstancePtr->Axilites_BaseAddress + XPWM_AXILITES_ADDR_M_V_BASE + offset + i) = *(data + i);
+        *(char *)(InstancePtr->Ctrl_BaseAddress + XPWM_CTRL_ADDR_M_V_BASE + offset + i) = *(data + i);
     }
     return length;
 }
@@ -162,11 +213,11 @@ u32 XPwm_Read_m_V_Bytes(XPwm *InstancePtr, int offset, char *data, int length) {
 
     int i;
 
-    if ((offset + length) > (XPWM_AXILITES_ADDR_M_V_HIGH - XPWM_AXILITES_ADDR_M_V_BASE + 1))
+    if ((offset + length) > (XPWM_CTRL_ADDR_M_V_HIGH - XPWM_CTRL_ADDR_M_V_BASE + 1))
         return 0;
 
     for (i = 0; i < length; i++) {
-        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XPWM_AXILITES_ADDR_M_V_BASE + offset + i);
+        *(data + i) = *(char *)(InstancePtr->Ctrl_BaseAddress + XPWM_CTRL_ADDR_M_V_BASE + offset + i);
     }
     return length;
 }
@@ -175,14 +226,14 @@ void XPwm_InterruptGlobalEnable(XPwm *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XPwm_WriteReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_GIE, 1);
+    XPwm_WriteReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_GIE, 1);
 }
 
 void XPwm_InterruptGlobalDisable(XPwm *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XPwm_WriteReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_GIE, 0);
+    XPwm_WriteReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_GIE, 0);
 }
 
 void XPwm_InterruptEnable(XPwm *InstancePtr, u32 Mask) {
@@ -191,8 +242,8 @@ void XPwm_InterruptEnable(XPwm *InstancePtr, u32 Mask) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Register =  XPwm_ReadReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_IER);
-    XPwm_WriteReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_IER, Register | Mask);
+    Register =  XPwm_ReadReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_IER);
+    XPwm_WriteReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_IER, Register | Mask);
 }
 
 void XPwm_InterruptDisable(XPwm *InstancePtr, u32 Mask) {
@@ -201,28 +252,28 @@ void XPwm_InterruptDisable(XPwm *InstancePtr, u32 Mask) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Register =  XPwm_ReadReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_IER);
-    XPwm_WriteReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_IER, Register & (~Mask));
+    Register =  XPwm_ReadReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_IER);
+    XPwm_WriteReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_IER, Register & (~Mask));
 }
 
 void XPwm_InterruptClear(XPwm *InstancePtr, u32 Mask) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XPwm_WriteReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_ISR, Mask);
+    XPwm_WriteReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_ISR, Mask);
 }
 
 u32 XPwm_InterruptGetEnabled(XPwm *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    return XPwm_ReadReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_IER);
+    return XPwm_ReadReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_IER);
 }
 
 u32 XPwm_InterruptGetStatus(XPwm *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    return XPwm_ReadReg(InstancePtr->Axilites_BaseAddress, XPWM_AXILITES_ADDR_ISR);
+    return XPwm_ReadReg(InstancePtr->Ctrl_BaseAddress, XPWM_CTRL_ADDR_ISR);
 }
 

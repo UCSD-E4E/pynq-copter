@@ -40,12 +40,12 @@ typedef uint32_t u32;
 #else
 typedef struct {
     u16 DeviceId;
-    u32 Axilites_BaseAddress;
+    u32 Ctrl_BaseAddress;
 } XPwm_Config;
 #endif
 
 typedef struct {
-    u32 Axilites_BaseAddress;
+    u32 Ctrl_BaseAddress;
     u32 IsReady;
 } XPwm;
 
@@ -87,6 +87,12 @@ u32 XPwm_IsReady(XPwm *InstancePtr);
 void XPwm_EnableAutoRestart(XPwm *InstancePtr);
 void XPwm_DisableAutoRestart(XPwm *InstancePtr);
 
+void XPwm_Set_min_duty_V(XPwm *InstancePtr, u32 Data);
+u32 XPwm_Get_min_duty_V(XPwm *InstancePtr);
+void XPwm_Set_max_duty_V(XPwm *InstancePtr, u32 Data);
+u32 XPwm_Get_max_duty_V(XPwm *InstancePtr);
+void XPwm_Set_period_V(XPwm *InstancePtr, u32 Data);
+u32 XPwm_Get_period_V(XPwm *InstancePtr);
 u32 XPwm_Get_m_V_BaseAddress(XPwm *InstancePtr);
 u32 XPwm_Get_m_V_HighAddress(XPwm *InstancePtr);
 u32 XPwm_Get_m_V_TotalBytes(XPwm *InstancePtr);

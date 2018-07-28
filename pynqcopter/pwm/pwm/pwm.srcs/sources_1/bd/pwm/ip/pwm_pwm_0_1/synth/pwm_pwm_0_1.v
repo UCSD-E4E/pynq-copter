@@ -48,71 +48,71 @@
 
 
 // IP VLNV: UCSD:hlsip:pwm:1.0
-// IP Revision: 1807231928
+// IP Revision: 1807271814
 
 (* X_CORE_INFO = "pwm,Vivado 2017.4" *)
 (* CHECK_LICENSE_TYPE = "pwm_pwm_0_1,pwm,{}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module pwm_pwm_0_1 (
-  s_axi_AXILiteS_AWADDR,
-  s_axi_AXILiteS_AWVALID,
-  s_axi_AXILiteS_AWREADY,
-  s_axi_AXILiteS_WDATA,
-  s_axi_AXILiteS_WSTRB,
-  s_axi_AXILiteS_WVALID,
-  s_axi_AXILiteS_WREADY,
-  s_axi_AXILiteS_BRESP,
-  s_axi_AXILiteS_BVALID,
-  s_axi_AXILiteS_BREADY,
-  s_axi_AXILiteS_ARADDR,
-  s_axi_AXILiteS_ARVALID,
-  s_axi_AXILiteS_ARREADY,
-  s_axi_AXILiteS_RDATA,
-  s_axi_AXILiteS_RRESP,
-  s_axi_AXILiteS_RVALID,
-  s_axi_AXILiteS_RREADY,
+  s_axi_ctrl_AWADDR,
+  s_axi_ctrl_AWVALID,
+  s_axi_ctrl_AWREADY,
+  s_axi_ctrl_WDATA,
+  s_axi_ctrl_WSTRB,
+  s_axi_ctrl_WVALID,
+  s_axi_ctrl_WREADY,
+  s_axi_ctrl_BRESP,
+  s_axi_ctrl_BVALID,
+  s_axi_ctrl_BREADY,
+  s_axi_ctrl_ARADDR,
+  s_axi_ctrl_ARVALID,
+  s_axi_ctrl_ARREADY,
+  s_axi_ctrl_RDATA,
+  s_axi_ctrl_RRESP,
+  s_axi_ctrl_RVALID,
+  s_axi_ctrl_RREADY,
   ap_clk,
   ap_rst_n,
   interrupt,
   out_V
 );
 
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS AWADDR" *)
-input wire [4 : 0] s_axi_AXILiteS_AWADDR;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS AWVALID" *)
-input wire s_axi_AXILiteS_AWVALID;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS AWREADY" *)
-output wire s_axi_AXILiteS_AWREADY;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS WDATA" *)
-input wire [31 : 0] s_axi_AXILiteS_WDATA;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS WSTRB" *)
-input wire [3 : 0] s_axi_AXILiteS_WSTRB;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS WVALID" *)
-input wire s_axi_AXILiteS_WVALID;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS WREADY" *)
-output wire s_axi_AXILiteS_WREADY;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS BRESP" *)
-output wire [1 : 0] s_axi_AXILiteS_BRESP;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS BVALID" *)
-output wire s_axi_AXILiteS_BVALID;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS BREADY" *)
-input wire s_axi_AXILiteS_BREADY;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS ARADDR" *)
-input wire [4 : 0] s_axi_AXILiteS_ARADDR;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS ARVALID" *)
-input wire s_axi_AXILiteS_ARVALID;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS ARREADY" *)
-output wire s_axi_AXILiteS_ARREADY;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS RDATA" *)
-output wire [31 : 0] s_axi_AXILiteS_RDATA;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS RRESP" *)
-output wire [1 : 0] s_axi_AXILiteS_RRESP;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS RVALID" *)
-output wire s_axi_AXILiteS_RVALID;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_AXILiteS, ADDR_WIDTH 5, DATA_WIDTH 32, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}, FREQ_HZ 100000000, ID_WIDTH 0, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *)
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS RREADY" *)
-input wire s_axi_AXILiteS_RREADY;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME ap_clk, ASSOCIATED_BUSIF s_axi_AXILiteS, ASSOCIATED_RESET ap_rst_n, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl AWADDR" *)
+input wire [6 : 0] s_axi_ctrl_AWADDR;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl AWVALID" *)
+input wire s_axi_ctrl_AWVALID;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl AWREADY" *)
+output wire s_axi_ctrl_AWREADY;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl WDATA" *)
+input wire [31 : 0] s_axi_ctrl_WDATA;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl WSTRB" *)
+input wire [3 : 0] s_axi_ctrl_WSTRB;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl WVALID" *)
+input wire s_axi_ctrl_WVALID;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl WREADY" *)
+output wire s_axi_ctrl_WREADY;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl BRESP" *)
+output wire [1 : 0] s_axi_ctrl_BRESP;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl BVALID" *)
+output wire s_axi_ctrl_BVALID;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl BREADY" *)
+input wire s_axi_ctrl_BREADY;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl ARADDR" *)
+input wire [6 : 0] s_axi_ctrl_ARADDR;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl ARVALID" *)
+input wire s_axi_ctrl_ARVALID;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl ARREADY" *)
+output wire s_axi_ctrl_ARREADY;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl RDATA" *)
+output wire [31 : 0] s_axi_ctrl_RDATA;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl RRESP" *)
+output wire [1 : 0] s_axi_ctrl_RRESP;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl RVALID" *)
+output wire s_axi_ctrl_RVALID;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_ctrl, ADDR_WIDTH 7, DATA_WIDTH 32, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}, FREQ_HZ 100000000, ID_WIDTH 0, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_ctrl RREADY" *)
+input wire s_axi_ctrl_RREADY;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME ap_clk, ASSOCIATED_BUSIF s_axi_ctrl, ASSOCIATED_RESET ap_rst_n, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 ap_clk CLK" *)
 input wire ap_clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME ap_rst_n, POLARITY ACTIVE_LOW, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {RST {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}" *)
@@ -126,26 +126,26 @@ output wire interrupt;
 output wire [5 : 0] out_V;
 
   pwm #(
-    .C_S_AXI_AXILITES_ADDR_WIDTH(5),
-    .C_S_AXI_AXILITES_DATA_WIDTH(32)
+    .C_S_AXI_CTRL_ADDR_WIDTH(7),
+    .C_S_AXI_CTRL_DATA_WIDTH(32)
   ) inst (
-    .s_axi_AXILiteS_AWADDR(s_axi_AXILiteS_AWADDR),
-    .s_axi_AXILiteS_AWVALID(s_axi_AXILiteS_AWVALID),
-    .s_axi_AXILiteS_AWREADY(s_axi_AXILiteS_AWREADY),
-    .s_axi_AXILiteS_WDATA(s_axi_AXILiteS_WDATA),
-    .s_axi_AXILiteS_WSTRB(s_axi_AXILiteS_WSTRB),
-    .s_axi_AXILiteS_WVALID(s_axi_AXILiteS_WVALID),
-    .s_axi_AXILiteS_WREADY(s_axi_AXILiteS_WREADY),
-    .s_axi_AXILiteS_BRESP(s_axi_AXILiteS_BRESP),
-    .s_axi_AXILiteS_BVALID(s_axi_AXILiteS_BVALID),
-    .s_axi_AXILiteS_BREADY(s_axi_AXILiteS_BREADY),
-    .s_axi_AXILiteS_ARADDR(s_axi_AXILiteS_ARADDR),
-    .s_axi_AXILiteS_ARVALID(s_axi_AXILiteS_ARVALID),
-    .s_axi_AXILiteS_ARREADY(s_axi_AXILiteS_ARREADY),
-    .s_axi_AXILiteS_RDATA(s_axi_AXILiteS_RDATA),
-    .s_axi_AXILiteS_RRESP(s_axi_AXILiteS_RRESP),
-    .s_axi_AXILiteS_RVALID(s_axi_AXILiteS_RVALID),
-    .s_axi_AXILiteS_RREADY(s_axi_AXILiteS_RREADY),
+    .s_axi_ctrl_AWADDR(s_axi_ctrl_AWADDR),
+    .s_axi_ctrl_AWVALID(s_axi_ctrl_AWVALID),
+    .s_axi_ctrl_AWREADY(s_axi_ctrl_AWREADY),
+    .s_axi_ctrl_WDATA(s_axi_ctrl_WDATA),
+    .s_axi_ctrl_WSTRB(s_axi_ctrl_WSTRB),
+    .s_axi_ctrl_WVALID(s_axi_ctrl_WVALID),
+    .s_axi_ctrl_WREADY(s_axi_ctrl_WREADY),
+    .s_axi_ctrl_BRESP(s_axi_ctrl_BRESP),
+    .s_axi_ctrl_BVALID(s_axi_ctrl_BVALID),
+    .s_axi_ctrl_BREADY(s_axi_ctrl_BREADY),
+    .s_axi_ctrl_ARADDR(s_axi_ctrl_ARADDR),
+    .s_axi_ctrl_ARVALID(s_axi_ctrl_ARVALID),
+    .s_axi_ctrl_ARREADY(s_axi_ctrl_ARREADY),
+    .s_axi_ctrl_RDATA(s_axi_ctrl_RDATA),
+    .s_axi_ctrl_RRESP(s_axi_ctrl_RRESP),
+    .s_axi_ctrl_RVALID(s_axi_ctrl_RVALID),
+    .s_axi_ctrl_RREADY(s_axi_ctrl_RREADY),
     .ap_clk(ap_clk),
     .ap_rst_n(ap_rst_n),
     .interrupt(interrupt),

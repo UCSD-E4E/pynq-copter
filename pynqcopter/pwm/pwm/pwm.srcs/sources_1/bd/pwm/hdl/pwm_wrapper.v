@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Mon Jul 23 20:03:48 2018
+//Date        : Fri Jul 27 19:25:20 2018
 //Host        : apple running 64-bit Ubuntu 16.04.4 LTS
 //Command     : generate_target pwm_wrapper.bd
 //Design      : pwm_wrapper

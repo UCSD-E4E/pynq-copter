@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="mixer.cpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/mixer/mixer.cpp"/>
+    <originFiles name="main.cpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/mixer/main.cpp"/>
+    <originFiles name="mixer.hpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/mixer/mixer.hpp"/>
+    <originFiles name="pwm.hpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm.hpp"/>
+  </source>
+  <testbench>
+    <originFiles name="mixer.cpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/mixer/mixer.cpp"/>
+    <originFiles name="main.cpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/mixer/main.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
