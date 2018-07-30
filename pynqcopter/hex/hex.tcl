@@ -44,15 +44,9 @@ set bCheckIPsPassed 1
 set bCheckIPs 1
 if { $bCheckIPs == 1 } {
    set list_check_ips "\ 
-xilinx.com:user:wire_distributor:1.0\
-UCSD:hlsip:ctrlloop:1.0\
-xilinx.com:ip:axi_uartlite:2.0\
-xilinx.com:ip:clk_wiz:5.4\
-xilinx.com:ip:axi_intc:4.1\
-xilinx.com:ip:xlconcat:2.1\
+xilinx.com:ip:axi_iic:2.0\
 xilinx.com:ip:processing_system7:5.5\
 xilinx.com:ip:proc_sys_reset:5.0\
-xilinx.com:ip:xlslice:1.0\
 "
 
    set list_ips_missing ""
@@ -118,6 +112,8 @@ proc create_root_design { parentCell } {
   set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR ]
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
   set arduino_gpio [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 arduino_gpio ]
+  set arduino_iic [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 arduino_iic ]
+  set iic_rtl_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 iic_rtl_0 ]
   set pmoda_gpio [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 pmoda_gpio ]
   set pmodb_gpio [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 pmodb_gpio ]
 
@@ -125,48 +121,8 @@ proc create_root_design { parentCell } {
   set led_o [ create_bd_port -dir O -from 3 -to 0 led_o ]
   set pb_i [ create_bd_port -dir I -from 3 -to 0 pb_i ]
 
-  # Create instance: arduinoGpioBreakout, and set properties
-  set arduinoGpioBreakout [ create_bd_cell -type ip -vlnv xilinx.com:user:wire_distributor:1.0 arduinoGpioBreakout ]
-  set_property -dict [ list \
-   CONFIG.TYPE {1} \
-   CONFIG.WIDTH {20} \
- ] $arduinoGpioBreakout
-
-  # Create instance: ctrlLoop, and set properties
-  set ctrlLoop [ create_bd_cell -type ip -vlnv UCSD:hlsip:ctrlloop:1.0 ctrlLoop ]
-
-  set_property -dict [ list \
-   CONFIG.SUPPORTS_NARROW_BURST {0} \
-   CONFIG.NUM_READ_OUTSTANDING {1} \
-   CONFIG.NUM_WRITE_OUTSTANDING {1} \
-   CONFIG.MAX_BURST_LENGTH {1} \
- ] [get_bd_intf_pins /ctrlLoop/s_axi_CTRL]
-
-  # Create instance: ctrlLoopInterconnect, and set properties
-  set ctrlLoopInterconnect [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ctrlLoopInterconnect ]
-  set_property -dict [ list \
-   CONFIG.NUM_MI {1} \
- ] $ctrlLoopInterconnect
-
-  # Create instance: ctrlLoopUart, and set properties
-  set ctrlLoopUart [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uartlite:2.0 ctrlLoopUart ]
-
-  # Create instance: plClk, and set properties
-  set plClk [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.4 plClk ]
-  set_property -dict [ list \
-   CONFIG.RESET_PORT {resetn} \
-   CONFIG.RESET_TYPE {ACTIVE_LOW} \
-   CONFIG.USE_LOCKED {false} \
- ] $plClk
-
-  # Create instance: plIntrController, and set properties
-  set plIntrController [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_intc:4.1 plIntrController ]
-
-  # Create instance: plIrqConcat, and set properties
-  set plIrqConcat [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 plIrqConcat ]
-  set_property -dict [ list \
-   CONFIG.NUM_PORTS {1} \
- ] $plIrqConcat
+  # Create instance: axi_iic_0, and set properties
+  set axi_iic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_iic:2.0 axi_iic_0 ]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -1037,53 +993,30 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_WDT_WDT_IO {<Select>} \
  ] $processing_system7_0
 
-  # Create instance: psInterconnect, and set properties
-  set psInterconnect [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 psInterconnect ]
+  # Create instance: ps7_0_axi_periph, and set properties
+  set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {2} \
- ] $psInterconnect
+   CONFIG.NUM_MI {1} \
+ ] $ps7_0_axi_periph
 
-  # Create instance: userReset, and set properties
-  set userReset [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 userReset ]
-
-  # Create instance: userResetSlice, and set properties
-  set userResetSlice [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 userResetSlice ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {0} \
-   CONFIG.DIN_TO {0} \
-   CONFIG.DIN_WIDTH {7} \
- ] $userResetSlice
+  # Create instance: rst_ps7_0_100M, and set properties
+  set rst_ps7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_100M ]
 
   # Create interface connections
-  connect_bd_intf_net -intf_net S00_AXI_1 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins psInterconnect/S00_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins ctrlLoopInterconnect/M00_AXI] [get_bd_intf_pins ctrlLoopUart/S_AXI]
-  connect_bd_intf_net -intf_net ctrlLoop_m_axi_IOMEM [get_bd_intf_pins ctrlLoop/m_axi_IOMEM] [get_bd_intf_pins ctrlLoopInterconnect/S00_AXI]
-  connect_bd_intf_net -intf_net distributor_arduino_gpio_gpio_output [get_bd_intf_ports arduino_gpio] [get_bd_intf_pins arduinoGpioBreakout/gpio_output]
+  connect_bd_intf_net -intf_net axi_iic_0_IIC [get_bd_intf_ports arduino_iic] [get_bd_intf_pins axi_iic_0/IIC]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
-  connect_bd_intf_net -intf_net psInterconnect_M00_AXI [get_bd_intf_pins ctrlLoop/s_axi_CTRL] [get_bd_intf_pins psInterconnect/M00_AXI]
-  connect_bd_intf_net -intf_net psInterconnect_M01_AXI [get_bd_intf_pins plIntrController/s_axi] [get_bd_intf_pins psInterconnect/M01_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins axi_iic_0/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
 
   # Create port connections
-  connect_bd_net -net FCLK_CLK0 [get_bd_pins ctrlLoop/ap_clk] [get_bd_pins ctrlLoopInterconnect/ACLK] [get_bd_pins ctrlLoopInterconnect/M00_ACLK] [get_bd_pins ctrlLoopInterconnect/S00_ACLK] [get_bd_pins ctrlLoopUart/s_axi_aclk] [get_bd_pins plClk/clk_out1] [get_bd_pins plIntrController/s_axi_aclk] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP1_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP2_ACLK] [get_bd_pins psInterconnect/ACLK] [get_bd_pins psInterconnect/M00_ACLK] [get_bd_pins psInterconnect/M01_ACLK] [get_bd_pins psInterconnect/S00_ACLK] [get_bd_pins userReset/slowest_sync_clk]
-  connect_bd_net -net S00_ARESETN_1 [get_bd_pins ctrlLoopInterconnect/ARESETN] [get_bd_pins psInterconnect/ARESETN] [get_bd_pins userReset/interconnect_aresetn]
-  connect_bd_net -net S00_ARESETN_2 [get_bd_pins ctrlLoop/ap_rst_n] [get_bd_pins ctrlLoopInterconnect/M00_ARESETN] [get_bd_pins ctrlLoopInterconnect/S00_ARESETN] [get_bd_pins ctrlLoopUart/s_axi_aresetn] [get_bd_pins plIntrController/s_axi_aresetn] [get_bd_pins psInterconnect/M00_ARESETN] [get_bd_pins psInterconnect/M01_ARESETN] [get_bd_pins psInterconnect/S00_ARESETN] [get_bd_pins userReset/peripheral_aresetn]
-  connect_bd_net -net axi_intc_0_irq [get_bd_pins plIntrController/irq] [get_bd_pins processing_system7_0/IRQ_F2P]
-  connect_bd_net -net ctrlLoopUart_interrupt [get_bd_pins ctrlLoop/interrupt_V] [get_bd_pins ctrlLoopUart/interrupt]
-  connect_bd_net -net ctrlLoopUart_tx [get_bd_pins ctrlLoopUart/rx] [get_bd_pins ctrlLoopUart/tx]
-  connect_bd_net -net ctrlloop_0_interrupt [get_bd_pins ctrlLoop/interrupt] [get_bd_pins plIrqConcat/In0]
-  connect_bd_net -net ctrlloop_leds_V [get_bd_ports led_O] [get_bd_pins ctrlLoop/leds_V]
-  connect_bd_net -net pb_i_1 [get_bd_ports pb_I] [get_bd_pins ctrlLoop/buttons_V]
-  connect_bd_net -net plIrqConcat_dout [get_bd_pins plIntrController/intr] [get_bd_pins plIrqConcat/dout]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins plClk/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins plClk/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins userReset/ext_reset_in]
-  connect_bd_net -net processing_system7_0_GPIO_O [get_bd_pins processing_system7_0/GPIO_O] [get_bd_pins userResetSlice/Din]
-  connect_bd_net -net resetSlice_Dout [get_bd_pins userReset/aux_reset_in] [get_bd_pins userResetSlice/Dout]
+  connect_bd_net -net FCLK_CLK0 [get_bd_pins axi_iic_0/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP1_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP2_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
+  connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_iic_0/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
 
   # Create address segments
-  create_bd_addr_seg -range 0x00001000 -offset 0x00000000 [get_bd_addr_spaces ctrlLoop/Data_m_axi_IOMEM] [get_bd_addr_segs ctrlLoopUart/S_AXI/Reg] SEG_ctrlLoopUart_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x40000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ctrlLoop/s_axi_CTRL/Reg] SEG_ctrlLoop_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x40001000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs plIntrController/S_AXI/Reg] SEG_plIntrController_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x41600000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
 
 
   # Restore current instance

@@ -69,7 +69,11 @@ set_property -dict {PACKAGE_PIN W11 IOSTANDARD LVCMOS33} [get_ports {arduino_gpi
 set_property -dict {PACKAGE_PIN V11 IOSTANDARD LVCMOS33} [get_ports {arduino_gpio_tri_io[17]}]
 set_property -dict {PACKAGE_PIN T5  IOSTANDARD LVCMOS33} [get_ports {arduino_gpio_tri_io[18]}]
 set_property -dict {PACKAGE_PIN U10 IOSTANDARD LVCMOS33} [get_ports {arduino_gpio_tri_io[19]}]
-set_property PULLUP true [get_ports {arduinotri_io[*]}]
+set_property -dict {PACKAGE_PIN P16 IOSTANDARD LVCMOS33} [get_ports arduino_iic_scl_io]
+set_property -dict {PACKAGE_PIN P15 IOSTANDARD LVCMOS33} [get_ports arduino_iic_sda_io]
+set_property PULLUP true [get_ports arduino_iic_scl_io]
+set_property PULLUP true [get_ports arduino_iic_sda_io]
+set_property PULLUP true [get_ports {arduino_gpio_tri_io[*]}]
 
 ##pmod Header JA
 set_property -dict {PACKAGE_PIN Y19 IOSTANDARD LVCMOS33} [get_ports {pmodJA_gpio_tri_io[1]}]
