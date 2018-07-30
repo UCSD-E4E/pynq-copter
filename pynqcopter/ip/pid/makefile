@@ -32,6 +32,7 @@
 # USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 # DAMAGE.
 ###############################################################################
-from .HlsCore import HlsCore
-from . import sensor_confirm
+BUILD_PATH=..
+PART ?=xc7z020clg400-1
 
+include $(BUILD_PATH)/include.mk

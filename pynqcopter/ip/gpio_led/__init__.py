@@ -32,6 +32,4 @@
 # USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 # DAMAGE.
 ###############################################################################
-from .HlsCore import HlsCore
-from . import sensor_confirm
-
+from .gpio_led import GPIO_LED
