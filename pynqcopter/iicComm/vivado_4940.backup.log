@@ -1,0 +1,118 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue Jul 31 12:01:34 2018
+# Process ID: 4940
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/iicComm
+# Command line: vivado iicComm/iicComm.xpr
+# Log file: /home/iavendano/pynq-copter/pynqcopter/iicComm/vivado.log
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/iicComm/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project iicComm/iicComm.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iavendano/pynq-copter/pynqcopter/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'UCSD:hlsip:ctrlloop:1.0'. The one found in IP location '/home/iavendano/pynq-copter/pynqcopter/ip/ctrlloop/ctrlloop/ctrlloop/impl/ip' will take precedence over the same IP in location /home/iavendano/pynq-copter/pynqcopter/ip/pid/ctrlloop/ctrlloop/impl/ip
+open_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:08 . Memory (MB): peak = 6223.344 ; gain = 50.781 ; free physical = 135023 ; free virtual = 506060
+update_compile_order -fileset sources_1
+open_bd_design {/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/iicComm.bd}
+Adding cell -- xilinx.com:ip:axi_iic:2.0 - axi_iic_0
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <iicComm> from BD file </home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/iicComm.bd>
+open_bd_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 6313.773 ; gain = 48.230 ; free physical = 133319 ; free virtual = 504355
+set_property location {0.5 -66 322} [get_bd_cells processing_system7_0]
+set_property location {1 24 55} [get_bd_cells rst_ps7_0_100M]
+set_property location {3.5 1399 429} [get_bd_cells axi_iic_0]
+set_property location {2 746 389} [get_bd_cells ps7_0_axi_periph]
+startgroup
+set_property -dict [list CONFIG.NUM_SI {2} CONFIG.NUM_MI {2}] [get_bd_cells ps7_0_axi_periph]
+endgroup
+delete_bd_objs [get_bd_intf_nets processing_system7_0_M_AXI_GP0]
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_intf_nets processing_system7_0_M_AXI_GP0]'
+set_property location {1.5 419 284} [get_bd_cells ps7_0_axi_periph]
+set_property location {2 426 345} [get_bd_cells ps7_0_axi_periph]
+set_property location {2 437 418} [get_bd_cells ps7_0_axi_periph]
+set_property location {2 385 381} [get_bd_cells ps7_0_axi_periph]
+set_property location {2 321 408} [get_bd_cells ps7_0_axi_periph]
+set_property location {2 423 432} [get_bd_cells ps7_0_axi_periph]
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M00_AXI]
+startgroup
+create_bd_cell -type ip -vlnv UCSD:hlsip:iiccomm:1.0 iiccomm_0
+endgroup
+set_property location {3.5 1052 373} [get_bd_cells iiccomm_0]
+set_property location {4.5 1904 436} [get_bd_cells axi_iic_0]
+set_property location {4 1916 385} [get_bd_cells axi_iic_0]
+set_property location {3 1106 458} [get_bd_cells iiccomm_0]
+set_property location {3 1127 454} [get_bd_cells iiccomm_0]
+set_property location {3.5 1234 458} [get_bd_cells iiccomm_0]
+set_property location {3 1187 429} [get_bd_cells iiccomm_0]
+set_property location {3 1100 420} [get_bd_cells iiccomm_0]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins iiccomm_0/s_axi_AXILiteS]
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M00_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins iiccomm_0/s_axi_outValue_first]
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M00_AXI]
+connect_bd_intf_net [get_bd_intf_pins iiccomm_0/s_axi_AXILiteS] -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
+set_property location {2.5 1001 410} [get_bd_cells iiccomm_0]
+set_property location {3.5 1202 396} [get_bd_cells iiccomm_0]
+connect_bd_intf_net [get_bd_intf_pins iiccomm_0/m_axi_bus_r] -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/S01_AXI]
+set_property location {3.5 1673 546} [get_bd_cells axi_iic_0]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/M01_AXI] [get_bd_intf_pins axi_iic_0/S_AXI]
+assign_bd_address [get_bd_addr_segs {iiccomm_0/s_axi_AXILiteS/Reg }]
+</iiccomm_0/s_axi_AXILiteS/Reg> is being mapped into </processing_system7_0/Data> at <0x40000000 [ 64K ]>
+</iiccomm_0/s_axi_AXILiteS/Reg> is being mapped into </iiccomm_0/Data_m_axi_bus_r> at <0x40000000 [ 64K ]>
+INFO: [BD 41-1051] The usage <register> of peripheral </iiccomm_0/s_axi_AXILiteS/Reg> does not match the usage <memory> of master </iiccomm_0/Data_m_axi_bus_r> and will be excluded using sparse connectivity from its address space. Use the include_bd_addr_seg command to override this precaution and make this peripheral visible within this masters address space.
+Excluding </iiccomm_0/s_axi_AXILiteS/Reg> from </iiccomm_0/Data_m_axi_bus_r>
+save_bd_design
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/iicComm.bd> 
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ui/bd_90c83d8f.ui> 
+validate_bd_design
+ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
+/ps7_0_axi_periph/S01_ACLK
+/ps7_0_axi_periph/M01_ACLK
+/iiccomm_0/ap_clk
+
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+connect_bd_net [get_bd_pins iiccomm_0/ap_clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins iiccomm_0/ap_rst_n] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+save_bd_design
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/iicComm.bd> 
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ui/bd_90c83d8f.ui> 
+validate_bd_design
+ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
+/ps7_0_axi_periph/S01_ACLK
+/ps7_0_axi_periph/M01_ACLK
+
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+connect_bd_net [get_bd_pins ps7_0_axi_periph/S01_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins ps7_0_axi_periph/S01_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+connect_bd_net [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+save_bd_design
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/iicComm.bd> 
+validate_bd_design
+CRITICAL WARNING: [BD 41-1356] Address block </axi_iic_0/S_AXI/Reg> is not mapped into </iiccomm_0/Data_m_axi_bus_r>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Address block </axi_iic_0/S_AXI/Reg> is not mapped into </iiccomm_0/Data_m_axi_bus_r>. Please use Address Editor to either map or exclude it.
+assign_bd_address [get_bd_addr_segs {axi_iic_0/S_AXI/Reg }]
+</axi_iic_0/S_AXI/Reg> is being mapped into </iiccomm_0/Data_m_axi_bus_r> at <0x41600000 [ 64K ]>
+INFO: [BD 41-1051] The usage <register> of peripheral </axi_iic_0/S_AXI/Reg> does not match the usage <memory> of master </iiccomm_0/Data_m_axi_bus_r> and will be excluded using sparse connectivity from its address space. Use the include_bd_addr_seg command to override this precaution and make this peripheral visible within this masters address space.
+Excluding </axi_iic_0/S_AXI/Reg> from </iiccomm_0/Data_m_axi_bus_r>
+save_bd_design
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/iicComm.bd> 
+validate_bd_design
+CRITICAL WARNING: [BD 41-1630] All addressable segments in </iiccomm_0/Data_m_axi_bus_r> are excluded.
+validate_bd_design -force
+CRITICAL WARNING: [BD 41-1630] All addressable segments in </iiccomm_0/Data_m_axi_bus_r> are excluded.
+save_bd_design
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/iicComm.bd> 
+write_bd_tcl -force -hier_blks [get_bd_cells /] /home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm.tcl
+INFO: [BD 5-148] Tcl file written out </home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm.tcl>.
+
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 31 12:20:05 2018...
