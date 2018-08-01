@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Tue Jul 31 12:35:08 2018
+| Date             : Tue Jul 31 16:12:34 2018
 | Host             : fabricant running 64-bit Linux Mint 18 Sarah
 | Command          : report_power -file iicComm_wrapper_power_routed.rpt -pb iicComm_wrapper_power_summary_routed.pb -rpx iicComm_wrapper_power_routed.rpx
 | Design           : iicComm_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.418        |
+| Total On-Chip Power (W)  | 1.417        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.285        |
+| Dynamic (W)              | 1.284        |
 | Device Static (W)        | 0.133        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 68.6         |
-| Junction Temperature (C) | 41.4         |
+| Max Ambient (C)          | 68.7         |
+| Junction Temperature (C) | 41.3         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,20 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.007 |        4 |       --- |             --- |
-| Slice Logic             |     0.002 |     3387 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     1241 |     53200 |            2.33 |
+| Clocks                  |     0.006 |        4 |       --- |             --- |
+| Slice Logic             |     0.002 |     3388 |       --- |             --- |
+|   LUT as Logic          |     0.002 |     1236 |     53200 |            2.32 |
 |   CARRY4                |    <0.001 |       68 |     13300 |            0.51 |
 |   Register              |    <0.001 |     1441 |    106400 |            1.35 |
 |   LUT as Shift Register |    <0.001 |       68 |     17400 |            0.39 |
 |   F7/F8 Muxes           |    <0.001 |        2 |     53200 |           <0.01 |
-|   Others                |     0.000 |      273 |       --- |             --- |
-| Signals                 |     0.003 |     2478 |       --- |             --- |
+|   Others                |     0.000 |      274 |       --- |             --- |
+| Signals                 |     0.003 |     2482 |       --- |             --- |
 | Block RAM               |     0.003 |      0.5 |       140 |            0.36 |
 | I/O                     |     0.000 |        6 |       125 |            4.80 |
 | PS7                     |     1.270 |        1 |       --- |             --- |
 | Static Power            |     0.133 |          |           |                 |
-| Total                   |     1.418 |          |           |                 |
+| Total                   |     1.417 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.028 |       0.014 |      0.013 |
+| Vccint    |       1.000 |     0.027 |       0.014 |      0.013 |
 | Vccaux    |       1.800 |     0.014 |       0.000 |      0.014 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -151,10 +151,10 @@ Table of Contents
 +--------------------------------------------------+-----------+
 | Name                                             | Power (W) |
 +--------------------------------------------------+-----------+
-| iicComm_wrapper                                  |     1.285 |
+| iicComm_wrapper                                  |     1.284 |
 |   arduino_iic_scl_iobuf                          |     0.000 |
 |   arduino_iic_sda_iobuf                          |     0.000 |
-|   iicComm_i                                      |     1.285 |
+|   iicComm_i                                      |     1.284 |
 |     axi_iic_0                                    |     0.002 |
 |       U0                                         |     0.002 |
 |         X_IIC                                    |     0.002 |
@@ -205,7 +205,7 @@ Table of Contents
 |               RD.r_channel_0                     |    <0.001 |
 |                 rd_data_fifo_0                   |    <0.001 |
 |                 transaction_fifo_0               |    <0.001 |
-|               SI_REG                             |     0.002 |
+|               SI_REG                             |     0.001 |
 |                 ar.ar_pipe                       |    <0.001 |
 |                 aw.aw_pipe                       |    <0.001 |
 |                 b.b_pipe                         |    <0.001 |

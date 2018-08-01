@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="iiccomm,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=696,HLS_SYN_LUT=862}" *)
+(* CORE_GENERATION_INFO="iiccomm,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=658,HLS_SYN_LUT=798}" *)
 
 module iiccomm (
         ap_clk,
@@ -218,8 +218,7 @@ reg    ap_idle;
 (* fsm_encoding = "none" *) reg   [8:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 reg    ap_ready;
-wire   [31:0] outValue_i;
-reg    outValue_o_ap_vld;
+reg    outValue_ap_vld;
 reg    bus_r_blk_n_AR;
 reg    bus_r_blk_n_R;
 wire    ap_CS_fsm_state8;
@@ -240,7 +239,7 @@ wire   [1:0] bus_r_BRESP;
 wire   [0:0] bus_r_BID;
 wire   [0:0] bus_r_BUSER;
 reg    ap_sig_ioackin_bus_r_ARREADY;
-reg   [31:0] bus_addr_read_reg_78;
+reg   [31:0] bus_addr_read_reg_70;
 reg    ap_reg_ioackin_bus_r_ARREADY;
 wire    ap_CS_fsm_state9;
 reg   [8:0] ap_NS_fsm;
@@ -306,9 +305,8 @@ iiccomm_outValue_first_s_axi_U(
     .ACLK(ap_clk),
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
-    .outValue_o(bus_addr_read_reg_78),
-    .outValue_o_ap_vld(outValue_o_ap_vld),
-    .outValue_i(outValue_i)
+    .outValue(bus_addr_read_reg_70),
+    .outValue_ap_vld(outValue_ap_vld)
 );
 
 iiccomm_bus_r_m_axi #(
@@ -451,7 +449,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((bus_r_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
-        bus_addr_read_reg_78 <= bus_r_RDATA;
+        bus_addr_read_reg_70 <= bus_r_RDATA;
     end
 end
 
@@ -521,9 +519,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state9)) begin
-        outValue_o_ap_vld = 1'b1;
+        outValue_ap_vld = 1'b1;
     end else begin
-        outValue_o_ap_vld = 1'b0;
+        outValue_ap_vld = 1'b0;
     end
 end
 
