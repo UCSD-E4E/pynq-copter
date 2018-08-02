@@ -6,7 +6,7 @@
 <Project Version="7" Minor="35" Path="/home/iavendano/pynq-copter/pynqcopter/ip/sensor/sensor/sensor/impl/verilog/project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="7c25a315c4cf42dc9ea242fadb2d2bc2"/>
+    <Option Name="Id" Val="56cb46350ec14cb7a15f184cc30ff0e5"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -54,14 +54,14 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/sensor_MASTER_BUS_m_axi.v">
+      <File Path="$PPRDIR/sensor_CTRL_s_axi.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/sensor_CTRL_s_axi.v">
+      <File Path="$PPRDIR/sensor_iicData_m_axi.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

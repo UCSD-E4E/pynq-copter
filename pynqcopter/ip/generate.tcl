@@ -37,10 +37,10 @@ set name [string toupper $target 0 0]
 set part $::env(PART)
 open_project $target
 set_top $target
-add_files -tb main.cpp -cflags "-std=c++0x"
-add_files -tb $target.cpp -cflags "-std=c++0x"
-add_files main.cpp -cflags "-std=c++0x"
-add_files $target.cpp -cflags "-std=c++0x"
+add_files -tb main.cpp -cflags "-std=c++11"
+add_files -tb $target.cpp -cflags "-std=c++11"
+add_files main.cpp -cflags "-std=c++11"
+add_files $target.cpp -cflags "-std=c++11"
 open_solution "$target"
 set_part $part
 create_clock -period 4 -name default

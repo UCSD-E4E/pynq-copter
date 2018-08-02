@@ -1,6 +1,6 @@
 <InterfaceSummary>
 <RtlPorts>
-<name>MASTER_BUS</name>
+<name>iicData</name>
 <CType>
 <TypeName>unsigned int</TypeName>
 <TypeWidth>32</TypeWidth>

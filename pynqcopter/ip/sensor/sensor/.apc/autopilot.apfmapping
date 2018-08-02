@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="sensor.cpp" path="/home/iavendano/pynq-copter/pynqcopter/ip/sensor/sensor.cpp"/>
+    <originFiles name="main.cpp" path="/home/iavendano/pynq-copter/pynqcopter/ip/sensor/main.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="sensor.cpp" path="/home/iavendano/pynq-copter/pynqcopter/ip/sensor/sensor.cpp"/>
+    <originFiles name="main.cpp" path="/home/iavendano/pynq-copter/pynqcopter/ip/sensor/main.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

@@ -11,67 +11,68 @@ use IEEE.numeric_std.all;
 
 entity sensor is
 generic (
-    C_M_AXI_MASTER_BUS_ADDR_WIDTH : INTEGER := 32;
-    C_M_AXI_MASTER_BUS_ID_WIDTH : INTEGER := 1;
-    C_M_AXI_MASTER_BUS_AWUSER_WIDTH : INTEGER := 1;
-    C_M_AXI_MASTER_BUS_DATA_WIDTH : INTEGER := 32;
-    C_M_AXI_MASTER_BUS_WUSER_WIDTH : INTEGER := 1;
-    C_M_AXI_MASTER_BUS_ARUSER_WIDTH : INTEGER := 1;
-    C_M_AXI_MASTER_BUS_RUSER_WIDTH : INTEGER := 1;
-    C_M_AXI_MASTER_BUS_BUSER_WIDTH : INTEGER := 1;
-    C_S_AXI_CTRL_ADDR_WIDTH : INTEGER := 6;
+    C_M_AXI_IICDATA_ADDR_WIDTH : INTEGER := 32;
+    C_M_AXI_IICDATA_ID_WIDTH : INTEGER := 1;
+    C_M_AXI_IICDATA_AWUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_IICDATA_DATA_WIDTH : INTEGER := 32;
+    C_M_AXI_IICDATA_WUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_IICDATA_ARUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_IICDATA_RUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_IICDATA_BUSER_WIDTH : INTEGER := 1;
+    C_S_AXI_CTRL_ADDR_WIDTH : INTEGER := 5;
     C_S_AXI_CTRL_DATA_WIDTH : INTEGER := 32;
-    C_M_AXI_MASTER_BUS_USER_VALUE : INTEGER := 0;
-    C_M_AXI_MASTER_BUS_PROT_VALUE : INTEGER := 0;
-    C_M_AXI_MASTER_BUS_CACHE_VALUE : INTEGER := 3 );
+    C_M_AXI_IICDATA_TARGET_ADDR : INTEGER := 0;
+    C_M_AXI_IICDATA_USER_VALUE : INTEGER := 0;
+    C_M_AXI_IICDATA_PROT_VALUE : INTEGER := 0;
+    C_M_AXI_IICDATA_CACHE_VALUE : INTEGER := 3 );
 port (
     ap_clk : IN STD_LOGIC;
     ap_rst_n : IN STD_LOGIC;
-    m_axi_MASTER_BUS_AWVALID : OUT STD_LOGIC;
-    m_axi_MASTER_BUS_AWREADY : IN STD_LOGIC;
-    m_axi_MASTER_BUS_AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_ADDR_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_AWID : OUT STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_ID_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_AWLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
-    m_axi_MASTER_BUS_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
-    m_axi_MASTER_BUS_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
-    m_axi_MASTER_BUS_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
-    m_axi_MASTER_BUS_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
-    m_axi_MASTER_BUS_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
-    m_axi_MASTER_BUS_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
-    m_axi_MASTER_BUS_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
-    m_axi_MASTER_BUS_AWUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_AWUSER_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_WVALID : OUT STD_LOGIC;
-    m_axi_MASTER_BUS_WREADY : IN STD_LOGIC;
-    m_axi_MASTER_BUS_WDATA : OUT STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_DATA_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_WSTRB : OUT STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_DATA_WIDTH/8-1 downto 0);
-    m_axi_MASTER_BUS_WLAST : OUT STD_LOGIC;
-    m_axi_MASTER_BUS_WID : OUT STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_ID_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_WUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_WUSER_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_ARVALID : OUT STD_LOGIC;
-    m_axi_MASTER_BUS_ARREADY : IN STD_LOGIC;
-    m_axi_MASTER_BUS_ARADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_ADDR_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_ARID : OUT STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_ID_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_ARLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
-    m_axi_MASTER_BUS_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
-    m_axi_MASTER_BUS_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
-    m_axi_MASTER_BUS_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
-    m_axi_MASTER_BUS_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
-    m_axi_MASTER_BUS_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
-    m_axi_MASTER_BUS_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
-    m_axi_MASTER_BUS_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
-    m_axi_MASTER_BUS_ARUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_ARUSER_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_RVALID : IN STD_LOGIC;
-    m_axi_MASTER_BUS_RREADY : OUT STD_LOGIC;
-    m_axi_MASTER_BUS_RDATA : IN STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_DATA_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_RLAST : IN STD_LOGIC;
-    m_axi_MASTER_BUS_RID : IN STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_ID_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_RUSER : IN STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_RUSER_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
-    m_axi_MASTER_BUS_BVALID : IN STD_LOGIC;
-    m_axi_MASTER_BUS_BREADY : OUT STD_LOGIC;
-    m_axi_MASTER_BUS_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
-    m_axi_MASTER_BUS_BID : IN STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_ID_WIDTH-1 downto 0);
-    m_axi_MASTER_BUS_BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_MASTER_BUS_BUSER_WIDTH-1 downto 0);
+    m_axi_iicData_AWVALID : OUT STD_LOGIC;
+    m_axi_iicData_AWREADY : IN STD_LOGIC;
+    m_axi_iicData_AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_IICDATA_ADDR_WIDTH-1 downto 0);
+    m_axi_iicData_AWID : OUT STD_LOGIC_VECTOR (C_M_AXI_IICDATA_ID_WIDTH-1 downto 0);
+    m_axi_iicData_AWLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_iicData_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_iicData_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_iicData_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_iicData_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_iicData_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_iicData_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_iicData_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_iicData_AWUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_IICDATA_AWUSER_WIDTH-1 downto 0);
+    m_axi_iicData_WVALID : OUT STD_LOGIC;
+    m_axi_iicData_WREADY : IN STD_LOGIC;
+    m_axi_iicData_WDATA : OUT STD_LOGIC_VECTOR (C_M_AXI_IICDATA_DATA_WIDTH-1 downto 0);
+    m_axi_iicData_WSTRB : OUT STD_LOGIC_VECTOR (C_M_AXI_IICDATA_DATA_WIDTH/8-1 downto 0);
+    m_axi_iicData_WLAST : OUT STD_LOGIC;
+    m_axi_iicData_WID : OUT STD_LOGIC_VECTOR (C_M_AXI_IICDATA_ID_WIDTH-1 downto 0);
+    m_axi_iicData_WUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_IICDATA_WUSER_WIDTH-1 downto 0);
+    m_axi_iicData_ARVALID : OUT STD_LOGIC;
+    m_axi_iicData_ARREADY : IN STD_LOGIC;
+    m_axi_iicData_ARADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_IICDATA_ADDR_WIDTH-1 downto 0);
+    m_axi_iicData_ARID : OUT STD_LOGIC_VECTOR (C_M_AXI_IICDATA_ID_WIDTH-1 downto 0);
+    m_axi_iicData_ARLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_iicData_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_iicData_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_iicData_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_iicData_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_iicData_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_iicData_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_iicData_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_iicData_ARUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_IICDATA_ARUSER_WIDTH-1 downto 0);
+    m_axi_iicData_RVALID : IN STD_LOGIC;
+    m_axi_iicData_RREADY : OUT STD_LOGIC;
+    m_axi_iicData_RDATA : IN STD_LOGIC_VECTOR (C_M_AXI_IICDATA_DATA_WIDTH-1 downto 0);
+    m_axi_iicData_RLAST : IN STD_LOGIC;
+    m_axi_iicData_RID : IN STD_LOGIC_VECTOR (C_M_AXI_IICDATA_ID_WIDTH-1 downto 0);
+    m_axi_iicData_RUSER : IN STD_LOGIC_VECTOR (C_M_AXI_IICDATA_RUSER_WIDTH-1 downto 0);
+    m_axi_iicData_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_iicData_BVALID : IN STD_LOGIC;
+    m_axi_iicData_BREADY : OUT STD_LOGIC;
+    m_axi_iicData_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_iicData_BID : IN STD_LOGIC_VECTOR (C_M_AXI_IICDATA_ID_WIDTH-1 downto 0);
+    m_axi_iicData_BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_IICDATA_BUSER_WIDTH-1 downto 0);
     s_axi_CTRL_AWVALID : IN STD_LOGIC;
     s_axi_CTRL_AWREADY : OUT STD_LOGIC;
     s_axi_CTRL_AWADDR : IN STD_LOGIC_VECTOR (C_S_AXI_CTRL_ADDR_WIDTH-1 downto 0);
@@ -96,80 +97,69 @@ end;
 architecture behav of sensor is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "sensor,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=9,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=736,HLS_SYN_LUT=927}";
+    "sensor,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=666,HLS_SYN_LUT=822}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
-    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (9 downto 0) := "0000000001";
-    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (9 downto 0) := "0000000010";
-    constant ap_ST_fsm_state3 : STD_LOGIC_VECTOR (9 downto 0) := "0000000100";
-    constant ap_ST_fsm_state4 : STD_LOGIC_VECTOR (9 downto 0) := "0000001000";
-    constant ap_ST_fsm_state5 : STD_LOGIC_VECTOR (9 downto 0) := "0000010000";
-    constant ap_ST_fsm_state6 : STD_LOGIC_VECTOR (9 downto 0) := "0000100000";
-    constant ap_ST_fsm_state7 : STD_LOGIC_VECTOR (9 downto 0) := "0001000000";
-    constant ap_ST_fsm_state8 : STD_LOGIC_VECTOR (9 downto 0) := "0010000000";
-    constant ap_ST_fsm_state9 : STD_LOGIC_VECTOR (9 downto 0) := "0100000000";
-    constant ap_ST_fsm_state10 : STD_LOGIC_VECTOR (9 downto 0) := "1000000000";
+    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (8 downto 0) := "000000001";
+    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (8 downto 0) := "000000010";
+    constant ap_ST_fsm_state3 : STD_LOGIC_VECTOR (8 downto 0) := "000000100";
+    constant ap_ST_fsm_state4 : STD_LOGIC_VECTOR (8 downto 0) := "000001000";
+    constant ap_ST_fsm_state5 : STD_LOGIC_VECTOR (8 downto 0) := "000010000";
+    constant ap_ST_fsm_state6 : STD_LOGIC_VECTOR (8 downto 0) := "000100000";
+    constant ap_ST_fsm_state7 : STD_LOGIC_VECTOR (8 downto 0) := "001000000";
+    constant ap_ST_fsm_state8 : STD_LOGIC_VECTOR (8 downto 0) := "010000000";
+    constant ap_ST_fsm_state9 : STD_LOGIC_VECTOR (8 downto 0) := "100000000";
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
-    constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
-    constant ap_const_lv32_8 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001000";
+    constant ap_const_lv32_7 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000111";
     constant C_S_AXI_DATA_WIDTH : INTEGER range 63 downto 0 := 20;
     constant C_M_AXI_DATA_WIDTH : INTEGER range 63 downto 0 := 20;
+    constant ap_const_lv64_10000C06 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000010000000000000000110000000110";
+    constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
     constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
-    constant ap_const_lv32_9 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001001";
-    constant ap_const_lv32_2 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000010";
-    constant ap_const_lv32_1F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000011111";
-    constant ap_const_lv31_41 : STD_LOGIC_VECTOR (30 downto 0) := "0000000000000000000000001000001";
+    constant ap_const_lv32_8 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001000";
     constant ap_const_boolean_1 : BOOLEAN := true;
 
     signal ap_rst_n_inv : STD_LOGIC;
     signal ap_start : STD_LOGIC;
     signal ap_done : STD_LOGIC;
     signal ap_idle : STD_LOGIC;
-    signal ap_CS_fsm : STD_LOGIC_VECTOR (9 downto 0) := "0000000001";
+    signal ap_CS_fsm : STD_LOGIC_VECTOR (8 downto 0) := "000000001";
     attribute fsm_encoding : string;
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
     signal ap_ready : STD_LOGIC;
-    signal iicData : STD_LOGIC_VECTOR (31 downto 0);
     signal iicStatus_i : STD_LOGIC_VECTOR (31 downto 0);
     signal iicStatus_o_ap_vld : STD_LOGIC;
-    signal MASTER_BUS_blk_n_AR : STD_LOGIC;
-    signal ap_CS_fsm_state2 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
-    signal MASTER_BUS_blk_n_R : STD_LOGIC;
+    signal iicData_blk_n_AR : STD_LOGIC;
+    signal iicData_blk_n_R : STD_LOGIC;
+    signal ap_CS_fsm_state8 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state8 : signal is "none";
+    signal iicData_AWREADY : STD_LOGIC;
+    signal iicData_WREADY : STD_LOGIC;
+    signal iicData_ARVALID : STD_LOGIC;
+    signal iicData_ARREADY : STD_LOGIC;
+    signal iicData_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal iicData_RVALID : STD_LOGIC;
+    signal iicData_RREADY : STD_LOGIC;
+    signal iicData_RDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal iicData_RLAST : STD_LOGIC;
+    signal iicData_RID : STD_LOGIC_VECTOR (0 downto 0);
+    signal iicData_RUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal iicData_RRESP : STD_LOGIC_VECTOR (1 downto 0);
+    signal iicData_BVALID : STD_LOGIC;
+    signal iicData_BRESP : STD_LOGIC_VECTOR (1 downto 0);
+    signal iicData_BID : STD_LOGIC_VECTOR (0 downto 0);
+    signal iicData_BUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal ap_sig_ioackin_iicData_ARREADY : STD_LOGIC;
+    signal iicData_addr_read_reg_76 : STD_LOGIC_VECTOR (31 downto 0);
+    signal ap_reg_ioackin_iicData_ARREADY : STD_LOGIC := '0';
     signal ap_CS_fsm_state9 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state9 : signal is "none";
-    signal MASTER_BUS_AWREADY : STD_LOGIC;
-    signal MASTER_BUS_WREADY : STD_LOGIC;
-    signal MASTER_BUS_ARVALID : STD_LOGIC;
-    signal MASTER_BUS_ARREADY : STD_LOGIC;
-    signal MASTER_BUS_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
-    signal MASTER_BUS_RVALID : STD_LOGIC;
-    signal MASTER_BUS_RREADY : STD_LOGIC;
-    signal MASTER_BUS_RDATA : STD_LOGIC_VECTOR (31 downto 0);
-    signal MASTER_BUS_RLAST : STD_LOGIC;
-    signal MASTER_BUS_RID : STD_LOGIC_VECTOR (0 downto 0);
-    signal MASTER_BUS_RUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal MASTER_BUS_RRESP : STD_LOGIC_VECTOR (1 downto 0);
-    signal MASTER_BUS_BVALID : STD_LOGIC;
-    signal MASTER_BUS_BRESP : STD_LOGIC_VECTOR (1 downto 0);
-    signal MASTER_BUS_BID : STD_LOGIC_VECTOR (0 downto 0);
-    signal MASTER_BUS_BUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal iicData2_sum_fu_99_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal iicData2_sum_reg_115 : STD_LOGIC_VECTOR (30 downto 0);
-    signal ap_sig_ioackin_MASTER_BUS_ARREADY : STD_LOGIC;
-    signal MASTER_BUS_addr_read_reg_126 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iicData2_sum_cast_fu_105_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal ap_reg_ioackin_MASTER_BUS_ARREADY : STD_LOGIC := '0';
-    signal ap_CS_fsm_state10 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state10 : signal is "none";
-    signal tmp_fu_85_p4 : STD_LOGIC_VECTOR (29 downto 0);
-    signal tmp_cast_fu_95_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal ap_NS_fsm : STD_LOGIC_VECTOR (9 downto 0);
+    signal ap_NS_fsm : STD_LOGIC_VECTOR (8 downto 0);
 
     component sensor_CTRL_s_axi IS
     generic (
@@ -201,14 +191,13 @@ architecture behav of sensor is
         ap_ready : IN STD_LOGIC;
         ap_done : IN STD_LOGIC;
         ap_idle : IN STD_LOGIC;
-        iicData : OUT STD_LOGIC_VECTOR (31 downto 0);
         iicStatus_o : IN STD_LOGIC_VECTOR (31 downto 0);
         iicStatus_o_ap_vld : IN STD_LOGIC;
         iicStatus_i : OUT STD_LOGIC_VECTOR (31 downto 0) );
     end component;
 
 
-    component sensor_MASTER_BUS_m_axi IS
+    component sensor_iicData_m_axi IS
     generic (
         USER_DW : INTEGER;
         USER_AW : INTEGER;
@@ -225,6 +214,7 @@ architecture behav of sensor is
         C_M_AXI_WUSER_WIDTH : INTEGER;
         C_M_AXI_RUSER_WIDTH : INTEGER;
         C_M_AXI_BUSER_WIDTH : INTEGER;
+        C_TARGET_ADDR : INTEGER;
         C_USER_VALUE : INTEGER;
         C_PROT_VALUE : INTEGER;
         C_CACHE_VALUE : INTEGER );
@@ -357,12 +347,11 @@ begin
         ap_ready => ap_ready,
         ap_done => ap_done,
         ap_idle => ap_idle,
-        iicData => iicData,
-        iicStatus_o => MASTER_BUS_addr_read_reg_126,
+        iicStatus_o => iicData_addr_read_reg_76,
         iicStatus_o_ap_vld => iicStatus_o_ap_vld,
         iicStatus_i => iicStatus_i);
 
-    sensor_MASTER_BUS_m_axi_U : component sensor_MASTER_BUS_m_axi
+    sensor_iicData_m_axi_U : component sensor_iicData_m_axi
     generic map (
         USER_DW => 32,
         USER_AW => 32,
@@ -371,69 +360,70 @@ begin
         NUM_WRITE_OUTSTANDING => 16,
         MAX_READ_BURST_LENGTH => 16,
         MAX_WRITE_BURST_LENGTH => 16,
-        C_M_AXI_ID_WIDTH => C_M_AXI_MASTER_BUS_ID_WIDTH,
-        C_M_AXI_ADDR_WIDTH => C_M_AXI_MASTER_BUS_ADDR_WIDTH,
-        C_M_AXI_DATA_WIDTH => C_M_AXI_MASTER_BUS_DATA_WIDTH,
-        C_M_AXI_AWUSER_WIDTH => C_M_AXI_MASTER_BUS_AWUSER_WIDTH,
-        C_M_AXI_ARUSER_WIDTH => C_M_AXI_MASTER_BUS_ARUSER_WIDTH,
-        C_M_AXI_WUSER_WIDTH => C_M_AXI_MASTER_BUS_WUSER_WIDTH,
-        C_M_AXI_RUSER_WIDTH => C_M_AXI_MASTER_BUS_RUSER_WIDTH,
-        C_M_AXI_BUSER_WIDTH => C_M_AXI_MASTER_BUS_BUSER_WIDTH,
-        C_USER_VALUE => C_M_AXI_MASTER_BUS_USER_VALUE,
-        C_PROT_VALUE => C_M_AXI_MASTER_BUS_PROT_VALUE,
-        C_CACHE_VALUE => C_M_AXI_MASTER_BUS_CACHE_VALUE)
+        C_M_AXI_ID_WIDTH => C_M_AXI_IICDATA_ID_WIDTH,
+        C_M_AXI_ADDR_WIDTH => C_M_AXI_IICDATA_ADDR_WIDTH,
+        C_M_AXI_DATA_WIDTH => C_M_AXI_IICDATA_DATA_WIDTH,
+        C_M_AXI_AWUSER_WIDTH => C_M_AXI_IICDATA_AWUSER_WIDTH,
+        C_M_AXI_ARUSER_WIDTH => C_M_AXI_IICDATA_ARUSER_WIDTH,
+        C_M_AXI_WUSER_WIDTH => C_M_AXI_IICDATA_WUSER_WIDTH,
+        C_M_AXI_RUSER_WIDTH => C_M_AXI_IICDATA_RUSER_WIDTH,
+        C_M_AXI_BUSER_WIDTH => C_M_AXI_IICDATA_BUSER_WIDTH,
+        C_TARGET_ADDR => C_M_AXI_IICDATA_TARGET_ADDR,
+        C_USER_VALUE => C_M_AXI_IICDATA_USER_VALUE,
+        C_PROT_VALUE => C_M_AXI_IICDATA_PROT_VALUE,
+        C_CACHE_VALUE => C_M_AXI_IICDATA_CACHE_VALUE)
     port map (
-        AWVALID => m_axi_MASTER_BUS_AWVALID,
-        AWREADY => m_axi_MASTER_BUS_AWREADY,
-        AWADDR => m_axi_MASTER_BUS_AWADDR,
-        AWID => m_axi_MASTER_BUS_AWID,
-        AWLEN => m_axi_MASTER_BUS_AWLEN,
-        AWSIZE => m_axi_MASTER_BUS_AWSIZE,
-        AWBURST => m_axi_MASTER_BUS_AWBURST,
-        AWLOCK => m_axi_MASTER_BUS_AWLOCK,
-        AWCACHE => m_axi_MASTER_BUS_AWCACHE,
-        AWPROT => m_axi_MASTER_BUS_AWPROT,
-        AWQOS => m_axi_MASTER_BUS_AWQOS,
-        AWREGION => m_axi_MASTER_BUS_AWREGION,
-        AWUSER => m_axi_MASTER_BUS_AWUSER,
-        WVALID => m_axi_MASTER_BUS_WVALID,
-        WREADY => m_axi_MASTER_BUS_WREADY,
-        WDATA => m_axi_MASTER_BUS_WDATA,
-        WSTRB => m_axi_MASTER_BUS_WSTRB,
-        WLAST => m_axi_MASTER_BUS_WLAST,
-        WID => m_axi_MASTER_BUS_WID,
-        WUSER => m_axi_MASTER_BUS_WUSER,
-        ARVALID => m_axi_MASTER_BUS_ARVALID,
-        ARREADY => m_axi_MASTER_BUS_ARREADY,
-        ARADDR => m_axi_MASTER_BUS_ARADDR,
-        ARID => m_axi_MASTER_BUS_ARID,
-        ARLEN => m_axi_MASTER_BUS_ARLEN,
-        ARSIZE => m_axi_MASTER_BUS_ARSIZE,
-        ARBURST => m_axi_MASTER_BUS_ARBURST,
-        ARLOCK => m_axi_MASTER_BUS_ARLOCK,
-        ARCACHE => m_axi_MASTER_BUS_ARCACHE,
-        ARPROT => m_axi_MASTER_BUS_ARPROT,
-        ARQOS => m_axi_MASTER_BUS_ARQOS,
-        ARREGION => m_axi_MASTER_BUS_ARREGION,
-        ARUSER => m_axi_MASTER_BUS_ARUSER,
-        RVALID => m_axi_MASTER_BUS_RVALID,
-        RREADY => m_axi_MASTER_BUS_RREADY,
-        RDATA => m_axi_MASTER_BUS_RDATA,
-        RLAST => m_axi_MASTER_BUS_RLAST,
-        RID => m_axi_MASTER_BUS_RID,
-        RUSER => m_axi_MASTER_BUS_RUSER,
-        RRESP => m_axi_MASTER_BUS_RRESP,
-        BVALID => m_axi_MASTER_BUS_BVALID,
-        BREADY => m_axi_MASTER_BUS_BREADY,
-        BRESP => m_axi_MASTER_BUS_BRESP,
-        BID => m_axi_MASTER_BUS_BID,
-        BUSER => m_axi_MASTER_BUS_BUSER,
+        AWVALID => m_axi_iicData_AWVALID,
+        AWREADY => m_axi_iicData_AWREADY,
+        AWADDR => m_axi_iicData_AWADDR,
+        AWID => m_axi_iicData_AWID,
+        AWLEN => m_axi_iicData_AWLEN,
+        AWSIZE => m_axi_iicData_AWSIZE,
+        AWBURST => m_axi_iicData_AWBURST,
+        AWLOCK => m_axi_iicData_AWLOCK,
+        AWCACHE => m_axi_iicData_AWCACHE,
+        AWPROT => m_axi_iicData_AWPROT,
+        AWQOS => m_axi_iicData_AWQOS,
+        AWREGION => m_axi_iicData_AWREGION,
+        AWUSER => m_axi_iicData_AWUSER,
+        WVALID => m_axi_iicData_WVALID,
+        WREADY => m_axi_iicData_WREADY,
+        WDATA => m_axi_iicData_WDATA,
+        WSTRB => m_axi_iicData_WSTRB,
+        WLAST => m_axi_iicData_WLAST,
+        WID => m_axi_iicData_WID,
+        WUSER => m_axi_iicData_WUSER,
+        ARVALID => m_axi_iicData_ARVALID,
+        ARREADY => m_axi_iicData_ARREADY,
+        ARADDR => m_axi_iicData_ARADDR,
+        ARID => m_axi_iicData_ARID,
+        ARLEN => m_axi_iicData_ARLEN,
+        ARSIZE => m_axi_iicData_ARSIZE,
+        ARBURST => m_axi_iicData_ARBURST,
+        ARLOCK => m_axi_iicData_ARLOCK,
+        ARCACHE => m_axi_iicData_ARCACHE,
+        ARPROT => m_axi_iicData_ARPROT,
+        ARQOS => m_axi_iicData_ARQOS,
+        ARREGION => m_axi_iicData_ARREGION,
+        ARUSER => m_axi_iicData_ARUSER,
+        RVALID => m_axi_iicData_RVALID,
+        RREADY => m_axi_iicData_RREADY,
+        RDATA => m_axi_iicData_RDATA,
+        RLAST => m_axi_iicData_RLAST,
+        RID => m_axi_iicData_RID,
+        RUSER => m_axi_iicData_RUSER,
+        RRESP => m_axi_iicData_RRESP,
+        BVALID => m_axi_iicData_BVALID,
+        BREADY => m_axi_iicData_BREADY,
+        BRESP => m_axi_iicData_BRESP,
+        BID => m_axi_iicData_BID,
+        BUSER => m_axi_iicData_BUSER,
         ACLK => ap_clk,
         ARESET => ap_rst_n_inv,
         ACLK_EN => ap_const_logic_1,
-        I_ARVALID => MASTER_BUS_ARVALID,
-        I_ARREADY => MASTER_BUS_ARREADY,
-        I_ARADDR => MASTER_BUS_ARADDR,
+        I_ARVALID => iicData_ARVALID,
+        I_ARREADY => iicData_ARREADY,
+        I_ARADDR => iicData_ARADDR,
         I_ARID => ap_const_lv1_0,
         I_ARLEN => ap_const_lv32_1,
         I_ARSIZE => ap_const_lv3_0,
@@ -444,15 +434,15 @@ begin
         I_ARUSER => ap_const_lv1_0,
         I_ARBURST => ap_const_lv2_0,
         I_ARREGION => ap_const_lv4_0,
-        I_RVALID => MASTER_BUS_RVALID,
-        I_RREADY => MASTER_BUS_RREADY,
-        I_RDATA => MASTER_BUS_RDATA,
-        I_RID => MASTER_BUS_RID,
-        I_RUSER => MASTER_BUS_RUSER,
-        I_RRESP => MASTER_BUS_RRESP,
-        I_RLAST => MASTER_BUS_RLAST,
+        I_RVALID => iicData_RVALID,
+        I_RREADY => iicData_RREADY,
+        I_RDATA => iicData_RDATA,
+        I_RID => iicData_RID,
+        I_RUSER => iicData_RUSER,
+        I_RRESP => iicData_RRESP,
+        I_RLAST => iicData_RLAST,
         I_AWVALID => ap_const_logic_0,
-        I_AWREADY => MASTER_BUS_AWREADY,
+        I_AWREADY => iicData_AWREADY,
         I_AWADDR => ap_const_lv32_0,
         I_AWID => ap_const_lv1_0,
         I_AWLEN => ap_const_lv32_0,
@@ -465,17 +455,17 @@ begin
         I_AWBURST => ap_const_lv2_0,
         I_AWREGION => ap_const_lv4_0,
         I_WVALID => ap_const_logic_0,
-        I_WREADY => MASTER_BUS_WREADY,
+        I_WREADY => iicData_WREADY,
         I_WDATA => ap_const_lv32_0,
         I_WID => ap_const_lv1_0,
         I_WUSER => ap_const_lv1_0,
         I_WLAST => ap_const_logic_0,
         I_WSTRB => ap_const_lv4_0,
-        I_BVALID => MASTER_BUS_BVALID,
+        I_BVALID => iicData_BVALID,
         I_BREADY => ap_const_logic_0,
-        I_BRESP => MASTER_BUS_BRESP,
-        I_BID => MASTER_BUS_BID,
-        I_BUSER => MASTER_BUS_BUSER);
+        I_BRESP => iicData_BRESP,
+        I_BID => iicData_BID,
+        I_BUSER => iicData_BUSER);
 
 
 
@@ -493,17 +483,17 @@ begin
     end process;
 
 
-    ap_reg_ioackin_MASTER_BUS_ARREADY_assign_proc : process(ap_clk)
+    ap_reg_ioackin_iicData_ARREADY_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst_n_inv = '1') then
-                ap_reg_ioackin_MASTER_BUS_ARREADY <= ap_const_logic_0;
+                ap_reg_ioackin_iicData_ARREADY <= ap_const_logic_0;
             else
-                if ((ap_const_logic_1 = ap_CS_fsm_state2)) then
-                    if ((ap_sig_ioackin_MASTER_BUS_ARREADY = ap_const_logic_1)) then 
-                        ap_reg_ioackin_MASTER_BUS_ARREADY <= ap_const_logic_0;
-                    elsif ((ap_const_logic_1 = MASTER_BUS_ARREADY)) then 
-                        ap_reg_ioackin_MASTER_BUS_ARREADY <= ap_const_logic_1;
+                if ((ap_const_logic_1 = ap_CS_fsm_state1)) then
+                    if (not(((ap_sig_ioackin_iicData_ARREADY = ap_const_logic_0) or (ap_start = ap_const_logic_0)))) then 
+                        ap_reg_ioackin_iicData_ARREADY <= ap_const_logic_0;
+                    elsif (((iicData_ARREADY = ap_const_logic_1) and (ap_start = ap_const_logic_1))) then 
+                        ap_reg_ioackin_iicData_ARREADY <= ap_const_logic_1;
                     end if;
                 end if; 
             end if;
@@ -513,35 +503,23 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((ap_const_logic_1 = ap_CS_fsm_state9) and (ap_const_logic_1 = MASTER_BUS_RVALID))) then
-                MASTER_BUS_addr_read_reg_126 <= MASTER_BUS_RDATA;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start = ap_const_logic_1))) then
-                iicData2_sum_reg_115 <= iicData2_sum_fu_99_p2;
+            if (((ap_const_logic_1 = ap_CS_fsm_state8) and (iicData_RVALID = ap_const_logic_1))) then
+                iicData_addr_read_reg_76 <= iicData_RDATA;
             end if;
         end if;
     end process;
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state9, MASTER_BUS_RVALID, ap_sig_ioackin_MASTER_BUS_ARREADY)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state8, iicData_RVALID, ap_sig_ioackin_iicData_ARREADY)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
-                if (((ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start = ap_const_logic_1))) then
+                if ((not(((ap_sig_ioackin_iicData_ARREADY = ap_const_logic_0) or (ap_start = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then
                     ap_NS_fsm <= ap_ST_fsm_state2;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 end if;
             when ap_ST_fsm_state2 => 
-                if (((ap_sig_ioackin_MASTER_BUS_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
-                    ap_NS_fsm <= ap_ST_fsm_state3;
-                else
-                    ap_NS_fsm <= ap_ST_fsm_state2;
-                end if;
+                ap_NS_fsm <= ap_ST_fsm_state3;
             when ap_ST_fsm_state3 => 
                 ap_NS_fsm <= ap_ST_fsm_state4;
             when ap_ST_fsm_state4 => 
@@ -553,68 +531,24 @@ begin
             when ap_ST_fsm_state7 => 
                 ap_NS_fsm <= ap_ST_fsm_state8;
             when ap_ST_fsm_state8 => 
-                ap_NS_fsm <= ap_ST_fsm_state9;
-            when ap_ST_fsm_state9 => 
-                if (((ap_const_logic_1 = ap_CS_fsm_state9) and (ap_const_logic_1 = MASTER_BUS_RVALID))) then
-                    ap_NS_fsm <= ap_ST_fsm_state10;
-                else
+                if (((ap_const_logic_1 = ap_CS_fsm_state8) and (iicData_RVALID = ap_const_logic_1))) then
                     ap_NS_fsm <= ap_ST_fsm_state9;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state8;
                 end if;
-            when ap_ST_fsm_state10 => 
+            when ap_ST_fsm_state9 => 
                 ap_NS_fsm <= ap_ST_fsm_state1;
             when others =>  
-                ap_NS_fsm <= "XXXXXXXXXX";
+                ap_NS_fsm <= "XXXXXXXXX";
         end case;
     end process;
-    MASTER_BUS_ARADDR <= iicData2_sum_cast_fu_105_p1(32 - 1 downto 0);
-
-    MASTER_BUS_ARVALID_assign_proc : process(ap_CS_fsm_state2, ap_reg_ioackin_MASTER_BUS_ARREADY)
-    begin
-        if (((ap_reg_ioackin_MASTER_BUS_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
-            MASTER_BUS_ARVALID <= ap_const_logic_1;
-        else 
-            MASTER_BUS_ARVALID <= ap_const_logic_0;
-        end if; 
-    end process;
-
-
-    MASTER_BUS_RREADY_assign_proc : process(ap_CS_fsm_state9, MASTER_BUS_RVALID)
-    begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state9) and (ap_const_logic_1 = MASTER_BUS_RVALID))) then 
-            MASTER_BUS_RREADY <= ap_const_logic_1;
-        else 
-            MASTER_BUS_RREADY <= ap_const_logic_0;
-        end if; 
-    end process;
-
-
-    MASTER_BUS_blk_n_AR_assign_proc : process(m_axi_MASTER_BUS_ARREADY, ap_CS_fsm_state2)
-    begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-            MASTER_BUS_blk_n_AR <= m_axi_MASTER_BUS_ARREADY;
-        else 
-            MASTER_BUS_blk_n_AR <= ap_const_logic_1;
-        end if; 
-    end process;
-
-
-    MASTER_BUS_blk_n_R_assign_proc : process(m_axi_MASTER_BUS_RVALID, ap_CS_fsm_state9)
-    begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state9)) then 
-            MASTER_BUS_blk_n_R <= m_axi_MASTER_BUS_RVALID;
-        else 
-            MASTER_BUS_blk_n_R <= ap_const_logic_1;
-        end if; 
-    end process;
-
     ap_CS_fsm_state1 <= ap_CS_fsm(0);
-    ap_CS_fsm_state10 <= ap_CS_fsm(9);
-    ap_CS_fsm_state2 <= ap_CS_fsm(1);
+    ap_CS_fsm_state8 <= ap_CS_fsm(7);
     ap_CS_fsm_state9 <= ap_CS_fsm(8);
 
-    ap_done_assign_proc : process(ap_CS_fsm_state10)
+    ap_done_assign_proc : process(ap_CS_fsm_state9)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state10)) then 
+        if ((ap_const_logic_1 = ap_CS_fsm_state9)) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_const_logic_0;
@@ -632,9 +566,9 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(ap_CS_fsm_state10)
+    ap_ready_assign_proc : process(ap_CS_fsm_state9)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state10)) then 
+        if ((ap_const_logic_1 = ap_CS_fsm_state9)) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
@@ -648,27 +582,64 @@ begin
     end process;
 
 
-    ap_sig_ioackin_MASTER_BUS_ARREADY_assign_proc : process(MASTER_BUS_ARREADY, ap_reg_ioackin_MASTER_BUS_ARREADY)
+    ap_sig_ioackin_iicData_ARREADY_assign_proc : process(iicData_ARREADY, ap_reg_ioackin_iicData_ARREADY)
     begin
-        if ((ap_reg_ioackin_MASTER_BUS_ARREADY = ap_const_logic_0)) then 
-            ap_sig_ioackin_MASTER_BUS_ARREADY <= MASTER_BUS_ARREADY;
+        if ((ap_reg_ioackin_iicData_ARREADY = ap_const_logic_0)) then 
+            ap_sig_ioackin_iicData_ARREADY <= iicData_ARREADY;
         else 
-            ap_sig_ioackin_MASTER_BUS_ARREADY <= ap_const_logic_1;
+            ap_sig_ioackin_iicData_ARREADY <= ap_const_logic_1;
         end if; 
     end process;
 
-    iicData2_sum_cast_fu_105_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(iicData2_sum_reg_115),64));
-    iicData2_sum_fu_99_p2 <= std_logic_vector(unsigned(tmp_cast_fu_95_p1) + unsigned(ap_const_lv31_41));
+    iicData_ARADDR <= ap_const_lv64_10000C06(32 - 1 downto 0);
 
-    iicStatus_o_ap_vld_assign_proc : process(ap_CS_fsm_state10)
+    iicData_ARVALID_assign_proc : process(ap_start, ap_CS_fsm_state1, ap_reg_ioackin_iicData_ARREADY)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state10)) then 
+        if (((ap_reg_ioackin_iicData_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start = ap_const_logic_1))) then 
+            iicData_ARVALID <= ap_const_logic_1;
+        else 
+            iicData_ARVALID <= ap_const_logic_0;
+        end if; 
+    end process;
+
+
+    iicData_RREADY_assign_proc : process(ap_CS_fsm_state8, iicData_RVALID)
+    begin
+        if (((ap_const_logic_1 = ap_CS_fsm_state8) and (iicData_RVALID = ap_const_logic_1))) then 
+            iicData_RREADY <= ap_const_logic_1;
+        else 
+            iicData_RREADY <= ap_const_logic_0;
+        end if; 
+    end process;
+
+
+    iicData_blk_n_AR_assign_proc : process(ap_start, ap_CS_fsm_state1, m_axi_iicData_ARREADY)
+    begin
+        if (((ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start = ap_const_logic_1))) then 
+            iicData_blk_n_AR <= m_axi_iicData_ARREADY;
+        else 
+            iicData_blk_n_AR <= ap_const_logic_1;
+        end if; 
+    end process;
+
+
+    iicData_blk_n_R_assign_proc : process(m_axi_iicData_RVALID, ap_CS_fsm_state8)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
+            iicData_blk_n_R <= m_axi_iicData_RVALID;
+        else 
+            iicData_blk_n_R <= ap_const_logic_1;
+        end if; 
+    end process;
+
+
+    iicStatus_o_ap_vld_assign_proc : process(ap_CS_fsm_state9)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state9)) then 
             iicStatus_o_ap_vld <= ap_const_logic_1;
         else 
             iicStatus_o_ap_vld <= ap_const_logic_0;
         end if; 
     end process;
 
-    tmp_cast_fu_95_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(tmp_fu_85_p4),31));
-    tmp_fu_85_p4 <= iicData(31 downto 2);
 end behav;

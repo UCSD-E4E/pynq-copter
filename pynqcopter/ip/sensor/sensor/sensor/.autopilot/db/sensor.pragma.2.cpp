@@ -291,13 +291,17 @@ extern "C" {
 # 1 "<built-in>" 2
 # 1 "sensor.cpp" 2
 # 35 "sensor.cpp"
+# 1 "./sensor.hpp" 1
+# 43 "./sensor.hpp"
+void sensor(volatile unsigned int *iicData, volatile int &iicStatus);
+# 36 "sensor.cpp" 2
 static int status;
 
 void sensor(volatile unsigned int *iicData, volatile int &iicStatus){
 
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(iicStatus, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(iicData, "m_axi", 0, 0, "", 0, 0, "MASTER_BUS", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(iicData, "m_axi", 0, 0, "", 0, 0, "", "IIC_OFFSET", "", 16, 16, 16, 16, "", "");
 
 
 
@@ -305,7 +309,7 @@ _ssdm_op_SpecInterface(iicData, "m_axi", 0, 0, "", 0, 0, "MASTER_BUS", "slave", 
 
 
 
- status = iicData[(0x104)/4];
+ status = iicData[(0X40003000/4)+(0X10/4)+2];
  iicStatus = status;
 
  return;

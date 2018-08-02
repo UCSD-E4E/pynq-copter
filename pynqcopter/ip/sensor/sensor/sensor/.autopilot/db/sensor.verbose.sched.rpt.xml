@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'sensor'" level="0">
-<item name = "Date">Mon Jul 23 10:56:11 2018
+<item name = "Date">Tue Jul 31 09:41:16 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">sensor</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">9, 9, 9, 9, none</column>
+<column name="">8, 8, 8, 8, none</column>
 </table>
 </item>
 <item name = "Detail">

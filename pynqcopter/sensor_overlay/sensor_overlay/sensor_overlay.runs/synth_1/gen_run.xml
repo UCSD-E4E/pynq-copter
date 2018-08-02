@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1532636362">
-  <File Type="VDS-TIMING-PB" Name="sensor_overlay_wrapper_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="sensor_overlay_wrapper_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="sensor_overlay_wrapper.dcp"/>
-  <File Type="REPORTS-TCL" Name="sensor_overlay_wrapper_reports.tcl"/>
-  <File Type="PA-TCL" Name="sensor_overlay_wrapper.tcl"/>
-  <File Type="RDS-RDS" Name="sensor_overlay_wrapper.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="sensor_overlay_wrapper_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="sensor_overlay_wrapper_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="sensor_overlay_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="sensor_overlay_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-RDS" Name="sensor_overlay_wrapper.vds"/>
+  <File Type="RDS-DCP" Name="sensor_overlay_wrapper.dcp"/>
+  <File Type="PA-TCL" Name="sensor_overlay_wrapper.tcl"/>
+  <File Type="REPORTS-TCL" Name="sensor_overlay_wrapper_reports.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/bd/sensor_overlay/sensor_overlay.bd">
@@ -43,18 +40,16 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_axi_iic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlslice_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlconcat_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_axi_iic_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_arduinoGpioBreakout_0"/>
   <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlconcat_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_userReset_0"/>
   <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlslice_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlconcat_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlslice_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_userReset_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="sensor_overlay_xlconcat_1_0"/>
 </GenRun>

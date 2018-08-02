@@ -32,13 +32,14 @@
 // USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 // DAMAGE.
 //##############################################################################
+#include "sensor.hpp"
 static int status;
 
 void sensor(volatile unsigned int *iicData, volatile int &iicStatus){
 
 #pragma HLS INTERFACE s_axilite port=return bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=iicStatus
-#pragma HLS INTERFACE m_axi port=iicData offset=slave bundle=MASTER_BUS //address offset set in vivado address editor; "depth"?
+#pragma HLS INTERFACE s_axilite port=iicStatus //the register we will read from Jupyter
+#pragma HLS INTERFACE m_axi port=iicData offset=IIC_OFFSET//address offset set in vivado address editor; "depth"?
 
 
 	//sequence of R/W
@@ -46,7 +47,7 @@ void sensor(volatile unsigned int *iicData, volatile int &iicStatus){
 	//initialization
 
 	//Read bytes from IIC Sensor Device
-	status = iicData[(0x104)/4]; //reads from specific address
+	status = iicData[IIC_INDEX+REG_INDEX+2]; //reads from specific address
 	iicStatus = status;
 
 	return;

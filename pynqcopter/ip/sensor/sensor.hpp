@@ -32,7 +32,14 @@
 // USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 // DAMAGE.
 //##############################################################################
-#ifndef __CTRLLOOP_HPP
-#define __CTRLLOOP_HPP
+#ifndef __SENSOR_HPP
+#define __SENSOR_HPP
+
+#define IIC_OFFSET 0X40003000
+#define IIC_INDEX (IIC_OFFSET/4)
+#define REG_OFFSET 0X10
+#define REG_INDEX (REG_OFFSET/4)
+
+void sensor(volatile unsigned int *iicData, volatile int &iicStatus);
 
 #endif

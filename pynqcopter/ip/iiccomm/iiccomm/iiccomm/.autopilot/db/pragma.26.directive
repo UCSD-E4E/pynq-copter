@@ -1,0 +1,24 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="iiccomm" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="bus"/>
+<option name="offset" value="off"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outValue"/>
+<option name="bundle" value="outValue_first"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

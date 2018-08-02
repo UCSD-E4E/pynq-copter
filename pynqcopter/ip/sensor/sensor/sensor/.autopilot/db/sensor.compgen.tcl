@@ -12,7 +12,7 @@ ap_start { }
 ap_done { }
 ap_ready { }
 ap_idle { }
-iicData { 
+iicStatus_i { 
 	dir I
 	width 32
 	depth 1
@@ -20,21 +20,13 @@ iicData {
 	offset 16
 	offset_end 23
 }
-iicStatus_i { 
-	dir I
-	width 32
-	depth 1
-	mode ap_none
-	offset 24
-	offset_end 31
-}
 iicStatus_o { 
 	dir O
 	width 32
 	depth 1
 	mode ap_vld
-	offset 32
-	offset_end 39
+	offset 24
+	offset_end 31
 }
 }
 
@@ -67,15 +59,15 @@ eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
     op interface \
     max_latency -1 \ 
     delay_budget 3.5 \ 
-    name {sensor_MASTER_BUS_m_axi} \
+    name {sensor_iicData_m_axi} \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find AXI interface model in the library. Ignored generation of AXI interface for 'MASTER_BUS'"
+puts "@W \[IMPL-110\] Cannot find AXI interface model in the library. Ignored generation of AXI interface for 'iicData'"
 }
 }
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler sensor_MASTER_BUS_m_axi
+	::AP::rtl_comp_handler sensor_iicData_m_axi
 }
 
 

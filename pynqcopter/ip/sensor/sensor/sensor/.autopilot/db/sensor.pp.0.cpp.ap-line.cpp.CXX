@@ -10,3 +10,6 @@
 #pragma line 1 "<built-in>" 2 ::: 144
 #pragma line 1 "sensor.cpp" 2 ::: 145
 #pragma line 35 "sensor.cpp" ::: 146
+#pragma line 1 "./sensor.hpp" 1 ::: 147
+#pragma line 43 "./sensor.hpp" ::: 148
+#pragma line 36 "sensor.cpp" 2 ::: 150

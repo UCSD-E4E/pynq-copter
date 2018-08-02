@@ -6,7 +6,7 @@
 <Project Version="7" Minor="35" Path="/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="8a7c3eb938764d45bb9ea4bbb37ab6be"/>
+    <Option Name="Id" Val="cc2dbd94c16d4f03856d91297e930ff7"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -68,11 +68,11 @@
         <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_iiccomm3_0_0/iicComm3_iiccomm3_0_0.xci">
           <Proxy FileSetName="iicComm3_iiccomm3_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_rst_ps7_0_100M_0/iicComm3_rst_ps7_0_100M_0.xci">
-          <Proxy FileSetName="iicComm3_rst_ps7_0_100M_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_processing_system7_0_0/iicComm3_processing_system7_0_0.xci">
           <Proxy FileSetName="iicComm3_processing_system7_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_rst_ps7_0_100M_0/iicComm3_rst_ps7_0_100M_0.xci">
+          <Proxy FileSetName="iicComm3_rst_ps7_0_100M_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_xbar_0/iicComm3_xbar_0.xci">
           <Proxy FileSetName="iicComm3_xbar_0"/>
@@ -109,8 +109,11 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+      <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="iicComm3_wrapper"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
@@ -184,9 +187,7 @@
   <Runs Version="1" Minor="10">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -195,9 +196,7 @@
     </Run>
     <Run Id="iicComm3_axi_iic_0_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm3_axi_iic_0_0" Part="xc7z020clg400-1" ConstrsSet="iicComm3_axi_iic_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm3_axi_iic_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -206,9 +205,7 @@
     </Run>
     <Run Id="iicComm3_iiccomm3_0_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm3_iiccomm3_0_0" Part="xc7z020clg400-1" ConstrsSet="iicComm3_iiccomm3_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm3_iiccomm3_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -217,9 +214,7 @@
     </Run>
     <Run Id="iicComm3_rst_ps7_0_100M_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm3_rst_ps7_0_100M_0" Part="xc7z020clg400-1" ConstrsSet="iicComm3_rst_ps7_0_100M_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm3_rst_ps7_0_100M_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -228,9 +223,7 @@
     </Run>
     <Run Id="iicComm3_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm3_processing_system7_0_0" Part="xc7z020clg400-1" ConstrsSet="iicComm3_processing_system7_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm3_processing_system7_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -239,9 +232,7 @@
     </Run>
     <Run Id="iicComm3_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm3_xbar_0" Part="xc7z020clg400-1" ConstrsSet="iicComm3_xbar_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm3_xbar_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -250,9 +241,7 @@
     </Run>
     <Run Id="iicComm3_auto_pc_1_synth_1" Type="Ft3:Synth" SrcSet="iicComm3_auto_pc_1" Part="xc7z020clg400-1" ConstrsSet="iicComm3_auto_pc_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm3_auto_pc_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -261,9 +250,7 @@
     </Run>
     <Run Id="iicComm3_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm3_auto_pc_0" Part="xc7z020clg400-1" ConstrsSet="iicComm3_auto_pc_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm3_auto_pc_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -272,9 +259,7 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -291,9 +276,7 @@
     </Run>
     <Run Id="iicComm3_axi_iic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm3_axi_iic_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm3_axi_iic_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -309,9 +292,7 @@
     </Run>
     <Run Id="iicComm3_iiccomm3_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm3_iiccomm3_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm3_iiccomm3_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -327,9 +308,7 @@
     </Run>
     <Run Id="iicComm3_rst_ps7_0_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm3_rst_ps7_0_100M_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm3_rst_ps7_0_100M_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -345,9 +324,7 @@
     </Run>
     <Run Id="iicComm3_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm3_processing_system7_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm3_processing_system7_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -363,9 +340,7 @@
     </Run>
     <Run Id="iicComm3_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm3_xbar_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm3_xbar_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -381,9 +356,7 @@
     </Run>
     <Run Id="iicComm3_auto_pc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm3_auto_pc_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm3_auto_pc_1_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -399,9 +372,7 @@
     </Run>
     <Run Id="iicComm3_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm3_auto_pc_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm3_auto_pc_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

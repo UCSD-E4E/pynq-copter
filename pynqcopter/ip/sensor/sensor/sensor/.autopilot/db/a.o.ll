@@ -6,8 +6,7 @@ target triple = "x86_64-unknown-linux-gnu"
 @.str1 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=1 type=[1 x i8]*]
 @.str2 = private unnamed_addr constant [5 x i8] c"CTRL\00", align 1 ; [#uses=1 type=[5 x i8]*]
 @.str3 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1 ; [#uses=1 type=[6 x i8]*]
-@.str4 = private unnamed_addr constant [11 x i8] c"MASTER_BUS\00", align 1 ; [#uses=1 type=[11 x i8]*]
-@.str5 = private unnamed_addr constant [6 x i8] c"slave\00", align 1 ; [#uses=1 type=[6 x i8]*]
+@.str4 = private unnamed_addr constant [11 x i8] c"IIC_OFFSET\00", align 1 ; [#uses=1 type=[11 x i8]*]
 @_ZL6status = internal global i32 0, align 4      ; [#uses=2 type=i32*]
 
 ; [#uses=0]
@@ -15,23 +14,23 @@ define void @_Z6sensorPVjRVi(i32* %iicData, i32* %iicStatus) nounwind uwtable {
   %1 = alloca i32*, align 8                       ; [#uses=3 type=i32**]
   %2 = alloca i32*, align 8                       ; [#uses=3 type=i32**]
   store i32* %iicData, i32** %1, align 8
-  call void @llvm.dbg.declare(metadata !{i32** %1}, metadata !50), !dbg !51 ; [debug line = 37:36] [debug variable = iicData]
+  call void @llvm.dbg.declare(metadata !{i32** %1}, metadata !50), !dbg !51 ; [debug line = 38:36] [debug variable = iicData]
   store i32* %iicStatus, i32** %2, align 8
-  call void @llvm.dbg.declare(metadata !{i32** %2}, metadata !52), !dbg !53 ; [debug line = 37:59] [debug variable = iicStatus]
-  call void (...)* @_ssdm_op_SpecInterface(i32 0, i8* getelementptr inbounds ([10 x i8]* @.str, i32 0, i32 0), i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i32 0, i32 0, i8* getelementptr inbounds ([5 x i8]* @.str2, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i32 0, i32 0, i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0)) nounwind, !dbg !54 ; [debug line = 39:1]
-  %3 = load i32** %2, align 8, !dbg !56           ; [#uses=1 type=i32*] [debug line = 40:1]
-  %4 = load volatile i32* %3, align 4, !dbg !56   ; [#uses=1 type=i32] [debug line = 40:1]
-  call void (...)* @_ssdm_op_SpecInterface(i32 %4, i8* getelementptr inbounds ([10 x i8]* @.str, i32 0, i32 0), i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i32 0, i32 0, i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0)) nounwind, !dbg !56 ; [debug line = 40:1]
-  %5 = load i32** %1, align 8, !dbg !57           ; [#uses=1 type=i32*] [debug line = 41:1]
-  call void (...)* @_ssdm_op_SpecInterface(i32* %5, i8* getelementptr inbounds ([6 x i8]* @.str3, i32 0, i32 0), i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i32 0, i32 0, i8* getelementptr inbounds ([11 x i8]* @.str4, i32 0, i32 0), i8* getelementptr inbounds ([6 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i32 16, i32 16, i32 16, i32 16, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0)) nounwind, !dbg !57 ; [debug line = 41:1]
-  %6 = load i32** %1, align 8, !dbg !58           ; [#uses=1 type=i32*] [debug line = 49:2]
-  %7 = getelementptr inbounds i32* %6, i64 65, !dbg !58 ; [#uses=1 type=i32*] [debug line = 49:2]
-  %8 = load volatile i32* %7, align 4, !dbg !58   ; [#uses=1 type=i32] [debug line = 49:2]
-  store i32 %8, i32* @_ZL6status, align 4, !dbg !58 ; [debug line = 49:2]
-  %9 = load i32* @_ZL6status, align 4, !dbg !59   ; [#uses=1 type=i32] [debug line = 50:2]
-  %10 = load i32** %2, align 8, !dbg !59          ; [#uses=1 type=i32*] [debug line = 50:2]
-  store volatile i32 %9, i32* %10, align 4, !dbg !59 ; [debug line = 50:2]
-  ret void, !dbg !60                              ; [debug line = 52:2]
+  call void @llvm.dbg.declare(metadata !{i32** %2}, metadata !52), !dbg !53 ; [debug line = 38:59] [debug variable = iicStatus]
+  call void (...)* @_ssdm_op_SpecInterface(i32 0, i8* getelementptr inbounds ([10 x i8]* @.str, i32 0, i32 0), i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i32 0, i32 0, i8* getelementptr inbounds ([5 x i8]* @.str2, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i32 0, i32 0, i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0)) nounwind, !dbg !54 ; [debug line = 40:1]
+  %3 = load i32** %2, align 8, !dbg !56           ; [#uses=1 type=i32*] [debug line = 41:1]
+  %4 = load volatile i32* %3, align 4, !dbg !56   ; [#uses=1 type=i32] [debug line = 41:1]
+  call void (...)* @_ssdm_op_SpecInterface(i32 %4, i8* getelementptr inbounds ([10 x i8]* @.str, i32 0, i32 0), i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i32 0, i32 0, i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0)) nounwind, !dbg !56 ; [debug line = 41:1]
+  %5 = load i32** %1, align 8, !dbg !57           ; [#uses=1 type=i32*] [debug line = 42:1]
+  call void (...)* @_ssdm_op_SpecInterface(i32* %5, i8* getelementptr inbounds ([6 x i8]* @.str3, i32 0, i32 0), i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i32 0, i32 0, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([11 x i8]* @.str4, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i32 16, i32 16, i32 16, i32 16, i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8]* @.str1, i32 0, i32 0)) nounwind, !dbg !57 ; [debug line = 42:1]
+  %6 = load i32** %1, align 8, !dbg !58           ; [#uses=1 type=i32*] [debug line = 50:2]
+  %7 = getelementptr inbounds i32* %6, i64 268438534, !dbg !58 ; [#uses=1 type=i32*] [debug line = 50:2]
+  %8 = load volatile i32* %7, align 4, !dbg !58   ; [#uses=1 type=i32] [debug line = 50:2]
+  store i32 %8, i32* @_ZL6status, align 4, !dbg !58 ; [debug line = 50:2]
+  %9 = load i32* @_ZL6status, align 4, !dbg !59   ; [#uses=1 type=i32] [debug line = 51:2]
+  %10 = load i32** %2, align 8, !dbg !59          ; [#uses=1 type=i32*] [debug line = 51:2]
+  store volatile i32 %9, i32* %10, align 4, !dbg !59 ; [debug line = 51:2]
+  ret void, !dbg !60                              ; [debug line = 53:2]
 }
 
 ; [#uses=2]
@@ -49,7 +48,7 @@ declare void @_ssdm_op_SpecInterface(...) nounwind
 !2 = metadata !{i32 0}
 !3 = metadata !{metadata !4}
 !4 = metadata !{metadata !5}
-!5 = metadata !{i32 786478, i32 0, metadata !6, metadata !"sensor", metadata !"sensor", metadata !"_Z6sensorPVjRVi", metadata !6, i32 37, metadata !7, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, void (i32*, i32*)* @_Z6sensorPVjRVi, null, null, metadata !15, i32 37} ; [ DW_TAG_subprogram ]
+!5 = metadata !{i32 786478, i32 0, metadata !6, metadata !"sensor", metadata !"sensor", metadata !"_Z6sensorPVjRVi", metadata !6, i32 38, metadata !7, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, void (i32*, i32*)* @_Z6sensorPVjRVi, null, null, metadata !15, i32 38} ; [ DW_TAG_subprogram ]
 !6 = metadata !{i32 786473, metadata !"sensor.cpp", metadata !"/home/iavendano/pynq-copter/pynqcopter/ip/sensor", null} ; [ DW_TAG_file_type ]
 !7 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !8, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
 !8 = metadata !{null, metadata !9, metadata !12}
@@ -63,7 +62,7 @@ declare void @_ssdm_op_SpecInterface(...) nounwind
 !16 = metadata !{i32 786468}                      ; [ DW_TAG_base_type ]
 !17 = metadata !{metadata !18}
 !18 = metadata !{metadata !19}
-!19 = metadata !{i32 786484, i32 0, null, metadata !"status", metadata !"status", metadata !"_ZL6status", metadata !6, i32 35, metadata !14, i32 1, i32 1, i32* @_ZL6status} ; [ DW_TAG_variable ]
+!19 = metadata !{i32 786484, i32 0, null, metadata !"status", metadata !"status", metadata !"_ZL6status", metadata !6, i32 36, metadata !14, i32 1, i32 1, i32* @_ZL6status} ; [ DW_TAG_variable ]
 !20 = metadata !{i32 786449, i32 0, i32 4, metadata !"/home/iavendano/pynq-copter/pynqcopter/ip/sensor/sensor/sensor/.autopilot/db/main.pragma.2.cpp", metadata !"/home/iavendano/pynq-copter/pynqcopter/ip/sensor", metadata !"clang version 3.1 ", i1 true, i1 false, metadata !"", i32 0, metadata !1, metadata !1, metadata !21, metadata !27} ; [ DW_TAG_compile_unit ]
 !21 = metadata !{metadata !22}
 !22 = metadata !{metadata !23}
@@ -94,14 +93,14 @@ declare void @_ssdm_op_SpecInterface(...) nounwind
 !47 = metadata !{metadata !"kernel_arg_type"}
 !48 = metadata !{metadata !"kernel_arg_type_qual"}
 !49 = metadata !{metadata !"kernel_arg_name"}
-!50 = metadata !{i32 786689, metadata !5, metadata !"iicData", metadata !6, i32 16777253, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
-!51 = metadata !{i32 37, i32 36, metadata !5, null}
-!52 = metadata !{i32 786689, metadata !5, metadata !"iicStatus", metadata !6, i32 33554469, metadata !12, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
-!53 = metadata !{i32 37, i32 59, metadata !5, null}
-!54 = metadata !{i32 39, i32 1, metadata !55, null}
-!55 = metadata !{i32 786443, metadata !5, i32 37, i32 69, metadata !6, i32 0} ; [ DW_TAG_lexical_block ]
-!56 = metadata !{i32 40, i32 1, metadata !55, null}
-!57 = metadata !{i32 41, i32 1, metadata !55, null}
-!58 = metadata !{i32 49, i32 2, metadata !55, null}
-!59 = metadata !{i32 50, i32 2, metadata !55, null}
-!60 = metadata !{i32 52, i32 2, metadata !55, null}
+!50 = metadata !{i32 786689, metadata !5, metadata !"iicData", metadata !6, i32 16777254, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
+!51 = metadata !{i32 38, i32 36, metadata !5, null}
+!52 = metadata !{i32 786689, metadata !5, metadata !"iicStatus", metadata !6, i32 33554470, metadata !12, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
+!53 = metadata !{i32 38, i32 59, metadata !5, null}
+!54 = metadata !{i32 40, i32 1, metadata !55, null}
+!55 = metadata !{i32 786443, metadata !5, i32 38, i32 69, metadata !6, i32 0} ; [ DW_TAG_lexical_block ]
+!56 = metadata !{i32 41, i32 1, metadata !55, null}
+!57 = metadata !{i32 42, i32 1, metadata !55, null}
+!58 = metadata !{i32 50, i32 2, metadata !55, null}
+!59 = metadata !{i32 51, i32 2, metadata !55, null}
+!60 = metadata !{i32 53, i32 2, metadata !55, null}

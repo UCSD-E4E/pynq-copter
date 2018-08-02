@@ -3,14 +3,14 @@
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;sensor.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;main.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 140043 ; free virtual = 508892" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 140040 ; free virtual = 508894" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 136124 ; free virtual = 506793" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 136124 ; free virtual = 506794" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 140033 ; free virtual = 508889" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 136130 ; free virtual = 506799" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 140032 ; free virtual = 508890" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 139962 ; free virtual = 508821" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 139948 ; free virtual = 508808" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 136130 ; free virtual = 506799" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 136096 ; free virtual = 506766" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 136116 ; free virtual = 506786" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;sensor&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
@@ -18,24 +18,23 @@
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 15.73 seconds; current allocated memory: 58.817 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 14.97 seconds; current allocated memory: 59.050 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.02 seconds; current allocated memory: 58.955 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.01 seconds; current allocated memory: 59.161 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;sensor&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
-	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;sensor/MASTER_BUS&apos; to &apos;m_axi&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;sensor/iicData&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;sensor/iicData&apos; to &apos;m_axi&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;sensor/iicStatus&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;sensor&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos;, &apos;iicData&apos; and &apos;iicStatus&apos; to AXI-Lite port CTRL." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos; and &apos;iicStatus&apos; to AXI-Lite port CTRL." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;sensor&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.03 seconds; current allocated memory: 59.559 MB." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 139946 ; free virtual = 508809" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.02 seconds; current allocated memory: 59.732 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 136110 ; free virtual = 506779" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for sensor." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for sensor." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for sensor." tag=""/>

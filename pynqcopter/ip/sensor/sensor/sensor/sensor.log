@@ -5,8 +5,8 @@ Copyright (C) 1986-2017 Xilinx, Inc. All Rights Reserved.
 
 ==============================================================
 
-INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 INFO: [SIM 211-1] CSim done with 0 errors.
@@ -14,14 +14,14 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'sensor.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 140043 ; free virtual = 508892
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 140040 ; free virtual = 508894
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 136124 ; free virtual = 506793
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 136124 ; free virtual = 506794
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 140033 ; free virtual = 508889
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 136130 ; free virtual = 506799
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 140032 ; free virtual = 508890
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 139962 ; free virtual = 508821
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 139948 ; free virtual = 508808
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 136130 ; free virtual = 506799
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 136096 ; free virtual = 506766
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 136116 ; free virtual = 506786
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'sensor' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -29,26 +29,25 @@ INFO: [HLS 200-42] -- Implementing module 'sensor'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 15.73 seconds; current allocated memory: 58.817 MB.
+INFO: [HLS 200-111]  Elapsed time: 14.97 seconds; current allocated memory: 59.050 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 58.955 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 59.161 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'sensor'
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-500] Setting interface mode on port 'sensor/MASTER_BUS' to 'm_axi'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'sensor/iicData' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sensor/iicData' to 'm_axi'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'sensor/iicStatus' to 's_axilite & ap_ovld'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'sensor' to 's_axilite & ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Bundling port 'return', 'iicData' and 'iicStatus' to AXI-Lite port CTRL.
+INFO: [RTGEN 206-100] Bundling port 'return' and 'iicStatus' to AXI-Lite port CTRL.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'sensor'.
-INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 59.559 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 139946 ; free virtual = 508809
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 59.732 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 136110 ; free virtual = 506779
 INFO: [SYSC 207-301] Generating SystemC RTL for sensor.
 INFO: [VHDL 208-304] Generating VHDL RTL for sensor.
 INFO: [VLOG 209-307] Generating Verilog RTL for sensor.
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-INFO: [HLS 200-112] Total elapsed time: 48.79 seconds; peak allocated memory: 59.559 MB.
+INFO: [HLS 200-112] Total elapsed time: 47.3 seconds; peak allocated memory: 59.732 MB.

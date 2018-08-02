@@ -87,8 +87,6 @@ u32 XSensor_IsReady(XSensor *InstancePtr);
 void XSensor_EnableAutoRestart(XSensor *InstancePtr);
 void XSensor_DisableAutoRestart(XSensor *InstancePtr);
 
-void XSensor_Set_iicData(XSensor *InstancePtr, u32 Data);
-u32 XSensor_Get_iicData(XSensor *InstancePtr);
 void XSensor_Set_iicStatus_i(XSensor *InstancePtr, u32 Data);
 u32 XSensor_Get_iicStatus_i(XSensor *InstancePtr);
 u32 XSensor_Get_iicStatus_o(XSensor *InstancePtr);

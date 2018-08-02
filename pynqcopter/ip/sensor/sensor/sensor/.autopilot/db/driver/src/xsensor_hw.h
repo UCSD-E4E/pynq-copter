@@ -24,15 +24,12 @@
 //        bit 0  - Channel 0 (ap_done)
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
-// 0x10 : Data signal of iicData
-//        bit 31~0 - iicData[31:0] (Read/Write)
-// 0x14 : reserved
-// 0x18 : Data signal of iicStatus_i
+// 0x10 : Data signal of iicStatus_i
 //        bit 31~0 - iicStatus_i[31:0] (Read/Write)
-// 0x1c : reserved
-// 0x20 : Data signal of iicStatus_o
+// 0x14 : reserved
+// 0x18 : Data signal of iicStatus_o
 //        bit 31~0 - iicStatus_o[31:0] (Read)
-// 0x24 : Control signal of iicStatus_o
+// 0x1c : Control signal of iicStatus_o
 //        bit 0  - iicStatus_o_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -41,11 +38,9 @@
 #define XSENSOR_CTRL_ADDR_GIE              0x04
 #define XSENSOR_CTRL_ADDR_IER              0x08
 #define XSENSOR_CTRL_ADDR_ISR              0x0c
-#define XSENSOR_CTRL_ADDR_IICDATA_DATA     0x10
-#define XSENSOR_CTRL_BITS_IICDATA_DATA     32
-#define XSENSOR_CTRL_ADDR_IICSTATUS_I_DATA 0x18
+#define XSENSOR_CTRL_ADDR_IICSTATUS_I_DATA 0x10
 #define XSENSOR_CTRL_BITS_IICSTATUS_I_DATA 32
-#define XSENSOR_CTRL_ADDR_IICSTATUS_O_DATA 0x20
+#define XSENSOR_CTRL_ADDR_IICSTATUS_O_DATA 0x18
 #define XSENSOR_CTRL_BITS_IICSTATUS_O_DATA 32
-#define XSENSOR_CTRL_ADDR_IICSTATUS_O_CTRL 0x24
+#define XSENSOR_CTRL_ADDR_IICSTATUS_O_CTRL 0x1c
 

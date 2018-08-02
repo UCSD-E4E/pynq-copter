@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'sensor'" level="0">
-<item name = "Date">Mon Jul 23 10:56:11 2018
+<item name = "Date">Tue Jul 31 09:41:16 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">sensor</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">9, 9, 9, 9, none</column>
+<column name="">8, 8, 8, 8, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -47,12 +47,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 38</column>
+<column name="Expression">-, -, -, -</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">2, -, 662, 812</column>
+<column name="Instance">2, -, 624, 748</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 77</column>
-<column name="Register">-, -, 74, -</column>
+<column name="Multiplexer">-, -, -, 74</column>
+<column name="Register">-, -, 42, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
 <specialColumn name="Utilization (%)">~0, 0, ~0, 1</specialColumn>
 </table>
@@ -61,8 +61,8 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="sensor_CTRL_s_axi_U">sensor_CTRL_s_axi, 0, 0, 150, 232</column>
-<column name="sensor_MASTER_BUS_m_axi_U">sensor_MASTER_BUS_m_axi, 2, 0, 512, 580</column>
+<column name="sensor_CTRL_s_axi_U">sensor_CTRL_s_axi, 0, 0, 112, 168</column>
+<column name="sensor_iicData_m_axi_U">sensor_iicData_m_axi, 2, 0, 512, 580</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -79,23 +79,21 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="iicData2_sum_fu_99_p2">+, 0, 0, 38, 31, 7</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="MASTER_BUS_blk_n_AR">9, 2, 1, 2</column>
-<column name="MASTER_BUS_blk_n_R">9, 2, 1, 2</column>
-<column name="ap_NS_fsm">50, 11, 1, 11</column>
-<column name="ap_sig_ioackin_MASTER_BUS_ARREADY">9, 2, 1, 2</column>
+<column name="ap_NS_fsm">47, 10, 1, 10</column>
+<column name="ap_sig_ioackin_iicData_ARREADY">9, 2, 1, 2</column>
+<column name="iicData_blk_n_AR">9, 2, 1, 2</column>
+<column name="iicData_blk_n_R">9, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="MASTER_BUS_addr_read_reg_126">32, 0, 32, 0</column>
-<column name="ap_CS_fsm">10, 0, 10, 0</column>
-<column name="ap_reg_ioackin_MASTER_BUS_ARREADY">1, 0, 1, 0</column>
-<column name="iicData2_sum_reg_115">31, 0, 31, 0</column>
+<column name="ap_CS_fsm">9, 0, 9, 0</column>
+<column name="ap_reg_ioackin_iicData_ARREADY">1, 0, 1, 0</column>
+<column name="iicData_addr_read_reg_76">32, 0, 32, 0</column>
 </table>
 </item>
 </section>
@@ -107,14 +105,14 @@
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
 <column name="s_axi_CTRL_AWVALID">in, 1, s_axi, CTRL, pointer</column>
 <column name="s_axi_CTRL_AWREADY">out, 1, s_axi, CTRL, pointer</column>
-<column name="s_axi_CTRL_AWADDR">in, 6, s_axi, CTRL, pointer</column>
+<column name="s_axi_CTRL_AWADDR">in, 5, s_axi, CTRL, pointer</column>
 <column name="s_axi_CTRL_WVALID">in, 1, s_axi, CTRL, pointer</column>
 <column name="s_axi_CTRL_WREADY">out, 1, s_axi, CTRL, pointer</column>
 <column name="s_axi_CTRL_WDATA">in, 32, s_axi, CTRL, pointer</column>
 <column name="s_axi_CTRL_WSTRB">in, 4, s_axi, CTRL, pointer</column>
 <column name="s_axi_CTRL_ARVALID">in, 1, s_axi, CTRL, pointer</column>
 <column name="s_axi_CTRL_ARREADY">out, 1, s_axi, CTRL, pointer</column>
-<column name="s_axi_CTRL_ARADDR">in, 6, s_axi, CTRL, pointer</column>
+<column name="s_axi_CTRL_ARADDR">in, 5, s_axi, CTRL, pointer</column>
 <column name="s_axi_CTRL_RVALID">out, 1, s_axi, CTRL, pointer</column>
 <column name="s_axi_CTRL_RREADY">in, 1, s_axi, CTRL, pointer</column>
 <column name="s_axi_CTRL_RDATA">out, 32, s_axi, CTRL, pointer</column>
@@ -125,51 +123,51 @@
 <column name="ap_clk">in, 1, ap_ctrl_hs, sensor, return value</column>
 <column name="ap_rst_n">in, 1, ap_ctrl_hs, sensor, return value</column>
 <column name="interrupt">out, 1, ap_ctrl_hs, sensor, return value</column>
-<column name="m_axi_MASTER_BUS_AWVALID">out, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_AWREADY">in, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_AWADDR">out, 32, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_AWID">out, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_AWLEN">out, 8, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_AWSIZE">out, 3, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_AWBURST">out, 2, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_AWLOCK">out, 2, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_AWCACHE">out, 4, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_AWPROT">out, 3, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_AWQOS">out, 4, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_AWREGION">out, 4, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_AWUSER">out, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_WVALID">out, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_WREADY">in, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_WDATA">out, 32, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_WSTRB">out, 4, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_WLAST">out, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_WID">out, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_WUSER">out, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARVALID">out, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARREADY">in, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARADDR">out, 32, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARID">out, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARLEN">out, 8, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARSIZE">out, 3, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARBURST">out, 2, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARLOCK">out, 2, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARCACHE">out, 4, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARPROT">out, 3, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARQOS">out, 4, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARREGION">out, 4, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_ARUSER">out, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_RVALID">in, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_RREADY">out, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_RDATA">in, 32, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_RLAST">in, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_RID">in, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_RUSER">in, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_RRESP">in, 2, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_BVALID">in, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_BREADY">out, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_BRESP">in, 2, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_BID">in, 1, m_axi, MASTER_BUS, pointer</column>
-<column name="m_axi_MASTER_BUS_BUSER">in, 1, m_axi, MASTER_BUS, pointer</column>
+<column name="m_axi_iicData_AWVALID">out, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_AWREADY">in, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_AWADDR">out, 32, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_AWID">out, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_AWLEN">out, 8, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_AWSIZE">out, 3, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_AWBURST">out, 2, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_AWLOCK">out, 2, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_AWCACHE">out, 4, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_AWPROT">out, 3, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_AWQOS">out, 4, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_AWREGION">out, 4, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_AWUSER">out, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_WVALID">out, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_WREADY">in, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_WDATA">out, 32, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_WSTRB">out, 4, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_WLAST">out, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_WID">out, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_WUSER">out, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARVALID">out, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARREADY">in, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARADDR">out, 32, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARID">out, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARLEN">out, 8, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARSIZE">out, 3, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARBURST">out, 2, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARLOCK">out, 2, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARCACHE">out, 4, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARPROT">out, 3, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARQOS">out, 4, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARREGION">out, 4, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_ARUSER">out, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_RVALID">in, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_RREADY">out, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_RDATA">in, 32, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_RLAST">in, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_RID">in, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_RUSER">in, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_RRESP">in, 2, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_BVALID">in, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_BREADY">out, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_BRESP">in, 2, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_BID">in, 1, m_axi, iicData, pointer</column>
+<column name="m_axi_iicData_BUSER">in, 1, m_axi, iicData, pointer</column>
 </table>
 </item>
 </section>

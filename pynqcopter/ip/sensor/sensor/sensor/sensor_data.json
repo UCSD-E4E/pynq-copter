@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "9",
+    "Latency": "8",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -40,12 +40,12 @@
     ],
     "Vhdl": [
       "impl\/vhdl\/sensor_CTRL_s_axi.vhd",
-      "impl\/vhdl\/sensor_MASTER_BUS_m_axi.vhd",
+      "impl\/vhdl\/sensor_iicData_m_axi.vhd",
       "impl\/vhdl\/sensor.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/sensor_CTRL_s_axi.v",
-      "impl\/verilog\/sensor_MASTER_BUS_m_axi.v",
+      "impl\/verilog\/sensor_iicData_m_axi.v",
       "impl\/verilog\/sensor.v"
     ],
     "SwDriver": [
@@ -69,7 +69,7 @@
     "ap_clk": {
       "type": "clock",
       "ctype": {"CLK": {"Type": "bool"}},
-      "buses": "s_axi_CTRL m_axi_MASTER_BUS",
+      "buses": "s_axi_CTRL m_axi_iicData",
       "reset": "ap_rst_n"
     },
     "ap_rst_n": {
@@ -81,13 +81,13 @@
       "type": "interrupt",
       "ctype": {"INTERRUPT": {"Type": "bool"}}
     },
-    "m_axi_MASTER_BUS": {
+    "m_axi_iicData": {
       "type": "native_axim",
       "is_adaptor": "true",
       "mode": "master",
-      "port_prefix": "m_axi_MASTER_BUS",
+      "port_prefix": "m_axi_iicData",
       "data_width": "32",
-      "param_prefix": "C_M_AXI_MASTER_BUS",
+      "param_prefix": "C_M_AXI_IICDATA",
       "ctype": {
         "AWLEN": {
           "Type": "integer unsigned",
@@ -234,10 +234,10 @@
           "Width": "1"
         }
       },
-      "HasOffset": "1",
+      "HasOffset": "0",
       "preferred_usage_value": "MEMORY",
-      "has_dependant_on": "1",
-      "offset_slave_name": "s_axi_CTRL",
+      "has_dependant_on": "0",
+      "offset_slave_name": "",
       "NUM_READ_OUTSTANDING": "16",
       "NUM_WRITE_OUTSTANDING": "16",
       "MAX_READ_BURST_LENGTH": "16",
@@ -266,7 +266,7 @@
       "mode": "slave",
       "port_prefix": "s_axi_CTRL",
       "param_prefix": "C_S_AXI_CTRL",
-      "addr_bits": "6",
+      "addr_bits": "5",
       "registers": [
         {
           "offset": "0x00",
@@ -426,21 +426,6 @@
         },
         {
           "offset": "0x10",
-          "name": "iicData",
-          "access": "W",
-          "reset_value": "0x0",
-          "description": "Data signal of iicData",
-          "fields": [{
-              "offset": "0",
-              "width": "32",
-              "name": "iicData",
-              "access": "W",
-              "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of iicData"
-            }]
-        },
-        {
-          "offset": "0x18",
           "name": "iicStatus_i",
           "access": "W",
           "reset_value": "0x0",
@@ -455,7 +440,7 @@
             }]
         },
         {
-          "offset": "0x20",
+          "offset": "0x18",
           "name": "iicStatus_o",
           "access": "R",
           "reset_value": "0x0",
@@ -470,7 +455,7 @@
             }]
         },
         {
-          "offset": "0x24",
+          "offset": "0x1c",
           "name": "iicStatus_o_ctrl",
           "access": "R",
           "reset_value": "0x0",
@@ -517,7 +502,7 @@
         },
         "AWADDR": {
           "Type": "integer unsigned",
-          "Width": "6"
+          "Width": "5"
         },
         "WDATA": {
           "Type": "integer signed",
@@ -529,7 +514,7 @@
         },
         "ARADDR": {
           "Type": "integer unsigned",
-          "Width": "6"
+          "Width": "5"
         },
         "RDATA": {
           "Type": "integer signed",
@@ -538,8 +523,8 @@
       },
       "data_width": "32",
       "port_width": {
-        "ARADDR": "6",
-        "AWADDR": "6",
+        "ARADDR": "5",
+        "AWADDR": "5",
         "RDATA": "32",
         "WDATA": "32",
         "WSTRB": "4"
@@ -557,7 +542,7 @@
     },
     "s_axi_CTRL_AWADDR": {
       "dir": "in",
-      "width": "6"
+      "width": "5"
     },
     "s_axi_CTRL_WVALID": {
       "dir": "in",
@@ -585,7 +570,7 @@
     },
     "s_axi_CTRL_ARADDR": {
       "dir": "in",
-      "width": "6"
+      "width": "5"
     },
     "s_axi_CTRL_RVALID": {
       "dir": "out",
@@ -628,212 +613,202 @@
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_MASTER_BUS_AWVALID": {
+    "m_axi_iicData_AWVALID": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_MASTER_BUS_AWREADY": {
+    "m_axi_iicData_AWREADY": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_MASTER_BUS_AWADDR": {
+    "m_axi_iicData_AWADDR": {
       "dir": "out",
       "width": "32"
     },
-    "m_axi_MASTER_BUS_AWID": {
+    "m_axi_iicData_AWID": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_MASTER_BUS_AWLEN": {
+    "m_axi_iicData_AWLEN": {
       "dir": "out",
       "width": "8"
     },
-    "m_axi_MASTER_BUS_AWSIZE": {
+    "m_axi_iicData_AWSIZE": {
       "dir": "out",
       "width": "3"
     },
-    "m_axi_MASTER_BUS_AWBURST": {
+    "m_axi_iicData_AWBURST": {
       "dir": "out",
       "width": "2"
     },
-    "m_axi_MASTER_BUS_AWLOCK": {
+    "m_axi_iicData_AWLOCK": {
       "dir": "out",
       "width": "2"
     },
-    "m_axi_MASTER_BUS_AWCACHE": {
+    "m_axi_iicData_AWCACHE": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_MASTER_BUS_AWPROT": {
+    "m_axi_iicData_AWPROT": {
       "dir": "out",
       "width": "3"
     },
-    "m_axi_MASTER_BUS_AWQOS": {
+    "m_axi_iicData_AWQOS": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_MASTER_BUS_AWREGION": {
+    "m_axi_iicData_AWREGION": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_MASTER_BUS_AWUSER": {
+    "m_axi_iicData_AWUSER": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_MASTER_BUS_WVALID": {
+    "m_axi_iicData_WVALID": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_MASTER_BUS_WREADY": {
+    "m_axi_iicData_WREADY": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_MASTER_BUS_WDATA": {
+    "m_axi_iicData_WDATA": {
       "dir": "out",
       "width": "32"
     },
-    "m_axi_MASTER_BUS_WSTRB": {
+    "m_axi_iicData_WSTRB": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_MASTER_BUS_WLAST": {
+    "m_axi_iicData_WLAST": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_MASTER_BUS_WID": {
+    "m_axi_iicData_WID": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_MASTER_BUS_WUSER": {
+    "m_axi_iicData_WUSER": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_MASTER_BUS_ARVALID": {
+    "m_axi_iicData_ARVALID": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_MASTER_BUS_ARREADY": {
+    "m_axi_iicData_ARREADY": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_MASTER_BUS_ARADDR": {
+    "m_axi_iicData_ARADDR": {
       "dir": "out",
       "width": "32"
     },
-    "m_axi_MASTER_BUS_ARID": {
+    "m_axi_iicData_ARID": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_MASTER_BUS_ARLEN": {
+    "m_axi_iicData_ARLEN": {
       "dir": "out",
       "width": "8"
     },
-    "m_axi_MASTER_BUS_ARSIZE": {
+    "m_axi_iicData_ARSIZE": {
       "dir": "out",
       "width": "3"
     },
-    "m_axi_MASTER_BUS_ARBURST": {
+    "m_axi_iicData_ARBURST": {
       "dir": "out",
       "width": "2"
     },
-    "m_axi_MASTER_BUS_ARLOCK": {
+    "m_axi_iicData_ARLOCK": {
       "dir": "out",
       "width": "2"
     },
-    "m_axi_MASTER_BUS_ARCACHE": {
+    "m_axi_iicData_ARCACHE": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_MASTER_BUS_ARPROT": {
+    "m_axi_iicData_ARPROT": {
       "dir": "out",
       "width": "3"
     },
-    "m_axi_MASTER_BUS_ARQOS": {
+    "m_axi_iicData_ARQOS": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_MASTER_BUS_ARREGION": {
+    "m_axi_iicData_ARREGION": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_MASTER_BUS_ARUSER": {
+    "m_axi_iicData_ARUSER": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_MASTER_BUS_RVALID": {
+    "m_axi_iicData_RVALID": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_MASTER_BUS_RREADY": {
+    "m_axi_iicData_RREADY": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_MASTER_BUS_RDATA": {
+    "m_axi_iicData_RDATA": {
       "dir": "in",
       "width": "32"
     },
-    "m_axi_MASTER_BUS_RLAST": {
+    "m_axi_iicData_RLAST": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_MASTER_BUS_RID": {
+    "m_axi_iicData_RID": {
       "dir": "in",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_MASTER_BUS_RUSER": {
+    "m_axi_iicData_RUSER": {
       "dir": "in",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_MASTER_BUS_RRESP": {
+    "m_axi_iicData_RRESP": {
       "dir": "in",
       "width": "2"
     },
-    "m_axi_MASTER_BUS_BVALID": {
+    "m_axi_iicData_BVALID": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_MASTER_BUS_BREADY": {
+    "m_axi_iicData_BREADY": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_MASTER_BUS_BRESP": {
+    "m_axi_iicData_BRESP": {
       "dir": "in",
       "width": "2"
     },
-    "m_axi_MASTER_BUS_BID": {
+    "m_axi_iicData_BID": {
       "dir": "in",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_MASTER_BUS_BUSER": {
+    "m_axi_iicData_BUSER": {
       "dir": "in",
       "width": "1",
       "isVector": "true"
     }
   },
   "CPorts": {
-    "iicData": {
-      "interfaceRef": "s_axi_CTRL",
-      "dir": "in",
-      "offset": "16",
-      "statusOffset": "NA",
-      "handshakeRef": "ap_none",
-      "Object": "CTRL",
-      "aximmInterfaceRef": "m_axi_MASTER_BUS",
-      "dataWidth": "32"
-    },
     "iicStatus_i": {
       "interfaceRef": "s_axi_CTRL",
       "dir": "in",
-      "offset": "24",
+      "offset": "16",
       "statusOffset": "NA",
       "handshakeRef": "ap_none",
       "Object": "CTRL"
@@ -841,8 +816,8 @@
     "iicStatus_o": {
       "interfaceRef": "s_axi_CTRL",
       "dir": "out",
-      "offset": "32",
-      "statusOffset": "36",
+      "offset": "24",
+      "statusOffset": "28",
       "handshakeRef": "ap_vld",
       "Object": "CTRL"
     },
@@ -851,8 +826,8 @@
       "dir": "in",
       "offset": "0"
     },
-    "MASTER_BUS": {
-      "interfaceRef": "m_axi_MASTER_BUS",
+    "iicData": {
+      "interfaceRef": "m_axi_iicData",
       "dir": "inout"
     }
   },
@@ -860,10 +835,10 @@
     "Hierarchy": {"ModuleName": "sensor"},
     "Metrics": {"sensor": {
         "Latency": {
-          "LatencyBest": "9",
-          "LatencyAvg": "9",
-          "LatencyWorst": "9",
-          "PipelineII": "10",
+          "LatencyBest": "8",
+          "LatencyAvg": "8",
+          "LatencyWorst": "8",
+          "PipelineII": "9",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -874,15 +849,15 @@
         },
         "Area": {
           "BRAM_18K": "2",
-          "FF": "736",
-          "LUT": "927",
+          "FF": "666",
+          "LUT": "822",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-07-23 10:56:12 PDT",
+    "Time": "2018-07-31 09:41:17 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

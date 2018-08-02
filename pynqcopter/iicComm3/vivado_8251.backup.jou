@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Aug  2 14:01:31 2018
+# Process ID: 8251
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/iicComm3
+# Command line: vivado iicComm3/iicComm.xpr
+# Log file: /home/iavendano/pynq-copter/pynqcopter/iicComm3/vivado.log
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/iicComm3/vivado.jou
+#-----------------------------------------------------------
+start_gui

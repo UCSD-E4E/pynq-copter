@@ -153,7 +153,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>ADDR_WIDTH</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.S_AXI_CTRL.ADDR_WIDTH">6</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S_AXI_CTRL.ADDR_WIDTH">5</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
@@ -177,10 +177,10 @@ pe immediate dependency {} format string minimum {} maximum {}} value {}} bitwid
 ue {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} ARREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long min
 imum {} maximum {}} value 0}}} RVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type 
 immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RRESP {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {sig
-ned {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} AWADDR {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 6} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minim
+ned {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} AWADDR {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 5} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minim
 um {} maximum {}} value false}}}} WDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}} WSTRB {datatype {name {attribs {res
 olve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 4} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} ARADDR {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {
-}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 6} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} RDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} 
+}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 5} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} RDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} 
 format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
@@ -203,7 +203,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>ASSOCIATED_BUSIF</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.AP_CLK.ASSOCIATED_BUSIF">s_axi_CTRL:m_axi_MASTER_BUS</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AP_CLK.ASSOCIATED_BUSIF">s_axi_CTRL:m_axi_iicData</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ASSOCIATED_RESET</spirit:name>
@@ -268,11 +268,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
       </spirit:parameters>
     </spirit:busInterface>
     <spirit:busInterface>
-      <spirit:name>m_axi_MASTER_BUS</spirit:name>
+      <spirit:name>m_axi_iicData</spirit:name>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm" spirit:version="1.0"/>
       <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm_rtl" spirit:version="1.0"/>
       <spirit:master>
-        <spirit:addressSpaceRef spirit:addressSpaceRef="Data_m_axi_MASTER_BUS"/>
+        <spirit:addressSpaceRef spirit:addressSpaceRef="Data_m_axi_iicData"/>
       </spirit:master>
       <spirit:portMaps>
         <spirit:portMap>
@@ -280,7 +280,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWID</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWID</spirit:name>
+            <spirit:name>m_axi_iicData_AWID</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -288,7 +288,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWADDR</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWADDR</spirit:name>
+            <spirit:name>m_axi_iicData_AWADDR</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -296,7 +296,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWLEN</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWLEN</spirit:name>
+            <spirit:name>m_axi_iicData_AWLEN</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -304,7 +304,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWSIZE</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWSIZE</spirit:name>
+            <spirit:name>m_axi_iicData_AWSIZE</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -312,7 +312,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWBURST</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWBURST</spirit:name>
+            <spirit:name>m_axi_iicData_AWBURST</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -320,7 +320,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWLOCK</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWLOCK</spirit:name>
+            <spirit:name>m_axi_iicData_AWLOCK</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -328,7 +328,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWREGION</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWREGION</spirit:name>
+            <spirit:name>m_axi_iicData_AWREGION</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -336,7 +336,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWCACHE</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWCACHE</spirit:name>
+            <spirit:name>m_axi_iicData_AWCACHE</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -344,7 +344,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWPROT</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWPROT</spirit:name>
+            <spirit:name>m_axi_iicData_AWPROT</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -352,7 +352,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWQOS</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWQOS</spirit:name>
+            <spirit:name>m_axi_iicData_AWQOS</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -360,7 +360,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWUSER</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWUSER</spirit:name>
+            <spirit:name>m_axi_iicData_AWUSER</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -368,7 +368,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWVALID</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWVALID</spirit:name>
+            <spirit:name>m_axi_iicData_AWVALID</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -376,7 +376,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>AWREADY</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_AWREADY</spirit:name>
+            <spirit:name>m_axi_iicData_AWREADY</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -384,7 +384,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>WID</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_WID</spirit:name>
+            <spirit:name>m_axi_iicData_WID</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -392,7 +392,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>WDATA</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_WDATA</spirit:name>
+            <spirit:name>m_axi_iicData_WDATA</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -400,7 +400,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>WSTRB</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_WSTRB</spirit:name>
+            <spirit:name>m_axi_iicData_WSTRB</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -408,7 +408,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>WLAST</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_WLAST</spirit:name>
+            <spirit:name>m_axi_iicData_WLAST</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -416,7 +416,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>WUSER</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_WUSER</spirit:name>
+            <spirit:name>m_axi_iicData_WUSER</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -424,7 +424,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>WVALID</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_WVALID</spirit:name>
+            <spirit:name>m_axi_iicData_WVALID</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -432,7 +432,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>WREADY</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_WREADY</spirit:name>
+            <spirit:name>m_axi_iicData_WREADY</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -440,7 +440,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>BID</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_BID</spirit:name>
+            <spirit:name>m_axi_iicData_BID</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -448,7 +448,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>BRESP</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_BRESP</spirit:name>
+            <spirit:name>m_axi_iicData_BRESP</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -456,7 +456,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>BUSER</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_BUSER</spirit:name>
+            <spirit:name>m_axi_iicData_BUSER</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -464,7 +464,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>BVALID</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_BVALID</spirit:name>
+            <spirit:name>m_axi_iicData_BVALID</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -472,7 +472,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>BREADY</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_BREADY</spirit:name>
+            <spirit:name>m_axi_iicData_BREADY</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -480,7 +480,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARID</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARID</spirit:name>
+            <spirit:name>m_axi_iicData_ARID</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -488,7 +488,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARADDR</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARADDR</spirit:name>
+            <spirit:name>m_axi_iicData_ARADDR</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -496,7 +496,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARLEN</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARLEN</spirit:name>
+            <spirit:name>m_axi_iicData_ARLEN</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -504,7 +504,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARSIZE</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARSIZE</spirit:name>
+            <spirit:name>m_axi_iicData_ARSIZE</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -512,7 +512,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARBURST</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARBURST</spirit:name>
+            <spirit:name>m_axi_iicData_ARBURST</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -520,7 +520,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARLOCK</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARLOCK</spirit:name>
+            <spirit:name>m_axi_iicData_ARLOCK</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -528,7 +528,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARREGION</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARREGION</spirit:name>
+            <spirit:name>m_axi_iicData_ARREGION</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -536,7 +536,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARCACHE</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARCACHE</spirit:name>
+            <spirit:name>m_axi_iicData_ARCACHE</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -544,7 +544,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARPROT</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARPROT</spirit:name>
+            <spirit:name>m_axi_iicData_ARPROT</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -552,7 +552,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARQOS</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARQOS</spirit:name>
+            <spirit:name>m_axi_iicData_ARQOS</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -560,7 +560,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARUSER</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARUSER</spirit:name>
+            <spirit:name>m_axi_iicData_ARUSER</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -568,7 +568,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARVALID</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARVALID</spirit:name>
+            <spirit:name>m_axi_iicData_ARVALID</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -576,7 +576,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>ARREADY</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_ARREADY</spirit:name>
+            <spirit:name>m_axi_iicData_ARREADY</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -584,7 +584,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>RID</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_RID</spirit:name>
+            <spirit:name>m_axi_iicData_RID</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -592,7 +592,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>RDATA</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_RDATA</spirit:name>
+            <spirit:name>m_axi_iicData_RDATA</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -600,7 +600,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>RRESP</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_RRESP</spirit:name>
+            <spirit:name>m_axi_iicData_RRESP</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -608,7 +608,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>RLAST</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_RLAST</spirit:name>
+            <spirit:name>m_axi_iicData_RLAST</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -616,7 +616,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>RUSER</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_RUSER</spirit:name>
+            <spirit:name>m_axi_iicData_RUSER</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -624,7 +624,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>RVALID</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_RVALID</spirit:name>
+            <spirit:name>m_axi_iicData_RVALID</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -632,67 +632,63 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
             <spirit:name>RREADY</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>m_axi_MASTER_BUS_RREADY</spirit:name>
+            <spirit:name>m_axi_iicData_RREADY</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
       </spirit:portMaps>
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>ADDR_WIDTH</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_MASTER_BUS.ADDR_WIDTH">32</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_IICDATA.ADDR_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>MAX_BURST_LENGTH</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_MASTER_BUS.MAX_BURST_LENGTH">256</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_IICDATA.MAX_BURST_LENGTH">256</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_MASTER_BUS.NUM_READ_OUTSTANDING">16</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_IICDATA.NUM_READ_OUTSTANDING">16</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_MASTER_BUS.NUM_WRITE_OUTSTANDING">16</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_IICDATA.NUM_WRITE_OUTSTANDING">16</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>MAX_READ_BURST_LENGTH</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_MASTER_BUS.MAX_READ_BURST_LENGTH">16</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_IICDATA.MAX_READ_BURST_LENGTH">16</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>MAX_WRITE_BURST_LENGTH</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_MASTER_BUS.MAX_WRITE_BURST_LENGTH">16</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_IICDATA.MAX_WRITE_BURST_LENGTH">16</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PROTOCOL</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_MASTER_BUS.PROTOCOL">AXI4</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_IICDATA.PROTOCOL">AXI4</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_MASTER_BUS.READ_WRITE_MODE">READ_WRITE</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_IICDATA.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_BURST</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_MASTER_BUS.HAS_BURST">0</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_IICDATA.HAS_BURST">0</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>SUPPORTS_NARROW_BURST</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_MASTER_BUS.SUPPORTS_NARROW_BURST">0</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_IICDATA.SUPPORTS_NARROW_BURST">0</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
   </spirit:busInterfaces>
   <spirit:addressSpaces>
     <spirit:addressSpace>
-      <spirit:name>Data_m_axi_MASTER_BUS</spirit:name>
+      <spirit:name>Data_m_axi_iicData</spirit:name>
       <spirit:range>4G</spirit:range>
       <spirit:width spirit:format="long">32</spirit:width>
       <spirit:parameters>
         <spirit:parameter>
-          <spirit:name>DEPENDENT_ON</spirit:name>
-          <spirit:value spirit:id="ADDRSPACEPARAM_VALUE.DATA_M_AXI_MASTER_BUS.DEPENDENT_ON">s_axi_CTRL</spirit:value>
-        </spirit:parameter>
-        <spirit:parameter>
           <spirit:name>PREFERRED_USAGE</spirit:name>
-          <spirit:value spirit:id="ADDRSPACEPARAM_VALUE.DATA_M_AXI_MASTER_BUS.PREFERRED_USAGE">MEMORY</spirit:value>
+          <spirit:value spirit:id="ADDRSPACEPARAM_VALUE.DATA_M_AXI_IICDATA.PREFERRED_USAGE">MEMORY</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:addressSpace>
@@ -959,33 +955,10 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
           </spirit:field>
         </spirit:register>
         <spirit:register>
-          <spirit:name>iicData</spirit:name>
-          <spirit:displayName>iicData</spirit:displayName>
-          <spirit:description>Data signal of iicData</spirit:description>
-          <spirit:addressOffset>16</spirit:addressOffset>
-          <spirit:size spirit:format="long">32</spirit:size>
-          <spirit:access>write-only</spirit:access>
-          <spirit:reset>
-            <spirit:value spirit:format="long">0</spirit:value>
-          </spirit:reset>
-          <spirit:field>
-            <spirit:name>iicData</spirit:name>
-            <spirit:description>Bit 31 to 0 Data signal of iicData</spirit:description>
-            <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
-            <spirit:access>write-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-        </spirit:register>
-        <spirit:register>
           <spirit:name>iicStatus_i</spirit:name>
           <spirit:displayName>iicStatus_i</spirit:displayName>
           <spirit:description>Data signal of iicStatus_i</spirit:description>
-          <spirit:addressOffset>24</spirit:addressOffset>
+          <spirit:addressOffset>16</spirit:addressOffset>
           <spirit:size spirit:format="long">32</spirit:size>
           <spirit:access>write-only</spirit:access>
           <spirit:reset>
@@ -1008,7 +981,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
           <spirit:name>iicStatus_o</spirit:name>
           <spirit:displayName>iicStatus_o</spirit:displayName>
           <spirit:description>Data signal of iicStatus_o</spirit:description>
-          <spirit:addressOffset>32</spirit:addressOffset>
+          <spirit:addressOffset>24</spirit:addressOffset>
           <spirit:size spirit:format="long">32</spirit:size>
           <spirit:access>read-only</spirit:access>
           <spirit:reset>
@@ -1032,7 +1005,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
           <spirit:name>iicStatus_o_ctrl</spirit:name>
           <spirit:displayName>iicStatus_o_ctrl</spirit:displayName>
           <spirit:description>Control signal of iicStatus_o</spirit:description>
-          <spirit:addressOffset>36</spirit:addressOffset>
+          <spirit:addressOffset>28</spirit:addressOffset>
           <spirit:size spirit:format="long">32</spirit:size>
           <spirit:access>read-only</spirit:access>
           <spirit:reset>
@@ -1082,7 +1055,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>dc719132</spirit:value>
+            <spirit:value>dfd51e13</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1098,7 +1071,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>fa0b34df</spirit:value>
+            <spirit:value>06922118</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1114,7 +1087,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>87cef894</spirit:value>
+            <spirit:value>6012c052</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1130,7 +1103,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>6e9806f0</spirit:value>
+            <spirit:value>5e1a3059</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1144,7 +1117,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2ca44ee6</spirit:value>
+            <spirit:value>2f36e0b1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1180,7 +1153,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>bdc2449b</spirit:value>
+            <spirit:value>db243bf8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1205,7 +1178,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_CTRL_ADDR_WIDTH&apos;)) - 1)">5</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_CTRL_ADDR_WIDTH&apos;)) - 1)">4</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1351,7 +1324,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_CTRL_ADDR_WIDTH&apos;)) - 1)">5</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_CTRL_ADDR_WIDTH&apos;)) - 1)">4</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1489,11 +1462,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWID</spirit:name>
+        <spirit:name>m_axi_iicData_AWID</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_ID_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_ID_WIDTH&apos;)) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1507,17 +1480,17 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_MASTER_BUS_AWID" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_ID_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_iicData_AWID" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_ID_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWADDR</spirit:name>
+        <spirit:name>m_axi_iicData_AWADDR</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_ADDR_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_ADDR_WIDTH&apos;)) - 1)">31</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1530,7 +1503,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWLEN</spirit:name>
+        <spirit:name>m_axi_iicData_AWLEN</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -1547,7 +1520,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWSIZE</spirit:name>
+        <spirit:name>m_axi_iicData_AWSIZE</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -1564,7 +1537,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWBURST</spirit:name>
+        <spirit:name>m_axi_iicData_AWBURST</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -1581,7 +1554,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWLOCK</spirit:name>
+        <spirit:name>m_axi_iicData_AWLOCK</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -1598,7 +1571,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWREGION</spirit:name>
+        <spirit:name>m_axi_iicData_AWREGION</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -1615,7 +1588,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWCACHE</spirit:name>
+        <spirit:name>m_axi_iicData_AWCACHE</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -1632,7 +1605,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWPROT</spirit:name>
+        <spirit:name>m_axi_iicData_AWPROT</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -1649,7 +1622,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWQOS</spirit:name>
+        <spirit:name>m_axi_iicData_AWQOS</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -1666,11 +1639,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWUSER</spirit:name>
+        <spirit:name>m_axi_iicData_AWUSER</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_AWUSER_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_AWUSER_WIDTH&apos;)) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1684,13 +1657,13 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_MASTER_BUS_AWUSER" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_iicData_AWUSER" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWVALID</spirit:name>
+        <spirit:name>m_axi_iicData_AWVALID</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -1703,7 +1676,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_AWREADY</spirit:name>
+        <spirit:name>m_axi_iicData_AWREADY</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -1716,11 +1689,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_WID</spirit:name>
+        <spirit:name>m_axi_iicData_WID</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_ID_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_ID_WIDTH&apos;)) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1734,17 +1707,17 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_MASTER_BUS_WID" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_ID_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_iicData_WID" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_ID_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_WDATA</spirit:name>
+        <spirit:name>m_axi_iicData_WDATA</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1757,11 +1730,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_WSTRB</spirit:name>
+        <spirit:name>m_axi_iicData_WSTRB</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_DATA_WIDTH&apos;)) div 8) - 1)">3</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_DATA_WIDTH&apos;)) div 8) - 1)">3</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1774,7 +1747,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_WLAST</spirit:name>
+        <spirit:name>m_axi_iicData_WLAST</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -1787,11 +1760,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_WUSER</spirit:name>
+        <spirit:name>m_axi_iicData_WUSER</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_WUSER_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_WUSER_WIDTH&apos;)) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1805,13 +1778,13 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_MASTER_BUS_WUSER" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_iicData_WUSER" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_WVALID</spirit:name>
+        <spirit:name>m_axi_iicData_WVALID</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -1824,7 +1797,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_WREADY</spirit:name>
+        <spirit:name>m_axi_iicData_WREADY</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -1837,11 +1810,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_BID</spirit:name>
+        <spirit:name>m_axi_iicData_BID</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_ID_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_ID_WIDTH&apos;)) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1855,13 +1828,13 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_MASTER_BUS_BID" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_ID_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_iicData_BID" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_ID_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_BRESP</spirit:name>
+        <spirit:name>m_axi_iicData_BRESP</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
@@ -1878,11 +1851,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_BUSER</spirit:name>
+        <spirit:name>m_axi_iicData_BUSER</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_BUSER_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_BUSER_WIDTH&apos;)) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1899,13 +1872,13 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_MASTER_BUS_BUSER" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_iicData_BUSER" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_BVALID</spirit:name>
+        <spirit:name>m_axi_iicData_BVALID</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -1918,7 +1891,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_BREADY</spirit:name>
+        <spirit:name>m_axi_iicData_BREADY</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -1931,11 +1904,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARID</spirit:name>
+        <spirit:name>m_axi_iicData_ARID</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_ID_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_ID_WIDTH&apos;)) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1949,17 +1922,17 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_MASTER_BUS_ARID" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_ID_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_iicData_ARID" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_ID_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARADDR</spirit:name>
+        <spirit:name>m_axi_iicData_ARADDR</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_ADDR_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_ADDR_WIDTH&apos;)) - 1)">31</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1972,7 +1945,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARLEN</spirit:name>
+        <spirit:name>m_axi_iicData_ARLEN</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -1989,7 +1962,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARSIZE</spirit:name>
+        <spirit:name>m_axi_iicData_ARSIZE</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -2006,7 +1979,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARBURST</spirit:name>
+        <spirit:name>m_axi_iicData_ARBURST</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -2023,7 +1996,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARLOCK</spirit:name>
+        <spirit:name>m_axi_iicData_ARLOCK</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -2040,7 +2013,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARREGION</spirit:name>
+        <spirit:name>m_axi_iicData_ARREGION</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -2057,7 +2030,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARCACHE</spirit:name>
+        <spirit:name>m_axi_iicData_ARCACHE</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -2074,7 +2047,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARPROT</spirit:name>
+        <spirit:name>m_axi_iicData_ARPROT</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -2091,7 +2064,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARQOS</spirit:name>
+        <spirit:name>m_axi_iicData_ARQOS</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -2108,11 +2081,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARUSER</spirit:name>
+        <spirit:name>m_axi_iicData_ARUSER</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_ARUSER_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_ARUSER_WIDTH&apos;)) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2126,13 +2099,13 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_MASTER_BUS_ARUSER" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_iicData_ARUSER" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARVALID</spirit:name>
+        <spirit:name>m_axi_iicData_ARVALID</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -2145,7 +2118,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_ARREADY</spirit:name>
+        <spirit:name>m_axi_iicData_ARREADY</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -2158,11 +2131,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_RID</spirit:name>
+        <spirit:name>m_axi_iicData_RID</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_ID_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_ID_WIDTH&apos;)) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2176,17 +2149,17 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_MASTER_BUS_RID" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_ID_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_iicData_RID" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_ID_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_RDATA</spirit:name>
+        <spirit:name>m_axi_iicData_RDATA</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2199,7 +2172,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_RRESP</spirit:name>
+        <spirit:name>m_axi_iicData_RRESP</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
@@ -2216,7 +2189,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_RLAST</spirit:name>
+        <spirit:name>m_axi_iicData_RLAST</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -2229,11 +2202,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_RUSER</spirit:name>
+        <spirit:name>m_axi_iicData_RUSER</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_RUSER_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_IICDATA_RUSER_WIDTH&apos;)) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2250,13 +2223,13 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_MASTER_BUS_RUSER" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_iicData_RUSER" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_RVALID</spirit:name>
+        <spirit:name>m_axi_iicData_RVALID</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -2269,7 +2242,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>m_axi_MASTER_BUS_RREADY</spirit:name>
+        <spirit:name>m_axi_iicData_RREADY</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -2285,104 +2258,108 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
     <spirit:modelParameters>
       <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
         <spirit:name>C_S_AXI_CTRL_ADDR_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXI_CTRL_ADDR_WIDTH">6</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXI_CTRL_ADDR_WIDTH">5</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_S_AXI_CTRL_DATA_WIDTH</spirit:name>
         <spirit:value spirit:format="long" spirit:id="MODELPARAM_VALUE.C_S_AXI_CTRL_DATA_WIDTH">32</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_M_AXI_MASTER_BUS_ID_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_ID_WIDTH">1</spirit:value>
+        <spirit:name>C_M_AXI_IICDATA_ID_WIDTH</spirit:name>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_IICDATA_ID_WIDTH">1</spirit:value>
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_ID_WIDTH">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_IICDATA_ID_WIDTH">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_M_AXI_MASTER_BUS_ADDR_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:id="MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_ADDR_WIDTH">32</spirit:value>
+        <spirit:name>C_M_AXI_IICDATA_ADDR_WIDTH</spirit:name>
+        <spirit:value spirit:format="long" spirit:id="MODELPARAM_VALUE.C_M_AXI_IICDATA_ADDR_WIDTH">32</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_M_AXI_MASTER_BUS_DATA_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_DATA_WIDTH">32</spirit:value>
+        <spirit:name>C_M_AXI_IICDATA_DATA_WIDTH</spirit:name>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_IICDATA_DATA_WIDTH">32</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_M_AXI_MASTER_BUS_AWUSER_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_AWUSER_WIDTH">1</spirit:value>
+        <spirit:name>C_M_AXI_IICDATA_AWUSER_WIDTH</spirit:name>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_IICDATA_AWUSER_WIDTH">1</spirit:value>
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_AWUSER_WIDTH">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_IICDATA_AWUSER_WIDTH">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_M_AXI_MASTER_BUS_ARUSER_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_ARUSER_WIDTH">1</spirit:value>
+        <spirit:name>C_M_AXI_IICDATA_ARUSER_WIDTH</spirit:name>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_IICDATA_ARUSER_WIDTH">1</spirit:value>
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_ARUSER_WIDTH">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_IICDATA_ARUSER_WIDTH">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_M_AXI_MASTER_BUS_WUSER_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_WUSER_WIDTH">1</spirit:value>
+        <spirit:name>C_M_AXI_IICDATA_WUSER_WIDTH</spirit:name>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_IICDATA_WUSER_WIDTH">1</spirit:value>
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_WUSER_WIDTH">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_IICDATA_WUSER_WIDTH">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_M_AXI_MASTER_BUS_RUSER_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_RUSER_WIDTH">1</spirit:value>
+        <spirit:name>C_M_AXI_IICDATA_RUSER_WIDTH</spirit:name>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_IICDATA_RUSER_WIDTH">1</spirit:value>
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_RUSER_WIDTH">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_IICDATA_RUSER_WIDTH">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_M_AXI_MASTER_BUS_BUSER_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_BUSER_WIDTH">1</spirit:value>
+        <spirit:name>C_M_AXI_IICDATA_BUSER_WIDTH</spirit:name>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_IICDATA_BUSER_WIDTH">1</spirit:value>
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_BUSER_WIDTH">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_IICDATA_BUSER_WIDTH">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_M_AXI_MASTER_BUS_USER_VALUE</spirit:name>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_USER_VALUE" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:name>C_M_AXI_IICDATA_USER_VALUE</spirit:name>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_IICDATA_USER_VALUE" spirit:bitStringLength="32">0x00000000</spirit:value>
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_USER_VALUE">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_M_AXI_IICDATA_USER_VALUE">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:parameterInfo>
         </spirit:vendorExtensions>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_M_AXI_MASTER_BUS_PROT_VALUE</spirit:name>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_PROT_VALUE" spirit:bitStringLength="3">&quot;000&quot;</spirit:value>
+        <spirit:name>C_M_AXI_IICDATA_PROT_VALUE</spirit:name>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_IICDATA_PROT_VALUE" spirit:bitStringLength="3">&quot;000&quot;</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_M_AXI_MASTER_BUS_CACHE_VALUE</spirit:name>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_MASTER_BUS_CACHE_VALUE" spirit:bitStringLength="4">&quot;0011&quot;</spirit:value>
+        <spirit:name>C_M_AXI_IICDATA_CACHE_VALUE</spirit:name>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_IICDATA_CACHE_VALUE" spirit:bitStringLength="4">&quot;0011&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_M_AXI_IICDATA_TARGET_ADDR</spirit:name>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_IICDATA_TARGET_ADDR" spirit:bitStringLength="32">0x00000000</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -2406,11 +2383,11 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/sensor_MASTER_BUS_m_axi.v</spirit:name>
+        <spirit:name>hdl/verilog/sensor_CTRL_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/sensor_CTRL_s_axi.v</spirit:name>
+        <spirit:name>hdl/verilog/sensor_iicData_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2421,12 +2398,12 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>hdl/verilog/sensor_MASTER_BUS_m_axi.v</spirit:name>
+        <spirit:name>hdl/verilog/sensor_CTRL_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/sensor_CTRL_s_axi.v</spirit:name>
+        <spirit:name>hdl/verilog/sensor_iicData_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -2448,13 +2425,13 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/sensor_MASTER_BUS_m_axi.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/sensor_iicData_m_axi.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/sensor_CTRL_s_axi.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_706f822a</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_58bb7697</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -2465,7 +2442,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/sensor_MASTER_BUS_m_axi.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/sensor_iicData_m_axi.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -2529,7 +2506,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
       <spirit:file>
         <spirit:name>xgui/sensor_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_bdc2449b</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_db243bf8</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -2545,113 +2522,118 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
   <spirit:description>HLS Core: Sensor Function</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
-      <spirit:name>C_M_AXI_MASTER_BUS_ENABLE_ID_PORTS</spirit:name>
+      <spirit:name>C_M_AXI_IICDATA_ENABLE_ID_PORTS</spirit:name>
       <spirit:displayName>Enable ID ports</spirit:displayName>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_ID_PORTS" spirit:order="2" spirit:configGroups="1 m axi MASTER BUS (AXI4 Master Interface)">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_ID_PORTS" spirit:order="2" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)">false</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_M_AXI_MASTER_BUS_ID_WIDTH</spirit:name>
+      <spirit:name>C_M_AXI_IICDATA_ID_WIDTH</spirit:name>
       <spirit:displayName>ID width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_MASTER_BUS_ID_WIDTH" spirit:order="3" spirit:configGroups="1 m axi MASTER BUS (AXI4 Master Interface)" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_ID_WIDTH" spirit:order="3" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_ID_WIDTH" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_ID_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_IICDATA_ID_WIDTH" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_ID_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_M_AXI_MASTER_BUS_DATA_WIDTH</spirit:name>
+      <spirit:name>C_M_AXI_IICDATA_DATA_WIDTH</spirit:name>
       <spirit:displayName>Data width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_MASTER_BUS_DATA_WIDTH" spirit:choiceRef="choice_list_40181835" spirit:order="4" spirit:configGroups="1 m axi MASTER BUS (AXI4 Master Interface)">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_DATA_WIDTH" spirit:choiceRef="choice_list_40181835" spirit:order="4" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)">32</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS</spirit:name>
+      <spirit:name>C_M_AXI_IICDATA_ENABLE_USER_PORTS</spirit:name>
       <spirit:displayName>Enable USER ports</spirit:displayName>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS" spirit:order="5" spirit:configGroups="1 m axi MASTER BUS (AXI4 Master Interface)">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_USER_PORTS" spirit:order="5" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)">false</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_M_AXI_MASTER_BUS_AWUSER_WIDTH</spirit:name>
+      <spirit:name>C_M_AXI_IICDATA_AWUSER_WIDTH</spirit:name>
       <spirit:displayName>AWUSER width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_MASTER_BUS_AWUSER_WIDTH" spirit:order="6" spirit:configGroups="1 m axi MASTER BUS (AXI4 Master Interface)" spirit:minimum="1" spirit:maximum="1024" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_AWUSER_WIDTH" spirit:order="6" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)" spirit:minimum="1" spirit:maximum="1024" spirit:rangeType="long">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_AWUSER_WIDTH" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_IICDATA_AWUSER_WIDTH" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_M_AXI_MASTER_BUS_WUSER_WIDTH</spirit:name>
+      <spirit:name>C_M_AXI_IICDATA_WUSER_WIDTH</spirit:name>
       <spirit:displayName>WUSER width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_MASTER_BUS_WUSER_WIDTH" spirit:order="7" spirit:configGroups="1 m axi MASTER BUS (AXI4 Master Interface)" spirit:minimum="1" spirit:maximum="1024" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_WUSER_WIDTH" spirit:order="7" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)" spirit:minimum="1" spirit:maximum="1024" spirit:rangeType="long">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_WUSER_WIDTH" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_IICDATA_WUSER_WIDTH" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_M_AXI_MASTER_BUS_BUSER_WIDTH</spirit:name>
+      <spirit:name>C_M_AXI_IICDATA_BUSER_WIDTH</spirit:name>
       <spirit:displayName>BUSER width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_MASTER_BUS_BUSER_WIDTH" spirit:order="8" spirit:configGroups="1 m axi MASTER BUS (AXI4 Master Interface)" spirit:minimum="1" spirit:maximum="1024" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_BUSER_WIDTH" spirit:order="8" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)" spirit:minimum="1" spirit:maximum="1024" spirit:rangeType="long">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_BUSER_WIDTH" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_IICDATA_BUSER_WIDTH" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_M_AXI_MASTER_BUS_ARUSER_WIDTH</spirit:name>
+      <spirit:name>C_M_AXI_IICDATA_ARUSER_WIDTH</spirit:name>
       <spirit:displayName>ARUSER width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_MASTER_BUS_ARUSER_WIDTH" spirit:order="9" spirit:configGroups="1 m axi MASTER BUS (AXI4 Master Interface)" spirit:minimum="1" spirit:maximum="1024" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_ARUSER_WIDTH" spirit:order="9" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)" spirit:minimum="1" spirit:maximum="1024" spirit:rangeType="long">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_ARUSER_WIDTH" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_IICDATA_ARUSER_WIDTH" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_M_AXI_MASTER_BUS_RUSER_WIDTH</spirit:name>
+      <spirit:name>C_M_AXI_IICDATA_RUSER_WIDTH</spirit:name>
       <spirit:displayName>RUSER width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_MASTER_BUS_RUSER_WIDTH" spirit:order="10" spirit:configGroups="1 m axi MASTER BUS (AXI4 Master Interface)" spirit:minimum="1" spirit:maximum="1024" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_RUSER_WIDTH" spirit:order="10" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)" spirit:minimum="1" spirit:maximum="1024" spirit:rangeType="long">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_RUSER_WIDTH" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_IICDATA_RUSER_WIDTH" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_M_AXI_MASTER_BUS_USER_VALUE</spirit:name>
+      <spirit:name>C_M_AXI_IICDATA_USER_VALUE</spirit:name>
       <spirit:displayName>USER value</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_MASTER_BUS_USER_VALUE" spirit:order="11" spirit:configGroups="1 m axi MASTER BUS (AXI4 Master Interface)" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_USER_VALUE" spirit:order="11" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)" spirit:bitStringLength="32">0x00000000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_MASTER_BUS_USER_VALUE" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_MASTER_BUS_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_M_AXI_IICDATA_USER_VALUE" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_M_AXI_IICDATA_ENABLE_USER_PORTS&apos;)) = 1)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_M_AXI_MASTER_BUS_PROT_VALUE</spirit:name>
+      <spirit:name>C_M_AXI_IICDATA_PROT_VALUE</spirit:name>
       <spirit:displayName>PROT value</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_MASTER_BUS_PROT_VALUE" spirit:order="12" spirit:configGroups="1 m axi MASTER BUS (AXI4 Master Interface)" spirit:bitStringLength="3">&quot;000&quot;</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_PROT_VALUE" spirit:order="12" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)" spirit:bitStringLength="3">&quot;000&quot;</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_M_AXI_MASTER_BUS_CACHE_VALUE</spirit:name>
+      <spirit:name>C_M_AXI_IICDATA_CACHE_VALUE</spirit:name>
       <spirit:displayName>CACHE value</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_MASTER_BUS_CACHE_VALUE" spirit:order="13" spirit:configGroups="1 m axi MASTER BUS (AXI4 Master Interface)" spirit:bitStringLength="4">&quot;0011&quot;</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_CACHE_VALUE" spirit:order="13" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)" spirit:bitStringLength="4">&quot;0011&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_M_AXI_IICDATA_TARGET_ADDR</spirit:name>
+      <spirit:displayName>Base address of target slave</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_IICDATA_TARGET_ADDR" spirit:order="14" spirit:configGroups="1 m axi iicData (AXI4 Master Interface)" spirit:bitStringLength="32">0x00000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -2659,23 +2641,23 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>clk_period</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.clk_period" spirit:order="14">4</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.clk_period" spirit:order="15">4</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>machine</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.machine" spirit:order="15">64</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.machine" spirit:order="16">64</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>combinational</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.combinational" spirit:order="16">0</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.combinational" spirit:order="17">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="17">9</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="18">8</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.II" spirit:order="18">x</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.II" spirit:order="19">x</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -2688,18 +2670,18 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
       </xilinx:taxonomies>
       <xilinx:displayName>Sensor</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1807231056</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-07-23T17:56:23Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1807310941</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-07-31T16:41:28Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="f0b64629"/>
-      <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="de2a7973"/>
-      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="05488b5e"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2a68cefc"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="0ac3f200"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="8f6e1fa0"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="21e3a681"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="684a8a03"/>
+      <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="47954795"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="c5e7f41b"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="dae06b0f"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="960f8950"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="38de83eb"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="cd8f2e4b"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

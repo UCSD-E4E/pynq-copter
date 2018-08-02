@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;pidfixed.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;main.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:01:30 ; elapsed = 00:00:32 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 247190 ; free virtual = 516580" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:32 ; elapsed = 00:00:34 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 247189 ; free virtual = 516579" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:33 ; elapsed = 00:00:36 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 247173 ; free virtual = 516563" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:33 ; elapsed = 00:00:36 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 247147 ; free virtual = 516537" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:34 ; elapsed = 00:00:37 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 247130 ; free virtual = 516519" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:35 ; elapsed = 00:00:38 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 247125 ; free virtual = 516514" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;pidfixed&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;pidfixed&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="86" content="Estimated delay (4.1ns) of &apos;sdiv&apos; operation (&apos;r.V&apos;, pidfixed.cpp:92) exceeds the target cycle time (target cycle time: 4ns, clock uncertainty: 0.5ns, effective cycle time: 3.5ns)." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="137" content="Estimated clock period (4.102ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns)." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="135" content="The critical path consists of the following:
+	&apos;sdiv&apos; operation (&apos;r.V&apos;, pidfixed.cpp:92) (4.1 ns)" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 38.03 seconds; current allocated memory: 108.170 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.16 seconds; current allocated memory: 109.036 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;pidfixed&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/target_roll_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/current_roll_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/Kp_roll_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/Ki_roll_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/Kd_roll_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/target_pitch_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/current_pitch_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/Kp_pitch_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/Ki_pitch_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/Kd_pitch_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/target_yaw_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/current_yaw_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/Kp_yaw_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/Ki_yaw_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/Kd_yaw_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/dt_V&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/rollX_V&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/pitchY_V&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;pidfixed/yawZ_V&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;pidfixed&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global scalar &apos;error_roll_V&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global scalar &apos;proportional_roll_V&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;integral_roll_V&apos; is power-on initialization." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;previous_error_roll_s&apos; is power-on initialization." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global scalar &apos;derivative_roll_V&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global scalar &apos;error_pitch_V&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global scalar &apos;proportional_pitch_V&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;integral_pitch_V&apos; is power-on initialization." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;previous_error_pitch&apos; is power-on initialization." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global scalar &apos;derivative_pitch_V&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global scalar &apos;error_yaw_V&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global scalar &apos;proportional_yaw_V&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;integral_yaw_V&apos; is power-on initialization." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;previous_error_yaw_V&apos; is power-on initialization." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global scalar &apos;derivative_yaw_V&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos;, &apos;current_roll_V&apos;, &apos;Kp_roll_V&apos;, &apos;Ki_roll_V&apos;, &apos;Kd_roll_V&apos;, &apos;target_pitch_V&apos;, &apos;current_pitch_V&apos;, &apos;Kp_pitch_V&apos;, &apos;Ki_pitch_V&apos;, &apos;Kd_pitch_V&apos;, &apos;target_yaw_V&apos;, &apos;current_yaw_V&apos;, &apos;Kp_yaw_V&apos;, &apos;Ki_yaw_V&apos;, &apos;Kd_yaw_V&apos;, &apos;dt_V&apos;, &apos;rollX_V&apos;, &apos;pitchY_V&apos; and &apos;yawZ_V&apos; to AXI-Lite port CTRL." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;pidfixed_sdiv_24ns_16s_23_28_1&apos; to &apos;pidfixed_sdiv_24nbkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;pidfixed_mul_16s_30s_30_7_1&apos; to &apos;pidfixed_mul_16s_cud&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;pidfixed_mul_mul_16s_16s_23_3_1&apos; to &apos;pidfixed_mul_mul_dEe&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;pidfixed_mul_mul_16s_16s_30_3_1&apos; to &apos;pidfixed_mul_mul_eOg&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;pidfixed_mul_mul_16s_23s_23_3_1&apos; to &apos;pidfixed_mul_mul_fYi&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;pidfixed_mul_16s_cud&apos;: 3 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;pidfixed_mul_mul_dEe&apos;: 3 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;pidfixed_mul_mul_eOg&apos;: 3 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;pidfixed_mul_mul_fYi&apos;: 3 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;pidfixed_sdiv_24nbkb&apos;: 3 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;pidfixed&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.24 seconds; current allocated memory: 110.363 MB." tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;pidfixed_sdiv_24nbkb_div&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;pidfixed_mul_16s_cud_MulnS_0&apos;" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:36 ; elapsed = 00:00:39 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 247122 ; free virtual = 516512" tag=""/>
+	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for pidfixed." tag=""/>
+	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for pidfixed." tag=""/>
+	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for pidfixed." tag=""/>
+</Messages>

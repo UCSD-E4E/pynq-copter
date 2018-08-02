@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity sensor_CTRL_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 6;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 5;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     -- axi4 lite slave signals
@@ -41,7 +41,6 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    iicData               :out  STD_LOGIC_VECTOR(31 downto 0);
     iicStatus_i           :out  STD_LOGIC_VECTOR(31 downto 0);
     iicStatus_o           :in   STD_LOGIC_VECTOR(31 downto 0);
     iicStatus_o_ap_vld    :in   STD_LOGIC
@@ -67,15 +66,12 @@ end entity sensor_CTRL_s_axi;
 --        bit 0  - Channel 0 (ap_done)
 --        bit 1  - Channel 1 (ap_ready)
 --        others - reserved
--- 0x10 : Data signal of iicData
---        bit 31~0 - iicData[31:0] (Read/Write)
--- 0x14 : reserved
--- 0x18 : Data signal of iicStatus_i
+-- 0x10 : Data signal of iicStatus_i
 --        bit 31~0 - iicStatus_i[31:0] (Read/Write)
--- 0x1c : reserved
--- 0x20 : Data signal of iicStatus_o
+-- 0x14 : reserved
+-- 0x18 : Data signal of iicStatus_o
 --        bit 31~0 - iicStatus_o[31:0] (Read)
--- 0x24 : Control signal of iicStatus_o
+-- 0x1c : Control signal of iicStatus_o
 --        bit 0  - iicStatus_o_ap_vld (Read/COR)
 --        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -89,13 +85,11 @@ architecture behave of sensor_CTRL_s_axi is
     constant ADDR_GIE                : INTEGER := 16#04#;
     constant ADDR_IER                : INTEGER := 16#08#;
     constant ADDR_ISR                : INTEGER := 16#0c#;
-    constant ADDR_IICDATA_DATA_0     : INTEGER := 16#10#;
-    constant ADDR_IICDATA_CTRL       : INTEGER := 16#14#;
-    constant ADDR_IICSTATUS_I_DATA_0 : INTEGER := 16#18#;
-    constant ADDR_IICSTATUS_I_CTRL   : INTEGER := 16#1c#;
-    constant ADDR_IICSTATUS_O_DATA_0 : INTEGER := 16#20#;
-    constant ADDR_IICSTATUS_O_CTRL   : INTEGER := 16#24#;
-    constant ADDR_BITS         : INTEGER := 6;
+    constant ADDR_IICSTATUS_I_DATA_0 : INTEGER := 16#10#;
+    constant ADDR_IICSTATUS_I_CTRL   : INTEGER := 16#14#;
+    constant ADDR_IICSTATUS_O_DATA_0 : INTEGER := 16#18#;
+    constant ADDR_IICSTATUS_O_CTRL   : INTEGER := 16#1c#;
+    constant ADDR_BITS         : INTEGER := 5;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(31 downto 0);
@@ -117,7 +111,6 @@ architecture behave of sensor_CTRL_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_iicData         : UNSIGNED(31 downto 0) := (others => '0');
     signal int_iicStatus_i     : UNSIGNED(31 downto 0) := (others => '0');
     signal int_iicStatus_o     : UNSIGNED(31 downto 0) := (others => '0');
     signal int_iicStatus_o_ap_vld : STD_LOGIC;
@@ -242,8 +235,6 @@ begin
                         rdata_data <= (1 => int_ier(1), 0 => int_ier(0), others => '0');
                     when ADDR_ISR =>
                         rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
-                    when ADDR_IICDATA_DATA_0 =>
-                        rdata_data <= RESIZE(int_iicData(31 downto 0), 32);
                     when ADDR_IICSTATUS_I_DATA_0 =>
                         rdata_data <= RESIZE(int_iicStatus_i(31 downto 0), 32);
                     when ADDR_IICSTATUS_O_DATA_0 =>
@@ -261,7 +252,6 @@ begin
 -- ----------------------- Register logic ----------------
     interrupt            <= int_gie and (int_isr(0) or int_isr(1));
     ap_start             <= int_ap_start;
-    iicData              <= STD_LOGIC_VECTOR(int_iicData);
     iicStatus_i          <= STD_LOGIC_VECTOR(int_iicStatus_i);
 
     process (ACLK)
@@ -384,17 +374,6 @@ begin
                     int_isr(1) <= '1';
                 elsif (w_hs = '1' and waddr = ADDR_ISR and WSTRB(0) = '1') then
                     int_isr(1) <= int_isr(1) xor WDATA(1); -- toggle on write
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_IICDATA_DATA_0) then
-                    int_iicData(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_iicData(31 downto 0));
                 end if;
             end if;
         end if;

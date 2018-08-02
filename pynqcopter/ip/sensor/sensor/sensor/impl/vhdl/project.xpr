@@ -6,7 +6,7 @@
 <Project Version="7" Minor="35" Path="/home/iavendano/pynq-copter/pynqcopter/ip/sensor/sensor/sensor/impl/vhdl/project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="d56a3da8fe554cbaa7a564d218dc013b"/>
+    <Option Name="Id" Val="a82fb8cde9ff487f861f9a8e474c6fef"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -61,7 +61,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/sensor_MASTER_BUS_m_axi.vhd">
+      <File Path="$PPRDIR/sensor_iicData_m_axi.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>

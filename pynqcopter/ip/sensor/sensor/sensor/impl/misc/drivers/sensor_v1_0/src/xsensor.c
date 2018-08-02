@@ -76,23 +76,6 @@ void XSensor_DisableAutoRestart(XSensor *InstancePtr) {
     XSensor_WriteReg(InstancePtr->Ctrl_BaseAddress, XSENSOR_CTRL_ADDR_AP_CTRL, 0);
 }
 
-void XSensor_Set_iicData(XSensor *InstancePtr, u32 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XSensor_WriteReg(InstancePtr->Ctrl_BaseAddress, XSENSOR_CTRL_ADDR_IICDATA_DATA, Data);
-}
-
-u32 XSensor_Get_iicData(XSensor *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XSensor_ReadReg(InstancePtr->Ctrl_BaseAddress, XSENSOR_CTRL_ADDR_IICDATA_DATA);
-    return Data;
-}
-
 void XSensor_Set_iicStatus_i(XSensor *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

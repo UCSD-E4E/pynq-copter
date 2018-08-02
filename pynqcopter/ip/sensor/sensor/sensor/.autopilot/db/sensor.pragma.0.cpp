@@ -145,13 +145,17 @@ extern "C" {
 #1 "<built-in>" 2
 #1 "sensor.cpp" 2
 #35 "sensor.cpp"
+#1 "./sensor.hpp" 1
+#43 "./sensor.hpp"
+void sensor(volatile unsigned int *iicData, volatile int &iicStatus);
+#36 "sensor.cpp" 2
 static int status;
 
 void sensor(volatile unsigned int *iicData, volatile int &iicStatus){
 
 #pragma HLS INTERFACE s_axilite port=return bundle=CTRL
 #pragma HLS INTERFACE s_axilite port=iicStatus
-#pragma HLS INTERFACE m_axi port=iicData offset=slave bundle=MASTER_BUS
+#pragma HLS INTERFACE m_axi port=iicData offset=IIC_OFFSET
 
 
 
@@ -159,7 +163,7 @@ void sensor(volatile unsigned int *iicData, volatile int &iicStatus){
 
 
 
- status = iicData[(0x104)/4];
+ status = iicData[(0X40003000/4)+(0X10/4)+2];
  iicStatus = status;
 
  return;

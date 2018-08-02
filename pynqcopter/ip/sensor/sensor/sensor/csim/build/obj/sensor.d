@@ -1,1 +1,1 @@
-obj/sensor.o: ../../../../sensor.cpp
+obj/sensor.o: ../../../../sensor.cpp ../../../../sensor.hpp

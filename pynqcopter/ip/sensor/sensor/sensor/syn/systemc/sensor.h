@@ -12,69 +12,69 @@
 #include "AESL_pkg.h"
 
 #include "sensor_CTRL_s_axi.h"
-#include "sensor_MASTER_BUS_m_axi.h"
+#include "sensor_iicData_m_axi.h"
 
 namespace ap_rtl {
 
-template<unsigned int C_M_AXI_MASTER_BUS_ADDR_WIDTH = 32,
-         unsigned int C_M_AXI_MASTER_BUS_ID_WIDTH = 1,
-         unsigned int C_M_AXI_MASTER_BUS_AWUSER_WIDTH = 1,
-         unsigned int C_M_AXI_MASTER_BUS_DATA_WIDTH = 32,
-         unsigned int C_M_AXI_MASTER_BUS_WUSER_WIDTH = 1,
-         unsigned int C_M_AXI_MASTER_BUS_ARUSER_WIDTH = 1,
-         unsigned int C_M_AXI_MASTER_BUS_RUSER_WIDTH = 1,
-         unsigned int C_M_AXI_MASTER_BUS_BUSER_WIDTH = 1,
-         unsigned int C_S_AXI_CTRL_ADDR_WIDTH = 6,
+template<unsigned int C_M_AXI_IICDATA_ADDR_WIDTH = 32,
+         unsigned int C_M_AXI_IICDATA_ID_WIDTH = 1,
+         unsigned int C_M_AXI_IICDATA_AWUSER_WIDTH = 1,
+         unsigned int C_M_AXI_IICDATA_DATA_WIDTH = 32,
+         unsigned int C_M_AXI_IICDATA_WUSER_WIDTH = 1,
+         unsigned int C_M_AXI_IICDATA_ARUSER_WIDTH = 1,
+         unsigned int C_M_AXI_IICDATA_RUSER_WIDTH = 1,
+         unsigned int C_M_AXI_IICDATA_BUSER_WIDTH = 1,
+         unsigned int C_S_AXI_CTRL_ADDR_WIDTH = 5,
          unsigned int C_S_AXI_CTRL_DATA_WIDTH = 32>
 struct sensor : public sc_module {
     // Port declarations 65
     sc_in_clk ap_clk;
     sc_in< sc_logic > ap_rst_n;
-    sc_out< sc_logic > m_axi_MASTER_BUS_AWVALID;
-    sc_in< sc_logic > m_axi_MASTER_BUS_AWREADY;
-    sc_out< sc_uint<C_M_AXI_MASTER_BUS_ADDR_WIDTH> > m_axi_MASTER_BUS_AWADDR;
-    sc_out< sc_uint<C_M_AXI_MASTER_BUS_ID_WIDTH> > m_axi_MASTER_BUS_AWID;
-    sc_out< sc_lv<8> > m_axi_MASTER_BUS_AWLEN;
-    sc_out< sc_lv<3> > m_axi_MASTER_BUS_AWSIZE;
-    sc_out< sc_lv<2> > m_axi_MASTER_BUS_AWBURST;
-    sc_out< sc_lv<2> > m_axi_MASTER_BUS_AWLOCK;
-    sc_out< sc_lv<4> > m_axi_MASTER_BUS_AWCACHE;
-    sc_out< sc_lv<3> > m_axi_MASTER_BUS_AWPROT;
-    sc_out< sc_lv<4> > m_axi_MASTER_BUS_AWQOS;
-    sc_out< sc_lv<4> > m_axi_MASTER_BUS_AWREGION;
-    sc_out< sc_uint<C_M_AXI_MASTER_BUS_AWUSER_WIDTH> > m_axi_MASTER_BUS_AWUSER;
-    sc_out< sc_logic > m_axi_MASTER_BUS_WVALID;
-    sc_in< sc_logic > m_axi_MASTER_BUS_WREADY;
-    sc_out< sc_uint<C_M_AXI_MASTER_BUS_DATA_WIDTH> > m_axi_MASTER_BUS_WDATA;
-    sc_out< sc_uint<C_M_AXI_MASTER_BUS_DATA_WIDTH/8> > m_axi_MASTER_BUS_WSTRB;
-    sc_out< sc_logic > m_axi_MASTER_BUS_WLAST;
-    sc_out< sc_uint<C_M_AXI_MASTER_BUS_ID_WIDTH> > m_axi_MASTER_BUS_WID;
-    sc_out< sc_uint<C_M_AXI_MASTER_BUS_WUSER_WIDTH> > m_axi_MASTER_BUS_WUSER;
-    sc_out< sc_logic > m_axi_MASTER_BUS_ARVALID;
-    sc_in< sc_logic > m_axi_MASTER_BUS_ARREADY;
-    sc_out< sc_uint<C_M_AXI_MASTER_BUS_ADDR_WIDTH> > m_axi_MASTER_BUS_ARADDR;
-    sc_out< sc_uint<C_M_AXI_MASTER_BUS_ID_WIDTH> > m_axi_MASTER_BUS_ARID;
-    sc_out< sc_lv<8> > m_axi_MASTER_BUS_ARLEN;
-    sc_out< sc_lv<3> > m_axi_MASTER_BUS_ARSIZE;
-    sc_out< sc_lv<2> > m_axi_MASTER_BUS_ARBURST;
-    sc_out< sc_lv<2> > m_axi_MASTER_BUS_ARLOCK;
-    sc_out< sc_lv<4> > m_axi_MASTER_BUS_ARCACHE;
-    sc_out< sc_lv<3> > m_axi_MASTER_BUS_ARPROT;
-    sc_out< sc_lv<4> > m_axi_MASTER_BUS_ARQOS;
-    sc_out< sc_lv<4> > m_axi_MASTER_BUS_ARREGION;
-    sc_out< sc_uint<C_M_AXI_MASTER_BUS_ARUSER_WIDTH> > m_axi_MASTER_BUS_ARUSER;
-    sc_in< sc_logic > m_axi_MASTER_BUS_RVALID;
-    sc_out< sc_logic > m_axi_MASTER_BUS_RREADY;
-    sc_in< sc_uint<C_M_AXI_MASTER_BUS_DATA_WIDTH> > m_axi_MASTER_BUS_RDATA;
-    sc_in< sc_logic > m_axi_MASTER_BUS_RLAST;
-    sc_in< sc_uint<C_M_AXI_MASTER_BUS_ID_WIDTH> > m_axi_MASTER_BUS_RID;
-    sc_in< sc_uint<C_M_AXI_MASTER_BUS_RUSER_WIDTH> > m_axi_MASTER_BUS_RUSER;
-    sc_in< sc_lv<2> > m_axi_MASTER_BUS_RRESP;
-    sc_in< sc_logic > m_axi_MASTER_BUS_BVALID;
-    sc_out< sc_logic > m_axi_MASTER_BUS_BREADY;
-    sc_in< sc_lv<2> > m_axi_MASTER_BUS_BRESP;
-    sc_in< sc_uint<C_M_AXI_MASTER_BUS_ID_WIDTH> > m_axi_MASTER_BUS_BID;
-    sc_in< sc_uint<C_M_AXI_MASTER_BUS_BUSER_WIDTH> > m_axi_MASTER_BUS_BUSER;
+    sc_out< sc_logic > m_axi_iicData_AWVALID;
+    sc_in< sc_logic > m_axi_iicData_AWREADY;
+    sc_out< sc_uint<C_M_AXI_IICDATA_ADDR_WIDTH> > m_axi_iicData_AWADDR;
+    sc_out< sc_uint<C_M_AXI_IICDATA_ID_WIDTH> > m_axi_iicData_AWID;
+    sc_out< sc_lv<8> > m_axi_iicData_AWLEN;
+    sc_out< sc_lv<3> > m_axi_iicData_AWSIZE;
+    sc_out< sc_lv<2> > m_axi_iicData_AWBURST;
+    sc_out< sc_lv<2> > m_axi_iicData_AWLOCK;
+    sc_out< sc_lv<4> > m_axi_iicData_AWCACHE;
+    sc_out< sc_lv<3> > m_axi_iicData_AWPROT;
+    sc_out< sc_lv<4> > m_axi_iicData_AWQOS;
+    sc_out< sc_lv<4> > m_axi_iicData_AWREGION;
+    sc_out< sc_uint<C_M_AXI_IICDATA_AWUSER_WIDTH> > m_axi_iicData_AWUSER;
+    sc_out< sc_logic > m_axi_iicData_WVALID;
+    sc_in< sc_logic > m_axi_iicData_WREADY;
+    sc_out< sc_uint<C_M_AXI_IICDATA_DATA_WIDTH> > m_axi_iicData_WDATA;
+    sc_out< sc_uint<C_M_AXI_IICDATA_DATA_WIDTH/8> > m_axi_iicData_WSTRB;
+    sc_out< sc_logic > m_axi_iicData_WLAST;
+    sc_out< sc_uint<C_M_AXI_IICDATA_ID_WIDTH> > m_axi_iicData_WID;
+    sc_out< sc_uint<C_M_AXI_IICDATA_WUSER_WIDTH> > m_axi_iicData_WUSER;
+    sc_out< sc_logic > m_axi_iicData_ARVALID;
+    sc_in< sc_logic > m_axi_iicData_ARREADY;
+    sc_out< sc_uint<C_M_AXI_IICDATA_ADDR_WIDTH> > m_axi_iicData_ARADDR;
+    sc_out< sc_uint<C_M_AXI_IICDATA_ID_WIDTH> > m_axi_iicData_ARID;
+    sc_out< sc_lv<8> > m_axi_iicData_ARLEN;
+    sc_out< sc_lv<3> > m_axi_iicData_ARSIZE;
+    sc_out< sc_lv<2> > m_axi_iicData_ARBURST;
+    sc_out< sc_lv<2> > m_axi_iicData_ARLOCK;
+    sc_out< sc_lv<4> > m_axi_iicData_ARCACHE;
+    sc_out< sc_lv<3> > m_axi_iicData_ARPROT;
+    sc_out< sc_lv<4> > m_axi_iicData_ARQOS;
+    sc_out< sc_lv<4> > m_axi_iicData_ARREGION;
+    sc_out< sc_uint<C_M_AXI_IICDATA_ARUSER_WIDTH> > m_axi_iicData_ARUSER;
+    sc_in< sc_logic > m_axi_iicData_RVALID;
+    sc_out< sc_logic > m_axi_iicData_RREADY;
+    sc_in< sc_uint<C_M_AXI_IICDATA_DATA_WIDTH> > m_axi_iicData_RDATA;
+    sc_in< sc_logic > m_axi_iicData_RLAST;
+    sc_in< sc_uint<C_M_AXI_IICDATA_ID_WIDTH> > m_axi_iicData_RID;
+    sc_in< sc_uint<C_M_AXI_IICDATA_RUSER_WIDTH> > m_axi_iicData_RUSER;
+    sc_in< sc_lv<2> > m_axi_iicData_RRESP;
+    sc_in< sc_logic > m_axi_iicData_BVALID;
+    sc_out< sc_logic > m_axi_iicData_BREADY;
+    sc_in< sc_lv<2> > m_axi_iicData_BRESP;
+    sc_in< sc_uint<C_M_AXI_IICDATA_ID_WIDTH> > m_axi_iicData_BID;
+    sc_in< sc_uint<C_M_AXI_IICDATA_BUSER_WIDTH> > m_axi_iicData_BUSER;
     sc_in< sc_logic > s_axi_CTRL_AWVALID;
     sc_out< sc_logic > s_axi_CTRL_AWREADY;
     sc_in< sc_uint<C_S_AXI_CTRL_ADDR_WIDTH> > s_axi_CTRL_AWADDR;
@@ -114,75 +114,66 @@ struct sensor : public sc_module {
     ofstream mHdltvinHandle;
     ofstream mHdltvoutHandle;
     sensor_CTRL_s_axi<C_S_AXI_CTRL_ADDR_WIDTH,C_S_AXI_CTRL_DATA_WIDTH>* sensor_CTRL_s_axi_U;
-    sensor_MASTER_BUS_m_axi<32,32,5,16,16,16,16,C_M_AXI_MASTER_BUS_ID_WIDTH,C_M_AXI_MASTER_BUS_ADDR_WIDTH,C_M_AXI_MASTER_BUS_DATA_WIDTH,C_M_AXI_MASTER_BUS_AWUSER_WIDTH,C_M_AXI_MASTER_BUS_ARUSER_WIDTH,C_M_AXI_MASTER_BUS_WUSER_WIDTH,C_M_AXI_MASTER_BUS_RUSER_WIDTH,C_M_AXI_MASTER_BUS_BUSER_WIDTH,C_M_AXI_MASTER_BUS_USER_VALUE,C_M_AXI_MASTER_BUS_PROT_VALUE,C_M_AXI_MASTER_BUS_CACHE_VALUE>* sensor_MASTER_BUS_m_axi_U;
+    sensor_iicData_m_axi<32,32,5,16,16,16,16,C_M_AXI_IICDATA_ID_WIDTH,C_M_AXI_IICDATA_ADDR_WIDTH,C_M_AXI_IICDATA_DATA_WIDTH,C_M_AXI_IICDATA_AWUSER_WIDTH,C_M_AXI_IICDATA_ARUSER_WIDTH,C_M_AXI_IICDATA_WUSER_WIDTH,C_M_AXI_IICDATA_RUSER_WIDTH,C_M_AXI_IICDATA_BUSER_WIDTH,C_M_AXI_IICDATA_TARGET_ADDR,C_M_AXI_IICDATA_USER_VALUE,C_M_AXI_IICDATA_PROT_VALUE,C_M_AXI_IICDATA_CACHE_VALUE>* sensor_iicData_m_axi_U;
     sc_signal< sc_logic > ap_rst_n_inv;
     sc_signal< sc_logic > ap_start;
     sc_signal< sc_logic > ap_done;
     sc_signal< sc_logic > ap_idle;
-    sc_signal< sc_lv<10> > ap_CS_fsm;
+    sc_signal< sc_lv<9> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
     sc_signal< sc_logic > ap_ready;
-    sc_signal< sc_lv<32> > iicData;
     sc_signal< sc_lv<32> > iicStatus_i;
     sc_signal< sc_logic > iicStatus_o_ap_vld;
-    sc_signal< sc_logic > MASTER_BUS_blk_n_AR;
-    sc_signal< sc_logic > ap_CS_fsm_state2;
-    sc_signal< sc_logic > MASTER_BUS_blk_n_R;
+    sc_signal< sc_logic > iicData_blk_n_AR;
+    sc_signal< sc_logic > iicData_blk_n_R;
+    sc_signal< sc_logic > ap_CS_fsm_state8;
+    sc_signal< sc_logic > iicData_AWREADY;
+    sc_signal< sc_logic > iicData_WREADY;
+    sc_signal< sc_logic > iicData_ARVALID;
+    sc_signal< sc_logic > iicData_ARREADY;
+    sc_signal< sc_lv<32> > iicData_ARADDR;
+    sc_signal< sc_logic > iicData_RVALID;
+    sc_signal< sc_logic > iicData_RREADY;
+    sc_signal< sc_lv<32> > iicData_RDATA;
+    sc_signal< sc_logic > iicData_RLAST;
+    sc_signal< sc_lv<1> > iicData_RID;
+    sc_signal< sc_lv<1> > iicData_RUSER;
+    sc_signal< sc_lv<2> > iicData_RRESP;
+    sc_signal< sc_logic > iicData_BVALID;
+    sc_signal< sc_lv<2> > iicData_BRESP;
+    sc_signal< sc_lv<1> > iicData_BID;
+    sc_signal< sc_lv<1> > iicData_BUSER;
+    sc_signal< sc_logic > ap_sig_ioackin_iicData_ARREADY;
+    sc_signal< sc_lv<32> > iicData_addr_read_reg_76;
+    sc_signal< sc_logic > ap_reg_ioackin_iicData_ARREADY;
     sc_signal< sc_logic > ap_CS_fsm_state9;
-    sc_signal< sc_logic > MASTER_BUS_AWREADY;
-    sc_signal< sc_logic > MASTER_BUS_WREADY;
-    sc_signal< sc_logic > MASTER_BUS_ARVALID;
-    sc_signal< sc_logic > MASTER_BUS_ARREADY;
-    sc_signal< sc_lv<32> > MASTER_BUS_ARADDR;
-    sc_signal< sc_logic > MASTER_BUS_RVALID;
-    sc_signal< sc_logic > MASTER_BUS_RREADY;
-    sc_signal< sc_lv<32> > MASTER_BUS_RDATA;
-    sc_signal< sc_logic > MASTER_BUS_RLAST;
-    sc_signal< sc_lv<1> > MASTER_BUS_RID;
-    sc_signal< sc_lv<1> > MASTER_BUS_RUSER;
-    sc_signal< sc_lv<2> > MASTER_BUS_RRESP;
-    sc_signal< sc_logic > MASTER_BUS_BVALID;
-    sc_signal< sc_lv<2> > MASTER_BUS_BRESP;
-    sc_signal< sc_lv<1> > MASTER_BUS_BID;
-    sc_signal< sc_lv<1> > MASTER_BUS_BUSER;
-    sc_signal< sc_lv<31> > iicData2_sum_fu_99_p2;
-    sc_signal< sc_lv<31> > iicData2_sum_reg_115;
-    sc_signal< sc_logic > ap_sig_ioackin_MASTER_BUS_ARREADY;
-    sc_signal< sc_lv<32> > MASTER_BUS_addr_read_reg_126;
-    sc_signal< sc_lv<64> > iicData2_sum_cast_fu_105_p1;
-    sc_signal< sc_logic > ap_reg_ioackin_MASTER_BUS_ARREADY;
-    sc_signal< sc_logic > ap_CS_fsm_state10;
-    sc_signal< sc_lv<30> > tmp_fu_85_p4;
-    sc_signal< sc_lv<31> > tmp_cast_fu_95_p1;
-    sc_signal< sc_lv<10> > ap_NS_fsm;
+    sc_signal< sc_lv<9> > ap_NS_fsm;
     static const sc_logic ap_const_logic_1;
     static const sc_logic ap_const_logic_0;
-    static const sc_lv<10> ap_ST_fsm_state1;
-    static const sc_lv<10> ap_ST_fsm_state2;
-    static const sc_lv<10> ap_ST_fsm_state3;
-    static const sc_lv<10> ap_ST_fsm_state4;
-    static const sc_lv<10> ap_ST_fsm_state5;
-    static const sc_lv<10> ap_ST_fsm_state6;
-    static const sc_lv<10> ap_ST_fsm_state7;
-    static const sc_lv<10> ap_ST_fsm_state8;
-    static const sc_lv<10> ap_ST_fsm_state9;
-    static const sc_lv<10> ap_ST_fsm_state10;
+    static const sc_lv<9> ap_ST_fsm_state1;
+    static const sc_lv<9> ap_ST_fsm_state2;
+    static const sc_lv<9> ap_ST_fsm_state3;
+    static const sc_lv<9> ap_ST_fsm_state4;
+    static const sc_lv<9> ap_ST_fsm_state5;
+    static const sc_lv<9> ap_ST_fsm_state6;
+    static const sc_lv<9> ap_ST_fsm_state7;
+    static const sc_lv<9> ap_ST_fsm_state8;
+    static const sc_lv<9> ap_ST_fsm_state9;
     static const sc_lv<32> ap_const_lv32_0;
-    static const sc_lv<32> ap_const_lv32_1;
-    static const sc_lv<32> ap_const_lv32_8;
+    static const sc_lv<32> ap_const_lv32_7;
     static const int C_S_AXI_DATA_WIDTH;
-    static const int C_M_AXI_MASTER_BUS_USER_VALUE;
-    static const int C_M_AXI_MASTER_BUS_PROT_VALUE;
-    static const int C_M_AXI_MASTER_BUS_CACHE_VALUE;
+    static const int C_M_AXI_IICDATA_TARGET_ADDR;
+    static const int C_M_AXI_IICDATA_USER_VALUE;
+    static const int C_M_AXI_IICDATA_PROT_VALUE;
+    static const int C_M_AXI_IICDATA_CACHE_VALUE;
     static const int C_M_AXI_DATA_WIDTH;
+    static const sc_lv<64> ap_const_lv64_10000C06;
+    static const sc_lv<32> ap_const_lv32_1;
     static const sc_lv<1> ap_const_lv1_0;
     static const sc_lv<3> ap_const_lv3_0;
     static const sc_lv<2> ap_const_lv2_0;
     static const sc_lv<4> ap_const_lv4_0;
-    static const sc_lv<32> ap_const_lv32_9;
-    static const sc_lv<32> ap_const_lv32_2;
-    static const sc_lv<32> ap_const_lv32_1F;
-    static const sc_lv<31> ap_const_lv31_41;
+    static const sc_lv<32> ap_const_lv32_8;
     static const bool ap_const_boolean_1;
     // Thread declarations
     void thread_ap_var_for_const0();
@@ -194,25 +185,20 @@ struct sensor : public sc_module {
     void thread_ap_var_for_const4();
     void thread_ap_var_for_const5();
     void thread_ap_clk_no_reset_();
-    void thread_MASTER_BUS_ARADDR();
-    void thread_MASTER_BUS_ARVALID();
-    void thread_MASTER_BUS_RREADY();
-    void thread_MASTER_BUS_blk_n_AR();
-    void thread_MASTER_BUS_blk_n_R();
     void thread_ap_CS_fsm_state1();
-    void thread_ap_CS_fsm_state10();
-    void thread_ap_CS_fsm_state2();
+    void thread_ap_CS_fsm_state8();
     void thread_ap_CS_fsm_state9();
     void thread_ap_done();
     void thread_ap_idle();
     void thread_ap_ready();
     void thread_ap_rst_n_inv();
-    void thread_ap_sig_ioackin_MASTER_BUS_ARREADY();
-    void thread_iicData2_sum_cast_fu_105_p1();
-    void thread_iicData2_sum_fu_99_p2();
+    void thread_ap_sig_ioackin_iicData_ARREADY();
+    void thread_iicData_ARADDR();
+    void thread_iicData_ARVALID();
+    void thread_iicData_RREADY();
+    void thread_iicData_blk_n_AR();
+    void thread_iicData_blk_n_R();
     void thread_iicStatus_o_ap_vld();
-    void thread_tmp_cast_fu_95_p1();
-    void thread_tmp_fu_85_p4();
     void thread_ap_NS_fsm();
     void thread_hdltv_gen();
 };

@@ -7,56 +7,56 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="sensor,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=9,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=736,HLS_SYN_LUT=927}" *)
+(* CORE_GENERATION_INFO="sensor,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=666,HLS_SYN_LUT=822}" *)
 
 module sensor (
         ap_clk,
         ap_rst_n,
-        m_axi_MASTER_BUS_AWVALID,
-        m_axi_MASTER_BUS_AWREADY,
-        m_axi_MASTER_BUS_AWADDR,
-        m_axi_MASTER_BUS_AWID,
-        m_axi_MASTER_BUS_AWLEN,
-        m_axi_MASTER_BUS_AWSIZE,
-        m_axi_MASTER_BUS_AWBURST,
-        m_axi_MASTER_BUS_AWLOCK,
-        m_axi_MASTER_BUS_AWCACHE,
-        m_axi_MASTER_BUS_AWPROT,
-        m_axi_MASTER_BUS_AWQOS,
-        m_axi_MASTER_BUS_AWREGION,
-        m_axi_MASTER_BUS_AWUSER,
-        m_axi_MASTER_BUS_WVALID,
-        m_axi_MASTER_BUS_WREADY,
-        m_axi_MASTER_BUS_WDATA,
-        m_axi_MASTER_BUS_WSTRB,
-        m_axi_MASTER_BUS_WLAST,
-        m_axi_MASTER_BUS_WID,
-        m_axi_MASTER_BUS_WUSER,
-        m_axi_MASTER_BUS_ARVALID,
-        m_axi_MASTER_BUS_ARREADY,
-        m_axi_MASTER_BUS_ARADDR,
-        m_axi_MASTER_BUS_ARID,
-        m_axi_MASTER_BUS_ARLEN,
-        m_axi_MASTER_BUS_ARSIZE,
-        m_axi_MASTER_BUS_ARBURST,
-        m_axi_MASTER_BUS_ARLOCK,
-        m_axi_MASTER_BUS_ARCACHE,
-        m_axi_MASTER_BUS_ARPROT,
-        m_axi_MASTER_BUS_ARQOS,
-        m_axi_MASTER_BUS_ARREGION,
-        m_axi_MASTER_BUS_ARUSER,
-        m_axi_MASTER_BUS_RVALID,
-        m_axi_MASTER_BUS_RREADY,
-        m_axi_MASTER_BUS_RDATA,
-        m_axi_MASTER_BUS_RLAST,
-        m_axi_MASTER_BUS_RID,
-        m_axi_MASTER_BUS_RUSER,
-        m_axi_MASTER_BUS_RRESP,
-        m_axi_MASTER_BUS_BVALID,
-        m_axi_MASTER_BUS_BREADY,
-        m_axi_MASTER_BUS_BRESP,
-        m_axi_MASTER_BUS_BID,
-        m_axi_MASTER_BUS_BUSER,
+        m_axi_iicData_AWVALID,
+        m_axi_iicData_AWREADY,
+        m_axi_iicData_AWADDR,
+        m_axi_iicData_AWID,
+        m_axi_iicData_AWLEN,
+        m_axi_iicData_AWSIZE,
+        m_axi_iicData_AWBURST,
+        m_axi_iicData_AWLOCK,
+        m_axi_iicData_AWCACHE,
+        m_axi_iicData_AWPROT,
+        m_axi_iicData_AWQOS,
+        m_axi_iicData_AWREGION,
+        m_axi_iicData_AWUSER,
+        m_axi_iicData_WVALID,
+        m_axi_iicData_WREADY,
+        m_axi_iicData_WDATA,
+        m_axi_iicData_WSTRB,
+        m_axi_iicData_WLAST,
+        m_axi_iicData_WID,
+        m_axi_iicData_WUSER,
+        m_axi_iicData_ARVALID,
+        m_axi_iicData_ARREADY,
+        m_axi_iicData_ARADDR,
+        m_axi_iicData_ARID,
+        m_axi_iicData_ARLEN,
+        m_axi_iicData_ARSIZE,
+        m_axi_iicData_ARBURST,
+        m_axi_iicData_ARLOCK,
+        m_axi_iicData_ARCACHE,
+        m_axi_iicData_ARPROT,
+        m_axi_iicData_ARQOS,
+        m_axi_iicData_ARREGION,
+        m_axi_iicData_ARUSER,
+        m_axi_iicData_RVALID,
+        m_axi_iicData_RREADY,
+        m_axi_iicData_RDATA,
+        m_axi_iicData_RLAST,
+        m_axi_iicData_RID,
+        m_axi_iicData_RUSER,
+        m_axi_iicData_RRESP,
+        m_axi_iicData_BVALID,
+        m_axi_iicData_BREADY,
+        m_axi_iicData_BRESP,
+        m_axi_iicData_BID,
+        m_axi_iicData_BUSER,
         s_axi_CTRL_AWVALID,
         s_axi_CTRL_AWREADY,
         s_axi_CTRL_AWADDR,
@@ -77,84 +77,84 @@ module sensor (
         interrupt
 );
 
-parameter    ap_ST_fsm_state1 = 10'd1;
-parameter    ap_ST_fsm_state2 = 10'd2;
-parameter    ap_ST_fsm_state3 = 10'd4;
-parameter    ap_ST_fsm_state4 = 10'd8;
-parameter    ap_ST_fsm_state5 = 10'd16;
-parameter    ap_ST_fsm_state6 = 10'd32;
-parameter    ap_ST_fsm_state7 = 10'd64;
-parameter    ap_ST_fsm_state8 = 10'd128;
-parameter    ap_ST_fsm_state9 = 10'd256;
-parameter    ap_ST_fsm_state10 = 10'd512;
+parameter    ap_ST_fsm_state1 = 9'd1;
+parameter    ap_ST_fsm_state2 = 9'd2;
+parameter    ap_ST_fsm_state3 = 9'd4;
+parameter    ap_ST_fsm_state4 = 9'd8;
+parameter    ap_ST_fsm_state5 = 9'd16;
+parameter    ap_ST_fsm_state6 = 9'd32;
+parameter    ap_ST_fsm_state7 = 9'd64;
+parameter    ap_ST_fsm_state8 = 9'd128;
+parameter    ap_ST_fsm_state9 = 9'd256;
 parameter    C_S_AXI_CTRL_DATA_WIDTH = 32;
-parameter    C_S_AXI_CTRL_ADDR_WIDTH = 6;
+parameter    C_S_AXI_CTRL_ADDR_WIDTH = 5;
 parameter    C_S_AXI_DATA_WIDTH = 32;
-parameter    C_M_AXI_MASTER_BUS_ID_WIDTH = 1;
-parameter    C_M_AXI_MASTER_BUS_ADDR_WIDTH = 32;
-parameter    C_M_AXI_MASTER_BUS_DATA_WIDTH = 32;
-parameter    C_M_AXI_MASTER_BUS_AWUSER_WIDTH = 1;
-parameter    C_M_AXI_MASTER_BUS_ARUSER_WIDTH = 1;
-parameter    C_M_AXI_MASTER_BUS_WUSER_WIDTH = 1;
-parameter    C_M_AXI_MASTER_BUS_RUSER_WIDTH = 1;
-parameter    C_M_AXI_MASTER_BUS_BUSER_WIDTH = 1;
-parameter    C_M_AXI_MASTER_BUS_USER_VALUE = 0;
-parameter    C_M_AXI_MASTER_BUS_PROT_VALUE = 0;
-parameter    C_M_AXI_MASTER_BUS_CACHE_VALUE = 3;
+parameter    C_M_AXI_IICDATA_ID_WIDTH = 1;
+parameter    C_M_AXI_IICDATA_ADDR_WIDTH = 32;
+parameter    C_M_AXI_IICDATA_DATA_WIDTH = 32;
+parameter    C_M_AXI_IICDATA_AWUSER_WIDTH = 1;
+parameter    C_M_AXI_IICDATA_ARUSER_WIDTH = 1;
+parameter    C_M_AXI_IICDATA_WUSER_WIDTH = 1;
+parameter    C_M_AXI_IICDATA_RUSER_WIDTH = 1;
+parameter    C_M_AXI_IICDATA_BUSER_WIDTH = 1;
+parameter    C_M_AXI_IICDATA_TARGET_ADDR = 0;
+parameter    C_M_AXI_IICDATA_USER_VALUE = 0;
+parameter    C_M_AXI_IICDATA_PROT_VALUE = 0;
+parameter    C_M_AXI_IICDATA_CACHE_VALUE = 3;
 parameter    C_M_AXI_DATA_WIDTH = 32;
 
 parameter C_S_AXI_CTRL_WSTRB_WIDTH = (32 / 8);
 parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
-parameter C_M_AXI_MASTER_BUS_WSTRB_WIDTH = (32 / 8);
+parameter C_M_AXI_IICDATA_WSTRB_WIDTH = (32 / 8);
 parameter C_M_AXI_WSTRB_WIDTH = (32 / 8);
 
 input   ap_clk;
 input   ap_rst_n;
-output   m_axi_MASTER_BUS_AWVALID;
-input   m_axi_MASTER_BUS_AWREADY;
-output  [C_M_AXI_MASTER_BUS_ADDR_WIDTH - 1:0] m_axi_MASTER_BUS_AWADDR;
-output  [C_M_AXI_MASTER_BUS_ID_WIDTH - 1:0] m_axi_MASTER_BUS_AWID;
-output  [7:0] m_axi_MASTER_BUS_AWLEN;
-output  [2:0] m_axi_MASTER_BUS_AWSIZE;
-output  [1:0] m_axi_MASTER_BUS_AWBURST;
-output  [1:0] m_axi_MASTER_BUS_AWLOCK;
-output  [3:0] m_axi_MASTER_BUS_AWCACHE;
-output  [2:0] m_axi_MASTER_BUS_AWPROT;
-output  [3:0] m_axi_MASTER_BUS_AWQOS;
-output  [3:0] m_axi_MASTER_BUS_AWREGION;
-output  [C_M_AXI_MASTER_BUS_AWUSER_WIDTH - 1:0] m_axi_MASTER_BUS_AWUSER;
-output   m_axi_MASTER_BUS_WVALID;
-input   m_axi_MASTER_BUS_WREADY;
-output  [C_M_AXI_MASTER_BUS_DATA_WIDTH - 1:0] m_axi_MASTER_BUS_WDATA;
-output  [C_M_AXI_MASTER_BUS_WSTRB_WIDTH - 1:0] m_axi_MASTER_BUS_WSTRB;
-output   m_axi_MASTER_BUS_WLAST;
-output  [C_M_AXI_MASTER_BUS_ID_WIDTH - 1:0] m_axi_MASTER_BUS_WID;
-output  [C_M_AXI_MASTER_BUS_WUSER_WIDTH - 1:0] m_axi_MASTER_BUS_WUSER;
-output   m_axi_MASTER_BUS_ARVALID;
-input   m_axi_MASTER_BUS_ARREADY;
-output  [C_M_AXI_MASTER_BUS_ADDR_WIDTH - 1:0] m_axi_MASTER_BUS_ARADDR;
-output  [C_M_AXI_MASTER_BUS_ID_WIDTH - 1:0] m_axi_MASTER_BUS_ARID;
-output  [7:0] m_axi_MASTER_BUS_ARLEN;
-output  [2:0] m_axi_MASTER_BUS_ARSIZE;
-output  [1:0] m_axi_MASTER_BUS_ARBURST;
-output  [1:0] m_axi_MASTER_BUS_ARLOCK;
-output  [3:0] m_axi_MASTER_BUS_ARCACHE;
-output  [2:0] m_axi_MASTER_BUS_ARPROT;
-output  [3:0] m_axi_MASTER_BUS_ARQOS;
-output  [3:0] m_axi_MASTER_BUS_ARREGION;
-output  [C_M_AXI_MASTER_BUS_ARUSER_WIDTH - 1:0] m_axi_MASTER_BUS_ARUSER;
-input   m_axi_MASTER_BUS_RVALID;
-output   m_axi_MASTER_BUS_RREADY;
-input  [C_M_AXI_MASTER_BUS_DATA_WIDTH - 1:0] m_axi_MASTER_BUS_RDATA;
-input   m_axi_MASTER_BUS_RLAST;
-input  [C_M_AXI_MASTER_BUS_ID_WIDTH - 1:0] m_axi_MASTER_BUS_RID;
-input  [C_M_AXI_MASTER_BUS_RUSER_WIDTH - 1:0] m_axi_MASTER_BUS_RUSER;
-input  [1:0] m_axi_MASTER_BUS_RRESP;
-input   m_axi_MASTER_BUS_BVALID;
-output   m_axi_MASTER_BUS_BREADY;
-input  [1:0] m_axi_MASTER_BUS_BRESP;
-input  [C_M_AXI_MASTER_BUS_ID_WIDTH - 1:0] m_axi_MASTER_BUS_BID;
-input  [C_M_AXI_MASTER_BUS_BUSER_WIDTH - 1:0] m_axi_MASTER_BUS_BUSER;
+output   m_axi_iicData_AWVALID;
+input   m_axi_iicData_AWREADY;
+output  [C_M_AXI_IICDATA_ADDR_WIDTH - 1:0] m_axi_iicData_AWADDR;
+output  [C_M_AXI_IICDATA_ID_WIDTH - 1:0] m_axi_iicData_AWID;
+output  [7:0] m_axi_iicData_AWLEN;
+output  [2:0] m_axi_iicData_AWSIZE;
+output  [1:0] m_axi_iicData_AWBURST;
+output  [1:0] m_axi_iicData_AWLOCK;
+output  [3:0] m_axi_iicData_AWCACHE;
+output  [2:0] m_axi_iicData_AWPROT;
+output  [3:0] m_axi_iicData_AWQOS;
+output  [3:0] m_axi_iicData_AWREGION;
+output  [C_M_AXI_IICDATA_AWUSER_WIDTH - 1:0] m_axi_iicData_AWUSER;
+output   m_axi_iicData_WVALID;
+input   m_axi_iicData_WREADY;
+output  [C_M_AXI_IICDATA_DATA_WIDTH - 1:0] m_axi_iicData_WDATA;
+output  [C_M_AXI_IICDATA_WSTRB_WIDTH - 1:0] m_axi_iicData_WSTRB;
+output   m_axi_iicData_WLAST;
+output  [C_M_AXI_IICDATA_ID_WIDTH - 1:0] m_axi_iicData_WID;
+output  [C_M_AXI_IICDATA_WUSER_WIDTH - 1:0] m_axi_iicData_WUSER;
+output   m_axi_iicData_ARVALID;
+input   m_axi_iicData_ARREADY;
+output  [C_M_AXI_IICDATA_ADDR_WIDTH - 1:0] m_axi_iicData_ARADDR;
+output  [C_M_AXI_IICDATA_ID_WIDTH - 1:0] m_axi_iicData_ARID;
+output  [7:0] m_axi_iicData_ARLEN;
+output  [2:0] m_axi_iicData_ARSIZE;
+output  [1:0] m_axi_iicData_ARBURST;
+output  [1:0] m_axi_iicData_ARLOCK;
+output  [3:0] m_axi_iicData_ARCACHE;
+output  [2:0] m_axi_iicData_ARPROT;
+output  [3:0] m_axi_iicData_ARQOS;
+output  [3:0] m_axi_iicData_ARREGION;
+output  [C_M_AXI_IICDATA_ARUSER_WIDTH - 1:0] m_axi_iicData_ARUSER;
+input   m_axi_iicData_RVALID;
+output   m_axi_iicData_RREADY;
+input  [C_M_AXI_IICDATA_DATA_WIDTH - 1:0] m_axi_iicData_RDATA;
+input   m_axi_iicData_RLAST;
+input  [C_M_AXI_IICDATA_ID_WIDTH - 1:0] m_axi_iicData_RID;
+input  [C_M_AXI_IICDATA_RUSER_WIDTH - 1:0] m_axi_iicData_RUSER;
+input  [1:0] m_axi_iicData_RRESP;
+input   m_axi_iicData_BVALID;
+output   m_axi_iicData_BREADY;
+input  [1:0] m_axi_iicData_BRESP;
+input  [C_M_AXI_IICDATA_ID_WIDTH - 1:0] m_axi_iicData_BID;
+input  [C_M_AXI_IICDATA_BUSER_WIDTH - 1:0] m_axi_iicData_BUSER;
 input   s_axi_CTRL_AWVALID;
 output   s_axi_CTRL_AWREADY;
 input  [C_S_AXI_CTRL_ADDR_WIDTH - 1:0] s_axi_CTRL_AWADDR;
@@ -178,47 +178,40 @@ reg    ap_rst_n_inv;
 wire    ap_start;
 reg    ap_done;
 reg    ap_idle;
-(* fsm_encoding = "none" *) reg   [9:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [8:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 reg    ap_ready;
-wire   [31:0] iicData;
 wire   [31:0] iicStatus_i;
 reg    iicStatus_o_ap_vld;
-reg    MASTER_BUS_blk_n_AR;
-wire    ap_CS_fsm_state2;
-reg    MASTER_BUS_blk_n_R;
+reg    iicData_blk_n_AR;
+reg    iicData_blk_n_R;
+wire    ap_CS_fsm_state8;
+wire    iicData_AWREADY;
+wire    iicData_WREADY;
+reg    iicData_ARVALID;
+wire    iicData_ARREADY;
+wire   [31:0] iicData_ARADDR;
+wire    iicData_RVALID;
+reg    iicData_RREADY;
+wire   [31:0] iicData_RDATA;
+wire    iicData_RLAST;
+wire   [0:0] iicData_RID;
+wire   [0:0] iicData_RUSER;
+wire   [1:0] iicData_RRESP;
+wire    iicData_BVALID;
+wire   [1:0] iicData_BRESP;
+wire   [0:0] iicData_BID;
+wire   [0:0] iicData_BUSER;
+reg    ap_sig_ioackin_iicData_ARREADY;
+reg   [31:0] iicData_addr_read_reg_76;
+reg    ap_reg_ioackin_iicData_ARREADY;
 wire    ap_CS_fsm_state9;
-wire    MASTER_BUS_AWREADY;
-wire    MASTER_BUS_WREADY;
-reg    MASTER_BUS_ARVALID;
-wire    MASTER_BUS_ARREADY;
-wire   [31:0] MASTER_BUS_ARADDR;
-wire    MASTER_BUS_RVALID;
-reg    MASTER_BUS_RREADY;
-wire   [31:0] MASTER_BUS_RDATA;
-wire    MASTER_BUS_RLAST;
-wire   [0:0] MASTER_BUS_RID;
-wire   [0:0] MASTER_BUS_RUSER;
-wire   [1:0] MASTER_BUS_RRESP;
-wire    MASTER_BUS_BVALID;
-wire   [1:0] MASTER_BUS_BRESP;
-wire   [0:0] MASTER_BUS_BID;
-wire   [0:0] MASTER_BUS_BUSER;
-wire   [30:0] iicData2_sum_fu_99_p2;
-reg   [30:0] iicData2_sum_reg_115;
-reg    ap_sig_ioackin_MASTER_BUS_ARREADY;
-reg   [31:0] MASTER_BUS_addr_read_reg_126;
-wire   [63:0] iicData2_sum_cast_fu_105_p1;
-reg    ap_reg_ioackin_MASTER_BUS_ARREADY;
-wire    ap_CS_fsm_state10;
-wire   [29:0] tmp_fu_85_p4;
-wire   [30:0] tmp_cast_fu_95_p1;
-reg   [9:0] ap_NS_fsm;
+reg   [8:0] ap_NS_fsm;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 10'd1;
-#0 ap_reg_ioackin_MASTER_BUS_ARREADY = 1'b0;
+#0 ap_CS_fsm = 9'd1;
+#0 ap_reg_ioackin_iicData_ARREADY = 1'b0;
 end
 
 sensor_CTRL_s_axi #(
@@ -250,13 +243,12 @@ sensor_CTRL_s_axi_U(
     .ap_ready(ap_ready),
     .ap_done(ap_done),
     .ap_idle(ap_idle),
-    .iicData(iicData),
-    .iicStatus_o(MASTER_BUS_addr_read_reg_126),
+    .iicStatus_o(iicData_addr_read_reg_76),
     .iicStatus_o_ap_vld(iicStatus_o_ap_vld),
     .iicStatus_i(iicStatus_i)
 );
 
-sensor_MASTER_BUS_m_axi #(
+sensor_iicData_m_axi #(
     .USER_DW( 32 ),
     .USER_AW( 32 ),
     .USER_MAXREQS( 5 ),
@@ -264,69 +256,70 @@ sensor_MASTER_BUS_m_axi #(
     .NUM_WRITE_OUTSTANDING( 16 ),
     .MAX_READ_BURST_LENGTH( 16 ),
     .MAX_WRITE_BURST_LENGTH( 16 ),
-    .C_M_AXI_ID_WIDTH( C_M_AXI_MASTER_BUS_ID_WIDTH ),
-    .C_M_AXI_ADDR_WIDTH( C_M_AXI_MASTER_BUS_ADDR_WIDTH ),
-    .C_M_AXI_DATA_WIDTH( C_M_AXI_MASTER_BUS_DATA_WIDTH ),
-    .C_M_AXI_AWUSER_WIDTH( C_M_AXI_MASTER_BUS_AWUSER_WIDTH ),
-    .C_M_AXI_ARUSER_WIDTH( C_M_AXI_MASTER_BUS_ARUSER_WIDTH ),
-    .C_M_AXI_WUSER_WIDTH( C_M_AXI_MASTER_BUS_WUSER_WIDTH ),
-    .C_M_AXI_RUSER_WIDTH( C_M_AXI_MASTER_BUS_RUSER_WIDTH ),
-    .C_M_AXI_BUSER_WIDTH( C_M_AXI_MASTER_BUS_BUSER_WIDTH ),
-    .C_USER_VALUE( C_M_AXI_MASTER_BUS_USER_VALUE ),
-    .C_PROT_VALUE( C_M_AXI_MASTER_BUS_PROT_VALUE ),
-    .C_CACHE_VALUE( C_M_AXI_MASTER_BUS_CACHE_VALUE ))
-sensor_MASTER_BUS_m_axi_U(
-    .AWVALID(m_axi_MASTER_BUS_AWVALID),
-    .AWREADY(m_axi_MASTER_BUS_AWREADY),
-    .AWADDR(m_axi_MASTER_BUS_AWADDR),
-    .AWID(m_axi_MASTER_BUS_AWID),
-    .AWLEN(m_axi_MASTER_BUS_AWLEN),
-    .AWSIZE(m_axi_MASTER_BUS_AWSIZE),
-    .AWBURST(m_axi_MASTER_BUS_AWBURST),
-    .AWLOCK(m_axi_MASTER_BUS_AWLOCK),
-    .AWCACHE(m_axi_MASTER_BUS_AWCACHE),
-    .AWPROT(m_axi_MASTER_BUS_AWPROT),
-    .AWQOS(m_axi_MASTER_BUS_AWQOS),
-    .AWREGION(m_axi_MASTER_BUS_AWREGION),
-    .AWUSER(m_axi_MASTER_BUS_AWUSER),
-    .WVALID(m_axi_MASTER_BUS_WVALID),
-    .WREADY(m_axi_MASTER_BUS_WREADY),
-    .WDATA(m_axi_MASTER_BUS_WDATA),
-    .WSTRB(m_axi_MASTER_BUS_WSTRB),
-    .WLAST(m_axi_MASTER_BUS_WLAST),
-    .WID(m_axi_MASTER_BUS_WID),
-    .WUSER(m_axi_MASTER_BUS_WUSER),
-    .ARVALID(m_axi_MASTER_BUS_ARVALID),
-    .ARREADY(m_axi_MASTER_BUS_ARREADY),
-    .ARADDR(m_axi_MASTER_BUS_ARADDR),
-    .ARID(m_axi_MASTER_BUS_ARID),
-    .ARLEN(m_axi_MASTER_BUS_ARLEN),
-    .ARSIZE(m_axi_MASTER_BUS_ARSIZE),
-    .ARBURST(m_axi_MASTER_BUS_ARBURST),
-    .ARLOCK(m_axi_MASTER_BUS_ARLOCK),
-    .ARCACHE(m_axi_MASTER_BUS_ARCACHE),
-    .ARPROT(m_axi_MASTER_BUS_ARPROT),
-    .ARQOS(m_axi_MASTER_BUS_ARQOS),
-    .ARREGION(m_axi_MASTER_BUS_ARREGION),
-    .ARUSER(m_axi_MASTER_BUS_ARUSER),
-    .RVALID(m_axi_MASTER_BUS_RVALID),
-    .RREADY(m_axi_MASTER_BUS_RREADY),
-    .RDATA(m_axi_MASTER_BUS_RDATA),
-    .RLAST(m_axi_MASTER_BUS_RLAST),
-    .RID(m_axi_MASTER_BUS_RID),
-    .RUSER(m_axi_MASTER_BUS_RUSER),
-    .RRESP(m_axi_MASTER_BUS_RRESP),
-    .BVALID(m_axi_MASTER_BUS_BVALID),
-    .BREADY(m_axi_MASTER_BUS_BREADY),
-    .BRESP(m_axi_MASTER_BUS_BRESP),
-    .BID(m_axi_MASTER_BUS_BID),
-    .BUSER(m_axi_MASTER_BUS_BUSER),
+    .C_M_AXI_ID_WIDTH( C_M_AXI_IICDATA_ID_WIDTH ),
+    .C_M_AXI_ADDR_WIDTH( C_M_AXI_IICDATA_ADDR_WIDTH ),
+    .C_M_AXI_DATA_WIDTH( C_M_AXI_IICDATA_DATA_WIDTH ),
+    .C_M_AXI_AWUSER_WIDTH( C_M_AXI_IICDATA_AWUSER_WIDTH ),
+    .C_M_AXI_ARUSER_WIDTH( C_M_AXI_IICDATA_ARUSER_WIDTH ),
+    .C_M_AXI_WUSER_WIDTH( C_M_AXI_IICDATA_WUSER_WIDTH ),
+    .C_M_AXI_RUSER_WIDTH( C_M_AXI_IICDATA_RUSER_WIDTH ),
+    .C_M_AXI_BUSER_WIDTH( C_M_AXI_IICDATA_BUSER_WIDTH ),
+    .C_TARGET_ADDR( C_M_AXI_IICDATA_TARGET_ADDR ),
+    .C_USER_VALUE( C_M_AXI_IICDATA_USER_VALUE ),
+    .C_PROT_VALUE( C_M_AXI_IICDATA_PROT_VALUE ),
+    .C_CACHE_VALUE( C_M_AXI_IICDATA_CACHE_VALUE ))
+sensor_iicData_m_axi_U(
+    .AWVALID(m_axi_iicData_AWVALID),
+    .AWREADY(m_axi_iicData_AWREADY),
+    .AWADDR(m_axi_iicData_AWADDR),
+    .AWID(m_axi_iicData_AWID),
+    .AWLEN(m_axi_iicData_AWLEN),
+    .AWSIZE(m_axi_iicData_AWSIZE),
+    .AWBURST(m_axi_iicData_AWBURST),
+    .AWLOCK(m_axi_iicData_AWLOCK),
+    .AWCACHE(m_axi_iicData_AWCACHE),
+    .AWPROT(m_axi_iicData_AWPROT),
+    .AWQOS(m_axi_iicData_AWQOS),
+    .AWREGION(m_axi_iicData_AWREGION),
+    .AWUSER(m_axi_iicData_AWUSER),
+    .WVALID(m_axi_iicData_WVALID),
+    .WREADY(m_axi_iicData_WREADY),
+    .WDATA(m_axi_iicData_WDATA),
+    .WSTRB(m_axi_iicData_WSTRB),
+    .WLAST(m_axi_iicData_WLAST),
+    .WID(m_axi_iicData_WID),
+    .WUSER(m_axi_iicData_WUSER),
+    .ARVALID(m_axi_iicData_ARVALID),
+    .ARREADY(m_axi_iicData_ARREADY),
+    .ARADDR(m_axi_iicData_ARADDR),
+    .ARID(m_axi_iicData_ARID),
+    .ARLEN(m_axi_iicData_ARLEN),
+    .ARSIZE(m_axi_iicData_ARSIZE),
+    .ARBURST(m_axi_iicData_ARBURST),
+    .ARLOCK(m_axi_iicData_ARLOCK),
+    .ARCACHE(m_axi_iicData_ARCACHE),
+    .ARPROT(m_axi_iicData_ARPROT),
+    .ARQOS(m_axi_iicData_ARQOS),
+    .ARREGION(m_axi_iicData_ARREGION),
+    .ARUSER(m_axi_iicData_ARUSER),
+    .RVALID(m_axi_iicData_RVALID),
+    .RREADY(m_axi_iicData_RREADY),
+    .RDATA(m_axi_iicData_RDATA),
+    .RLAST(m_axi_iicData_RLAST),
+    .RID(m_axi_iicData_RID),
+    .RUSER(m_axi_iicData_RUSER),
+    .RRESP(m_axi_iicData_RRESP),
+    .BVALID(m_axi_iicData_BVALID),
+    .BREADY(m_axi_iicData_BREADY),
+    .BRESP(m_axi_iicData_BRESP),
+    .BID(m_axi_iicData_BID),
+    .BUSER(m_axi_iicData_BUSER),
     .ACLK(ap_clk),
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
-    .I_ARVALID(MASTER_BUS_ARVALID),
-    .I_ARREADY(MASTER_BUS_ARREADY),
-    .I_ARADDR(MASTER_BUS_ARADDR),
+    .I_ARVALID(iicData_ARVALID),
+    .I_ARREADY(iicData_ARREADY),
+    .I_ARADDR(iicData_ARADDR),
     .I_ARID(1'd0),
     .I_ARLEN(32'd1),
     .I_ARSIZE(3'd0),
@@ -337,15 +330,15 @@ sensor_MASTER_BUS_m_axi_U(
     .I_ARUSER(1'd0),
     .I_ARBURST(2'd0),
     .I_ARREGION(4'd0),
-    .I_RVALID(MASTER_BUS_RVALID),
-    .I_RREADY(MASTER_BUS_RREADY),
-    .I_RDATA(MASTER_BUS_RDATA),
-    .I_RID(MASTER_BUS_RID),
-    .I_RUSER(MASTER_BUS_RUSER),
-    .I_RRESP(MASTER_BUS_RRESP),
-    .I_RLAST(MASTER_BUS_RLAST),
+    .I_RVALID(iicData_RVALID),
+    .I_RREADY(iicData_RREADY),
+    .I_RDATA(iicData_RDATA),
+    .I_RID(iicData_RID),
+    .I_RUSER(iicData_RUSER),
+    .I_RRESP(iicData_RRESP),
+    .I_RLAST(iicData_RLAST),
     .I_AWVALID(1'b0),
-    .I_AWREADY(MASTER_BUS_AWREADY),
+    .I_AWREADY(iicData_AWREADY),
     .I_AWADDR(32'd0),
     .I_AWID(1'd0),
     .I_AWLEN(32'd0),
@@ -358,17 +351,17 @@ sensor_MASTER_BUS_m_axi_U(
     .I_AWBURST(2'd0),
     .I_AWREGION(4'd0),
     .I_WVALID(1'b0),
-    .I_WREADY(MASTER_BUS_WREADY),
+    .I_WREADY(iicData_WREADY),
     .I_WDATA(32'd0),
     .I_WID(1'd0),
     .I_WUSER(1'd0),
     .I_WLAST(1'b0),
     .I_WSTRB(4'd0),
-    .I_BVALID(MASTER_BUS_BVALID),
+    .I_BVALID(iicData_BVALID),
     .I_BREADY(1'b0),
-    .I_BRESP(MASTER_BUS_BRESP),
-    .I_BID(MASTER_BUS_BID),
-    .I_BUSER(MASTER_BUS_BUSER)
+    .I_BRESP(iicData_BRESP),
+    .I_BID(iicData_BID),
+    .I_BUSER(iicData_BUSER)
 );
 
 always @ (posedge ap_clk) begin
@@ -381,64 +374,26 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_reg_ioackin_MASTER_BUS_ARREADY <= 1'b0;
+        ap_reg_ioackin_iicData_ARREADY <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state2)) begin
-            if ((ap_sig_ioackin_MASTER_BUS_ARREADY == 1'b1)) begin
-                ap_reg_ioackin_MASTER_BUS_ARREADY <= 1'b0;
-            end else if ((1'b1 == MASTER_BUS_ARREADY)) begin
-                ap_reg_ioackin_MASTER_BUS_ARREADY <= 1'b1;
+        if ((1'b1 == ap_CS_fsm_state1)) begin
+            if (~((ap_sig_ioackin_iicData_ARREADY == 1'b0) | (ap_start == 1'b0))) begin
+                ap_reg_ioackin_iicData_ARREADY <= 1'b0;
+            end else if (((iicData_ARREADY == 1'b1) & (ap_start == 1'b1))) begin
+                ap_reg_ioackin_iicData_ARREADY <= 1'b1;
             end
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state9) & (1'b1 == MASTER_BUS_RVALID))) begin
-        MASTER_BUS_addr_read_reg_126 <= MASTER_BUS_RDATA;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-        iicData2_sum_reg_115 <= iicData2_sum_fu_99_p2;
-    end
-end
-
-always @ (*) begin
-    if (((ap_reg_ioackin_MASTER_BUS_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state2))) begin
-        MASTER_BUS_ARVALID = 1'b1;
-    end else begin
-        MASTER_BUS_ARVALID = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state9) & (1'b1 == MASTER_BUS_RVALID))) begin
-        MASTER_BUS_RREADY = 1'b1;
-    end else begin
-        MASTER_BUS_RREADY = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        MASTER_BUS_blk_n_AR = m_axi_MASTER_BUS_ARREADY;
-    end else begin
-        MASTER_BUS_blk_n_AR = 1'b1;
+    if (((1'b1 == ap_CS_fsm_state8) & (iicData_RVALID == 1'b1))) begin
+        iicData_addr_read_reg_76 <= iicData_RDATA;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state9)) begin
-        MASTER_BUS_blk_n_R = m_axi_MASTER_BUS_RVALID;
-    end else begin
-        MASTER_BUS_blk_n_R = 1'b1;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state10)) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -454,7 +409,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state10)) begin
+    if ((1'b1 == ap_CS_fsm_state9)) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -462,15 +417,47 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((ap_reg_ioackin_MASTER_BUS_ARREADY == 1'b0)) begin
-        ap_sig_ioackin_MASTER_BUS_ARREADY = MASTER_BUS_ARREADY;
+    if ((ap_reg_ioackin_iicData_ARREADY == 1'b0)) begin
+        ap_sig_ioackin_iicData_ARREADY = iicData_ARREADY;
     end else begin
-        ap_sig_ioackin_MASTER_BUS_ARREADY = 1'b1;
+        ap_sig_ioackin_iicData_ARREADY = 1'b1;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state10)) begin
+    if (((ap_reg_ioackin_iicData_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
+        iicData_ARVALID = 1'b1;
+    end else begin
+        iicData_ARVALID = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state8) & (iicData_RVALID == 1'b1))) begin
+        iicData_RREADY = 1'b1;
+    end else begin
+        iicData_RREADY = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
+        iicData_blk_n_AR = m_axi_iicData_ARREADY;
+    end else begin
+        iicData_blk_n_AR = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state8)) begin
+        iicData_blk_n_R = m_axi_iicData_RVALID;
+    end else begin
+        iicData_blk_n_R = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state9)) begin
         iicStatus_o_ap_vld = 1'b1;
     end else begin
         iicStatus_o_ap_vld = 1'b0;
@@ -480,18 +467,14 @@ end
 always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_state1 : begin
-            if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
+            if ((~((ap_sig_ioackin_iicData_ARREADY == 1'b0) | (ap_start == 1'b0)) & (1'b1 == ap_CS_fsm_state1))) begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((ap_sig_ioackin_MASTER_BUS_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
-                ap_NS_fsm = ap_ST_fsm_state3;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state2;
-            end
+            ap_NS_fsm = ap_ST_fsm_state3;
         end
         ap_ST_fsm_state3 : begin
             ap_NS_fsm = ap_ST_fsm_state4;
@@ -509,16 +492,13 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state8;
         end
         ap_ST_fsm_state8 : begin
-            ap_NS_fsm = ap_ST_fsm_state9;
-        end
-        ap_ST_fsm_state9 : begin
-            if (((1'b1 == ap_CS_fsm_state9) & (1'b1 == MASTER_BUS_RVALID))) begin
-                ap_NS_fsm = ap_ST_fsm_state10;
-            end else begin
+            if (((1'b1 == ap_CS_fsm_state8) & (iicData_RVALID == 1'b1))) begin
                 ap_NS_fsm = ap_ST_fsm_state9;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state8;
             end
         end
-        ap_ST_fsm_state10 : begin
+        ap_ST_fsm_state9 : begin
             ap_NS_fsm = ap_ST_fsm_state1;
         end
         default : begin
@@ -527,13 +507,9 @@ always @ (*) begin
     endcase
 end
 
-assign MASTER_BUS_ARADDR = iicData2_sum_cast_fu_105_p1;
-
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
-assign ap_CS_fsm_state10 = ap_CS_fsm[32'd9];
-
-assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+assign ap_CS_fsm_state8 = ap_CS_fsm[32'd7];
 
 assign ap_CS_fsm_state9 = ap_CS_fsm[32'd8];
 
@@ -541,12 +517,6 @@ always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign iicData2_sum_cast_fu_105_p1 = iicData2_sum_reg_115;
-
-assign iicData2_sum_fu_99_p2 = (tmp_cast_fu_95_p1 + 31'd65);
-
-assign tmp_cast_fu_95_p1 = tmp_fu_85_p4;
-
-assign tmp_fu_85_p4 = {{iicData[31:2]}};
+assign iicData_ARADDR = 64'd268438534;
 
 endmodule //sensor
