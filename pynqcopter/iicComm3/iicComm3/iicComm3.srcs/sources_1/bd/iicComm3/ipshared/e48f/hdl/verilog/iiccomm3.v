@@ -239,7 +239,7 @@ wire   [1:0] iic_BRESP;
 wire   [0:0] iic_BID;
 wire   [0:0] iic_BUSER;
 reg    ap_sig_ioackin_iic_ARREADY;
-reg   [31:0] iic_addr_read_reg_68;
+reg   [31:0] iic_addr_read_reg_66;
 reg    ap_reg_ioackin_iic_ARREADY;
 wire    ap_CS_fsm_state9;
 reg   [8:0] ap_NS_fsm;
@@ -305,7 +305,7 @@ iiccomm3_outValue_first_s_axi_U(
     .ACLK(ap_clk),
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
-    .outValue(iic_addr_read_reg_68),
+    .outValue(iic_addr_read_reg_66),
     .outValue_ap_vld(outValue_ap_vld)
 );
 
@@ -449,7 +449,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
-        iic_addr_read_reg_68 <= iic_RDATA;
+        iic_addr_read_reg_66 <= iic_RDATA;
     end
 end
 
@@ -578,6 +578,6 @@ always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign iic_ARADDR = 64'd3137;
+assign iic_ARADDR = 64'd268438593;
 
 endmodule //iiccomm3

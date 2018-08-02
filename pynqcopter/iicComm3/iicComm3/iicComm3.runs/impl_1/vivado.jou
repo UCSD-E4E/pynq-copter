@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Thu Aug  2 10:05:23 2018
-# Process ID: 1181
+# Start of session at: Thu Aug  2 11:59:41 2018
+# Process ID: 24701
 # Current directory: /home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.runs/impl_1
 # Command line: vivado -log iicComm3_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source iicComm3_wrapper.tcl -notrace
 # Log file: /home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.runs/impl_1/iicComm3_wrapper.vdi
