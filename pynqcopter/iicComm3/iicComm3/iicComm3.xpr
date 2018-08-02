@@ -6,7 +6,7 @@
 <Project Version="7" Minor="35" Path="/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="cc2dbd94c16d4f03856d91297e930ff7"/>
+    <Option Name="Id" Val="f3254cde27a04015aa3a2a6612c7f83a"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -120,15 +120,15 @@
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
-    <FileSet Name="iicComm3_axi_iic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/iicComm3_axi_iic_0_0">
-      <Config>
-        <Option Name="TopModule" Val="iicComm3_axi_iic_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="iicComm3_iiccomm3_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/iicComm3_iiccomm3_0_0">
       <Config>
         <Option Name="TopModule" Val="iicComm3_iiccomm3_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="iicComm3_axi_iic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/iicComm3_axi_iic_0_0">
+      <Config>
+        <Option Name="TopModule" Val="iicComm3_axi_iic_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -194,7 +194,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="iicComm3_axi_iic_0_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm3_axi_iic_0_0" Part="xc7z020clg400-1" ConstrsSet="iicComm3_axi_iic_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm3_axi_iic_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="iicComm3_iiccomm3_0_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm3_iiccomm3_0_0" Part="xc7z020clg400-1" ConstrsSet="iicComm3_iiccomm3_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm3_iiccomm3_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
@@ -203,7 +203,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="iicComm3_iiccomm3_0_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm3_iiccomm3_0_0" Part="xc7z020clg400-1" ConstrsSet="iicComm3_iiccomm3_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm3_iiccomm3_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="iicComm3_axi_iic_0_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm3_axi_iic_0_0" Part="xc7z020clg400-1" ConstrsSet="iicComm3_axi_iic_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm3_axi_iic_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
@@ -274,7 +274,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="iicComm3_axi_iic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm3_axi_iic_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm3_axi_iic_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="iicComm3_iiccomm3_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm3_iiccomm3_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm3_iiccomm3_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
@@ -290,7 +290,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="iicComm3_iiccomm3_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm3_iiccomm3_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm3_iiccomm3_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="iicComm3_axi_iic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm3_axi_iic_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm3_axi_iic_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>

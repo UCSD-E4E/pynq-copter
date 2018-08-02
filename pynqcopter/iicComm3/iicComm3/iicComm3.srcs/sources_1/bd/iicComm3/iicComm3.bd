@@ -2176,13 +2176,13 @@
         <spirit:range>4G</spirit:range>
         <spirit:width>32</spirit:width>
         <spirit:segments>
-          <spirit:segment bd:isExcluded="true">
+          <spirit:segment>
             <spirit:name>SEG_axi_iic_0_Reg</spirit:name>
             <spirit:displayName>/axi_iic_0/S_AXI/Reg</spirit:displayName>
             <spirit:addressOffset>0x40003000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
-          <spirit:segment bd:isExcluded="true">
+          <spirit:segment>
             <spirit:name>SEG_iiccomm3_0_Reg</spirit:name>
             <spirit:displayName>/iiccomm3_0/s_axi_AXILiteS/Reg</spirit:displayName>
             <spirit:addressOffset>0x40000000</spirit:addressOffset>

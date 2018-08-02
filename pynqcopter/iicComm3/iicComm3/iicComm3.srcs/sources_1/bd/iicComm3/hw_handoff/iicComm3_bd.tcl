@@ -1078,16 +1078,10 @@ proc create_root_design { parentCell } {
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_iic_0/s_axi_aresetn] [get_bd_pins iiccomm3_0/ap_rst_n] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins ps7_0_axi_periph/S01_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
 
   # Create address segments
+  create_bd_addr_seg -range 0x00001000 -offset 0x40003000 [get_bd_addr_spaces iiccomm3_0/Data_m_axi_iic] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40000000 [get_bd_addr_spaces iiccomm3_0/Data_m_axi_iic] [get_bd_addr_segs iiccomm3_0/s_axi_AXILiteS/Reg] SEG_iiccomm3_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x40003000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x40000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs iiccomm3_0/s_axi_AXILiteS/Reg] SEG_iiccomm3_0_Reg
-
-  # Exclude Address Segments
-  create_bd_addr_seg -range 0x00001000 -offset 0x40003000 [get_bd_addr_spaces iiccomm3_0/Data_m_axi_iic] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
-  exclude_bd_addr_seg [get_bd_addr_segs iiccomm3_0/Data_m_axi_iic/SEG_axi_iic_0_Reg]
-
-  create_bd_addr_seg -range 0x00001000 -offset 0x40000000 [get_bd_addr_spaces iiccomm3_0/Data_m_axi_iic] [get_bd_addr_segs iiccomm3_0/s_axi_AXILiteS/Reg] SEG_iiccomm3_0_Reg
-  exclude_bd_addr_seg [get_bd_addr_segs iiccomm3_0/Data_m_axi_iic/SEG_iiccomm3_0_Reg]
-
 
 
   # Restore current instance
