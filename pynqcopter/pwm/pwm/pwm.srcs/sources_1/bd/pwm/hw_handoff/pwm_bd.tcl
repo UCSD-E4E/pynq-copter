@@ -1063,8 +1063,10 @@ proc create_root_design { parentCell } {
   set pwm_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:pwm:1.0 pwm_0 ]
 
   set_property -dict [ list \
+   CONFIG.SUPPORTS_NARROW_BURST {0} \
    CONFIG.NUM_READ_OUTSTANDING {1} \
    CONFIG.NUM_WRITE_OUTSTANDING {1} \
+   CONFIG.MAX_BURST_LENGTH {1} \
  ] [get_bd_intf_pins /pwm_0/s_axi_ctrl]
 
   # Create instance: rst_ps7_0_100M, and set properties

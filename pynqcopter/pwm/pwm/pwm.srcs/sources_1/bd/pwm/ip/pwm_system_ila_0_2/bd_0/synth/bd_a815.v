@@ -95,11 +95,11 @@ module bd_a815
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WREADY" *) input SLOT_0_AXI_wready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WSTRB" *) input [3:0]SLOT_0_AXI_wstrb;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WVALID" *) input SLOT_0_AXI_wvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_1_AXI, ADDR_WIDTH 7, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, MAX_BURST_LENGTH 1, NUM_READ_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 1, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0" *) input [6:0]SLOT_1_AXI_araddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_1_AXI, ADDR_WIDTH 6, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, MAX_BURST_LENGTH 1, NUM_READ_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 1, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0" *) input [5:0]SLOT_1_AXI_araddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARPROT" *) input [2:0]SLOT_1_AXI_arprot;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARREADY" *) input SLOT_1_AXI_arready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARVALID" *) input SLOT_1_AXI_arvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWADDR" *) input [6:0]SLOT_1_AXI_awaddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWADDR" *) input [5:0]SLOT_1_AXI_awaddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWPROT" *) input [2:0]SLOT_1_AXI_awprot;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWREADY" *) input SLOT_1_AXI_awready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWVALID" *) input SLOT_1_AXI_awvalid;
@@ -117,11 +117,11 @@ module bd_a815
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_BUSIF SLOT_0_AXI:SLOT_1_AXI, ASSOCIATED_RESET resetn, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0, FREQ_HZ 100000000, PHASE 0.000" *) input clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESETN RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESETN, POLARITY ACTIVE_LOW" *) input resetn;
 
-  wire [6:0]Conn1_ARADDR;
+  wire [5:0]Conn1_ARADDR;
   wire [2:0]Conn1_ARPROT;
   wire Conn1_ARREADY;
   wire Conn1_ARVALID;
-  wire [6:0]Conn1_AWADDR;
+  wire [5:0]Conn1_AWADDR;
   wire [2:0]Conn1_AWPROT;
   wire Conn1_AWREADY;
   wire Conn1_AWVALID;
@@ -214,13 +214,13 @@ module bd_a815
   wire net_slot_0_axi_wvalid;
   wire [1:0]net_slot_1_axi_ar_cnt;
   wire [1:0]net_slot_1_axi_ar_ctrl;
-  wire [6:0]net_slot_1_axi_araddr;
+  wire [5:0]net_slot_1_axi_araddr;
   wire [2:0]net_slot_1_axi_arprot;
   wire net_slot_1_axi_arready;
   wire net_slot_1_axi_arvalid;
   wire [1:0]net_slot_1_axi_aw_cnt;
   wire [1:0]net_slot_1_axi_aw_ctrl;
-  wire [6:0]net_slot_1_axi_awaddr;
+  wire [5:0]net_slot_1_axi_awaddr;
   wire [2:0]net_slot_1_axi_awprot;
   wire net_slot_1_axi_awready;
   wire net_slot_1_axi_awvalid;
@@ -242,11 +242,11 @@ module bd_a815
   wire net_slot_1_axi_wvalid;
   wire resetn_1;
 
-  assign Conn1_ARADDR = SLOT_1_AXI_araddr[6:0];
+  assign Conn1_ARADDR = SLOT_1_AXI_araddr[5:0];
   assign Conn1_ARPROT = SLOT_1_AXI_arprot[2:0];
   assign Conn1_ARREADY = SLOT_1_AXI_arready;
   assign Conn1_ARVALID = SLOT_1_AXI_arvalid;
-  assign Conn1_AWADDR = SLOT_1_AXI_awaddr[6:0];
+  assign Conn1_AWADDR = SLOT_1_AXI_awaddr[5:0];
   assign Conn1_AWPROT = SLOT_1_AXI_awprot[2:0];
   assign Conn1_AWREADY = SLOT_1_AXI_awready;
   assign Conn1_AWVALID = SLOT_1_AXI_awvalid;

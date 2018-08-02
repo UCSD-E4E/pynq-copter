@@ -94,11 +94,11 @@ module bd_a815_wrapper
   input SLOT_0_AXI_wready;
   input [3:0]SLOT_0_AXI_wstrb;
   input SLOT_0_AXI_wvalid;
-  input [6:0]SLOT_1_AXI_araddr;
+  input [5:0]SLOT_1_AXI_araddr;
   input [2:0]SLOT_1_AXI_arprot;
   input SLOT_1_AXI_arready;
   input SLOT_1_AXI_arvalid;
-  input [6:0]SLOT_1_AXI_awaddr;
+  input [5:0]SLOT_1_AXI_awaddr;
   input [2:0]SLOT_1_AXI_awprot;
   input SLOT_1_AXI_awready;
   input SLOT_1_AXI_awvalid;
@@ -149,11 +149,11 @@ module bd_a815_wrapper
   wire SLOT_0_AXI_wready;
   wire [3:0]SLOT_0_AXI_wstrb;
   wire SLOT_0_AXI_wvalid;
-  wire [6:0]SLOT_1_AXI_araddr;
+  wire [5:0]SLOT_1_AXI_araddr;
   wire [2:0]SLOT_1_AXI_arprot;
   wire SLOT_1_AXI_arready;
   wire SLOT_1_AXI_arvalid;
-  wire [6:0]SLOT_1_AXI_awaddr;
+  wire [5:0]SLOT_1_AXI_awaddr;
   wire [2:0]SLOT_1_AXI_awprot;
   wire SLOT_1_AXI_awready;
   wire SLOT_1_AXI_awvalid;

@@ -25,17 +25,21 @@
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
 // 0x10 : Data signal of min_duty_V
-//        bit 31~0 - min_duty_V[31:0] (Read/Write)
+//        bit 15~0 - min_duty_V[15:0] (Read/Write)
+//        others   - reserved
 // 0x14 : reserved
 // 0x18 : Data signal of max_duty_V
-//        bit 31~0 - max_duty_V[31:0] (Read/Write)
+//        bit 15~0 - max_duty_V[15:0] (Read/Write)
+//        others   - reserved
 // 0x1c : reserved
 // 0x20 : Data signal of period_V
-//        bit 31~0 - period_V[31:0] (Read/Write)
+//        bit 15~0 - period_V[15:0] (Read/Write)
+//        others   - reserved
 // 0x24 : reserved
-// 0x40 ~
-// 0x5f : Memory 'm_V' (6 * 32b)
-//        Word n : bit [31:0] - m_V[n]
+// 0x30 ~
+// 0x3f : Memory 'm_V' (6 * 16b)
+//        Word n : bit [15: 0] - m_V[2n]
+//                 bit [31:16] - m_V[2n+1]
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XPWM_CTRL_ADDR_AP_CTRL         0x00
@@ -43,13 +47,13 @@
 #define XPWM_CTRL_ADDR_IER             0x08
 #define XPWM_CTRL_ADDR_ISR             0x0c
 #define XPWM_CTRL_ADDR_MIN_DUTY_V_DATA 0x10
-#define XPWM_CTRL_BITS_MIN_DUTY_V_DATA 32
+#define XPWM_CTRL_BITS_MIN_DUTY_V_DATA 16
 #define XPWM_CTRL_ADDR_MAX_DUTY_V_DATA 0x18
-#define XPWM_CTRL_BITS_MAX_DUTY_V_DATA 32
+#define XPWM_CTRL_BITS_MAX_DUTY_V_DATA 16
 #define XPWM_CTRL_ADDR_PERIOD_V_DATA   0x20
-#define XPWM_CTRL_BITS_PERIOD_V_DATA   32
-#define XPWM_CTRL_ADDR_M_V_BASE        0x40
-#define XPWM_CTRL_ADDR_M_V_HIGH        0x5f
-#define XPWM_CTRL_WIDTH_M_V            32
+#define XPWM_CTRL_BITS_PERIOD_V_DATA   16
+#define XPWM_CTRL_ADDR_M_V_BASE        0x30
+#define XPWM_CTRL_ADDR_M_V_HIGH        0x3f
+#define XPWM_CTRL_WIDTH_M_V            16
 #define XPWM_CTRL_DEPTH_M_V            6
 

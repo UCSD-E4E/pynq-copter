@@ -13,7 +13,7 @@ set Pointer0 "0"
 set Reference0 "0"
 set Dims0 [list 4]
 set Interface0 "wire"
-set DataType0 "[list ap_ufixed 32 1 5 3 0 ]"
+set DataType0 "[list ap_fixed 16 1 5 3 0 ]"
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
 lappend PortList $Port0
 set PortName1 "m"
@@ -25,7 +25,7 @@ set Pointer1 "0"
 set Reference1 "0"
 set Dims1 [list 4096]
 set Interface1 "wire"
-set DataType1 "[list ap_ufixed 32 1 5 3 0 ]"
+set DataType1 "[list ap_fixed 16 1 5 3 0 ]"
 set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
 lappend PortList $Port1
 set globalAPint "" 

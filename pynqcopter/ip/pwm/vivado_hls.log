@@ -6,7 +6,7 @@
 
 source /home/brennan/Vivado/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/home/brennan/Vivado/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'brennan' on host 'apple' (Linux_x86_64 version 4.13.0-45-generic) on Fri Jul 27 18:13:42 EDT 2018
+INFO: [HLS 200-10] For user 'brennan' on host 'apple' (Linux_x86_64 version 4.15.0-29-generic) on Wed Aug 01 04:32:22 PDT 2018
 INFO: [HLS 200-10] On os Ubuntu 16.04.4 LTS
 INFO: [HLS 200-10] In directory '/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm'
 INFO: [HLS 200-10] Opening project '/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm'.
@@ -20,28 +20,26 @@ INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 make[1]: Entering directory '/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/csim/build'
-   Compiling ../../../../pwm.cpp in debug mode
-   Compiling ../../../../main.cpp in debug mode
-   Generating csim.exe
+make[1]: 'csim.exe' is up to date.
 make[1]: Leaving directory '/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/csim/build'
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'pwm.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:00 ; elapsed = 00:00:43 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 432 ; free virtual = 10194
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:02 ; elapsed = 00:00:45 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 422 ; free virtual = 10191
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:54 ; elapsed = 00:00:43 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 2993 ; free virtual = 9739
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:56 ; elapsed = 00:00:45 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 2986 ; free virtual = 9740
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 399 ; free virtual = 10177
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:57 ; elapsed = 00:00:48 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 2960 ; free virtual = 9724
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 389 ; free virtual = 10169
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:57 ; elapsed = 00:00:49 . Memory (MB): peak = 488.570 ; gain = 142.008 ; free physical = 2949 ; free virtual = 9715
 INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'pwm' (pwm.cpp:43).
 INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (pwm.cpp:56) in function 'pwm' completely.
 INFO: [XFORM 203-501] Unrolling loop 'Loop-2' (pwm.cpp:64) in function 'pwm' completely.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'pwm'... converting 15 basic blocks.
 INFO: [XFORM 203-11] Balancing expressions in function 'pwm' (pwm.cpp:43)...14 expression(s) balanced.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:04 ; elapsed = 00:00:47 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 355 ; free virtual = 10140
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:04 ; elapsed = 00:00:48 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 350 ; free virtual = 10136
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:58 ; elapsed = 00:00:50 . Memory (MB): peak = 488.570 ; gain = 142.008 ; free physical = 2915 ; free virtual = 9687
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:58 ; elapsed = 00:00:51 . Memory (MB): peak = 488.570 ; gain = 142.008 ; free physical = 2912 ; free virtual = 9684
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'pwm' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -50,15 +48,18 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'pwm'.
 WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('m_V_load_1', pwm.cpp:57) on array 'm_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'm_V'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 19.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 14.
+WARNING: [SCHED 204-21] Estimated clock period (3.89ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns).
+WARNING: [SCHED 204-21] The critical path consists of the following:
+	'mul' operation ('p_Val2_s', pwm.cpp:57) (3.89 ns)
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 48.71 seconds; current allocated memory: 97.368 MB.
+INFO: [HLS 200-111]  Elapsed time: 52.32 seconds; current allocated memory: 96.729 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 98.186 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 97.437 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'pwm'
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -72,15 +73,11 @@ INFO: [RTGEN 206-500] Setting interface mode on function 'pwm' to 's_axilite & a
 WARNING: [RTGEN 206-101] Register 'accumulator_V' is power-on initialization.
 WARNING: [RTGEN 206-101] Register 'out_p_V' is power-on initialization.
 INFO: [RTGEN 206-100] Bundling port 'return', 'max_duty_V', 'period_V' and 'm_V' to AXI-Lite port ctrl.
-INFO: [SYN 201-210] Renamed object name 'pwm_mul_32ns_33s_65_7_1' to 'pwm_mul_32ns_33s_bkb' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'pwm_add_66s_66ns_66_2_1' to 'pwm_add_66s_66ns_cud' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'pwm_add_66s_66ns_cud': 6 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'pwm_mul_32ns_33s_bkb': 6 instance(s).
+INFO: [SYN 201-210] Renamed object name 'pwm_mul_mul_16s_17s_33_3_1' to 'pwm_mul_mul_16s_1bkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'pwm_mul_mul_16s_1bkb': 6 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'pwm'.
-INFO: [HLS 200-111]  Elapsed time: 0.34 seconds; current allocated memory: 99.715 MB.
-INFO: [RTMG 210-282] Generating pipelined core: 'pwm_mul_32ns_33s_bkb_MulnS_0'
-INFO: [RTMG 210-283] Generating pipelined adder/subtractor : 'pwm_add_66s_66ns_cud_AddSubnS_0'
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:06 ; elapsed = 00:00:51 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 327 ; free virtual = 10130
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 98.765 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:00 ; elapsed = 00:00:54 . Memory (MB): peak = 488.570 ; gain = 142.008 ; free physical = 2899 ; free virtual = 9679
 INFO: [SYSC 207-301] Generating SystemC RTL for pwm.
 INFO: [VHDL 208-304] Generating VHDL RTL for pwm.
 INFO: [VLOG 209-307] Generating Verilog RTL for pwm.
@@ -95,6 +92,6 @@ source run_ippack.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/brennan/Vivado/Vivado/2017.4/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Fri Jul 27 18:14:47 2018...
-INFO: [HLS 200-112] Total elapsed time: 86.71 seconds; peak allocated memory: 99.715 MB.
-INFO: [Common 17-206] Exiting vivado_hls at Fri Jul 27 18:15:09 2018...
+INFO: [Common 17-206] Exiting Vivado at Wed Aug  1 04:33:28 2018...
+INFO: [HLS 200-112] Total elapsed time: 89.32 seconds; peak allocated memory: 98.765 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Wed Aug  1 04:33:50 2018...

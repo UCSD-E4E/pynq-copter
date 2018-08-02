@@ -32970,8 +32970,8 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 
 
-typedef ap_ufixed<32,1> F_t;
-typedef ap_uint<32> N_t;
+typedef ap_fixed<16,1> F_t;
+typedef ap_uint<16> N_t;
 typedef ap_uint<6> O_t;
 
 void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);

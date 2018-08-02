@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "mixer"
 set Version     "1.0"
 set DisplayName "Mixer"
-set Revision    "1807271922"
+set Revision    "1808021017"
 set Description "HLS Core: Mixer Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -89,7 +89,7 @@ set Interfaces {
         addr_bits "5"
         port_width "AWADDR 5 WDATA 32 WSTRB 4 ARADDR 5 RDATA 32"
         registers {{0x00 CTRL       RW   0x0 "Control signals" {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 24 RESERVED_2 R 0 "Reserved.  0s on read." }}} {0x04 GIER       RW   0x0 "Global Interrupt Enable Register" {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }} } {0x08 IP_IER     RW   0x0 "IP Interrupt Enable Register" {{ 0 1 CHAN0_INT_EN RW 0 "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled." } { 1 1 CHAN1_INT_EN RW 0 "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled." } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x0c IP_ISR     RW   0x0 "IP Interrupt Status Register" {{ 0 1 CHAN0_INT_ST RTOW 0 "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup" } { 1 1 CHAN1_INT_ST RTOW 0 "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup" } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}}}
-        memories "regs_in_V {base_address 16 range 16}"
+        memories "regs_in_V {base_address 16 range 8}"
         ctype {
             AWVALID {
                 Type "bool"
@@ -157,9 +157,9 @@ set Interfaces {
                 Bits "5"
             }
             WDATA {
-                Type "real fixed unsigned 31"
-                Width "32"
-                Bits "32"
+                Type "real fixed signed 15"
+                Width "16"
+                Bits "16"
             }
             WSTRB {
                 Type "integer unsigned"
@@ -172,9 +172,9 @@ set Interfaces {
                 Bits "5"
             }
             RDATA {
-                Type "real fixed unsigned 31"
-                Width "32"
-                Bits "32"
+                Type "real fixed signed 15"
+                Width "16"
+                Bits "16"
             }
         }
         data_width "32"
@@ -386,9 +386,9 @@ set Interfaces {
                 Bits "1"
             }
             WDATA {
-                Type "real fixed unsigned 31"
-                Width "32"
-                Bits "32"
+                Type "real fixed signed 15"
+                Width "16"
+                Bits "16"
             }
             WSTRB {
                 Type "integer unsigned"
@@ -421,9 +421,9 @@ set Interfaces {
                 Bits "1"
             }
             RDATA {
-                Type "real fixed unsigned 31"
-                Width "32"
-                Bits "32"
+                Type "real fixed signed 15"
+                Width "16"
+                Bits "16"
             }
             RID {
                 Type "integer unsigned"
@@ -1919,7 +1919,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_ver match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 42 II 6}
+set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 31 II 6}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]

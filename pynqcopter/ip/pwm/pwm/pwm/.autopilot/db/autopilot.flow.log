@@ -1,50 +1,50 @@
-INFO: [HLS 200-0] Workspace /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm opened at Fri Jul 27 18:13:42 EDT 2018
+INFO: [HLS 200-0] Workspace /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm opened at Wed Aug 01 04:32:23 PDT 2018
 Execute       config_clock -quiet -name default -period 4 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
 Command       config_clock returned 0; 0 sec.
 Execute       open_platform DefaultPlatform 
-Command       open_platform returned 0; 0.03 sec.
+Command       open_platform returned 0; 0.04 sec.
 Execute       import_lib /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq 
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.lib 
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.lib 
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.lib 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.lib 
 Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.lib 
+Command             ap_source returned 0; 0.01 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.lib 
 Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.lib 
 Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.lib 
-Command             ap_source returned 0; 0.01 sec.
-Command           ap_source returned 0; 0.03 sec.
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.02 sec.
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.lib 
-Command           ap_source returned 0; 0.01 sec.
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.lib 
 Command           ap_source returned 0; 0 sec.
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.lib 
+Command           ap_source returned 0; 0.02 sec.
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.lib 
 Command           ap_source returned 0; 0.01 sec.
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.lib 
-Command           ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.01 sec.
 Command         ap_source returned 0; 0.09 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_old.lib 
-Command         ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.02 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_vivado.lib 
-Command         ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
-Command           ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0.02 sec.
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
 Command             ap_source returned 0; 0.01 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.02 sec.
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
 Command           ap_source returned 0; 0.01 sec.
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command           ap_source returned 0; 0.02 sec.
 Command         ap_source returned 0; 0.05 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/dsp48e1.hlp 
-Command         ap_source returned 0; 0.02 sec.
+Command         ap_source returned 0; 0.01 sec.
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
 Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
@@ -58,12 +58,12 @@ Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xi
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
 Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
-Command             ap_source returned 0; 0.01 sec.
-Command           ap_source returned 0; 0.01 sec.
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command             ap_source returned 0; 0 sec.
 Command           ap_source returned 0; 0 sec.
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command           ap_source returned 0; 0.01 sec.
 Command         ap_source returned 0; 0.01 sec.
-Command       import_lib returned 0; 0.26 sec.
+Command       import_lib returned 0; 0.24 sec.
 Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
@@ -72,26 +72,26 @@ Command             ap_source returned 0; 0.01 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
 Command             ap_source returned 0; 0.01 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command             ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
 Command               ap_source returned 0; 0.01 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command               ap_source returned 0; 0.01 sec.
-Command             ap_source returned 0; 0.02 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command               ap_source returned 0; 0.02 sec.
 Command             ap_source returned 0; 0.03 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.02 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
 Command             ap_source returned 0; 0.03 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
-Command             ap_source returned 0; 0.02 sec.
+Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
 Command             ap_source returned 0; 0.08 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0.01 sec.
-Command           ap_source returned 0; 0.22 sec.
+Command             ap_source returned 0; 0.02 sec.
+Command           ap_source returned 0; 0.23 sec.
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command           ap_source returned 0; 0 sec.
 Command         ap_source returned 0; 0.23 sec.
@@ -102,7 +102,7 @@ Execute       import_lib /home/brennan/Vivado/Vivado/2017.4/common/technology/xi
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv7.lib 
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_hp.lib 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.01 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv.hlp 
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
@@ -118,25 +118,25 @@ Command             ap_source returned 0; 0 sec.
 Command           ap_source returned 0; 0 sec.
 Command         ap_source returned 0; 0 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_hp.hlp 
-Command         ap_source returned 0; 0.01 sec.
-Command       import_lib returned 0; 0.04 sec.
+Command         ap_source returned 0; 0 sec.
+Command       import_lib returned 0; 0.03 sec.
 Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
-Command         ap_source returned 0; 0.01 sec.
-Command       ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
 Execute       set_part xc7z020clg400-1 
 Execute         add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
 Execute           get_default_platform 
 Command           get_default_platform returned 0; 0 sec.
 Execute           license_isbetapart xc7z020 
-Command           license_isbetapart returned 1; 0 sec.
+Command           license_isbetapart returned 1; 0.02 sec.
 Execute           get_default_platform 
 Command           get_default_platform returned 0; 0 sec.
 Execute           config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
 Command           config_chip_info returned 0; 0 sec.
 Execute           config_chip_info -quiet -speed slow 
 Command           config_chip_info returned 0; 0 sec.
-Command         add_library returned 0; 0.01 sec.
+Command         add_library returned 0; 0.03 sec.
 Execute         add_library xilinx/zynq/zynq_fpv6 
 Execute           get_default_platform 
 Command           get_default_platform returned 0; 0 sec.
@@ -144,14 +144,14 @@ Command         add_library returned 0; 0 sec.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
-Command       set_part returned 0; 0.06 sec.
+Command       set_part returned 0; 0.09 sec.
 Execute       get_default_platform 
 Command       get_default_platform returned 0; 0 sec.
 Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
 Command       config_chip_info returned 0; 0 sec.
 Execute       config_chip_info -quiet -speed slow 
 Command       config_chip_info returned 0; 0 sec.
-Command     open_solution returned 0; 0.65 sec.
+Command     open_solution returned 0; 0.8 sec.
 Execute     set_part xc7z020clg400-1 
 Execute       add_library xilinx/zynq/zynq:xc7z020:clg400:-1 
 Execute         get_default_platform 
@@ -164,7 +164,7 @@ Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}   
 Command         config_chip_info returned 0; 0 sec.
 Execute         config_chip_info -quiet -speed slow 
 Command         config_chip_info returned 0; 0 sec.
-Command       add_library returned 0; 0 sec.
+Command       add_library returned 0; 0.01 sec.
 Execute       add_library xilinx/zynq/zynq_fpv6 
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
@@ -180,7 +180,7 @@ Command       ap_source returned 0; 0.01 sec.
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 Execute       source csim/.lst_opt.tcl 
-Command       ap_source returned 0; 0.04 sec.
+Command       ap_source returned 0; 0 sec.
 Execute       is_encrypted /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm.cpp 
 Command       is_encrypted returned 0; 0 sec.
 Execute       is_xip /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm.cpp 
@@ -190,16 +190,16 @@ Command       is_encrypted returned 0; 0 sec.
 Execute       is_xip /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/main.cpp 
 Command       is_xip returned 0; 0 sec.
 Execute       is_encrypted /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm.hpp 
-Command       is_encrypted returned 0; 0 sec.
+Command       is_encrypted returned 0; 0.03 sec.
 Execute       is_xip /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm.hpp 
 Command       is_xip returned 0; 0 sec.
 Execute       get_default_platform 
 Command       get_default_platform returned 0; 0 sec.
 Execute       source run_sim.tcl 
-Command       ap_source returned 0; 3.83 sec.
+Command       ap_source returned 0; 3.06 sec.
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-Command     csim_design returned 0; 10.58 sec.
+Command     csim_design returned 0; 3.71 sec.
 Execute     csynth_design 
 Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -VP9_rom_infer_simplify=0 -ng=0 -g=0 -opt_fp=0 -enable_clang39=0 
 INFO: [HLS 200-10] Analyzing design file 'pwm.cpp' ...
@@ -216,12 +216,12 @@ Command         get_default_platform returned 0; 0 sec.
 INFO: [HLS 200-0] Source preprocessing
 Execute         clang  -fno-limit-debug-info -gcc-toolchain "/home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "pwm.cpp"   -std=c++0x  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot" -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.pp.0.cpp" 
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E pwm.cpp -std=c++0x -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.pp.0.cpp
-Command         clang returned 0; 3.12 sec.
+Command         clang returned 0; 5.26 sec.
 INFO: [HLS 200-0] Syntax Checking before pre-processing...
 Execute         clang  -fno-limit-debug-info -gcc-toolchain "/home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc" -hls  -std=c++0x  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot" -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.pp.0.cpp"  -o "/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/useless.bc"  
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc -hls -std=c++0x -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.pp.0.cpp -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/useless.bc
-Command         clang returned 0; 1.9 sec.
-INFO: [HLS 200-0] GCC PP time: 5 seconds per iteration
+Command         clang returned 0; 2.63 sec.
+INFO: [HLS 200-0] GCC PP time: 7 seconds per iteration
 Execute         list_core -type functional_unit 
 Command         list_core returned 0; 0 sec.
 INFO: [HLS 200-0] CDT Preprocessing...
@@ -447,7 +447,7 @@ Error:Syntax error in source:operator^(_Ios_Iostate __a, _Ios_Iostate __b)
 Error:Missing ; in source:e
 Error:Syntax error in source:operator~(_Ios_Iostate __a)
   { return _Ios_Iostate(~static_cast<int>(__a)); }
-Command         cdt returned 0; 9.25 sec.
+Command         cdt returned 0; 11.63 sec.
 INFO: [HLS 200-0] Marker-Pragma convertor: /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.pp.0.cpp.ap-cdt.cpp /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.pragma.0.cpp /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.pragma.0.cpp.ap-line.CXX 0
 INFO: [HLS 200-0] Converting Pragmas to Markers...
 Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pragma.status.tcl 
@@ -462,7 +462,7 @@ Command         get_default_platform returned 0; 0 sec.
 INFO: [HLS 200-0] Processing labels
 Execute         clang  -fno-limit-debug-info -gcc-toolchain /home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.pragma.2.cpp"  -std=c++0x  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot" -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.g.bc" 
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.pragma.2.cpp -std=c++0x -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.g.bc
-Command         clang returned 0; 2.14 sec.
+Command         clang returned 0; 2.54 sec.
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-0] Compiling one TU...
 Execute         is_m_axi_addr64 
@@ -477,11 +477,11 @@ Command         get_default_platform returned 0; 0 sec.
 INFO: [HLS 200-0] Source preprocessing
 Execute         clang  -fno-limit-debug-info -gcc-toolchain "/home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "main.cpp"   -std=c++0x  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot" -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pp.0.cpp" 
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E main.cpp -std=c++0x -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pp.0.cpp
-Command         clang returned 0; 0.85 sec.
+Command         clang returned 0; 1.12 sec.
 INFO: [HLS 200-0] Syntax Checking before pre-processing...
 Execute         clang  -fno-limit-debug-info -gcc-toolchain "/home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc" -hls  -std=c++0x  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot" -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pp.0.cpp"  -o "/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/useless.bc"  
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc -hls -std=c++0x -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pp.0.cpp -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/useless.bc
-Command         clang returned 0; 1.29 sec.
+Command         clang returned 0; 1.3 sec.
 INFO: [HLS 200-0] GCC PP time: 2 seconds per iteration
 Execute         list_core -type functional_unit 
 Command         list_core returned 0; 0 sec.
@@ -708,7 +708,7 @@ Error:Syntax error in source:operator^(_Ios_Iostate __a, _Ios_Iostate __b)
 Error:Missing ; in source:e
 Error:Syntax error in source:operator~(_Ios_Iostate __a)
   { return _Ios_Iostate(~static_cast<int>(__a)); }
-Command         cdt returned 0; 7.34 sec.
+Command         cdt returned 0; 6.62 sec.
 INFO: [HLS 200-0] Marker-Pragma convertor: /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pp.0.cpp.ap-cdt.cpp /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pragma.0.cpp /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pragma.0.cpp.ap-line.CXX 0
 INFO: [HLS 200-0] Converting Pragmas to Markers...
 Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pragma.status.tcl 
@@ -717,32 +717,32 @@ INFO: [HLS 200-0] Pragma Handling...
 INFO: [HLS 200-0] Source preprocessing
 Execute         clang  -fno-limit-debug-info -gcc-toolchain "/home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pragma.1.cpp"   -std=c++0x  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot" -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pragma.2.cpp" 
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pragma.1.cpp -std=c++0x -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pragma.2.cpp
-Command         clang returned 0; 0.83 sec.
+Command         clang returned 0; 0.82 sec.
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
 INFO: [HLS 200-0] Processing labels
 Execute         clang  -fno-limit-debug-info -gcc-toolchain /home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pragma.2.cpp"  -std=c++0x  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot" -I "/home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.g.bc" 
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/brennan/Vivado/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.pragma.2.cpp -std=c++0x -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot -I /home/brennan/Vivado/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.g.bc
-Command         clang returned 0; 1.32 sec.
+Command         clang returned 0; 1.31 sec.
 Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/ve_warning.tcl 
-Command         ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0 sec.
 INFO: [HLS 200-10] Validating synthesis directives ...
 Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pragma.status.tcl 
 Command         ap_source returned 0; 0 sec.
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:00 ; elapsed = 00:00:43 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 432 ; free virtual = 10194
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:54 ; elapsed = 00:00:43 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 2993 ; free virtual = 9739
 INFO: [HLS 200-0] Linking Release ...
 Execute         llvm-ld /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.bc /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.bc -hls-opt -except-internalize pwm -L/home/brennan/Vivado/Vivado/2017.4/lnx64/lib -lm_basic -lhlsmc++ -lhlsm -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o 
-Command         llvm-ld returned 0; 0.92 sec.
+Command         llvm-ld returned 0; 1.56 sec.
 Execute         disassemble /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o 
 Execute           is_encrypted /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o.bc 
 Command           is_encrypted returned 0; 0 sec.
-Command         disassemble returned 0; 0.57 sec.
+Command         disassemble returned 0; 0.68 sec.
 INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
 INFO: [HLS 200-0] Linking Debug ...
 Execute         llvm-ld /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.g.bc /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/main.g.bc -hls-opt -except-internalize pwm -L/home/brennan/Vivado/Vivado/2017.4/lnx64/lib -lm_basic -lhlsmc++ -lhlsm -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.g 
-Command         llvm-ld returned 0; 0.53 sec.
+Command         llvm-ld returned 0; 0.52 sec.
 INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:02 ; elapsed = 00:00:45 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 422 ; free virtual = 10191
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:56 ; elapsed = 00:00:45 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 2986 ; free virtual = 9740
 Execute         ::config_rtl 
 Command         config_rtl returned 0; 0 sec.
 Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
@@ -752,25 +752,25 @@ Execute           cleanup_all_models
 Command           cleanup_all_models returned 0; 0 sec.
 INFO: [HLS 200-10] Starting code transformations ...
 Execute           transform -promote-dbg-pointer /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.pp.bc -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.pp.0.bc -f 
-Command           transform returned 0; 0.34 sec.
+Command           transform returned 0; 0.79 sec.
 Execute           llvm-ld /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.pp.0.bc -disable-opt -L/home/brennan/Vivado/Vivado/2017.4/lnx64/lib -lfloatconversion -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.g.0 
-Command           llvm-ld returned 0; 0.62 sec.
+Command           llvm-ld returned 0; 1.15 sec.
 INFO: [HLS 200-0] Running Standard Transforms...
 Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top pwm -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.g.0.bc -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.g.1.bc -f -phase std-opt 
-Command           transform returned 0; 0.18 sec.
+Command           transform returned 0; 0.44 sec.
 Execute           disassemble /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.g.1 /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.g.1 
 Execute             is_encrypted /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.g.1.bc 
 Command             is_encrypted returned 0; 0 sec.
-Command           disassemble returned 0; 0.47 sec.
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 399 ; free virtual = 10177
+Command           disassemble returned 0; 0.46 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:57 ; elapsed = 00:00:48 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 2960 ; free virtual = 9724
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO: [HLS 200-0] Checking Synthesizability 1/2..
 Execute           transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.g.1.bc -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.g.2.prechk.bc -f 
-Command           transform returned 0; 0.08 sec.
+Command           transform returned 0; 0.51 sec.
 INFO: [HLS 200-0] Checking Synthesizability 2/2..
 Execute           transform -syn-check /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.g.2.prechk.bc -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.g.2.bc -f -phase syn-check 
 Command           transform returned 0; 0.04 sec.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 389 ; free virtual = 10169
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:57 ; elapsed = 00:00:49 . Memory (MB): peak = 488.570 ; gain = 142.008 ; free physical = 2949 ; free virtual = 9715
 INFO: [HLS 200-0] Compiler optimizing ...
 INFO: [HLS 200-0] Share syncheck's 1.bc for syn flow: copy /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.g.1.bc to /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o.1.bc
 INFO: [HLS 200-0] Presyn 1...
@@ -778,7 +778,7 @@ Execute           transform -hls -tmp /home/brennan/Documents/pynq-copter/pynqco
 INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'pwm' (pwm.cpp:43).
 INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (pwm.cpp:56) in function 'pwm' completely.
 INFO: [XFORM 203-501] Unrolling loop 'Loop-2' (pwm.cpp:64) in function 'pwm' completely.
-Command           transform returned 0; 0.16 sec.
+Command           transform returned 0; 0.34 sec.
 INFO: [HLS 200-0] Presyn 2...
 Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o.1.tmp.bc -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o.2.bc -f -phase presyn 
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'pwm'... converting 15 basic blocks.
@@ -787,19 +787,19 @@ Command           transform returned 0; 0.09 sec.
 Execute           disassemble /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o.2 /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o.2 
 Execute             is_encrypted /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o.2.bc 
 Command             is_encrypted returned 0; 0 sec.
-Command           disassemble returned 0; 0.45 sec.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:04 ; elapsed = 00:00:47 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 355 ; free virtual = 10140
+Command           disassemble returned 0; 0.43 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:58 ; elapsed = 00:00:50 . Memory (MB): peak = 488.570 ; gain = 142.008 ; free physical = 2915 ; free virtual = 9687
 INFO: [HLS 200-0] Building ssdm...
 Execute           transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -interface-preproc -directive-preproc -interface-gen -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -read-loop-dep -dce -bitwidth -loop-dep -check-stream -norm-name -legalize -validate-dataflow -cdfg-build /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o.2.bc -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-Command           transform returned 0; 0.25 sec.
+Command           transform returned 0; 0.96 sec.
 Execute           disassemble /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o.3 /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o.3 
 Execute             is_encrypted /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/a.o.3.bc 
 Command             is_encrypted returned 0; 0 sec.
-Command           disassemble returned 0; 0.43 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:04 ; elapsed = 00:00:48 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 350 ; free virtual = 10136
+Command           disassemble returned 0; 0.42 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:58 ; elapsed = 00:00:51 . Memory (MB): peak = 488.570 ; gain = 142.008 ; free physical = 2912 ; free virtual = 9684
 INFO: [HLS 200-0] Finish building internal data model.
-Command         opt_and_import_c returned 0; 3.13 sec.
-Command       elaborate returned 0; 36.47 sec.
+Command         opt_and_import_c returned 0; 5.91 sec.
+Command       elaborate returned 0; 45.16 sec.
 Execute       autosyn 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-0] Synthesizing C/C++ design ...
@@ -823,9 +823,9 @@ INFO: [HLS 200-0] Preprocessing Module: pwm ...
 Execute         set_default_model pwm 
 Command         set_default_model returned 0; 0 sec.
 Execute         cdfg_preprocess -model pwm 
-Command         cdfg_preprocess returned 0; 0.04 sec.
+Command         cdfg_preprocess returned 0; 0.57 sec.
 Execute         rtl_gen_preprocess pwm 
-Command         rtl_gen_preprocess returned 0; 0 sec.
+Command         rtl_gen_preprocess returned 0; 0.01 sec.
 INFO: [HLS 200-0] Model list for synthesis: pwm
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'pwm'
@@ -836,12 +836,15 @@ Execute         schedule -model pwm
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'pwm'.
 WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('m_V_load_1', pwm.cpp:57) on array 'm_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'm_V'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 19.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 6, Depth = 14.
+WARNING: [SCHED 204-21] Estimated clock period (3.89ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns).
+WARNING: [SCHED 204-21] The critical path consists of the following:
+	'mul' operation ('p_Val2_s', pwm.cpp:57) (3.89 ns)
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule returned 0; 0.58 sec.
-INFO: [HLS 200-111]  Elapsed time: 48.71 seconds; current allocated memory: 97.368 MB.
+Command         schedule returned 0; 0.41 sec.
+INFO: [HLS 200-111]  Elapsed time: 52.32 seconds; current allocated memory: 96.729 MB.
 Execute         report -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.verbose.sched.rpt -verbose -f 
-Command         report returned 0; 0.09 sec.
+Command         report returned 0; 0.06 sec.
 Execute         db_write -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.sched.adb -f 
 Command         db_write returned 0; 0.03 sec.
 INFO: [HLS 200-0] Finish scheduling pwm.
@@ -881,10 +884,10 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command         bind returned 0; 0.07 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 98.186 MB.
+Command         bind returned 0; 0.06 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 97.437 MB.
 Execute         report -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.verbose.bind.rpt -verbose -f 
-Command         report returned 0; 0.17 sec.
+Command         report returned 0; 0.12 sec.
 Execute         db_write -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.bind.adb -f 
 Command         db_write returned 0; 0.01 sec.
 INFO: [HLS 200-0] Finish binding pwm.
@@ -908,37 +911,35 @@ INFO: [RTGEN 206-500] Setting interface mode on function 'pwm' to 's_axilite & a
 WARNING: [RTGEN 206-101] Register 'accumulator_V' is power-on initialization.
 WARNING: [RTGEN 206-101] Register 'out_p_V' is power-on initialization.
 INFO: [RTGEN 206-100] Bundling port 'return', 'max_duty_V', 'period_V' and 'm_V' to AXI-Lite port ctrl.
-INFO: [SYN 201-210] Renamed object name 'pwm_mul_32ns_33s_65_7_1' to 'pwm_mul_32ns_33s_bkb' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'pwm_add_66s_66ns_66_2_1' to 'pwm_add_66s_66ns_cud' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'pwm_add_66s_66ns_cud': 6 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'pwm_mul_32ns_33s_bkb': 6 instance(s).
+INFO: [SYN 201-210] Renamed object name 'pwm_mul_mul_16s_17s_33_3_1' to 'pwm_mul_mul_16s_1bkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'pwm_mul_mul_16s_1bkb': 6 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'pwm'.
-Command         create_rtl_model returned 0; 0.16 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.34 seconds; current allocated memory: 99.715 MB.
+Command         create_rtl_model returned 0; 0.05 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 98.765 MB.
 Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.rtl_wrap.cfg.tcl 
 Command         ap_source returned 0; 0 sec.
 Execute         gen_rtl pwm -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/syn/systemc/pwm -synmodules pwm 
-Command         gen_rtl returned 0; 0.01 sec.
+Command         gen_rtl returned 0; 0 sec.
 Execute         gen_rtl pwm -istop -style xilinx -f -lang vhdl -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/syn/vhdl/pwm 
-Command         gen_rtl returned 0; 0.09 sec.
+Command         gen_rtl returned 0; 0.08 sec.
 Execute         gen_rtl pwm -istop -style xilinx -f -lang vlog -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/syn/verilog/pwm 
 Command         gen_rtl returned 0; 0.04 sec.
 Execute         export_constraint_db -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.constraint.tcl -f -tool general 
 Command         export_constraint_db returned 0; 0 sec.
 Execute         report -model pwm -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.design.xml -verbose -f -dv 
-Command         report returned 0; 0.07 sec.
+Command         report returned 0; 0.05 sec.
 Execute         report -model pwm -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.sdaccel.xml -verbose -f -sdaccel 
-Command         report returned 0; 0.11 sec.
+Command         report returned 0; 0.09 sec.
 Execute         gen_tb_info pwm -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm -p /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db 
 Command         gen_tb_info returned 0; 0 sec.
 Execute         report -model pwm -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/syn/report/pwm_csynth.rpt -f 
-Command         report returned 0; 0.04 sec.
+Command         report returned 0; 0.03 sec.
 Execute         report -model pwm -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/syn/report/pwm_csynth.xml -f -x 
 Command         report returned 0; 0.03 sec.
 Execute         report -model pwm -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.verbose.rpt -verbose -f 
-Command         report returned 0; 0.2 sec.
+Command         report returned 0; 0.15 sec.
 Execute         db_write -model pwm -o /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.adb -f 
-Command         db_write returned 0; 0.07 sec.
+Command         db_write returned 0; 0.05 sec.
 Execute         sc_get_clocks pwm 
 Command         sc_get_clocks returned 0; 0 sec.
 Execute         sc_get_portdomain pwm 
@@ -946,18 +947,15 @@ Command         sc_get_portdomain returned 0; 0 sec.
 INFO: [HLS 200-0] Model list for RTL component generation: pwm
 INFO: [HLS 200-0] Handling components in module [pwm] ... 
 Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.compgen.tcl 
-INFO: [HLS 200-0] Found component pwm_mul_32ns_33s_bkb.
-INFO: [HLS 200-0] Append model pwm_mul_32ns_33s_bkb
-INFO: [HLS 200-0] Found component pwm_add_66s_66ns_cud.
-INFO: [HLS 200-0] Append model pwm_add_66s_66ns_cud
+INFO: [HLS 200-0] Found component pwm_mul_mul_16s_1bkb.
+INFO: [HLS 200-0] Append model pwm_mul_mul_16s_1bkb
 INFO: [HLS 200-0] Found component pwm_ctrl_s_axi.
 INFO: [HLS 200-0] Append model pwm_ctrl_s_axi
 Command         ap_source returned 0; 0 sec.
 INFO: [HLS 200-0] Append model pwm
 INFO: [HLS 200-0] Generating RTL model list ...
-INFO: [HLS 200-0] All models in this session: pwm_mul_32ns_33s_bkb pwm_add_66s_66ns_cud pwm_ctrl_s_axi pwm
-INFO: [HLS 200-0] To file: write model pwm_mul_32ns_33s_bkb
-INFO: [HLS 200-0] To file: write model pwm_add_66s_66ns_cud
+INFO: [HLS 200-0] All models in this session: pwm_mul_mul_16s_1bkb pwm_ctrl_s_axi pwm
+INFO: [HLS 200-0] To file: write model pwm_mul_mul_16s_1bkb
 INFO: [HLS 200-0] To file: write model pwm_ctrl_s_axi
 INFO: [HLS 200-0] To file: write model pwm
 INFO: [HLS 200-0] Finished generating RTL model list.
@@ -972,21 +970,21 @@ Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm
 Command         ap_source returned 0; 0 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
-Command           ap_source returned 0; 0.01 sec.
-Command         ap_source returned 0; 0.04 sec.
+Command           ap_source returned 0; 0.02 sec.
+Command         ap_source returned 0; 0.03 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
-Command         ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
 Command         ap_source returned 0; 0 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
-Command         ap_source returned 0; 0.01 sec.
-Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
 Command         ap_source returned 0; 0 sec.
+Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command         ap_source returned 0; 0.01 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
-Command               ap_source returned 0; 0 sec.
+Command               ap_source returned 0; 0.01 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
 Command               ap_source returned 0; 0 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
@@ -998,7 +996,7 @@ Execute                 source /home/brennan/Vivado/Vivado/2017.4/common/technol
 Command                 ap_source returned 0; 0.01 sec.
 Command               ap_source returned 0; 0.01 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command               ap_source returned 0; 0.01 sec.
+Command               ap_source returned 0; 0 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
 Command               ap_source returned 0; 0.01 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
@@ -1009,11 +1007,11 @@ Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technolog
 Command               ap_source returned 0; 0.07 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
 Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0.12 sec.
+Command             ap_source returned 0; 0.11 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.12 sec.
-Command         ap_source returned 0; 0.12 sec.
+Command           ap_source returned 0; 0.11 sec.
+Command         ap_source returned 0; 0.11 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
 Command           ap_source returned 0; 0 sec.
@@ -1025,8 +1023,6 @@ Command         ap_source returned 0; 0 sec.
 Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
 Command         ap_source returned 0; 0 sec.
 Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.compgen.tcl 
-INFO: [RTMG 210-282] Generating pipelined core: 'pwm_mul_32ns_33s_bkb_MulnS_0'
-INFO: [RTMG 210-283] Generating pipelined adder/subtractor : 'pwm_add_66s_66ns_cud_AddSubnS_0'
 Execute           source ./ctrl.slave.tcl 
 Command           ap_source returned 0; 0 sec.
 Command         ap_source returned 0; 0.18 sec.
@@ -1039,7 +1035,7 @@ Command         ap_source returned 0; 0 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
 Command         ap_source returned 0; 0 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
-Command         ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.01 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
 Command         ap_source returned 0; 0 sec.
 Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
@@ -1048,32 +1044,32 @@ Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xili
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
-Command               ap_source returned 0; 0 sec.
+Command               ap_source returned 0; 0.01 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
 Command               ap_source returned 0; 0 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command               ap_source returned 0; 0.01 sec.
+Command               ap_source returned 0; 0 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute                 source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command                 ap_source returned 0; 0 sec.
+Command                 ap_source returned 0; 0.01 sec.
 Execute                 source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
 Command                 ap_source returned 0; 0.01 sec.
-Command               ap_source returned 0; 0.01 sec.
+Command               ap_source returned 0; 0.02 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
 Command               ap_source returned 0; 0.01 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command               ap_source returned 0; 0 sec.
+Command               ap_source returned 0; 0.01 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command               ap_source returned 0; 0 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command               ap_source returned 0; 0 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command               ap_source returned 0; 0.08 sec.
+Command               ap_source returned 0; 0.06 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0.11 sec.
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.12 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
-Command             ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0 sec.
 Command           ap_source returned 0; 0.12 sec.
 Command         ap_source returned 0; 0.12 sec.
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
@@ -1124,12 +1120,12 @@ Execute         sc_get_clocks pwm
 Command         sc_get_clocks returned 0; 0 sec.
 Execute         source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
 Command         ap_source returned 0; 0 sec.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:06 ; elapsed = 00:00:51 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 327 ; free virtual = 10130
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:00 ; elapsed = 00:00:54 . Memory (MB): peak = 488.570 ; gain = 142.008 ; free physical = 2899 ; free virtual = 9679
 INFO: [SYSC 207-301] Generating SystemC RTL for pwm.
 INFO: [VHDL 208-304] Generating VHDL RTL for pwm.
 INFO: [VLOG 209-307] Generating Verilog RTL for pwm.
-Command       autosyn returned 0; 3.09 sec.
-Command     csynth_design returned 0; 39.57 sec.
+Command       autosyn returned 0; 2.82 sec.
+Command     csynth_design returned 0; 47.98 sec.
 Execute     export_design -format ip_catalog -library hlsip -description HLS Core: Pwm Function -vendor UCSD -version 1.0 -display_name Pwm 
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
@@ -1156,10 +1152,10 @@ Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/
 Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command               ap_source returned 0; 0 sec.
-Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
 Command               ap_source returned 0; 0.01 sec.
-Command             ap_source returned 0; 0.02 sec.
+Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.01 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
 Command             ap_source returned 0; 0.01 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
@@ -1169,18 +1165,18 @@ Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.08 sec.
+Command             ap_source returned 0; 0.07 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.12 sec.
+Command           ap_source returned 0; 0.1 sec.
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.12 sec.
-Command       ap_source returned 0; 0.12 sec.
+Command         ap_source returned 0; 0.1 sec.
+Command       ap_source returned 0; 0.1 sec.
 Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
-Command         ap_source returned 0; 0.01 sec.
-Command       ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
@@ -1193,13 +1189,13 @@ Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/gene
 Command         ap_source returned 0; 0 sec.
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
-Command       ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
 Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0.01 sec.
+Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
@@ -1218,20 +1214,20 @@ Command             ap_source returned 0; 0.01 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
 Command             ap_source returned 0; 0.01 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command             ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.1 sec.
+Command             ap_source returned 0; 0.06 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
 Command             ap_source returned 0; 0.01 sec.
-Command           ap_source returned 0; 0.14 sec.
+Command           ap_source returned 0; 0.1 sec.
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.14 sec.
-Command       ap_source returned 0; 0.14 sec.
+Command         ap_source returned 0; 0.1 sec.
+Command       ap_source returned 0; 0.1 sec.
 Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
 Command         ap_source returned 0; 0 sec.
@@ -1243,7 +1239,7 @@ Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.compgen.tcl 
-Command       ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.compgen.tcl 
@@ -1263,7 +1259,7 @@ Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.tbgen.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0.01 sec.
+Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.constraint.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       sc_get_clocks pwm 
@@ -1324,271 +1320,51 @@ Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/p
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command               ap_source returned 0; 0 sec.
-Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command               ap_source returned 0; 0.01 sec.
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.08 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.1 sec.
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
-Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.1 sec.
-Command       ap_source returned 0; 0.1 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command               ap_source returned 0; 0.01 sec.
-Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.07 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.1 sec.
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
-Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.1 sec.
-Command       ap_source returned 0; 0.1 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command               ap_source returned 0; 0.01 sec.
-Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.06 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.09 sec.
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
-Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.1 sec.
-Command       ap_source returned 0; 0.1 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.compgen.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.constraint.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.tbgen.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0.01 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command               ap_source returned 0; 0 sec.
-Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command               ap_source returned 0; 0.01 sec.
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.08 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.1 sec.
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
-Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.1 sec.
-Command       ap_source returned 0; 0.1 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command               ap_source returned 0; 0 sec.
-Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command               ap_source returned 0; 0.01 sec.
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.07 sec.
-Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.1 sec.
-Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
-Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.1 sec.
-Command       ap_source returned 0; 0.1 sec.
-Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
-Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
 Command         ap_source returned 0; 0.01 sec.
 Command       ap_source returned 0; 0.01 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.07 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.09 sec.
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.09 sec.
+Command       ap_source returned 0; 0.09 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0 sec.
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
@@ -1612,13 +1388,13 @@ Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command             ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
 Command               ap_source returned 0; 0 sec.
 Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0 sec.
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.01 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
 Command             ap_source returned 0; 0.01 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
@@ -1628,27 +1404,21 @@ Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.06 sec.
+Command             ap_source returned 0; 0.09 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0.01 sec.
-Command           ap_source returned 0; 0.1 sec.
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.12 sec.
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.1 sec.
-Command       ap_source returned 0; 0.1 sec.
+Command         ap_source returned 0; 0.12 sec.
+Command       ap_source returned 0; 0.13 sec.
 Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
 Command         ap_source returned 0; 0 sec.
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.compgen.tcl 
-Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.constraint.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.tbgen.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
@@ -1688,10 +1458,10 @@ Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.07 sec.
+Command             ap_source returned 0; 0.08 sec.
 Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.09 sec.
+Command           ap_source returned 0; 0.1 sec.
 Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command           ap_source returned 0; 0 sec.
 Command         ap_source returned 0; 0.1 sec.
@@ -1702,6 +1472,232 @@ Command         ap_source returned 0; 0 sec.
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
-Command     export_design returned 0; 35.54 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.constraint.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.07 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.1 sec.
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.1 sec.
+Command       ap_source returned 0; 0.1 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.07 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0.1 sec.
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.1 sec.
+Command       ap_source returned 0; 0.1 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.07 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.1 sec.
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.1 sec.
+Command       ap_source returned 0; 0.1 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.constraint.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/pwm.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.07 sec.
+Execute             source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.1 sec.
+Execute           source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.1 sec.
+Command       ap_source returned 0; 0.1 sec.
+Execute       source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/brennan/Vivado/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Command     export_design returned 0; 35.17 sec.
 Execute     cleanup_all 
 Command     cleanup_all returned 0; 0.01 sec.

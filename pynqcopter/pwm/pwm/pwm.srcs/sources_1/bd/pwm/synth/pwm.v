@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Fri Jul 27 19:25:20 2018
+//Date        : Thu Aug  2 10:28:35 2018
 //Host        : apple running 64-bit Ubuntu 16.04.4 LTS
 //Command     : generate_target pwm.bd
 //Design      : pwm
@@ -1011,10 +1011,10 @@ module pwm
        (.ap_clk(processing_system7_0_FCLK_CLK0),
         .ap_rst_n(rst_ps7_0_100M_peripheral_aresetn),
         .out_V(pwm_0_out_V),
-        .s_axi_ctrl_ARADDR(axi_interconnect_0_M01_AXI_ARADDR[6:0]),
+        .s_axi_ctrl_ARADDR(axi_interconnect_0_M01_AXI_ARADDR[5:0]),
         .s_axi_ctrl_ARREADY(axi_interconnect_0_M01_AXI_ARREADY),
         .s_axi_ctrl_ARVALID(axi_interconnect_0_M01_AXI_ARVALID),
-        .s_axi_ctrl_AWADDR(axi_interconnect_0_M01_AXI_AWADDR[6:0]),
+        .s_axi_ctrl_AWADDR(axi_interconnect_0_M01_AXI_AWADDR[5:0]),
         .s_axi_ctrl_AWREADY(axi_interconnect_0_M01_AXI_AWREADY),
         .s_axi_ctrl_AWVALID(axi_interconnect_0_M01_AXI_AWVALID),
         .s_axi_ctrl_BREADY(axi_interconnect_0_M01_AXI_BREADY),
@@ -1070,11 +1070,11 @@ module pwm
         .SLOT_0_AXI_wready(mixer_0_m_axi_m_V_WREADY),
         .SLOT_0_AXI_wstrb(mixer_0_m_axi_m_V_WSTRB),
         .SLOT_0_AXI_wvalid(mixer_0_m_axi_m_V_WVALID),
-        .SLOT_1_AXI_araddr(axi_interconnect_0_M01_AXI_ARADDR[6:0]),
+        .SLOT_1_AXI_araddr(axi_interconnect_0_M01_AXI_ARADDR[5:0]),
         .SLOT_1_AXI_arprot(axi_interconnect_0_M01_AXI_ARPROT),
         .SLOT_1_AXI_arready(axi_interconnect_0_M01_AXI_ARREADY),
         .SLOT_1_AXI_arvalid(axi_interconnect_0_M01_AXI_ARVALID),
-        .SLOT_1_AXI_awaddr(axi_interconnect_0_M01_AXI_AWADDR[6:0]),
+        .SLOT_1_AXI_awaddr(axi_interconnect_0_M01_AXI_AWADDR[5:0]),
         .SLOT_1_AXI_awprot(axi_interconnect_0_M01_AXI_AWPROT),
         .SLOT_1_AXI_awready(axi_interconnect_0_M01_AXI_AWREADY),
         .SLOT_1_AXI_awvalid(axi_interconnect_0_M01_AXI_AWVALID),

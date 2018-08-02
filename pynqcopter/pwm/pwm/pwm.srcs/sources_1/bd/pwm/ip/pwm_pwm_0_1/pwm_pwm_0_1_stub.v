@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Fri Jul 27 18:22:00 2018
+// Date        : Wed Aug  1 04:38:30 2018
 // Host        : apple running 64-bit Ubuntu 16.04.4 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_pwm_0_1/pwm_pwm_0_1_stub.v
@@ -19,8 +19,8 @@ module pwm_pwm_0_1(s_axi_ctrl_AWADDR, s_axi_ctrl_AWVALID,
   s_axi_ctrl_WREADY, s_axi_ctrl_BRESP, s_axi_ctrl_BVALID, s_axi_ctrl_BREADY, 
   s_axi_ctrl_ARADDR, s_axi_ctrl_ARVALID, s_axi_ctrl_ARREADY, s_axi_ctrl_RDATA, 
   s_axi_ctrl_RRESP, s_axi_ctrl_RVALID, s_axi_ctrl_RREADY, ap_clk, ap_rst_n, interrupt, out_V)
-/* synthesis syn_black_box black_box_pad_pin="s_axi_ctrl_AWADDR[6:0],s_axi_ctrl_AWVALID,s_axi_ctrl_AWREADY,s_axi_ctrl_WDATA[31:0],s_axi_ctrl_WSTRB[3:0],s_axi_ctrl_WVALID,s_axi_ctrl_WREADY,s_axi_ctrl_BRESP[1:0],s_axi_ctrl_BVALID,s_axi_ctrl_BREADY,s_axi_ctrl_ARADDR[6:0],s_axi_ctrl_ARVALID,s_axi_ctrl_ARREADY,s_axi_ctrl_RDATA[31:0],s_axi_ctrl_RRESP[1:0],s_axi_ctrl_RVALID,s_axi_ctrl_RREADY,ap_clk,ap_rst_n,interrupt,out_V[5:0]" */;
-  input [6:0]s_axi_ctrl_AWADDR;
+/* synthesis syn_black_box black_box_pad_pin="s_axi_ctrl_AWADDR[5:0],s_axi_ctrl_AWVALID,s_axi_ctrl_AWREADY,s_axi_ctrl_WDATA[31:0],s_axi_ctrl_WSTRB[3:0],s_axi_ctrl_WVALID,s_axi_ctrl_WREADY,s_axi_ctrl_BRESP[1:0],s_axi_ctrl_BVALID,s_axi_ctrl_BREADY,s_axi_ctrl_ARADDR[5:0],s_axi_ctrl_ARVALID,s_axi_ctrl_ARREADY,s_axi_ctrl_RDATA[31:0],s_axi_ctrl_RRESP[1:0],s_axi_ctrl_RVALID,s_axi_ctrl_RREADY,ap_clk,ap_rst_n,interrupt,out_V[5:0]" */;
+  input [5:0]s_axi_ctrl_AWADDR;
   input s_axi_ctrl_AWVALID;
   output s_axi_ctrl_AWREADY;
   input [31:0]s_axi_ctrl_WDATA;
@@ -30,7 +30,7 @@ module pwm_pwm_0_1(s_axi_ctrl_AWADDR, s_axi_ctrl_AWVALID,
   output [1:0]s_axi_ctrl_BRESP;
   output s_axi_ctrl_BVALID;
   input s_axi_ctrl_BREADY;
-  input [6:0]s_axi_ctrl_ARADDR;
+  input [5:0]s_axi_ctrl_ARADDR;
   input s_axi_ctrl_ARVALID;
   output s_axi_ctrl_ARREADY;
   output [31:0]s_axi_ctrl_RDATA;

@@ -1,23 +1,26 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 1
-set name pwm_mul_32ns_33s_bkb
+set name pwm_mul_mul_16s_1bkb
 set corename simcore_mul
 set op mul
-set stage_num 7
+set stage_num 3
 set max_latency -1
 set registered_input 1
 set clk_width 1
 set clk_signed 0
 set reset_width 1
 set reset_signed 0
-set in0_width 32
-set in0_signed 0
-set in1_width 33
+set in0_width 16
+set in0_signed 1
+set in1_width 17
 set in1_signed 1
 set ce_width 1
 set ce_signed 0
-set out_width 65
+set out_width 33
+set exp i0*i1
+set arg_lists {i0 {16 1 +} i1 {17 1 +} p {33 1 +} acc {0} }
+set TrueReset 0
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {
 eval "ap_gen_simcore_mul { \
@@ -27,6 +30,7 @@ eval "ap_gen_simcore_mul { \
     op ${op} \
     reset_level 1 \
     sync_rst true \
+    true_reset ${TrueReset} \
     stage_num ${stage_num} \
     max_latency ${max_latency} \
     registered_input ${registered_input} \
@@ -41,6 +45,8 @@ eval "ap_gen_simcore_mul { \
     ce_width ${ce_width} \
     ce_signed ${ce_signed} \
     out_width ${out_width} \
+    exp ${exp} \
+    arg_lists {${arg_lists}} \
 }"
 } else {
 puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mul, check your AutoPilot builtin lib"
@@ -54,16 +60,17 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 
 
 set op mul
-set corename MulnS
+set corename DSP48
 if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul] == "::AESL_LIB_VIRTEX::xil_gen_multicycle_mul"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_multicycle_mul { \
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
     id ${id} \
     name ${name} \
     corename ${corename} \
     op ${op} \
     reset_level 1 \
     sync_rst true \
+    true_reset ${TrueReset} \
     stage_num ${stage_num} \
     max_latency ${max_latency} \
     registered_input ${registered_input} \
@@ -78,94 +85,11 @@ eval "::AESL_LIB_VIRTEX::xil_gen_multicycle_mul { \
     ce_width ${ce_width} \
     ce_signed ${ce_signed} \
     out_width ${out_width} \
+    exp ${exp} \
+    arg_lists {${arg_lists}} \
 }"
 } else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, check your platform lib"
-}
-}
-
-
-set id 7
-set name pwm_add_66s_66ns_cud
-set corename simcore_add
-set op add
-set stage_num 2
-set max_latency -1
-set registered_input 1
-set clk_width 1
-set clk_signed 0
-set reset_width 1
-set reset_signed 0
-set in0_width 66
-set in0_signed 1
-set in1_width 66
-set in1_signed 0
-set ce_width 1
-set ce_signed 0
-set out_width 66
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_add] == "ap_gen_simcore_add"} {
-eval "ap_gen_simcore_add { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    clk_width ${clk_width} \
-    clk_signed ${clk_signed} \
-    reset_width ${reset_width} \
-    reset_signed ${reset_signed} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    ce_width ${ce_width} \
-    ce_signed ${ce_signed} \
-    out_width ${out_width} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_add, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op add
-set corename AddSubnS
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_pipeaddsub] == "::AESL_LIB_VIRTEX::xil_gen_pipeaddsub"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_pipeaddsub { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    clk_width ${clk_width} \
-    clk_signed ${clk_signed} \
-    reset_width ${reset_width} \
-    reset_signed ${reset_signed} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    ce_width ${ce_width} \
-    ce_signed ${ce_signed} \
-    out_width ${out_width} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipeaddsub, check your platform lib"
+puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
 }
 }
 
@@ -184,7 +108,7 @@ ap_ready { }
 ap_idle { }
 min_duty_V { 
 	dir I
-	width 32
+	width 16
 	depth 1
 	mode ap_none
 	offset 16
@@ -192,7 +116,7 @@ min_duty_V {
 }
 max_duty_V { 
 	dir I
-	width 32
+	width 16
 	depth 1
 	mode ap_none
 	offset 24
@@ -200,7 +124,7 @@ max_duty_V {
 }
 period_V { 
 	dir I
-	width 32
+	width 16
 	depth 1
 	mode ap_none
 	offset 32
@@ -208,11 +132,11 @@ period_V {
 }
 m_V { 
 	dir I
-	width 32
+	width 16
 	depth 6
 	mode ap_memory
-	offset 64
-	offset_end 95
+	offset 48
+	offset_end 63
 }
 }
 
@@ -221,7 +145,7 @@ m_V {
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 15 \
+			id 8 \
 			corename pwm_ctrl_axilite \
 			name pwm_ctrl_s_axi \
 			ports {$port_ctrl} \
@@ -239,7 +163,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 16 \
+    id 9 \
     name out_V \
     type other \
     dir O \

@@ -26,6 +26,7 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1003724773" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.337564044" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/brennan/Documents/pynq-copter/pynqcopter/ip/mixer"/>
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/include"/>
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/lnx64/tools/systemc/include"/>
@@ -43,6 +44,7 @@
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.1334646217" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1369986129" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/brennan/Documents/pynq-copter/pynqcopter/ip/mixer"/>
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/include"/>
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/lnx64/tools/systemc/include"/>
@@ -155,6 +157,7 @@
 								<option id="gnu.cpp.compiler.exe.release.option.debugging.level.173043612" name="Debug Level" superClass="gnu.cpp.compiler.exe.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1908778467" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/brennan/Documents/pynq-copter/pynqcopter/ip/mixer"/>
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/include"/>
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/lnx64/tools/systemc/include"/>
@@ -167,6 +170,7 @@
 								<option id="gnu.c.compiler.exe.release.option.debugging.level.1229348496" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.93036054" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/brennan/Documents/pynq-copter/pynqcopter/ip/mixer"/>
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/include"/>
 									<listOptionValue builtIn="false" value="/home/brennan/Vivado/Vivado/2017.4/lnx64/tools/systemc/include"/>

@@ -35253,8 +35253,8 @@ inline bool operator!=(
 #pragma line 42 "./mixer.hpp" 2
 #pragma line 1 "./../pwm/pwm.hpp" 1
 #pragma line 48 "./../pwm/pwm.hpp"
-typedef ap_ufixed<32,1> F_t;
-typedef ap_uint<32> N_t;
+typedef ap_fixed<16,1> F_t;
+typedef ap_uint<16> N_t;
 typedef ap_uint<6> O_t;
 #pragma empty_line
 void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
@@ -35264,9 +35264,12 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-typedef ap_fixed<32,4> bigN;
 #pragma empty_line
-const bigN MIX_C[6][3] = {
+#pragma empty_line
+typedef ap_fixed<16 +3,4> bigF_t;
+#pragma empty_line
+#pragma empty_line
+const bigF_t MIX_C[6][3] = {
  {.5,-0.57735026919,-1},
  {1,0,1},
  {.5,.57735026919,-1},
@@ -35276,23 +35279,25 @@ const bigN MIX_C[6][3] = {
 };
 #pragma empty_line
 #pragma empty_line
-void mixer(F_t regs_in[4],F_t m[6],unsigned int ctrl[6]) ;
+void mixer(F_t regs_in[4],F_t m[4096]) ;
 #pragma line 41 "mixer.cpp" 2
 #pragma line 76 "mixer.cpp"
 void mixer(F_t regs_in[4],F_t m[4096]) {_ssdm_SpecArrayDimSize(regs_in,4);_ssdm_SpecArrayDimSize(m,4096);
 #pragma HLS INTERFACE s_axilite port=return
 #pragma HLS INTERFACE s_axilite port=regs_in
-#pragma HLS INTERFACE m_axi port=m offset=0x40000000
+#pragma HLS INTERFACE m_axi port=m
 #pragma HLS PIPELINE
 #pragma empty_line
- bigN r_c = regs_in[0];
- bigN p_c = regs_in[1];
- bigN y_c = regs_in[2];
- bigN t_c = regs_in[3];
-#pragma line 104 "mixer.cpp"
+ bigF_t r_c = (regs_in[0]<F_t(-.99)?F_t(-.99):(regs_in[0]>F_t(.99)?F_t(.99):regs_in[0]));
+ bigF_t p_c = (regs_in[1]<F_t(-.99)?F_t(-.99):(regs_in[1]>F_t(.99)?F_t(.99):regs_in[1]));
+ bigF_t y_c = (regs_in[2]<F_t(-.99)?F_t(-.99):(regs_in[2]>F_t(.99)?F_t(.99):regs_in[2]));
+ bigF_t t_c = (regs_in[3]<F_t(0)?F_t(0):(regs_in[3]>F_t(.99)?F_t(.99):regs_in[3]));
+ bigF_t scaled_power;
+#pragma line 98 "mixer.cpp"
  for(int i=0; i < 6; i++) {
 #pragma HLS unroll
- m[(0x40001000/4)+(0x40/4)+i]=(t_c + ((1-t_c)*((r_c*MIX_C[i][0]+p_c*MIX_C[i][1]+y_c*MIX_C[i][2])/3)));
+ scaled_power = t_c+(r_c*MIX_C[i][0]+p_c*MIX_C[i][1]+y_c*MIX_C[i][2])/bigF_t(3.0);
+  m[(0x40001000/sizeof(F_t))+(0x30/sizeof(F_t))+i]=F_t((scaled_power<bigF_t(0)?bigF_t(0):(scaled_power>bigF_t(.99)?bigF_t(.99):scaled_power)));
  }
 }
 

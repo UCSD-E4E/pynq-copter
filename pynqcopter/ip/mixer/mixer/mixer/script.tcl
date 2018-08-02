@@ -5,8 +5,8 @@
 ############################################################
 open_project mixer
 set_top mixer
-add_files main.cpp -cflags "-std=c++0x"
 add_files mixer.cpp -cflags "-std=c++0x"
+add_files main.cpp -cflags "-std=c++0x"
 add_files mixer.hpp
 add_files ../pwm/pwm.hpp
 add_files -tb mixer.cpp -cflags "-std=c++0x"
@@ -17,5 +17,5 @@ create_clock -period 4 -name default
 #source "./mixer/mixer/directives.tcl"
 csim_design
 csynth_design
-cosim_design
+cosim_design -compiler gcc
 export_design -rtl verilog -format ip_catalog -description "HLS Core: Mixer Function" -vendor "UCSD" -library "hlsip" -display_name "Mixer"

@@ -76,13 +76,14 @@
 void mixer(F_t regs_in[4],F_t m[4096]) {
 #pragma HLS INTERFACE s_axilite port=return
 #pragma HLS INTERFACE s_axilite port=regs_in
-#pragma HLS INTERFACE m_axi port=m offset=0x40000000
+#pragma HLS INTERFACE m_axi port=m
 #pragma HLS PIPELINE
 	//clip all inputs to min and max range for safety
-	bigN r_c = regs_in[0];
-	bigN p_c = regs_in[1];
-	bigN y_c = regs_in[2];
-	bigN t_c = regs_in[3];
+	bigF_t r_c = clip(regs_in[0],F_t(-.99),F_t(.99));
+	bigF_t p_c = clip(regs_in[1],F_t(-.99),F_t(.99));
+	bigF_t y_c = clip(regs_in[2],F_t(-.99),F_t(.99));
+	bigF_t t_c = clip(regs_in[3],F_t(0),F_t(.99));
+	bigF_t scaled_power;
 
 	// let min_dc be the min high time in the duty cycle
 	// let range_dc be the range the duty high time may be
@@ -91,18 +92,12 @@ void mixer(F_t regs_in[4],F_t m[4096]) {
 	// let r be the roll command
 	// let p be the pitch command
 	// let y be the yaw command
-	// let m[][] be the mixer variables
-	// d#:=min_dc+range(t+(1-t)*(r*m[#][0]+p*m[#][1]+y*m[#][2])/3)
-	/*
-	m[PWM_INDEX+PWM_ARR_INDEX+0]=(t_c + ((1-t_c)*((r_c*m[0][0]+p_c*m[0][1]+y_c*m[0][2])/3)));
-	m[PWM_INDEX+PWM_ARR_INDEX+1]=(t_c + ((1-t_c)*((r_c*m[1][0]+p_c*m[1][1]+y_c*m[1][2])/3)));
-	m[PWM_INDEX+PWM_ARR_INDEX+2]=(t_c + ((1-t_c)*((r_c*m[2][0]+p_c*m[2][1]+y_c*m[2][2])/3)));
-	m[PWM_INDEX+PWM_ARR_INDEX+3]=(t_c + ((1-t_c)*((r_c*m[3][0]+p_c*m[3][1]+y_c*m[3][2])/3)));
-	m[PWM_INDEX+PWM_ARR_INDEX+4]=(t_c + ((1-t_c)*((r_c*m[4][0]+p_c*m[4][1]+y_c*m[4][2])/3)));
-	m[PWM_INDEX+PWM_ARR_INDEX+5]=(t_c + ((1-t_c)*((r_c*m[5][0]+p_c*m[5][1]+y_c*m[5][2])/3)));
-	*/
+	// let MIX_C be the mixer variables
+
+
 	for(int i=0; i < 6; i++) {
 	#pragma HLS unroll
-		m[PWM_INDEX+PWM_ARR_INDEX+i]=(t_c + ((1-t_c)*((r_c*MIX_C[i][0]+p_c*MIX_C[i][1]+y_c*MIX_C[i][2])/3)));
+		scaled_power = t_c+(r_c*MIX_C[i][0]+p_c*MIX_C[i][1]+y_c*MIX_C[i][2])/bigF_t(3.0);
+		m[PWM_INDEX+PWM_ARR_INDEX+i]=F_t(clip(scaled_power,bigF_t(0),bigF_t(.99)));
 	}
 }

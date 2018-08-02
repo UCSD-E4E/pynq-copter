@@ -42,12 +42,15 @@
 #include "../pwm/pwm.hpp"
 
 #define PWM_OFFSET 0x40001000
-#define PWM_INDEX (PWM_OFFSET/4)
-#define PWM_ARR_OFFSET 0x40
-#define PWM_ARR_INDEX (PWM_ARR_OFFSET/4)
-typedef ap_fixed<32,4> bigN;
+#define PWM_INDEX (PWM_OFFSET/sizeof(F_t))
+#define PWM_ARR_OFFSET 0x30
+#define PWM_ARR_INDEX (PWM_ARR_OFFSET/sizeof(F_t))
 
-const bigN MIX_C[6][3] = {
+#define clip(in,low,high) (in<low?low:(in>high?high:in))
+typedef ap_fixed<RESOLUTION+3,4> bigF_t;
+
+
+const bigF_t MIX_C[6][3] = {
 	{.5,-0.57735026919,-1},
 	{1,0,1},
 	{.5,.57735026919,-1},
@@ -57,4 +60,4 @@ const bigN MIX_C[6][3] = {
 };
 
 
-void mixer(F_t regs_in[4],F_t m[6],unsigned int ctrl[6]) ;
+void mixer(F_t regs_in[4],F_t m[4096]) ;

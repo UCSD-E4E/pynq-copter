@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:mixer:1.0
-// IP Revision: 1807271922
+// IP Revision: 1808021017
 
 `timescale 1ns/1ps
 

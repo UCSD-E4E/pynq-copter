@@ -25,8 +25,9 @@
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
 // 0x10 ~
-// 0x1f : Memory 'regs_in_V' (4 * 32b)
-//        Word n : bit [31:0] - regs_in_V[n]
+// 0x17 : Memory 'regs_in_V' (4 * 16b)
+//        Word n : bit [15: 0] - regs_in_V[2n]
+//                 bit [31:16] - regs_in_V[2n+1]
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XMIXER_AXILITES_ADDR_AP_CTRL        0x00
@@ -34,7 +35,7 @@
 #define XMIXER_AXILITES_ADDR_IER            0x08
 #define XMIXER_AXILITES_ADDR_ISR            0x0c
 #define XMIXER_AXILITES_ADDR_REGS_IN_V_BASE 0x10
-#define XMIXER_AXILITES_ADDR_REGS_IN_V_HIGH 0x1f
-#define XMIXER_AXILITES_WIDTH_REGS_IN_V     32
+#define XMIXER_AXILITES_ADDR_REGS_IN_V_HIGH 0x17
+#define XMIXER_AXILITES_WIDTH_REGS_IN_V     16
 #define XMIXER_AXILITES_DEPTH_REGS_IN_V     4
 

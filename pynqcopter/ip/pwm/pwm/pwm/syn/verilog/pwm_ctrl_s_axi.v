@@ -8,7 +8,7 @@
 `timescale 1ns/1ps
 module pwm_ctrl_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 7,
+    C_S_AXI_ADDR_WIDTH = 6,
     C_S_AXI_DATA_WIDTH = 32
 )(
     // axi4 lite slave signals
@@ -38,12 +38,12 @@ module pwm_ctrl_s_axi
     input  wire                          ap_done,
     input  wire                          ap_ready,
     input  wire                          ap_idle,
-    output wire [31:0]                   min_duty_V,
-    output wire [31:0]                   max_duty_V,
-    output wire [31:0]                   period_V,
+    output wire [15:0]                   min_duty_V,
+    output wire [15:0]                   max_duty_V,
+    output wire [15:0]                   period_V,
     input  wire [2:0]                    m_V_address0,
     input  wire                          m_V_ce0,
-    output wire [31:0]                   m_V_q0
+    output wire [15:0]                   m_V_q0
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -65,33 +65,37 @@ module pwm_ctrl_s_axi
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
 // 0x10 : Data signal of min_duty_V
-//        bit 31~0 - min_duty_V[31:0] (Read/Write)
+//        bit 15~0 - min_duty_V[15:0] (Read/Write)
+//        others   - reserved
 // 0x14 : reserved
 // 0x18 : Data signal of max_duty_V
-//        bit 31~0 - max_duty_V[31:0] (Read/Write)
+//        bit 15~0 - max_duty_V[15:0] (Read/Write)
+//        others   - reserved
 // 0x1c : reserved
 // 0x20 : Data signal of period_V
-//        bit 31~0 - period_V[31:0] (Read/Write)
+//        bit 15~0 - period_V[15:0] (Read/Write)
+//        others   - reserved
 // 0x24 : reserved
-// 0x40 ~
-// 0x5f : Memory 'm_V' (6 * 32b)
-//        Word n : bit [31:0] - m_V[n]
+// 0x30 ~
+// 0x3f : Memory 'm_V' (6 * 16b)
+//        Word n : bit [15: 0] - m_V[2n]
+//                 bit [31:16] - m_V[2n+1]
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL           = 7'h00,
-    ADDR_GIE               = 7'h04,
-    ADDR_IER               = 7'h08,
-    ADDR_ISR               = 7'h0c,
-    ADDR_MIN_DUTY_V_DATA_0 = 7'h10,
-    ADDR_MIN_DUTY_V_CTRL   = 7'h14,
-    ADDR_MAX_DUTY_V_DATA_0 = 7'h18,
-    ADDR_MAX_DUTY_V_CTRL   = 7'h1c,
-    ADDR_PERIOD_V_DATA_0   = 7'h20,
-    ADDR_PERIOD_V_CTRL     = 7'h24,
-    ADDR_M_V_BASE          = 7'h40,
-    ADDR_M_V_HIGH          = 7'h5f,
+    ADDR_AP_CTRL           = 6'h00,
+    ADDR_GIE               = 6'h04,
+    ADDR_IER               = 6'h08,
+    ADDR_ISR               = 6'h0c,
+    ADDR_MIN_DUTY_V_DATA_0 = 6'h10,
+    ADDR_MIN_DUTY_V_CTRL   = 6'h14,
+    ADDR_MAX_DUTY_V_DATA_0 = 6'h18,
+    ADDR_MAX_DUTY_V_CTRL   = 6'h1c,
+    ADDR_PERIOD_V_DATA_0   = 6'h20,
+    ADDR_PERIOD_V_CTRL     = 6'h24,
+    ADDR_M_V_BASE          = 6'h30,
+    ADDR_M_V_HIGH          = 6'h3f,
     WRIDLE                 = 2'd0,
     WRDATA                 = 2'd1,
     WRRESP                 = 2'd2,
@@ -99,7 +103,7 @@ localparam
     RDIDLE                 = 2'd0,
     RDDATA                 = 2'd1,
     RDRESET                = 2'd2,
-    ADDR_BITS         = 7;
+    ADDR_BITS         = 6;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -122,17 +126,17 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
-    reg  [31:0]                   int_min_duty_V = 'b0;
-    reg  [31:0]                   int_max_duty_V = 'b0;
-    reg  [31:0]                   int_period_V = 'b0;
+    reg  [15:0]                   int_min_duty_V = 'b0;
+    reg  [15:0]                   int_max_duty_V = 'b0;
+    reg  [15:0]                   int_period_V = 'b0;
     // memory signals
-    wire [2:0]                    int_m_V_address0;
+    wire [1:0]                    int_m_V_address0;
     wire                          int_m_V_ce0;
     wire                          int_m_V_we0;
     wire [3:0]                    int_m_V_be0;
     wire [31:0]                   int_m_V_d0;
     wire [31:0]                   int_m_V_q0;
-    wire [2:0]                    int_m_V_address1;
+    wire [1:0]                    int_m_V_address1;
     wire                          int_m_V_ce1;
     wire                          int_m_V_we1;
     wire [3:0]                    int_m_V_be1;
@@ -140,12 +144,13 @@ localparam
     wire [31:0]                   int_m_V_q1;
     reg                           int_m_V_read;
     reg                           int_m_V_write;
+    reg  [0:0]                    int_m_V_shift;
 
 //------------------------Instantiation------------------
 // int_m_V
 pwm_ctrl_s_axi_ram #(
     .BYTES    ( 4 ),
-    .DEPTH    ( 6 )
+    .DEPTH    ( 3 )
 ) int_m_V (
     .clk0     ( ACLK ),
     .address0 ( int_m_V_address0 ),
@@ -268,13 +273,13 @@ always @(posedge ACLK) begin
                     rdata <= int_isr;
                 end
                 ADDR_MIN_DUTY_V_DATA_0: begin
-                    rdata <= int_min_duty_V[31:0];
+                    rdata <= int_min_duty_V[15:0];
                 end
                 ADDR_MAX_DUTY_V_DATA_0: begin
-                    rdata <= int_max_duty_V[31:0];
+                    rdata <= int_max_duty_V[15:0];
                 end
                 ADDR_PERIOD_V_DATA_0: begin
-                    rdata <= int_period_V[31:0];
+                    rdata <= int_period_V[15:0];
                 end
             endcase
         end
@@ -387,46 +392,46 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_min_duty_V[31:0]
+// int_min_duty_V[15:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_min_duty_V[31:0] <= 0;
+        int_min_duty_V[15:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_MIN_DUTY_V_DATA_0)
-            int_min_duty_V[31:0] <= (WDATA[31:0] & wmask) | (int_min_duty_V[31:0] & ~wmask);
+            int_min_duty_V[15:0] <= (WDATA[31:0] & wmask) | (int_min_duty_V[15:0] & ~wmask);
     end
 end
 
-// int_max_duty_V[31:0]
+// int_max_duty_V[15:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_max_duty_V[31:0] <= 0;
+        int_max_duty_V[15:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_MAX_DUTY_V_DATA_0)
-            int_max_duty_V[31:0] <= (WDATA[31:0] & wmask) | (int_max_duty_V[31:0] & ~wmask);
+            int_max_duty_V[15:0] <= (WDATA[31:0] & wmask) | (int_max_duty_V[15:0] & ~wmask);
     end
 end
 
-// int_period_V[31:0]
+// int_period_V[15:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_period_V[31:0] <= 0;
+        int_period_V[15:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_PERIOD_V_DATA_0)
-            int_period_V[31:0] <= (WDATA[31:0] & wmask) | (int_period_V[31:0] & ~wmask);
+            int_period_V[15:0] <= (WDATA[31:0] & wmask) | (int_period_V[15:0] & ~wmask);
     end
 end
 
 
 //------------------------Memory logic-------------------
 // m_V
-assign int_m_V_address0 = m_V_address0;
+assign int_m_V_address0 = m_V_address0 >> 1;
 assign int_m_V_ce0      = m_V_ce0;
 assign int_m_V_we0      = 1'b0;
 assign int_m_V_be0      = 1'b0;
 assign int_m_V_d0       = 1'b0;
-assign m_V_q0           = int_m_V_q0;
-assign int_m_V_address1 = ar_hs? raddr[4:2] : waddr[4:2];
+assign m_V_q0           = int_m_V_q0 >> (int_m_V_shift * 16);
+assign int_m_V_address1 = ar_hs? raddr[3:2] : waddr[3:2];
 assign int_m_V_ce1      = ar_hs | (int_m_V_write & WVALID);
 assign int_m_V_we1      = int_m_V_write & WVALID;
 assign int_m_V_be1      = WSTRB;
@@ -452,6 +457,14 @@ always @(posedge ACLK) begin
             int_m_V_write <= 1'b1;
         else if (WVALID)
             int_m_V_write <= 1'b0;
+    end
+end
+
+// int_m_V_shift
+always @(posedge ACLK) begin
+    if (ACLK_EN) begin
+        if (m_V_ce0)
+            int_m_V_shift <= m_V_address0[0];
     end
 end
 

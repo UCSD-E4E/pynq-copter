@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Fri Jul 27 18:22:00 2018
+-- Date        : Wed Aug  1 04:38:30 2018
 -- Host        : apple running 64-bit Ubuntu 16.04.4 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_pwm_0_1/pwm_pwm_0_1_stub.vhdl
@@ -14,7 +14,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity pwm_pwm_0_1 is
   Port ( 
-    s_axi_ctrl_AWADDR : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    s_axi_ctrl_AWADDR : in STD_LOGIC_VECTOR ( 5 downto 0 );
     s_axi_ctrl_AWVALID : in STD_LOGIC;
     s_axi_ctrl_AWREADY : out STD_LOGIC;
     s_axi_ctrl_WDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -24,7 +24,7 @@ entity pwm_pwm_0_1 is
     s_axi_ctrl_BRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_ctrl_BVALID : out STD_LOGIC;
     s_axi_ctrl_BREADY : in STD_LOGIC;
-    s_axi_ctrl_ARADDR : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    s_axi_ctrl_ARADDR : in STD_LOGIC_VECTOR ( 5 downto 0 );
     s_axi_ctrl_ARVALID : in STD_LOGIC;
     s_axi_ctrl_ARREADY : out STD_LOGIC;
     s_axi_ctrl_RDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -43,7 +43,7 @@ architecture stub of pwm_pwm_0_1 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "s_axi_ctrl_AWADDR[6:0],s_axi_ctrl_AWVALID,s_axi_ctrl_AWREADY,s_axi_ctrl_WDATA[31:0],s_axi_ctrl_WSTRB[3:0],s_axi_ctrl_WVALID,s_axi_ctrl_WREADY,s_axi_ctrl_BRESP[1:0],s_axi_ctrl_BVALID,s_axi_ctrl_BREADY,s_axi_ctrl_ARADDR[6:0],s_axi_ctrl_ARVALID,s_axi_ctrl_ARREADY,s_axi_ctrl_RDATA[31:0],s_axi_ctrl_RRESP[1:0],s_axi_ctrl_RVALID,s_axi_ctrl_RREADY,ap_clk,ap_rst_n,interrupt,out_V[5:0]";
+attribute black_box_pad_pin of stub : architecture is "s_axi_ctrl_AWADDR[5:0],s_axi_ctrl_AWVALID,s_axi_ctrl_AWREADY,s_axi_ctrl_WDATA[31:0],s_axi_ctrl_WSTRB[3:0],s_axi_ctrl_WVALID,s_axi_ctrl_WREADY,s_axi_ctrl_BRESP[1:0],s_axi_ctrl_BVALID,s_axi_ctrl_BREADY,s_axi_ctrl_ARADDR[5:0],s_axi_ctrl_ARVALID,s_axi_ctrl_ARREADY,s_axi_ctrl_RDATA[31:0],s_axi_ctrl_RRESP[1:0],s_axi_ctrl_RVALID,s_axi_ctrl_RREADY,ap_clk,ap_rst_n,interrupt,out_V[5:0]";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "pwm,Vivado 2017.4";
 begin

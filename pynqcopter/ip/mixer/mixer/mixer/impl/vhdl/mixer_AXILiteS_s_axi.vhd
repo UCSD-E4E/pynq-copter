@@ -43,7 +43,7 @@ port (
     ap_idle               :in   STD_LOGIC;
     regs_in_V_address0    :in   STD_LOGIC_VECTOR(1 downto 0);
     regs_in_V_ce0         :in   STD_LOGIC;
-    regs_in_V_q0          :out  STD_LOGIC_VECTOR(31 downto 0)
+    regs_in_V_q0          :out  STD_LOGIC_VECTOR(15 downto 0)
 );
 end entity mixer_AXILiteS_s_axi;
 
@@ -67,8 +67,9 @@ end entity mixer_AXILiteS_s_axi;
 --        bit 1  - Channel 1 (ap_ready)
 --        others - reserved
 -- 0x10 ~
--- 0x1f : Memory 'regs_in_V' (4 * 32b)
---        Word n : bit [31:0] - regs_in_V[n]
+-- 0x17 : Memory 'regs_in_V' (4 * 16b)
+--        Word n : bit [15: 0] - regs_in_V[2n]
+--                 bit [31:16] - regs_in_V[2n+1]
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of mixer_AXILiteS_s_axi is
@@ -81,7 +82,7 @@ architecture behave of mixer_AXILiteS_s_axi is
     constant ADDR_IER            : INTEGER := 16#08#;
     constant ADDR_ISR            : INTEGER := 16#0c#;
     constant ADDR_REGS_IN_V_BASE : INTEGER := 16#10#;
-    constant ADDR_REGS_IN_V_HIGH : INTEGER := 16#1f#;
+    constant ADDR_REGS_IN_V_HIGH : INTEGER := 16#17#;
     constant ADDR_BITS         : INTEGER := 5;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -105,13 +106,13 @@ architecture behave of mixer_AXILiteS_s_axi is
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     -- memory signals
-    signal int_regs_in_V_address0 : UNSIGNED(1 downto 0);
+    signal int_regs_in_V_address0 : UNSIGNED(0 downto 0);
     signal int_regs_in_V_ce0   : STD_LOGIC;
     signal int_regs_in_V_we0   : STD_LOGIC;
     signal int_regs_in_V_be0   : UNSIGNED(3 downto 0);
     signal int_regs_in_V_d0    : UNSIGNED(31 downto 0);
     signal int_regs_in_V_q0    : UNSIGNED(31 downto 0);
-    signal int_regs_in_V_address1 : UNSIGNED(1 downto 0);
+    signal int_regs_in_V_address1 : UNSIGNED(0 downto 0);
     signal int_regs_in_V_ce1   : STD_LOGIC;
     signal int_regs_in_V_we1   : STD_LOGIC;
     signal int_regs_in_V_be1   : UNSIGNED(3 downto 0);
@@ -119,6 +120,7 @@ architecture behave of mixer_AXILiteS_s_axi is
     signal int_regs_in_V_q1    : UNSIGNED(31 downto 0);
     signal int_regs_in_V_read  : STD_LOGIC;
     signal int_regs_in_V_write : STD_LOGIC;
+    signal int_regs_in_V_shift : UNSIGNED(0 downto 0);
 
     component mixer_AXILiteS_s_axi_ram is
         generic (
@@ -160,8 +162,8 @@ begin
 int_regs_in_V : mixer_AXILiteS_s_axi_ram
 generic map (
      BYTES    => 4,
-     DEPTH    => 4,
-     AWIDTH   => log2(4))
+     DEPTH    => 2,
+     AWIDTH   => log2(2))
 port map (
      clk0     => ACLK,
      address0 => int_regs_in_V_address0,
@@ -436,13 +438,13 @@ port map (
 
 -- ----------------------- Memory logic ------------------
     -- regs_in_V
-    int_regs_in_V_address0 <= UNSIGNED(regs_in_V_address0);
+    int_regs_in_V_address0 <= SHIFT_RIGHT(UNSIGNED(regs_in_V_address0), 1)(0 downto 0);
     int_regs_in_V_ce0    <= regs_in_V_ce0;
     int_regs_in_V_we0    <= '0';
     int_regs_in_V_be0    <= (others => '0');
     int_regs_in_V_d0     <= (others => '0');
-    regs_in_V_q0         <= STD_LOGIC_VECTOR(RESIZE(int_regs_in_V_q0, 32));
-    int_regs_in_V_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
+    regs_in_V_q0         <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_regs_in_V_q0, TO_INTEGER(int_regs_in_V_shift) * 16)(15 downto 0));
+    int_regs_in_V_address1 <= raddr(2 downto 2) when ar_hs = '1' else waddr(2 downto 2);
     int_regs_in_V_ce1    <= '1' when ar_hs = '1' or (int_regs_in_V_write = '1' and WVALID  = '1') else '0';
     int_regs_in_V_we1    <= '1' when int_regs_in_V_write = '1' and WVALID = '1' else '0';
     int_regs_in_V_be1    <= UNSIGNED(WSTRB);
@@ -473,6 +475,17 @@ port map (
                     int_regs_in_V_write <= '1';
                 elsif (WVALID = '1') then
                     int_regs_in_V_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (regs_in_V_ce0 = '1') then
+                    int_regs_in_V_shift(0) <= regs_in_V_address0(0);
                 end if;
             end if;
         end if;

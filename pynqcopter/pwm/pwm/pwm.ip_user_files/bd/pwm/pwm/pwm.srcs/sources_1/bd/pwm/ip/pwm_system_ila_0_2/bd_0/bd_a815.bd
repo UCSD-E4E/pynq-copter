@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x84BDC949F23ED3E0" bd:bdsource="SBD" bd:device="xc7z020clg400-1" bd:isScoped="true" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2017.4" bd:top="bd_a815" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x4B70DFBFD8147FE9" bd:bdsource="SBD" bd:device="xc7z020clg400-1" bd:isScoped="true" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2017.4" bd:top="bd_a815" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -335,7 +335,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>ADDR_WIDTH</spirit:name>
-            <spirit:value>7</spirit:value>
+            <spirit:value>6</spirit:value>
             <spirit:vendorExtensions>
               <bd:configElementInfos>
                 <bd:configElementInfo bd:valueSource="default"/>
@@ -761,10 +761,10 @@
           <spirit:configurableElementValue spirit:referenceId="C_PROBE37_WIDTH">2</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE36_WIDTH">2</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE35_WIDTH">3</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_PROBE34_WIDTH">7</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE34_WIDTH">6</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE33_WIDTH">2</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE32_WIDTH">3</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_PROBE31_WIDTH">7</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE31_WIDTH">6</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE30_WIDTH">2</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE29_WIDTH">3</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE28_WIDTH">2</spirit:configurableElementValue>
@@ -858,7 +858,7 @@
           <spirit:configurableElementValue spirit:referenceId="C_SLOT_1_AXI_PROTOCOL">AXI4LITE</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_SLOT_1_AXI_ID_WIDTH">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_SLOT_1_AXI_DATA_WIDTH">32</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_SLOT_1_AXI_ADDR_WIDTH">7</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_SLOT_1_AXI_ADDR_WIDTH">6</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_SLOT_0_AXI_PROTOCOL">AXI4</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_SLOT_0_AXI_ID_WIDTH">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_SLOT_0_AXI_DATA_WIDTH">32</spirit:configurableElementValue>

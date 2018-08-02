@@ -1,29 +1,3 @@
 <AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
-<sourceFile name="">
-<directive functionLabel="" functionName="mixer" label="">
-<pragma name="INTERFACE">
-<option name="s_axilite" positionalBoolean="mode" value=""/>
-<option name="port" positionalBoolean="4" value="return"/>
-</pragma>
-</directive>
-<directive functionLabel="" functionName="mixer" label="">
-<pragma name="INTERFACE">
-<option name="s_axilite" positionalBoolean="mode" value=""/>
-<option name="port" positionalBoolean="4" value="regs_in"/>
-</pragma>
-</directive>
-<directive functionLabel="" functionName="mixer" label="">
-<pragma name="INTERFACE">
-<option name="m_axi" positionalBoolean="mode" value=""/>
-<option name="port" positionalBoolean="4" value="m"/>
-<option name="offset" value="0x40000000"/>
-</pragma>
-</directive>
-<directive functionLabel="" functionName="mixer" label="">
-<pragma name="PIPELINE"/>
-</directive>
-<directive functionLabel="" functionName="mixer" label="">
-<pragma name="UNROLL"/>
-</directive>
-</sourceFile>
+<sourceFile name=""/>
 </AutoPilot:ProjectResources>

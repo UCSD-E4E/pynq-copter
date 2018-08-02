@@ -41,11 +41,11 @@
 
 #include "ap_int.h"
 
-#define RESOLUTION 32
+#define RESOLUTION 16
 #define CHANNELS 6
 
 
-typedef ap_ufixed<RESOLUTION,1> F_t;
+typedef ap_fixed<RESOLUTION,1> F_t;
 typedef ap_uint<RESOLUTION> N_t;
 typedef ap_uint<CHANNELS> O_t;
 

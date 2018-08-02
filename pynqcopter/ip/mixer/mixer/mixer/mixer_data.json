@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "6",
-    "Latency": "42",
+    "Latency": "31",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -35,41 +35,29 @@
   },
   "Files": {
     "CSource": [
-      "..\/..\/mixer.cpp",
       "..\/..\/main.cpp",
-      "..\/..\/mixer.hpp",
-      "..\/..\/..\/pwm\/pwm.hpp"
+      "..\/..\/mixer.cpp"
     ],
     "Vhdl": [
-      "impl\/vhdl\/mixer_add_85ns_85lbW.vhd",
       "impl\/vhdl\/mixer_AXILiteS_s_axi.vhd",
       "impl\/vhdl\/mixer_m_V_m_axi.vhd",
-      "impl\/vhdl\/mixer_mul_29ns_29bkb.vhd",
-      "impl\/vhdl\/mixer_mul_29ns_29cud.vhd",
-      "impl\/vhdl\/mixer_mul_30s_57njbC.vhd",
-      "impl\/vhdl\/mixer_mul_30s_58skbM.vhd",
-      "impl\/vhdl\/mixer_mul_30s_59sibs.vhd",
-      "impl\/vhdl\/mixer_mul_58ns_60dEe.vhd",
-      "impl\/vhdl\/mixer_mul_59s_61neOg.vhd",
-      "impl\/vhdl\/mixer_mul_59s_61nfYi.vhd",
-      "impl\/vhdl\/mixer_sub_118ns_1hbi.vhd",
-      "impl\/vhdl\/mixer_sub_119ns_1g8j.vhd",
+      "impl\/vhdl\/mixer_mul_51ns_47bkb.vhd",
+      "impl\/vhdl\/mixer_mul_51ns_48cud.vhd",
+      "impl\/vhdl\/mixer_mul_mul_16ng8j.vhd",
+      "impl\/vhdl\/mixer_mul_mul_16sfYi.vhd",
+      "impl\/vhdl\/mixer_sub_97ns_97dEe.vhd",
+      "impl\/vhdl\/mixer_sub_98ns_98eOg.vhd",
       "impl\/vhdl\/mixer.vhd"
     ],
     "Verilog": [
-      "impl\/verilog\/mixer_add_85ns_85lbW.v",
       "impl\/verilog\/mixer_AXILiteS_s_axi.v",
       "impl\/verilog\/mixer_m_V_m_axi.v",
-      "impl\/verilog\/mixer_mul_29ns_29bkb.v",
-      "impl\/verilog\/mixer_mul_29ns_29cud.v",
-      "impl\/verilog\/mixer_mul_30s_57njbC.v",
-      "impl\/verilog\/mixer_mul_30s_58skbM.v",
-      "impl\/verilog\/mixer_mul_30s_59sibs.v",
-      "impl\/verilog\/mixer_mul_58ns_60dEe.v",
-      "impl\/verilog\/mixer_mul_59s_61neOg.v",
-      "impl\/verilog\/mixer_mul_59s_61nfYi.v",
-      "impl\/verilog\/mixer_sub_118ns_1hbi.v",
-      "impl\/verilog\/mixer_sub_119ns_1g8j.v",
+      "impl\/verilog\/mixer_mul_51ns_47bkb.v",
+      "impl\/verilog\/mixer_mul_51ns_48cud.v",
+      "impl\/verilog\/mixer_mul_mul_16ng8j.v",
+      "impl\/verilog\/mixer_mul_mul_16sfYi.v",
+      "impl\/verilog\/mixer_sub_97ns_97dEe.v",
+      "impl\/verilog\/mixer_sub_98ns_98eOg.v",
       "impl\/verilog\/mixer.v"
     ],
     "SwDriver": [
@@ -210,8 +198,8 @@
           "Width": "1"
         },
         "WDATA": {
-          "Type": "real fixed unsigned 31",
-          "Width": "32"
+          "Type": "real fixed signed 15",
+          "Width": "16"
         },
         "WSTRB": {
           "Type": "integer unsigned",
@@ -238,8 +226,8 @@
           "Width": "1"
         },
         "RDATA": {
-          "Type": "real fixed unsigned 31",
-          "Width": "32"
+          "Type": "real fixed signed 15",
+          "Width": "16"
         },
         "RID": {
           "Type": "integer unsigned",
@@ -449,7 +437,7 @@
           ]
         }
       ],
-      "memories": "regs_in_V {base_address 16 range 16}",
+      "memories": "regs_in_V {base_address 16 range 8}",
       "ctype": {
         "AWVALID": {"Type": "bool"},
         "AWREADY": {"Type": "bool"},
@@ -474,8 +462,8 @@
           "Width": "5"
         },
         "WDATA": {
-          "Type": "real fixed unsigned 31",
-          "Width": "32"
+          "Type": "real fixed signed 15",
+          "Width": "16"
         },
         "WSTRB": {
           "Type": "integer unsigned",
@@ -486,8 +474,8 @@
           "Width": "5"
         },
         "RDATA": {
-          "Type": "real fixed unsigned 31",
-          "Width": "32"
+          "Type": "real fixed signed 15",
+          "Width": "16"
         }
       },
       "data_width": "32",
@@ -795,29 +783,29 @@
     "Hierarchy": {"ModuleName": "mixer"},
     "Metrics": {"mixer": {
         "Latency": {
-          "LatencyBest": "42",
-          "LatencyAvg": "42",
-          "LatencyWorst": "42",
+          "LatencyBest": "31",
+          "LatencyAvg": "31",
+          "LatencyWorst": "31",
           "PipelineII": "6",
-          "PipelineDepth": "43",
+          "PipelineDepth": "32",
           "PipelineType": "function"
         },
         "Timing": {
           "Target": "4.00",
           "Uncertainty": "0.50",
-          "Estimate": "6.97"
+          "Estimate": "4.35"
         },
         "Area": {
           "BRAM_18K": "4",
-          "DSP48E": "177",
-          "FF": "15665",
-          "LUT": "6841"
+          "DSP48E": "56",
+          "FF": "8926",
+          "LUT": "4656"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-07-27 19:22:20 EDT",
+    "Time": "2018-08-02 10:17:53 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

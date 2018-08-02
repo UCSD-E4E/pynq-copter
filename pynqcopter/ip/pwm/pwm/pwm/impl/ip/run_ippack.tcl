@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "pwm"
 set Version     "1.0"
 set DisplayName "Pwm"
-set Revision    "1807271814"
+set Revision    "1808010433"
 set Description "HLS Core: Pwm Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -86,10 +86,10 @@ set Interfaces {
         mode "slave"
         port_prefix "s_axi_ctrl"
         param_prefix "C_S_AXI_CTRL"
-        addr_bits "7"
-        port_width "AWADDR 7 WDATA 32 WSTRB 4 ARADDR 7 RDATA 32"
-        registers {{0x00 CTRL       RW   0x0 "Control signals" {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 24 RESERVED_2 R 0 "Reserved.  0s on read." }}} {0x04 GIER       RW   0x0 "Global Interrupt Enable Register" {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }} } {0x08 IP_IER     RW   0x0 "IP Interrupt Enable Register" {{ 0 1 CHAN0_INT_EN RW 0 "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled." } { 1 1 CHAN1_INT_EN RW 0 "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled." } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x0c IP_ISR     RW   0x0 "IP Interrupt Status Register" {{ 0 1 CHAN0_INT_ST RTOW 0 "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup" } { 1 1 CHAN1_INT_ST RTOW 0 "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup" } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x10 min_duty_V W 0x0 "Data signal of min_duty_V" {{0 32 min_duty_V W 0 "Bit 31 to 0 Data signal of min_duty_V"}}} {0x18 max_duty_V W 0x0 "Data signal of max_duty_V" {{0 32 max_duty_V W 0 "Bit 31 to 0 Data signal of max_duty_V"}}} {0x20 period_V W 0x0 "Data signal of period_V" {{0 32 period_V W 0 "Bit 31 to 0 Data signal of period_V"}}}}
-        memories "m_V {base_address 64 range 32}"
+        addr_bits "6"
+        port_width "AWADDR 6 WDATA 32 WSTRB 4 ARADDR 6 RDATA 32"
+        registers {{0x00 CTRL       RW   0x0 "Control signals" {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 24 RESERVED_2 R 0 "Reserved.  0s on read." }}} {0x04 GIER       RW   0x0 "Global Interrupt Enable Register" {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }} } {0x08 IP_IER     RW   0x0 "IP Interrupt Enable Register" {{ 0 1 CHAN0_INT_EN RW 0 "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled." } { 1 1 CHAN1_INT_EN RW 0 "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled." } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x0c IP_ISR     RW   0x0 "IP Interrupt Status Register" {{ 0 1 CHAN0_INT_ST RTOW 0 "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup" } { 1 1 CHAN1_INT_ST RTOW 0 "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup" } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x10 min_duty_V W 0x0 "Data signal of min_duty_V" {{0 16 min_duty_V W 0 "Bit 15 to 0 Data signal of min_duty_V"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0x18 max_duty_V W 0x0 "Data signal of max_duty_V" {{0 16 max_duty_V W 0 "Bit 15 to 0 Data signal of max_duty_V"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0x20 period_V W 0x0 "Data signal of period_V" {{0 16 period_V W 0 "Bit 15 to 0 Data signal of period_V"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}}}
+        memories "m_V {base_address 48 range 16}"
         ctype {
             AWVALID {
                 Type "bool"
@@ -153,13 +153,13 @@ set Interfaces {
             }
             AWADDR {
                 Type "integer unsigned"
-                Width "7"
-                Bits "7"
+                Width "6"
+                Bits "6"
             }
             WDATA {
-                Type "real fixed unsigned 31"
-                Width "32"
-                Bits "32"
+                Type "real fixed signed 15"
+                Width "16"
+                Bits "16"
             }
             WSTRB {
                 Type "integer unsigned"
@@ -168,13 +168,13 @@ set Interfaces {
             }
             ARADDR {
                 Type "integer unsigned"
-                Width "7"
-                Bits "7"
+                Width "6"
+                Bits "6"
             }
             RDATA {
-                Type "real fixed unsigned 31"
-                Width "32"
-                Bits "32"
+                Type "real fixed signed 15"
+                Width "16"
+                Bits "16"
             }
         }
         data_width "32"
@@ -1688,7 +1688,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_ver match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 18 II 6}
+set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 13 II 6}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]

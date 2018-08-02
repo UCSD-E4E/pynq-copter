@@ -37165,8 +37165,8 @@ using namespace std;
 #pragma line 42 "./mixer.hpp" 2
 #pragma line 1 "./../pwm/pwm.hpp" 1
 #pragma line 48 "./../pwm/pwm.hpp"
-typedef ap_ufixed<32,1> F_t;
-typedef ap_uint<32> N_t;
+typedef ap_fixed<16,1> F_t;
+typedef ap_uint<16> N_t;
 typedef ap_uint<6> O_t;
 #pragma empty_line
 void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
@@ -37176,9 +37176,12 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-typedef ap_fixed<32,4> bigN;
 #pragma empty_line
-const bigN MIX_C[6][3] = {
+#pragma empty_line
+typedef ap_fixed<16 +3,4> bigF_t;
+#pragma empty_line
+#pragma empty_line
+const bigF_t MIX_C[6][3] = {
  {.5,-0.57735026919,-1},
  {1,0,1},
  {.5,.57735026919,-1},
@@ -37188,23 +37191,11 @@ const bigN MIX_C[6][3] = {
 };
 #pragma empty_line
 #pragma empty_line
-void mixer(F_t regs_in[4],F_t m[6],unsigned int ctrl[6]) ;
+void mixer(F_t regs_in[4],F_t m[4096]) ;
 #pragma line 45 "main.cpp" 2
+void mixer(F_t regs_in[4],F_t m[4096]);
 #pragma empty_line
 int main() {
- char delim = '\t';
- ofstream myfile;
- myfile.open("out.csv");
-    F_t regs[4] = { 0x0,0x0,0x0,0x0 };
-    F_t m[6];
-#pragma empty_line
-#pragma empty_line
-    cout << "------------------" << endl;
-    cout << "---  TESTBENCH ---" << endl;
-    cout << "------------------" << endl;
-#pragma line 91 "main.cpp"
-    myfile.close();
-#pragma empty_line
-#pragma empty_line
+#pragma line 95 "main.cpp"
     return 0;
 }

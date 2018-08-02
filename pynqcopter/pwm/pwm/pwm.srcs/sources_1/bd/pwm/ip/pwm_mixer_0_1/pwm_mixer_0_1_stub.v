@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Fri Jul 27 19:27:29 2018
+// Date        : Thu Aug  2 10:31:24 2018
 // Host        : apple running 64-bit Ubuntu 16.04.4 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_mixer_0_1/pwm_mixer_0_1_stub.v

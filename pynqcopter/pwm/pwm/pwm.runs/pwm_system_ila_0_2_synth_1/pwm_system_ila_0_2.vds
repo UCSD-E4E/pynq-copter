@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Fri Jul 27 15:12:09 2018
-# Process ID: 3941
+# Start of session at: Wed Aug  1 02:36:13 2018
+# Process ID: 18058
 # Current directory: /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_system_ila_0_2_synth_1
 # Command line: vivado -log pwm_system_ila_0_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pwm_system_ila_0_2.tcl
 # Log file: /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_system_ila_0_2_synth_1/pwm_system_ila_0_2.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 3989 
+INFO: Helper process launched with PID 18151 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1336.914 ; gain = 104.996 ; free physical = 812 ; free virtual = 9716
+Starting RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:27 . Memory (MB): peak = 1338.387 ; gain = 109.996 ; free physical = 133 ; free virtual = 8963
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'pwm_system_ila_0_2' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_system_ila_0_2/synth/pwm_system_ila_0_2.v:206]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_system_ila_0_2/synth/pwm_system_ila_0_2.v:376]
@@ -915,7 +915,7 @@ INFO: [Synth 8-638] synthesizing module 'bd_a815_g_inst_0_gigantic_mux' [/home/b
 	Parameter C_SLOT_0_AXIS_TID_WIDTH bound to: 1 - type: integer 
 	Parameter C_SLOT_0_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
 	Parameter C_SLOT_0_AXIS_TUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_SLOT_1_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter C_SLOT_1_AXI_ADDR_WIDTH bound to: 6 - type: integer 
 	Parameter C_SLOT_1_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_SLOT_1_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
 	Parameter C_SLOT_1_AXI_WUSER_WIDTH bound to: 0 - type: integer 
@@ -1693,7 +1693,7 @@ WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unco
 WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port SLEEP
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:57 ; elapsed = 00:02:15 . Memory (MB): peak = 1755.203 ; gain = 523.285 ; free physical = 1097 ; free virtual = 10004
+Finished RTL Elaboration : Time (s): cpu = 00:02:06 ; elapsed = 00:02:40 . Memory (MB): peak = 1757.676 ; gain = 529.285 ; free physical = 523 ; free virtual = 8149
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1742,7 +1742,7 @@ INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0 [/home/b
 INFO: [Synth 8-3295] tying undriven pin inst:trig_in to constant 0 [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_system_ila_0_2/bd_0/ip/ip_0/synth/bd_a815_ila_lib_0.v:3303]
 INFO: [Synth 8-3295] tying undriven pin inst:trig_out_ack to constant 0 [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_system_ila_0_2/bd_0/ip/ip_0/synth/bd_a815_ila_lib_0.v:3303]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:57 ; elapsed = 00:02:16 . Memory (MB): peak = 1755.203 ; gain = 523.285 ; free physical = 1144 ; free virtual = 10055
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:06 ; elapsed = 00:02:41 . Memory (MB): peak = 1757.676 ; gain = 529.285 ; free physical = 565 ; free virtual = 8198
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 503 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1766,16 +1766,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 312 instances
   CFGLUT5 => SRLC32E: 52 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1858.219 ; gain = 0.000 ; free physical = 871 ; free virtual = 9787
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1867.691 ; gain = 0.000 ; free physical = 1232 ; free virtual = 9123
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:02:22 ; elapsed = 00:02:55 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 990 ; free virtual = 9896
+Finished Constraint Validation : Time (s): cpu = 00:02:33 ; elapsed = 00:03:35 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1336 ; free virtual = 9234
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:02:22 ; elapsed = 00:02:55 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 990 ; free virtual = 9896
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:33 ; elapsed = 00:03:36 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1336 ; free virtual = 9234
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1795,7 +1795,7 @@ Applied set_property DONT_TOUCH = true for inst/slot_1_b. (constraint file  auto
 Applied set_property DONT_TOUCH = true for inst/slot_1_r. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/slot_1_w. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:22 ; elapsed = 00:02:55 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 992 ; free virtual = 9898
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:33 ; elapsed = 00:03:36 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1338 ; free virtual = 9236
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized48'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -1954,7 +1954,7 @@ INFO: [Synth 8-5546] ROM "read_addr" won't be mapped to RAM because it is too sp
 INFO: [Synth 8-5546] ROM "curr_read_block" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "read_en" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:25 ; elapsed = 00:03:00 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 975 ; free virtual = 9886
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:36 ; elapsed = 00:03:41 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1325 ; free virtual = 9224
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1978,8 +1978,8 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit         XORs := 4     
 +---Registers : 
 	             1024 Bit    Registers := 2     
-	              336 Bit    Registers := 1     
-	              320 Bit    Registers := 9     
+	              320 Bit    Registers := 1     
+	              318 Bit    Registers := 9     
 	              128 Bit    Registers := 1     
 	               48 Bit    Registers := 1     
 	               33 Bit    Registers := 2     
@@ -1988,15 +1988,15 @@ Detailed RTL Component Info :
 	               16 Bit    Registers := 261   
 	               10 Bit    Registers := 9     
 	                8 Bit    Registers := 4     
-	                7 Bit    Registers := 7     
-	                6 Bit    Registers := 2     
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 6     
 	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 118   
 	                3 Bit    Registers := 16    
 	                2 Bit    Registers := 49    
 	                1 Bit    Registers := 328   
 +---Muxes : 
-	   2 Input    320 Bit        Muxes := 1     
+	   2 Input    318 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 59    
 	   4 Input     16 Bit        Muxes := 1     
 	   3 Input     16 Bit        Muxes := 1     
@@ -3113,7 +3113,7 @@ Detailed RTL Component Info :
 Module ltlib_v1_0_0_allx_typeA__parameterized6 
 Detailed RTL Component Info : 
 +---Registers : 
-	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 2     
 Module ltlib_v1_0_0_match__parameterized6 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -3202,7 +3202,7 @@ Detailed RTL Component Info :
 	   2 Input     10 Bit       Adders := 1     
 	   2 Input      5 Bit       Adders := 1     
 +---Registers : 
-	              336 Bit    Registers := 1     
+	              320 Bit    Registers := 1     
 	               10 Bit    Registers := 1     
 	                7 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
@@ -3219,12 +3219,12 @@ Detailed RTL Component Info :
 Module ila_v6_2_5_ila_core 
 Detailed RTL Component Info : 
 +---Registers : 
-	              320 Bit    Registers := 9     
+	              318 Bit    Registers := 9     
 	               16 Bit    Registers := 2     
 	                2 Bit    Registers := 3     
 	                1 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input    320 Bit        Muxes := 1     
+	   2 Input    318 Bit        Muxes := 1     
 Module ila_v6_2_5_ila 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -3551,7 +3551,7 @@ INFO: [Synth 8-3886] merging instance 'inst/ila_lib/inst/ila_core_inst/u_ila_reg
 INFO: [Synth 8-3886] merging instance 'inst/ila_lib/inst/ila_core_inst/u_ila_regs/shift_reg0_reg[13]' (FDSE) to 'inst/ila_lib/inst/ila_core_inst/u_ila_regs/shift_reg0_reg[14]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:40 ; elapsed = 00:03:18 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 933 ; free virtual = 9844
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:49 ; elapsed = 00:03:58 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1279 ; free virtual = 9189
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3563,13 +3563,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:49 ; elapsed = 00:03:29 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 814 ; free virtual = 9729
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:57 ; elapsed = 00:04:10 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1142 ; free virtual = 9068
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:50 ; elapsed = 00:03:30 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 806 ; free virtual = 9726
+Finished Timing Optimization : Time (s): cpu = 00:02:58 ; elapsed = 00:04:11 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1138 ; free virtual = 9064
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3581,7 +3581,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:53 ; elapsed = 00:03:33 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 802 ; free virtual = 9722
+Finished Technology Mapping : Time (s): cpu = 00:03:01 ; elapsed = 00:04:14 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1136 ; free virtual = 9062
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3645,7 +3645,7 @@ INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0
 INFO: [Synth 8-3295] tying undriven pin inst:trig_in to constant 0
 INFO: [Synth 8-3295] tying undriven pin inst:trig_out_ack to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:54 ; elapsed = 00:03:34 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 801 ; free virtual = 9721
+Finished IO Insertion : Time (s): cpu = 00:03:02 ; elapsed = 00:04:15 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1136 ; free virtual = 9062
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -3658,7 +3658,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:54 ; elapsed = 00:03:34 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 801 ; free virtual = 9721
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:02 ; elapsed = 00:04:15 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1136 ; free virtual = 9062
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3670,25 +3670,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:54 ; elapsed = 00:03:35 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 802 ; free virtual = 9721
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:02 ; elapsed = 00:04:16 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1135 ; free virtual = 9061
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:54 ; elapsed = 00:03:35 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 802 ; free virtual = 9721
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:02 ; elapsed = 00:04:16 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1135 ; free virtual = 9061
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:55 ; elapsed = 00:03:35 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 801 ; free virtual = 9721
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:03 ; elapsed = 00:04:16 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1134 ; free virtual = 9060
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:55 ; elapsed = 00:03:35 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 801 ; free virtual = 9721
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:03 ; elapsed = 00:04:16 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1134 ; free virtual = 9060
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -3699,7 +3699,7 @@ Static Shift Register Report:
 |Module Name    | RTL Name                                                                         | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
 +---------------+----------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |ila_v6_2_5_ila | ila_core_inst/u_ila_regs/adv_rb_drdy4_reg                                        | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|ila_v6_2_5_ila | ila_core_inst/shifted_data_in_reg[8][319]                                        | 9      | 320   | NO           | NO                 | YES               | 320    | 0       | 
+|ila_v6_2_5_ila | ila_core_inst/shifted_data_in_reg[8][317]                                        | 9      | 318   | NO           | NO                 | YES               | 318    | 0       | 
 |ila_v6_2_5_ila | ila_core_inst/xsdb_memory_read_inst/multiple_read_latency.read_enable_out_reg[3] | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |ila_v6_2_5_ila | ila_core_inst/xsdb_memory_read_inst/multiple_enable_latency.enable_out_reg[3]    | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 +---------------+----------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
@@ -3724,18 +3724,18 @@ Report Cell Usage:
 |1     |CARRY4   |   130|
 |2     |CFGLUT5  |   364|
 |3     |LUT1     |    77|
-|4     |LUT2     |    89|
-|5     |LUT3     |   167|
-|6     |LUT4     |   466|
-|7     |LUT5     |   170|
-|8     |LUT6     |  1454|
-|9     |MUXF7    |   136|
-|10    |MUXF8    |    44|
+|4     |LUT2     |    90|
+|5     |LUT3     |   171|
+|6     |LUT4     |   457|
+|7     |LUT5     |   191|
+|8     |LUT6     |  1444|
+|9     |MUXF7    |   145|
+|10    |MUXF8    |    46|
 |11    |RAMB36E1 |     9|
-|12    |SRL16E   |   324|
+|12    |SRL16E   |   322|
 |13    |SRLC16E  |     2|
 |14    |SRLC32E  |    17|
-|15    |FDRE     |  4492|
+|15    |FDRE     |  4484|
 |16    |FDSE     |    15|
 +------+---------+------+
 
@@ -3743,15 +3743,15 @@ Report Instance Areas:
 +------+----------------------------------------------------------------------------+-------------------------------------------------+------+
 |      |Instance                                                                    |Module                                           |Cells |
 +------+----------------------------------------------------------------------------+-------------------------------------------------+------+
-|1     |top                                                                         |                                                 |  7956|
-|2     |  inst                                                                      |bd_a815                                          |  7956|
+|1     |top                                                                         |                                                 |  7964|
+|2     |  inst                                                                      |bd_a815                                          |  7964|
 |3     |    g_inst                                                                  |bd_a815_g_inst_0                                 |    19|
 |4     |      inst                                                                  |bd_a815_g_inst_0_gigantic_mux                    |    19|
 |5     |        \SLOT_0.inst_slot0                                                  |gigantic_mux_v1_0_1_cntr                         |    10|
 |6     |        \SLOT_1.inst_slot0                                                  |gigantic_mux_v1_0_1_cntr__parameterized0         |     9|
-|7     |    ila_lib                                                                 |bd_a815_ila_lib_0                                |  7937|
-|8     |      inst                                                                  |ila_v6_2_5_ila                                   |  7937|
-|9     |        ila_core_inst                                                       |ila_v6_2_5_ila_core                              |  7930|
+|7     |    ila_lib                                                                 |bd_a815_ila_lib_0                                |  7945|
+|8     |      inst                                                                  |ila_v6_2_5_ila                                   |  7945|
+|9     |        ila_core_inst                                                       |ila_v6_2_5_ila_core                              |  7938|
 |10    |          ila_trace_memory_inst                                             |ila_v6_2_5_ila_trace_memory                      |     9|
 |11    |            \SUBCORE_RAM_BLK_MEM_1.trace_block_memory                       |blk_mem_gen_v8_3_6                               |     9|
 |12    |              inst_blk_mem_gen                                              |blk_mem_gen_v8_3_6_synth                         |     9|
@@ -3804,13 +3804,13 @@ Report Instance Areas:
 |59    |                    DUT                                                     |ltlib_v1_0_0_all_typeA__parameterized2           |    12|
 |60    |                      \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized1     |     5|
 |61    |                      \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized2     |     5|
-|62    |          u_ila_regs                                                        |ila_v6_2_5_ila_register                          |  5116|
+|62    |          u_ila_regs                                                        |ila_v6_2_5_ila_register                          |  5125|
 |63    |            U_XSDB_SLAVE                                                    |xsdbs_v1_0_2_xsdbs                               |   303|
 |64    |            reg_890                                                         |xsdbs_v1_0_2_reg__parameterized138               |    16|
 |65    |              \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_218                        |    16|
 |66    |            \MU_SRL[0].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s                             |    74|
 |67    |            \MU_SRL[10].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized9             |    74|
-|68    |            \MU_SRL[11].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized10            |   104|
+|68    |            \MU_SRL[11].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized10            |   105|
 |69    |            \MU_SRL[12].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized11            |    74|
 |70    |            \MU_SRL[13].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized12            |    74|
 |71    |            \MU_SRL[14].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized13            |    74|
@@ -3818,30 +3818,30 @@ Report Instance Areas:
 |73    |            \MU_SRL[16].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized15            |    74|
 |74    |            \MU_SRL[17].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized16            |    74|
 |75    |            \MU_SRL[18].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized17            |    74|
-|76    |            \MU_SRL[19].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized18            |   119|
+|76    |            \MU_SRL[19].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized18            |   120|
 |77    |            \MU_SRL[1].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized0             |    74|
 |78    |            \MU_SRL[20].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized19            |    74|
 |79    |            \MU_SRL[21].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized20            |    74|
 |80    |            \MU_SRL[22].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized21            |    74|
-|81    |            \MU_SRL[23].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized22            |    91|
+|81    |            \MU_SRL[23].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized22            |    90|
 |82    |            \MU_SRL[24].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized23            |    74|
 |83    |            \MU_SRL[25].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized24            |    74|
 |84    |            \MU_SRL[26].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized25            |    74|
-|85    |            \MU_SRL[27].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized26            |   104|
+|85    |            \MU_SRL[27].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized26            |   105|
 |86    |            \MU_SRL[28].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized27            |    74|
 |87    |            \MU_SRL[29].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized28            |    74|
 |88    |            \MU_SRL[2].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized1             |    74|
 |89    |            \MU_SRL[30].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized29            |    74|
-|90    |            \MU_SRL[31].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized30            |    90|
+|90    |            \MU_SRL[31].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized30            |    91|
 |91    |            \MU_SRL[32].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized31            |    74|
 |92    |            \MU_SRL[33].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized32            |    74|
 |93    |            \MU_SRL[34].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized33            |    74|
-|94    |            \MU_SRL[35].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized34            |   134|
+|94    |            \MU_SRL[35].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized34            |   137|
 |95    |            \MU_SRL[36].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized35            |    74|
 |96    |            \MU_SRL[37].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized36            |    74|
 |97    |            \MU_SRL[38].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized37            |    74|
 |98    |            \MU_SRL[39].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized38            |    90|
-|99    |            \MU_SRL[3].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized2             |   118|
+|99    |            \MU_SRL[3].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized2             |   120|
 |100   |            \MU_SRL[40].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized39            |    74|
 |101   |            \MU_SRL[41].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized40            |    74|
 |102   |            \MU_SRL[42].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized41            |    74|
@@ -3853,51 +3853,51 @@ Report Instance Areas:
 |108   |            \MU_SRL[4].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized3             |    74|
 |109   |            \MU_SRL[5].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized4             |    74|
 |110   |            \MU_SRL[6].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized5             |    74|
-|111   |            \MU_SRL[7].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized6             |    92|
+|111   |            \MU_SRL[7].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized6             |    90|
 |112   |            \MU_SRL[8].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized7             |    74|
 |113   |            \MU_SRL[9].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized8             |    74|
 |114   |            \TC_SRL[0].tc_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized47            |    75|
-|115   |            reg_15                                                          |xsdbs_v1_0_2_reg__parameterized120               |    25|
-|116   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_217                         |    25|
+|115   |            reg_15                                                          |xsdbs_v1_0_2_reg__parameterized120               |    27|
+|116   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_217                         |    27|
 |117   |            reg_16                                                          |xsdbs_v1_0_2_reg__parameterized121               |    17|
 |118   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_216                         |    17|
-|119   |            reg_17                                                          |xsdbs_v1_0_2_reg__parameterized122               |    35|
-|120   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_215                         |    35|
-|121   |            reg_18                                                          |xsdbs_v1_0_2_reg__parameterized123               |    31|
-|122   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_214                         |    31|
-|123   |            reg_19                                                          |xsdbs_v1_0_2_reg__parameterized124               |    18|
-|124   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_213                         |    18|
-|125   |            reg_1a                                                          |xsdbs_v1_0_2_reg__parameterized125               |    34|
-|126   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized1_212         |    34|
-|127   |            reg_6                                                           |xsdbs_v1_0_2_reg__parameterized105               |    23|
-|128   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_211                         |    23|
-|129   |            reg_7                                                           |xsdbs_v1_0_2_reg__parameterized106               |    36|
-|130   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized0             |    36|
-|131   |            reg_8                                                           |xsdbs_v1_0_2_reg__parameterized107               |     7|
-|132   |              \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_210                        |     7|
+|119   |            reg_17                                                          |xsdbs_v1_0_2_reg__parameterized122               |    27|
+|120   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_215                         |    27|
+|121   |            reg_18                                                          |xsdbs_v1_0_2_reg__parameterized123               |    37|
+|122   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_214                         |    37|
+|123   |            reg_19                                                          |xsdbs_v1_0_2_reg__parameterized124               |    17|
+|124   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_213                         |    17|
+|125   |            reg_1a                                                          |xsdbs_v1_0_2_reg__parameterized125               |    35|
+|126   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized1_212         |    35|
+|127   |            reg_6                                                           |xsdbs_v1_0_2_reg__parameterized105               |    28|
+|128   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_211                         |    28|
+|129   |            reg_7                                                           |xsdbs_v1_0_2_reg__parameterized106               |    29|
+|130   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized0             |    29|
+|131   |            reg_8                                                           |xsdbs_v1_0_2_reg__parameterized107               |     4|
+|132   |              \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_210                        |     4|
 |133   |            reg_80                                                          |xsdbs_v1_0_2_reg__parameterized126               |    17|
 |134   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized1_209         |    17|
 |135   |            reg_81                                                          |xsdbs_v1_0_2_reg__parameterized127               |    17|
 |136   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_208                         |    17|
 |137   |            reg_82                                                          |xsdbs_v1_0_2_reg__parameterized128               |    17|
 |138   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized1             |    17|
-|139   |            reg_83                                                          |xsdbs_v1_0_2_reg__parameterized129               |    60|
-|140   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_207                         |    60|
+|139   |            reg_83                                                          |xsdbs_v1_0_2_reg__parameterized129               |    59|
+|140   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_207                         |    59|
 |141   |            reg_84                                                          |xsdbs_v1_0_2_reg__parameterized130               |    23|
 |142   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_206                         |    23|
-|143   |            reg_85                                                          |xsdbs_v1_0_2_reg__parameterized131               |    17|
-|144   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_205                         |    17|
+|143   |            reg_85                                                          |xsdbs_v1_0_2_reg__parameterized131               |    18|
+|144   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_205                         |    18|
 |145   |            reg_887                                                         |xsdbs_v1_0_2_reg__parameterized133               |     3|
 |146   |              \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_204                        |     3|
-|147   |            reg_88d                                                         |xsdbs_v1_0_2_reg__parameterized135               |     6|
-|148   |              \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_203                        |     6|
-|149   |            reg_9                                                           |xsdbs_v1_0_2_reg__parameterized108               |    11|
-|150   |              \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_202                        |    11|
-|151   |            reg_srl_fff                                                     |xsdbs_v1_0_2_reg_p2s__parameterized48            |    96|
-|152   |            reg_stream_ffd                                                  |xsdbs_v1_0_2_reg_stream                          |    28|
-|153   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl                             |    28|
-|154   |            reg_stream_ffe                                                  |xsdbs_v1_0_2_reg_stream__parameterized0          |    28|
-|155   |              \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat                            |    28|
+|147   |            reg_88d                                                         |xsdbs_v1_0_2_reg__parameterized135               |     4|
+|148   |              \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_203                        |     4|
+|149   |            reg_9                                                           |xsdbs_v1_0_2_reg__parameterized108               |    13|
+|150   |              \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_202                        |    13|
+|151   |            reg_srl_fff                                                     |xsdbs_v1_0_2_reg_p2s__parameterized48            |   108|
+|152   |            reg_stream_ffd                                                  |xsdbs_v1_0_2_reg_stream                          |    33|
+|153   |              \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl                             |    33|
+|154   |            reg_stream_ffe                                                  |xsdbs_v1_0_2_reg_stream__parameterized0          |    16|
+|155   |              \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat                            |    16|
 |156   |          u_ila_reset_ctrl                                                  |ila_v6_2_5_ila_reset_ctrl                        |    46|
 |157   |            arm_detection_inst                                              |ltlib_v1_0_0_rising_edge_detection               |     5|
 |158   |            \asyncrounous_transfer.arm_in_transfer_inst                     |ltlib_v1_0_0_async_edge_xfer                     |     7|
@@ -3905,7 +3905,7 @@ Report Instance Areas:
 |160   |            \asyncrounous_transfer.halt_in_transfer_inst                    |ltlib_v1_0_0_async_edge_xfer_199                 |     7|
 |161   |            \asyncrounous_transfer.halt_out_transfer_inst                   |ltlib_v1_0_0_async_edge_xfer_200                 |     6|
 |162   |            halt_detection_inst                                             |ltlib_v1_0_0_rising_edge_detection_201           |     6|
-|163   |          u_trig                                                            |ila_v6_2_5_ila_trigger                           |  1246|
+|163   |          u_trig                                                            |ila_v6_2_5_ila_trigger                           |  1242|
 |164   |            \N_DDR_TC.N_DDR_TC_INST[0].U_TC                                 |ltlib_v1_0_0_match                               |    83|
 |165   |              \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst      |ltlib_v1_0_0_allx_typeA                          |    81|
 |166   |                DUT                                                         |ltlib_v1_0_0_all_typeA                           |    33|
@@ -3915,7 +3915,7 @@ Report Instance Areas:
 |170   |                  \I_WHOLE_SLICE.G_SLICE_IDX[3].U_ALL_SRL_SLICE             |ltlib_v1_0_0_all_typeA_slice_195                 |     5|
 |171   |                  \I_WHOLE_SLICE.G_SLICE_IDX[4].U_ALL_SRL_SLICE             |ltlib_v1_0_0_all_typeA_slice_196                 |     5|
 |172   |                  \I_WHOLE_SLICE.G_SLICE_IDX[5].U_ALL_SRL_SLICE             |ltlib_v1_0_0_all_typeA_slice__parameterized0_197 |     6|
-|173   |            U_TM                                                            |ila_v6_2_5_ila_trig_match                        |  1162|
+|173   |            U_TM                                                            |ila_v6_2_5_ila_trig_match                        |  1158|
 |174   |              \N_DDR_MODE.G_NMU[0].U_M                                      |ltlib_v1_0_0_match__parameterized0               |    13|
 |175   |                \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized0_189      |    12|
 |176   |                  DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized0_190       |     8|
@@ -4024,8 +4024,8 @@ Report Instance Areas:
 |279   |                \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized0_108      |    12|
 |280   |                  DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized0_109       |     8|
 |281   |                    \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_110 |     6|
-|282   |              \N_DDR_MODE.G_NMU[31].U_M                                     |ltlib_v1_0_0_match__parameterized6               |    23|
-|283   |                \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized6_105      |    22|
+|282   |              \N_DDR_MODE.G_NMU[31].U_M                                     |ltlib_v1_0_0_match__parameterized6               |    21|
+|283   |                \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized6_105      |    20|
 |284   |                  DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized0_106       |     8|
 |285   |                    \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_107 |     6|
 |286   |              \N_DDR_MODE.G_NMU[32].U_M                                     |ltlib_v1_0_0_match__parameterized5_18            |    15|
@@ -4036,8 +4036,8 @@ Report Instance Areas:
 |291   |                \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized0_99       |    12|
 |292   |                  DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized0_100       |     8|
 |293   |                    \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_101 |     6|
-|294   |              \N_DDR_MODE.G_NMU[34].U_M                                     |ltlib_v1_0_0_match__parameterized6_20            |    23|
-|295   |                \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized6          |    22|
+|294   |              \N_DDR_MODE.G_NMU[34].U_M                                     |ltlib_v1_0_0_match__parameterized6_20            |    21|
+|295   |                \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized6          |    20|
 |296   |                  DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized0_97        |     8|
 |297   |                    \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_98  |     6|
 |298   |              \N_DDR_MODE.G_NMU[35].U_M                                     |ltlib_v1_0_0_match__parameterized5_21            |    15|
@@ -4126,7 +4126,7 @@ Report Instance Areas:
 |381   |                \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized0          |    12|
 |382   |                  DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized0           |     8|
 |383   |                    \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0     |     6|
-|384   |          xsdb_memory_read_inst                                             |ltlib_v1_0_0_generic_memrd                       |   512|
+|384   |          xsdb_memory_read_inst                                             |ltlib_v1_0_0_generic_memrd                       |   519|
 |385   |    slot_0_ar                                                               |bd_a815_slot_0_ar_0                              |     0|
 |386   |    slot_0_aw                                                               |bd_a815_slot_0_aw_0                              |     0|
 |387   |    slot_0_b                                                                |bd_a815_slot_0_b_0                               |     0|
@@ -4139,13 +4139,13 @@ Report Instance Areas:
 |394   |    slot_1_w                                                                |bd_a815_slot_1_w_0                               |     0|
 +------+----------------------------------------------------------------------------+-------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:55 ; elapsed = 00:03:35 . Memory (MB): peak = 1858.219 ; gain = 626.301 ; free physical = 801 ; free virtual = 9721
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:03 ; elapsed = 00:04:16 . Memory (MB): peak = 1867.691 ; gain = 639.301 ; free physical = 1133 ; free virtual = 9060
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1142 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:39 ; elapsed = 00:03:04 . Memory (MB): peak = 1858.219 ; gain = 523.285 ; free physical = 855 ; free virtual = 9775
-Synthesis Optimization Complete : Time (s): cpu = 00:02:55 ; elapsed = 00:03:35 . Memory (MB): peak = 1858.227 ; gain = 626.301 ; free physical = 862 ; free virtual = 9782
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:45 ; elapsed = 00:03:33 . Memory (MB): peak = 1867.691 ; gain = 529.285 ; free physical = 1188 ; free virtual = 9114
+Synthesis Optimization Complete : Time (s): cpu = 00:03:03 ; elapsed = 00:04:16 . Memory (MB): peak = 1867.699 ; gain = 639.301 ; free physical = 1195 ; free virtual = 9121
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 683 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 694 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -4157,13 +4157,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 615 Infos, 203 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:59 ; elapsed = 00:03:39 . Memory (MB): peak = 1858.227 ; gain = 639.684 ; free physical = 864 ; free virtual = 9779
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.collectionResultDisplayLimit
+synth_design: Time (s): cpu = 00:03:07 ; elapsed = 00:04:20 . Memory (MB): peak = 1867.699 ; gain = 652.684 ; free physical = 1194 ; free virtual = 9121
 INFO: [Common 17-1381] The checkpoint '/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_system_ila_0_2_synth_1/pwm_system_ila_0_2.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_system_ila_0_2/pwm_system_ila_0_2.xci
 INFO: [Coretcl 2-1174] Renamed 393 cell refs.
 INFO: [Common 17-1381] The checkpoint '/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_system_ila_0_2_synth_1/pwm_system_ila_0_2.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file pwm_system_ila_0_2_utilization_synth.rpt -pb pwm_system_ila_0_2_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.18 . Memory (MB): peak = 1882.230 ; gain = 0.000 ; free physical = 818 ; free virtual = 9784
-INFO: [Common 17-206] Exiting Vivado at Fri Jul 27 15:16:10 2018...
+report_utilization: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1891.703 ; gain = 0.000 ; free physical = 1181 ; free virtual = 9122
+INFO: [Common 17-206] Exiting Vivado at Wed Aug  1 02:41:05 2018...

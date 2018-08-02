@@ -37329,8 +37329,8 @@ using namespace std;
 # 42 "./mixer.hpp" 2
 # 1 "./../pwm/pwm.hpp" 1
 # 48 "./../pwm/pwm.hpp"
-typedef ap_ufixed<32,1> F_t;
-typedef ap_uint<32> N_t;
+typedef ap_fixed<16,1> F_t;
+typedef ap_uint<16> N_t;
 typedef ap_uint<6> O_t;
 
 void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
@@ -37340,9 +37340,12 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 
 
 
-typedef ap_fixed<32,4> bigN;
 
-const bigN MIX_C[6][3] = {
+
+typedef ap_fixed<16 +3,4> bigF_t;
+
+
+const bigF_t MIX_C[6][3] = {
  {.5,-0.57735026919,-1},
  {1,0,1},
  {.5,.57735026919,-1},
@@ -37352,25 +37355,13 @@ const bigN MIX_C[6][3] = {
 };
 
 
-void mixer(F_t regs_in[4],F_t m[6],unsigned int ctrl[6]) ;
+void mixer(F_t regs_in[4],F_t m[4096]) ;
 # 45 "main.cpp" 2
+void mixer(F_t regs_in[4],F_t m[4096]);
 
 int main() {
- char delim = '\t';
- ofstream myfile;
- myfile.open("out.csv");
-    F_t regs[4] = { 0x0,0x0,0x0,0x0 };
-    F_t m[6];
-
-
-    cout << "------------------" << endl;
-    cout << "---  TESTBENCH ---" << endl;
-    cout << "------------------" << endl;
-# 91 "main.cpp"
- myfile.close();
-
-
-    return 0;
+# 95 "main.cpp"
+ return 0;
 }
 
 class ssdm_global_array_mainpp0cppaplinecpp {

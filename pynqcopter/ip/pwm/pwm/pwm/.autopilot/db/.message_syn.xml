@@ -3,19 +3,19 @@
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;pwm.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;main.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:01:00 ; elapsed = 00:00:43 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 432 ; free virtual = 10194" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:02 ; elapsed = 00:00:45 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 422 ; free virtual = 10191" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:54 ; elapsed = 00:00:43 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 2993 ; free virtual = 9739" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:56 ; elapsed = 00:00:45 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 2986 ; free virtual = 9740" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 399 ; free virtual = 10177" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:57 ; elapsed = 00:00:48 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 2960 ; free virtual = 9724" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 389 ; free virtual = 10169" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:57 ; elapsed = 00:00:49 . Memory (MB): peak = 488.570 ; gain = 142.008 ; free physical = 2949 ; free virtual = 9715" tag=""/>
 	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="817" content="Unrolling all loops for pipelining in function &apos;pwm&apos; (pwm.cpp:43)." tag=""/>
 	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1&apos; (pwm.cpp:56) in function &apos;pwm&apos; completely." tag=""/>
 	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-2&apos; (pwm.cpp:64) in function &apos;pwm&apos; completely." tag=""/>
 	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock in function &apos;pwm&apos;... converting 15 basic blocks." tag=""/>
 	<Message prefix="[XFORM 203-11]" severity="INFO" keynum="754" content="Balancing expressions in function &apos;pwm&apos; (pwm.cpp:43)...14 expression(s) balanced." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:04 ; elapsed = 00:00:47 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 355 ; free virtual = 10140" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:04 ; elapsed = 00:00:48 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 350 ; free virtual = 10136" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:58 ; elapsed = 00:00:50 . Memory (MB): peak = 488.570 ; gain = 142.008 ; free physical = 2915 ; free virtual = 9687" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:58 ; elapsed = 00:00:51 . Memory (MB): peak = 488.570 ; gain = 142.008 ; free physical = 2912 ; free virtual = 9684" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;pwm&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
@@ -24,15 +24,18 @@
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
 	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="112" content="Pipelining function &apos;pwm&apos;." tag=""/>
 	<Message prefix="[SCHED 204-69]" severity="WARNING" keynum="104" content="Unable to schedule &apos;load&apos; operation (&apos;m_V_load_1&apos;, pwm.cpp:57) on array &apos;m_V&apos; due to limited memory ports. Please consider using a memory core with more ports or partitioning the array &apos;m_V&apos;." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 6, Depth = 19." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 6, Depth = 14." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="137" content="Estimated clock period (3.89ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns)." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="135" content="The critical path consists of the following:
+	&apos;mul&apos; operation (&apos;p_Val2_s&apos;, pwm.cpp:57) (3.89 ns)" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 48.71 seconds; current allocated memory: 97.368 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 52.32 seconds; current allocated memory: 96.729 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.2 seconds; current allocated memory: 98.186 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.15 seconds; current allocated memory: 97.437 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;pwm&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
@@ -46,15 +49,11 @@
 	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;accumulator_V&apos; is power-on initialization." tag=""/>
 	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;out_p_V&apos; is power-on initialization." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos;, &apos;max_duty_V&apos;, &apos;period_V&apos; and &apos;m_V&apos; to AXI-Lite port ctrl." tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;pwm_mul_32ns_33s_65_7_1&apos; to &apos;pwm_mul_32ns_33s_bkb&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;pwm_add_66s_66ns_66_2_1&apos; to &apos;pwm_add_66s_66ns_cud&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;pwm_add_66s_66ns_cud&apos;: 6 instance(s)." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;pwm_mul_32ns_33s_bkb&apos;: 6 instance(s)." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;pwm_mul_mul_16s_17s_33_3_1&apos; to &apos;pwm_mul_mul_16s_1bkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;pwm_mul_mul_16s_1bkb&apos;: 6 instance(s)." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;pwm&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.34 seconds; current allocated memory: 99.715 MB." tag=""/>
-	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;pwm_mul_32ns_33s_bkb_MulnS_0&apos;" tag=""/>
-	<Message prefix="[RTMG 210-283]" severity="INFO" keynum="RTMG_283_1797" content="Generating pipelined adder/subtractor : &apos;pwm_add_66s_66ns_cud_AddSubnS_0&apos;" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:06 ; elapsed = 00:00:51 . Memory (MB): peak = 488.566 ; gain = 142.004 ; free physical = 327 ; free virtual = 10130" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.18 seconds; current allocated memory: 98.765 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:00 ; elapsed = 00:00:54 . Memory (MB): peak = 488.570 ; gain = 142.008 ; free physical = 2899 ; free virtual = 9679" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for pwm." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for pwm." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for pwm." tag=""/>

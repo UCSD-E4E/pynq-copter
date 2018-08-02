@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "6",
-    "Latency": "18",
+    "Latency": "13",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -40,15 +40,13 @@
       "..\/..\/pwm.hpp"
     ],
     "Vhdl": [
-      "impl\/vhdl\/pwm_add_66s_66ns_cud.vhd",
       "impl\/vhdl\/pwm_ctrl_s_axi.vhd",
-      "impl\/vhdl\/pwm_mul_32ns_33s_bkb.vhd",
+      "impl\/vhdl\/pwm_mul_mul_16s_1bkb.vhd",
       "impl\/vhdl\/pwm.vhd"
     ],
     "Verilog": [
-      "impl\/verilog\/pwm_add_66s_66ns_cud.v",
       "impl\/verilog\/pwm_ctrl_s_axi.v",
-      "impl\/verilog\/pwm_mul_32ns_33s_bkb.v",
+      "impl\/verilog\/pwm_mul_mul_16s_1bkb.v",
       "impl\/verilog\/pwm.v"
     ],
     "SwDriver": [
@@ -99,7 +97,7 @@
       "mode": "slave",
       "port_prefix": "s_axi_ctrl",
       "param_prefix": "C_S_AXI_CTRL",
-      "addr_bits": "7",
+      "addr_bits": "6",
       "registers": [
         {
           "offset": "0x00",
@@ -263,14 +261,24 @@
           "access": "W",
           "reset_value": "0x0",
           "description": "Data signal of min_duty_V",
-          "fields": [{
+          "fields": [
+            {
               "offset": "0",
-              "width": "32",
+              "width": "16",
               "name": "min_duty_V",
               "access": "W",
               "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of min_duty_V"
-            }]
+              "description": "Bit 15 to 0 Data signal of min_duty_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
         },
         {
           "offset": "0x18",
@@ -278,14 +286,24 @@
           "access": "W",
           "reset_value": "0x0",
           "description": "Data signal of max_duty_V",
-          "fields": [{
+          "fields": [
+            {
               "offset": "0",
-              "width": "32",
+              "width": "16",
               "name": "max_duty_V",
               "access": "W",
               "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of max_duty_V"
-            }]
+              "description": "Bit 15 to 0 Data signal of max_duty_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
         },
         {
           "offset": "0x20",
@@ -293,17 +311,27 @@
           "access": "W",
           "reset_value": "0x0",
           "description": "Data signal of period_V",
-          "fields": [{
+          "fields": [
+            {
               "offset": "0",
-              "width": "32",
+              "width": "16",
               "name": "period_V",
               "access": "W",
               "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of period_V"
-            }]
+              "description": "Bit 15 to 0 Data signal of period_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
         }
       ],
-      "memories": "m_V {base_address 64 range 32}",
+      "memories": "m_V {base_address 48 range 16}",
       "ctype": {
         "AWVALID": {"Type": "bool"},
         "AWREADY": {"Type": "bool"},
@@ -325,11 +353,11 @@
         },
         "AWADDR": {
           "Type": "integer unsigned",
-          "Width": "7"
+          "Width": "6"
         },
         "WDATA": {
-          "Type": "real fixed unsigned 31",
-          "Width": "32"
+          "Type": "real fixed signed 15",
+          "Width": "16"
         },
         "WSTRB": {
           "Type": "integer unsigned",
@@ -337,17 +365,17 @@
         },
         "ARADDR": {
           "Type": "integer unsigned",
-          "Width": "7"
+          "Width": "6"
         },
         "RDATA": {
-          "Type": "real fixed unsigned 31",
-          "Width": "32"
+          "Type": "real fixed signed 15",
+          "Width": "16"
         }
       },
       "data_width": "32",
       "port_width": {
-        "ARADDR": "7",
-        "AWADDR": "7",
+        "ARADDR": "6",
+        "AWADDR": "6",
         "RDATA": "32",
         "WDATA": "32",
         "WSTRB": "4"
@@ -365,7 +393,7 @@
     },
     "s_axi_ctrl_AWADDR": {
       "dir": "in",
-      "width": "7"
+      "width": "6"
     },
     "s_axi_ctrl_WVALID": {
       "dir": "in",
@@ -393,7 +421,7 @@
     },
     "s_axi_ctrl_ARADDR": {
       "dir": "in",
-      "width": "7"
+      "width": "6"
     },
     "s_axi_ctrl_RVALID": {
       "dir": "out",
@@ -469,7 +497,7 @@
     "m_V": {
       "interfaceRef": "s_axi_ctrl",
       "dir": "in",
-      "offset": "64",
+      "offset": "48",
       "statusOffset": "NA",
       "Object": "ctrl"
     },
@@ -483,36 +511,36 @@
       "dir": "out",
       "dataWidth": "6",
       "handshakeRef": "ap_none",
-      "firstOutLatency": "18"
+      "firstOutLatency": "13"
     }
   },
   "ModuleInfo": {
     "Hierarchy": {"ModuleName": "pwm"},
     "Metrics": {"pwm": {
         "Latency": {
-          "LatencyBest": "18",
-          "LatencyAvg": "18",
-          "LatencyWorst": "18",
+          "LatencyBest": "13",
+          "LatencyAvg": "13",
+          "LatencyWorst": "13",
           "PipelineII": "6",
-          "PipelineDepth": "19",
+          "PipelineDepth": "14",
           "PipelineType": "function"
         },
         "Timing": {
           "Target": "4.00",
           "Uncertainty": "0.50",
-          "Estimate": "3.40"
+          "Estimate": "3.89"
         },
         "Area": {
           "BRAM_18K": "2",
-          "DSP48E": "24",
-          "FF": "5531",
-          "LUT": "2239"
+          "DSP48E": "6",
+          "FF": "1051",
+          "LUT": "1333"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-07-27 18:14:34 EDT",
+    "Time": "2018-08-01 04:33:15 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

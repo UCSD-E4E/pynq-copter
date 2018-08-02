@@ -42,10 +42,7 @@
 </pragma>
 </directive>
 <directive functionLabel="" functionName="pwm" label="">
-<pragma name="UNROLL"/>
-</directive>
-<directive functionLabel="" functionName="pwm" label="">
-<pragma name="UNROLL"/>
+<pragma name="PIPELINE"/>
 </directive>
 </sourceFile>
 </AutoPilot:ProjectResources>

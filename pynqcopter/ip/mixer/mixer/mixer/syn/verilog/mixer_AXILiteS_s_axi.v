@@ -40,7 +40,7 @@ module mixer_AXILiteS_s_axi
     input  wire                          ap_idle,
     input  wire [1:0]                    regs_in_V_address0,
     input  wire                          regs_in_V_ce0,
-    output wire [31:0]                   regs_in_V_q0
+    output wire [15:0]                   regs_in_V_q0
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -62,8 +62,9 @@ module mixer_AXILiteS_s_axi
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
 // 0x10 ~
-// 0x1f : Memory 'regs_in_V' (4 * 32b)
-//        Word n : bit [31:0] - regs_in_V[n]
+// 0x17 : Memory 'regs_in_V' (4 * 16b)
+//        Word n : bit [15: 0] - regs_in_V[2n]
+//                 bit [31:16] - regs_in_V[2n+1]
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
@@ -73,7 +74,7 @@ localparam
     ADDR_IER            = 5'h08,
     ADDR_ISR            = 5'h0c,
     ADDR_REGS_IN_V_BASE = 5'h10,
-    ADDR_REGS_IN_V_HIGH = 5'h1f,
+    ADDR_REGS_IN_V_HIGH = 5'h17,
     WRIDLE              = 2'd0,
     WRDATA              = 2'd1,
     WRRESP              = 2'd2,
@@ -105,13 +106,13 @@ localparam
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
     // memory signals
-    wire [1:0]                    int_regs_in_V_address0;
+    wire [0:0]                    int_regs_in_V_address0;
     wire                          int_regs_in_V_ce0;
     wire                          int_regs_in_V_we0;
     wire [3:0]                    int_regs_in_V_be0;
     wire [31:0]                   int_regs_in_V_d0;
     wire [31:0]                   int_regs_in_V_q0;
-    wire [1:0]                    int_regs_in_V_address1;
+    wire [0:0]                    int_regs_in_V_address1;
     wire                          int_regs_in_V_ce1;
     wire                          int_regs_in_V_we1;
     wire [3:0]                    int_regs_in_V_be1;
@@ -119,12 +120,13 @@ localparam
     wire [31:0]                   int_regs_in_V_q1;
     reg                           int_regs_in_V_read;
     reg                           int_regs_in_V_write;
+    reg  [0:0]                    int_regs_in_V_shift;
 
 //------------------------Instantiation------------------
 // int_regs_in_V
 mixer_AXILiteS_s_axi_ram #(
     .BYTES    ( 4 ),
-    .DEPTH    ( 4 )
+    .DEPTH    ( 2 )
 ) int_regs_in_V (
     .clk0     ( ACLK ),
     .address0 ( int_regs_in_V_address0 ),
@@ -357,13 +359,13 @@ end
 
 //------------------------Memory logic-------------------
 // regs_in_V
-assign int_regs_in_V_address0 = regs_in_V_address0;
+assign int_regs_in_V_address0 = regs_in_V_address0 >> 1;
 assign int_regs_in_V_ce0      = regs_in_V_ce0;
 assign int_regs_in_V_we0      = 1'b0;
 assign int_regs_in_V_be0      = 1'b0;
 assign int_regs_in_V_d0       = 1'b0;
-assign regs_in_V_q0           = int_regs_in_V_q0;
-assign int_regs_in_V_address1 = ar_hs? raddr[3:2] : waddr[3:2];
+assign regs_in_V_q0           = int_regs_in_V_q0 >> (int_regs_in_V_shift * 16);
+assign int_regs_in_V_address1 = ar_hs? raddr[2:2] : waddr[2:2];
 assign int_regs_in_V_ce1      = ar_hs | (int_regs_in_V_write & WVALID);
 assign int_regs_in_V_we1      = int_regs_in_V_write & WVALID;
 assign int_regs_in_V_be1      = WSTRB;
@@ -389,6 +391,14 @@ always @(posedge ACLK) begin
             int_regs_in_V_write <= 1'b1;
         else if (WVALID)
             int_regs_in_V_write <= 1'b0;
+    end
+end
+
+// int_regs_in_V_shift
+always @(posedge ACLK) begin
+    if (ACLK_EN) begin
+        if (regs_in_V_ce0)
+            int_regs_in_V_shift <= regs_in_V_address0[0];
     end
 end
 

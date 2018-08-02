@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="pwm_system_ila_0_2_synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1532718727">
-  <File Type="REPORTS-TCL" Name="pwm_system_ila_0_2_reports.tcl"/>
+<GenRun Id="pwm_system_ila_0_2_synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1533116170">
   <File Type="PA-TCL" Name="pwm_system_ila_0_2.tcl"/>
-  <File Type="RDS-DCP" Name="pwm_system_ila_0_2.dcp"/>
+  <File Type="REPORTS-TCL" Name="pwm_system_ila_0_2_reports.tcl"/>
   <File Type="RDS-RDS" Name="pwm_system_ila_0_2.vds"/>
+  <File Type="RDS-DCP" Name="pwm_system_ila_0_2.dcp"/>
   <File Type="RDS-UTIL-PB" Name="pwm_system_ila_0_2_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="pwm_system_ila_0_2_utilization_synth.rpt"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pwm_system_ila_0_2">
     <File Path="$PSRCDIR/sources_1/bd/pwm/ip/pwm_system_ila_0_2/pwm_system_ila_0_2.xci">
       <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
       </FileInfo>
     </File>
     <Config>
@@ -22,9 +24,11 @@
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pwm_system_ila_0_2">
     <File Path="$PSRCDIR/sources_1/bd/pwm/ip/pwm_system_ila_0_2/pwm_system_ila_0_2.xci">
       <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
       </FileInfo>
     </File>
     <Config>
