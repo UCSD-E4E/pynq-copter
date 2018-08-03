@@ -41,7 +41,7 @@ static int val1;
 
 
 //void iiccomm(volatile int *bus, volatile int &outValue)
-void iiccomm3(uint32_t iic[4], uint32_t &outValue)
+void iiccomm3(uint32_t iic[4096], uint32_t &outValue)
 {
     #pragma HLS INTERFACE s_axilite port=return
 

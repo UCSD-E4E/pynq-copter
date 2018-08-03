@@ -3123,8 +3123,8 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </xilinx:taxonomies>
       <xilinx:displayName>Iiccomm3</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808021405</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-02T21:05:19Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808022004</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-03T03:04:14Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>

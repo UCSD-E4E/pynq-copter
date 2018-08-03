@@ -19,7 +19,7 @@ define void @iiccomm3(i32* %iic, i32* %outValue) {
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue) nounwind, !map !26
   call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @iiccomm3_str) nounwind
   call void @llvm.dbg.value(metadata !{i32* %iic}, i64 0, metadata !30), !dbg !44 ; [debug line = 44:24] [debug variable = iic]
-  call void @llvm.dbg.value(metadata !{i32* %outValue}, i64 0, metadata !45), !dbg !46 ; [debug line = 44:42] [debug variable = outValue]
+  call void @llvm.dbg.value(metadata !{i32* %outValue}, i64 0, metadata !45), !dbg !46 ; [debug line = 44:45] [debug variable = outValue]
   call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind, !dbg !47 ; [debug line = 46:1]
   call void (...)* @_ssdm_op_SpecInterface(i32* %iic, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
   call void (...)* @_ssdm_op_SpecInterface(i32* %outValue, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [15 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind, !dbg !49 ; [debug line = 50:1]
@@ -97,7 +97,7 @@ entry:
 !22 = metadata !{metadata !23}
 !23 = metadata !{metadata !"iic", metadata !24, metadata !"unsigned int", i32 0, i32 31}
 !24 = metadata !{metadata !25}
-!25 = metadata !{i32 0, i32 3, i32 1}
+!25 = metadata !{i32 0, i32 4095, i32 1}
 !26 = metadata !{metadata !27}
 !27 = metadata !{i32 0, i32 31, metadata !28}
 !28 = metadata !{metadata !29}
@@ -115,10 +115,10 @@ entry:
 !40 = metadata !{i32 786468}                      ; [ DW_TAG_base_type ]
 !41 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 0, i64 0, i32 0, i32 0, metadata !36, metadata !42, i32 0, i32 0} ; [ DW_TAG_array_type ]
 !42 = metadata !{metadata !43}
-!43 = metadata !{i32 786465, i64 0, i64 3}        ; [ DW_TAG_subrange_type ]
+!43 = metadata !{i32 786465, i64 0, i64 4095}     ; [ DW_TAG_subrange_type ]
 !44 = metadata !{i32 44, i32 24, metadata !31, null}
 !45 = metadata !{i32 786689, metadata !31, metadata !"outValue", metadata !32, i32 33554476, metadata !38, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
-!46 = metadata !{i32 44, i32 42, metadata !31, null}
+!46 = metadata !{i32 44, i32 45, metadata !31, null}
 !47 = metadata !{i32 46, i32 1, metadata !48, null}
 !48 = metadata !{i32 786443, metadata !31, i32 45, i32 1, metadata !32, i32 0} ; [ DW_TAG_lexical_block ]
 !49 = metadata !{i32 50, i32 1, metadata !48, null}

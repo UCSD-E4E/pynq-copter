@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="iiccomm2" xd:componentRef="iiccomm2" xd:initiationInterval="9" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
-  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
-  <xd:arg xd:name="*(bus)" xd:originalName="bus" xd:direction="inout" xd:interfaceRef="m_axi_bus_r" xd:busTypeRef="aximm" xd:dataWidth="32" xd:bufferDirection="in"/>
-  <xd:arg xd:name="outValue" xd:originalName="outValue" xd:direction="out" xd:interfaceRef="s_axi_outValue_first" xd:busTypeRef="axilite" xd:offset="0x10" xd:statusOffset="0x14" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
-  <xd:latencyEstimates xd:best-case="8" xd:worst-case="8" xd:average-case="8"/>
-  <xd:resourceEstimates xd:LUT="798" xd:FF="658" xd:BRAM="2" xd:DSP="0"/>
-</xd:acceleratorMap>

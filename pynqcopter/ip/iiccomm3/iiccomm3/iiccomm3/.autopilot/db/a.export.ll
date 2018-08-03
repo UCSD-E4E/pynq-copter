@@ -87,7 +87,7 @@ entry:
 !22 = metadata !{metadata !23}
 !23 = metadata !{metadata !"iic", metadata !24, metadata !"unsigned int", i32 0, i32 31}
 !24 = metadata !{metadata !25}
-!25 = metadata !{i32 0, i32 3, i32 1}
+!25 = metadata !{i32 0, i32 4095, i32 1}
 !26 = metadata !{metadata !27}
 !27 = metadata !{i32 0, i32 31, metadata !28}
 !28 = metadata !{metadata !29}

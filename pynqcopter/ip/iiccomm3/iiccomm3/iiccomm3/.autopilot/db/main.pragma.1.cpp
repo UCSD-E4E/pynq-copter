@@ -33214,7 +33214,7 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 
 
-void iiccomm3(uint32_t iic[4], uint32_t &outValue);
+void iiccomm3(uint32_t iic[4096], uint32_t &outValue);
 #36 "main.cpp" 2
 
 
