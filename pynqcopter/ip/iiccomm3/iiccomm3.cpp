@@ -37,7 +37,7 @@
 #include "ap_int.h"
 #include "stdint.h"
 
-static int val1;
+static uint32_t val1;
 
 
 //void iiccomm(volatile int *bus, volatile int &outValue)

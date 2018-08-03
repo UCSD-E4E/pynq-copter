@@ -33220,7 +33220,7 @@ void iiccomm3(uint32_t iic[4096], uint32_t &outValue);
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-static int val1;
+static uint32_t val1;
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
