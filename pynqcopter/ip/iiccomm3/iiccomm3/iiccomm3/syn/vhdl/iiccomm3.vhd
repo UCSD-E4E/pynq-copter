@@ -116,7 +116,7 @@ end;
 architecture behav of iiccomm3 is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "iiccomm3,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=658,HLS_SYN_LUT=798}";
+    "iiccomm3,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=696,HLS_SYN_LUT=862}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (8 downto 0) := "000000001";
@@ -151,7 +151,8 @@ architecture behav of iiccomm3 is
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
     signal ap_ready : STD_LOGIC;
-    signal outValue_ap_vld : STD_LOGIC;
+    signal outValue_i : STD_LOGIC_VECTOR (31 downto 0);
+    signal outValue_o_ap_vld : STD_LOGIC;
     signal iic_blk_n_AR : STD_LOGIC;
     signal iic_blk_n_R : STD_LOGIC;
     signal ap_CS_fsm_state8 : STD_LOGIC;
@@ -173,8 +174,8 @@ architecture behav of iiccomm3 is
     signal iic_BID : STD_LOGIC_VECTOR (0 downto 0);
     signal iic_BUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_sig_ioackin_iic_ARREADY : STD_LOGIC;
-    signal iic_addr_read_reg_66 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_reg_ioackin_iic_ARREADY : STD_LOGIC := '0';
+    signal val1_fu_38 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state9 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state9 : signal is "none";
     signal ap_NS_fsm : STD_LOGIC_VECTOR (8 downto 0);
@@ -237,8 +238,9 @@ architecture behav of iiccomm3 is
         ACLK : IN STD_LOGIC;
         ARESET : IN STD_LOGIC;
         ACLK_EN : IN STD_LOGIC;
-        outValue : IN STD_LOGIC_VECTOR (31 downto 0);
-        outValue_ap_vld : IN STD_LOGIC );
+        outValue_o : IN STD_LOGIC_VECTOR (31 downto 0);
+        outValue_o_ap_vld : IN STD_LOGIC;
+        outValue_i : OUT STD_LOGIC_VECTOR (31 downto 0) );
     end component;
 
 
@@ -418,8 +420,9 @@ begin
         ACLK => ap_clk,
         ARESET => ap_rst_n_inv,
         ACLK_EN => ap_const_logic_1,
-        outValue => iic_addr_read_reg_66,
-        outValue_ap_vld => outValue_ap_vld);
+        outValue_o => val1_fu_38,
+        outValue_o_ap_vld => outValue_o_ap_vld,
+        outValue_i => outValue_i);
 
     iiccomm3_iic_m_axi_U : component iiccomm3_iic_m_axi
     generic map (
@@ -574,7 +577,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state8))) then
-                iic_addr_read_reg_66 <= iic_RDATA;
+                val1_fu_38 <= iic_RDATA;
             end if;
         end if;
     end process;
@@ -703,12 +706,12 @@ begin
     end process;
 
 
-    outValue_ap_vld_assign_proc : process(ap_CS_fsm_state9)
+    outValue_o_ap_vld_assign_proc : process(ap_CS_fsm_state9)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state9)) then 
-            outValue_ap_vld <= ap_const_logic_1;
+            outValue_o_ap_vld <= ap_const_logic_1;
         else 
-            outValue_ap_vld <= ap_const_logic_0;
+            outValue_o_ap_vld <= ap_const_logic_0;
         end if; 
     end process;
 

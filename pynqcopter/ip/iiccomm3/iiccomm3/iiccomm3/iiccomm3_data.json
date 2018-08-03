@@ -487,33 +487,48 @@
       "registers": [
         {
           "offset": "0x10",
-          "name": "outValue",
-          "access": "R",
+          "name": "outValue_i",
+          "access": "W",
           "reset_value": "0x0",
-          "description": "Data signal of outValue",
+          "description": "Data signal of outValue_i",
           "fields": [{
               "offset": "0",
               "width": "32",
-              "name": "outValue",
-              "access": "R",
+              "name": "outValue_i",
+              "access": "W",
               "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of outValue"
+              "description": "Bit 31 to 0 Data signal of outValue_i"
             }]
         },
         {
-          "offset": "0x14",
-          "name": "outValue_ctrl",
+          "offset": "0x18",
+          "name": "outValue_o",
           "access": "R",
           "reset_value": "0x0",
-          "description": "Control signal of outValue",
+          "description": "Data signal of outValue_o",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "outValue_o",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of outValue_o"
+            }]
+        },
+        {
+          "offset": "0x1c",
+          "name": "outValue_o_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of outValue_o",
           "fields": [
             {
               "offset": "0",
               "width": "1",
-              "name": "outValue_ap_vld",
+              "name": "outValue_o_ap_vld",
               "access": "R",
               "reset_value": "0",
-              "description": "Control signal outValue_ap_vld"
+              "description": "Control signal outValue_o_ap_vld"
             },
             {
               "offset": "1",
@@ -924,14 +939,21 @@
       "dir": "in",
       "offset": "0"
     },
-    "outValue": {
+    "outValue_i": {
+      "interfaceRef": "s_axi_outValue_first",
+      "dir": "in",
+      "offset": "16",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "outValue_first"
+    },
+    "outValue_o": {
       "interfaceRef": "s_axi_outValue_first",
       "dir": "out",
-      "offset": "16",
-      "statusOffset": "20",
+      "offset": "24",
+      "statusOffset": "28",
       "handshakeRef": "ap_vld",
-      "Object": "outValue_first",
-      "firstOutLatency": "8"
+      "Object": "outValue_first"
     },
     "iic": {
       "interfaceRef": "m_axi_iic",
@@ -956,15 +978,15 @@
         },
         "Area": {
           "BRAM_18K": "2",
-          "FF": "658",
-          "LUT": "798",
+          "FF": "696",
+          "LUT": "862",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-03 00:06:24 PDT",
+    "Time": "2018-08-03 11:45:26 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

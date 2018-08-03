@@ -37,11 +37,11 @@
 #include "ap_int.h"
 #include "stdint.h"
 
-static uint32_t val1;
+volatile static uint32_t val1;
 
 
 //void iiccomm(volatile int *bus, volatile int &outValue)
-void iiccomm3(uint32_t iic[4096], uint32_t &outValue)
+void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t &outValue)
 {
     #pragma HLS INTERFACE s_axilite port=return
 

@@ -1,0 +1,1840 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Aug  3 11:01:44 2018
+# Process ID: 30441
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/iicStat
+# Command line: vivado -mode batch -source ..//build.tcl -tclargs iicStat single xc7z020clg400-1
+# Log file: /home/iavendano/pynq-copter/pynqcopter/iicStat/vivado.log
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/iicStat/vivado.jou
+#-----------------------------------------------------------
+source ..//build.tcl
+# set argc [llength $argv]
+# set target [file tail [pwd]]
+# set run_type "single"
+# set part ""
+# if { $argc != 0 } {
+#     if { $argc != 3 } {
+# 	puts ""
+# 	set errmsg "Expected two arguments: Name of Overlay (e.g. riscv) \
+#                 sweep | single, and part (e.g. xc7z020clg400-1)"
+# 	catch {common::send_msg_id "PYNQ-000" "ERROR" $errmsg}
+# 	return 1
+#     }
+#     set target [lindex $argv 0]
+#     set exists [file exists $target.tcl]
+#     if { $exists == 0 } {
+#         puts ""
+# 	set errmsg "Could not find file: $target.tcl"
+#         catch {common::send_msg_id "PYNQ-000" "ERROR" $errmsg}
+#         return 1
+#     }
+# 
+#     set run_arg [lindex $argv 1]
+#     if { $run_arg == "sweep"} {
+# 	set run_type "sweep"
+#     } elseif {$run_arg == "single"} {
+# 	set run_type "single"
+#     } else {
+# 	puts ""
+# 	set errmsg "Unknown argument value $run_arg"
+# 	catch {common::send_msg_id "PYNQ-000" "ERROR" $errmsg}
+# 	return 1
+#     }
+#     set part [lindex $argv 2]
+# } else {
+#     puts ""
+#     set errmsg "Using default target ($target -- from current directory name) and run type ($run_type)"
+#     catch {common::send_msg_id "PYNQ-000" "WARN" $errmsg}
+#     after 10000
+# }
+# create_project $target $target -part $part 
+# set ip_dirs "../ip"
+# set_property ip_repo_paths $ip_dirs [current_project]
+# update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iavendano/pynq-copter/pynqcopter/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
+# set design_name $target
+# create_bd_design $design_name
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/iicStat.bd> 
+# current_bd_design $design_name
+# source $target.tcl
+## namespace eval _tcl {
+## proc get_script_folder {} {
+##    set script_path [file normalize [info script]]
+##    set script_folder [file dirname $script_path]
+##    return $script_folder
+## }
+## }
+## variable script_folder
+## set script_folder [_tcl::get_script_folder]
+## set scripts_vivado_version 2017.4
+## set current_vivado_version [version -short]
+## if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
+##    puts ""
+##    catch {common::send_msg_id "BD_TCL-109" "ERROR" "This script was generated using Vivado <$scripts_vivado_version> and is being run in <$current_vivado_version> of Vivado. Please run the script in Vivado <$scripts_vivado_version> then open the design in Vivado <$current_vivado_version>. Upgrade the design by running \"Tools => Report => Report IP Status...\", then run write_bd_tcl to create an updated script."}
+## 
+##    return 1
+## }
+## set bCheckIPsPassed 1
+## set bCheckIPs 1
+## if { $bCheckIPs == 1 } {
+##    set list_check_ips "\ 
+## xilinx.com:ip:axi_iic:2.0\
+## UCSD:hlsip:iicstat:1.0\
+## xilinx.com:ip:processing_system7:5.5\
+## xilinx.com:ip:proc_sys_reset:5.0\
+## "
+## 
+##    set list_ips_missing ""
+##    common::send_msg_id "BD_TCL-006" "INFO" "Checking if the following IPs exist in the project's IP catalog: $list_check_ips ."
+## 
+##    foreach ip_vlnv $list_check_ips {
+##       set ip_obj [get_ipdefs -all $ip_vlnv]
+##       if { $ip_obj eq "" } {
+##          lappend list_ips_missing $ip_vlnv
+##       }
+##    }
+## 
+##    if { $list_ips_missing ne "" } {
+##       catch {common::send_msg_id "BD_TCL-115" "ERROR" "The following IPs are not found in the IP Catalog:\n  $list_ips_missing\n\nResolution: Please add the repository containing the IP(s) to the project." }
+##       set bCheckIPsPassed 0
+##    }
+## 
+## }
+INFO: [BD_TCL-6] Checking if the following IPs exist in the project's IP catalog:  
+xilinx.com:ip:axi_iic:2.0 UCSD:hlsip:iicstat:1.0 xilinx.com:ip:processing_system7:5.5 xilinx.com:ip:proc_sys_reset:5.0  .
+## if { $bCheckIPsPassed != 1 } {
+##   common::send_msg_id "BD_TCL-1003" "WARNING" "Will not continue with creation of design due to the error(s) above."
+##   return 3
+## }
+## proc create_root_design { parentCell } {
+## 
+##   variable script_folder
+## 
+##   if { $parentCell eq "" } {
+##      set parentCell [get_bd_cells /]
+##   }
+## 
+##   # Get object for parentCell
+##   set parentObj [get_bd_cells $parentCell]
+##   if { $parentObj == "" } {
+##      catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+##      return
+##   }
+## 
+##   # Make sure parentObj is hier blk
+##   set parentType [get_property TYPE $parentObj]
+##   if { $parentType ne "hier" } {
+##      catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+##      return
+##   }
+## 
+##   # Save current instance; Restore later
+##   set oldCurInst [current_bd_instance .]
+## 
+##   # Set parent object as current
+##   current_bd_instance $parentObj
+## 
+## 
+##   # Create interface ports
+##   set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR ]
+##   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
+##   set arduino_gpio [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 arduino_gpio ]
+##   set arduino_iic [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 arduino_iic ]
+##   set pmoda_gpio [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 pmoda_gpio ]
+##   set pmodb_gpio [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 pmodb_gpio ]
+## 
+##   # Create ports
+##   set led_o [ create_bd_port -dir O -from 3 -to 0 led_o ]
+##   set pb_i [ create_bd_port -dir I -from 3 -to 0 pb_i ]
+## 
+##   # Create instance: axi_iic_0, and set properties
+##   set axi_iic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_iic:2.0 axi_iic_0 ]
+## 
+##   # Create instance: iicstat_0, and set properties
+##   set iicstat_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:iicstat:1.0 iicstat_0 ]
+## 
+##   set_property -dict [ list \
+##    CONFIG.SUPPORTS_NARROW_BURST {0} \
+##    CONFIG.NUM_READ_OUTSTANDING {1} \
+##    CONFIG.NUM_WRITE_OUTSTANDING {1} \
+##    CONFIG.MAX_BURST_LENGTH {1} \
+##  ] [get_bd_intf_pins /iicstat_0/s_axi_outValue_first]
+## 
+##   # Create instance: processing_system7_0, and set properties
+##   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
+##   set_property -dict [ list \
+##    CONFIG.PCW_ACT_APU_PERIPHERAL_FREQMHZ {650.000000} \
+##    CONFIG.PCW_ACT_CAN0_PERIPHERAL_FREQMHZ {23.8095} \
+##    CONFIG.PCW_ACT_CAN1_PERIPHERAL_FREQMHZ {23.8095} \
+##    CONFIG.PCW_ACT_CAN_PERIPHERAL_FREQMHZ {10.000000} \
+##    CONFIG.PCW_ACT_DCI_PERIPHERAL_FREQMHZ {10.096154} \
+##    CONFIG.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ {125.000000} \
+##    CONFIG.PCW_ACT_ENET1_PERIPHERAL_FREQMHZ {10.000000} \
+##    CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
+##    CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {50.000000} \
+##    CONFIG.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ {10.000000} \
+##    CONFIG.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ {10.000000} \
+##    CONFIG.PCW_ACT_I2C_PERIPHERAL_FREQMHZ {50} \
+##    CONFIG.PCW_ACT_PCAP_PERIPHERAL_FREQMHZ {200.000000} \
+##    CONFIG.PCW_ACT_QSPI_PERIPHERAL_FREQMHZ {200.000000} \
+##    CONFIG.PCW_ACT_SDIO_PERIPHERAL_FREQMHZ {50.000000} \
+##    CONFIG.PCW_ACT_SMC_PERIPHERAL_FREQMHZ {10.000000} \
+##    CONFIG.PCW_ACT_SPI_PERIPHERAL_FREQMHZ {10.000000} \
+##    CONFIG.PCW_ACT_TPIU_PERIPHERAL_FREQMHZ {200.000000} \
+##    CONFIG.PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ {108.333336} \
+##    CONFIG.PCW_ACT_TTC0_CLK1_PERIPHERAL_FREQMHZ {108.333336} \
+##    CONFIG.PCW_ACT_TTC0_CLK2_PERIPHERAL_FREQMHZ {108.333336} \
+##    CONFIG.PCW_ACT_TTC1_CLK0_PERIPHERAL_FREQMHZ {108.333336} \
+##    CONFIG.PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ {108.333336} \
+##    CONFIG.PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ {108.333336} \
+##    CONFIG.PCW_ACT_TTC_PERIPHERAL_FREQMHZ {50} \
+##    CONFIG.PCW_ACT_UART_PERIPHERAL_FREQMHZ {100.000000} \
+##    CONFIG.PCW_ACT_USB0_PERIPHERAL_FREQMHZ {60} \
+##    CONFIG.PCW_ACT_USB1_PERIPHERAL_FREQMHZ {60} \
+##    CONFIG.PCW_ACT_WDT_PERIPHERAL_FREQMHZ {108.333336} \
+##    CONFIG.PCW_APU_CLK_RATIO_ENABLE {6:2:1} \
+##    CONFIG.PCW_APU_PERIPHERAL_FREQMHZ {650} \
+##    CONFIG.PCW_ARMPLL_CTRL_FBDIV {26} \
+##    CONFIG.PCW_CAN0_BASEADDR {0xE0008000} \
+##    CONFIG.PCW_CAN0_CAN0_IO {<Select>} \
+##    CONFIG.PCW_CAN0_GRP_CLK_ENABLE {0} \
+##    CONFIG.PCW_CAN0_GRP_CLK_IO {<Select>} \
+##    CONFIG.PCW_CAN0_HIGHADDR {0xE0008FFF} \
+##    CONFIG.PCW_CAN0_PERIPHERAL_CLKSRC {External} \
+##    CONFIG.PCW_CAN0_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_CAN0_PERIPHERAL_FREQMHZ {-1} \
+##    CONFIG.PCW_CAN1_BASEADDR {0xE0009000} \
+##    CONFIG.PCW_CAN1_CAN1_IO {<Select>} \
+##    CONFIG.PCW_CAN1_GRP_CLK_ENABLE {0} \
+##    CONFIG.PCW_CAN1_GRP_CLK_IO {<Select>} \
+##    CONFIG.PCW_CAN1_HIGHADDR {0xE0009FFF} \
+##    CONFIG.PCW_CAN1_PERIPHERAL_CLKSRC {External} \
+##    CONFIG.PCW_CAN1_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_CAN1_PERIPHERAL_FREQMHZ {-1} \
+##    CONFIG.PCW_CAN_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_CAN_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_CAN_PERIPHERAL_DIVISOR1 {1} \
+##    CONFIG.PCW_CAN_PERIPHERAL_FREQMHZ {100} \
+##    CONFIG.PCW_CAN_PERIPHERAL_VALID {0} \
+##    CONFIG.PCW_CLK0_FREQ {100000000} \
+##    CONFIG.PCW_CLK1_FREQ {50000000} \
+##    CONFIG.PCW_CLK2_FREQ {10000000} \
+##    CONFIG.PCW_CLK3_FREQ {10000000} \
+##    CONFIG.PCW_CORE0_FIQ_INTR {0} \
+##    CONFIG.PCW_CORE0_IRQ_INTR {0} \
+##    CONFIG.PCW_CORE1_FIQ_INTR {0} \
+##    CONFIG.PCW_CORE1_IRQ_INTR {0} \
+##    CONFIG.PCW_CPU_CPU_6X4X_MAX_RANGE {667} \
+##    CONFIG.PCW_CPU_CPU_PLL_FREQMHZ {1300.000} \
+##    CONFIG.PCW_CPU_PERIPHERAL_CLKSRC {ARM PLL} \
+##    CONFIG.PCW_CPU_PERIPHERAL_DIVISOR0 {2} \
+##    CONFIG.PCW_CRYSTAL_PERIPHERAL_FREQMHZ {50} \
+##    CONFIG.PCW_DCI_PERIPHERAL_CLKSRC {DDR PLL} \
+##    CONFIG.PCW_DCI_PERIPHERAL_DIVISOR0 {52} \
+##    CONFIG.PCW_DCI_PERIPHERAL_DIVISOR1 {2} \
+##    CONFIG.PCW_DCI_PERIPHERAL_FREQMHZ {10.159} \
+##    CONFIG.PCW_DDRPLL_CTRL_FBDIV {21} \
+##    CONFIG.PCW_DDR_DDR_PLL_FREQMHZ {1050.000} \
+##    CONFIG.PCW_DDR_HPRLPR_QUEUE_PARTITION {HPR(0)/LPR(32)} \
+##    CONFIG.PCW_DDR_HPR_TO_CRITICAL_PRIORITY_LEVEL {15} \
+##    CONFIG.PCW_DDR_LPR_TO_CRITICAL_PRIORITY_LEVEL {2} \
+##    CONFIG.PCW_DDR_PERIPHERAL_CLKSRC {DDR PLL} \
+##    CONFIG.PCW_DDR_PERIPHERAL_DIVISOR0 {2} \
+##    CONFIG.PCW_DDR_PORT0_HPR_ENABLE {0} \
+##    CONFIG.PCW_DDR_PORT1_HPR_ENABLE {0} \
+##    CONFIG.PCW_DDR_PORT2_HPR_ENABLE {0} \
+##    CONFIG.PCW_DDR_PORT3_HPR_ENABLE {0} \
+##    CONFIG.PCW_DDR_PRIORITY_READPORT_0 {<Select>} \
+##    CONFIG.PCW_DDR_PRIORITY_READPORT_1 {<Select>} \
+##    CONFIG.PCW_DDR_PRIORITY_READPORT_2 {<Select>} \
+##    CONFIG.PCW_DDR_PRIORITY_READPORT_3 {<Select>} \
+##    CONFIG.PCW_DDR_PRIORITY_WRITEPORT_0 {<Select>} \
+##    CONFIG.PCW_DDR_PRIORITY_WRITEPORT_1 {<Select>} \
+##    CONFIG.PCW_DDR_PRIORITY_WRITEPORT_2 {<Select>} \
+##    CONFIG.PCW_DDR_PRIORITY_WRITEPORT_3 {<Select>} \
+##    CONFIG.PCW_DDR_RAM_BASEADDR {0x00100000} \
+##    CONFIG.PCW_DDR_RAM_HIGHADDR {0x1FFFFFFF} \
+##    CONFIG.PCW_DDR_WRITE_TO_CRITICAL_PRIORITY_LEVEL {2} \
+##    CONFIG.PCW_DM_WIDTH {4} \
+##    CONFIG.PCW_DQS_WIDTH {4} \
+##    CONFIG.PCW_DQ_WIDTH {32} \
+##    CONFIG.PCW_ENET0_BASEADDR {0xE000B000} \
+##    CONFIG.PCW_ENET0_ENET0_IO {MIO 16 .. 27} \
+##    CONFIG.PCW_ENET0_GRP_MDIO_ENABLE {1} \
+##    CONFIG.PCW_ENET0_GRP_MDIO_IO {MIO 52 .. 53} \
+##    CONFIG.PCW_ENET0_HIGHADDR {0xE000BFFF} \
+##    CONFIG.PCW_ENET0_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_ENET0_PERIPHERAL_DIVISOR0 {8} \
+##    CONFIG.PCW_ENET0_PERIPHERAL_DIVISOR1 {1} \
+##    CONFIG.PCW_ENET0_PERIPHERAL_ENABLE {1} \
+##    CONFIG.PCW_ENET0_PERIPHERAL_FREQMHZ {1000 Mbps} \
+##    CONFIG.PCW_ENET0_RESET_ENABLE {0} \
+##    CONFIG.PCW_ENET0_RESET_IO {<Select>} \
+##    CONFIG.PCW_ENET1_BASEADDR {0xE000C000} \
+##    CONFIG.PCW_ENET1_ENET1_IO {<Select>} \
+##    CONFIG.PCW_ENET1_GRP_MDIO_ENABLE {0} \
+##    CONFIG.PCW_ENET1_GRP_MDIO_IO {<Select>} \
+##    CONFIG.PCW_ENET1_HIGHADDR {0xE000CFFF} \
+##    CONFIG.PCW_ENET1_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_ENET1_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_ENET1_PERIPHERAL_DIVISOR1 {1} \
+##    CONFIG.PCW_ENET1_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_ENET1_PERIPHERAL_FREQMHZ {1000 Mbps} \
+##    CONFIG.PCW_ENET1_RESET_ENABLE {0} \
+##    CONFIG.PCW_ENET1_RESET_IO {<Select>} \
+##    CONFIG.PCW_ENET_RESET_ENABLE {0} \
+##    CONFIG.PCW_ENET_RESET_POLARITY {Active Low} \
+##    CONFIG.PCW_ENET_RESET_SELECT {<Select>} \
+##    CONFIG.PCW_EN_4K_TIMER {0} \
+##    CONFIG.PCW_EN_CAN0 {0} \
+##    CONFIG.PCW_EN_CAN1 {0} \
+##    CONFIG.PCW_EN_CLK0_PORT {1} \
+##    CONFIG.PCW_EN_CLK1_PORT {1} \
+##    CONFIG.PCW_EN_CLK2_PORT {0} \
+##    CONFIG.PCW_EN_CLK3_PORT {0} \
+##    CONFIG.PCW_EN_CLKTRIG0_PORT {0} \
+##    CONFIG.PCW_EN_CLKTRIG1_PORT {0} \
+##    CONFIG.PCW_EN_CLKTRIG2_PORT {0} \
+##    CONFIG.PCW_EN_CLKTRIG3_PORT {0} \
+##    CONFIG.PCW_EN_DDR {1} \
+##    CONFIG.PCW_EN_EMIO_CAN0 {0} \
+##    CONFIG.PCW_EN_EMIO_CAN1 {0} \
+##    CONFIG.PCW_EN_EMIO_CD_SDIO0 {0} \
+##    CONFIG.PCW_EN_EMIO_CD_SDIO1 {0} \
+##    CONFIG.PCW_EN_EMIO_ENET0 {0} \
+##    CONFIG.PCW_EN_EMIO_ENET1 {0} \
+##    CONFIG.PCW_EN_EMIO_GPIO {1} \
+##    CONFIG.PCW_EN_EMIO_I2C0 {0} \
+##    CONFIG.PCW_EN_EMIO_I2C1 {0} \
+##    CONFIG.PCW_EN_EMIO_MODEM_UART0 {0} \
+##    CONFIG.PCW_EN_EMIO_MODEM_UART1 {0} \
+##    CONFIG.PCW_EN_EMIO_PJTAG {0} \
+##    CONFIG.PCW_EN_EMIO_SDIO0 {0} \
+##    CONFIG.PCW_EN_EMIO_SDIO1 {0} \
+##    CONFIG.PCW_EN_EMIO_SPI0 {0} \
+##    CONFIG.PCW_EN_EMIO_SPI1 {0} \
+##    CONFIG.PCW_EN_EMIO_SRAM_INT {0} \
+##    CONFIG.PCW_EN_EMIO_TRACE {0} \
+##    CONFIG.PCW_EN_EMIO_TTC0 {0} \
+##    CONFIG.PCW_EN_EMIO_TTC1 {0} \
+##    CONFIG.PCW_EN_EMIO_UART0 {0} \
+##    CONFIG.PCW_EN_EMIO_UART1 {0} \
+##    CONFIG.PCW_EN_EMIO_WDT {0} \
+##    CONFIG.PCW_EN_EMIO_WP_SDIO0 {0} \
+##    CONFIG.PCW_EN_EMIO_WP_SDIO1 {0} \
+##    CONFIG.PCW_EN_ENET0 {1} \
+##    CONFIG.PCW_EN_ENET1 {0} \
+##    CONFIG.PCW_EN_GPIO {0} \
+##    CONFIG.PCW_EN_I2C0 {0} \
+##    CONFIG.PCW_EN_I2C1 {0} \
+##    CONFIG.PCW_EN_MODEM_UART0 {0} \
+##    CONFIG.PCW_EN_MODEM_UART1 {0} \
+##    CONFIG.PCW_EN_PJTAG {0} \
+##    CONFIG.PCW_EN_PTP_ENET0 {0} \
+##    CONFIG.PCW_EN_PTP_ENET1 {0} \
+##    CONFIG.PCW_EN_QSPI {1} \
+##    CONFIG.PCW_EN_RST0_PORT {1} \
+##    CONFIG.PCW_EN_RST1_PORT {0} \
+##    CONFIG.PCW_EN_RST2_PORT {0} \
+##    CONFIG.PCW_EN_RST3_PORT {0} \
+##    CONFIG.PCW_EN_SDIO0 {1} \
+##    CONFIG.PCW_EN_SDIO1 {0} \
+##    CONFIG.PCW_EN_SMC {0} \
+##    CONFIG.PCW_EN_SPI0 {0} \
+##    CONFIG.PCW_EN_SPI1 {0} \
+##    CONFIG.PCW_EN_TRACE {0} \
+##    CONFIG.PCW_EN_TTC0 {0} \
+##    CONFIG.PCW_EN_TTC1 {0} \
+##    CONFIG.PCW_EN_UART0 {1} \
+##    CONFIG.PCW_EN_UART1 {0} \
+##    CONFIG.PCW_EN_USB0 {1} \
+##    CONFIG.PCW_EN_USB1 {0} \
+##    CONFIG.PCW_EN_WDT {0} \
+##    CONFIG.PCW_FCLK0_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {5} \
+##    CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {2} \
+##    CONFIG.PCW_FCLK1_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {5} \
+##    CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {4} \
+##    CONFIG.PCW_FCLK2_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR1 {1} \
+##    CONFIG.PCW_FCLK3_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1 {1} \
+##    CONFIG.PCW_FCLK_CLK0_BUF {TRUE} \
+##    CONFIG.PCW_FCLK_CLK1_BUF {TRUE} \
+##    CONFIG.PCW_FCLK_CLK2_BUF {FALSE} \
+##    CONFIG.PCW_FCLK_CLK3_BUF {FALSE} \
+##    CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100} \
+##    CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {50} \
+##    CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {100} \
+##    CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {160} \
+##    CONFIG.PCW_FPGA_FCLK0_ENABLE {1} \
+##    CONFIG.PCW_FPGA_FCLK1_ENABLE {1} \
+##    CONFIG.PCW_FPGA_FCLK2_ENABLE {0} \
+##    CONFIG.PCW_FPGA_FCLK3_ENABLE {0} \
+##    CONFIG.PCW_FTM_CTI_IN0 {<Select>} \
+##    CONFIG.PCW_FTM_CTI_IN1 {<Select>} \
+##    CONFIG.PCW_FTM_CTI_IN2 {<Select>} \
+##    CONFIG.PCW_FTM_CTI_IN3 {<Select>} \
+##    CONFIG.PCW_FTM_CTI_OUT0 {<Select>} \
+##    CONFIG.PCW_FTM_CTI_OUT1 {<Select>} \
+##    CONFIG.PCW_FTM_CTI_OUT2 {<Select>} \
+##    CONFIG.PCW_FTM_CTI_OUT3 {<Select>} \
+##    CONFIG.PCW_GP0_EN_MODIFIABLE_TXN {0} \
+##    CONFIG.PCW_GP0_NUM_READ_THREADS {4} \
+##    CONFIG.PCW_GP0_NUM_WRITE_THREADS {4} \
+##    CONFIG.PCW_GP1_EN_MODIFIABLE_TXN {0} \
+##    CONFIG.PCW_GP1_NUM_READ_THREADS {4} \
+##    CONFIG.PCW_GP1_NUM_WRITE_THREADS {4} \
+##    CONFIG.PCW_GPIO_BASEADDR {0xE000A000} \
+##    CONFIG.PCW_GPIO_EMIO_GPIO_ENABLE {1} \
+##    CONFIG.PCW_GPIO_EMIO_GPIO_IO {7} \
+##    CONFIG.PCW_GPIO_EMIO_GPIO_WIDTH {7} \
+##    CONFIG.PCW_GPIO_HIGHADDR {0xE000AFFF} \
+##    CONFIG.PCW_GPIO_MIO_GPIO_ENABLE {0} \
+##    CONFIG.PCW_GPIO_MIO_GPIO_IO {<Select>} \
+##    CONFIG.PCW_GPIO_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_I2C0_BASEADDR {0xE0004000} \
+##    CONFIG.PCW_I2C0_GRP_INT_ENABLE {0} \
+##    CONFIG.PCW_I2C0_GRP_INT_IO {<Select>} \
+##    CONFIG.PCW_I2C0_HIGHADDR {0xE0004FFF} \
+##    CONFIG.PCW_I2C0_I2C0_IO {<Select>} \
+##    CONFIG.PCW_I2C0_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_I2C0_RESET_ENABLE {0} \
+##    CONFIG.PCW_I2C0_RESET_IO {<Select>} \
+##    CONFIG.PCW_I2C1_BASEADDR {0xE0005000} \
+##    CONFIG.PCW_I2C1_GRP_INT_ENABLE {0} \
+##    CONFIG.PCW_I2C1_GRP_INT_IO {<Select>} \
+##    CONFIG.PCW_I2C1_HIGHADDR {0xE0005FFF} \
+##    CONFIG.PCW_I2C1_I2C1_IO {<Select>} \
+##    CONFIG.PCW_I2C1_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_I2C1_RESET_ENABLE {0} \
+##    CONFIG.PCW_I2C1_RESET_IO {<Select>} \
+##    CONFIG.PCW_I2C_PERIPHERAL_FREQMHZ {25} \
+##    CONFIG.PCW_I2C_RESET_ENABLE {0} \
+##    CONFIG.PCW_I2C_RESET_POLARITY {Active Low} \
+##    CONFIG.PCW_I2C_RESET_SELECT {<Select>} \
+##    CONFIG.PCW_IMPORT_BOARD_PRESET {None} \
+##    CONFIG.PCW_INCLUDE_ACP_TRANS_CHECK {0} \
+##    CONFIG.PCW_INCLUDE_TRACE_BUFFER {0} \
+##    CONFIG.PCW_IOPLL_CTRL_FBDIV {20} \
+##    CONFIG.PCW_IO_IO_PLL_FREQMHZ {1000.000} \
+##    CONFIG.PCW_IRQ_F2P_INTR {1} \
+##    CONFIG.PCW_IRQ_F2P_MODE {DIRECT} \
+##    CONFIG.PCW_MIO_0_DIRECTION {<Select>} \
+##    CONFIG.PCW_MIO_0_IOTYPE {<Select>} \
+##    CONFIG.PCW_MIO_0_PULLUP {<Select>} \
+##    CONFIG.PCW_MIO_0_SLEW {<Select>} \
+##    CONFIG.PCW_MIO_10_DIRECTION {<Select>} \
+##    CONFIG.PCW_MIO_10_IOTYPE {<Select>} \
+##    CONFIG.PCW_MIO_10_PULLUP {<Select>} \
+##    CONFIG.PCW_MIO_10_SLEW {<Select>} \
+##    CONFIG.PCW_MIO_11_DIRECTION {<Select>} \
+##    CONFIG.PCW_MIO_11_IOTYPE {<Select>} \
+##    CONFIG.PCW_MIO_11_PULLUP {<Select>} \
+##    CONFIG.PCW_MIO_11_SLEW {<Select>} \
+##    CONFIG.PCW_MIO_12_DIRECTION {<Select>} \
+##    CONFIG.PCW_MIO_12_IOTYPE {<Select>} \
+##    CONFIG.PCW_MIO_12_PULLUP {<Select>} \
+##    CONFIG.PCW_MIO_12_SLEW {<Select>} \
+##    CONFIG.PCW_MIO_13_DIRECTION {<Select>} \
+##    CONFIG.PCW_MIO_13_IOTYPE {<Select>} \
+##    CONFIG.PCW_MIO_13_PULLUP {<Select>} \
+##    CONFIG.PCW_MIO_13_SLEW {<Select>} \
+##    CONFIG.PCW_MIO_14_DIRECTION {in} \
+##    CONFIG.PCW_MIO_14_IOTYPE {LVCMOS 3.3V} \
+##    CONFIG.PCW_MIO_14_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_14_SLEW {slow} \
+##    CONFIG.PCW_MIO_15_DIRECTION {out} \
+##    CONFIG.PCW_MIO_15_IOTYPE {LVCMOS 3.3V} \
+##    CONFIG.PCW_MIO_15_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_15_SLEW {slow} \
+##    CONFIG.PCW_MIO_16_DIRECTION {out} \
+##    CONFIG.PCW_MIO_16_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_16_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_16_SLEW {slow} \
+##    CONFIG.PCW_MIO_17_DIRECTION {out} \
+##    CONFIG.PCW_MIO_17_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_17_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_17_SLEW {slow} \
+##    CONFIG.PCW_MIO_18_DIRECTION {out} \
+##    CONFIG.PCW_MIO_18_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_18_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_18_SLEW {slow} \
+##    CONFIG.PCW_MIO_19_DIRECTION {out} \
+##    CONFIG.PCW_MIO_19_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_19_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_19_SLEW {slow} \
+##    CONFIG.PCW_MIO_1_DIRECTION {out} \
+##    CONFIG.PCW_MIO_1_IOTYPE {LVCMOS 3.3V} \
+##    CONFIG.PCW_MIO_1_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_1_SLEW {slow} \
+##    CONFIG.PCW_MIO_20_DIRECTION {out} \
+##    CONFIG.PCW_MIO_20_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_20_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_20_SLEW {slow} \
+##    CONFIG.PCW_MIO_21_DIRECTION {out} \
+##    CONFIG.PCW_MIO_21_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_21_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_21_SLEW {slow} \
+##    CONFIG.PCW_MIO_22_DIRECTION {in} \
+##    CONFIG.PCW_MIO_22_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_22_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_22_SLEW {slow} \
+##    CONFIG.PCW_MIO_23_DIRECTION {in} \
+##    CONFIG.PCW_MIO_23_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_23_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_23_SLEW {slow} \
+##    CONFIG.PCW_MIO_24_DIRECTION {in} \
+##    CONFIG.PCW_MIO_24_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_24_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_24_SLEW {slow} \
+##    CONFIG.PCW_MIO_25_DIRECTION {in} \
+##    CONFIG.PCW_MIO_25_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_25_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_25_SLEW {slow} \
+##    CONFIG.PCW_MIO_26_DIRECTION {in} \
+##    CONFIG.PCW_MIO_26_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_26_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_26_SLEW {slow} \
+##    CONFIG.PCW_MIO_27_DIRECTION {in} \
+##    CONFIG.PCW_MIO_27_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_27_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_27_SLEW {slow} \
+##    CONFIG.PCW_MIO_28_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_28_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_28_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_28_SLEW {slow} \
+##    CONFIG.PCW_MIO_29_DIRECTION {in} \
+##    CONFIG.PCW_MIO_29_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_29_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_29_SLEW {slow} \
+##    CONFIG.PCW_MIO_2_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_2_IOTYPE {LVCMOS 3.3V} \
+##    CONFIG.PCW_MIO_2_PULLUP {disabled} \
+##    CONFIG.PCW_MIO_2_SLEW {slow} \
+##    CONFIG.PCW_MIO_30_DIRECTION {out} \
+##    CONFIG.PCW_MIO_30_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_30_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_30_SLEW {slow} \
+##    CONFIG.PCW_MIO_31_DIRECTION {in} \
+##    CONFIG.PCW_MIO_31_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_31_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_31_SLEW {slow} \
+##    CONFIG.PCW_MIO_32_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_32_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_32_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_32_SLEW {slow} \
+##    CONFIG.PCW_MIO_33_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_33_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_33_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_33_SLEW {slow} \
+##    CONFIG.PCW_MIO_34_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_34_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_34_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_34_SLEW {slow} \
+##    CONFIG.PCW_MIO_35_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_35_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_35_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_35_SLEW {slow} \
+##    CONFIG.PCW_MIO_36_DIRECTION {in} \
+##    CONFIG.PCW_MIO_36_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_36_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_36_SLEW {slow} \
+##    CONFIG.PCW_MIO_37_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_37_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_37_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_37_SLEW {slow} \
+##    CONFIG.PCW_MIO_38_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_38_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_38_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_38_SLEW {slow} \
+##    CONFIG.PCW_MIO_39_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_39_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_39_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_39_SLEW {slow} \
+##    CONFIG.PCW_MIO_3_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_3_IOTYPE {LVCMOS 3.3V} \
+##    CONFIG.PCW_MIO_3_PULLUP {disabled} \
+##    CONFIG.PCW_MIO_3_SLEW {slow} \
+##    CONFIG.PCW_MIO_40_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_40_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_40_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_40_SLEW {slow} \
+##    CONFIG.PCW_MIO_41_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_41_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_41_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_41_SLEW {slow} \
+##    CONFIG.PCW_MIO_42_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_42_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_42_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_42_SLEW {slow} \
+##    CONFIG.PCW_MIO_43_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_43_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_43_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_43_SLEW {slow} \
+##    CONFIG.PCW_MIO_44_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_44_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_44_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_44_SLEW {slow} \
+##    CONFIG.PCW_MIO_45_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_45_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_45_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_45_SLEW {slow} \
+##    CONFIG.PCW_MIO_46_DIRECTION {<Select>} \
+##    CONFIG.PCW_MIO_46_IOTYPE {<Select>} \
+##    CONFIG.PCW_MIO_46_PULLUP {<Select>} \
+##    CONFIG.PCW_MIO_46_SLEW {<Select>} \
+##    CONFIG.PCW_MIO_47_DIRECTION {in} \
+##    CONFIG.PCW_MIO_47_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_47_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_47_SLEW {slow} \
+##    CONFIG.PCW_MIO_48_DIRECTION {<Select>} \
+##    CONFIG.PCW_MIO_48_IOTYPE {<Select>} \
+##    CONFIG.PCW_MIO_48_PULLUP {<Select>} \
+##    CONFIG.PCW_MIO_48_SLEW {<Select>} \
+##    CONFIG.PCW_MIO_49_DIRECTION {<Select>} \
+##    CONFIG.PCW_MIO_49_IOTYPE {<Select>} \
+##    CONFIG.PCW_MIO_49_PULLUP {<Select>} \
+##    CONFIG.PCW_MIO_49_SLEW {<Select>} \
+##    CONFIG.PCW_MIO_4_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_4_IOTYPE {LVCMOS 3.3V} \
+##    CONFIG.PCW_MIO_4_PULLUP {disabled} \
+##    CONFIG.PCW_MIO_4_SLEW {slow} \
+##    CONFIG.PCW_MIO_50_DIRECTION {<Select>} \
+##    CONFIG.PCW_MIO_50_IOTYPE {<Select>} \
+##    CONFIG.PCW_MIO_50_PULLUP {<Select>} \
+##    CONFIG.PCW_MIO_50_SLEW {<Select>} \
+##    CONFIG.PCW_MIO_51_DIRECTION {<Select>} \
+##    CONFIG.PCW_MIO_51_IOTYPE {<Select>} \
+##    CONFIG.PCW_MIO_51_PULLUP {<Select>} \
+##    CONFIG.PCW_MIO_51_SLEW {<Select>} \
+##    CONFIG.PCW_MIO_52_DIRECTION {out} \
+##    CONFIG.PCW_MIO_52_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_52_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_52_SLEW {slow} \
+##    CONFIG.PCW_MIO_53_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_53_IOTYPE {LVCMOS 1.8V} \
+##    CONFIG.PCW_MIO_53_PULLUP {enabled} \
+##    CONFIG.PCW_MIO_53_SLEW {slow} \
+##    CONFIG.PCW_MIO_5_DIRECTION {inout} \
+##    CONFIG.PCW_MIO_5_IOTYPE {LVCMOS 3.3V} \
+##    CONFIG.PCW_MIO_5_PULLUP {disabled} \
+##    CONFIG.PCW_MIO_5_SLEW {slow} \
+##    CONFIG.PCW_MIO_6_DIRECTION {out} \
+##    CONFIG.PCW_MIO_6_IOTYPE {LVCMOS 3.3V} \
+##    CONFIG.PCW_MIO_6_PULLUP {disabled} \
+##    CONFIG.PCW_MIO_6_SLEW {slow} \
+##    CONFIG.PCW_MIO_7_DIRECTION {<Select>} \
+##    CONFIG.PCW_MIO_7_IOTYPE {<Select>} \
+##    CONFIG.PCW_MIO_7_PULLUP {<Select>} \
+##    CONFIG.PCW_MIO_7_SLEW {<Select>} \
+##    CONFIG.PCW_MIO_8_DIRECTION {out} \
+##    CONFIG.PCW_MIO_8_IOTYPE {LVCMOS 3.3V} \
+##    CONFIG.PCW_MIO_8_PULLUP {disabled} \
+##    CONFIG.PCW_MIO_8_SLEW {slow} \
+##    CONFIG.PCW_MIO_9_DIRECTION {<Select>} \
+##    CONFIG.PCW_MIO_9_IOTYPE {<Select>} \
+##    CONFIG.PCW_MIO_9_PULLUP {<Select>} \
+##    CONFIG.PCW_MIO_9_SLEW {<Select>} \
+##    CONFIG.PCW_MIO_PRIMITIVE {54} \
+##    CONFIG.PCW_MIO_TREE_PERIPHERALS {unassigned#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#unassigned#Quad SPI Flash#unassigned#unassigned#unassigned#unassigned#unassigned#UART 0#UART 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#Enet 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#SD 0#SD 0#SD 0#SD 0#SD 0#SD 0#unassigned#SD 0#unassigned#unassigned#unassigned#unassigned#Enet 0#Enet 0} \
+##    CONFIG.PCW_MIO_TREE_SIGNALS {unassigned#qspi0_ss_b#qspi0_io[0]#qspi0_io[1]#qspi0_io[2]#qspi0_io[3]/HOLD_B#qspi0_sclk#unassigned#qspi_fbclk#unassigned#unassigned#unassigned#unassigned#unassigned#rx#tx#tx_clk#txd[0]#txd[1]#txd[2]#txd[3]#tx_ctl#rx_clk#rxd[0]#rxd[1]#rxd[2]#rxd[3]#rx_ctl#data[4]#dir#stp#nxt#data[0]#data[1]#data[2]#data[3]#clk#data[5]#data[6]#data[7]#clk#cmd#data[0]#data[1]#data[2]#data[3]#unassigned#cd#unassigned#unassigned#unassigned#unassigned#mdc#mdio} \
+##    CONFIG.PCW_M_AXI_GP0_ENABLE_STATIC_REMAP {0} \
+##    CONFIG.PCW_M_AXI_GP0_ID_WIDTH {12} \
+##    CONFIG.PCW_M_AXI_GP0_SUPPORT_NARROW_BURST {0} \
+##    CONFIG.PCW_M_AXI_GP0_THREAD_ID_WIDTH {12} \
+##    CONFIG.PCW_M_AXI_GP1_ENABLE_STATIC_REMAP {0} \
+##    CONFIG.PCW_M_AXI_GP1_ID_WIDTH {12} \
+##    CONFIG.PCW_M_AXI_GP1_SUPPORT_NARROW_BURST {0} \
+##    CONFIG.PCW_M_AXI_GP1_THREAD_ID_WIDTH {12} \
+##    CONFIG.PCW_NAND_CYCLES_T_AR {1} \
+##    CONFIG.PCW_NAND_CYCLES_T_CLR {1} \
+##    CONFIG.PCW_NAND_CYCLES_T_RC {11} \
+##    CONFIG.PCW_NAND_CYCLES_T_REA {1} \
+##    CONFIG.PCW_NAND_CYCLES_T_RR {1} \
+##    CONFIG.PCW_NAND_CYCLES_T_WC {11} \
+##    CONFIG.PCW_NAND_CYCLES_T_WP {1} \
+##    CONFIG.PCW_NAND_GRP_D8_ENABLE {0} \
+##    CONFIG.PCW_NAND_GRP_D8_IO {<Select>} \
+##    CONFIG.PCW_NAND_NAND_IO {<Select>} \
+##    CONFIG.PCW_NAND_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_NOR_CS0_T_CEOE {1} \
+##    CONFIG.PCW_NOR_CS0_T_PC {1} \
+##    CONFIG.PCW_NOR_CS0_T_RC {11} \
+##    CONFIG.PCW_NOR_CS0_T_TR {1} \
+##    CONFIG.PCW_NOR_CS0_T_WC {11} \
+##    CONFIG.PCW_NOR_CS0_T_WP {1} \
+##    CONFIG.PCW_NOR_CS0_WE_TIME {0} \
+##    CONFIG.PCW_NOR_CS1_T_CEOE {1} \
+##    CONFIG.PCW_NOR_CS1_T_PC {1} \
+##    CONFIG.PCW_NOR_CS1_T_RC {11} \
+##    CONFIG.PCW_NOR_CS1_T_TR {1} \
+##    CONFIG.PCW_NOR_CS1_T_WC {11} \
+##    CONFIG.PCW_NOR_CS1_T_WP {1} \
+##    CONFIG.PCW_NOR_CS1_WE_TIME {0} \
+##    CONFIG.PCW_NOR_GRP_A25_ENABLE {0} \
+##    CONFIG.PCW_NOR_GRP_A25_IO {<Select>} \
+##    CONFIG.PCW_NOR_GRP_CS0_ENABLE {0} \
+##    CONFIG.PCW_NOR_GRP_CS0_IO {<Select>} \
+##    CONFIG.PCW_NOR_GRP_CS1_ENABLE {0} \
+##    CONFIG.PCW_NOR_GRP_CS1_IO {<Select>} \
+##    CONFIG.PCW_NOR_GRP_SRAM_CS0_ENABLE {0} \
+##    CONFIG.PCW_NOR_GRP_SRAM_CS0_IO {<Select>} \
+##    CONFIG.PCW_NOR_GRP_SRAM_CS1_ENABLE {0} \
+##    CONFIG.PCW_NOR_GRP_SRAM_CS1_IO {<Select>} \
+##    CONFIG.PCW_NOR_GRP_SRAM_INT_ENABLE {0} \
+##    CONFIG.PCW_NOR_GRP_SRAM_INT_IO {<Select>} \
+##    CONFIG.PCW_NOR_NOR_IO {<Select>} \
+##    CONFIG.PCW_NOR_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_NOR_SRAM_CS0_T_CEOE {1} \
+##    CONFIG.PCW_NOR_SRAM_CS0_T_PC {1} \
+##    CONFIG.PCW_NOR_SRAM_CS0_T_RC {11} \
+##    CONFIG.PCW_NOR_SRAM_CS0_T_TR {1} \
+##    CONFIG.PCW_NOR_SRAM_CS0_T_WC {11} \
+##    CONFIG.PCW_NOR_SRAM_CS0_T_WP {1} \
+##    CONFIG.PCW_NOR_SRAM_CS0_WE_TIME {0} \
+##    CONFIG.PCW_NOR_SRAM_CS1_T_CEOE {1} \
+##    CONFIG.PCW_NOR_SRAM_CS1_T_PC {1} \
+##    CONFIG.PCW_NOR_SRAM_CS1_T_RC {11} \
+##    CONFIG.PCW_NOR_SRAM_CS1_T_TR {1} \
+##    CONFIG.PCW_NOR_SRAM_CS1_T_WC {11} \
+##    CONFIG.PCW_NOR_SRAM_CS1_T_WP {1} \
+##    CONFIG.PCW_NOR_SRAM_CS1_WE_TIME {0} \
+##    CONFIG.PCW_OVERRIDE_BASIC_CLOCK {0} \
+##    CONFIG.PCW_P2F_CAN0_INTR {0} \
+##    CONFIG.PCW_P2F_CAN1_INTR {0} \
+##    CONFIG.PCW_P2F_CTI_INTR {0} \
+##    CONFIG.PCW_P2F_DMAC0_INTR {0} \
+##    CONFIG.PCW_P2F_DMAC1_INTR {0} \
+##    CONFIG.PCW_P2F_DMAC2_INTR {0} \
+##    CONFIG.PCW_P2F_DMAC3_INTR {0} \
+##    CONFIG.PCW_P2F_DMAC4_INTR {0} \
+##    CONFIG.PCW_P2F_DMAC5_INTR {0} \
+##    CONFIG.PCW_P2F_DMAC6_INTR {0} \
+##    CONFIG.PCW_P2F_DMAC7_INTR {0} \
+##    CONFIG.PCW_P2F_DMAC_ABORT_INTR {0} \
+##    CONFIG.PCW_P2F_ENET0_INTR {0} \
+##    CONFIG.PCW_P2F_ENET1_INTR {0} \
+##    CONFIG.PCW_P2F_GPIO_INTR {0} \
+##    CONFIG.PCW_P2F_I2C0_INTR {0} \
+##    CONFIG.PCW_P2F_I2C1_INTR {0} \
+##    CONFIG.PCW_P2F_QSPI_INTR {0} \
+##    CONFIG.PCW_P2F_SDIO0_INTR {0} \
+##    CONFIG.PCW_P2F_SDIO1_INTR {0} \
+##    CONFIG.PCW_P2F_SMC_INTR {0} \
+##    CONFIG.PCW_P2F_SPI0_INTR {0} \
+##    CONFIG.PCW_P2F_SPI1_INTR {0} \
+##    CONFIG.PCW_P2F_UART0_INTR {0} \
+##    CONFIG.PCW_P2F_UART1_INTR {0} \
+##    CONFIG.PCW_P2F_USB0_INTR {0} \
+##    CONFIG.PCW_P2F_USB1_INTR {0} \
+##    CONFIG.PCW_PACKAGE_DDR_BOARD_DELAY0 {0.223} \
+##    CONFIG.PCW_PACKAGE_DDR_BOARD_DELAY1 {0.212} \
+##    CONFIG.PCW_PACKAGE_DDR_BOARD_DELAY2 {0.085} \
+##    CONFIG.PCW_PACKAGE_DDR_BOARD_DELAY3 {0.092} \
+##    CONFIG.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_0 {0.040} \
+##    CONFIG.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_1 {0.058} \
+##    CONFIG.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_2 {-0.009} \
+##    CONFIG.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_3 {-0.033} \
+##    CONFIG.PCW_PACKAGE_NAME {clg400} \
+##    CONFIG.PCW_PCAP_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_PCAP_PERIPHERAL_DIVISOR0 {5} \
+##    CONFIG.PCW_PCAP_PERIPHERAL_FREQMHZ {200} \
+##    CONFIG.PCW_PERIPHERAL_BOARD_PRESET {None} \
+##    CONFIG.PCW_PJTAG_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_PJTAG_PJTAG_IO {<Select>} \
+##    CONFIG.PCW_PLL_BYPASSMODE_ENABLE {0} \
+##    CONFIG.PCW_PRESET_BANK0_VOLTAGE {LVCMOS 3.3V} \
+##    CONFIG.PCW_PRESET_BANK1_VOLTAGE {LVCMOS 1.8V} \
+##    CONFIG.PCW_PS7_SI_REV {PRODUCTION} \
+##    CONFIG.PCW_QSPI_GRP_FBCLK_ENABLE {1} \
+##    CONFIG.PCW_QSPI_GRP_FBCLK_IO {MIO 8} \
+##    CONFIG.PCW_QSPI_GRP_IO1_ENABLE {0} \
+##    CONFIG.PCW_QSPI_GRP_IO1_IO {<Select>} \
+##    CONFIG.PCW_QSPI_GRP_SINGLE_SS_ENABLE {1} \
+##    CONFIG.PCW_QSPI_GRP_SINGLE_SS_IO {MIO 1 .. 6} \
+##    CONFIG.PCW_QSPI_GRP_SS1_ENABLE {0} \
+##    CONFIG.PCW_QSPI_GRP_SS1_IO {<Select>} \
+##    CONFIG.PCW_QSPI_INTERNAL_HIGHADDRESS {0xFCFFFFFF} \
+##    CONFIG.PCW_QSPI_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_QSPI_PERIPHERAL_DIVISOR0 {5} \
+##    CONFIG.PCW_QSPI_PERIPHERAL_ENABLE {1} \
+##    CONFIG.PCW_QSPI_PERIPHERAL_FREQMHZ {200} \
+##    CONFIG.PCW_QSPI_QSPI_IO {MIO 1 .. 6} \
+##    CONFIG.PCW_SD0_GRP_CD_ENABLE {1} \
+##    CONFIG.PCW_SD0_GRP_CD_IO {MIO 47} \
+##    CONFIG.PCW_SD0_GRP_POW_ENABLE {0} \
+##    CONFIG.PCW_SD0_GRP_POW_IO {<Select>} \
+##    CONFIG.PCW_SD0_GRP_WP_ENABLE {0} \
+##    CONFIG.PCW_SD0_GRP_WP_IO {<Select>} \
+##    CONFIG.PCW_SD0_PERIPHERAL_ENABLE {1} \
+##    CONFIG.PCW_SD0_SD0_IO {MIO 40 .. 45} \
+##    CONFIG.PCW_SD1_GRP_CD_ENABLE {0} \
+##    CONFIG.PCW_SD1_GRP_CD_IO {<Select>} \
+##    CONFIG.PCW_SD1_GRP_POW_ENABLE {0} \
+##    CONFIG.PCW_SD1_GRP_POW_IO {<Select>} \
+##    CONFIG.PCW_SD1_GRP_WP_ENABLE {0} \
+##    CONFIG.PCW_SD1_GRP_WP_IO {<Select>} \
+##    CONFIG.PCW_SD1_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_SD1_SD1_IO {<Select>} \
+##    CONFIG.PCW_SDIO0_BASEADDR {0xE0100000} \
+##    CONFIG.PCW_SDIO0_HIGHADDR {0xE0100FFF} \
+##    CONFIG.PCW_SDIO1_BASEADDR {0xE0101000} \
+##    CONFIG.PCW_SDIO1_HIGHADDR {0xE0101FFF} \
+##    CONFIG.PCW_SDIO_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_SDIO_PERIPHERAL_DIVISOR0 {20} \
+##    CONFIG.PCW_SDIO_PERIPHERAL_FREQMHZ {50} \
+##    CONFIG.PCW_SDIO_PERIPHERAL_VALID {1} \
+##    CONFIG.PCW_SINGLE_QSPI_DATA_MODE {x4} \
+##    CONFIG.PCW_SMC_CYCLE_T0 {NA} \
+##    CONFIG.PCW_SMC_CYCLE_T1 {NA} \
+##    CONFIG.PCW_SMC_CYCLE_T2 {NA} \
+##    CONFIG.PCW_SMC_CYCLE_T3 {NA} \
+##    CONFIG.PCW_SMC_CYCLE_T4 {NA} \
+##    CONFIG.PCW_SMC_CYCLE_T5 {NA} \
+##    CONFIG.PCW_SMC_CYCLE_T6 {NA} \
+##    CONFIG.PCW_SMC_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_SMC_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_SMC_PERIPHERAL_FREQMHZ {100} \
+##    CONFIG.PCW_SMC_PERIPHERAL_VALID {0} \
+##    CONFIG.PCW_SPI0_BASEADDR {0xE0006000} \
+##    CONFIG.PCW_SPI0_GRP_SS0_ENABLE {0} \
+##    CONFIG.PCW_SPI0_GRP_SS0_IO {<Select>} \
+##    CONFIG.PCW_SPI0_GRP_SS1_ENABLE {0} \
+##    CONFIG.PCW_SPI0_GRP_SS1_IO {<Select>} \
+##    CONFIG.PCW_SPI0_GRP_SS2_ENABLE {0} \
+##    CONFIG.PCW_SPI0_GRP_SS2_IO {<Select>} \
+##    CONFIG.PCW_SPI0_HIGHADDR {0xE0006FFF} \
+##    CONFIG.PCW_SPI0_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_SPI0_SPI0_IO {<Select>} \
+##    CONFIG.PCW_SPI1_BASEADDR {0xE0007000} \
+##    CONFIG.PCW_SPI1_GRP_SS0_ENABLE {0} \
+##    CONFIG.PCW_SPI1_GRP_SS0_IO {<Select>} \
+##    CONFIG.PCW_SPI1_GRP_SS1_ENABLE {0} \
+##    CONFIG.PCW_SPI1_GRP_SS1_IO {<Select>} \
+##    CONFIG.PCW_SPI1_GRP_SS2_ENABLE {0} \
+##    CONFIG.PCW_SPI1_GRP_SS2_IO {<Select>} \
+##    CONFIG.PCW_SPI1_HIGHADDR {0xE0007FFF} \
+##    CONFIG.PCW_SPI1_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_SPI1_SPI1_IO {<Select>} \
+##    CONFIG.PCW_SPI_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_SPI_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_SPI_PERIPHERAL_FREQMHZ {166.666666} \
+##    CONFIG.PCW_SPI_PERIPHERAL_VALID {0} \
+##    CONFIG.PCW_S_AXI_ACP_ARUSER_VAL {31} \
+##    CONFIG.PCW_S_AXI_ACP_AWUSER_VAL {31} \
+##    CONFIG.PCW_S_AXI_ACP_ID_WIDTH {3} \
+##    CONFIG.PCW_S_AXI_GP0_ID_WIDTH {6} \
+##    CONFIG.PCW_S_AXI_GP1_ID_WIDTH {6} \
+##    CONFIG.PCW_S_AXI_HP0_DATA_WIDTH {64} \
+##    CONFIG.PCW_S_AXI_HP0_ID_WIDTH {6} \
+##    CONFIG.PCW_S_AXI_HP1_DATA_WIDTH {64} \
+##    CONFIG.PCW_S_AXI_HP1_ID_WIDTH {6} \
+##    CONFIG.PCW_S_AXI_HP2_DATA_WIDTH {64} \
+##    CONFIG.PCW_S_AXI_HP2_ID_WIDTH {6} \
+##    CONFIG.PCW_S_AXI_HP3_DATA_WIDTH {64} \
+##    CONFIG.PCW_S_AXI_HP3_ID_WIDTH {6} \
+##    CONFIG.PCW_TPIU_PERIPHERAL_CLKSRC {External} \
+##    CONFIG.PCW_TPIU_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_TPIU_PERIPHERAL_FREQMHZ {200} \
+##    CONFIG.PCW_TRACE_BUFFER_CLOCK_DELAY {12} \
+##    CONFIG.PCW_TRACE_BUFFER_FIFO_SIZE {128} \
+##    CONFIG.PCW_TRACE_GRP_16BIT_ENABLE {0} \
+##    CONFIG.PCW_TRACE_GRP_16BIT_IO {<Select>} \
+##    CONFIG.PCW_TRACE_GRP_2BIT_ENABLE {0} \
+##    CONFIG.PCW_TRACE_GRP_2BIT_IO {<Select>} \
+##    CONFIG.PCW_TRACE_GRP_32BIT_ENABLE {0} \
+##    CONFIG.PCW_TRACE_GRP_32BIT_IO {<Select>} \
+##    CONFIG.PCW_TRACE_GRP_4BIT_ENABLE {0} \
+##    CONFIG.PCW_TRACE_GRP_4BIT_IO {<Select>} \
+##    CONFIG.PCW_TRACE_GRP_8BIT_ENABLE {0} \
+##    CONFIG.PCW_TRACE_GRP_8BIT_IO {<Select>} \
+##    CONFIG.PCW_TRACE_INTERNAL_WIDTH {2} \
+##    CONFIG.PCW_TRACE_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_TRACE_PIPELINE_WIDTH {8} \
+##    CONFIG.PCW_TRACE_TRACE_IO {<Select>} \
+##    CONFIG.PCW_TTC0_BASEADDR {0xE0104000} \
+##    CONFIG.PCW_TTC0_CLK0_PERIPHERAL_CLKSRC {CPU_1X} \
+##    CONFIG.PCW_TTC0_CLK0_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_TTC0_CLK0_PERIPHERAL_FREQMHZ {133.333333} \
+##    CONFIG.PCW_TTC0_CLK1_PERIPHERAL_CLKSRC {CPU_1X} \
+##    CONFIG.PCW_TTC0_CLK1_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_TTC0_CLK1_PERIPHERAL_FREQMHZ {133.333333} \
+##    CONFIG.PCW_TTC0_CLK2_PERIPHERAL_CLKSRC {CPU_1X} \
+##    CONFIG.PCW_TTC0_CLK2_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_TTC0_CLK2_PERIPHERAL_FREQMHZ {133.333333} \
+##    CONFIG.PCW_TTC0_HIGHADDR {0xE0104fff} \
+##    CONFIG.PCW_TTC0_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_TTC0_TTC0_IO {<Select>} \
+##    CONFIG.PCW_TTC1_BASEADDR {0xE0105000} \
+##    CONFIG.PCW_TTC1_CLK0_PERIPHERAL_CLKSRC {CPU_1X} \
+##    CONFIG.PCW_TTC1_CLK0_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_TTC1_CLK0_PERIPHERAL_FREQMHZ {133.333333} \
+##    CONFIG.PCW_TTC1_CLK1_PERIPHERAL_CLKSRC {CPU_1X} \
+##    CONFIG.PCW_TTC1_CLK1_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_TTC1_CLK1_PERIPHERAL_FREQMHZ {133.333333} \
+##    CONFIG.PCW_TTC1_CLK2_PERIPHERAL_CLKSRC {CPU_1X} \
+##    CONFIG.PCW_TTC1_CLK2_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_TTC1_CLK2_PERIPHERAL_FREQMHZ {133.333333} \
+##    CONFIG.PCW_TTC1_HIGHADDR {0xE0105fff} \
+##    CONFIG.PCW_TTC1_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_TTC1_TTC1_IO {<Select>} \
+##    CONFIG.PCW_TTC_PERIPHERAL_FREQMHZ {50} \
+##    CONFIG.PCW_UART0_BASEADDR {0xE0000000} \
+##    CONFIG.PCW_UART0_BAUD_RATE {115200} \
+##    CONFIG.PCW_UART0_GRP_FULL_ENABLE {0} \
+##    CONFIG.PCW_UART0_GRP_FULL_IO {<Select>} \
+##    CONFIG.PCW_UART0_HIGHADDR {0xE0000FFF} \
+##    CONFIG.PCW_UART0_PERIPHERAL_ENABLE {1} \
+##    CONFIG.PCW_UART0_UART0_IO {MIO 14 .. 15} \
+##    CONFIG.PCW_UART1_BASEADDR {0xE0001000} \
+##    CONFIG.PCW_UART1_BAUD_RATE {115200} \
+##    CONFIG.PCW_UART1_GRP_FULL_ENABLE {0} \
+##    CONFIG.PCW_UART1_GRP_FULL_IO {<Select>} \
+##    CONFIG.PCW_UART1_HIGHADDR {0xE0001FFF} \
+##    CONFIG.PCW_UART1_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_UART1_UART1_IO {<Select>} \
+##    CONFIG.PCW_UART_PERIPHERAL_CLKSRC {IO PLL} \
+##    CONFIG.PCW_UART_PERIPHERAL_DIVISOR0 {10} \
+##    CONFIG.PCW_UART_PERIPHERAL_FREQMHZ {100} \
+##    CONFIG.PCW_UART_PERIPHERAL_VALID {1} \
+##    CONFIG.PCW_UIPARAM_ACT_DDR_FREQ_MHZ {525.000000} \
+##    CONFIG.PCW_UIPARAM_DDR_ADV_ENABLE {0} \
+##    CONFIG.PCW_UIPARAM_DDR_AL {0} \
+##    CONFIG.PCW_UIPARAM_DDR_BANK_ADDR_COUNT {3} \
+##    CONFIG.PCW_UIPARAM_DDR_BL {8} \
+##    CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY0 {0.223} \
+##    CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY1 {0.212} \
+##    CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY2 {0.085} \
+##    CONFIG.PCW_UIPARAM_DDR_BOARD_DELAY3 {0.092} \
+##    CONFIG.PCW_UIPARAM_DDR_BUS_WIDTH {16 Bit} \
+##    CONFIG.PCW_UIPARAM_DDR_CL {7} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_0_LENGTH_MM {25.8} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_0_PACKAGE_LENGTH {80.4535} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_0_PROPOGATION_DELAY {160} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_1_LENGTH_MM {25.8} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_1_PACKAGE_LENGTH {80.4535} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_1_PROPOGATION_DELAY {160} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_2_LENGTH_MM {0} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_2_PACKAGE_LENGTH {80.4535} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_2_PROPOGATION_DELAY {160} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_3_LENGTH_MM {0} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_3_PACKAGE_LENGTH {80.4535} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_3_PROPOGATION_DELAY {160} \
+##    CONFIG.PCW_UIPARAM_DDR_CLOCK_STOP_EN {0} \
+##    CONFIG.PCW_UIPARAM_DDR_COL_ADDR_COUNT {10} \
+##    CONFIG.PCW_UIPARAM_DDR_CWL {6} \
+##    CONFIG.PCW_UIPARAM_DDR_DEVICE_CAPACITY {4096 MBits} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_0_LENGTH_MM {15.6} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_0_PACKAGE_LENGTH {105.056} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_0_PROPOGATION_DELAY {160} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_1_LENGTH_MM {18.8} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_1_PACKAGE_LENGTH {66.904} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_1_PROPOGATION_DELAY {160} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_2_LENGTH_MM {0} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_2_PACKAGE_LENGTH {89.1715} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_2_PROPOGATION_DELAY {160} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_3_LENGTH_MM {0} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_3_PACKAGE_LENGTH {113.63} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_3_PROPOGATION_DELAY {160} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 {0.040} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 {0.058} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 {-0.009} \
+##    CONFIG.PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 {-0.033} \
+##    CONFIG.PCW_UIPARAM_DDR_DQ_0_LENGTH_MM {16.5} \
+##    CONFIG.PCW_UIPARAM_DDR_DQ_0_PACKAGE_LENGTH {98.503} \
+##    CONFIG.PCW_UIPARAM_DDR_DQ_0_PROPOGATION_DELAY {160} \
+##    CONFIG.PCW_UIPARAM_DDR_DQ_1_LENGTH_MM {18} \
+##    CONFIG.PCW_UIPARAM_DDR_DQ_1_PACKAGE_LENGTH {68.5855} \
+##    CONFIG.PCW_UIPARAM_DDR_DQ_1_PROPOGATION_DELAY {160} \
+##    CONFIG.PCW_UIPARAM_DDR_DQ_2_LENGTH_MM {0} \
+##    CONFIG.PCW_UIPARAM_DDR_DQ_2_PACKAGE_LENGTH {90.295} \
+##    CONFIG.PCW_UIPARAM_DDR_DQ_2_PROPOGATION_DELAY {160} \
+##    CONFIG.PCW_UIPARAM_DDR_DQ_3_LENGTH_MM {0} \
+##    CONFIG.PCW_UIPARAM_DDR_DQ_3_PACKAGE_LENGTH {103.977} \
+##    CONFIG.PCW_UIPARAM_DDR_DQ_3_PROPOGATION_DELAY {160} \
+##    CONFIG.PCW_UIPARAM_DDR_DRAM_WIDTH {16 Bits} \
+##    CONFIG.PCW_UIPARAM_DDR_ECC {Disabled} \
+##    CONFIG.PCW_UIPARAM_DDR_ENABLE {1} \
+##    CONFIG.PCW_UIPARAM_DDR_FREQ_MHZ {525} \
+##    CONFIG.PCW_UIPARAM_DDR_HIGH_TEMP {Normal (0-85)} \
+##    CONFIG.PCW_UIPARAM_DDR_MEMORY_TYPE {DDR 3} \
+##    CONFIG.PCW_UIPARAM_DDR_PARTNO {Custom} \
+##    CONFIG.PCW_UIPARAM_DDR_ROW_ADDR_COUNT {15} \
+##    CONFIG.PCW_UIPARAM_DDR_SPEED_BIN {DDR3_1066F} \
+##    CONFIG.PCW_UIPARAM_DDR_TRAIN_DATA_EYE {1} \
+##    CONFIG.PCW_UIPARAM_DDR_TRAIN_READ_GATE {1} \
+##    CONFIG.PCW_UIPARAM_DDR_TRAIN_WRITE_LEVEL {1} \
+##    CONFIG.PCW_UIPARAM_DDR_T_FAW {40.0} \
+##    CONFIG.PCW_UIPARAM_DDR_T_RAS_MIN {35.0} \
+##    CONFIG.PCW_UIPARAM_DDR_T_RC {50.625} \
+##    CONFIG.PCW_UIPARAM_DDR_T_RCD {13.125} \
+##    CONFIG.PCW_UIPARAM_DDR_T_RP {13.125} \
+##    CONFIG.PCW_UIPARAM_DDR_USE_INTERNAL_VREF {0} \
+##    CONFIG.PCW_UIPARAM_GENERATE_SUMMARY {NA} \
+##    CONFIG.PCW_USB0_BASEADDR {0xE0102000} \
+##    CONFIG.PCW_USB0_HIGHADDR {0xE0102fff} \
+##    CONFIG.PCW_USB0_PERIPHERAL_ENABLE {1} \
+##    CONFIG.PCW_USB0_PERIPHERAL_FREQMHZ {60} \
+##    CONFIG.PCW_USB0_RESET_ENABLE {0} \
+##    CONFIG.PCW_USB0_RESET_IO {<Select>} \
+##    CONFIG.PCW_USB0_USB0_IO {MIO 28 .. 39} \
+##    CONFIG.PCW_USB1_BASEADDR {0xE0103000} \
+##    CONFIG.PCW_USB1_HIGHADDR {0xE0103fff} \
+##    CONFIG.PCW_USB1_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_USB1_PERIPHERAL_FREQMHZ {60} \
+##    CONFIG.PCW_USB1_RESET_ENABLE {0} \
+##    CONFIG.PCW_USB1_RESET_IO {<Select>} \
+##    CONFIG.PCW_USB1_USB1_IO {<Select>} \
+##    CONFIG.PCW_USB_RESET_ENABLE {0} \
+##    CONFIG.PCW_USB_RESET_POLARITY {Active Low} \
+##    CONFIG.PCW_USB_RESET_SELECT {<Select>} \
+##    CONFIG.PCW_USE_AXI_FABRIC_IDLE {0} \
+##    CONFIG.PCW_USE_AXI_NONSECURE {0} \
+##    CONFIG.PCW_USE_CORESIGHT {0} \
+##    CONFIG.PCW_USE_CROSS_TRIGGER {0} \
+##    CONFIG.PCW_USE_CR_FABRIC {1} \
+##    CONFIG.PCW_USE_DDR_BYPASS {0} \
+##    CONFIG.PCW_USE_DEBUG {0} \
+##    CONFIG.PCW_USE_DEFAULT_ACP_USER_VAL {0} \
+##    CONFIG.PCW_USE_DMA0 {0} \
+##    CONFIG.PCW_USE_DMA1 {0} \
+##    CONFIG.PCW_USE_DMA2 {0} \
+##    CONFIG.PCW_USE_DMA3 {0} \
+##    CONFIG.PCW_USE_EXPANDED_IOP {0} \
+##    CONFIG.PCW_USE_EXPANDED_PS_SLCR_REGISTERS {0} \
+##    CONFIG.PCW_USE_FABRIC_INTERRUPT {1} \
+##    CONFIG.PCW_USE_HIGH_OCM {0} \
+##    CONFIG.PCW_USE_M_AXI_GP0 {1} \
+##    CONFIG.PCW_USE_M_AXI_GP1 {0} \
+##    CONFIG.PCW_USE_PROC_EVENT_BUS {0} \
+##    CONFIG.PCW_USE_PS_SLCR_REGISTERS {0} \
+##    CONFIG.PCW_USE_S_AXI_ACP {0} \
+##    CONFIG.PCW_USE_S_AXI_GP0 {0} \
+##    CONFIG.PCW_USE_S_AXI_GP1 {0} \
+##    CONFIG.PCW_USE_S_AXI_HP0 {1} \
+##    CONFIG.PCW_USE_S_AXI_HP1 {1} \
+##    CONFIG.PCW_USE_S_AXI_HP2 {1} \
+##    CONFIG.PCW_USE_S_AXI_HP3 {0} \
+##    CONFIG.PCW_USE_TRACE {0} \
+##    CONFIG.PCW_USE_TRACE_DATA_EDGE_DETECTOR {0} \
+##    CONFIG.PCW_VALUE_SILVERSION {3} \
+##    CONFIG.PCW_WDT_PERIPHERAL_CLKSRC {CPU_1X} \
+##    CONFIG.PCW_WDT_PERIPHERAL_DIVISOR0 {1} \
+##    CONFIG.PCW_WDT_PERIPHERAL_ENABLE {0} \
+##    CONFIG.PCW_WDT_PERIPHERAL_FREQMHZ {133.333333} \
+##    CONFIG.PCW_WDT_WDT_IO {<Select>} \
+##  ] $processing_system7_0
+## 
+##   # Create instance: ps7_0_axi_periph, and set properties
+##   set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
+##   set_property -dict [ list \
+##    CONFIG.NUM_MI {2} \
+##    CONFIG.NUM_SI {2} \
+##  ] $ps7_0_axi_periph
+## 
+##   # Create instance: rst_ps7_0_100M, and set properties
+##   set rst_ps7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_100M ]
+## 
+##   # Create interface connections
+##   connect_bd_intf_net -intf_net axi_iic_0_IIC [get_bd_intf_ports arduino_iic] [get_bd_intf_pins axi_iic_0/IIC]
+##   connect_bd_intf_net -intf_net iicstat_0_m_axi_bus_r [get_bd_intf_pins iicstat_0/m_axi_bus_r] [get_bd_intf_pins ps7_0_axi_periph/S01_AXI]
+##   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
+##   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
+##   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
+##   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins iicstat_0/s_axi_outValue_first] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
+##   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins axi_iic_0/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
+## 
+##   # Create port connections
+##   connect_bd_net -net FCLK_CLK0 [get_bd_pins axi_iic_0/s_axi_aclk] [get_bd_pins iicstat_0/ap_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP1_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP2_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins ps7_0_axi_periph/S01_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+##   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
+##   connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
+##   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_iic_0/s_axi_aresetn] [get_bd_pins iicstat_0/ap_rst_n] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins ps7_0_axi_periph/S01_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+## 
+##   # Create address segments
+##   create_bd_addr_seg -range 0x00010000 -offset 0x41600000 [get_bd_addr_spaces iicstat_0/Data_m_axi_bus_r] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
+##   create_bd_addr_seg -range 0x00010000 -offset 0x40010000 [get_bd_addr_spaces iicstat_0/Data_m_axi_bus_r] [get_bd_addr_segs iicstat_0/s_axi_outValue_first/Reg] SEG_iicstat_0_Reg
+##   create_bd_addr_seg -range 0x00010000 -offset 0x41600000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
+##   create_bd_addr_seg -range 0x00010000 -offset 0x40010000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs iicstat_0/s_axi_outValue_first/Reg] SEG_iicstat_0_Reg
+## 
+## 
+##   # Restore current instance
+##   current_bd_instance $oldCurInst
+## 
+## }
+## proc available_tcl_procs { } {
+##    puts "##################################################################"
+##    puts "# Available Tcl procedures to recreate hierarchical blocks:"
+##    puts "#"
+##    puts "#    create_root_design"
+##    puts "#"
+##    puts "#"
+##    puts "# The following procedures will create hiearchical blocks with addressing "
+##    puts "# for IPs within those blocks and their sub-hierarchical blocks. Addressing "
+##    puts "# will not be handled outside those blocks:"
+##    puts "#"
+##    puts "#    create_root_design"
+##    puts "#"
+##    puts "##################################################################"
+## }
+## available_tcl_procs
+##################################################################
+# Available Tcl procedures to recreate hierarchical blocks:
+#
+#    create_root_design
+#
+#
+# The following procedures will create hiearchical blocks with addressing 
+# for IPs within those blocks and their sub-hierarchical blocks. Addressing 
+# will not be handled outside those blocks:
+#
+#    create_root_design
+#
+##################################################################
+# create_root_design ""
+CRITICAL WARNING: [BD 41-737] Cannot set the parameter SUPPORTS_NARROW_BURST on /iicstat_0/s_axi_outValue_first. It is read-only.
+WARNING: [BD 41-1282] Ignoring parameter LAYERED_METADATA
+WARNING: [BD 41-1281] Parameter LAYERED_METADATA is not defined on /iicstat_0/s_axi_outValue_first. Setting parameter on /iicstat_0/s_axi_outValue_first failed
+WARNING: [BD 41-1282] Ignoring parameter LAYERED_METADATA
+WARNING: [BD 41-1281] Parameter LAYERED_METADATA is not defined on /iicstat_0/s_axi_outValue_first. Setting parameter on /iicstat_0/s_axi_outValue_first failed
+CRITICAL WARNING: [BD 41-737] Cannot set the parameter MAX_BURST_LENGTH on /iicstat_0/s_axi_outValue_first. It is read-only.
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+# make_wrapper -files [get_files ./$target/$target.srcs/sources_1/bd/$target/$target.bd] -top
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/iicStat.bd> 
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/ps7_0_axi_periph/s01_couplers/auto_pc/s_axi_awlock'(1) to net 's01_couplers_to_auto_pc_AWLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/ps7_0_axi_periph/s01_couplers/auto_pc/s_axi_arlock'(1) to net 's01_couplers_to_auto_pc_ARLOCK'(2) - Only lower order bits will be connected.
+VHDL Output written to : /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/synth/iicStat.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/ps7_0_axi_periph/s01_couplers/auto_pc/s_axi_awlock'(1) to net 's01_couplers_to_auto_pc_AWLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/ps7_0_axi_periph/s01_couplers/auto_pc/s_axi_arlock'(1) to net 's01_couplers_to_auto_pc_ARLOCK'(2) - Only lower order bits will be connected.
+VHDL Output written to : /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/sim/iicStat.v
+VHDL Output written to : /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/hdl/iicStat_wrapper.v
+# add_files -norecurse ./$target/$target.srcs/sources_1/bd/$target/hdl/$target\_wrapper.v
+# update_compile_order -fileset sources_1
+# set_property top $target\_wrapper [current_fileset]
+# update_compile_order -fileset sources_1
+# add_files -fileset constrs_1 -norecurse ./design.xdc
+# update_compile_order -fileset sources_1
+# if { ${run_type} eq "sweep" } {
+#     set min 0 
+#     set max 400
+#     while {($max - $min) > .5} {
+#         set tgt [ expr {double($max + $min)/2} ]
+#         puts "Testing Frequency: $tgt"
+#         set_property CONFIG.CLKOUT1_REQUESTED_OUT_FREQ $tgt [get_bd_cells plClk]
+#         reset_run synth_1
+#         launch_runs impl_1 -jobs 8 -quiet
+#         wait_on_run impl_1
+#         open_run impl_1
+# 	set mult [ get_property CONFIG.MMCM_CLKFBOUT_MULT_F [get_bd_cells plClk]]
+# 	set div [ get_property CONFIG.MMCM_CLKOUT0_DIVIDE_F [get_bd_cells plClk]]
+# 	set clkin [ get_property CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ [get_bd_cells processing_system7_0] ]
+# 	set act_freq [ expr $clkin * $mult / $div ]
+#         set slack [ get_property SLACK [get_timing_paths]]
+#         puts "Timing Slack @ $tgt: $slack"
+#         if {$slack > 0} {
+#             set min $tgt
+# 	    write_bitstream -force $target.bit
+#         } else {
+#             set max $tgt
+#         }
+#         puts [ expr {$max-$min} ]
+#         close_design
+#     }
+#     archive_project
+# } else {
+#     launch_runs impl_1 -to_step write_bitstream -jobs 4
+#     wait_on_run impl_1
+#     file copy -force ./$target/$target.runs/impl_1/$target\_wrapper.bit $target.bit
+# }
+INFO: [BD 41-1662] The design 'iicStat.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/ps7_0_axi_periph/s01_couplers/auto_pc/s_axi_awlock'(1) to net 's01_couplers_to_auto_pc_AWLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/ps7_0_axi_periph/s01_couplers/auto_pc/s_axi_arlock'(1) to net 's01_couplers_to_auto_pc_ARLOCK'(2) - Only lower order bits will be connected.
+VHDL Output written to : /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/synth/iicStat.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/ps7_0_axi_periph/s01_couplers/auto_pc/s_axi_awlock'(1) to net 's01_couplers_to_auto_pc_AWLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/ps7_0_axi_periph/s01_couplers/auto_pc/s_axi_arlock'(1) to net 's01_couplers_to_auto_pc_ARLOCK'(2) - Only lower order bits will be connected.
+VHDL Output written to : /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/sim/iicStat.v
+VHDL Output written to : /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/hdl/iicStat_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_iic_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block iicstat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_auto_pc_1/iicStat_auto_pc_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s01_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_auto_pc_0/iicStat_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/hw_handoff/iicStat.hwh
+Generated Block Design Tcl file /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/hw_handoff/iicStat_bd.tcl
+Generated Hardware Definition File /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/synth/iicStat.hwdef
+[Fri Aug  3 11:02:24 2018] Launched iicStat_rst_ps7_0_100M_0_synth_1, iicStat_processing_system7_0_0_synth_1, iicStat_iicstat_0_0_synth_1, iicStat_auto_pc_0_synth_1, iicStat_axi_iic_0_0_synth_1, iicStat_xbar_0_synth_1, iicStat_auto_pc_1_synth_1, synth_1...
+Run output will be captured here:
+iicStat_rst_ps7_0_100M_0_synth_1: /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/iicStat_rst_ps7_0_100M_0_synth_1/runme.log
+iicStat_processing_system7_0_0_synth_1: /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/iicStat_processing_system7_0_0_synth_1/runme.log
+iicStat_iicstat_0_0_synth_1: /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/iicStat_iicstat_0_0_synth_1/runme.log
+iicStat_auto_pc_0_synth_1: /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/iicStat_auto_pc_0_synth_1/runme.log
+iicStat_axi_iic_0_0_synth_1: /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/iicStat_axi_iic_0_0_synth_1/runme.log
+iicStat_xbar_0_synth_1: /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/iicStat_xbar_0_synth_1/runme.log
+iicStat_auto_pc_1_synth_1: /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/iicStat_auto_pc_1_synth_1/runme.log
+synth_1: /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/synth_1/runme.log
+[Fri Aug  3 11:02:25 2018] Launched impl_1...
+Run output will be captured here: /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1512.711 ; gain = 106.863 ; free physical = 129098 ; free virtual = 505180
+[Fri Aug  3 11:02:25 2018] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log iicStat_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source iicStat_wrapper.tcl -notrace
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source iicStat_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iavendano/pynq-copter/pynqcopter/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
+Command: link_design -top iicStat_wrapper -part xc7z020clg400-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_axi_iic_0_0/iicStat_axi_iic_0_0.dcp' for cell 'iicStat_i/axi_iic_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_iicstat_0_0/iicStat_iicstat_0_0.dcp' for cell 'iicStat_i/iicstat_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_processing_system7_0_0/iicStat_processing_system7_0_0.dcp' for cell 'iicStat_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_rst_ps7_0_100M_0/iicStat_rst_ps7_0_100M_0.dcp' for cell 'iicStat_i/rst_ps7_0_100M'
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_xbar_0/iicStat_xbar_0.dcp' for cell 'iicStat_i/ps7_0_axi_periph/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_auto_pc_0/iicStat_auto_pc_0.dcp' for cell 'iicStat_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_auto_pc_1/iicStat_auto_pc_1.dcp' for cell 'iicStat_i/ps7_0_axi_periph/s01_couplers/auto_pc'
+INFO: [Netlist 29-17] Analyzing 80 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_axi_iic_0_0/iicStat_axi_iic_0_0_board.xdc] for cell 'iicStat_i/axi_iic_0/U0'
+Finished Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_axi_iic_0_0/iicStat_axi_iic_0_0_board.xdc] for cell 'iicStat_i/axi_iic_0/U0'
+Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_processing_system7_0_0/iicStat_processing_system7_0_0.xdc] for cell 'iicStat_i/processing_system7_0/inst'
+Finished Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_processing_system7_0_0/iicStat_processing_system7_0_0.xdc] for cell 'iicStat_i/processing_system7_0/inst'
+Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_rst_ps7_0_100M_0/iicStat_rst_ps7_0_100M_0_board.xdc] for cell 'iicStat_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_rst_ps7_0_100M_0/iicStat_rst_ps7_0_100M_0_board.xdc] for cell 'iicStat_i/rst_ps7_0_100M/U0'
+Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_rst_ps7_0_100M_0/iicStat_rst_ps7_0_100M_0.xdc] for cell 'iicStat_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.srcs/sources_1/bd/iicStat/ip/iicStat_rst_ps7_0_100M_0/iicStat_rst_ps7_0_100M_0.xdc] for cell 'iicStat_i/rst_ps7_0_100M/U0'
+Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc]
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[0]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[1]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[2]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[3]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[4]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[5]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[6]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[7]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[8]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[9]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[10]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[11]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[12]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[13]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[14]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[15]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[16]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[17]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[18]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[19]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[*]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[1]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:79]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:79]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[0]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:80]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:80]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[3]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:81]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:81]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[2]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:82]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:82]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[5]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:83]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:83]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[4]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:84]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:84]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[7]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[6]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:86]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[2]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[3]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[6]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[7]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[1]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[0]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[3]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:95]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[2]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:96]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:96]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[5]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:97]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[4]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:98]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:98]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[7]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:99]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:99]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[6]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:100]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:100]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[2]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:101]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:101]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[3]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:102]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:102]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[6]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:103]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:103]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[7]'. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:104]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc:104]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicStat/design.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+
+17 Infos, 45 Warnings, 45 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:34 . Memory (MB): peak = 1557.480 ; gain = 382.527 ; free physical = 128598 ; free virtual = 504696
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1628.504 ; gain = 71.023 ; free physical = 128587 ; free virtual = 504685
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1c1f0914f
+
+Time (s): cpu = 00:00:00.48 ; elapsed = 00:00:00.29 . Memory (MB): peak = 2089.996 ; gain = 0.000 ; free physical = 128191 ; free virtual = 504288
+INFO: [Opt 31-389] Phase Retarget created 165 cells and removed 204 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 10d727657
+
+Time (s): cpu = 00:00:00.64 ; elapsed = 00:00:00.45 . Memory (MB): peak = 2089.996 ; gain = 0.000 ; free physical = 128191 ; free virtual = 504288
+INFO: [Opt 31-389] Phase Constant propagation created 127 cells and removed 387 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 1176fe9a1
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.88 . Memory (MB): peak = 2089.996 ; gain = 0.000 ; free physical = 128174 ; free virtual = 504272
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 354 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 1176fe9a1
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.94 . Memory (MB): peak = 2089.996 ; gain = 0.000 ; free physical = 128188 ; free virtual = 504285
+INFO: [Opt 31-389] Phase BUFG optimization created 0 cells and removed 0 cells
+
+Phase 5 Shift Register Optimization
+Phase 5 Shift Register Optimization | Checksum: 1176fe9a1
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2089.996 ; gain = 0.000 ; free physical = 128179 ; free virtual = 504276
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2089.996 ; gain = 0.000 ; free physical = 128187 ; free virtual = 504285
+Ending Logic Optimization Task | Checksum: 16f769f0e
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2089.996 ; gain = 0.000 ; free physical = 128187 ; free virtual = 504285
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=4.022 | TNS=0.000 |
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 1 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 0 Total Ports: 2
+Ending PowerOpt Patch Enables Task | Checksum: 208ecf8f4
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2444.219 ; gain = 0.000 ; free physical = 128166 ; free virtual = 504263
+Ending Power Optimization Task | Checksum: 208ecf8f4
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2444.219 ; gain = 354.223 ; free physical = 128170 ; free virtual = 504268
+INFO: [Common 17-83] Releasing license: Implementation
+38 Infos, 45 Warnings, 45 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:31 . Memory (MB): peak = 2444.219 ; gain = 886.738 ; free physical = 128170 ; free virtual = 504268
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2444.219 ; gain = 0.000 ; free physical = 128159 ; free virtual = 504258
+INFO: [Common 17-1381] The checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/impl_1/iicStat_wrapper_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file iicStat_wrapper_drc_opted.rpt -pb iicStat_wrapper_drc_opted.pb -rpx iicStat_wrapper_drc_opted.rpx
+Command: report_drc -file iicStat_wrapper_drc_opted.rpt -pb iicStat_wrapper_drc_opted.pb -rpx iicStat_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/impl_1/iicStat_wrapper_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Chipscope 16-241] No debug cores found in the current design.
+Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
+or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2444.219 ; gain = 0.000 ; free physical = 128176 ; free virtual = 504275
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 14e0bc27a
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2444.219 ; gain = 0.000 ; free physical = 128176 ; free virtual = 504275
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2444.219 ; gain = 0.000 ; free physical = 128182 ; free virtual = 504280
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: b3104bc7
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2444.219 ; gain = 0.000 ; free physical = 128175 ; free virtual = 504274
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: c77a126c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2444.219 ; gain = 0.000 ; free physical = 128170 ; free virtual = 504268
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: c77a126c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2444.219 ; gain = 0.000 ; free physical = 128170 ; free virtual = 504268
+Phase 1 Placer Initialization | Checksum: c77a126c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2444.219 ; gain = 0.000 ; free physical = 128170 ; free virtual = 504268
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 18d26b168
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128145 ; free virtual = 504243
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 18d26b168
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128145 ; free virtual = 504243
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: ce6c070f
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128146 ; free virtual = 504244
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: ed05faf9
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128146 ; free virtual = 504244
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 177d70856
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128146 ; free virtual = 504244
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 1ab8abb3f
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128142 ; free virtual = 504241
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 1c1c4e6b3
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128144 ; free virtual = 504243
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 8a69e01c
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128144 ; free virtual = 504243
+Phase 3 Detail Placement | Checksum: 8a69e01c
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128144 ; free virtual = 504243
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 6e21b44d
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Place 46-31] BUFG insertion identified 0 candidate nets, 0 success, 0 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 6e21b44d
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128138 ; free virtual = 504237
+INFO: [Place 30-746] Post Placement Timing Summary WNS=3.949. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 5a6ea938
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128137 ; free virtual = 504235
+Phase 4.1 Post Commit Optimization | Checksum: 5a6ea938
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128135 ; free virtual = 504234
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 5a6ea938
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128133 ; free virtual = 504232
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 5a6ea938
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128130 ; free virtual = 504229
+
+Phase 4.4 Final Placement Cleanup
+Phase 4.4 Final Placement Cleanup | Checksum: 117dbd5e5
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128129 ; free virtual = 504228
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 117dbd5e5
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128147 ; free virtual = 504246
+Ending Placer Task | Checksum: 1147ff7ec
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128161 ; free virtual = 504260
+INFO: [Common 17-83] Releasing license: Implementation
+60 Infos, 45 Warnings, 45 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:09 . Memory (MB): peak = 2444.301 ; gain = 0.082 ; free physical = 128159 ; free virtual = 504258
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.66 ; elapsed = 00:00:00.24 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 128150 ; free virtual = 504254
+INFO: [Common 17-1381] The checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/impl_1/iicStat_wrapper_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file iicStat_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 128152 ; free virtual = 504252
+INFO: [runtcl-4] Executing : report_utilization -file iicStat_wrapper_utilization_placed.rpt -pb iicStat_wrapper_utilization_placed.pb
+report_utilization: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.27 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 128160 ; free virtual = 504261
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file iicStat_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 128150 ; free virtual = 504251
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: 2a0c3456 ConstDB: 0 ShapeSum: ea73c396 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: d898e212
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127965 ; free virtual = 504066
+Post Restoration Checksum: NetGraph: b3e20118 NumContArr: 24b6e0fa Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: d898e212
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127963 ; free virtual = 504064
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: d898e212
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127927 ; free virtual = 504028
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: d898e212
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127924 ; free virtual = 504025
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 194c03ec2
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:18 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127941 ; free virtual = 504042
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.946  | TNS=0.000  | WHS=-0.146 | THS=-39.779|
+
+Phase 2 Router Initialization | Checksum: 1dd3dff4d
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:18 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127941 ; free virtual = 504041
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: ede1dbe6
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:19 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127941 ; free virtual = 504042
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 279
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.267  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1b001a8c2
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:19 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127930 ; free virtual = 504031
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.267  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 91d8c259
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:19 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127931 ; free virtual = 504031
+Phase 4 Rip-up And Reroute | Checksum: 91d8c259
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:19 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127938 ; free virtual = 504038
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 91d8c259
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:19 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127937 ; free virtual = 504038
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 91d8c259
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:19 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127936 ; free virtual = 504037
+Phase 5 Delay and Skew Optimization | Checksum: 91d8c259
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:19 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127935 ; free virtual = 504036
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: faae45fc
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:19 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127925 ; free virtual = 504025
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.431  | TNS=0.000  | WHS=0.020  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 155c49ce7
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:19 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127923 ; free virtual = 504024
+Phase 6 Post Hold Fix | Checksum: 155c49ce7
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:19 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127920 ; free virtual = 504020
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.447085 %
+  Global Horizontal Routing Utilization  = 0.602857 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 128ee81a9
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:20 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127937 ; free virtual = 504037
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 128ee81a9
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:20 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127935 ; free virtual = 504035
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: dad2fead
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:20 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127936 ; free virtual = 504037
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=3.431  | TNS=0.000  | WHS=0.020  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: dad2fead
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:20 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127936 ; free virtual = 504037
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:20 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127971 ; free virtual = 504072
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+77 Infos, 45 Warnings, 45 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:22 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127971 ; free virtual = 504072
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.53 ; elapsed = 00:00:00.19 . Memory (MB): peak = 2444.301 ; gain = 0.000 ; free physical = 127962 ; free virtual = 504070
+INFO: [Common 17-1381] The checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/impl_1/iicStat_wrapper_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file iicStat_wrapper_drc_routed.rpt -pb iicStat_wrapper_drc_routed.pb -rpx iicStat_wrapper_drc_routed.rpx
+Command: report_drc -file iicStat_wrapper_drc_routed.rpt -pb iicStat_wrapper_drc_routed.pb -rpx iicStat_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/impl_1/iicStat_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file iicStat_wrapper_methodology_drc_routed.rpt -pb iicStat_wrapper_methodology_drc_routed.pb -rpx iicStat_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file iicStat_wrapper_methodology_drc_routed.rpt -pb iicStat_wrapper_methodology_drc_routed.pb -rpx iicStat_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/impl_1/iicStat_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file iicStat_wrapper_power_routed.rpt -pb iicStat_wrapper_power_summary_routed.pb -rpx iicStat_wrapper_power_routed.rpx
+Command: report_power -file iicStat_wrapper_power_routed.rpt -pb iicStat_wrapper_power_summary_routed.pb -rpx iicStat_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+89 Infos, 45 Warnings, 45 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file iicStat_wrapper_route_status.rpt -pb iicStat_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file iicStat_wrapper_timing_summary_routed.rpt -rpx iicStat_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file iicStat_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-545] No incremental reuse to report, no incremental placement and routing data was found.
+INFO: [runtcl-4] Executing : report_clock_utilization -file iicStat_wrapper_clock_utilization_routed.rpt
+Command: write_bitstream -force iicStat_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Project 1-821] Please set project.enableDesignId to be 'true'.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./iicStat_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-118] WebTalk data collection is enabled (User setting is ON. Install Setting is ON.).
+INFO: [Common 17-186] '/home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Fri Aug  3 11:11:42 2018. For additional details about this file, please refer to the WebTalk help file at /data/opt/Xilinx/Vivado/2017.4/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+107 Infos, 45 Warnings, 45 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:17 ; elapsed = 00:02:21 . Memory (MB): peak = 2688.586 ; gain = 236.258 ; free physical = 128633 ; free virtual = 504737
+INFO: [Common 17-206] Exiting Vivado at Fri Aug  3 11:11:42 2018...
+[Fri Aug  3 11:11:48 2018] impl_1 finished
+wait_on_run: Time (s): cpu = 00:07:56 ; elapsed = 00:09:23 . Memory (MB): peak = 1512.711 ; gain = 0.000 ; free physical = 129737 ; free virtual = 505841
+INFO: [Common 17-206] Exiting Vivado at Fri Aug  3 11:11:48 2018...

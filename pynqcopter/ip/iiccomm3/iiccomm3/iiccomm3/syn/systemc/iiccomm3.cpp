@@ -88,8 +88,9 @@ iiccomm3::iiccomm3(sc_module_name name) : sc_module(name), mVcdFile(0) {
     iiccomm3_outValue_first_s_axi_U->ACLK(ap_clk);
     iiccomm3_outValue_first_s_axi_U->ARESET(ap_rst_n_inv);
     iiccomm3_outValue_first_s_axi_U->ACLK_EN(ap_var_for_const0);
-    iiccomm3_outValue_first_s_axi_U->outValue(iic_addr_read_reg_66);
-    iiccomm3_outValue_first_s_axi_U->outValue_ap_vld(outValue_ap_vld);
+    iiccomm3_outValue_first_s_axi_U->outValue_o(val1_fu_38);
+    iiccomm3_outValue_first_s_axi_U->outValue_o_ap_vld(outValue_o_ap_vld);
+    iiccomm3_outValue_first_s_axi_U->outValue_i(outValue_i);
     iiccomm3_iic_m_axi_U = new iiccomm3_iic_m_axi<32,32,5,16,16,16,16,C_M_AXI_IIC_ID_WIDTH,C_M_AXI_IIC_ADDR_WIDTH,C_M_AXI_IIC_DATA_WIDTH,C_M_AXI_IIC_AWUSER_WIDTH,C_M_AXI_IIC_ARUSER_WIDTH,C_M_AXI_IIC_WUSER_WIDTH,C_M_AXI_IIC_RUSER_WIDTH,C_M_AXI_IIC_BUSER_WIDTH,C_M_AXI_IIC_TARGET_ADDR,C_M_AXI_IIC_USER_VALUE,C_M_AXI_IIC_PROT_VALUE,C_M_AXI_IIC_CACHE_VALUE>("iiccomm3_iic_m_axi_U");
     iiccomm3_iic_m_axi_U->AWVALID(m_axi_iic_AWVALID);
     iiccomm3_iic_m_axi_U->AWREADY(m_axi_iic_AWREADY);
@@ -238,7 +239,7 @@ iiccomm3::iiccomm3(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( m_axi_iic_RVALID );
     sensitive << ( ap_CS_fsm_state8 );
 
-    SC_METHOD(thread_outValue_ap_vld);
+    SC_METHOD(thread_outValue_o_ap_vld);
     sensitive << ( ap_CS_fsm_state9 );
 
     SC_METHOD(thread_ap_NS_fsm);
@@ -369,7 +370,8 @@ iiccomm3::iiccomm3(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, ap_CS_fsm, "ap_CS_fsm");
     sc_trace(mVcdFile, ap_CS_fsm_state1, "ap_CS_fsm_state1");
     sc_trace(mVcdFile, ap_ready, "ap_ready");
-    sc_trace(mVcdFile, outValue_ap_vld, "outValue_ap_vld");
+    sc_trace(mVcdFile, outValue_i, "outValue_i");
+    sc_trace(mVcdFile, outValue_o_ap_vld, "outValue_o_ap_vld");
     sc_trace(mVcdFile, iic_blk_n_AR, "iic_blk_n_AR");
     sc_trace(mVcdFile, iic_blk_n_R, "iic_blk_n_R");
     sc_trace(mVcdFile, ap_CS_fsm_state8, "ap_CS_fsm_state8");
@@ -390,8 +392,8 @@ iiccomm3::iiccomm3(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, iic_BID, "iic_BID");
     sc_trace(mVcdFile, iic_BUSER, "iic_BUSER");
     sc_trace(mVcdFile, ap_sig_ioackin_iic_ARREADY, "ap_sig_ioackin_iic_ARREADY");
-    sc_trace(mVcdFile, iic_addr_read_reg_66, "iic_addr_read_reg_66");
     sc_trace(mVcdFile, ap_reg_ioackin_iic_ARREADY, "ap_reg_ioackin_iic_ARREADY");
+    sc_trace(mVcdFile, val1_fu_38, "val1_fu_38");
     sc_trace(mVcdFile, ap_CS_fsm_state9, "ap_CS_fsm_state9");
     sc_trace(mVcdFile, ap_NS_fsm, "ap_NS_fsm");
 #endif
@@ -465,7 +467,7 @@ void iiccomm3::thread_ap_clk_no_reset_() {
         }
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read()) && esl_seteq<1,1,1>(iic_RVALID.read(), ap_const_logic_1))) {
-        iic_addr_read_reg_66 = iic_RDATA.read();
+        val1_fu_38 = iic_RDATA.read();
     }
 }
 
@@ -558,11 +560,11 @@ void iiccomm3::thread_iic_blk_n_R() {
     }
 }
 
-void iiccomm3::thread_outValue_ap_vld() {
+void iiccomm3::thread_outValue_o_ap_vld() {
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state9.read())) {
-        outValue_ap_vld = ap_const_logic_1;
+        outValue_o_ap_vld = ap_const_logic_1;
     } else {
-        outValue_ap_vld = ap_const_logic_0;
+        outValue_o_ap_vld = ap_const_logic_0;
     }
 }
 

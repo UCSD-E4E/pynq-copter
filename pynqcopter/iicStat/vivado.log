@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Aug  3 11:14:48 2018
+# Process ID: 6477
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/iicStat
+# Command line: vivado iicStat/iicStat.xpr
+# Log file: /home/iavendano/pynq-copter/pynqcopter/iicStat/vivado.log
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/iicStat/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project iicStat/iicStat.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iavendano/pynq-copter/pynqcopter/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
+open_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:09 . Memory (MB): peak = 6244.238 ; gain = 97.805 ; free physical = 129493 ; free virtual = 505601
+update_compile_order -fileset sources_1
+file mkdir /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.sdk
+write_hwdef -force  -file /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.sdk/iicStat_wrapper.hdf
+launch_sdk -workspace /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.sdk -hwspec /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.sdk/iicStat_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.sdk -hwspec /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.sdk/iicStat_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Aug  3 11:41:00 2018...

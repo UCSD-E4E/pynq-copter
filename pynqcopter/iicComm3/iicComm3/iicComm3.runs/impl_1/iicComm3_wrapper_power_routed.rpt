@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Fri Aug  3 00:14:28 2018
+| Date             : Fri Aug  3 11:57:03 2018
 | Host             : fabricant running 64-bit Linux Mint 18 Sarah
 | Command          : report_power -file iicComm3_wrapper_power_routed.rpt -pb iicComm3_wrapper_power_summary_routed.pb -rpx iicComm3_wrapper_power_routed.rpx
 | Design           : iicComm3_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.418        |
+| Total On-Chip Power (W)  | 1.419        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 1.285        |
@@ -52,20 +52,20 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.006 |        4 |       --- |             --- |
-| Slice Logic             |     0.002 |     3454 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     1256 |     53200 |            2.36 |
+| Clocks                  |     0.007 |        4 |       --- |             --- |
+| Slice Logic             |     0.002 |     3450 |       --- |             --- |
+|   LUT as Logic          |     0.002 |     1253 |     53200 |            2.36 |
 |   CARRY4                |    <0.001 |       68 |     13300 |            0.51 |
 |   Register              |    <0.001 |     1478 |    106400 |            1.39 |
-|   LUT as Shift Register |    <0.001 |       69 |     17400 |            0.40 |
+|   LUT as Shift Register |    <0.001 |       71 |     17400 |            0.41 |
 |   F7/F8 Muxes           |    <0.001 |        2 |     53200 |           <0.01 |
-|   Others                |     0.000 |      274 |       --- |             --- |
-| Signals                 |     0.003 |     2533 |       --- |             --- |
+|   Others                |     0.000 |      273 |       --- |             --- |
+| Signals                 |     0.003 |     2525 |       --- |             --- |
 | Block RAM               |     0.003 |      0.5 |       140 |            0.36 |
 | I/O                     |     0.000 |        6 |       125 |            4.80 |
 | PS7                     |     1.270 |        1 |       --- |             --- |
 | Static Power            |     0.133 |          |           |                 |
-| Total                   |     1.418 |          |           |                 |
+| Total                   |     1.419 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.027 |       0.014 |      0.013 |
+| Vccint    |       1.000 |     0.028 |       0.015 |      0.013 |
 | Vccaux    |       1.800 |     0.014 |       0.000 |      0.014 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |

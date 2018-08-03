@@ -143,7 +143,8 @@ struct iiccomm3 : public sc_module {
     sc_signal< sc_lv<9> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
     sc_signal< sc_logic > ap_ready;
-    sc_signal< sc_logic > outValue_ap_vld;
+    sc_signal< sc_lv<32> > outValue_i;
+    sc_signal< sc_logic > outValue_o_ap_vld;
     sc_signal< sc_logic > iic_blk_n_AR;
     sc_signal< sc_logic > iic_blk_n_R;
     sc_signal< sc_logic > ap_CS_fsm_state8;
@@ -164,8 +165,8 @@ struct iiccomm3 : public sc_module {
     sc_signal< sc_lv<1> > iic_BID;
     sc_signal< sc_lv<1> > iic_BUSER;
     sc_signal< sc_logic > ap_sig_ioackin_iic_ARREADY;
-    sc_signal< sc_lv<32> > iic_addr_read_reg_66;
     sc_signal< sc_logic > ap_reg_ioackin_iic_ARREADY;
+    sc_signal< sc_lv<32> > val1_fu_38;
     sc_signal< sc_logic > ap_CS_fsm_state9;
     sc_signal< sc_lv<9> > ap_NS_fsm;
     static const sc_logic ap_const_logic_1;
@@ -218,7 +219,7 @@ struct iiccomm3 : public sc_module {
     void thread_iic_RREADY();
     void thread_iic_blk_n_AR();
     void thread_iic_blk_n_R();
-    void thread_outValue_ap_vld();
+    void thread_outValue_o_ap_vld();
     void thread_ap_NS_fsm();
     void thread_hdltv_gen();
 };

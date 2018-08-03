@@ -15,18 +15,22 @@ declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 define void @iiccomm3(i32* %iic, i32* %outValue) {
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %iic), !map !20
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue) nounwind, !map !26
+  %val1 = alloca i32, align 4
   call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @iiccomm3_str) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32* %iic, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+  %outValue_load = call i32 @_ssdm_op_Read.s_axilite.volatile.i32P(i32* %outValue)
   call void (...)* @_ssdm_op_SpecInterface(i32* %outValue, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [15 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   %iic_addr = getelementptr i32* %iic, i64 268438593
   %iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)
-  %iic_addr_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %iic_addr)
-  call void @_ssdm_op_Write.s_axilite.i32P(i32* %outValue, i32 %iic_addr_read)
+  %iic_addr_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr)
+  store volatile i32 %iic_addr_read, i32* %val1, align 4
+  %val1_load = load volatile i32* %val1, align 4
+  call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue, i32 %val1_load)
   ret void
 }
 
-define weak void @_ssdm_op_Write.s_axilite.i32P(i32*, i32) {
+define weak void @_ssdm_op_Write.s_axilite.volatile.i32P(i32*, i32) {
 entry:
   store i32 %1, i32* %0
   ret void
@@ -52,7 +56,13 @@ entry:
   ret i1 true
 }
 
-define weak i32 @_ssdm_op_Read.m_axi.i32P(i32*) {
+define weak i32 @_ssdm_op_Read.s_axilite.volatile.i32P(i32*) {
+entry:
+  %empty = load i32* %0
+  ret i32 %empty
+}
+
+define weak i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32*) {
 entry:
   %empty = load i32* %0
   ret i32 %empty
@@ -65,8 +75,8 @@ entry:
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
 !1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0}
 !2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none"}
-!3 = metadata !{metadata !"kernel_arg_type", metadata !"uint32_t*", metadata !"uint32_t &"}
-!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !""}
+!3 = metadata !{metadata !"kernel_arg_type", metadata !"uint32_t*", metadata !"volatile uint32_t &"}
+!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"volatile", metadata !""}
 !5 = metadata !{metadata !"kernel_arg_name", metadata !"iic", metadata !"outValue"}
 !6 = metadata !{metadata !"reqd_work_group_size", i32 1, i32 1, i32 1}
 !7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}

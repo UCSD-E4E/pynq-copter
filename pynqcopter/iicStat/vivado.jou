@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Aug  3 11:14:48 2018
+# Process ID: 6477
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/iicStat
+# Command line: vivado iicStat/iicStat.xpr
+# Log file: /home/iavendano/pynq-copter/pynqcopter/iicStat/vivado.log
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/iicStat/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project iicStat/iicStat.xpr
+update_compile_order -fileset sources_1
+file mkdir /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.sdk
+write_hwdef -force  -file /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.sdk/iicStat_wrapper.hdf
+launch_sdk -workspace /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.sdk -hwspec /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.sdk/iicStat_wrapper.hdf

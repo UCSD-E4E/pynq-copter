@@ -45,6 +45,6 @@
 #define IIC_STATUS_REG (0x104/sizeof(uint32_t))
 
 //void iiccomm(volatile int *bus, volatile int &outValue);
-void iiccomm3(uint32_t iic[4096], uint32_t &outValue);
+void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t &outValue);
 
 #endif

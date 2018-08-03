@@ -77,23 +77,40 @@ void XIiccomm3_DisableAutoRestart(XIiccomm3 *InstancePtr) {
     XIiccomm3_WriteReg(InstancePtr->Axilites_BaseAddress, XIICCOMM3_AXILITES_ADDR_AP_CTRL, 0);
 }
 
-u32 XIiccomm3_Get_outValue(XIiccomm3 *InstancePtr) {
+void XIiccomm3_Set_outValue_i(XIiccomm3 *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XIiccomm3_WriteReg(InstancePtr->Outvalue_first_BaseAddress, XIICCOMM3_OUTVALUE_FIRST_ADDR_OUTVALUE_I_DATA, Data);
+}
+
+u32 XIiccomm3_Get_outValue_i(XIiccomm3 *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XIiccomm3_ReadReg(InstancePtr->Outvalue_first_BaseAddress, XIICCOMM3_OUTVALUE_FIRST_ADDR_OUTVALUE_DATA);
+    Data = XIiccomm3_ReadReg(InstancePtr->Outvalue_first_BaseAddress, XIICCOMM3_OUTVALUE_FIRST_ADDR_OUTVALUE_I_DATA);
     return Data;
 }
 
-u32 XIiccomm3_Get_outValue_vld(XIiccomm3 *InstancePtr) {
+u32 XIiccomm3_Get_outValue_o(XIiccomm3 *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XIiccomm3_ReadReg(InstancePtr->Outvalue_first_BaseAddress, XIICCOMM3_OUTVALUE_FIRST_ADDR_OUTVALUE_CTRL);
+    Data = XIiccomm3_ReadReg(InstancePtr->Outvalue_first_BaseAddress, XIICCOMM3_OUTVALUE_FIRST_ADDR_OUTVALUE_O_DATA);
+    return Data;
+}
+
+u32 XIiccomm3_Get_outValue_o_vld(XIiccomm3 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm3_ReadReg(InstancePtr->Outvalue_first_BaseAddress, XIICCOMM3_OUTVALUE_FIRST_ADDR_OUTVALUE_O_CTRL);
     return Data & 0x1;
 }
 

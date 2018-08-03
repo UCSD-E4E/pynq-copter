@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'iiccomm3'
 ================================================================
-* Date:           Fri Aug  3 00:06:23 2018
+* Date:           Fri Aug  3 11:45:25 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        iiccomm3
@@ -91,39 +91,43 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
  <State 1> : 3.50ns
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%iic_addr = getelementptr i32* %iic, i64 268438593"
-ST_1 : Operation 11 [7/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%val1 = alloca i32, align 4"
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%iic_addr = getelementptr i32* %iic, i64 268438593"
+ST_1 : Operation 12 [7/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 2> : 3.50ns
-ST_2 : Operation 12 [6/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 13 [6/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 3> : 3.50ns
-ST_3 : Operation 13 [5/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 14 [5/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 4> : 3.50ns
-ST_4 : Operation 14 [4/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 15 [4/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 5> : 3.50ns
-ST_5 : Operation 15 [3/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 16 [3/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 6> : 3.50ns
-ST_6 : Operation 16 [2/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 17 [2/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 7> : 3.50ns
-ST_7 : Operation 17 [1/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 18 [1/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 8> : 3.50ns
-ST_8 : Operation 18 [1/1] (3.50ns)   --->   "%iic_addr_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %iic_addr)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 19 [1/1] (1.00ns)   --->   "%outValue_load = call i32 @_ssdm_op_Read.s_axilite.volatile.i32P(i32* %outValue)" [iiccomm3.cpp:50]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_8 : Operation 20 [1/1] (3.50ns)   --->   "%iic_addr_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr)" [iiccomm3.cpp:53]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 21 [1/1] (0.00ns)   --->   "store volatile i32 %iic_addr_read, i32* %val1, align 4" [iiccomm3.cpp:53]
 
  <State 9> : 1.00ns
-ST_9 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %iic), !map !20"
-ST_9 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue) nounwind, !map !26"
-ST_9 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @iiccomm3_str) nounwind"
-ST_9 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm3.cpp:46]
-ST_9 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %iic, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
-ST_9 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [15 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm3.cpp:50]
-ST_9 : Operation 25 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %outValue, i32 %iic_addr_read)" [iiccomm3.cpp:54]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_9 : Operation 26 [1/1] (0.00ns)   --->   "ret void" [iiccomm3.cpp:56]
+ST_9 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %iic), !map !20"
+ST_9 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue) nounwind, !map !26"
+ST_9 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @iiccomm3_str) nounwind"
+ST_9 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm3.cpp:46]
+ST_9 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %iic, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
+ST_9 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [15 x i8]* @p_str3, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm3.cpp:50]
+ST_9 : Operation 28 [1/1] (0.00ns)   --->   "%val1_load = load volatile i32* %val1, align 4" [iiccomm3.cpp:54]
+ST_9 : Operation 29 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue, i32 %val1_load)" [iiccomm3.cpp:54]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_9 : Operation 30 [1/1] (0.00ns)   --->   "ret void" [iiccomm3.cpp:56]
 
 
 ============================================================
@@ -138,24 +142,28 @@ STG Binding:
 - Is top level: 1
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
 Port [ iic]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
-Port [ outValue]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=ap_vld:ce=0
+Port [ outValue]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=0; pingpong=0; private_global=0; IO mode=ap_ovld:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
 
 <LifeTime>
 <method=bitvector/>
+val1          (alloca       ) [ 0011111111]
 iic_addr      (getelementptr) [ 0011111110]
 iic_load_req  (readreq      ) [ 0000000000]
-iic_addr_read (read         ) [ 0000000001]
-StgValue_19   (specbitsmap  ) [ 0000000000]
-StgValue_20   (specbitsmap  ) [ 0000000000]
-StgValue_21   (spectopmodule) [ 0000000000]
-StgValue_22   (specinterface) [ 0000000000]
-StgValue_23   (specinterface) [ 0000000000]
-StgValue_24   (specinterface) [ 0000000000]
-StgValue_25   (write        ) [ 0000000000]
-StgValue_26   (ret          ) [ 0000000000]
+outValue_load (read         ) [ 0000000000]
+iic_addr_read (read         ) [ 0000000000]
+StgValue_21   (store        ) [ 0000000000]
+StgValue_22   (specbitsmap  ) [ 0000000000]
+StgValue_23   (specbitsmap  ) [ 0000000000]
+StgValue_24   (spectopmodule) [ 0000000000]
+StgValue_25   (specinterface) [ 0000000000]
+StgValue_26   (specinterface) [ 0000000000]
+StgValue_27   (specinterface) [ 0000000000]
+val1_load     (load         ) [ 0000000000]
+StgValue_29   (write        ) [ 0000000000]
+StgValue_30   (ret          ) [ 0000000000]
 </LifeTime>
 
 <model>
@@ -193,7 +201,7 @@ StgValue_26   (ret          ) [ 0000000000]
 <pin id="7" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_ReadReq.m_axi.i32P"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -202,7 +210,7 @@ StgValue_26   (ret          ) [ 0000000000]
 <pin id="9" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_ReadReq.m_axi.i32P"/></StgValue>
 </bind>
 </comp>
 
@@ -211,25 +219,25 @@ StgValue_26   (ret          ) [ 0000000000]
 <pin id="11" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.m_axi.i32P"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
 <comp id="12" class="1001" name="const_12">
 <pin_list>
-<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.s_axilite.volatile.i32P"/></StgValue>
 </bind>
 </comp>
 
 <comp id="14" class="1001" name="const_14">
 <pin_list>
-<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.m_axi.volatile.i32P"/></StgValue>
 </bind>
 </comp>
 
@@ -238,7 +246,7 @@ StgValue_26   (ret          ) [ 0000000000]
 <pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="iiccomm3_str"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
 </bind>
 </comp>
 
@@ -247,7 +255,7 @@ StgValue_26   (ret          ) [ 0000000000]
 <pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
 </bind>
 </comp>
 
@@ -256,7 +264,7 @@ StgValue_26   (ret          ) [ 0000000000]
 <pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="iiccomm3_str"/></StgValue>
 </bind>
 </comp>
 
@@ -265,7 +273,7 @@ StgValue_26   (ret          ) [ 0000000000]
 <pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
 </bind>
 </comp>
 
@@ -274,7 +282,7 @@ StgValue_26   (ret          ) [ 0000000000]
 <pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str1"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -283,7 +291,7 @@ StgValue_26   (ret          ) [ 0000000000]
 <pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str2"/></StgValue>
+<StgValue><ssdm name="p_str"/></StgValue>
 </bind>
 </comp>
 
@@ -292,7 +300,7 @@ StgValue_26   (ret          ) [ 0000000000]
 <pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="p_str1"/></StgValue>
 </bind>
 </comp>
 
@@ -301,25 +309,54 @@ StgValue_26   (ret          ) [ 0000000000]
 <pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str3"/></StgValue>
+<StgValue><ssdm name="p_str2"/></StgValue>
 </bind>
 </comp>
 
 <comp id="32" class="1001" name="const_32">
 <pin_list>
-<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+<pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Write.s_axilite.i32P"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
-<comp id="34" class="1004" name="grp_readreq_fu_34">
+<comp id="34" class="1001" name="const_34">
 <pin_list>
-<pin id="35" dir="0" index="0" bw="1" slack="0"/>
-<pin id="36" dir="0" index="1" bw="32" slack="0"/>
-<pin id="37" dir="0" index="2" bw="1" slack="0"/>
-<pin id="38" dir="1" index="3" bw="1" slack="2147483647"/>
+<pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.s_axilite.volatile.i32P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1004" name="val1_fu_38">
+<pin_list>
+<pin id="39" dir="0" index="0" bw="1" slack="0"/>
+<pin id="40" dir="1" index="1" bw="32" slack="7"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="val1/1 "/>
+</bind>
+</comp>
+
+<comp id="42" class="1004" name="grp_readreq_fu_42">
+<pin_list>
+<pin id="43" dir="0" index="0" bw="1" slack="0"/>
+<pin id="44" dir="0" index="1" bw="32" slack="0"/>
+<pin id="45" dir="0" index="2" bw="1" slack="0"/>
+<pin id="46" dir="1" index="3" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="readreq(1154) " fcode="readreq"/>
@@ -327,11 +364,23 @@ StgValue_26   (ret          ) [ 0000000000]
 </bind>
 </comp>
 
-<comp id="41" class="1004" name="iic_addr_read_read_fu_41">
+<comp id="49" class="1004" name="outValue_load_read_fu_49">
 <pin_list>
-<pin id="42" dir="0" index="0" bw="32" slack="0"/>
-<pin id="43" dir="0" index="1" bw="32" slack="7"/>
-<pin id="44" dir="1" index="2" bw="32" slack="1"/>
+<pin id="50" dir="0" index="0" bw="32" slack="0"/>
+<pin id="51" dir="0" index="1" bw="32" slack="0"/>
+<pin id="52" dir="1" index="2" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="outValue_load/8 "/>
+</bind>
+</comp>
+
+<comp id="55" class="1004" name="iic_addr_read_read_fu_55">
+<pin_list>
+<pin id="56" dir="0" index="0" bw="32" slack="0"/>
+<pin id="57" dir="0" index="1" bw="32" slack="7"/>
+<pin id="58" dir="1" index="2" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -339,24 +388,24 @@ StgValue_26   (ret          ) [ 0000000000]
 </bind>
 </comp>
 
-<comp id="46" class="1004" name="StgValue_25_write_fu_46">
+<comp id="60" class="1004" name="StgValue_29_write_fu_60">
 <pin_list>
-<pin id="47" dir="0" index="0" bw="0" slack="0"/>
-<pin id="48" dir="0" index="1" bw="32" slack="0"/>
-<pin id="49" dir="0" index="2" bw="32" slack="1"/>
-<pin id="50" dir="1" index="3" bw="0" slack="2147483647"/>
+<pin id="61" dir="0" index="0" bw="0" slack="0"/>
+<pin id="62" dir="0" index="1" bw="32" slack="0"/>
+<pin id="63" dir="0" index="2" bw="32" slack="0"/>
+<pin id="64" dir="1" index="3" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="StgValue_25/9 "/>
+<opset="StgValue_29/9 "/>
 </bind>
 </comp>
 
-<comp id="53" class="1004" name="iic_addr_fu_53">
+<comp id="67" class="1004" name="iic_addr_fu_67">
 <pin_list>
-<pin id="54" dir="0" index="0" bw="32" slack="0"/>
-<pin id="55" dir="0" index="1" bw="30" slack="0"/>
-<pin id="56" dir="1" index="2" bw="32" slack="0"/>
+<pin id="68" dir="0" index="0" bw="32" slack="0"/>
+<pin id="69" dir="0" index="1" bw="30" slack="0"/>
+<pin id="70" dir="1" index="2" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="getelementptr(29) " fcode="getelementptr"/>
@@ -364,54 +413,89 @@ StgValue_26   (ret          ) [ 0000000000]
 </bind>
 </comp>
 
-<comp id="60" class="1005" name="iic_addr_reg_60">
+<comp id="74" class="1004" name="StgValue_21_store_fu_74">
 <pin_list>
-<pin id="61" dir="0" index="0" bw="32" slack="1"/>
-<pin id="62" dir="1" index="1" bw="32" slack="1"/>
+<pin id="75" dir="0" index="0" bw="32" slack="0"/>
+<pin id="76" dir="0" index="1" bw="32" slack="7"/>
+<pin id="77" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="StgValue_21/8 "/>
+</bind>
+</comp>
+
+<comp id="79" class="1004" name="val1_load_load_fu_79">
+<pin_list>
+<pin id="80" dir="0" index="0" bw="32" slack="8"/>
+<pin id="81" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="val1_load/9 "/>
+</bind>
+</comp>
+
+<comp id="83" class="1005" name="val1_reg_83">
+<pin_list>
+<pin id="84" dir="0" index="0" bw="32" slack="7"/>
+<pin id="85" dir="1" index="1" bw="32" slack="7"/>
+</pin_list>
+<bind>
+<opset="val1 "/>
+</bind>
+</comp>
+
+<comp id="89" class="1005" name="iic_addr_reg_89">
+<pin_list>
+<pin id="90" dir="0" index="0" bw="32" slack="1"/>
+<pin id="91" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="iic_addr "/>
 </bind>
 </comp>
 
-<comp id="66" class="1005" name="iic_addr_read_reg_66">
-<pin_list>
-<pin id="67" dir="0" index="0" bw="32" slack="1"/>
-<pin id="68" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opset="iic_addr_read "/>
-</bind>
-</comp>
-
 </comp_list>
 
 <net_list>
-<net id="39"><net_src comp="6" pin="0"/><net_sink comp="34" pin=0"/></net>
+<net id="41"><net_src comp="4" pin="0"/><net_sink comp="38" pin=0"/></net>
 
-<net id="40"><net_src comp="8" pin="0"/><net_sink comp="34" pin=2"/></net>
+<net id="47"><net_src comp="8" pin="0"/><net_sink comp="42" pin=0"/></net>
 
-<net id="45"><net_src comp="10" pin="0"/><net_sink comp="41" pin=0"/></net>
+<net id="48"><net_src comp="10" pin="0"/><net_sink comp="42" pin=2"/></net>
 
-<net id="51"><net_src comp="32" pin="0"/><net_sink comp="46" pin=0"/></net>
+<net id="53"><net_src comp="12" pin="0"/><net_sink comp="49" pin=0"/></net>
 
-<net id="52"><net_src comp="2" pin="0"/><net_sink comp="46" pin=1"/></net>
+<net id="54"><net_src comp="2" pin="0"/><net_sink comp="49" pin=1"/></net>
 
-<net id="57"><net_src comp="0" pin="0"/><net_sink comp="53" pin=0"/></net>
+<net id="59"><net_src comp="14" pin="0"/><net_sink comp="55" pin=0"/></net>
 
-<net id="58"><net_src comp="4" pin="0"/><net_sink comp="53" pin=1"/></net>
+<net id="65"><net_src comp="36" pin="0"/><net_sink comp="60" pin=0"/></net>
 
-<net id="59"><net_src comp="53" pin="2"/><net_sink comp="34" pin=1"/></net>
+<net id="66"><net_src comp="2" pin="0"/><net_sink comp="60" pin=1"/></net>
 
-<net id="63"><net_src comp="53" pin="2"/><net_sink comp="60" pin=0"/></net>
+<net id="71"><net_src comp="0" pin="0"/><net_sink comp="67" pin=0"/></net>
 
-<net id="64"><net_src comp="60" pin="1"/><net_sink comp="34" pin=1"/></net>
+<net id="72"><net_src comp="6" pin="0"/><net_sink comp="67" pin=1"/></net>
 
-<net id="65"><net_src comp="60" pin="1"/><net_sink comp="41" pin=1"/></net>
+<net id="73"><net_src comp="67" pin="2"/><net_sink comp="42" pin=1"/></net>
 
-<net id="69"><net_src comp="41" pin="2"/><net_sink comp="66" pin=0"/></net>
+<net id="78"><net_src comp="55" pin="2"/><net_sink comp="74" pin=0"/></net>
 
-<net id="70"><net_src comp="66" pin="1"/><net_sink comp="46" pin=2"/></net>
+<net id="82"><net_src comp="79" pin="1"/><net_sink comp="60" pin=2"/></net>
+
+<net id="86"><net_src comp="38" pin="1"/><net_sink comp="83" pin=0"/></net>
+
+<net id="87"><net_src comp="83" pin="1"/><net_sink comp="74" pin=1"/></net>
+
+<net id="88"><net_src comp="83" pin="1"/><net_sink comp="79" pin=0"/></net>
+
+<net id="92"><net_src comp="67" pin="2"/><net_sink comp="89" pin=0"/></net>
+
+<net id="93"><net_src comp="89" pin="1"/><net_sink comp="42" pin=1"/></net>
+
+<net id="94"><net_src comp="89" pin="1"/><net_sink comp="55" pin=1"/></net>
 
 </net_list>
 
@@ -423,6 +507,7 @@ StgValue_26   (ret          ) [ 0000000000]
 	Port: outValue | {9 }
  - Input state : 
 	Port: iiccomm3 : iic | {1 2 3 4 5 6 7 8 }
+	Port: iiccomm3 : outValue | {8 }
   - Chain level:
 	State 1
 		iic_load_req : 1
@@ -434,6 +519,7 @@ StgValue_26   (ret          ) [ 0000000000]
 	State 7
 	State 8
 	State 9
+		StgValue_29 : 1
 
 
 ============================================================
@@ -444,11 +530,12 @@ StgValue_26   (ret          ) [ 0000000000]
 |----------|--------------------------|
 | Operation|      Functional Unit     |
 |----------|--------------------------|
-|  readreq |     grp_readreq_fu_34    |
+|  readreq |     grp_readreq_fu_42    |
 |----------|--------------------------|
-|   read   | iic_addr_read_read_fu_41 |
+|   read   | outValue_load_read_fu_49 |
+|          | iic_addr_read_read_fu_55 |
 |----------|--------------------------|
-|   write  |  StgValue_25_write_fu_46 |
+|   write  |  StgValue_29_write_fu_60 |
 |----------|--------------------------|
 |   Total  |                          |
 |----------|--------------------------|
@@ -457,20 +544,20 @@ Memories:
 N/A
 
 * Register list:
-+--------------------+--------+
-|                    |   FF   |
-+--------------------+--------+
-|iic_addr_read_reg_66|   32   |
-|   iic_addr_reg_60  |   32   |
-+--------------------+--------+
-|        Total       |   64   |
-+--------------------+--------+
++---------------+--------+
+|               |   FF   |
++---------------+--------+
+|iic_addr_reg_89|   32   |
+|  val1_reg_83  |   32   |
++---------------+--------+
+|     Total     |   64   |
++---------------+--------+
 
 * Multiplexer (MUX) list: 
 |-------------------|------|------|------|--------||---------||---------|
 |        Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
 |-------------------|------|------|------|--------||---------||---------|
-| grp_readreq_fu_34 |  p1  |   2  |  32  |   64   ||    9    |
+| grp_readreq_fu_42 |  p1  |   2  |  32  |   64   ||    9    |
 |-------------------|------|------|------|--------||---------||---------|
 |       Total       |      |      |      |   64   ||  1.769  ||    9    |
 |-------------------|------|------|------|--------||---------||---------|

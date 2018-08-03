@@ -33214,17 +33214,17 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 
 
-void iiccomm3(uint32_t iic[4096], uint32_t &outValue);
+void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t &outValue);
 #36 "iiccomm3.cpp" 2
 
 
 
 
-static uint32_t val1;
+volatile static uint32_t val1;
 
 
 
-void iiccomm3(uint32_t iic[4096], uint32_t &outValue)
+void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t &outValue)
 {_ssdm_SpecArrayDimSize(iic,4096);
 #pragma HLS INTERFACE s_axilite port=return
 

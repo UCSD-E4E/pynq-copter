@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'iiccomm3'" level="0">
-<item name = "Date">Fri Aug  3 00:06:23 2018
+<item name = "Date">Fri Aug  3 11:45:25 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">iiccomm3</item>
@@ -47,7 +47,7 @@
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, -, -</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">2, -, 616, 724</column>
+<column name="Instance">2, -, 654, 788</column>
 <column name="Memory">-, -, -, -</column>
 <column name="Multiplexer">-, -, -, 74</column>
 <column name="Register">-, -, 42, -</column>
@@ -61,7 +61,7 @@
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="iiccomm3_AXILiteS_s_axi_U">iiccomm3_AXILiteS_s_axi, 0, 0, 36, 40</column>
 <column name="iiccomm3_iic_m_axi_U">iiccomm3_iic_m_axi, 2, 0, 512, 580</column>
-<column name="iiccomm3_outValue_first_s_axi_U">iiccomm3_outValue_first_s_axi, 0, 0, 68, 104</column>
+<column name="iiccomm3_outValue_first_s_axi_U">iiccomm3_outValue_first_s_axi, 0, 0, 106, 168</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -92,7 +92,7 @@
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">9, 0, 9, 0</column>
 <column name="ap_reg_ioackin_iic_ARREADY">1, 0, 1, 0</column>
-<column name="iic_addr_read_reg_66">32, 0, 32, 0</column>
+<column name="val1_fu_38">32, 0, 32, 0</column>
 </table>
 </item>
 </section>

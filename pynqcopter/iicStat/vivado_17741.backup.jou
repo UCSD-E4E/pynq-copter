@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Aug  3 10:37:48 2018
+# Process ID: 17741
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/iicStat
+# Command line: vivado -mode batch -source ..//build.tcl -tclargs iicStat single xc7z020clg400-1
+# Log file: /home/iavendano/pynq-copter/pynqcopter/iicStat/vivado.log
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/iicStat/vivado.jou
+#-----------------------------------------------------------
+source ..//build.tcl

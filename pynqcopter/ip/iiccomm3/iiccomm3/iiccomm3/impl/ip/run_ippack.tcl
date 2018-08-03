@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "iiccomm3"
 set Version     "1.0"
 set DisplayName "Iiccomm3"
-set Revision    "1808030006"
+set Revision    "1808031145"
 set Description "HLS Core: Iiccomm3 Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -186,7 +186,7 @@ set Interfaces {
         param_prefix "C_S_AXI_OUTVALUE_FIRST"
         addr_bits "5"
         port_width "AWADDR 5 WDATA 32 WSTRB 4 ARADDR 5 RDATA 32"
-        registers {{0x10 outValue R 0x0 "Data signal of outValue" {{0 32 outValue R 0 "Bit 31 to 0 Data signal of outValue"}}} {0x14 outValue_ctrl R 0x0 "Control signal of outValue" {{0 1 outValue_ap_vld R 0 "Control signal outValue_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}}}
+        registers {{0x10 outValue_i W 0x0 "Data signal of outValue_i" {{0 32 outValue_i W 0 "Bit 31 to 0 Data signal of outValue_i"}}} {0x18 outValue_o R 0x0 "Data signal of outValue_o" {{0 32 outValue_o R 0 "Bit 31 to 0 Data signal of outValue_o"}}} {0x1c outValue_o_ctrl R 0x0 "Control signal of outValue_o" {{0 1 outValue_o_ap_vld R 0 "Control signal outValue_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}}}
         memories ""
         ctype {
             AWVALID {

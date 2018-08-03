@@ -89,8 +89,10 @@ u32 XIiccomm3_IsReady(XIiccomm3 *InstancePtr);
 void XIiccomm3_EnableAutoRestart(XIiccomm3 *InstancePtr);
 void XIiccomm3_DisableAutoRestart(XIiccomm3 *InstancePtr);
 
-u32 XIiccomm3_Get_outValue(XIiccomm3 *InstancePtr);
-u32 XIiccomm3_Get_outValue_vld(XIiccomm3 *InstancePtr);
+void XIiccomm3_Set_outValue_i(XIiccomm3 *InstancePtr, u32 Data);
+u32 XIiccomm3_Get_outValue_i(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue_o(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue_o_vld(XIiccomm3 *InstancePtr);
 
 void XIiccomm3_InterruptGlobalEnable(XIiccomm3 *InstancePtr);
 void XIiccomm3_InterruptGlobalDisable(XIiccomm3 *InstancePtr);

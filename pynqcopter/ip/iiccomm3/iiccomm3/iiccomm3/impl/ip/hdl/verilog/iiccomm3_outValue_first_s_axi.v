@@ -33,32 +33,38 @@ module iiccomm3_outValue_first_s_axi
     output wire                          RVALID,
     input  wire                          RREADY,
     // user signals
-    input  wire [31:0]                   outValue,
-    input  wire                          outValue_ap_vld
+    output wire [31:0]                   outValue_i,
+    input  wire [31:0]                   outValue_o,
+    input  wire                          outValue_o_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x00 : reserved
 // 0x04 : reserved
 // 0x08 : reserved
 // 0x0c : reserved
-// 0x10 : Data signal of outValue
-//        bit 31~0 - outValue[31:0] (Read)
-// 0x14 : Control signal of outValue
-//        bit 0  - outValue_ap_vld (Read/COR)
+// 0x10 : Data signal of outValue_i
+//        bit 31~0 - outValue_i[31:0] (Read/Write)
+// 0x14 : reserved
+// 0x18 : Data signal of outValue_o
+//        bit 31~0 - outValue_o[31:0] (Read)
+// 0x1c : Control signal of outValue_o
+//        bit 0  - outValue_o_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_OUTVALUE_DATA_0 = 5'h10,
-    ADDR_OUTVALUE_CTRL   = 5'h14,
-    WRIDLE               = 2'd0,
-    WRDATA               = 2'd1,
-    WRRESP               = 2'd2,
-    WRRESET              = 2'd3,
-    RDIDLE               = 2'd0,
-    RDDATA               = 2'd1,
-    RDRESET              = 2'd2,
+    ADDR_OUTVALUE_I_DATA_0 = 5'h10,
+    ADDR_OUTVALUE_I_CTRL   = 5'h14,
+    ADDR_OUTVALUE_O_DATA_0 = 5'h18,
+    ADDR_OUTVALUE_O_CTRL   = 5'h1c,
+    WRIDLE                 = 2'd0,
+    WRDATA                 = 2'd1,
+    WRRESP                 = 2'd2,
+    WRRESET                = 2'd3,
+    RDIDLE                 = 2'd0,
+    RDDATA                 = 2'd1,
+    RDRESET                = 2'd2,
     ADDR_BITS         = 5;
 
 //------------------------Local signal-------------------
@@ -74,8 +80,9 @@ localparam
     wire                          ar_hs;
     wire [ADDR_BITS-1:0]          raddr;
     // internal registers
-    reg  [31:0]                   int_outValue = 'b0;
-    reg                           int_outValue_ap_vld;
+    reg  [31:0]                   int_outValue_i = 'b0;
+    reg  [31:0]                   int_outValue_o = 'b0;
+    reg                           int_outValue_o_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -167,11 +174,14 @@ always @(posedge ACLK) begin
         if (ar_hs) begin
             rdata <= 1'b0;
             case (raddr)
-                ADDR_OUTVALUE_DATA_0: begin
-                    rdata <= int_outValue[31:0];
+                ADDR_OUTVALUE_I_DATA_0: begin
+                    rdata <= int_outValue_i[31:0];
                 end
-                ADDR_OUTVALUE_CTRL: begin
-                    rdata[0] <= int_outValue_ap_vld;
+                ADDR_OUTVALUE_O_DATA_0: begin
+                    rdata <= int_outValue_o[31:0];
+                end
+                ADDR_OUTVALUE_O_CTRL: begin
+                    rdata[0] <= int_outValue_o_ap_vld;
                 end
             endcase
         end
@@ -180,25 +190,36 @@ end
 
 
 //------------------------Register logic-----------------
-// int_outValue
+assign outValue_i = int_outValue_i;
+// int_outValue_i[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_outValue <= 0;
+        int_outValue_i[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (outValue_ap_vld)
-            int_outValue <= outValue;
+        if (w_hs && waddr == ADDR_OUTVALUE_I_DATA_0)
+            int_outValue_i[31:0] <= (WDATA[31:0] & wmask) | (int_outValue_i[31:0] & ~wmask);
     end
 end
 
-// int_outValue_ap_vld
+// int_outValue_o
 always @(posedge ACLK) begin
     if (ARESET)
-        int_outValue_ap_vld <= 1'b0;
+        int_outValue_o <= 0;
     else if (ACLK_EN) begin
-        if (outValue_ap_vld)
-            int_outValue_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_OUTVALUE_CTRL)
-            int_outValue_ap_vld <= 1'b0; // clear on read
+        if (outValue_o_ap_vld)
+            int_outValue_o <= outValue_o;
+    end
+end
+
+// int_outValue_o_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_outValue_o_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (outValue_o_ap_vld)
+            int_outValue_o_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_OUTVALUE_O_CTRL)
+            int_outValue_o_ap_vld <= 1'b0; // clear on read
     end
 end
 

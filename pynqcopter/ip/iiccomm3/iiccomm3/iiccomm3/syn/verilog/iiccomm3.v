@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="iiccomm3,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=658,HLS_SYN_LUT=798}" *)
+(* CORE_GENERATION_INFO="iiccomm3,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=696,HLS_SYN_LUT=862}" *)
 
 module iiccomm3 (
         ap_clk,
@@ -218,7 +218,8 @@ reg    ap_idle;
 (* fsm_encoding = "none" *) reg   [8:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 reg    ap_ready;
-reg    outValue_ap_vld;
+wire   [31:0] outValue_i;
+reg    outValue_o_ap_vld;
 reg    iic_blk_n_AR;
 reg    iic_blk_n_R;
 wire    ap_CS_fsm_state8;
@@ -239,8 +240,8 @@ wire   [1:0] iic_BRESP;
 wire   [0:0] iic_BID;
 wire   [0:0] iic_BUSER;
 reg    ap_sig_ioackin_iic_ARREADY;
-reg   [31:0] iic_addr_read_reg_66;
 reg    ap_reg_ioackin_iic_ARREADY;
+reg   [31:0] val1_fu_38;
 wire    ap_CS_fsm_state9;
 reg   [8:0] ap_NS_fsm;
 
@@ -305,8 +306,9 @@ iiccomm3_outValue_first_s_axi_U(
     .ACLK(ap_clk),
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
-    .outValue(iic_addr_read_reg_66),
-    .outValue_ap_vld(outValue_ap_vld)
+    .outValue_o(val1_fu_38),
+    .outValue_o_ap_vld(outValue_o_ap_vld),
+    .outValue_i(outValue_i)
 );
 
 iiccomm3_iic_m_axi #(
@@ -449,7 +451,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
-        iic_addr_read_reg_66 <= iic_RDATA;
+        val1_fu_38 <= iic_RDATA;
     end
 end
 
@@ -519,9 +521,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state9)) begin
-        outValue_ap_vld = 1'b1;
+        outValue_o_ap_vld = 1'b1;
     end else begin
-        outValue_ap_vld = 1'b0;
+        outValue_o_ap_vld = 1'b0;
     end
 end
 
