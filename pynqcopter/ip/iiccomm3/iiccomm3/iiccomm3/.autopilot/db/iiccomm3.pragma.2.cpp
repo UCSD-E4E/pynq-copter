@@ -33348,33 +33348,80 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 };
 # 41 "./iiccomm3.hpp" 2
-
-
-
-
-
-
-
-void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t &outValue);
+# 51 "./iiccomm3.hpp"
+void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatile uint32_t &outValue2, volatile uint32_t &outValue3, volatile uint32_t &outValue4, volatile uint32_t &outValue5, volatile uint32_t &outValue6, volatile uint32_t &outValue7, volatile uint32_t &outValue8, volatile uint32_t &outValue9, volatile uint32_t &outValue10);
 # 36 "iiccomm3.cpp" 2
 
 
 
 
-volatile static uint32_t val1;
+static uint32_t val1;
+static uint32_t val2;
+static uint32_t val3;
+static uint32_t val4;
+static uint32_t val5;
+static uint32_t val6;
+static uint32_t val7;
+static uint32_t val8;
+static uint32_t val9;
+static uint32_t val10;
 
 
-
-void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t &outValue)
+void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatile uint32_t &outValue2, volatile uint32_t &outValue3, volatile uint32_t &outValue4, volatile uint32_t &outValue5, volatile uint32_t &outValue6, volatile uint32_t &outValue7, volatile uint32_t &outValue8, volatile uint32_t &outValue9, volatile uint32_t &outValue10)
 {_ssdm_SpecArrayDimSize(iic,4096);
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
 _ssdm_op_SpecInterface(iic, "m_axi", 0, 0, "", 0, 0, "", "", "", 16, 16, 16, 16, "", "");
 
-_ssdm_op_SpecInterface(outValue, "s_axilite", 0, 0, "", 0, 0, "outValue_first", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(outValue1, "s_axilite", 0, 0, "", 0, 0, "OUTPUTS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(outValue2, "s_axilite", 0, 0, "", 0, 0, "OUTPUTS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(outValue3, "s_axilite", 0, 0, "", 0, 0, "OUTPUTS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(outValue4, "s_axilite", 0, 0, "", 0, 0, "OUTPUTS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(outValue5, "s_axilite", 0, 0, "", 0, 0, "OUTPUTS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(outValue6, "s_axilite", 0, 0, "", 0, 0, "OUTPUTS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(outValue7, "s_axilite", 0, 0, "", 0, 0, "OUTPUTS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(outValue8, "s_axilite", 0, 0, "", 0, 0, "OUTPUTS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(outValue9, "s_axilite", 0, 0, "", 0, 0, "OUTPUTS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(outValue10, "s_axilite", 0, 0, "", 0, 0, "OUTPUTS", "", "", 0, 0, 0, 0, "", "");
 
 
- val1 = iic[(0x40003000/sizeof(uint32_t))+(0x104/sizeof(uint32_t))];
-    outValue=val1;
+ val1 = iic[0];
+    outValue1=val1;
+
+ val2 = iic[2];
+    outValue2=val2;
+
+
+
+    val3 = iic[(0x40001000/4)+(0x104/4)];
+    outValue3=val3;
+
+ val4 = iic[(0x40001000/4)+0x104];
+    outValue4=val4;
+
+ val5 = iic[(0x104/4)];
+    outValue5=val5;
+
+ val6 = iic[0x104];
+    outValue6=val6;
+
+
+
+ val7 = iic[(0x40001000/4)+(0x020/4)];
+    outValue7=val7;
+
+ val8 = iic[(0x40001000/4)+0x020];
+    outValue8=val8;
+
+ val9 = iic[(0x020/4)];
+    outValue9=val9;
+
+ val10 = iic[0x020];
+    outValue10=val10;
+
+
+
+
+
 
 }

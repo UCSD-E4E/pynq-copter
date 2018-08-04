@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Messages>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;ctrlloop.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;main.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;ctrlloop.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:01:28 ; elapsed = 00:00:34 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 247608 ; free virtual = 516738" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:29 ; elapsed = 00:00:36 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 247604 ; free virtual = 516737" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:01:18 ; elapsed = 00:00:28 . Memory (MB): peak = 359.953 ; gain = 13.379 ; free physical = 125394 ; free virtual = 502037" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:20 ; elapsed = 00:00:30 . Memory (MB): peak = 359.953 ; gain = 13.379 ; free physical = 125413 ; free virtual = 502059" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
 	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;delay_until_ms&lt;1000ull, 100000000ull&gt;&apos; into &apos;ctrlloop&apos; (ctrlloop.cpp:92)." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:31 ; elapsed = 00:00:37 . Memory (MB): peak = 360.379 ; gain = 13.820 ; free physical = 247590 ; free virtual = 516726" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:21 ; elapsed = 00:00:31 . Memory (MB): peak = 360.363 ; gain = 13.789 ; free physical = 125325 ; free virtual = 501974" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:31 ; elapsed = 00:00:37 . Memory (MB): peak = 488.180 ; gain = 141.621 ; free physical = 247583 ; free virtual = 516720" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:32 ; elapsed = 00:00:38 . Memory (MB): peak = 488.180 ; gain = 141.621 ; free physical = 247553 ; free virtual = 516694" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:21 ; elapsed = 00:00:31 . Memory (MB): peak = 488.195 ; gain = 141.621 ; free physical = 125291 ; free virtual = 501941" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:22 ; elapsed = 00:00:32 . Memory (MB): peak = 488.195 ; gain = 141.621 ; free physical = 125254 ; free virtual = 501907" tag=""/>
 	<Message prefix="[XFORM 203-803]" severity="WARNING" keynum="899" content="Cannot bundle argument &apos;iomem.V&apos; to m_axi port &apos;IOMEM&apos; since its offset mode is off." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:32 ; elapsed = 00:00:39 . Memory (MB): peak = 488.180 ; gain = 141.621 ; free physical = 247550 ; free virtual = 516691" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:22 ; elapsed = 00:00:33 . Memory (MB): peak = 488.195 ; gain = 141.621 ; free physical = 125250 ; free virtual = 501903" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;ctrlloop&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
@@ -20,13 +20,13 @@
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 38.63 seconds; current allocated memory: 86.023 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 32.87 seconds; current allocated memory: 85.662 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.02 seconds; current allocated memory: 86.228 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.02 seconds; current allocated memory: 85.828 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;ctrlloop&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
@@ -164,9 +164,10 @@
 	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="251" content="Port &apos;ctrlloop/interrupt_V&apos; has no fanin or fanout and is left dangling.
                Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;ctrlloop&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.15 seconds; current allocated memory: 86.714 MB." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:33 ; elapsed = 00:00:39 . Memory (MB): peak = 488.180 ; gain = 141.621 ; free physical = 247550 ; free virtual = 516692" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.12 seconds; current allocated memory: 86.282 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:23 ; elapsed = 00:00:34 . Memory (MB): peak = 488.195 ; gain = 141.621 ; free physical = 125262 ; free virtual = 501916" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for ctrlloop." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for ctrlloop." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for ctrlloop." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 33.6 seconds; peak allocated memory: 86.282 MB." tag=""/>
 </Messages>

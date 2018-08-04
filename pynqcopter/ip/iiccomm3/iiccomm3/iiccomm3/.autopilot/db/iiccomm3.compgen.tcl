@@ -34,8 +34,8 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler iiccomm3_AXILiteS_s_axi
 }
 
-set port_outValue_first {
-outValue_i { 
+set port_OUTPUTS {
+outValue1_i { 
 	dir I
 	width 32
 	depth 1
@@ -43,13 +43,157 @@ outValue_i {
 	offset 16
 	offset_end 23
 }
-outValue_o { 
+outValue1_o { 
 	dir O
 	width 32
 	depth 1
 	mode ap_vld
 	offset 24
 	offset_end 31
+}
+outValue2_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 32
+	offset_end 39
+}
+outValue2_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 40
+	offset_end 47
+}
+outValue3_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 48
+	offset_end 55
+}
+outValue3_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 56
+	offset_end 63
+}
+outValue4_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 64
+	offset_end 71
+}
+outValue4_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 72
+	offset_end 79
+}
+outValue5_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 80
+	offset_end 87
+}
+outValue5_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 88
+	offset_end 95
+}
+outValue6_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 96
+	offset_end 103
+}
+outValue6_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 104
+	offset_end 111
+}
+outValue7_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 112
+	offset_end 119
+}
+outValue7_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 120
+	offset_end 127
+}
+outValue8_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 128
+	offset_end 135
+}
+outValue8_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 136
+	offset_end 143
+}
+outValue9_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 144
+	offset_end 151
+}
+outValue9_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 152
+	offset_end 159
+}
+outValue10_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 160
+	offset_end 167
+}
+outValue10_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 168
+	offset_end 175
 }
 }
 
@@ -59,18 +203,18 @@ if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
 			id 2 \
-			corename iiccomm3_outValue_first_axilite \
-			name iiccomm3_outValue_first_s_axi \
-			ports {$port_outValue_first} \
+			corename iiccomm3_OUTPUTS_axilite \
+			name iiccomm3_OUTPUTS_s_axi \
+			ports {$port_OUTPUTS} \
 			op interface \
 		} "
 	} else {
-		puts "@W \[IMPL-110\] Cannot find AXI Lite interface model in the library. Ignored generation of AXI Lite  interface for 'outValue_first'"
+		puts "@W \[IMPL-110\] Cannot find AXI Lite interface model in the library. Ignored generation of AXI Lite  interface for 'OUTPUTS'"
 	}
 }
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler iiccomm3_outValue_first_s_axi
+	::AP::rtl_comp_handler iiccomm3_OUTPUTS_s_axi
 }
 
 # Native M_AXI:

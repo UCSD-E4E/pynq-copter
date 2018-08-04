@@ -41,10 +41,10 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7z020:clg400:-1"
-set SourceFiles {sc {} c {../../ctrlloop.cpp ../../main.cpp}}
-set SourceFlags {sc {} c {{ -std=c++11} { -std=c++11}}}
+set SourceFiles {sc {} c {../../main.cpp ../../ctrlloop.cpp}}
+set SourceFlags {sc {} c {-std=c++11 -std=c++11}}
 set DirectiveFile {/home/iavendano/pynq-copter/pynqcopter/ip/ctrlloop/ctrlloop/ctrlloop/ctrlloop.directive}
-set TBFiles {verilog {../../ctrlloop.cpp ../../main.cpp} bc {../../ctrlloop.cpp ../../main.cpp} sc {../../ctrlloop.cpp ../../main.cpp} vhdl {../../ctrlloop.cpp ../../main.cpp} c {} cas {../../ctrlloop.cpp ../../main.cpp}}
+set TBFiles {verilog {../../main.cpp ../../ctrlloop.cpp} bc {../../main.cpp ../../ctrlloop.cpp} sc {../../main.cpp ../../ctrlloop.cpp} vhdl {../../main.cpp ../../ctrlloop.cpp} c {} cas {../../main.cpp ../../ctrlloop.cpp}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

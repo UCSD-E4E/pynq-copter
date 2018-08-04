@@ -9,20 +9,20 @@ proc generate {drv_handle} {
     xdefine_include_file $drv_handle "xparameters.h" "XIiccomm3" \
         "NUM_INSTANCES" \
         "DEVICE_ID" \
-        "C_S_AXI_OUTVALUE_FIRST_BASEADDR" \
-        "C_S_AXI_OUTVALUE_FIRST_HIGHADDR" \
+        "C_S_AXI_OUTPUTS_BASEADDR" \
+        "C_S_AXI_OUTPUTS_HIGHADDR" \
         "C_S_AXI_AXILITES_BASEADDR" \
         "C_S_AXI_AXILITES_HIGHADDR"
 
     xdefine_config_file $drv_handle "xiiccomm3_g.c" "XIiccomm3" \
         "DEVICE_ID" \
-        "C_S_AXI_OUTVALUE_FIRST_BASEADDR" \
+        "C_S_AXI_OUTPUTS_BASEADDR" \
         "C_S_AXI_AXILITES_BASEADDR"
 
     xdefine_canonical_xpars $drv_handle "xparameters.h" "XIiccomm3" \
         "DEVICE_ID" \
-        "C_S_AXI_OUTVALUE_FIRST_BASEADDR" \
-        "C_S_AXI_OUTVALUE_FIRST_HIGHADDR" \
+        "C_S_AXI_OUTPUTS_BASEADDR" \
+        "C_S_AXI_OUTPUTS_HIGHADDR" \
         "C_S_AXI_AXILITES_BASEADDR" \
         "C_S_AXI_AXILITES_HIGHADDR"
 }

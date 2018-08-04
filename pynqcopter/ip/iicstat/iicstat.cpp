@@ -37,17 +37,17 @@
 
 static int val1;
 
-void iicstat(volatile int *bus, volatile int *outValue)
+void iicstat(volatile int *bus, volatile int &outValue)
 {
 
 	#pragma HLS INTERFACE m_axi depth=64 port=bus offset=off
 	#pragma HLS INTERFACE s_axilite port=outValue bundle=outValue_first
-	//#pragma HLS INTERFACE s_axilite port=return
+	#pragma HLS INTERFACE s_axilite port=return
 	#pragma HLS INTERFACE ap_ctrl_none port=return
 
 	//READ
     val1 = bus[(0x104)/4];
-    *outValue=val1;
+    outValue=val1;
 	
 
 }

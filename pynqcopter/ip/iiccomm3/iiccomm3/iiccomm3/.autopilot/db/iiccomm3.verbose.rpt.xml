@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'iiccomm3'" level="0">
-<item name = "Date">Fri Aug  3 11:45:25 2018
+<item name = "Date">Sat Aug  4 09:53:00 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">iiccomm3</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">8, 8, 8, 8, none</column>
+<column name="">17, 17, 17, 17, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -49,12 +49,12 @@
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, -, -</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">2, -, 654, 788</column>
+<column name="Instance">2, -, 1338, 1940</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 74</column>
-<column name="Register">-, -, 42, -</column>
+<column name="Multiplexer">-, -, -, 170</column>
+<column name="Register">-, -, 339, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">~0, 0, ~0, 1</specialColumn>
+<specialColumn name="Utilization (%)">~0, 0, 1, 3</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -62,8 +62,8 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="iiccomm3_AXILiteS_s_axi_U">iiccomm3_AXILiteS_s_axi, 0, 0, 36, 40</column>
+<column name="iiccomm3_OUTPUTS_s_axi_U">iiccomm3_OUTPUTS_s_axi, 0, 0, 790, 1320</column>
 <column name="iiccomm3_iic_m_axi_U">iiccomm3_iic_m_axi, 2, 0, 512, 580</column>
-<column name="iiccomm3_outValue_first_s_axi_U">iiccomm3_outValue_first_s_axi, 0, 0, 106, 168</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -84,17 +84,27 @@
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">47, 10, 1, 10</column>
+<column name="ap_NS_fsm">93, 19, 1, 19</column>
 <column name="ap_sig_ioackin_iic_ARREADY">9, 2, 1, 2</column>
+<column name="iic_ARADDR">50, 11, 32, 352</column>
 <column name="iic_blk_n_AR">9, 2, 1, 2</column>
 <column name="iic_blk_n_R">9, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">9, 0, 9, 0</column>
+<column name="ap_CS_fsm">18, 0, 18, 0</column>
 <column name="ap_reg_ioackin_iic_ARREADY">1, 0, 1, 0</column>
-<column name="val1_fu_38">32, 0, 32, 0</column>
+<column name="iic_addr_1_read_reg_443">32, 0, 32, 0</column>
+<column name="iic_addr_2_read_reg_454">32, 0, 32, 0</column>
+<column name="iic_addr_3_read_reg_459">32, 0, 32, 0</column>
+<column name="iic_addr_4_read_reg_464">32, 0, 32, 0</column>
+<column name="iic_addr_5_read_reg_469">32, 0, 32, 0</column>
+<column name="iic_addr_6_read_reg_474">32, 0, 32, 0</column>
+<column name="iic_addr_7_read_reg_479">32, 0, 32, 0</column>
+<column name="iic_addr_8_read_reg_484">32, 0, 32, 0</column>
+<column name="iic_addr_read_reg_432">32, 0, 32, 0</column>
+<column name="iic_read_reg_421">32, 0, 32, 0</column>
 </table>
 </item>
 </section>
@@ -121,23 +131,23 @@
 <column name="s_axi_AXILiteS_BVALID">out, 1, s_axi, AXILiteS, return void</column>
 <column name="s_axi_AXILiteS_BREADY">in, 1, s_axi, AXILiteS, return void</column>
 <column name="s_axi_AXILiteS_BRESP">out, 2, s_axi, AXILiteS, return void</column>
-<column name="s_axi_outValue_first_AWVALID">in, 1, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_AWREADY">out, 1, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_AWADDR">in, 5, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_WVALID">in, 1, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_WREADY">out, 1, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_WDATA">in, 32, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_WSTRB">in, 4, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_ARVALID">in, 1, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_ARREADY">out, 1, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_ARADDR">in, 5, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_RVALID">out, 1, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_RREADY">in, 1, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_RDATA">out, 32, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_RRESP">out, 2, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_BVALID">out, 1, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_BREADY">in, 1, s_axi, outValue_first, pointer</column>
-<column name="s_axi_outValue_first_BRESP">out, 2, s_axi, outValue_first, pointer</column>
+<column name="s_axi_OUTPUTS_AWVALID">in, 1, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_AWREADY">out, 1, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_AWADDR">in, 8, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_WVALID">in, 1, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_WREADY">out, 1, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_WDATA">in, 32, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_WSTRB">in, 4, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_ARVALID">in, 1, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_ARREADY">out, 1, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_ARADDR">in, 8, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_RVALID">out, 1, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_RREADY">in, 1, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_RDATA">out, 32, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_RRESP">out, 2, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_BVALID">out, 1, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_BREADY">in, 1, s_axi, OUTPUTS, pointer</column>
+<column name="s_axi_OUTPUTS_BRESP">out, 2, s_axi, OUTPUTS, pointer</column>
 <column name="ap_clk">in, 1, ap_ctrl_hs, iiccomm3, return value</column>
 <column name="ap_rst_n">in, 1, ap_ctrl_hs, iiccomm3, return value</column>
 <column name="interrupt">out, 1, ap_ctrl_hs, iiccomm3, return value</column>

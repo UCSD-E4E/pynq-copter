@@ -152,7 +152,7 @@ codeRepl:7  call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @ctrlloop_str) no
 
 <Node id="15" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-codeRepl:8  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+codeRepl:8  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str15, i32 0, i32 0, [5 x i8]* @p_str2, [1 x i8]* @p_str15, [1 x i8]* @p_str15, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str15, [1 x i8]* @p_str15) nounwind
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -167,7 +167,7 @@ codeRepl:8  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i
 
 <Node id="16" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="0" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="0" op_7_bw="0" op_8_bw="0" op_9_bw="0" op_10_bw="0">
 <![CDATA[
-codeRepl:9  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([128 x i32]* %regs_V, [1 x i8]* @p_str6, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str6, i32 -1, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6)
+codeRepl:9  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([128 x i32]* %regs_V, [1 x i8]* @p_str, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
 ]]></Node>
 <StgValue><ssdm name="empty"/></StgValue>
@@ -182,7 +182,7 @@ codeRepl:9  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([128 x i32]* %regs_V,
 
 <Node id="17" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-codeRepl:10  call void (...)* @_ssdm_op_SpecInterface([128 x i32]* %regs_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+codeRepl:10  call void (...)* @_ssdm_op_SpecInterface([128 x i32]* %regs_V, [10 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str15, i32 0, i32 0, [5 x i8]* @p_str2, [1 x i8]* @p_str15, [1 x i8]* @p_str15, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str15, [1 x i8]* @p_str15) nounwind
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -197,7 +197,7 @@ codeRepl:10  call void (...)* @_ssdm_op_SpecInterface([128 x i32]* %regs_V, [10 
 
 <Node id="18" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-codeRepl:11  call void (...)* @_ssdm_op_SpecInterface(i32* %IOMEM, [6 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [6 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+codeRepl:11  call void (...)* @_ssdm_op_SpecInterface(i32* %IOMEM, [6 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str15, i32 0, i32 0, [6 x i8]* @p_str46, [1 x i8]* @p_str15, [1 x i8]* @p_str15, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str15, [1 x i8]* @p_str15)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -212,7 +212,7 @@ codeRepl:11  call void (...)* @_ssdm_op_SpecInterface(i32* %IOMEM, [6 x i8]* @p_
 
 <Node id="19" bw="0" op_0_bw="0" op_1_bw="4" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-codeRepl:12  call void (...)* @_ssdm_op_SpecInterface(i4* %leds_V, [8 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+codeRepl:12  call void (...)* @_ssdm_op_SpecInterface(i4* %leds_V, [8 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str15, i32 0, i32 0, [1 x i8]* @p_str15, [1 x i8]* @p_str15, [1 x i8]* @p_str15, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str15, [1 x i8]* @p_str15) nounwind
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -227,7 +227,7 @@ codeRepl:12  call void (...)* @_ssdm_op_SpecInterface(i4* %leds_V, [8 x i8]* @p_
 
 <Node id="20" bw="0" op_0_bw="0" op_1_bw="4" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-codeRepl:13  call void (...)* @_ssdm_op_SpecInterface(i4 %buttons_V, [8 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+codeRepl:13  call void (...)* @_ssdm_op_SpecInterface(i4 %buttons_V, [8 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str15, i32 0, i32 0, [1 x i8]* @p_str15, [1 x i8]* @p_str15, [1 x i8]* @p_str15, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str15, [1 x i8]* @p_str15) nounwind
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -242,7 +242,7 @@ codeRepl:13  call void (...)* @_ssdm_op_SpecInterface(i4 %buttons_V, [8 x i8]* @
 
 <Node id="21" bw="0" op_0_bw="0" op_1_bw="4" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-codeRepl:14  call void (...)* @_ssdm_op_SpecReset(i4* @led_state_V, i32 1, [1 x i8]* @p_str1) nounwind
+codeRepl:14  call void (...)* @_ssdm_op_SpecReset(i4* @led_state_V, i32 1, [1 x i8]* @p_str15) nounwind
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -377,7 +377,7 @@ codeRepl:22  %rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([45 x i8]* @del
 
 <Node id="30" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-codeRepl:23  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind
+codeRepl:23  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str15) nounwind
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>

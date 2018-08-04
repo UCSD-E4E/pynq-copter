@@ -1,4 +1,4 @@
 iiccomm3_AXILiteS_s_axi
-iiccomm3_outValue_first_s_axi
+iiccomm3_OUTPUTS_s_axi
 iiccomm3_iic_m_axi
 iiccomm3

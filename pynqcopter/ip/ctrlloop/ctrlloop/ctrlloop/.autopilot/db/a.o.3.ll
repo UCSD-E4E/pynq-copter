@@ -8,13 +8,13 @@ target triple = "x86_64-unknown-linux-gnu"
 @delay_until_ms_MD_10 = internal unnamed_addr constant [45 x i8] c"delay_until_ms<1000ull, 100000000ull>.region\00" ; [#uses=2 type=[45 x i8]*]
 @ctrlloop_str = internal unnamed_addr constant [9 x i8] c"ctrlloop\00" ; [#uses=1 type=[9 x i8]*]
 @RAM_1P_str = internal unnamed_addr constant [7 x i8] c"RAM_1P\00" ; [#uses=1 type=[7 x i8]*]
-@p_str6 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=7 type=[1 x i8]*]
 @p_str5 = private unnamed_addr constant [8 x i8] c"ap_none\00", align 1 ; [#uses=2 type=[8 x i8]*]
-@p_str4 = private unnamed_addr constant [6 x i8] c"IOMEM\00", align 1 ; [#uses=1 type=[6 x i8]*]
+@p_str46 = private unnamed_addr constant [6 x i8] c"IOMEM\00", align 1 ; [#uses=1 type=[6 x i8]*]
+@p_str4 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1 ; [#uses=2 type=[10 x i8]*]
 @p_str3 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1 ; [#uses=1 type=[6 x i8]*]
 @p_str2 = private unnamed_addr constant [5 x i8] c"CTRL\00", align 1 ; [#uses=2 type=[5 x i8]*]
-@p_str1 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=29 type=[1 x i8]*]
-@p_str = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1 ; [#uses=2 type=[10 x i8]*]
+@p_str15 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=29 type=[1 x i8]*]
+@p_str = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=7 type=[1 x i8]*]
 
 ; [#uses=12]
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
@@ -35,13 +35,13 @@ codeRepl:
   call void @llvm.dbg.value(metadata !{i32* %IOMEM}, i64 0, metadata !1718), !dbg !1729 ; [debug line = 55:27] [debug variable = iomem.V]
   call void @llvm.dbg.value(metadata !{[128 x i32]* %regs_V}, i64 0, metadata !1730), !dbg !1735 ; [debug line = 56:14] [debug variable = regs.V]
   call void @llvm.dbg.value(metadata !{i4* %leds_V}, i64 0, metadata !1736), !dbg !1738 ; [debug line = 59:14] [debug variable = leds.V]
-  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind, !dbg !1739 ; [debug line = 62:1]
-  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([128 x i32]* %regs_V, [1 x i8]* @p_str6, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str6, i32 -1, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6, [1 x i8]* @p_str6) ; [#uses=0 type=i32]
-  call void (...)* @_ssdm_op_SpecInterface([128 x i32]* %regs_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32* %IOMEM, [6 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [6 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-  call void (...)* @_ssdm_op_SpecInterface(i4* %leds_V, [8 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind, !dbg !1740 ; [debug line = 73:1]
-  call void (...)* @_ssdm_op_SpecInterface(i4 %buttons_V, [8 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind, !dbg !1741 ; [debug line = 76:1]
-  call void (...)* @_ssdm_op_SpecReset(i4* @led_state_V, i32 1, [1 x i8]* @p_str1) nounwind, !dbg !1742 ; [debug line = 82:1]
+  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str15, i32 0, i32 0, [5 x i8]* @p_str2, [1 x i8]* @p_str15, [1 x i8]* @p_str15, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str15, [1 x i8]* @p_str15) nounwind, !dbg !1739 ; [debug line = 62:1]
+  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([128 x i32]* %regs_V, [1 x i8]* @p_str, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) ; [#uses=0 type=i32]
+  call void (...)* @_ssdm_op_SpecInterface([128 x i32]* %regs_V, [10 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str15, i32 0, i32 0, [5 x i8]* @p_str2, [1 x i8]* @p_str15, [1 x i8]* @p_str15, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str15, [1 x i8]* @p_str15) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32* %IOMEM, [6 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str15, i32 0, i32 0, [6 x i8]* @p_str46, [1 x i8]* @p_str15, [1 x i8]* @p_str15, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str15, [1 x i8]* @p_str15)
+  call void (...)* @_ssdm_op_SpecInterface(i4* %leds_V, [8 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str15, i32 0, i32 0, [1 x i8]* @p_str15, [1 x i8]* @p_str15, [1 x i8]* @p_str15, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str15, [1 x i8]* @p_str15) nounwind, !dbg !1740 ; [debug line = 73:1]
+  call void (...)* @_ssdm_op_SpecInterface(i4 %buttons_V, [8 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str15, i32 0, i32 0, [1 x i8]* @p_str15, [1 x i8]* @p_str15, [1 x i8]* @p_str15, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str15, [1 x i8]* @p_str15) nounwind, !dbg !1741 ; [debug line = 76:1]
+  call void (...)* @_ssdm_op_SpecReset(i4* @led_state_V, i32 1, [1 x i8]* @p_str15) nounwind, !dbg !1742 ; [debug line = 82:1]
   %led_state_V_load = load i4* @led_state_V, align 1, !dbg !1743 ; [#uses=1 type=i4] [debug line = 1908:26@83:2]
   %led_state_V_assign = add i4 %led_state_V_load, 1, !dbg !1747 ; [#uses=2 type=i4] [debug line = 1879:145@1909:5@83:2]
   store i4 %led_state_V_assign, i4* @led_state_V, align 1, !dbg !1747 ; [debug line = 1879:145@1909:5@83:2]
@@ -54,7 +54,7 @@ codeRepl:
   %regs_V_addr = getelementptr [128 x i32]* %regs_V, i64 0, i64 0 ; [#uses=1 type=i32*]
   store i32 %p_s, i32* %regs_V_addr, align 4, !dbg !1770 ; [debug line = 281:5@88:2]
   %rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([45 x i8]* @delay_until_ms_MD_10) nounwind ; [#uses=1 type=i32]
-  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind, !dbg !1772 ; [debug line = 53:1@92:2]
+  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str15) nounwind, !dbg !1772 ; [debug line = 53:1@92:2]
   br label %0, !dbg !1782                         ; [debug line = 57:7@92:2]
 
 ; <label>:0                                       ; preds = %1, %codeRepl
@@ -144,23 +144,23 @@ entry:
   ret i4 %0
 }
 
-!opencl.kernels = !{!0, !7, !7, !13, !13, !7, !19, !22, !24, !24, !7, !7, !26, !28, !28, !7, !7, !30, !30, !7, !7, !32, !34, !35, !19, !24, !24, !7, !7, !7, !37, !13, !13, !7, !43, !45, !24, !24, !7, !7, !24, !24, !7, !7, !7, !7, !7, !7}
+!opencl.kernels = !{!0, !7, !13, !13, !0, !19, !22, !24, !24, !0, !0, !24, !24, !0, !0, !0, !0, !0, !0, !26, !0, !0, !13, !13, !0, !32, !34, !24, !24, !0, !0, !36, !38, !38, !0, !0, !40, !40, !0, !0, !42, !44, !45, !32, !24, !24, !0, !0}
 !hls.encrypted.func = !{}
 !llvm.map.gv = !{!47}
 
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
-!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 0, i32 0, i32 0}
-!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!3 = metadata !{metadata !"kernel_arg_type", metadata !"ap_uint<32>*", metadata !"ap_uint<32>*", metadata !"ap_uint<4>", metadata !"ap_uint<1>", metadata !"ap_uint<4> &"}
-!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"const", metadata !"const", metadata !""}
-!5 = metadata !{metadata !"kernel_arg_name", metadata !"iomem", metadata !"regs", metadata !"buttons", metadata !"interrupt", metadata !"leds"}
+!1 = metadata !{metadata !"kernel_arg_addr_space"}
+!2 = metadata !{metadata !"kernel_arg_access_qual"}
+!3 = metadata !{metadata !"kernel_arg_type"}
+!4 = metadata !{metadata !"kernel_arg_type_qual"}
+!5 = metadata !{metadata !"kernel_arg_name"}
 !6 = metadata !{metadata !"reqd_work_group_size", i32 1, i32 1, i32 1}
 !7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}
-!8 = metadata !{metadata !"kernel_arg_addr_space"}
-!9 = metadata !{metadata !"kernel_arg_access_qual"}
-!10 = metadata !{metadata !"kernel_arg_type"}
-!11 = metadata !{metadata !"kernel_arg_type_qual"}
-!12 = metadata !{metadata !"kernel_arg_name"}
+!8 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 0}
+!9 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none"}
+!10 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_int_base<4, false> &", metadata !"int"}
+!11 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !""}
+!12 = metadata !{metadata !"kernel_arg_name", metadata !"op", metadata !"op2"}
 !13 = metadata !{null, metadata !14, metadata !15, metadata !16, metadata !17, metadata !18, metadata !6}
 !14 = metadata !{metadata !"kernel_arg_addr_space", i32 0}
 !15 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none"}
@@ -168,33 +168,33 @@ entry:
 !17 = metadata !{metadata !"kernel_arg_type_qual", metadata !""}
 !18 = metadata !{metadata !"kernel_arg_name", metadata !"op"}
 !19 = metadata !{null, metadata !14, metadata !15, metadata !20, metadata !17, metadata !21, metadata !6}
-!20 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_int_base<1, false> &"}
+!20 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_int_base<32, true> &"}
 !21 = metadata !{metadata !"kernel_arg_name", metadata !"op2"}
 !22 = metadata !{null, metadata !14, metadata !15, metadata !23, metadata !17, metadata !21, metadata !6}
-!23 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_int_base<64, false> &"}
+!23 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_int_base<4, false> &"}
 !24 = metadata !{null, metadata !14, metadata !15, metadata !16, metadata !17, metadata !25, metadata !6}
 !25 = metadata !{metadata !"kernel_arg_name", metadata !"val"}
-!26 = metadata !{null, metadata !14, metadata !15, metadata !27, metadata !17, metadata !21, metadata !6}
-!27 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_uint<64> &"}
-!28 = metadata !{null, metadata !14, metadata !15, metadata !29, metadata !17, metadata !25, metadata !6}
-!29 = metadata !{metadata !"kernel_arg_type", metadata !"ulong long"}
-!30 = metadata !{null, metadata !14, metadata !15, metadata !31, metadata !17, metadata !18, metadata !6}
-!31 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_uint<4> &"}
+!26 = metadata !{null, metadata !27, metadata !28, metadata !29, metadata !30, metadata !31, metadata !6}
+!27 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 0, i32 0, i32 0}
+!28 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!29 = metadata !{metadata !"kernel_arg_type", metadata !"ap_uint<32>*", metadata !"ap_uint<32>*", metadata !"ap_uint<4>", metadata !"ap_uint<1>", metadata !"ap_uint<4> &"}
+!30 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"const", metadata !"const", metadata !""}
+!31 = metadata !{metadata !"kernel_arg_name", metadata !"iomem", metadata !"regs", metadata !"buttons", metadata !"interrupt", metadata !"leds"}
 !32 = metadata !{null, metadata !14, metadata !15, metadata !33, metadata !17, metadata !21, metadata !6}
-!33 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_uint<32> &"}
-!34 = metadata !{null, metadata !14, metadata !15, metadata !31, metadata !17, metadata !21, metadata !6}
-!35 = metadata !{null, metadata !14, metadata !15, metadata !16, metadata !17, metadata !36, metadata !6}
-!36 = metadata !{metadata !"kernel_arg_name", metadata !""}
-!37 = metadata !{null, metadata !38, metadata !39, metadata !40, metadata !41, metadata !42, metadata !6}
-!38 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 0}
-!39 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none"}
-!40 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_int_base<4, false> &", metadata !"int"}
-!41 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !""}
-!42 = metadata !{metadata !"kernel_arg_name", metadata !"op", metadata !"op2"}
-!43 = metadata !{null, metadata !14, metadata !15, metadata !44, metadata !17, metadata !21, metadata !6}
-!44 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_int_base<32, true> &"}
-!45 = metadata !{null, metadata !14, metadata !15, metadata !46, metadata !17, metadata !21, metadata !6}
-!46 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_int_base<4, false> &"}
+!33 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_int_base<1, false> &"}
+!34 = metadata !{null, metadata !14, metadata !15, metadata !35, metadata !17, metadata !21, metadata !6}
+!35 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_int_base<64, false> &"}
+!36 = metadata !{null, metadata !14, metadata !15, metadata !37, metadata !17, metadata !21, metadata !6}
+!37 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_uint<64> &"}
+!38 = metadata !{null, metadata !14, metadata !15, metadata !39, metadata !17, metadata !25, metadata !6}
+!39 = metadata !{metadata !"kernel_arg_type", metadata !"ulong long"}
+!40 = metadata !{null, metadata !14, metadata !15, metadata !41, metadata !17, metadata !18, metadata !6}
+!41 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_uint<4> &"}
+!42 = metadata !{null, metadata !14, metadata !15, metadata !43, metadata !17, metadata !21, metadata !6}
+!43 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_uint<32> &"}
+!44 = metadata !{null, metadata !14, metadata !15, metadata !41, metadata !17, metadata !21, metadata !6}
+!45 = metadata !{null, metadata !14, metadata !15, metadata !16, metadata !17, metadata !46, metadata !6}
+!46 = metadata !{metadata !"kernel_arg_name", metadata !""}
 !47 = metadata !{metadata !48, [0 x i32]* @llvm_global_ctors_0}
 !48 = metadata !{metadata !49}
 !49 = metadata !{i32 0, i32 31, metadata !50}

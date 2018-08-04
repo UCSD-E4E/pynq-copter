@@ -40,13 +40,13 @@ typedef uint32_t u32;
 #else
 typedef struct {
     u16 DeviceId;
-    u32 Outvalue_first_BaseAddress;
+    u32 Outputs_BaseAddress;
     u32 Axilites_BaseAddress;
 } XIiccomm3_Config;
 #endif
 
 typedef struct {
-    u32 Outvalue_first_BaseAddress;
+    u32 Outputs_BaseAddress;
     u32 Axilites_BaseAddress;
     u32 IsReady;
 } XIiccomm3;
@@ -89,10 +89,46 @@ u32 XIiccomm3_IsReady(XIiccomm3 *InstancePtr);
 void XIiccomm3_EnableAutoRestart(XIiccomm3 *InstancePtr);
 void XIiccomm3_DisableAutoRestart(XIiccomm3 *InstancePtr);
 
-void XIiccomm3_Set_outValue_i(XIiccomm3 *InstancePtr, u32 Data);
-u32 XIiccomm3_Get_outValue_i(XIiccomm3 *InstancePtr);
-u32 XIiccomm3_Get_outValue_o(XIiccomm3 *InstancePtr);
-u32 XIiccomm3_Get_outValue_o_vld(XIiccomm3 *InstancePtr);
+void XIiccomm3_Set_outValue1_i(XIiccomm3 *InstancePtr, u32 Data);
+u32 XIiccomm3_Get_outValue1_i(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue1_o(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue1_o_vld(XIiccomm3 *InstancePtr);
+void XIiccomm3_Set_outValue2_i(XIiccomm3 *InstancePtr, u32 Data);
+u32 XIiccomm3_Get_outValue2_i(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue2_o(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue2_o_vld(XIiccomm3 *InstancePtr);
+void XIiccomm3_Set_outValue3_i(XIiccomm3 *InstancePtr, u32 Data);
+u32 XIiccomm3_Get_outValue3_i(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue3_o(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue3_o_vld(XIiccomm3 *InstancePtr);
+void XIiccomm3_Set_outValue4_i(XIiccomm3 *InstancePtr, u32 Data);
+u32 XIiccomm3_Get_outValue4_i(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue4_o(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue4_o_vld(XIiccomm3 *InstancePtr);
+void XIiccomm3_Set_outValue5_i(XIiccomm3 *InstancePtr, u32 Data);
+u32 XIiccomm3_Get_outValue5_i(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue5_o(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue5_o_vld(XIiccomm3 *InstancePtr);
+void XIiccomm3_Set_outValue6_i(XIiccomm3 *InstancePtr, u32 Data);
+u32 XIiccomm3_Get_outValue6_i(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue6_o(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue6_o_vld(XIiccomm3 *InstancePtr);
+void XIiccomm3_Set_outValue7_i(XIiccomm3 *InstancePtr, u32 Data);
+u32 XIiccomm3_Get_outValue7_i(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue7_o(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue7_o_vld(XIiccomm3 *InstancePtr);
+void XIiccomm3_Set_outValue8_i(XIiccomm3 *InstancePtr, u32 Data);
+u32 XIiccomm3_Get_outValue8_i(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue8_o(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue8_o_vld(XIiccomm3 *InstancePtr);
+void XIiccomm3_Set_outValue9_i(XIiccomm3 *InstancePtr, u32 Data);
+u32 XIiccomm3_Get_outValue9_i(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue9_o(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue9_o_vld(XIiccomm3 *InstancePtr);
+void XIiccomm3_Set_outValue10_i(XIiccomm3 *InstancePtr, u32 Data);
+u32 XIiccomm3_Get_outValue10_i(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue10_o(XIiccomm3 *InstancePtr);
+u32 XIiccomm3_Get_outValue10_o_vld(XIiccomm3 *InstancePtr);
 
 void XIiccomm3_InterruptGlobalEnable(XIiccomm3 *InstancePtr);
 void XIiccomm3_InterruptGlobalDisable(XIiccomm3 *InstancePtr);

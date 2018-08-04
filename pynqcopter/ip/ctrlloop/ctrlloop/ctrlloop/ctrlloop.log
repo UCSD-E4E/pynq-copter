@@ -5,25 +5,21 @@ Copyright (C) 1986-2017 Xilinx, Inc. All Rights Reserved.
 
 ==============================================================
 
-INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
-INFO: [SIM 211-1] CSim done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-10] Analyzing design file 'ctrlloop.cpp' ...
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
+INFO: [HLS 200-10] Analyzing design file 'ctrlloop.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:28 ; elapsed = 00:00:34 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 247608 ; free virtual = 516738
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:29 ; elapsed = 00:00:36 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 247604 ; free virtual = 516737
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:18 ; elapsed = 00:00:28 . Memory (MB): peak = 359.953 ; gain = 13.379 ; free physical = 125394 ; free virtual = 502037
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:20 ; elapsed = 00:00:30 . Memory (MB): peak = 359.953 ; gain = 13.379 ; free physical = 125413 ; free virtual = 502059
 INFO: [HLS 200-10] Starting code transformations ...
 INFO: [XFORM 203-603] Inlining function 'delay_until_ms<1000ull, 100000000ull>' into 'ctrlloop' (ctrlloop.cpp:92).
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:31 ; elapsed = 00:00:37 . Memory (MB): peak = 360.379 ; gain = 13.820 ; free physical = 247590 ; free virtual = 516726
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:21 ; elapsed = 00:00:31 . Memory (MB): peak = 360.363 ; gain = 13.789 ; free physical = 125325 ; free virtual = 501974
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:31 ; elapsed = 00:00:37 . Memory (MB): peak = 488.180 ; gain = 141.621 ; free physical = 247583 ; free virtual = 516720
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:32 ; elapsed = 00:00:38 . Memory (MB): peak = 488.180 ; gain = 141.621 ; free physical = 247553 ; free virtual = 516694
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:21 ; elapsed = 00:00:31 . Memory (MB): peak = 488.195 ; gain = 141.621 ; free physical = 125291 ; free virtual = 501941
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:22 ; elapsed = 00:00:32 . Memory (MB): peak = 488.195 ; gain = 141.621 ; free physical = 125254 ; free virtual = 501907
 WARNING: [XFORM 203-803] Cannot bundle argument 'iomem.V' to m_axi port 'IOMEM' since its offset mode is off.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:32 ; elapsed = 00:00:39 . Memory (MB): peak = 488.180 ; gain = 141.621 ; free physical = 247550 ; free virtual = 516691
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:22 ; elapsed = 00:00:33 . Memory (MB): peak = 488.195 ; gain = 141.621 ; free physical = 125250 ; free virtual = 501903
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'ctrlloop' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -31,13 +27,13 @@ INFO: [HLS 200-42] -- Implementing module 'ctrlloop'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 38.63 seconds; current allocated memory: 86.023 MB.
+INFO: [HLS 200-111]  Elapsed time: 32.87 seconds; current allocated memory: 85.662 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 86.228 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 85.828 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'ctrlloop'
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -175,10 +171,9 @@ WARNING: [RTGEN 206-101] Port 'ctrlloop/m_axi_IOMEM_BUSER' has no fanin or fanou
 WARNING: [RTGEN 206-101] Port 'ctrlloop/interrupt_V' has no fanin or fanout and is left dangling.
                Please use C simulation to confirm this function argument can be read from or written to.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'ctrlloop'.
-INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 86.714 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:33 ; elapsed = 00:00:39 . Memory (MB): peak = 488.180 ; gain = 141.621 ; free physical = 247550 ; free virtual = 516692
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 86.282 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:23 ; elapsed = 00:00:34 . Memory (MB): peak = 488.195 ; gain = 141.621 ; free physical = 125262 ; free virtual = 501916
 INFO: [SYSC 207-301] Generating SystemC RTL for ctrlloop.
 INFO: [VHDL 208-304] Generating VHDL RTL for ctrlloop.
 INFO: [VLOG 209-307] Generating Verilog RTL for ctrlloop.
-INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-INFO: [HLS 200-112] Total elapsed time: 71.27 seconds; peak allocated memory: 86.714 MB.
+INFO: [HLS 200-112] Total elapsed time: 33.6 seconds; peak allocated memory: 86.282 MB.

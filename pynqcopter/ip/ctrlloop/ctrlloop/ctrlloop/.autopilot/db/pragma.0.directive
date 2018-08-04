@@ -8,43 +8,5 @@
 <option name="floating" positionalBoolean="mode" value=""/>
 </pragma>
 </directive>
-<directive functionLabel="" functionName="ctrlloop" label="">
-<pragma name="INTERFACE">
-<option name="s_axilite" positionalBoolean="mode" value=""/>
-<option name="port" positionalBoolean="4" value="return"/>
-<option name="bundle" value="CTRL"/>
-</pragma>
-</directive>
-<directive functionLabel="" functionName="ctrlloop" label="">
-<pragma name="INTERFACE">
-<option name="s_axilite" positionalBoolean="mode" value=""/>
-<option name="port" positionalBoolean="4" value="regs"/>
-<option name="bundle" value="CTRL"/>
-</pragma>
-</directive>
-<directive functionLabel="" functionName="ctrlloop" label="">
-<pragma name="INTERFACE">
-<option name="m_axi" positionalBoolean="mode" value=""/>
-<option name="port" positionalBoolean="4" value="iomem"/>
-<option name="bundle" value="IOMEM"/>
-</pragma>
-</directive>
-<directive functionLabel="" functionName="ctrlloop" label="">
-<pragma name="INTERFACE">
-<option name="ap_none" positionalBoolean="mode" value=""/>
-<option name="port" positionalBoolean="4" value="leds"/>
-</pragma>
-</directive>
-<directive functionLabel="" functionName="ctrlloop" label="">
-<pragma name="INTERFACE">
-<option name="ap_none" positionalBoolean="mode" value=""/>
-<option name="port" positionalBoolean="4" value="buttons"/>
-</pragma>
-</directive>
-<directive functionLabel="" functionName="ctrlloop" label="">
-<pragma name="RESET">
-<option name="variable" positionalBoolean="4" value="led_state"/>
-</pragma>
-</directive>
 </sourceFile>
 </AutoPilot:ProjectResources>

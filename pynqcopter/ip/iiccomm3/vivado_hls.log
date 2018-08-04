@@ -6,7 +6,7 @@
 
 source /data/opt/Xilinx/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/data/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Fri Aug 03 11:44:49 PDT 2018
+INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Sat Aug 04 09:52:27 PDT 2018
 INFO: [HLS 200-10] On os Linux Mint 18 Sarah
 INFO: [HLS 200-10] In directory '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3'
 INFO: [HLS 200-10] Opening project '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3'.
@@ -20,9 +20,7 @@ INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 make[2]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/csim/build'
-   Compiling ../../../../iiccomm3.cpp in debug mode
-   Compiling ../../../../main.cpp in debug mode
-   Generating csim.exe
+make[2]: 'csim.exe' is up to date.
 make[2]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/csim/build'
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
 INFO: [SIM 211-1] CSim done with 0 errors.
@@ -30,14 +28,14 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'iiccomm3.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:27 ; elapsed = 00:00:32 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 127681 ; free virtual = 503823
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:29 ; elapsed = 00:00:34 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 127522 ; free virtual = 503664
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:20 ; elapsed = 00:00:28 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 127248 ; free virtual = 504277
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:21 ; elapsed = 00:00:30 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 127243 ; free virtual = 504271
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:30 ; elapsed = 00:00:35 . Memory (MB): peak = 360.141 ; gain = 13.582 ; free physical = 127670 ; free virtual = 503813
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:23 ; elapsed = 00:00:31 . Memory (MB): peak = 360.141 ; gain = 13.582 ; free physical = 127221 ; free virtual = 504249
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:30 ; elapsed = 00:00:35 . Memory (MB): peak = 360.141 ; gain = 13.582 ; free physical = 127667 ; free virtual = 503810
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:30 ; elapsed = 00:00:36 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 127688 ; free virtual = 503831
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:31 ; elapsed = 00:00:36 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 127669 ; free virtual = 503811
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:23 ; elapsed = 00:00:31 . Memory (MB): peak = 360.141 ; gain = 13.582 ; free physical = 127205 ; free virtual = 504233
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:23 ; elapsed = 00:00:32 . Memory (MB): peak = 488.145 ; gain = 141.586 ; free physical = 127173 ; free virtual = 504202
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:24 ; elapsed = 00:00:33 . Memory (MB): peak = 488.145 ; gain = 141.586 ; free physical = 127155 ; free virtual = 504184
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'iiccomm3' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -45,24 +43,33 @@ INFO: [HLS 200-42] -- Implementing module 'iiccomm3'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 36.33 seconds; current allocated memory: 72.901 MB.
+INFO: [HLS 200-111]  Elapsed time: 32.63 seconds; current allocated memory: 77.083 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 73.021 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 77.549 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'iiccomm3'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/iic' to 'm_axi'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue1' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue2' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue3' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue4' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue5' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue6' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue7' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue8' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue9' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue10' to 's_axilite & ap_ovld'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'iiccomm3' to 's_axilite & ap_ctrl_hs'.
 INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port AXILiteS.
-INFO: [RTGEN 206-100] Bundling port 'outValue' to AXI-Lite port outValue_first.
+INFO: [RTGEN 206-100] Bundling port 'outValue1', 'outValue2', 'outValue3', 'outValue4', 'outValue5', 'outValue6', 'outValue7', 'outValue8', 'outValue9' and 'outValue10' to AXI-Lite port OUTPUTS.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'iiccomm3'.
-INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 73.664 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:32 ; elapsed = 00:00:37 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 127640 ; free virtual = 503781
+INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 78.493 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:25 ; elapsed = 00:00:34 . Memory (MB): peak = 488.145 ; gain = 141.586 ; free physical = 127139 ; free virtual = 504168
 INFO: [SYSC 207-301] Generating SystemC RTL for iiccomm3.
 INFO: [VHDL 208-304] Generating VHDL RTL for iiccomm3.
 INFO: [VLOG 209-307] Generating Verilog RTL for iiccomm3.
@@ -77,6 +84,6 @@ source run_ippack.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Fri Aug  3 11:45:40 2018...
-INFO: [HLS 200-112] Total elapsed time: 79.86 seconds; peak allocated memory: 73.664 MB.
-INFO: [Common 17-206] Exiting vivado_hls at Fri Aug  3 11:46:08 2018...
+INFO: [Common 17-206] Exiting Vivado at Sat Aug  4 09:53:12 2018...
+INFO: [HLS 200-112] Total elapsed time: 65.35 seconds; peak allocated memory: 78.493 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Sat Aug  4 09:53:33 2018...

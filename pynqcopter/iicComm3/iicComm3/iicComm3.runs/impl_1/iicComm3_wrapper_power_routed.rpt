@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Fri Aug  3 11:57:03 2018
+| Date             : Sat Aug  4 10:01:17 2018
 | Host             : fabricant running 64-bit Linux Mint 18 Sarah
 | Command          : report_power -file iicComm3_wrapper_power_routed.rpt -pb iicComm3_wrapper_power_summary_routed.pb -rpx iicComm3_wrapper_power_routed.rpx
 | Design           : iicComm3_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.419        |
+| Total On-Chip Power (W)  | 1.418        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 1.285        |
@@ -52,20 +52,20 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.007 |        4 |       --- |             --- |
-| Slice Logic             |     0.002 |     3450 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     1253 |     53200 |            2.36 |
+| Clocks                  |     0.006 |        4 |       --- |             --- |
+| Slice Logic             |     0.002 |     3537 |       --- |             --- |
+|   LUT as Logic          |     0.002 |     1292 |     53200 |            2.43 |
 |   CARRY4                |    <0.001 |       68 |     13300 |            0.51 |
-|   Register              |    <0.001 |     1478 |    106400 |            1.39 |
-|   LUT as Shift Register |    <0.001 |       71 |     17400 |            0.41 |
+|   Register              |    <0.001 |     1516 |    106400 |            1.42 |
+|   LUT as Shift Register |    <0.001 |       73 |     17400 |            0.42 |
 |   F7/F8 Muxes           |    <0.001 |        2 |     53200 |           <0.01 |
-|   Others                |     0.000 |      273 |       --- |             --- |
-| Signals                 |     0.003 |     2525 |       --- |             --- |
+|   Others                |     0.000 |      275 |       --- |             --- |
+| Signals                 |     0.003 |     2597 |       --- |             --- |
 | Block RAM               |     0.003 |      0.5 |       140 |            0.36 |
 | I/O                     |     0.000 |        6 |       125 |            4.80 |
 | PS7                     |     1.270 |        1 |       --- |             --- |
 | Static Power            |     0.133 |          |           |                 |
-| Total                   |     1.419 |          |           |                 |
+| Total                   |     1.418 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.028 |       0.015 |      0.013 |
+| Vccint    |       1.000 |     0.028 |       0.014 |      0.013 |
 | Vccaux    |       1.800 |     0.014 |       0.000 |      0.014 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -183,6 +183,7 @@ Table of Contents
 |     iiccomm3_0                                   |     0.005 |
 |       inst                                       |     0.005 |
 |         iiccomm3_AXILiteS_s_axi_U                |    <0.001 |
+|         iiccomm3_OUTPUTS_s_axi_U                 |     0.000 |
 |         iiccomm3_iic_m_axi_U                     |     0.005 |
 |           bus_read                               |     0.005 |
 |             buff_rdata                           |     0.003 |
@@ -243,9 +244,9 @@ Table of Contents
 |               WR.b_channel_0                     |    <0.001 |
 |                 bid_fifo_0                       |    <0.001 |
 |                 bresp_fifo_0                     |    <0.001 |
-|       xbar                                       |    <0.001 |
-|         inst                                     |    <0.001 |
-|           gen_sasd.crossbar_sasd_0               |    <0.001 |
+|       xbar                                       |     0.001 |
+|         inst                                     |     0.001 |
+|           gen_sasd.crossbar_sasd_0               |     0.001 |
 |             addr_arbiter_inst                    |    <0.001 |
 |             gen_decerr.decerr_slave_inst         |    <0.001 |
 |             reg_slice_r                          |    <0.001 |

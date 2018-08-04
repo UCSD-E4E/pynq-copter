@@ -12,7 +12,7 @@
 #include "AESL_pkg.h"
 
 #include "iiccomm3_AXILiteS_s_axi.h"
-#include "iiccomm3_outValue_first_s_axi.h"
+#include "iiccomm3_OUTPUTS_s_axi.h"
 #include "iiccomm3_iic_m_axi.h"
 
 namespace ap_rtl {
@@ -27,8 +27,8 @@ template<unsigned int C_M_AXI_IIC_ADDR_WIDTH = 32,
          unsigned int C_M_AXI_IIC_BUSER_WIDTH = 1,
          unsigned int C_S_AXI_AXILITES_ADDR_WIDTH = 4,
          unsigned int C_S_AXI_AXILITES_DATA_WIDTH = 32,
-         unsigned int C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH = 5,
-         unsigned int C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH = 32>
+         unsigned int C_S_AXI_OUTPUTS_ADDR_WIDTH = 8,
+         unsigned int C_S_AXI_OUTPUTS_DATA_WIDTH = 32>
 struct iiccomm3 : public sc_module {
     // Port declarations 82
     sc_in_clk ap_clk;
@@ -96,23 +96,23 @@ struct iiccomm3 : public sc_module {
     sc_in< sc_logic > s_axi_AXILiteS_BREADY;
     sc_out< sc_lv<2> > s_axi_AXILiteS_BRESP;
     sc_out< sc_logic > interrupt;
-    sc_in< sc_logic > s_axi_outValue_first_AWVALID;
-    sc_out< sc_logic > s_axi_outValue_first_AWREADY;
-    sc_in< sc_uint<C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH> > s_axi_outValue_first_AWADDR;
-    sc_in< sc_logic > s_axi_outValue_first_WVALID;
-    sc_out< sc_logic > s_axi_outValue_first_WREADY;
-    sc_in< sc_uint<C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH> > s_axi_outValue_first_WDATA;
-    sc_in< sc_uint<C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH/8> > s_axi_outValue_first_WSTRB;
-    sc_in< sc_logic > s_axi_outValue_first_ARVALID;
-    sc_out< sc_logic > s_axi_outValue_first_ARREADY;
-    sc_in< sc_uint<C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH> > s_axi_outValue_first_ARADDR;
-    sc_out< sc_logic > s_axi_outValue_first_RVALID;
-    sc_in< sc_logic > s_axi_outValue_first_RREADY;
-    sc_out< sc_uint<C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH> > s_axi_outValue_first_RDATA;
-    sc_out< sc_lv<2> > s_axi_outValue_first_RRESP;
-    sc_out< sc_logic > s_axi_outValue_first_BVALID;
-    sc_in< sc_logic > s_axi_outValue_first_BREADY;
-    sc_out< sc_lv<2> > s_axi_outValue_first_BRESP;
+    sc_in< sc_logic > s_axi_OUTPUTS_AWVALID;
+    sc_out< sc_logic > s_axi_OUTPUTS_AWREADY;
+    sc_in< sc_uint<C_S_AXI_OUTPUTS_ADDR_WIDTH> > s_axi_OUTPUTS_AWADDR;
+    sc_in< sc_logic > s_axi_OUTPUTS_WVALID;
+    sc_out< sc_logic > s_axi_OUTPUTS_WREADY;
+    sc_in< sc_uint<C_S_AXI_OUTPUTS_DATA_WIDTH> > s_axi_OUTPUTS_WDATA;
+    sc_in< sc_uint<C_S_AXI_OUTPUTS_DATA_WIDTH/8> > s_axi_OUTPUTS_WSTRB;
+    sc_in< sc_logic > s_axi_OUTPUTS_ARVALID;
+    sc_out< sc_logic > s_axi_OUTPUTS_ARREADY;
+    sc_in< sc_uint<C_S_AXI_OUTPUTS_ADDR_WIDTH> > s_axi_OUTPUTS_ARADDR;
+    sc_out< sc_logic > s_axi_OUTPUTS_RVALID;
+    sc_in< sc_logic > s_axi_OUTPUTS_RREADY;
+    sc_out< sc_uint<C_S_AXI_OUTPUTS_DATA_WIDTH> > s_axi_OUTPUTS_RDATA;
+    sc_out< sc_lv<2> > s_axi_OUTPUTS_RRESP;
+    sc_out< sc_logic > s_axi_OUTPUTS_BVALID;
+    sc_in< sc_logic > s_axi_OUTPUTS_BREADY;
+    sc_out< sc_lv<2> > s_axi_OUTPUTS_BRESP;
     sc_signal< sc_logic > ap_var_for_const0;
     sc_signal< sc_logic > ap_var_for_const6;
     sc_signal< sc_lv<32> > ap_var_for_const7;
@@ -134,20 +134,53 @@ struct iiccomm3 : public sc_module {
     ofstream mHdltvinHandle;
     ofstream mHdltvoutHandle;
     iiccomm3_AXILiteS_s_axi<C_S_AXI_AXILITES_ADDR_WIDTH,C_S_AXI_AXILITES_DATA_WIDTH>* iiccomm3_AXILiteS_s_axi_U;
-    iiccomm3_outValue_first_s_axi<C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH,C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH>* iiccomm3_outValue_first_s_axi_U;
+    iiccomm3_OUTPUTS_s_axi<C_S_AXI_OUTPUTS_ADDR_WIDTH,C_S_AXI_OUTPUTS_DATA_WIDTH>* iiccomm3_OUTPUTS_s_axi_U;
     iiccomm3_iic_m_axi<32,32,5,16,16,16,16,C_M_AXI_IIC_ID_WIDTH,C_M_AXI_IIC_ADDR_WIDTH,C_M_AXI_IIC_DATA_WIDTH,C_M_AXI_IIC_AWUSER_WIDTH,C_M_AXI_IIC_ARUSER_WIDTH,C_M_AXI_IIC_WUSER_WIDTH,C_M_AXI_IIC_RUSER_WIDTH,C_M_AXI_IIC_BUSER_WIDTH,C_M_AXI_IIC_TARGET_ADDR,C_M_AXI_IIC_USER_VALUE,C_M_AXI_IIC_PROT_VALUE,C_M_AXI_IIC_CACHE_VALUE>* iiccomm3_iic_m_axi_U;
     sc_signal< sc_logic > ap_rst_n_inv;
     sc_signal< sc_logic > ap_start;
     sc_signal< sc_logic > ap_done;
     sc_signal< sc_logic > ap_idle;
-    sc_signal< sc_lv<9> > ap_CS_fsm;
+    sc_signal< sc_lv<18> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
     sc_signal< sc_logic > ap_ready;
-    sc_signal< sc_lv<32> > outValue_i;
-    sc_signal< sc_logic > outValue_o_ap_vld;
+    sc_signal< sc_lv<32> > outValue1_i;
+    sc_signal< sc_logic > outValue1_o_ap_vld;
+    sc_signal< sc_lv<32> > outValue2_i;
+    sc_signal< sc_logic > outValue2_o_ap_vld;
+    sc_signal< sc_lv<32> > outValue3_i;
+    sc_signal< sc_logic > outValue3_o_ap_vld;
+    sc_signal< sc_lv<32> > outValue4_i;
+    sc_signal< sc_logic > outValue4_o_ap_vld;
+    sc_signal< sc_lv<32> > outValue5_i;
+    sc_signal< sc_logic > outValue5_o_ap_vld;
+    sc_signal< sc_lv<32> > outValue6_i;
+    sc_signal< sc_logic > outValue6_o_ap_vld;
+    sc_signal< sc_lv<32> > outValue7_i;
+    sc_signal< sc_logic > outValue7_o_ap_vld;
+    sc_signal< sc_lv<32> > outValue8_i;
+    sc_signal< sc_logic > outValue8_o_ap_vld;
+    sc_signal< sc_lv<32> > outValue9_i;
+    sc_signal< sc_logic > outValue9_o_ap_vld;
+    sc_signal< sc_lv<32> > outValue10_i;
+    sc_signal< sc_logic > outValue10_o_ap_vld;
     sc_signal< sc_logic > iic_blk_n_AR;
     sc_signal< sc_logic > iic_blk_n_R;
     sc_signal< sc_logic > ap_CS_fsm_state8;
+    sc_signal< sc_logic > ap_CS_fsm_state2;
+    sc_signal< sc_logic > ap_CS_fsm_state9;
+    sc_signal< sc_logic > ap_CS_fsm_state3;
+    sc_signal< sc_logic > ap_CS_fsm_state10;
+    sc_signal< sc_logic > ap_CS_fsm_state4;
+    sc_signal< sc_logic > ap_CS_fsm_state11;
+    sc_signal< sc_logic > ap_CS_fsm_state5;
+    sc_signal< sc_logic > ap_CS_fsm_state12;
+    sc_signal< sc_logic > ap_CS_fsm_state6;
+    sc_signal< sc_logic > ap_CS_fsm_state13;
+    sc_signal< sc_logic > ap_CS_fsm_state7;
+    sc_signal< sc_logic > ap_CS_fsm_state14;
+    sc_signal< sc_logic > ap_CS_fsm_state15;
+    sc_signal< sc_logic > ap_CS_fsm_state16;
+    sc_signal< sc_logic > ap_CS_fsm_state17;
     sc_signal< sc_logic > iic_AWREADY;
     sc_signal< sc_logic > iic_WREADY;
     sc_signal< sc_logic > iic_ARVALID;
@@ -165,36 +198,76 @@ struct iiccomm3 : public sc_module {
     sc_signal< sc_lv<1> > iic_BID;
     sc_signal< sc_lv<1> > iic_BUSER;
     sc_signal< sc_logic > ap_sig_ioackin_iic_ARREADY;
+    sc_signal< sc_lv<32> > iic_read_reg_421;
+    sc_signal< sc_lv<32> > iic_addr_read_reg_432;
+    sc_signal< sc_lv<32> > iic_addr_1_read_reg_443;
+    sc_signal< sc_lv<32> > iic_addr_2_read_reg_454;
+    sc_signal< sc_lv<32> > iic_addr_3_read_reg_459;
+    sc_signal< sc_lv<32> > iic_addr_4_read_reg_464;
+    sc_signal< sc_lv<32> > iic_addr_5_read_reg_469;
+    sc_signal< sc_lv<32> > iic_addr_6_read_reg_474;
+    sc_signal< sc_lv<32> > iic_addr_7_read_reg_479;
+    sc_signal< sc_lv<32> > iic_addr_8_read_reg_484;
     sc_signal< sc_logic > ap_reg_ioackin_iic_ARREADY;
-    sc_signal< sc_lv<32> > val1_fu_38;
-    sc_signal< sc_logic > ap_CS_fsm_state9;
-    sc_signal< sc_lv<9> > ap_NS_fsm;
+    sc_signal< sc_logic > ap_CS_fsm_state18;
+    sc_signal< sc_lv<18> > ap_NS_fsm;
     static const sc_logic ap_const_logic_1;
     static const sc_logic ap_const_logic_0;
-    static const sc_lv<9> ap_ST_fsm_state1;
-    static const sc_lv<9> ap_ST_fsm_state2;
-    static const sc_lv<9> ap_ST_fsm_state3;
-    static const sc_lv<9> ap_ST_fsm_state4;
-    static const sc_lv<9> ap_ST_fsm_state5;
-    static const sc_lv<9> ap_ST_fsm_state6;
-    static const sc_lv<9> ap_ST_fsm_state7;
-    static const sc_lv<9> ap_ST_fsm_state8;
-    static const sc_lv<9> ap_ST_fsm_state9;
+    static const sc_lv<18> ap_ST_fsm_state1;
+    static const sc_lv<18> ap_ST_fsm_state2;
+    static const sc_lv<18> ap_ST_fsm_state3;
+    static const sc_lv<18> ap_ST_fsm_state4;
+    static const sc_lv<18> ap_ST_fsm_state5;
+    static const sc_lv<18> ap_ST_fsm_state6;
+    static const sc_lv<18> ap_ST_fsm_state7;
+    static const sc_lv<18> ap_ST_fsm_state8;
+    static const sc_lv<18> ap_ST_fsm_state9;
+    static const sc_lv<18> ap_ST_fsm_state10;
+    static const sc_lv<18> ap_ST_fsm_state11;
+    static const sc_lv<18> ap_ST_fsm_state12;
+    static const sc_lv<18> ap_ST_fsm_state13;
+    static const sc_lv<18> ap_ST_fsm_state14;
+    static const sc_lv<18> ap_ST_fsm_state15;
+    static const sc_lv<18> ap_ST_fsm_state16;
+    static const sc_lv<18> ap_ST_fsm_state17;
+    static const sc_lv<18> ap_ST_fsm_state18;
     static const sc_lv<32> ap_const_lv32_0;
     static const sc_lv<32> ap_const_lv32_7;
+    static const sc_lv<32> ap_const_lv32_1;
+    static const sc_lv<32> ap_const_lv32_8;
+    static const sc_lv<32> ap_const_lv32_2;
+    static const sc_lv<32> ap_const_lv32_9;
+    static const sc_lv<32> ap_const_lv32_3;
+    static const sc_lv<32> ap_const_lv32_A;
+    static const sc_lv<32> ap_const_lv32_4;
+    static const sc_lv<32> ap_const_lv32_B;
+    static const sc_lv<32> ap_const_lv32_5;
+    static const sc_lv<32> ap_const_lv32_C;
+    static const sc_lv<32> ap_const_lv32_6;
+    static const sc_lv<32> ap_const_lv32_D;
+    static const sc_lv<32> ap_const_lv32_E;
+    static const sc_lv<32> ap_const_lv32_F;
+    static const sc_lv<32> ap_const_lv32_10;
     static const int C_S_AXI_DATA_WIDTH;
     static const int C_M_AXI_IIC_TARGET_ADDR;
     static const int C_M_AXI_IIC_USER_VALUE;
     static const int C_M_AXI_IIC_PROT_VALUE;
     static const int C_M_AXI_IIC_CACHE_VALUE;
     static const int C_M_AXI_DATA_WIDTH;
-    static const sc_lv<64> ap_const_lv64_10000C41;
-    static const sc_lv<32> ap_const_lv32_1;
+    static const sc_lv<64> ap_const_lv64_2;
+    static const sc_lv<64> ap_const_lv64_10000441;
+    static const sc_lv<64> ap_const_lv64_10000504;
+    static const sc_lv<64> ap_const_lv64_41;
+    static const sc_lv<64> ap_const_lv64_104;
+    static const sc_lv<64> ap_const_lv64_10000408;
+    static const sc_lv<64> ap_const_lv64_10000420;
+    static const sc_lv<64> ap_const_lv64_8;
+    static const sc_lv<64> ap_const_lv64_20;
     static const sc_lv<1> ap_const_lv1_0;
     static const sc_lv<3> ap_const_lv3_0;
     static const sc_lv<2> ap_const_lv2_0;
     static const sc_lv<4> ap_const_lv4_0;
-    static const sc_lv<32> ap_const_lv32_8;
+    static const sc_lv<32> ap_const_lv32_11;
     static const bool ap_const_boolean_1;
     // Thread declarations
     void thread_ap_var_for_const0();
@@ -207,6 +280,21 @@ struct iiccomm3 : public sc_module {
     void thread_ap_var_for_const5();
     void thread_ap_clk_no_reset_();
     void thread_ap_CS_fsm_state1();
+    void thread_ap_CS_fsm_state10();
+    void thread_ap_CS_fsm_state11();
+    void thread_ap_CS_fsm_state12();
+    void thread_ap_CS_fsm_state13();
+    void thread_ap_CS_fsm_state14();
+    void thread_ap_CS_fsm_state15();
+    void thread_ap_CS_fsm_state16();
+    void thread_ap_CS_fsm_state17();
+    void thread_ap_CS_fsm_state18();
+    void thread_ap_CS_fsm_state2();
+    void thread_ap_CS_fsm_state3();
+    void thread_ap_CS_fsm_state4();
+    void thread_ap_CS_fsm_state5();
+    void thread_ap_CS_fsm_state6();
+    void thread_ap_CS_fsm_state7();
     void thread_ap_CS_fsm_state8();
     void thread_ap_CS_fsm_state9();
     void thread_ap_done();
@@ -219,7 +307,16 @@ struct iiccomm3 : public sc_module {
     void thread_iic_RREADY();
     void thread_iic_blk_n_AR();
     void thread_iic_blk_n_R();
-    void thread_outValue_o_ap_vld();
+    void thread_outValue10_o_ap_vld();
+    void thread_outValue1_o_ap_vld();
+    void thread_outValue2_o_ap_vld();
+    void thread_outValue3_o_ap_vld();
+    void thread_outValue4_o_ap_vld();
+    void thread_outValue5_o_ap_vld();
+    void thread_outValue6_o_ap_vld();
+    void thread_outValue7_o_ap_vld();
+    void thread_outValue8_o_ap_vld();
+    void thread_outValue9_o_ap_vld();
     void thread_ap_NS_fsm();
     void thread_hdltv_gen();
 };

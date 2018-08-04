@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Aug  3 19:35:06 2018
+# Process ID: 28222
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/impl_1
+# Command line: vivado -log base_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source base_wrapper.tcl -notrace
+# Log file: /home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/impl_1/base_wrapper.vdi
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source base_wrapper.tcl -notrace

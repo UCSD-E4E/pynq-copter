@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="base_userReset_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/base_userReset_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="base_processing_system7_0_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/base_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="base_ctrlLoopUart_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/base_ctrlLoopUart_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="base_plClk_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/base_plClk_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="base_plIntrController_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/base_plIntrController_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="base_userResetSlice_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/base_userResetSlice_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="base_xbar_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/base_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="base_arduinoGpioBreakout_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/base_arduinoGpioBreakout_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="base_auto_pc_1_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/base_auto_pc_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="base_auto_pc_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/base_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="base_ctrlLoop_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/base_ctrlLoop_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="base_plIrqConcat_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/base_plIrqConcat_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="base_userReset_0_synth_1"/>
+		<Parent Id="base_processing_system7_0_0_synth_1"/>
+		<Parent Id="base_ctrlLoopUart_0_synth_1"/>
+		<Parent Id="base_plClk_0_synth_1"/>
+		<Parent Id="base_plIntrController_0_synth_1"/>
+		<Parent Id="base_userResetSlice_0_synth_1"/>
+		<Parent Id="base_xbar_0_synth_1"/>
+		<Parent Id="base_arduinoGpioBreakout_0_synth_1"/>
+		<Parent Id="base_auto_pc_1_synth_1"/>
+		<Parent Id="base_auto_pc_0_synth_1"/>
+		<Parent Id="base_ctrlLoop_0_synth_1"/>
+		<Parent Id="base_plIrqConcat_0_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/base/base/base.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="synth_1"/>
+		<Parent Id="base_userReset_0_synth_1"/>
+		<Parent Id="base_processing_system7_0_0_synth_1"/>
+		<Parent Id="base_ctrlLoopUart_0_synth_1"/>
+		<Parent Id="base_plClk_0_synth_1"/>
+		<Parent Id="base_plIntrController_0_synth_1"/>
+		<Parent Id="base_userResetSlice_0_synth_1"/>
+		<Parent Id="base_xbar_0_synth_1"/>
+		<Parent Id="base_arduinoGpioBreakout_0_synth_1"/>
+		<Parent Id="base_auto_pc_1_synth_1"/>
+		<Parent Id="base_auto_pc_0_synth_1"/>
+		<Parent Id="base_ctrlLoop_0_synth_1"/>
+		<Parent Id="base_plIrqConcat_0_synth_1"/>
+	</Run>
+</Runs>
+

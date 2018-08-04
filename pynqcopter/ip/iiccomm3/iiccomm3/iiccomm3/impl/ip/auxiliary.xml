@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="iiccomm3" xd:componentRef="iiccomm3" xd:initiationInterval="9" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="iiccomm3" xd:componentRef="iiccomm3" xd:initiationInterval="18" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
   <xd:arg xd:name="iic[]" xd:originalName="iic" xd:direction="inout" xd:interfaceRef="m_axi_iic" xd:busTypeRef="aximm" xd:arraySize="4096" xd:dataWidth="32" xd:bufferDirection="in"/>
-  <xd:arg xd:name="outValue" xd:originalName="outValue" xd:direction="in" xd:interfaceRef="s_axi_outValue_first" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
-  <xd:arg xd:name="outValue" xd:originalName="outValue" xd:direction="out" xd:interfaceRef="s_axi_outValue_first" xd:busTypeRef="axilite" xd:offset="0x18" xd:statusOffset="0x1C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
-  <xd:latencyEstimates xd:best-case="8" xd:worst-case="8" xd:average-case="8"/>
-  <xd:resourceEstimates xd:LUT="862" xd:FF="696" xd:BRAM="2" xd:DSP="0"/>
+  <xd:arg xd:name="outValue1" xd:originalName="outValue1" xd:direction="in" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue1" xd:originalName="outValue1" xd:direction="out" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x18" xd:statusOffset="0x1C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue2" xd:originalName="outValue2" xd:direction="in" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x20" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue2" xd:originalName="outValue2" xd:direction="out" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x28" xd:statusOffset="0x2C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue3" xd:originalName="outValue3" xd:direction="in" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x30" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue3" xd:originalName="outValue3" xd:direction="out" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x38" xd:statusOffset="0x3C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue4" xd:originalName="outValue4" xd:direction="in" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x40" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue4" xd:originalName="outValue4" xd:direction="out" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x48" xd:statusOffset="0x4C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue5" xd:originalName="outValue5" xd:direction="in" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x50" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue5" xd:originalName="outValue5" xd:direction="out" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x58" xd:statusOffset="0x5C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue6" xd:originalName="outValue6" xd:direction="in" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x60" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue6" xd:originalName="outValue6" xd:direction="out" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x68" xd:statusOffset="0x6C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue7" xd:originalName="outValue7" xd:direction="in" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x70" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue7" xd:originalName="outValue7" xd:direction="out" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x78" xd:statusOffset="0x7C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue8" xd:originalName="outValue8" xd:direction="in" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x80" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue8" xd:originalName="outValue8" xd:direction="out" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x88" xd:statusOffset="0x8C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue9" xd:originalName="outValue9" xd:direction="in" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x90" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue9" xd:originalName="outValue9" xd:direction="out" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x98" xd:statusOffset="0x9C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue10" xd:originalName="outValue10" xd:direction="in" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0xA0" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue10" xd:originalName="outValue10" xd:direction="out" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0xA8" xd:statusOffset="0xAC" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="17" xd:worst-case="17" xd:average-case="17"/>
+  <xd:resourceEstimates xd:LUT="2110" xd:FF="1677" xd:BRAM="2" xd:DSP="0"/>
 </xd:acceleratorMap>

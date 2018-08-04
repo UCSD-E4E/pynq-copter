@@ -159,7 +159,6 @@ proc create_root_design { parentCell } {
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
   set arduino_gpio [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 arduino_gpio ]
   set arduino_iic [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 arduino_iic ]
-  set iic_rtl_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 iic_rtl_0 ]
   set pmoda_gpio [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 pmoda_gpio ]
   set pmodb_gpio [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 pmodb_gpio ]
 
@@ -181,7 +180,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.NUM_READ_OUTSTANDING {1} \
    CONFIG.NUM_WRITE_OUTSTANDING {1} \
- ] [get_bd_intf_pins /iiccomm3_0/s_axi_outValue_first]
+ ] [get_bd_intf_pins /iiccomm3_0/s_axi_OUTPUTS]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -1078,10 +1077,14 @@ proc create_root_design { parentCell } {
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_iic_0/s_axi_aresetn] [get_bd_pins iiccomm3_0/ap_rst_n] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins ps7_0_axi_periph/S01_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
 
   # Create address segments
-  create_bd_addr_seg -range 0x00001000 -offset 0x40003000 [get_bd_addr_spaces iiccomm3_0/Data_m_axi_iic] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x40000000 [get_bd_addr_spaces iiccomm3_0/Data_m_axi_iic] [get_bd_addr_segs iiccomm3_0/s_axi_AXILiteS/Reg] SEG_iiccomm3_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x40003000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40001000 [get_bd_addr_spaces iiccomm3_0/Data_m_axi_iic] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40001000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x40000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs iiccomm3_0/s_axi_AXILiteS/Reg] SEG_iiccomm3_0_Reg
+
+  # Exclude Address Segments
+  create_bd_addr_seg -range 0x00001000 -offset 0x40000000 [get_bd_addr_spaces iiccomm3_0/Data_m_axi_iic] [get_bd_addr_segs iiccomm3_0/s_axi_AXILiteS/Reg] SEG_iiccomm3_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs iiccomm3_0/Data_m_axi_iic/SEG_iiccomm3_0_Reg]
+
 
 
   # Restore current instance

@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="iiccomm3,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=696,HLS_SYN_LUT=862}" *)
+(* CORE_GENERATION_INFO="iiccomm3,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=17,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=1677,HLS_SYN_LUT=2110}" *)
 
 module iiccomm3 (
         ap_clk,
@@ -75,39 +75,48 @@ module iiccomm3 (
         s_axi_AXILiteS_BREADY,
         s_axi_AXILiteS_BRESP,
         interrupt,
-        s_axi_outValue_first_AWVALID,
-        s_axi_outValue_first_AWREADY,
-        s_axi_outValue_first_AWADDR,
-        s_axi_outValue_first_WVALID,
-        s_axi_outValue_first_WREADY,
-        s_axi_outValue_first_WDATA,
-        s_axi_outValue_first_WSTRB,
-        s_axi_outValue_first_ARVALID,
-        s_axi_outValue_first_ARREADY,
-        s_axi_outValue_first_ARADDR,
-        s_axi_outValue_first_RVALID,
-        s_axi_outValue_first_RREADY,
-        s_axi_outValue_first_RDATA,
-        s_axi_outValue_first_RRESP,
-        s_axi_outValue_first_BVALID,
-        s_axi_outValue_first_BREADY,
-        s_axi_outValue_first_BRESP
+        s_axi_OUTPUTS_AWVALID,
+        s_axi_OUTPUTS_AWREADY,
+        s_axi_OUTPUTS_AWADDR,
+        s_axi_OUTPUTS_WVALID,
+        s_axi_OUTPUTS_WREADY,
+        s_axi_OUTPUTS_WDATA,
+        s_axi_OUTPUTS_WSTRB,
+        s_axi_OUTPUTS_ARVALID,
+        s_axi_OUTPUTS_ARREADY,
+        s_axi_OUTPUTS_ARADDR,
+        s_axi_OUTPUTS_RVALID,
+        s_axi_OUTPUTS_RREADY,
+        s_axi_OUTPUTS_RDATA,
+        s_axi_OUTPUTS_RRESP,
+        s_axi_OUTPUTS_BVALID,
+        s_axi_OUTPUTS_BREADY,
+        s_axi_OUTPUTS_BRESP
 );
 
-parameter    ap_ST_fsm_state1 = 9'd1;
-parameter    ap_ST_fsm_state2 = 9'd2;
-parameter    ap_ST_fsm_state3 = 9'd4;
-parameter    ap_ST_fsm_state4 = 9'd8;
-parameter    ap_ST_fsm_state5 = 9'd16;
-parameter    ap_ST_fsm_state6 = 9'd32;
-parameter    ap_ST_fsm_state7 = 9'd64;
-parameter    ap_ST_fsm_state8 = 9'd128;
-parameter    ap_ST_fsm_state9 = 9'd256;
+parameter    ap_ST_fsm_state1 = 18'd1;
+parameter    ap_ST_fsm_state2 = 18'd2;
+parameter    ap_ST_fsm_state3 = 18'd4;
+parameter    ap_ST_fsm_state4 = 18'd8;
+parameter    ap_ST_fsm_state5 = 18'd16;
+parameter    ap_ST_fsm_state6 = 18'd32;
+parameter    ap_ST_fsm_state7 = 18'd64;
+parameter    ap_ST_fsm_state8 = 18'd128;
+parameter    ap_ST_fsm_state9 = 18'd256;
+parameter    ap_ST_fsm_state10 = 18'd512;
+parameter    ap_ST_fsm_state11 = 18'd1024;
+parameter    ap_ST_fsm_state12 = 18'd2048;
+parameter    ap_ST_fsm_state13 = 18'd4096;
+parameter    ap_ST_fsm_state14 = 18'd8192;
+parameter    ap_ST_fsm_state15 = 18'd16384;
+parameter    ap_ST_fsm_state16 = 18'd32768;
+parameter    ap_ST_fsm_state17 = 18'd65536;
+parameter    ap_ST_fsm_state18 = 18'd131072;
 parameter    C_S_AXI_AXILITES_DATA_WIDTH = 32;
 parameter    C_S_AXI_AXILITES_ADDR_WIDTH = 4;
 parameter    C_S_AXI_DATA_WIDTH = 32;
-parameter    C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH = 32;
-parameter    C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH = 5;
+parameter    C_S_AXI_OUTPUTS_DATA_WIDTH = 32;
+parameter    C_S_AXI_OUTPUTS_ADDR_WIDTH = 8;
 parameter    C_M_AXI_IIC_ID_WIDTH = 1;
 parameter    C_M_AXI_IIC_ADDR_WIDTH = 32;
 parameter    C_M_AXI_IIC_DATA_WIDTH = 32;
@@ -124,7 +133,7 @@ parameter    C_M_AXI_DATA_WIDTH = 32;
 
 parameter C_S_AXI_AXILITES_WSTRB_WIDTH = (32 / 8);
 parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
-parameter C_S_AXI_OUTVALUE_FIRST_WSTRB_WIDTH = (32 / 8);
+parameter C_S_AXI_OUTPUTS_WSTRB_WIDTH = (32 / 8);
 parameter C_M_AXI_IIC_WSTRB_WIDTH = (32 / 8);
 parameter C_M_AXI_WSTRB_WIDTH = (32 / 8);
 
@@ -193,41 +202,74 @@ output   s_axi_AXILiteS_BVALID;
 input   s_axi_AXILiteS_BREADY;
 output  [1:0] s_axi_AXILiteS_BRESP;
 output   interrupt;
-input   s_axi_outValue_first_AWVALID;
-output   s_axi_outValue_first_AWREADY;
-input  [C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH - 1:0] s_axi_outValue_first_AWADDR;
-input   s_axi_outValue_first_WVALID;
-output   s_axi_outValue_first_WREADY;
-input  [C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH - 1:0] s_axi_outValue_first_WDATA;
-input  [C_S_AXI_OUTVALUE_FIRST_WSTRB_WIDTH - 1:0] s_axi_outValue_first_WSTRB;
-input   s_axi_outValue_first_ARVALID;
-output   s_axi_outValue_first_ARREADY;
-input  [C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH - 1:0] s_axi_outValue_first_ARADDR;
-output   s_axi_outValue_first_RVALID;
-input   s_axi_outValue_first_RREADY;
-output  [C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH - 1:0] s_axi_outValue_first_RDATA;
-output  [1:0] s_axi_outValue_first_RRESP;
-output   s_axi_outValue_first_BVALID;
-input   s_axi_outValue_first_BREADY;
-output  [1:0] s_axi_outValue_first_BRESP;
+input   s_axi_OUTPUTS_AWVALID;
+output   s_axi_OUTPUTS_AWREADY;
+input  [C_S_AXI_OUTPUTS_ADDR_WIDTH - 1:0] s_axi_OUTPUTS_AWADDR;
+input   s_axi_OUTPUTS_WVALID;
+output   s_axi_OUTPUTS_WREADY;
+input  [C_S_AXI_OUTPUTS_DATA_WIDTH - 1:0] s_axi_OUTPUTS_WDATA;
+input  [C_S_AXI_OUTPUTS_WSTRB_WIDTH - 1:0] s_axi_OUTPUTS_WSTRB;
+input   s_axi_OUTPUTS_ARVALID;
+output   s_axi_OUTPUTS_ARREADY;
+input  [C_S_AXI_OUTPUTS_ADDR_WIDTH - 1:0] s_axi_OUTPUTS_ARADDR;
+output   s_axi_OUTPUTS_RVALID;
+input   s_axi_OUTPUTS_RREADY;
+output  [C_S_AXI_OUTPUTS_DATA_WIDTH - 1:0] s_axi_OUTPUTS_RDATA;
+output  [1:0] s_axi_OUTPUTS_RRESP;
+output   s_axi_OUTPUTS_BVALID;
+input   s_axi_OUTPUTS_BREADY;
+output  [1:0] s_axi_OUTPUTS_BRESP;
 
 reg    ap_rst_n_inv;
 wire    ap_start;
 reg    ap_done;
 reg    ap_idle;
-(* fsm_encoding = "none" *) reg   [8:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [17:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 reg    ap_ready;
-wire   [31:0] outValue_i;
-reg    outValue_o_ap_vld;
+wire   [31:0] outValue1_i;
+reg    outValue1_o_ap_vld;
+wire   [31:0] outValue2_i;
+reg    outValue2_o_ap_vld;
+wire   [31:0] outValue3_i;
+reg    outValue3_o_ap_vld;
+wire   [31:0] outValue4_i;
+reg    outValue4_o_ap_vld;
+wire   [31:0] outValue5_i;
+reg    outValue5_o_ap_vld;
+wire   [31:0] outValue6_i;
+reg    outValue6_o_ap_vld;
+wire   [31:0] outValue7_i;
+reg    outValue7_o_ap_vld;
+wire   [31:0] outValue8_i;
+reg    outValue8_o_ap_vld;
+wire   [31:0] outValue9_i;
+reg    outValue9_o_ap_vld;
+wire   [31:0] outValue10_i;
+reg    outValue10_o_ap_vld;
 reg    iic_blk_n_AR;
 reg    iic_blk_n_R;
 wire    ap_CS_fsm_state8;
+wire    ap_CS_fsm_state2;
+wire    ap_CS_fsm_state9;
+wire    ap_CS_fsm_state3;
+wire    ap_CS_fsm_state10;
+wire    ap_CS_fsm_state4;
+wire    ap_CS_fsm_state11;
+wire    ap_CS_fsm_state5;
+wire    ap_CS_fsm_state12;
+wire    ap_CS_fsm_state6;
+wire    ap_CS_fsm_state13;
+wire    ap_CS_fsm_state7;
+wire    ap_CS_fsm_state14;
+wire    ap_CS_fsm_state15;
+wire    ap_CS_fsm_state16;
+wire    ap_CS_fsm_state17;
 wire    iic_AWREADY;
 wire    iic_WREADY;
 reg    iic_ARVALID;
 wire    iic_ARREADY;
-wire   [31:0] iic_ARADDR;
+reg   [31:0] iic_ARADDR;
 wire    iic_RVALID;
 reg    iic_RREADY;
 wire   [31:0] iic_RDATA;
@@ -240,14 +282,23 @@ wire   [1:0] iic_BRESP;
 wire   [0:0] iic_BID;
 wire   [0:0] iic_BUSER;
 reg    ap_sig_ioackin_iic_ARREADY;
+reg   [31:0] iic_read_reg_421;
+reg   [31:0] iic_addr_read_reg_432;
+reg   [31:0] iic_addr_1_read_reg_443;
+reg   [31:0] iic_addr_2_read_reg_454;
+reg   [31:0] iic_addr_3_read_reg_459;
+reg   [31:0] iic_addr_4_read_reg_464;
+reg   [31:0] iic_addr_5_read_reg_469;
+reg   [31:0] iic_addr_6_read_reg_474;
+reg   [31:0] iic_addr_7_read_reg_479;
+reg   [31:0] iic_addr_8_read_reg_484;
 reg    ap_reg_ioackin_iic_ARREADY;
-reg   [31:0] val1_fu_38;
-wire    ap_CS_fsm_state9;
-reg   [8:0] ap_NS_fsm;
+wire    ap_CS_fsm_state18;
+reg   [17:0] ap_NS_fsm;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 9'd1;
+#0 ap_CS_fsm = 18'd1;
 #0 ap_reg_ioackin_iic_ARREADY = 1'b0;
 end
 
@@ -282,33 +333,60 @@ iiccomm3_AXILiteS_s_axi_U(
     .ap_idle(ap_idle)
 );
 
-iiccomm3_outValue_first_s_axi #(
-    .C_S_AXI_ADDR_WIDTH( C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH ),
-    .C_S_AXI_DATA_WIDTH( C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH ))
-iiccomm3_outValue_first_s_axi_U(
-    .AWVALID(s_axi_outValue_first_AWVALID),
-    .AWREADY(s_axi_outValue_first_AWREADY),
-    .AWADDR(s_axi_outValue_first_AWADDR),
-    .WVALID(s_axi_outValue_first_WVALID),
-    .WREADY(s_axi_outValue_first_WREADY),
-    .WDATA(s_axi_outValue_first_WDATA),
-    .WSTRB(s_axi_outValue_first_WSTRB),
-    .ARVALID(s_axi_outValue_first_ARVALID),
-    .ARREADY(s_axi_outValue_first_ARREADY),
-    .ARADDR(s_axi_outValue_first_ARADDR),
-    .RVALID(s_axi_outValue_first_RVALID),
-    .RREADY(s_axi_outValue_first_RREADY),
-    .RDATA(s_axi_outValue_first_RDATA),
-    .RRESP(s_axi_outValue_first_RRESP),
-    .BVALID(s_axi_outValue_first_BVALID),
-    .BREADY(s_axi_outValue_first_BREADY),
-    .BRESP(s_axi_outValue_first_BRESP),
+iiccomm3_OUTPUTS_s_axi #(
+    .C_S_AXI_ADDR_WIDTH( C_S_AXI_OUTPUTS_ADDR_WIDTH ),
+    .C_S_AXI_DATA_WIDTH( C_S_AXI_OUTPUTS_DATA_WIDTH ))
+iiccomm3_OUTPUTS_s_axi_U(
+    .AWVALID(s_axi_OUTPUTS_AWVALID),
+    .AWREADY(s_axi_OUTPUTS_AWREADY),
+    .AWADDR(s_axi_OUTPUTS_AWADDR),
+    .WVALID(s_axi_OUTPUTS_WVALID),
+    .WREADY(s_axi_OUTPUTS_WREADY),
+    .WDATA(s_axi_OUTPUTS_WDATA),
+    .WSTRB(s_axi_OUTPUTS_WSTRB),
+    .ARVALID(s_axi_OUTPUTS_ARVALID),
+    .ARREADY(s_axi_OUTPUTS_ARREADY),
+    .ARADDR(s_axi_OUTPUTS_ARADDR),
+    .RVALID(s_axi_OUTPUTS_RVALID),
+    .RREADY(s_axi_OUTPUTS_RREADY),
+    .RDATA(s_axi_OUTPUTS_RDATA),
+    .RRESP(s_axi_OUTPUTS_RRESP),
+    .BVALID(s_axi_OUTPUTS_BVALID),
+    .BREADY(s_axi_OUTPUTS_BREADY),
+    .BRESP(s_axi_OUTPUTS_BRESP),
     .ACLK(ap_clk),
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
-    .outValue_o(val1_fu_38),
-    .outValue_o_ap_vld(outValue_o_ap_vld),
-    .outValue_i(outValue_i)
+    .outValue1_o(iic_read_reg_421),
+    .outValue1_o_ap_vld(outValue1_o_ap_vld),
+    .outValue1_i(outValue1_i),
+    .outValue2_o(iic_addr_read_reg_432),
+    .outValue2_o_ap_vld(outValue2_o_ap_vld),
+    .outValue2_i(outValue2_i),
+    .outValue3_o(iic_addr_1_read_reg_443),
+    .outValue3_o_ap_vld(outValue3_o_ap_vld),
+    .outValue3_i(outValue3_i),
+    .outValue4_o(iic_addr_2_read_reg_454),
+    .outValue4_o_ap_vld(outValue4_o_ap_vld),
+    .outValue4_i(outValue4_i),
+    .outValue5_o(iic_addr_3_read_reg_459),
+    .outValue5_o_ap_vld(outValue5_o_ap_vld),
+    .outValue5_i(outValue5_i),
+    .outValue6_o(iic_addr_4_read_reg_464),
+    .outValue6_o_ap_vld(outValue6_o_ap_vld),
+    .outValue6_i(outValue6_i),
+    .outValue7_o(iic_addr_5_read_reg_469),
+    .outValue7_o_ap_vld(outValue7_o_ap_vld),
+    .outValue7_i(outValue7_i),
+    .outValue8_o(iic_addr_6_read_reg_474),
+    .outValue8_o_ap_vld(outValue8_o_ap_vld),
+    .outValue8_i(outValue8_i),
+    .outValue9_o(iic_addr_7_read_reg_479),
+    .outValue9_o_ap_vld(outValue9_o_ap_vld),
+    .outValue9_i(outValue9_i),
+    .outValue10_o(iic_addr_8_read_reg_484),
+    .outValue10_o_ap_vld(outValue10_o_ap_vld),
+    .outValue10_i(outValue10_i)
 );
 
 iiccomm3_iic_m_axi #(
@@ -439,24 +517,76 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_reg_ioackin_iic_ARREADY <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state1)) begin
-            if (~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (ap_start == 1'b0))) begin
-                ap_reg_ioackin_iic_ARREADY <= 1'b0;
-            end else if (((iic_ARREADY == 1'b1) & (ap_start == 1'b1))) begin
-                ap_reg_ioackin_iic_ARREADY <= 1'b1;
-            end
+        if (((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (ap_start == 1'b0)) & (1'b1 == ap_CS_fsm_state1)) | ((ap_sig_ioackin_iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state7)) | ((ap_sig_ioackin_iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state6)) | ((ap_sig_ioackin_iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state5)) | ((ap_sig_ioackin_iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state4)) | (~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state10)) | ((ap_sig_ioackin_iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state3)) | (~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state9)) | ((ap_sig_ioackin_iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state2)) | (~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state8)))) begin
+            ap_reg_ioackin_iic_ARREADY <= 1'b0;
+        end else if ((((ap_start == 1'b1) & (iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state1)) | ((iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state7)) | ((iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state6)) | ((iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state5)) | ((iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state4)) | ((iic_RVALID == 1'b1) & (iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state10)) | ((iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state3)) | ((iic_RVALID == 1'b1) & (iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state9)) | ((iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state2)) | ((iic_RVALID == 1'b1) & (iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state8)))) begin
+            ap_reg_ioackin_iic_ARREADY <= 1'b1;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
-        val1_fu_38 <= iic_RDATA;
+    if ((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state10))) begin
+        iic_addr_1_read_reg_443 <= iic_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state11))) begin
+        iic_addr_2_read_reg_454 <= iic_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state12))) begin
+        iic_addr_3_read_reg_459 <= iic_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state13))) begin
+        iic_addr_4_read_reg_464 <= iic_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state14))) begin
+        iic_addr_5_read_reg_469 <= iic_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state15))) begin
+        iic_addr_6_read_reg_474 <= iic_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state16))) begin
+        iic_addr_7_read_reg_479 <= iic_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state17))) begin
+        iic_addr_8_read_reg_484 <= iic_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state9))) begin
+        iic_addr_read_reg_432 <= iic_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state8))) begin
+        iic_read_reg_421 <= iic_RDATA;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state9)) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -472,7 +602,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state9)) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -488,7 +618,37 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_reg_ioackin_iic_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
+    if ((ap_reg_ioackin_iic_ARREADY == 1'b0)) begin
+        if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state10))) begin
+            iic_ARADDR = 64'd32;
+        end else if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state9))) begin
+            iic_ARADDR = 64'd8;
+        end else if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
+            iic_ARADDR = 64'd268436512;
+        end else if ((1'b1 == ap_CS_fsm_state7)) begin
+            iic_ARADDR = 64'd268436488;
+        end else if ((1'b1 == ap_CS_fsm_state6)) begin
+            iic_ARADDR = 64'd260;
+        end else if ((1'b1 == ap_CS_fsm_state5)) begin
+            iic_ARADDR = 64'd65;
+        end else if ((1'b1 == ap_CS_fsm_state4)) begin
+            iic_ARADDR = 64'd268436740;
+        end else if ((1'b1 == ap_CS_fsm_state3)) begin
+            iic_ARADDR = 64'd268436545;
+        end else if ((1'b1 == ap_CS_fsm_state2)) begin
+            iic_ARADDR = 64'd2;
+        end else if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            iic_ARADDR = 32'd0;
+        end else begin
+            iic_ARADDR = 'bx;
+        end
+    end else begin
+        iic_ARADDR = 'bx;
+    end
+end
+
+always @ (*) begin
+    if ((((ap_reg_ioackin_iic_ARREADY == 1'b0) & (ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1)) | ((ap_reg_ioackin_iic_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state7)) | ((ap_reg_ioackin_iic_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state6)) | ((ap_reg_ioackin_iic_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state5)) | ((ap_reg_ioackin_iic_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state4)) | ((iic_RVALID == 1'b1) & (ap_reg_ioackin_iic_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state10)) | ((ap_reg_ioackin_iic_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state3)) | ((iic_RVALID == 1'b1) & (ap_reg_ioackin_iic_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state9)) | ((ap_reg_ioackin_iic_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state2)) | ((iic_RVALID == 1'b1) & (ap_reg_ioackin_iic_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state8)))) begin
         iic_ARVALID = 1'b1;
     end else begin
         iic_ARVALID = 1'b0;
@@ -496,7 +656,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
+    if ((((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state17)) | ((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state16)) | ((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state15)) | ((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state14)) | ((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state13)) | ((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state12)) | ((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state11)) | (~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state10)) | (~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state9)) | (~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state8)))) begin
         iic_RREADY = 1'b1;
     end else begin
         iic_RREADY = 1'b0;
@@ -504,7 +664,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
+    if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state8) | ((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1)))) begin
         iic_blk_n_AR = m_axi_iic_ARREADY;
     end else begin
         iic_blk_n_AR = 1'b1;
@@ -512,7 +672,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
+    if (((1'b1 == ap_CS_fsm_state17) | (1'b1 == ap_CS_fsm_state16) | (1'b1 == ap_CS_fsm_state15) | (1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13) | (1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state8))) begin
         iic_blk_n_R = m_axi_iic_RVALID;
     end else begin
         iic_blk_n_R = 1'b1;
@@ -520,10 +680,82 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state9)) begin
-        outValue_o_ap_vld = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state18)) begin
+        outValue10_o_ap_vld = 1'b1;
     end else begin
-        outValue_o_ap_vld = 1'b0;
+        outValue10_o_ap_vld = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
+        outValue1_o_ap_vld = 1'b1;
+    end else begin
+        outValue1_o_ap_vld = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
+        outValue2_o_ap_vld = 1'b1;
+    end else begin
+        outValue2_o_ap_vld = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
+        outValue3_o_ap_vld = 1'b1;
+    end else begin
+        outValue3_o_ap_vld = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
+        outValue4_o_ap_vld = 1'b1;
+    end else begin
+        outValue4_o_ap_vld = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
+        outValue5_o_ap_vld = 1'b1;
+    end else begin
+        outValue5_o_ap_vld = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
+        outValue6_o_ap_vld = 1'b1;
+    end else begin
+        outValue6_o_ap_vld = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
+        outValue7_o_ap_vld = 1'b1;
+    end else begin
+        outValue7_o_ap_vld = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
+        outValue8_o_ap_vld = 1'b1;
+    end else begin
+        outValue8_o_ap_vld = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
+        outValue9_o_ap_vld = 1'b1;
+    end else begin
+        outValue9_o_ap_vld = 1'b0;
     end
 end
 
@@ -537,31 +769,118 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state2 : begin
-            ap_NS_fsm = ap_ST_fsm_state3;
+            if (((ap_sig_ioackin_iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
+                ap_NS_fsm = ap_ST_fsm_state3;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state2;
+            end
         end
         ap_ST_fsm_state3 : begin
-            ap_NS_fsm = ap_ST_fsm_state4;
+            if (((ap_sig_ioackin_iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+                ap_NS_fsm = ap_ST_fsm_state4;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state3;
+            end
         end
         ap_ST_fsm_state4 : begin
-            ap_NS_fsm = ap_ST_fsm_state5;
+            if (((ap_sig_ioackin_iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state4))) begin
+                ap_NS_fsm = ap_ST_fsm_state5;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state4;
+            end
         end
         ap_ST_fsm_state5 : begin
-            ap_NS_fsm = ap_ST_fsm_state6;
+            if (((ap_sig_ioackin_iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+                ap_NS_fsm = ap_ST_fsm_state6;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state5;
+            end
         end
         ap_ST_fsm_state6 : begin
-            ap_NS_fsm = ap_ST_fsm_state7;
+            if (((ap_sig_ioackin_iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+                ap_NS_fsm = ap_ST_fsm_state7;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state6;
+            end
         end
         ap_ST_fsm_state7 : begin
-            ap_NS_fsm = ap_ST_fsm_state8;
+            if (((ap_sig_ioackin_iic_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state7))) begin
+                ap_NS_fsm = ap_ST_fsm_state8;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state7;
+            end
         end
         ap_ST_fsm_state8 : begin
-            if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
+            if ((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state8))) begin
                 ap_NS_fsm = ap_ST_fsm_state9;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state8;
             end
         end
         ap_ST_fsm_state9 : begin
+            if ((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state9))) begin
+                ap_NS_fsm = ap_ST_fsm_state10;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state9;
+            end
+        end
+        ap_ST_fsm_state10 : begin
+            if ((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state10))) begin
+                ap_NS_fsm = ap_ST_fsm_state11;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state10;
+            end
+        end
+        ap_ST_fsm_state11 : begin
+            if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state11))) begin
+                ap_NS_fsm = ap_ST_fsm_state12;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state11;
+            end
+        end
+        ap_ST_fsm_state12 : begin
+            if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state12))) begin
+                ap_NS_fsm = ap_ST_fsm_state13;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state12;
+            end
+        end
+        ap_ST_fsm_state13 : begin
+            if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state13))) begin
+                ap_NS_fsm = ap_ST_fsm_state14;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state13;
+            end
+        end
+        ap_ST_fsm_state14 : begin
+            if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state14))) begin
+                ap_NS_fsm = ap_ST_fsm_state15;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state14;
+            end
+        end
+        ap_ST_fsm_state15 : begin
+            if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state15))) begin
+                ap_NS_fsm = ap_ST_fsm_state16;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state15;
+            end
+        end
+        ap_ST_fsm_state16 : begin
+            if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state16))) begin
+                ap_NS_fsm = ap_ST_fsm_state17;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state16;
+            end
+        end
+        ap_ST_fsm_state17 : begin
+            if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state17))) begin
+                ap_NS_fsm = ap_ST_fsm_state18;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state17;
+            end
+        end
+        ap_ST_fsm_state18 : begin
             ap_NS_fsm = ap_ST_fsm_state1;
         end
         default : begin
@@ -572,6 +891,36 @@ end
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
+assign ap_CS_fsm_state10 = ap_CS_fsm[32'd9];
+
+assign ap_CS_fsm_state11 = ap_CS_fsm[32'd10];
+
+assign ap_CS_fsm_state12 = ap_CS_fsm[32'd11];
+
+assign ap_CS_fsm_state13 = ap_CS_fsm[32'd12];
+
+assign ap_CS_fsm_state14 = ap_CS_fsm[32'd13];
+
+assign ap_CS_fsm_state15 = ap_CS_fsm[32'd14];
+
+assign ap_CS_fsm_state16 = ap_CS_fsm[32'd15];
+
+assign ap_CS_fsm_state17 = ap_CS_fsm[32'd16];
+
+assign ap_CS_fsm_state18 = ap_CS_fsm[32'd17];
+
+assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+
+assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
+
+assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
+
+assign ap_CS_fsm_state5 = ap_CS_fsm[32'd4];
+
+assign ap_CS_fsm_state6 = ap_CS_fsm[32'd5];
+
+assign ap_CS_fsm_state7 = ap_CS_fsm[32'd6];
+
 assign ap_CS_fsm_state8 = ap_CS_fsm[32'd7];
 
 assign ap_CS_fsm_state9 = ap_CS_fsm[32'd8];
@@ -579,7 +928,5 @@ assign ap_CS_fsm_state9 = ap_CS_fsm[32'd8];
 always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
-
-assign iic_ARADDR = 64'd268438593;
 
 endmodule //iiccomm3

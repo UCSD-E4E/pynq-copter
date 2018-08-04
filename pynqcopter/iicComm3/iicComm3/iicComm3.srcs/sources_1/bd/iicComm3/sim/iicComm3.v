@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Fri Aug  3 11:46:36 2018
+//Date        : Sat Aug  4 09:53:55 2018
 //Host        : fabricant running 64-bit Linux Mint 18 Sarah
 //Command     : generate_target iicComm3.bd
 //Design      : iicComm3
@@ -296,15 +296,15 @@ module iicComm3
         .s_axi_AXILiteS_WREADY(ps7_0_axi_periph_M00_AXI_WREADY),
         .s_axi_AXILiteS_WSTRB(ps7_0_axi_periph_M00_AXI_WSTRB),
         .s_axi_AXILiteS_WVALID(ps7_0_axi_periph_M00_AXI_WVALID),
-        .s_axi_outValue_first_ARADDR({1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .s_axi_outValue_first_ARVALID(1'b0),
-        .s_axi_outValue_first_AWADDR({1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .s_axi_outValue_first_AWVALID(1'b0),
-        .s_axi_outValue_first_BREADY(1'b0),
-        .s_axi_outValue_first_RREADY(1'b0),
-        .s_axi_outValue_first_WDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .s_axi_outValue_first_WSTRB({1'b1,1'b1,1'b1,1'b1}),
-        .s_axi_outValue_first_WVALID(1'b0));
+        .s_axi_OUTPUTS_ARADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s_axi_OUTPUTS_ARVALID(1'b0),
+        .s_axi_OUTPUTS_AWADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s_axi_OUTPUTS_AWVALID(1'b0),
+        .s_axi_OUTPUTS_BREADY(1'b0),
+        .s_axi_OUTPUTS_RREADY(1'b0),
+        .s_axi_OUTPUTS_WDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s_axi_OUTPUTS_WSTRB({1'b1,1'b1,1'b1,1'b1}),
+        .s_axi_OUTPUTS_WVALID(1'b0));
   iicComm3_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),
         .DDR_BankAddr(DDR_ba[2:0]),

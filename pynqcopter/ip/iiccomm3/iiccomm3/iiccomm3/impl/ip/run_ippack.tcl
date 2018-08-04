@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "iiccomm3"
 set Version     "1.0"
 set DisplayName "Iiccomm3"
-set Revision    "1808031145"
+set Revision    "1808040953"
 set Description "HLS Core: Iiccomm3 Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -179,14 +179,14 @@ set Interfaces {
         }
         data_width "32"
     }
-    s_axi_outValue_first {
+    s_axi_OUTPUTS {
         type "axi4lite"
         mode "slave"
-        port_prefix "s_axi_outValue_first"
-        param_prefix "C_S_AXI_OUTVALUE_FIRST"
-        addr_bits "5"
-        port_width "AWADDR 5 WDATA 32 WSTRB 4 ARADDR 5 RDATA 32"
-        registers {{0x10 outValue_i W 0x0 "Data signal of outValue_i" {{0 32 outValue_i W 0 "Bit 31 to 0 Data signal of outValue_i"}}} {0x18 outValue_o R 0x0 "Data signal of outValue_o" {{0 32 outValue_o R 0 "Bit 31 to 0 Data signal of outValue_o"}}} {0x1c outValue_o_ctrl R 0x0 "Control signal of outValue_o" {{0 1 outValue_o_ap_vld R 0 "Control signal outValue_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}}}
+        port_prefix "s_axi_OUTPUTS"
+        param_prefix "C_S_AXI_OUTPUTS"
+        addr_bits "8"
+        port_width "AWADDR 8 WDATA 32 WSTRB 4 ARADDR 8 RDATA 32"
+        registers {{0x10 outValue1_i W 0x0 "Data signal of outValue1_i" {{0 32 outValue1_i W 0 "Bit 31 to 0 Data signal of outValue1_i"}}} {0x18 outValue1_o R 0x0 "Data signal of outValue1_o" {{0 32 outValue1_o R 0 "Bit 31 to 0 Data signal of outValue1_o"}}} {0x1c outValue1_o_ctrl R 0x0 "Control signal of outValue1_o" {{0 1 outValue1_o_ap_vld R 0 "Control signal outValue1_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x20 outValue2_i W 0x0 "Data signal of outValue2_i" {{0 32 outValue2_i W 0 "Bit 31 to 0 Data signal of outValue2_i"}}} {0x28 outValue2_o R 0x0 "Data signal of outValue2_o" {{0 32 outValue2_o R 0 "Bit 31 to 0 Data signal of outValue2_o"}}} {0x2c outValue2_o_ctrl R 0x0 "Control signal of outValue2_o" {{0 1 outValue2_o_ap_vld R 0 "Control signal outValue2_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x30 outValue3_i W 0x0 "Data signal of outValue3_i" {{0 32 outValue3_i W 0 "Bit 31 to 0 Data signal of outValue3_i"}}} {0x38 outValue3_o R 0x0 "Data signal of outValue3_o" {{0 32 outValue3_o R 0 "Bit 31 to 0 Data signal of outValue3_o"}}} {0x3c outValue3_o_ctrl R 0x0 "Control signal of outValue3_o" {{0 1 outValue3_o_ap_vld R 0 "Control signal outValue3_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x40 outValue4_i W 0x0 "Data signal of outValue4_i" {{0 32 outValue4_i W 0 "Bit 31 to 0 Data signal of outValue4_i"}}} {0x48 outValue4_o R 0x0 "Data signal of outValue4_o" {{0 32 outValue4_o R 0 "Bit 31 to 0 Data signal of outValue4_o"}}} {0x4c outValue4_o_ctrl R 0x0 "Control signal of outValue4_o" {{0 1 outValue4_o_ap_vld R 0 "Control signal outValue4_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x50 outValue5_i W 0x0 "Data signal of outValue5_i" {{0 32 outValue5_i W 0 "Bit 31 to 0 Data signal of outValue5_i"}}} {0x58 outValue5_o R 0x0 "Data signal of outValue5_o" {{0 32 outValue5_o R 0 "Bit 31 to 0 Data signal of outValue5_o"}}} {0x5c outValue5_o_ctrl R 0x0 "Control signal of outValue5_o" {{0 1 outValue5_o_ap_vld R 0 "Control signal outValue5_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x60 outValue6_i W 0x0 "Data signal of outValue6_i" {{0 32 outValue6_i W 0 "Bit 31 to 0 Data signal of outValue6_i"}}} {0x68 outValue6_o R 0x0 "Data signal of outValue6_o" {{0 32 outValue6_o R 0 "Bit 31 to 0 Data signal of outValue6_o"}}} {0x6c outValue6_o_ctrl R 0x0 "Control signal of outValue6_o" {{0 1 outValue6_o_ap_vld R 0 "Control signal outValue6_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x70 outValue7_i W 0x0 "Data signal of outValue7_i" {{0 32 outValue7_i W 0 "Bit 31 to 0 Data signal of outValue7_i"}}} {0x78 outValue7_o R 0x0 "Data signal of outValue7_o" {{0 32 outValue7_o R 0 "Bit 31 to 0 Data signal of outValue7_o"}}} {0x7c outValue7_o_ctrl R 0x0 "Control signal of outValue7_o" {{0 1 outValue7_o_ap_vld R 0 "Control signal outValue7_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x80 outValue8_i W 0x0 "Data signal of outValue8_i" {{0 32 outValue8_i W 0 "Bit 31 to 0 Data signal of outValue8_i"}}} {0x88 outValue8_o R 0x0 "Data signal of outValue8_o" {{0 32 outValue8_o R 0 "Bit 31 to 0 Data signal of outValue8_o"}}} {0x8c outValue8_o_ctrl R 0x0 "Control signal of outValue8_o" {{0 1 outValue8_o_ap_vld R 0 "Control signal outValue8_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x90 outValue9_i W 0x0 "Data signal of outValue9_i" {{0 32 outValue9_i W 0 "Bit 31 to 0 Data signal of outValue9_i"}}} {0x98 outValue9_o R 0x0 "Data signal of outValue9_o" {{0 32 outValue9_o R 0 "Bit 31 to 0 Data signal of outValue9_o"}}} {0x9c outValue9_o_ctrl R 0x0 "Control signal of outValue9_o" {{0 1 outValue9_o_ap_vld R 0 "Control signal outValue9_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0xa0 outValue10_i W 0x0 "Data signal of outValue10_i" {{0 32 outValue10_i W 0 "Bit 31 to 0 Data signal of outValue10_i"}}} {0xa8 outValue10_o R 0x0 "Data signal of outValue10_o" {{0 32 outValue10_o R 0 "Bit 31 to 0 Data signal of outValue10_o"}}} {0xac outValue10_o_ctrl R 0x0 "Control signal of outValue10_o" {{0 1 outValue10_o_ap_vld R 0 "Control signal outValue10_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}}}
         memories ""
         ctype {
             AWVALID {
@@ -251,8 +251,8 @@ set Interfaces {
             }
             AWADDR {
                 Type "integer unsigned"
-                Width "5"
-                Bits "5"
+                Width "8"
+                Bits "8"
             }
             WDATA {
                 Type "integer unsigned"
@@ -266,8 +266,8 @@ set Interfaces {
             }
             ARADDR {
                 Type "integer unsigned"
-                Width "5"
-                Bits "5"
+                Width "8"
+                Bits "8"
             }
             RDATA {
                 Type "integer unsigned"
@@ -286,7 +286,7 @@ set Interfaces {
                 Bits "1"
             }
         }
-        buses "s_axi_AXILiteS s_axi_outValue_first m_axi_iic"
+        buses "s_axi_AXILiteS s_axi_OUTPUTS m_axi_iic"
         reset "ap_rst_n"
     }
     ap_rst_n {
@@ -2017,7 +2017,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_ver match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 8 II x}
+set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 17 II x}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]

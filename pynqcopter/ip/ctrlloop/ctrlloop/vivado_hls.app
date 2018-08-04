@@ -1,15 +1,17 @@
-<AutoPilot:project xmlns:AutoPilot="com.autoesl.autopilot.project" projectType="C/C++" name="ctrlloop" top="ctrlloop">
-    <files>
-        <file name="ctrlloop.cpp" sc="0" tb="false" cflags="-std=c++11"/>
-        <file name="main.cpp" sc="0" tb="false" cflags="-std=c++11"/>
-        <file name="../../ctrlloop.cpp" sc="0" tb="1" cflags=" -std=c++11"/>
-        <file name="../../main.cpp" sc="0" tb="1" cflags=" -std=c++11"/>
-    </files>
-    <solutions>
-        <solution name="ctrlloop" status=""/>
-    </solutions>
+<project xmlns="com.autoesl.autopilot.project" name="ctrlloop" top="ctrlloop">
+    <includePaths/>
+    <libraryPaths/>
     <Simulation argv="">
-        <SimFlow name="csim" setup="false" optimizeCompile="false" clean="false" ldflags="" mflags=""/>
+        <SimFlow name="csim" ldflags="" mflags=""/>
     </Simulation>
-</AutoPilot:project>
+    <files xmlns="">
+        <file name="../../main.cpp" sc="0" tb="1" cflags=" -std=c++11"/>
+        <file name="../../ctrlloop.cpp" sc="0" tb="1" cflags=" -std=c++11"/>
+        <file name="main.cpp" sc="0" tb="false" cflags="-std=c++11"/>
+        <file name="ctrlloop.cpp" sc="0" tb="false" cflags="-std=c++11"/>
+    </files>
+    <solutions xmlns="">
+        <solution name="ctrlloop" status="active"/>
+    </solutions>
+</project>
 

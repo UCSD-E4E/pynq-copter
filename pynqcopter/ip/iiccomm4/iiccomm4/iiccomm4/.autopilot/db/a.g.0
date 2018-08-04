@@ -1,0 +1,4 @@
+#!/bin/sh
+lli=${LLVMINTERP-lli}
+exec $lli \
+    /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm4/iiccomm4/iiccomm4/.autopilot/db/a.g.0.bc ${1+"$@"}

@@ -1,0 +1,250 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Aug  3 15:06:19 2018
+# Process ID: 29233
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.runs/impl_1
+# Command line: vivado -log iicComm3_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source iicComm3_wrapper.tcl -notrace
+# Log file: /home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.runs/impl_1/iicComm3_wrapper.vdi
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source iicComm3_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iavendano/pynq-copter/pynqcopter/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
+Command: link_design -top iicComm3_wrapper -part xc7z020clg400-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_axi_iic_0_0/iicComm3_axi_iic_0_0.dcp' for cell 'iicComm3_i/axi_iic_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_iiccomm3_0_0/iicComm3_iiccomm3_0_0.dcp' for cell 'iicComm3_i/iiccomm3_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_processing_system7_0_0/iicComm3_processing_system7_0_0.dcp' for cell 'iicComm3_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_rst_ps7_0_100M_0/iicComm3_rst_ps7_0_100M_0.dcp' for cell 'iicComm3_i/rst_ps7_0_100M'
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_xbar_0/iicComm3_xbar_0.dcp' for cell 'iicComm3_i/ps7_0_axi_periph/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_auto_pc_0/iicComm3_auto_pc_0.dcp' for cell 'iicComm3_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_auto_pc_1/iicComm3_auto_pc_1.dcp' for cell 'iicComm3_i/ps7_0_axi_periph/s01_couplers/auto_pc'
+INFO: [Netlist 29-17] Analyzing 79 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_axi_iic_0_0/iicComm3_axi_iic_0_0_board.xdc] for cell 'iicComm3_i/axi_iic_0/U0'
+Finished Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_axi_iic_0_0/iicComm3_axi_iic_0_0_board.xdc] for cell 'iicComm3_i/axi_iic_0/U0'
+Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_processing_system7_0_0/iicComm3_processing_system7_0_0.xdc] for cell 'iicComm3_i/processing_system7_0/inst'
+Finished Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_processing_system7_0_0/iicComm3_processing_system7_0_0.xdc] for cell 'iicComm3_i/processing_system7_0/inst'
+Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_rst_ps7_0_100M_0/iicComm3_rst_ps7_0_100M_0_board.xdc] for cell 'iicComm3_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_rst_ps7_0_100M_0/iicComm3_rst_ps7_0_100M_0_board.xdc] for cell 'iicComm3_i/rst_ps7_0_100M/U0'
+Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_rst_ps7_0_100M_0/iicComm3_rst_ps7_0_100M_0.xdc] for cell 'iicComm3_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.srcs/sources_1/bd/iicComm3/ip/iicComm3_rst_ps7_0_100M_0/iicComm3_rst_ps7_0_100M_0.xdc] for cell 'iicComm3_i/rst_ps7_0_100M/U0'
+Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc]
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[0]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[1]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[2]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[3]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[4]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[5]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[6]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[7]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[8]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[9]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[10]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[11]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[12]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[13]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[14]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[15]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[16]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[17]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[18]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[19]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'arduino_gpio_tri_io[*]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[1]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:79]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:79]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[0]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:80]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:80]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[3]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:81]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:81]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[2]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:82]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:82]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[5]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:83]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:83]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[4]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:84]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:84]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[7]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[6]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:86]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[2]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[3]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[6]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJA_gpio_tri_io[7]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[1]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[0]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[3]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:95]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[2]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:96]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:96]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[5]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:97]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[4]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:98]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:98]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[7]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:99]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:99]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[6]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:100]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:100]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[2]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:101]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:101]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[3]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:102]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:102]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[6]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:103]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:103]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pmodJB_gpio_tri_io[7]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:104]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:104]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[9]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[10]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[11]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[12]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[13]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[14]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[15]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[16]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[17]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[18]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[19]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[20]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[21]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[22]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[23]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[24]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[25]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[26]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[27]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[28]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[29]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[30]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_ARADDR[31]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[9]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[10]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[11]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[12]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[13]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[14]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[15]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[16]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[17]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[18]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[19]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[20]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[21]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[22]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[23]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[24]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[25]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[26]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[27]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[28]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[29]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[30]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'iicComm3_i/ps7_0_axi_periph_M01_AXI_AWADDR[31]'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'clk'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:187]
+CRITICAL WARNING: [Common 17-162] Invalid option value specified for '-nets'. [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc:187]
+Finished Parsing XDC File [/home/iavendano/pynq-copter/pynqcopter/iicComm3/design.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+
+17 Infos, 92 Warnings, 46 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:39 . Memory (MB): peak = 1557.477 ; gain = 382.527 ; free physical = 127909 ; free virtual = 504338
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1637.500 ; gain = 80.023 ; free physical = 127914 ; free virtual = 504342
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+INFO: [Common 17-83] Releasing license: Implementation
+23 Infos, 92 Warnings, 46 Critical Warnings and 1 Errors encountered.
+opt_design failed
+ERROR: [Chipscope 16-213] The debug port 'u_ila_0/probe0' has 23 unconnected channels (bits). This will cause errors during implementation.
+INFO: [Common 17-206] Exiting Vivado at Fri Aug  3 15:07:41 2018...
