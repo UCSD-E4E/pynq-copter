@@ -33188,7 +33188,7 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 };
 #pragma line 41 "./iiccomm4.hpp" 2
 #pragma line 51 "./iiccomm4.hpp"
-void iiccomm4(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatile uint32_t &outValue2, volatile uint32_t &outValue3, volatile uint32_t &outValue4, volatile uint32_t &outValue5, volatile uint32_t &outValue6, volatile uint32_t &outValue7, volatile uint32_t &outValue8, volatile uint32_t &outValue9, volatile uint32_t &outValue10);
+void iiccomm4(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatile uint32_t &outValue2, volatile uint32_t &outValue3, volatile uint32_t &outValue4, volatile uint32_t &outValue5, volatile uint32_t &outValue6, volatile uint32_t &outValue7, volatile uint32_t &outValue8, volatile uint32_t &outValue9, volatile uint32_t &outValue10, volatile uint32_t &outValue11);
 #pragma line 36 "iiccomm4.cpp" 2
 #pragma empty_line
 #pragma empty_line
@@ -33206,7 +33206,7 @@ static uint32_t val9;
 static uint32_t val10;
 #pragma empty_line
 #pragma empty_line
-void iiccomm4(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatile uint32_t &outValue2, volatile uint32_t &outValue3, volatile uint32_t &outValue4, volatile uint32_t &outValue5, volatile uint32_t &outValue6, volatile uint32_t &outValue7, volatile uint32_t &outValue8, volatile uint32_t &outValue9, volatile uint32_t &outValue10)
+void iiccomm4(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatile uint32_t &outValue2, volatile uint32_t &outValue3, volatile uint32_t &outValue4, volatile uint32_t &outValue5, volatile uint32_t &outValue6, volatile uint32_t &outValue7, volatile uint32_t &outValue8, volatile uint32_t &outValue9, volatile uint32_t &outValue10,volatile uint32_t &outValue11)
 {
 #pragma HLS INTERFACE s_axilite port=return
 #pragma empty_line
@@ -33258,9 +33258,7 @@ void iiccomm4(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatil
  val10 = iic[0x020];
     outValue10=val10;
 #pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
+ outValue11 = 15;
 #pragma empty_line
 #pragma empty_line
 }

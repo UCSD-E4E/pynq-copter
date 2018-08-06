@@ -30,7 +30,7 @@ template<unsigned int C_M_AXI_IIC_ADDR_WIDTH = 32,
          unsigned int C_S_AXI_OUTPUTS_ADDR_WIDTH = 8,
          unsigned int C_S_AXI_OUTPUTS_DATA_WIDTH = 32>
 struct iiccomm3 : public sc_module {
-    // Port declarations 82
+    // Port declarations 84
     sc_in_clk ap_clk;
     sc_in< sc_logic > ap_rst_n;
     sc_out< sc_logic > m_axi_iic_AWVALID;
@@ -78,6 +78,8 @@ struct iiccomm3 : public sc_module {
     sc_in< sc_lv<2> > m_axi_iic_BRESP;
     sc_in< sc_uint<C_M_AXI_IIC_ID_WIDTH> > m_axi_iic_BID;
     sc_in< sc_uint<C_M_AXI_IIC_BUSER_WIDTH> > m_axi_iic_BUSER;
+    sc_out< sc_lv<32> > outValue11;
+    sc_out< sc_logic > outValue11_ap_vld;
     sc_in< sc_logic > s_axi_AXILiteS_AWVALID;
     sc_out< sc_logic > s_axi_AXILiteS_AWREADY;
     sc_in< sc_uint<C_S_AXI_AXILITES_ADDR_WIDTH> > s_axi_AXILiteS_AWADDR;
@@ -198,16 +200,16 @@ struct iiccomm3 : public sc_module {
     sc_signal< sc_lv<1> > iic_BID;
     sc_signal< sc_lv<1> > iic_BUSER;
     sc_signal< sc_logic > ap_sig_ioackin_iic_ARREADY;
-    sc_signal< sc_lv<32> > iic_read_reg_421;
-    sc_signal< sc_lv<32> > iic_addr_read_reg_432;
-    sc_signal< sc_lv<32> > iic_addr_1_read_reg_443;
-    sc_signal< sc_lv<32> > iic_addr_2_read_reg_454;
-    sc_signal< sc_lv<32> > iic_addr_3_read_reg_459;
-    sc_signal< sc_lv<32> > iic_addr_4_read_reg_464;
-    sc_signal< sc_lv<32> > iic_addr_5_read_reg_469;
-    sc_signal< sc_lv<32> > iic_addr_6_read_reg_474;
-    sc_signal< sc_lv<32> > iic_addr_7_read_reg_479;
-    sc_signal< sc_lv<32> > iic_addr_8_read_reg_484;
+    sc_signal< sc_lv<32> > iic_read_reg_435;
+    sc_signal< sc_lv<32> > iic_addr_read_reg_446;
+    sc_signal< sc_lv<32> > iic_addr_1_read_reg_457;
+    sc_signal< sc_lv<32> > iic_addr_2_read_reg_468;
+    sc_signal< sc_lv<32> > iic_addr_3_read_reg_473;
+    sc_signal< sc_lv<32> > iic_addr_4_read_reg_478;
+    sc_signal< sc_lv<32> > iic_addr_5_read_reg_483;
+    sc_signal< sc_lv<32> > iic_addr_6_read_reg_488;
+    sc_signal< sc_lv<32> > iic_addr_7_read_reg_493;
+    sc_signal< sc_lv<32> > iic_addr_8_read_reg_498;
     sc_signal< sc_logic > ap_reg_ioackin_iic_ARREADY;
     sc_signal< sc_logic > ap_CS_fsm_state18;
     sc_signal< sc_lv<18> > ap_NS_fsm;
@@ -308,6 +310,8 @@ struct iiccomm3 : public sc_module {
     void thread_iic_blk_n_AR();
     void thread_iic_blk_n_R();
     void thread_outValue10_o_ap_vld();
+    void thread_outValue11();
+    void thread_outValue11_ap_vld();
     void thread_outValue1_o_ap_vld();
     void thread_outValue2_o_ap_vld();
     void thread_outValue3_o_ap_vld();

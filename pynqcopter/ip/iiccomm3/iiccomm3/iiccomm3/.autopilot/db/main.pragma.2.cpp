@@ -1558,7 +1558,6 @@ enum SsdmRegionTypes {
 };
 # 74 "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_utils.h" 2
 # 39 "./iiccomm3.hpp" 2
-
 # 1 "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_int.h" 1
 # 60 "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_int.h"
 # 1 "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/hls_half.h" 1
@@ -33347,9 +33346,9 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
   }
 
 };
-# 41 "./iiccomm3.hpp" 2
-# 51 "./iiccomm3.hpp"
-void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatile uint32_t &outValue2, volatile uint32_t &outValue3, volatile uint32_t &outValue4, volatile uint32_t &outValue5, volatile uint32_t &outValue6, volatile uint32_t &outValue7, volatile uint32_t &outValue8, volatile uint32_t &outValue9, volatile uint32_t &outValue10);
+# 40 "./iiccomm3.hpp" 2
+# 50 "./iiccomm3.hpp"
+void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatile uint32_t &outValue2, volatile uint32_t &outValue3, volatile uint32_t &outValue4, volatile uint32_t &outValue5, volatile uint32_t &outValue6, volatile uint32_t &outValue7, volatile uint32_t &outValue8, volatile uint32_t &outValue9, volatile uint32_t &outValue10, volatile uint32_t &outValue11);
 # 36 "main.cpp" 2
 
 

@@ -47,6 +47,8 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("m_axi_iic_BRESP", 2, hls_in, 0, "m_axi", "RESP", 1),
 	Port_Property("m_axi_iic_BID", 1, hls_in, 0, "m_axi", "ID", 1),
 	Port_Property("m_axi_iic_BUSER", 1, hls_in, 0, "m_axi", "USER", 1),
+	Port_Property("outValue11", 32, hls_out, 11, "ap_vld", "out_data", 1),
+	Port_Property("outValue11_ap_vld", 1, hls_out, 11, "ap_vld", "out_vld", 1),
 	Port_Property("s_axi_AXILiteS_AWVALID", 1, hls_in, -1, "", "", 1),
 	Port_Property("s_axi_AXILiteS_AWREADY", 1, hls_out, -1, "", "", 1),
 	Port_Property("s_axi_AXILiteS_AWADDR", 4, hls_in, -1, "", "", 1),

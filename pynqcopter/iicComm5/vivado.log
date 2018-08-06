@@ -1,0 +1,61 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Aug  5 20:40:34 2018
+# Process ID: 5616
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/iicComm5
+# Command line: vivado -mode batch -source ..//build.tcl -tclargs iicComm5 single xc7z020clg400-1
+# Log file: /home/iavendano/pynq-copter/pynqcopter/iicComm5/vivado.log
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/iicComm5/vivado.jou
+#-----------------------------------------------------------
+source ..//build.tcl
+# set argc [llength $argv]
+# set target [file tail [pwd]]
+# set run_type "single"
+# set part ""
+# if { $argc != 0 } {
+#     if { $argc != 3 } {
+# 	puts ""
+# 	set errmsg "Expected two arguments: Name of Overlay (e.g. riscv) \
+#                 sweep | single, and part (e.g. xc7z020clg400-1)"
+# 	catch {common::send_msg_id "PYNQ-000" "ERROR" $errmsg}
+# 	return 1
+#     }
+#     set target [lindex $argv 0]
+#     set exists [file exists $target.tcl]
+#     if { $exists == 0 } {
+#         puts ""
+# 	set errmsg "Could not find file: $target.tcl"
+#         catch {common::send_msg_id "PYNQ-000" "ERROR" $errmsg}
+#         return 1
+#     }
+# 
+#     set run_arg [lindex $argv 1]
+#     if { $run_arg == "sweep"} {
+# 	set run_type "sweep"
+#     } elseif {$run_arg == "single"} {
+# 	set run_type "single"
+#     } else {
+# 	puts ""
+# 	set errmsg "Unknown argument value $run_arg"
+# 	catch {common::send_msg_id "PYNQ-000" "ERROR" $errmsg}
+# 	return 1
+#     }
+#     set part [lindex $argv 2]
+# } else {
+#     puts ""
+#     set errmsg "Using default target ($target -- from current directory name) and run type ($run_type)"
+#     catch {common::send_msg_id "PYNQ-000" "WARN" $errmsg}
+#     after 10000
+# }
+# create_project $target $target -part $part 
+ERROR: [Common 17-53] User Exception: Project already exists on disk, please use '-force' option to overwrite: 
+     /home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.xpr
+     /home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.runs
+     /home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.srcs
+     /home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.sim
+     /home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.cache
+     /home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.hw
+     /home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.ip_user_files
+INFO: [Common 17-206] Exiting Vivado at Sun Aug  5 20:40:44 2018...

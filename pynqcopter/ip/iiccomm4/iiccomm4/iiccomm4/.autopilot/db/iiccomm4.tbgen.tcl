@@ -1,5 +1,5 @@
 set C_TypeInfoList {{ 
-"iiccomm4" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"outValue1": [[], {"reference": "0"}] }, {"outValue2": [[], {"reference": "0"}] }, {"outValue3": [[], {"reference": "0"}] }, {"outValue4": [[], {"reference": "0"}] }, {"outValue5": [[], {"reference": "0"}] }, {"outValue6": [[], {"reference": "0"}] }, {"outValue7": [[], {"reference": "0"}] }, {"outValue8": [[], {"reference": "0"}] }, {"outValue9": [[], {"reference": "0"}] }, {"outValue10": [[], {"reference": "0"}] }],[],""], 
+"iiccomm4" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"outValue1": [[], {"reference": "0"}] }, {"outValue2": [[], {"reference": "0"}] }, {"outValue3": [[], {"reference": "0"}] }, {"outValue4": [[], {"reference": "0"}] }, {"outValue5": [[], {"reference": "0"}] }, {"outValue6": [[], {"reference": "0"}] }, {"outValue7": [[], {"reference": "0"}] }, {"outValue8": [[], {"reference": "0"}] }, {"outValue9": [[], {"reference": "0"}] }, {"outValue10": [[], {"reference": "0"}] }, {"outValue11": [[], {"reference": "0"}] }],[],""], 
 "0": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}]
 }}
 set moduleName iiccomm4
@@ -25,6 +25,7 @@ set C_modelArgList {
 	{ outValue8 int 32 regular {axi_slave 2}  }
 	{ outValue9 int 32 regular {axi_slave 2}  }
 	{ outValue10 int 32 regular {axi_slave 2}  }
+	{ outValue11 int 32 regular {pointer 1 volatile }  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "iic", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "iic","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 4095,"step" : 1}]}]}]} , 
@@ -37,9 +38,10 @@ set C_modelArgMapList {[
  	{ "Name" : "outValue7", "interface" : "axi_slave", "bundle":"OUTPUTS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue7","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":112, "out":120}, "offset_end" : {"in":119, "out":127}} , 
  	{ "Name" : "outValue8", "interface" : "axi_slave", "bundle":"OUTPUTS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue8","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":128, "out":136}, "offset_end" : {"in":135, "out":143}} , 
  	{ "Name" : "outValue9", "interface" : "axi_slave", "bundle":"OUTPUTS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue9","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":144, "out":152}, "offset_end" : {"in":151, "out":159}} , 
- 	{ "Name" : "outValue10", "interface" : "axi_slave", "bundle":"OUTPUTS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue10","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":160, "out":168}, "offset_end" : {"in":167, "out":175}} ]}
+ 	{ "Name" : "outValue10", "interface" : "axi_slave", "bundle":"OUTPUTS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue10","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":160, "out":168}, "offset_end" : {"in":167, "out":175}} , 
+ 	{ "Name" : "outValue11", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue11","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} ]}
 # RTL Port declarations: 
-set portNum 82
+set portNum 84
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst_n sc_in sc_logic 1 reset -1 active_low_sync } 
@@ -88,6 +90,8 @@ set portList {
 	{ m_axi_iic_BRESP sc_in sc_lv 2 signal 0 } 
 	{ m_axi_iic_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_iic_BUSER sc_in sc_lv 1 signal 0 } 
+	{ outValue11 sc_out sc_lv 32 signal 11 } 
+	{ outValue11_ap_vld sc_out sc_logic 1 outvld 11 } 
 	{ s_axi_AXILiteS_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_AWREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_AWADDR sc_in sc_lv 4 signal -1 } 
@@ -206,7 +210,9 @@ set NewPortList {[
  	{ "name": "m_axi_iic_BREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "iic", "role": "BREADY" }} , 
  	{ "name": "m_axi_iic_BRESP", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "iic", "role": "BRESP" }} , 
  	{ "name": "m_axi_iic_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "iic", "role": "BID" }} , 
- 	{ "name": "m_axi_iic_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "iic", "role": "BUSER" }}  ]}
+ 	{ "name": "m_axi_iic_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "iic", "role": "BUSER" }} , 
+ 	{ "name": "outValue11", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "outValue11", "role": "default" }} , 
+ 	{ "name": "outValue11_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "outValue11", "role": "ap_vld" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3"],
@@ -231,7 +237,8 @@ set RtlHierarchyInfo {[
 			{"Name" : "outValue7", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "outValue8", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "outValue9", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "outValue10", "Type" : "OVld", "Direction" : "IO"}]},
+			{"Name" : "outValue10", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "outValue11", "Type" : "Vld", "Direction" : "O"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm4_AXILiteS_s_axi_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm4_OUTPUTS_s_axi_U", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm4_iic_m_axi_U", "Parent" : "0"}]}
@@ -249,7 +256,8 @@ set ArgLastReadFirstWriteLatency {
 		outValue7 {Type IO LastRead 7 FirstWrite 17}
 		outValue8 {Type IO LastRead 7 FirstWrite 17}
 		outValue9 {Type IO LastRead 7 FirstWrite 17}
-		outValue10 {Type IO LastRead 7 FirstWrite 17}}}
+		outValue10 {Type IO LastRead 7 FirstWrite 17}
+		outValue11 {Type O LastRead -1 FirstWrite 17}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -263,6 +271,7 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	iic { m_axi {  { m_axi_iic_AWVALID VALID 1 1 }  { m_axi_iic_AWREADY READY 0 1 }  { m_axi_iic_AWADDR ADDR 1 32 }  { m_axi_iic_AWID ID 1 1 }  { m_axi_iic_AWLEN LEN 1 8 }  { m_axi_iic_AWSIZE SIZE 1 3 }  { m_axi_iic_AWBURST BURST 1 2 }  { m_axi_iic_AWLOCK LOCK 1 2 }  { m_axi_iic_AWCACHE CACHE 1 4 }  { m_axi_iic_AWPROT PROT 1 3 }  { m_axi_iic_AWQOS QOS 1 4 }  { m_axi_iic_AWREGION REGION 1 4 }  { m_axi_iic_AWUSER USER 1 1 }  { m_axi_iic_WVALID VALID 1 1 }  { m_axi_iic_WREADY READY 0 1 }  { m_axi_iic_WDATA DATA 1 32 }  { m_axi_iic_WSTRB STRB 1 4 }  { m_axi_iic_WLAST LAST 1 1 }  { m_axi_iic_WID ID 1 1 }  { m_axi_iic_WUSER USER 1 1 }  { m_axi_iic_ARVALID VALID 1 1 }  { m_axi_iic_ARREADY READY 0 1 }  { m_axi_iic_ARADDR ADDR 1 32 }  { m_axi_iic_ARID ID 1 1 }  { m_axi_iic_ARLEN LEN 1 8 }  { m_axi_iic_ARSIZE SIZE 1 3 }  { m_axi_iic_ARBURST BURST 1 2 }  { m_axi_iic_ARLOCK LOCK 1 2 }  { m_axi_iic_ARCACHE CACHE 1 4 }  { m_axi_iic_ARPROT PROT 1 3 }  { m_axi_iic_ARQOS QOS 1 4 }  { m_axi_iic_ARREGION REGION 1 4 }  { m_axi_iic_ARUSER USER 1 1 }  { m_axi_iic_RVALID VALID 0 1 }  { m_axi_iic_RREADY READY 1 1 }  { m_axi_iic_RDATA DATA 0 32 }  { m_axi_iic_RLAST LAST 0 1 }  { m_axi_iic_RID ID 0 1 }  { m_axi_iic_RUSER USER 0 1 }  { m_axi_iic_RRESP RESP 0 2 }  { m_axi_iic_BVALID VALID 0 1 }  { m_axi_iic_BREADY READY 1 1 }  { m_axi_iic_BRESP RESP 0 2 }  { m_axi_iic_BID ID 0 1 }  { m_axi_iic_BUSER USER 0 1 } } }
+	outValue11 { ap_vld {  { outValue11 out_data 1 32 }  { outValue11_ap_vld out_vld 1 1 } } }
 }
 
 set busDeadlockParameterList { 

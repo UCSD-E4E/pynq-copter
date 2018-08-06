@@ -237,6 +237,21 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler iiccomm3_iic_m_axi
 }
 
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 4 \
+    name outValue11 \
+    type other \
+    dir O \
+    reset_level 0 \
+    sync_rst true \
+    corename dc_outValue11 \
+    op interface \
+    ports { outValue11 { O 32 vector } outValue11_ap_vld { O 1 bit } } \
+} "
+}
+
 
 # Adapter definition:
 set PortName ap_clk

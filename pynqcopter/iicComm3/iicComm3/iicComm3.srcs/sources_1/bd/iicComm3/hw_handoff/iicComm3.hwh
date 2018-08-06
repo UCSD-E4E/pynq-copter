@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Aug  4 09:54:11 2018" VIVADOVERSION="2017.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Aug  5 18:56:18 2018" VIVADOVERSION="2017.4">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="iicComm3" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -2194,6 +2194,7 @@
         <PARAMETER NAME="C_S_AXI_AXILITES_HIGHADDR" VALUE="0x40000FFF"/>
       </PARAMETERS>
       <PORTS>
+        <PORT DIR="O" NAME="outValue11_ap_vld" SIGIS="undef"/>
         <PORT DIR="I" LEFT="3" NAME="s_axi_AXILiteS_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="iiccomm3_0_s_axi_AXILiteS_AWADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_awaddr"/>
@@ -2482,6 +2483,7 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S01_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" LEFT="31" NAME="outValue11" RIGHT="0" SIGIS="data"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="ps7_0_axi_periph_M00_AXI" DATAWIDTH="32" NAME="s_axi_AXILiteS" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">

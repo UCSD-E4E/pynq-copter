@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1533401470">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1533520606">
   <File Type="VDS-TIMING-PB" Name="iicComm4_wrapper_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="iicComm4_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="iicComm4_wrapper.dcp"/>
@@ -48,11 +48,11 @@
     </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="iicComm4_auto_pc_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="iicComm4_iiccomm4_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="iicComm4_axi_iic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="iicComm4_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="iicComm4_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="iicComm4_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="iicComm4_rst_ps7_0_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="iicComm4_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="iicComm4_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="iicComm4_iiccomm4_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="iicComm4_axi_iic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="iicComm4_auto_pc_1"/>
 </GenRun>

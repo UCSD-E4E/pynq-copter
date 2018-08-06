@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "iiccomm3"
 set Version     "1.0"
 set DisplayName "Iiccomm3"
-set Revision    "1808040953"
+set Revision    "1808051855"
 set Description "HLS Core: Iiccomm3 Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -552,6 +552,18 @@ set Interfaces {
         NUM_WRITE_OUTSTANDING "16"
         MAX_READ_BURST_LENGTH "16"
         MAX_WRITE_BURST_LENGTH "16"
+    }
+    outValue11 {
+        type "data"
+        dir "out"
+        width "32"
+        ctype {
+            DATA {
+                Type "integer unsigned"
+                Width "32"
+                Bits "32"
+            }
+        }
     }
 }
 

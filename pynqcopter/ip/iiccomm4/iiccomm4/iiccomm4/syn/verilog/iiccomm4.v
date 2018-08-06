@@ -57,6 +57,8 @@ module iiccomm4 (
         m_axi_iic_BRESP,
         m_axi_iic_BID,
         m_axi_iic_BUSER,
+        outValue11,
+        outValue11_ap_vld,
         s_axi_AXILiteS_AWVALID,
         s_axi_AXILiteS_AWREADY,
         s_axi_AXILiteS_AWADDR,
@@ -184,6 +186,8 @@ output   m_axi_iic_BREADY;
 input  [1:0] m_axi_iic_BRESP;
 input  [C_M_AXI_IIC_ID_WIDTH - 1:0] m_axi_iic_BID;
 input  [C_M_AXI_IIC_BUSER_WIDTH - 1:0] m_axi_iic_BUSER;
+output  [31:0] outValue11;
+output   outValue11_ap_vld;
 input   s_axi_AXILiteS_AWVALID;
 output   s_axi_AXILiteS_AWREADY;
 input  [C_S_AXI_AXILITES_ADDR_WIDTH - 1:0] s_axi_AXILiteS_AWADDR;
@@ -219,6 +223,8 @@ output  [1:0] s_axi_OUTPUTS_RRESP;
 output   s_axi_OUTPUTS_BVALID;
 input   s_axi_OUTPUTS_BREADY;
 output  [1:0] s_axi_OUTPUTS_BRESP;
+
+reg outValue11_ap_vld;
 
 reg    ap_rst_n_inv;
 wire    ap_start;
@@ -282,16 +288,16 @@ wire   [1:0] iic_BRESP;
 wire   [0:0] iic_BID;
 wire   [0:0] iic_BUSER;
 reg    ap_sig_ioackin_iic_ARREADY;
-reg   [31:0] iic_read_reg_423;
-reg   [31:0] iic_addr_read_reg_434;
-reg   [31:0] iic_addr_1_read_reg_445;
-reg   [31:0] iic_addr_2_read_reg_456;
-reg   [31:0] iic_addr_3_read_reg_461;
-reg   [31:0] iic_addr_4_read_reg_466;
-reg   [31:0] iic_addr_5_read_reg_471;
-reg   [31:0] iic_addr_6_read_reg_476;
-reg   [31:0] iic_addr_7_read_reg_481;
-reg   [31:0] iic_addr_8_read_reg_486;
+reg   [31:0] iic_read_reg_437;
+reg   [31:0] iic_addr_read_reg_448;
+reg   [31:0] iic_addr_1_read_reg_459;
+reg   [31:0] iic_addr_2_read_reg_470;
+reg   [31:0] iic_addr_3_read_reg_475;
+reg   [31:0] iic_addr_4_read_reg_480;
+reg   [31:0] iic_addr_5_read_reg_485;
+reg   [31:0] iic_addr_6_read_reg_490;
+reg   [31:0] iic_addr_7_read_reg_495;
+reg   [31:0] iic_addr_8_read_reg_500;
 reg    ap_reg_ioackin_iic_ARREADY;
 wire    ap_CS_fsm_state18;
 reg   [17:0] ap_NS_fsm;
@@ -357,34 +363,34 @@ iiccomm4_OUTPUTS_s_axi_U(
     .ACLK(ap_clk),
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
-    .outValue1_o(iic_read_reg_423),
+    .outValue1_o(iic_read_reg_437),
     .outValue1_o_ap_vld(outValue1_o_ap_vld),
     .outValue1_i(outValue1_i),
-    .outValue2_o(iic_addr_read_reg_434),
+    .outValue2_o(iic_addr_read_reg_448),
     .outValue2_o_ap_vld(outValue2_o_ap_vld),
     .outValue2_i(outValue2_i),
-    .outValue3_o(iic_addr_1_read_reg_445),
+    .outValue3_o(iic_addr_1_read_reg_459),
     .outValue3_o_ap_vld(outValue3_o_ap_vld),
     .outValue3_i(outValue3_i),
-    .outValue4_o(iic_addr_2_read_reg_456),
+    .outValue4_o(iic_addr_2_read_reg_470),
     .outValue4_o_ap_vld(outValue4_o_ap_vld),
     .outValue4_i(outValue4_i),
-    .outValue5_o(iic_addr_3_read_reg_461),
+    .outValue5_o(iic_addr_3_read_reg_475),
     .outValue5_o_ap_vld(outValue5_o_ap_vld),
     .outValue5_i(outValue5_i),
-    .outValue6_o(iic_addr_4_read_reg_466),
+    .outValue6_o(iic_addr_4_read_reg_480),
     .outValue6_o_ap_vld(outValue6_o_ap_vld),
     .outValue6_i(outValue6_i),
-    .outValue7_o(iic_addr_5_read_reg_471),
+    .outValue7_o(iic_addr_5_read_reg_485),
     .outValue7_o_ap_vld(outValue7_o_ap_vld),
     .outValue7_i(outValue7_i),
-    .outValue8_o(iic_addr_6_read_reg_476),
+    .outValue8_o(iic_addr_6_read_reg_490),
     .outValue8_o_ap_vld(outValue8_o_ap_vld),
     .outValue8_i(outValue8_i),
-    .outValue9_o(iic_addr_7_read_reg_481),
+    .outValue9_o(iic_addr_7_read_reg_495),
     .outValue9_o_ap_vld(outValue9_o_ap_vld),
     .outValue9_i(outValue9_i),
-    .outValue10_o(iic_addr_8_read_reg_486),
+    .outValue10_o(iic_addr_8_read_reg_500),
     .outValue10_o_ap_vld(outValue10_o_ap_vld),
     .outValue10_i(outValue10_i)
 );
@@ -527,61 +533,61 @@ end
 
 always @ (posedge ap_clk) begin
     if ((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state10))) begin
-        iic_addr_1_read_reg_445 <= iic_RDATA;
+        iic_addr_1_read_reg_459 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state11))) begin
-        iic_addr_2_read_reg_456 <= iic_RDATA;
+        iic_addr_2_read_reg_470 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state12))) begin
-        iic_addr_3_read_reg_461 <= iic_RDATA;
+        iic_addr_3_read_reg_475 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state13))) begin
-        iic_addr_4_read_reg_466 <= iic_RDATA;
+        iic_addr_4_read_reg_480 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state14))) begin
-        iic_addr_5_read_reg_471 <= iic_RDATA;
+        iic_addr_5_read_reg_485 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state15))) begin
-        iic_addr_6_read_reg_476 <= iic_RDATA;
+        iic_addr_6_read_reg_490 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state16))) begin
-        iic_addr_7_read_reg_481 <= iic_RDATA;
+        iic_addr_7_read_reg_495 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state17))) begin
-        iic_addr_8_read_reg_486 <= iic_RDATA;
+        iic_addr_8_read_reg_500 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state9))) begin
-        iic_addr_read_reg_434 <= iic_RDATA;
+        iic_addr_read_reg_448 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state8))) begin
-        iic_read_reg_423 <= iic_RDATA;
+        iic_read_reg_437 <= iic_RDATA;
     end
 end
 
@@ -684,6 +690,14 @@ always @ (*) begin
         outValue10_o_ap_vld = 1'b1;
     end else begin
         outValue10_o_ap_vld = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
+        outValue11_ap_vld = 1'b1;
+    end else begin
+        outValue11_ap_vld = 1'b0;
     end
 end
 
@@ -928,5 +942,7 @@ assign ap_CS_fsm_state9 = ap_CS_fsm[32'd8];
 always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
+
+assign outValue11 = 32'd15;
 
 endmodule //iiccomm4

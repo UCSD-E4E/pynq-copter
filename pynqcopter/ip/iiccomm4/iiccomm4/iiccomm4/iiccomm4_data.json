@@ -262,6 +262,15 @@
         "WUSER": "1"
       }
     },
+    "outValue11": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        }}
+    },
     "s_axi_AXILiteS": {
       "type": "axi4lite",
       "is_adaptor": "true",
@@ -1426,6 +1435,14 @@
       "dir": "in",
       "width": "1",
       "isVector": "true"
+    },
+    "outValue11": {
+      "dir": "out",
+      "width": "32"
+    },
+    "outValue11_ap_vld": {
+      "dir": "out",
+      "width": "1"
     }
   },
   "CPorts": {
@@ -1597,6 +1614,13 @@
     "iic": {
       "interfaceRef": "m_axi_iic",
       "dir": "inout"
+    },
+    "outValue11": {
+      "interfaceRef": "outValue11",
+      "dir": "out",
+      "dataWidth": "32",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "17"
     }
   },
   "ModuleInfo": {
@@ -1625,7 +1649,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-04 09:50:01 PDT",
+    "Time": "2018-08-05 18:55:30 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

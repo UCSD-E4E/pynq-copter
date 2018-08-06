@@ -136,6 +136,18 @@ set Interface10 "wire"
 set DataType10 "unsigned int"
 set Port10 [list $PortName10 $Interface10 $DataType10 $Pointer10 $Dims10 $Const10 $Volatile10 $ArrayOpt10]
 lappend PortList $Port10
+set PortName11 "outValue11"
+set BitWidth11 "32"
+set ArrayOpt11 ""
+set Const11 "0"
+set Volatile11 "1"
+set Pointer11 "2"
+set Reference11 "1"
+set Dims11 [list 0]
+set Interface11 "wire"
+set DataType11 "unsigned int"
+set Port11 [list $PortName11 $Interface11 $DataType11 $Pointer11 $Dims11 $Const11 $Volatile11 $ArrayOpt11]
+lappend PortList $Port11
 set globalAPint "" 
 set returnAPInt "" 
 set hasCPPAPInt 0 

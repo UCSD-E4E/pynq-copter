@@ -1,4 +1,4 @@
-INFO: [HLS 200-0] Workspace /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3 opened at Sat Aug 04 09:52:27 PDT 2018
+INFO: [HLS 200-0] Workspace /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3 opened at Sun Aug 05 18:54:32 PDT 2018
 Execute       config_clock -quiet -name default -period 4 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
 Command       config_clock returned 0; 0 sec.
@@ -41,7 +41,7 @@ Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xili
 Command             ap_source returned 0; 0 sec.
 Command           ap_source returned 0; 0 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
-Command           ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.01 sec.
 Command         ap_source returned 0; 0.01 sec.
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/dsp48e1.hlp 
 Command         ap_source returned 0; 0 sec.
@@ -77,10 +77,10 @@ Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xili
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
 Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command               ap_source returned 0; 0.01 sec.
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command               ap_source returned 0; 0.02 sec.
 Command             ap_source returned 0; 0.02 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
 Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
@@ -88,10 +88,10 @@ Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
 Command             ap_source returned 0; 0.09 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.13 sec.
+Command           ap_source returned 0; 0.14 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command           ap_source returned 0; 0 sec.
 Command         ap_source returned 0; 0.14 sec.
@@ -102,7 +102,7 @@ Execute       import_lib /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv7.lib 
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_hp.lib 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.01 sec.
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv.hlp 
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
@@ -115,8 +115,8 @@ Command               ap_source returned 0; 0 sec.
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0.01 sec.
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_hp.hlp 
 Command         ap_source returned 0; 0 sec.
 Command       import_lib returned 0; 0.02 sec.
@@ -154,7 +154,7 @@ Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xi
 Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.lib 
 Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_old.lib 
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_vivado.lib 
@@ -169,8 +169,8 @@ Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/
 Command                 ap_source returned 0; 0 sec.
 Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
-Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0 sec.
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/dsp48e1.hlp 
 Command             ap_source returned 0; 0 sec.
 Execute             get_default_platform 
@@ -190,8 +190,8 @@ Command                 ap_source returned 0; 0 sec.
 Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
 Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0.01 sec.
-Command           import_lib returned 0; 0.02 sec.
+Command             ap_source returned 0; 0 sec.
+Command           import_lib returned 0; 0.01 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
@@ -200,17 +200,17 @@ Command                 ap_source returned 0; 0 sec.
 Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
 Command                 ap_source returned 0; 0 sec.
 Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command                 ap_source returned 0; 0 sec.
+Command                 ap_source returned 0; 0.01 sec.
 Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute                   source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
 Command                   ap_source returned 0; 0 sec.
 Execute                   source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command                   ap_source returned 0; 0.01 sec.
-Command                 ap_source returned 0; 0.01 sec.
+Command                   ap_source returned 0; 0 sec.
+Command                 ap_source returned 0; 0 sec.
 Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command                 ap_source returned 0; 0.01 sec.
+Command                 ap_source returned 0; 0.02 sec.
 Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command                 ap_source returned 0; 0.01 sec.
+Command                 ap_source returned 0; 0 sec.
 Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command                 ap_source returned 0; 0 sec.
 Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
@@ -222,15 +222,15 @@ Command                 ap_source returned 0; 0 sec.
 Command               ap_source returned 0; 0.11 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0.11 sec.
-Command           ap_source returned 0; 0.11 sec.
+Command             ap_source returned 0; 0.12 sec.
+Command           ap_source returned 0; 0.12 sec.
 Execute           get_default_platform 
 Command           get_default_platform returned 0; 0 sec.
 Execute           config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
 Command           config_chip_info returned 0; 0 sec.
 Execute           config_chip_info -quiet -speed slow 
 Command           config_chip_info returned 0; 0 sec.
-Command         add_library returned 0; 0.14 sec.
+Command         add_library returned 0; 0.15 sec.
 Execute         add_library xilinx/zynq/zynq_fpv6 
 Execute           get_default_platform 
 Command           get_default_platform returned 0; 0 sec.
@@ -239,7 +239,7 @@ Command           open_platform returned 0; 0 sec.
 Execute           import_lib /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6 
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv7.lib 
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_hp.lib 
-Command               ap_source returned 0; 0.01 sec.
+Command               ap_source returned 0; 0 sec.
 Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv.hlp 
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
@@ -256,13 +256,13 @@ Command                 ap_source returned 0; 0 sec.
 Command               ap_source returned 0; 0 sec.
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_hp.hlp 
-Command             ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.01 sec.
 Command           import_lib returned 0; 0.02 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
-Command             ap_source returned 0; 0.01 sec.
-Command           ap_source returned 0; 0.01 sec.
-Command         add_library returned 0; 0.03 sec.
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0 sec.
+Command         add_library returned 0; 0.02 sec.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
@@ -286,7 +286,7 @@ Execute         import_lib /data/opt/Xilinx/Vivado/2017.4/common/technology/xili
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.lib 
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.lib 
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.lib 
-Command               ap_source returned 0; 0 sec.
+Command               ap_source returned 0; 0.01 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.lib 
 Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.lib 
@@ -295,7 +295,7 @@ Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xi
 Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.lib 
 Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.lib 
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.lib 
@@ -304,11 +304,11 @@ Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xili
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.lib 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.01 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_old.lib 
 Command           ap_source returned 0; 0 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_vivado.lib 
-Command           ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.01 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
 Command             ap_source returned 0; 0 sec.
@@ -353,20 +353,20 @@ Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xi
 Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command                 ap_source returned 0; 0 sec.
+Command                 ap_source returned 0; 0.01 sec.
 Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
 Command                 ap_source returned 0; 0.01 sec.
-Command               ap_source returned 0; 0.01 sec.
+Command               ap_source returned 0; 0.02 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command               ap_source returned 0; 0.01 sec.
-Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
 Command               ap_source returned 0; 0 sec.
+Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command               ap_source returned 0; 0.01 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
 Command               ap_source returned 0; 0.09 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command               ap_source returned 0; 0.01 sec.
+Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command               ap_source returned 0; 0 sec.
 Command             ap_source returned 0; 0.12 sec.
@@ -390,7 +390,7 @@ Execute         import_lib /data/opt/Xilinx/Vivado/2017.4/common/technology/xili
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv7.lib 
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_hp.lib 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv.hlp 
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
@@ -450,17 +450,17 @@ INFO: [HLS 200-0] Handling iiccomm3.cpp as C++
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
 Execute         is_encrypted iiccomm3.cpp 
-Command         is_encrypted returned 0; 0 sec.
+Command         is_encrypted returned 0; 0.01 sec.
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
 INFO: [HLS 200-0] Source preprocessing
 Execute         clang  -fno-limit-debug-info -gcc-toolchain "/data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "iiccomm3.cpp"   -std=c++11  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pp.0.cpp" 
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E iiccomm3.cpp -std=c++11 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pp.0.cpp
-Command         clang returned 0; 1.12 sec.
+Command         clang returned 0; 1.19 sec.
 INFO: [HLS 200-0] Syntax Checking before pre-processing...
 Execute         clang  -fno-limit-debug-info -gcc-toolchain "/data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -std=c++11  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pp.0.cpp"  -o "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/useless.bc"  
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -std=c++11 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pp.0.cpp -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/useless.bc
-Command         clang returned 0; 1.63 sec.
+Command         clang returned 0; 1.46 sec.
 INFO: [HLS 200-0] GCC PP time: 2 seconds per iteration
 Execute         list_core -type functional_unit 
 Command         list_core returned 0; 0 sec.
@@ -687,7 +687,7 @@ Error:Syntax error in source:operator^(_Ios_Iostate __a, _Ios_Iostate __b)
 Error:Missing ; in source:e
 Error:Syntax error in source:operator~(_Ios_Iostate __a)
   { return _Ios_Iostate(~static_cast<int>(__a)); }
-Command         cdt returned 0; 7.57 sec.
+Command         cdt returned 0; 7.01 sec.
 INFO: [HLS 200-0] Marker-Pragma convertor: /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pp.0.cpp.ap-cdt.cpp /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pragma.0.cpp /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pragma.0.cpp.ap-line.CXX 0
 INFO: [HLS 200-0] Converting Pragmas to Markers...
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/pragma.status.tcl 
@@ -696,13 +696,13 @@ INFO: [HLS 200-0] Pragma Handling...
 INFO: [HLS 200-0] Source preprocessing
 Execute         clang  -fno-limit-debug-info -gcc-toolchain "/data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pragma.1.cpp"   -std=c++11  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pragma.2.cpp" 
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pragma.1.cpp -std=c++11 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pragma.2.cpp
-Command         clang returned 0; 1.07 sec.
+Command         clang returned 0; 1.19 sec.
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
 INFO: [HLS 200-0] Processing labels
 Execute         clang  -fno-limit-debug-info -gcc-toolchain /data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pragma.2.cpp"  -std=c++11  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.g.bc" 
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.pragma.2.cpp -std=c++11 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.g.bc
-Command         clang returned 0; 1.51 sec.
+Command         clang returned 0; 1.66 sec.
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-0] Compiling one TU...
 Execute         is_m_axi_addr64 
@@ -717,11 +717,11 @@ Command         get_default_platform returned 0; 0 sec.
 INFO: [HLS 200-0] Source preprocessing
 Execute         clang  -fno-limit-debug-info -gcc-toolchain "/data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "main.cpp"   -std=c++11  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pp.0.cpp" 
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E main.cpp -std=c++11 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pp.0.cpp
-Command         clang returned 0; 1.09 sec.
+Command         clang returned 0; 1.2 sec.
 INFO: [HLS 200-0] Syntax Checking before pre-processing...
 Execute         clang  -fno-limit-debug-info -gcc-toolchain "/data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -std=c++11  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pp.0.cpp"  -o "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/useless.bc"  
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -std=c++11 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pp.0.cpp -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/useless.bc
-Command         clang returned 0; 1.6 sec.
+Command         clang returned 0; 1.57 sec.
 INFO: [HLS 200-0] GCC PP time: 2 seconds per iteration
 Execute         list_core -type functional_unit 
 Command         list_core returned 0; 0 sec.
@@ -948,7 +948,7 @@ Error:Syntax error in source:operator^(_Ios_Iostate __a, _Ios_Iostate __b)
 Error:Missing ; in source:e
 Error:Syntax error in source:operator~(_Ios_Iostate __a)
   { return _Ios_Iostate(~static_cast<int>(__a)); }
-Command         cdt returned 0; 6.52 sec.
+Command         cdt returned 0; 6.42 sec.
 INFO: [HLS 200-0] Marker-Pragma convertor: /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pp.0.cpp.ap-cdt.cpp /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pragma.0.cpp /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pragma.0.cpp.ap-line.CXX 0
 INFO: [HLS 200-0] Converting Pragmas to Markers...
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/pragma.status.tcl 
@@ -957,32 +957,32 @@ INFO: [HLS 200-0] Pragma Handling...
 INFO: [HLS 200-0] Source preprocessing
 Execute         clang  -fno-limit-debug-info -gcc-toolchain "/data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pragma.1.cpp"   -std=c++11  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pragma.2.cpp" 
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pragma.1.cpp -std=c++11 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pragma.2.cpp
-Command         clang returned 0; 1.17 sec.
+Command         clang returned 0; 1.14 sec.
 Execute         get_default_platform 
 Command         get_default_platform returned 0; 0 sec.
 INFO: [HLS 200-0] Processing labels
 Execute         clang  -fno-limit-debug-info -gcc-toolchain /data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pragma.2.cpp"  -std=c++11  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.g.bc" 
 INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.pragma.2.cpp -std=c++11 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot -I /data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.g.bc
-Command         clang returned 0; 1.68 sec.
+Command         clang returned 0; 1.67 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/ve_warning.tcl 
 Command         ap_source returned 0; 0 sec.
 INFO: [HLS 200-10] Validating synthesis directives ...
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/pragma.status.tcl 
 Command         ap_source returned 0; 0 sec.
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:20 ; elapsed = 00:00:28 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 127248 ; free virtual = 504277
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:21 ; elapsed = 00:00:28 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 128558 ; free virtual = 506119
 INFO: [HLS 200-0] Linking Release ...
 Execute         llvm-ld /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.bc /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.bc -hls-opt -except-internalize iiccomm3 -L/data/opt/Xilinx/Vivado/2017.4/lnx64/lib -lm_basic -lhlsmc++ -lhlsm -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o 
-Command         llvm-ld returned 0; 0.61 sec.
+Command         llvm-ld returned 0; 0.63 sec.
 Execute         disassemble /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o 
 Execute           is_encrypted /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o.bc 
 Command           is_encrypted returned 0; 0 sec.
-Command         disassemble returned 0; 0.59 sec.
+Command         disassemble returned 0; 0.46 sec.
 INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
 INFO: [HLS 200-0] Linking Debug ...
 Execute         llvm-ld /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.g.bc /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/main.g.bc -hls-opt -except-internalize iiccomm3 -L/data/opt/Xilinx/Vivado/2017.4/lnx64/lib -lm_basic -lhlsmc++ -lhlsm -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.g 
-Command         llvm-ld returned 0; 0.49 sec.
+Command         llvm-ld returned 0; 0.62 sec.
 INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:21 ; elapsed = 00:00:30 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 127243 ; free virtual = 504271
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:23 ; elapsed = 00:00:30 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 128242 ; free virtual = 505805
 Execute         ::config_rtl 
 Command         config_rtl returned 0; 0 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
@@ -992,7 +992,7 @@ Execute           cleanup_all_models
 Command           cleanup_all_models returned 0; 0 sec.
 INFO: [HLS 200-10] Starting code transformations ...
 Execute           transform -promote-dbg-pointer /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.pp.bc -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.pp.0.bc -f 
-Command           transform returned 0; 0.03 sec.
+Command           transform returned 0; 0.04 sec.
 Execute           llvm-ld /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.pp.0.bc -disable-opt -L/data/opt/Xilinx/Vivado/2017.4/lnx64/lib -lfloatconversion -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.g.0 
 Command           llvm-ld returned 0; 0.6 sec.
 INFO: [HLS 200-0] Running Standard Transforms...
@@ -1001,16 +1001,16 @@ Command           transform returned 0; 0.05 sec.
 Execute           disassemble /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.g.1 /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.g.1 
 Execute             is_encrypted /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.g.1.bc 
 Command             is_encrypted returned 0; 0 sec.
-Command           disassemble returned 0; 0.59 sec.
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:23 ; elapsed = 00:00:31 . Memory (MB): peak = 360.141 ; gain = 13.582 ; free physical = 127221 ; free virtual = 504249
+Command           disassemble returned 0; 0.56 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:24 ; elapsed = 00:00:31 . Memory (MB): peak = 360.145 ; gain = 13.582 ; free physical = 128209 ; free virtual = 505772
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO: [HLS 200-0] Checking Synthesizability 1/2..
 Execute           transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.g.1.bc -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.g.2.prechk.bc -f 
-Command           transform returned 0; 0.07 sec.
+Command           transform returned 0; 0.08 sec.
 INFO: [HLS 200-0] Checking Synthesizability 2/2..
 Execute           transform -syn-check /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.g.2.prechk.bc -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.g.2.bc -f -phase syn-check 
-Command           transform returned 0; 0.02 sec.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:23 ; elapsed = 00:00:31 . Memory (MB): peak = 360.141 ; gain = 13.582 ; free physical = 127205 ; free virtual = 504233
+Command           transform returned 0; 0.03 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:24 ; elapsed = 00:00:31 . Memory (MB): peak = 360.145 ; gain = 13.582 ; free physical = 128204 ; free virtual = 505768
 INFO: [HLS 200-0] Compiler optimizing ...
 INFO: [HLS 200-0] Share syncheck's 1.bc for syn flow: copy /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.g.1.bc to /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o.1.bc
 INFO: [HLS 200-0] Presyn 1...
@@ -1022,19 +1022,19 @@ Command           transform returned 0; 0.06 sec.
 Execute           disassemble /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o.2 /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o.2 
 Execute             is_encrypted /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o.2.bc 
 Command             is_encrypted returned 0; 0 sec.
-Command           disassemble returned 0; 0.48 sec.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:23 ; elapsed = 00:00:32 . Memory (MB): peak = 488.145 ; gain = 141.586 ; free physical = 127173 ; free virtual = 504202
+Command           disassemble returned 0; 0.63 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:25 ; elapsed = 00:00:32 . Memory (MB): peak = 488.148 ; gain = 141.586 ; free physical = 128171 ; free virtual = 505734
 INFO: [HLS 200-0] Building ssdm...
 Execute           transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -interface-preproc -directive-preproc -interface-gen -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -read-loop-dep -dce -bitwidth -loop-dep -check-stream -norm-name -legalize -validate-dataflow -cdfg-build /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o.2.bc -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
 Command           transform returned 0; 0.15 sec.
 Execute           disassemble /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o.3 /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o.3 
 Execute             is_encrypted /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/a.o.3.bc 
 Command             is_encrypted returned 0; 0 sec.
-Command           disassemble returned 0; 0.57 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:24 ; elapsed = 00:00:33 . Memory (MB): peak = 488.145 ; gain = 141.586 ; free physical = 127155 ; free virtual = 504184
+Command           disassemble returned 0; 0.6 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:25 ; elapsed = 00:00:33 . Memory (MB): peak = 488.148 ; gain = 141.586 ; free physical = 128172 ; free virtual = 505735
 INFO: [HLS 200-0] Finish building internal data model.
-Command         opt_and_import_c returned 0; 2.75 sec.
-Command       elaborate returned 0; 31.6 sec.
+Command         opt_and_import_c returned 0; 2.92 sec.
+Command       elaborate returned 0; 31.55 sec.
 Execute       autosyn 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-0] Synthesizing C/C++ design ...
@@ -1070,12 +1070,12 @@ Command         set_default_model returned 0; 0 sec.
 Execute         schedule -model iiccomm3 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule returned 0; 0.03 sec.
-INFO: [HLS 200-111]  Elapsed time: 32.63 seconds; current allocated memory: 77.083 MB.
+Command         schedule returned 0; 0.04 sec.
+INFO: [HLS 200-111]  Elapsed time: 32.6 seconds; current allocated memory: 77.108 MB.
 Execute         report -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.verbose.sched.rpt -verbose -f 
-Command         report returned 0; 0.02 sec.
+Command         report returned 0; 0.01 sec.
 Execute         db_write -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.sched.adb -f 
-Command         db_write returned 0; 0.01 sec.
+Command         db_write returned 0; 0 sec.
 INFO: [HLS 200-0] Finish scheduling iiccomm3.
 Execute         set_default_model iiccomm3 
 Command         set_default_model returned 0; 0 sec.
@@ -1113,12 +1113,12 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command         bind returned 0; 0.01 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 77.549 MB.
+Command         bind returned 0; 0.02 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 77.582 MB.
 Execute         report -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.verbose.bind.rpt -verbose -f 
 Command         report returned 0; 0.02 sec.
 Execute         db_write -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.bind.adb -f 
-Command         db_write returned 0; 0.01 sec.
+Command         db_write returned 0; 0 sec.
 INFO: [HLS 200-0] Finish binding iiccomm3.
 Execute         get_model_list iiccomm3 -filter all-wo-channel 
 Command         get_model_list returned 0; 0 sec.
@@ -1141,12 +1141,13 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue7' to 's_
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue8' to 's_axilite & ap_ovld'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue9' to 's_axilite & ap_ovld'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue10' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm3/outValue11' to 'ap_vld'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'iiccomm3' to 's_axilite & ap_ctrl_hs'.
 INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port AXILiteS.
 INFO: [RTGEN 206-100] Bundling port 'outValue1', 'outValue2', 'outValue3', 'outValue4', 'outValue5', 'outValue6', 'outValue7', 'outValue8', 'outValue9' and 'outValue10' to AXI-Lite port OUTPUTS.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'iiccomm3'.
 Command         create_rtl_model returned 0; 0.04 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 78.493 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.06 seconds; current allocated memory: 78.530 MB.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.rtl_wrap.cfg.tcl 
 Command         ap_source returned 0; 0 sec.
 Execute         gen_rtl iiccomm3 -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/syn/systemc/iiccomm3 -synmodules iiccomm3 
@@ -1162,11 +1163,11 @@ Command         report returned 0; 0 sec.
 Execute         report -model iiccomm3 -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.sdaccel.xml -verbose -f -sdaccel 
 Command         report returned 0; 0.01 sec.
 Execute         gen_tb_info iiccomm3 -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3 -p /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db 
-Command         gen_tb_info returned 0; 0.01 sec.
+Command         gen_tb_info returned 0; 0 sec.
 Execute         report -model iiccomm3 -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/syn/report/iiccomm3_csynth.rpt -f 
 Command         report returned 0; 0 sec.
 Execute         report -model iiccomm3 -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/syn/report/iiccomm3_csynth.xml -f -x 
-Command         report returned 0; 0 sec.
+Command         report returned 0; 0.01 sec.
 Execute         report -model iiccomm3 -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.verbose.rpt -verbose -f 
 Command         report returned 0; 0.03 sec.
 Execute         db_write -model iiccomm3 -o /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.adb -f 
@@ -1225,27 +1226,27 @@ Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xi
 Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command                 ap_source returned 0; 0.01 sec.
-Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
 Command                 ap_source returned 0; 0 sec.
+Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command                 ap_source returned 0; 0.01 sec.
 Command               ap_source returned 0; 0.01 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
 Command               ap_source returned 0; 0.01 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command               ap_source returned 0; 0.01 sec.
+Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command               ap_source returned 0; 0.09 sec.
+Command               ap_source returned 0; 0.08 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command               ap_source returned 0; 0 sec.
+Command               ap_source returned 0; 0.01 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command               ap_source returned 0; 0 sec.
 Command             ap_source returned 0; 0.12 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.12 sec.
-Command         ap_source returned 0; 0.12 sec.
+Command           ap_source returned 0; 0.13 sec.
+Command         ap_source returned 0; 0.13 sec.
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
 Command           ap_source returned 0; 0 sec.
@@ -1263,7 +1264,7 @@ Execute           source ./OUTPUTS.slave.tcl
 Command           ap_source returned 0; 0 sec.
 Execute           source ./AXILiteS.slave.tcl 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.12 sec.
+Command         ap_source returned 0; 0.08 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command         ap_source returned 0; 0 sec.
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
@@ -1291,8 +1292,8 @@ Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xi
 Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
 Command                 ap_source returned 0; 0.01 sec.
 Execute                 source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command                 ap_source returned 0; 0.02 sec.
-Command               ap_source returned 0; 0.03 sec.
+Command                 ap_source returned 0; 0 sec.
+Command               ap_source returned 0; 0.01 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
 Command               ap_source returned 0; 0.01 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
@@ -1305,11 +1306,11 @@ Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xi
 Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0.17 sec.
+Command             ap_source returned 0; 0.15 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.18 sec.
-Command         ap_source returned 0; 0.19 sec.
+Command           ap_source returned 0; 0.16 sec.
+Command         ap_source returned 0; 0.16 sec.
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
 Command           ap_source returned 0; 0 sec.
@@ -1321,7 +1322,7 @@ Command         ap_source returned 0; 0 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.rtl_wrap.cfg.tcl 
 Command         ap_source returned 0; 0 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.tbgen.tcl 
-Command         ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.01 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.tbgen.tcl 
 Command         ap_source returned 0; 0 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
@@ -1331,7 +1332,7 @@ Command         ap_source returned 0; 0 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command         ap_source returned 0; 0 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.compgen.tcl 
-Command         ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command         ap_source returned 0; 0 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.compgen.tcl 
@@ -1347,6 +1348,8 @@ Command         ap_source returned 0; 0 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command         ap_source returned 0; 0 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.tbgen.tcl 
 Command         ap_source returned 0; 0 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.tbgen.tcl 
 Command         ap_source returned 0; 0 sec.
@@ -1378,19 +1381,19 @@ Execute         sc_get_clocks iiccomm3
 Command         sc_get_clocks returned 0; 0 sec.
 Execute         source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command         ap_source returned 0; 0 sec.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:25 ; elapsed = 00:00:34 . Memory (MB): peak = 488.145 ; gain = 141.586 ; free physical = 127139 ; free virtual = 504168
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:26 ; elapsed = 00:00:34 . Memory (MB): peak = 488.148 ; gain = 141.586 ; free physical = 128132 ; free virtual = 505695
 INFO: [SYSC 207-301] Generating SystemC RTL for iiccomm3.
 INFO: [VHDL 208-304] Generating VHDL RTL for iiccomm3.
 INFO: [VLOG 209-307] Generating Verilog RTL for iiccomm3.
-Command       autosyn returned 0; 1 sec.
-Command     csynth_design returned 0; 32.6 sec.
+Command       autosyn returned 0; 1.04 sec.
+Command     csynth_design returned 0; 32.59 sec.
 Execute     export_design -format ip_catalog -library hlsip -description HLS Core: Iiccomm3 Function -vendor UCSD -version 1.0 -display_name Iiccomm3 
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
 Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
 Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
 Command       ap_source returned 0; 0 sec.
 Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
@@ -1410,27 +1413,27 @@ Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xili
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command               ap_source returned 0; 0.01 sec.
-Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
 Command               ap_source returned 0; 0 sec.
+Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.01 sec.
 Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
 Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command             ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.06 sec.
+Command             ap_source returned 0; 0.08 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.1 sec.
+Command           ap_source returned 0; 0.11 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.1 sec.
-Command       ap_source returned 0; 0.1 sec.
+Command         ap_source returned 0; 0.12 sec.
+Command       ap_source returned 0; 0.12 sec.
 Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
 Command         ap_source returned 0; 0 sec.
@@ -1462,7 +1465,7 @@ Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command             ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
 Command               ap_source returned 0; 0 sec.
@@ -1476,16 +1479,16 @@ Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.07 sec.
+Command             ap_source returned 0; 0.09 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.09 sec.
+Command           ap_source returned 0; 0.12 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.09 sec.
-Command       ap_source returned 0; 0.09 sec.
+Command         ap_source returned 0; 0.12 sec.
+Command       ap_source returned 0; 0.12 sec.
 Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
 Command         ap_source returned 0; 0 sec.
@@ -1497,7 +1500,7 @@ Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.compgen.tcl 
-Command       ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.compgen.tcl 
@@ -1513,6 +1516,8 @@ Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.tbgen.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.tbgen.tcl 
 Command       ap_source returned 0; 0 sec.
@@ -1566,12 +1571,14 @@ Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.tbgen.tcl 
 Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.rtl_wrap.cfg.tcl 
-Command       ap_source returned 0; 0.01 sec.
+Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.rtl_wrap.cfg.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.rtl_wrap.cfg.tcl 
@@ -1613,6 +1620,56 @@ Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.constraint.tcl 
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.07 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.09 sec.
+Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.09 sec.
+Command       ap_source returned 0; 0.09 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0 sec.
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
@@ -1646,7 +1703,7 @@ Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
 Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command             ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
@@ -1655,21 +1712,25 @@ Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xili
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.09 sec.
+Command           ap_source returned 0; 0.1 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.09 sec.
-Command       ap_source returned 0; 0.09 sec.
+Command         ap_source returned 0; 0.11 sec.
+Command       ap_source returned 0; 0.11 sec.
 Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
 Command         ap_source returned 0; 0 sec.
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
 Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
-Command         ap_source returned 0; 0.01 sec.
-Command       ap_source returned 0; 0.01 sec.
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
 Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
 Command       ap_source returned 0; 0 sec.
 Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
@@ -1684,9 +1745,121 @@ Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
-Command             ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
 Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.07 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0.1 sec.
+Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.1 sec.
+Command       ap_source returned 0; 0.1 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.constraint.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0 sec.
+Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0.01 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.07 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.1 sec.
+Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.1 sec.
+Command       ap_source returned 0; 0.1 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0.01 sec.
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
+Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
 Command               ap_source returned 0; 0 sec.
@@ -1700,9 +1873,9 @@ Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.11 sec.
+Command             ap_source returned 0; 0.1 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.01 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
 Command             ap_source returned 0; 0 sec.
 Command           ap_source returned 0; 0.16 sec.
@@ -1743,66 +1916,6 @@ Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xili
 Command             ap_source returned 0; 0 sec.
 Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command               ap_source returned 0; 0.01 sec.
-Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.08 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
-Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.11 sec.
-Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
-Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.12 sec.
-Command       ap_source returned 0; 0.12 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
-Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.compgen.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.constraint.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/iiccomm3.tbgen.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
-Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
-Command       ap_source returned 0; 0.01 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
-Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
-Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
 Command               ap_source returned 0; 0 sec.
 Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
 Command               ap_source returned 0; 0.01 sec.
@@ -1821,113 +1934,7 @@ Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xili
 Command             ap_source returned 0; 0 sec.
 Command           ap_source returned 0; 0.11 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
-Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.12 sec.
-Command       ap_source returned 0; 0.12 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
-Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
-Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
-Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
-Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command               ap_source returned 0; 0.01 sec.
-Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.09 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
-Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.12 sec.
-Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
-Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.12 sec.
-Command       ap_source returned 0; 0.12 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
-Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/common.gen 
-Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/APCoreGen.gen 
-Command         ap_source returned 0; 0 sec.
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/op_simcore.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/generic/autopilot/interface.gen 
-Command       ap_source returned 0; 0 sec.
-Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
-Command       ap_source returned 0; 0 sec.
-Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq.gen 
-Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
-Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
-Command               ap_source returned 0; 0 sec.
-Execute               source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
-Command               ap_source returned 0; 0 sec.
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command             ap_source returned 0; 0.01 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
-Command             ap_source returned 0; 0.08 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
-Command             ap_source returned 0; 0 sec.
-Execute             source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
-Command             ap_source returned 0; 0 sec.
-Command           ap_source returned 0; 0.11 sec.
-Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
-Command           ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.01 sec.
 Command         ap_source returned 0; 0.12 sec.
 Command       ap_source returned 0; 0.12 sec.
 Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
@@ -1988,14 +1995,14 @@ Command             ap_source returned 0; 0 sec.
 Command           ap_source returned 0; 0.11 sec.
 Execute           source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
 Command           ap_source returned 0; 0 sec.
-Command         ap_source returned 0; 0.11 sec.
-Command       ap_source returned 0; 0.11 sec.
+Command         ap_source returned 0; 0.12 sec.
+Command       ap_source returned 0; 0.12 sec.
 Execute       source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source /data/opt/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
 Command         ap_source returned 0; 0 sec.
 Command       ap_source returned 0; 0 sec.
 Execute       source /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm3/iiccomm3/iiccomm3/.autopilot/db/global.setting.tcl 
 Command       ap_source returned 0; 0 sec.
-Command     export_design returned 0; 31.78 sec.
+Command     export_design returned 0; 33.02 sec.
 Execute     cleanup_all 
-Command     cleanup_all returned 0; 0.01 sec.
+Command     cleanup_all returned 0; 0 sec.

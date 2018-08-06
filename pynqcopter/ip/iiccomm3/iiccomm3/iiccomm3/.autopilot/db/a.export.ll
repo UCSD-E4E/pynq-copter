@@ -12,7 +12,7 @@ target triple = "x86_64-unknown-linux-gnu"
 
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
-define void @iiccomm3(i32* %iic, i32* %outValue1, i32* %outValue2, i32* %outValue3, i32* %outValue4, i32* %outValue5, i32* %outValue6, i32* %outValue7, i32* %outValue8, i32* %outValue9, i32* %outValue10) {
+define void @iiccomm3(i32* %iic, i32* %outValue1, i32* %outValue2, i32* %outValue3, i32* %outValue4, i32* %outValue5, i32* %outValue6, i32* %outValue7, i32* %outValue8, i32* %outValue9, i32* %outValue10, i32* %outValue11) {
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %iic), !map !20
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue1) nounwind, !map !26
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue2) nounwind, !map !30
@@ -24,6 +24,7 @@ define void @iiccomm3(i32* %iic, i32* %outValue1, i32* %outValue2, i32* %outValu
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue8) nounwind, !map !54
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue9) nounwind, !map !58
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue10) nounwind, !map !62
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue11) nounwind, !map !66
   call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @iiccomm3_str) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32* %iic, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
@@ -86,10 +87,17 @@ define void @iiccomm3(i32* %iic, i32* %outValue1, i32* %outValue2, i32* %outValu
   %iic_load_9_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_8, i32 1)
   %iic_addr_8_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr_8)
   call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue10, i32 %iic_addr_8_read)
+  call void @_ssdm_op_Write.ap_auto.volatile.i32P(i32* %outValue11, i32 10)
   ret void
 }
 
 define weak void @_ssdm_op_Write.s_axilite.volatile.i32P(i32*, i32) {
+entry:
+  store i32 %1, i32* %0
+  ret void
+}
+
+define weak void @_ssdm_op_Write.ap_auto.volatile.i32P(i32*, i32) {
 entry:
   store i32 %1, i32* %0
   ret void
@@ -132,11 +140,11 @@ entry:
 !llvm.map.gv = !{!13}
 
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
-!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0}
-!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!3 = metadata !{metadata !"kernel_arg_type", metadata !"uint32_t*", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &"}
-!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"volatile", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
-!5 = metadata !{metadata !"kernel_arg_name", metadata !"iic", metadata !"outValue1", metadata !"outValue2", metadata !"outValue3", metadata !"outValue4", metadata !"outValue5", metadata !"outValue6", metadata !"outValue7", metadata !"outValue8", metadata !"outValue9", metadata !"outValue10"}
+!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0}
+!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!3 = metadata !{metadata !"kernel_arg_type", metadata !"uint32_t*", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &"}
+!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"volatile", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
+!5 = metadata !{metadata !"kernel_arg_name", metadata !"iic", metadata !"outValue1", metadata !"outValue2", metadata !"outValue3", metadata !"outValue4", metadata !"outValue5", metadata !"outValue6", metadata !"outValue7", metadata !"outValue8", metadata !"outValue9", metadata !"outValue10", metadata !"outValue11"}
 !6 = metadata !{metadata !"reqd_work_group_size", i32 1, i32 1, i32 1}
 !7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}
 !8 = metadata !{metadata !"kernel_arg_addr_space"}
@@ -197,3 +205,7 @@ entry:
 !63 = metadata !{i32 0, i32 31, metadata !64}
 !64 = metadata !{metadata !65}
 !65 = metadata !{metadata !"outValue10", metadata !18, metadata !"unsigned int", i32 0, i32 31}
+!66 = metadata !{metadata !67}
+!67 = metadata !{i32 0, i32 31, metadata !68}
+!68 = metadata !{metadata !69}
+!69 = metadata !{metadata !"outValue11", metadata !18, metadata !"unsigned int", i32 0, i32 31}

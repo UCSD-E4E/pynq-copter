@@ -33349,7 +33349,7 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 };
 # 41 "./iiccomm4.hpp" 2
 # 51 "./iiccomm4.hpp"
-void iiccomm4(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatile uint32_t &outValue2, volatile uint32_t &outValue3, volatile uint32_t &outValue4, volatile uint32_t &outValue5, volatile uint32_t &outValue6, volatile uint32_t &outValue7, volatile uint32_t &outValue8, volatile uint32_t &outValue9, volatile uint32_t &outValue10);
+void iiccomm4(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatile uint32_t &outValue2, volatile uint32_t &outValue3, volatile uint32_t &outValue4, volatile uint32_t &outValue5, volatile uint32_t &outValue6, volatile uint32_t &outValue7, volatile uint32_t &outValue8, volatile uint32_t &outValue9, volatile uint32_t &outValue10, volatile uint32_t &outValue11);
 # 36 "main.cpp" 2
 
 

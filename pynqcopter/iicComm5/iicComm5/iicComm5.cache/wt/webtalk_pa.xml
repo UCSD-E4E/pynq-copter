@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Sun Aug  5 20:39:19 2018">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="8c621897946543ce9d0b325b3c187c0a" type="ProjectID"/>
+<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="EditDelete" value="1" type="JavaHandler"/>
+<property name="ExcludeFromAddrSpace" value="1" type="JavaHandler"/>
+<property name="ExportRSBTclScript" value="1" type="JavaHandler"/>
+<property name="SaveRSBDesign" value="3" type="JavaHandler"/>
+<property name="ValidateRSBDesign" value="1" type="JavaHandler"/>
+</item>
+<item name="Gui Handlers">
+<property name="AddressTreeTablePanel_ADDRESS_TREE_TABLE" value="18" type="GuiHandlerData"/>
+<property name="BaseDialog_OK" value="1" type="GuiHandlerData"/>
+<property name="CoreTreeTablePanel_CORE_TREE_TABLE" value="1" type="GuiHandlerData"/>
+<property name="ExportRSBTclScriptDialog_SPECIFY_FILE" value="1" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="3" type="GuiHandlerData"/>
+<property name="MainMenuMgr_EXPORT" value="2" type="GuiHandlerData"/>
+<property name="MainMenuMgr_FILE" value="4" type="GuiHandlerData"/>
+<property name="MainMenuMgr_OPEN_RECENT_FILE" value="1" type="GuiHandlerData"/>
+<property name="MainMenuMgr_OPEN_RECENT_PROJECT" value="1" type="GuiHandlerData"/>
+<property name="MainMenuMgr_TOOLS" value="2" type="GuiHandlerData"/>
+<property name="PACommandNames_EXPORT_BD_TCL" value="1" type="GuiHandlerData"/>
+<property name="PACommandNames_INCLUDE_IN_ADDR_SPACE" value="1" type="GuiHandlerData"/>
+<property name="PACommandNames_SAVE_RSB_DESIGN" value="3" type="GuiHandlerData"/>
+<property name="PACommandNames_VALIDATE_RSB_DESIGN" value="1" type="GuiHandlerData"/>
+<property name="SystemBuilderMenu_ASSIGN_ADDRESS" value="2" type="GuiHandlerData"/>
+<property name="SystemBuilderView_ADD_IP" value="2" type="GuiHandlerData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="76" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="71" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Sat Aug  4 09:52:47 2018
+// Date        : Sun Aug  5 18:58:24 2018
 // Host        : fabricant running 64-bit Linux Mint 18 Sarah
 // Command     : write_verilog -force -mode synth_stub
 //               /home/iavendano/pynq-copter/pynqcopter/iicComm4/iicComm4/iicComm4.srcs/sources_1/bd/iicComm4/ip/iicComm4_iiccomm4_0_0/iicComm4_iiccomm4_0_0_stub.v
@@ -14,7 +14,7 @@
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "iiccomm4,Vivado 2017.4" *)
-module iicComm4_iiccomm4_0_0(s_axi_AXILiteS_AWADDR, 
+module iicComm4_iiccomm4_0_0(outValue11_ap_vld, s_axi_AXILiteS_AWADDR, 
   s_axi_AXILiteS_AWVALID, s_axi_AXILiteS_AWREADY, s_axi_AXILiteS_WDATA, 
   s_axi_AXILiteS_WSTRB, s_axi_AXILiteS_WVALID, s_axi_AXILiteS_WREADY, 
   s_axi_AXILiteS_BRESP, s_axi_AXILiteS_BVALID, s_axi_AXILiteS_BREADY, 
@@ -32,8 +32,9 @@ module iicComm4_iiccomm4_0_0(s_axi_AXILiteS_AWADDR,
   m_axi_iic_BVALID, m_axi_iic_BREADY, m_axi_iic_ARADDR, m_axi_iic_ARLEN, m_axi_iic_ARSIZE, 
   m_axi_iic_ARBURST, m_axi_iic_ARLOCK, m_axi_iic_ARREGION, m_axi_iic_ARCACHE, 
   m_axi_iic_ARPROT, m_axi_iic_ARQOS, m_axi_iic_ARVALID, m_axi_iic_ARREADY, m_axi_iic_RDATA, 
-  m_axi_iic_RRESP, m_axi_iic_RLAST, m_axi_iic_RVALID, m_axi_iic_RREADY)
-/* synthesis syn_black_box black_box_pad_pin="s_axi_AXILiteS_AWADDR[3:0],s_axi_AXILiteS_AWVALID,s_axi_AXILiteS_AWREADY,s_axi_AXILiteS_WDATA[31:0],s_axi_AXILiteS_WSTRB[3:0],s_axi_AXILiteS_WVALID,s_axi_AXILiteS_WREADY,s_axi_AXILiteS_BRESP[1:0],s_axi_AXILiteS_BVALID,s_axi_AXILiteS_BREADY,s_axi_AXILiteS_ARADDR[3:0],s_axi_AXILiteS_ARVALID,s_axi_AXILiteS_ARREADY,s_axi_AXILiteS_RDATA[31:0],s_axi_AXILiteS_RRESP[1:0],s_axi_AXILiteS_RVALID,s_axi_AXILiteS_RREADY,s_axi_OUTPUTS_AWADDR[7:0],s_axi_OUTPUTS_AWVALID,s_axi_OUTPUTS_AWREADY,s_axi_OUTPUTS_WDATA[31:0],s_axi_OUTPUTS_WSTRB[3:0],s_axi_OUTPUTS_WVALID,s_axi_OUTPUTS_WREADY,s_axi_OUTPUTS_BRESP[1:0],s_axi_OUTPUTS_BVALID,s_axi_OUTPUTS_BREADY,s_axi_OUTPUTS_ARADDR[7:0],s_axi_OUTPUTS_ARVALID,s_axi_OUTPUTS_ARREADY,s_axi_OUTPUTS_RDATA[31:0],s_axi_OUTPUTS_RRESP[1:0],s_axi_OUTPUTS_RVALID,s_axi_OUTPUTS_RREADY,ap_clk,ap_rst_n,interrupt,m_axi_iic_AWADDR[31:0],m_axi_iic_AWLEN[7:0],m_axi_iic_AWSIZE[2:0],m_axi_iic_AWBURST[1:0],m_axi_iic_AWLOCK[1:0],m_axi_iic_AWREGION[3:0],m_axi_iic_AWCACHE[3:0],m_axi_iic_AWPROT[2:0],m_axi_iic_AWQOS[3:0],m_axi_iic_AWVALID,m_axi_iic_AWREADY,m_axi_iic_WDATA[31:0],m_axi_iic_WSTRB[3:0],m_axi_iic_WLAST,m_axi_iic_WVALID,m_axi_iic_WREADY,m_axi_iic_BRESP[1:0],m_axi_iic_BVALID,m_axi_iic_BREADY,m_axi_iic_ARADDR[31:0],m_axi_iic_ARLEN[7:0],m_axi_iic_ARSIZE[2:0],m_axi_iic_ARBURST[1:0],m_axi_iic_ARLOCK[1:0],m_axi_iic_ARREGION[3:0],m_axi_iic_ARCACHE[3:0],m_axi_iic_ARPROT[2:0],m_axi_iic_ARQOS[3:0],m_axi_iic_ARVALID,m_axi_iic_ARREADY,m_axi_iic_RDATA[31:0],m_axi_iic_RRESP[1:0],m_axi_iic_RLAST,m_axi_iic_RVALID,m_axi_iic_RREADY" */;
+  m_axi_iic_RRESP, m_axi_iic_RLAST, m_axi_iic_RVALID, m_axi_iic_RREADY, outValue11)
+/* synthesis syn_black_box black_box_pad_pin="outValue11_ap_vld,s_axi_AXILiteS_AWADDR[3:0],s_axi_AXILiteS_AWVALID,s_axi_AXILiteS_AWREADY,s_axi_AXILiteS_WDATA[31:0],s_axi_AXILiteS_WSTRB[3:0],s_axi_AXILiteS_WVALID,s_axi_AXILiteS_WREADY,s_axi_AXILiteS_BRESP[1:0],s_axi_AXILiteS_BVALID,s_axi_AXILiteS_BREADY,s_axi_AXILiteS_ARADDR[3:0],s_axi_AXILiteS_ARVALID,s_axi_AXILiteS_ARREADY,s_axi_AXILiteS_RDATA[31:0],s_axi_AXILiteS_RRESP[1:0],s_axi_AXILiteS_RVALID,s_axi_AXILiteS_RREADY,s_axi_OUTPUTS_AWADDR[7:0],s_axi_OUTPUTS_AWVALID,s_axi_OUTPUTS_AWREADY,s_axi_OUTPUTS_WDATA[31:0],s_axi_OUTPUTS_WSTRB[3:0],s_axi_OUTPUTS_WVALID,s_axi_OUTPUTS_WREADY,s_axi_OUTPUTS_BRESP[1:0],s_axi_OUTPUTS_BVALID,s_axi_OUTPUTS_BREADY,s_axi_OUTPUTS_ARADDR[7:0],s_axi_OUTPUTS_ARVALID,s_axi_OUTPUTS_ARREADY,s_axi_OUTPUTS_RDATA[31:0],s_axi_OUTPUTS_RRESP[1:0],s_axi_OUTPUTS_RVALID,s_axi_OUTPUTS_RREADY,ap_clk,ap_rst_n,interrupt,m_axi_iic_AWADDR[31:0],m_axi_iic_AWLEN[7:0],m_axi_iic_AWSIZE[2:0],m_axi_iic_AWBURST[1:0],m_axi_iic_AWLOCK[1:0],m_axi_iic_AWREGION[3:0],m_axi_iic_AWCACHE[3:0],m_axi_iic_AWPROT[2:0],m_axi_iic_AWQOS[3:0],m_axi_iic_AWVALID,m_axi_iic_AWREADY,m_axi_iic_WDATA[31:0],m_axi_iic_WSTRB[3:0],m_axi_iic_WLAST,m_axi_iic_WVALID,m_axi_iic_WREADY,m_axi_iic_BRESP[1:0],m_axi_iic_BVALID,m_axi_iic_BREADY,m_axi_iic_ARADDR[31:0],m_axi_iic_ARLEN[7:0],m_axi_iic_ARSIZE[2:0],m_axi_iic_ARBURST[1:0],m_axi_iic_ARLOCK[1:0],m_axi_iic_ARREGION[3:0],m_axi_iic_ARCACHE[3:0],m_axi_iic_ARPROT[2:0],m_axi_iic_ARQOS[3:0],m_axi_iic_ARVALID,m_axi_iic_ARREADY,m_axi_iic_RDATA[31:0],m_axi_iic_RRESP[1:0],m_axi_iic_RLAST,m_axi_iic_RVALID,m_axi_iic_RREADY,outValue11[31:0]" */;
+  output outValue11_ap_vld;
   input [3:0]s_axi_AXILiteS_AWADDR;
   input s_axi_AXILiteS_AWVALID;
   output s_axi_AXILiteS_AWREADY;
@@ -106,4 +107,5 @@ module iicComm4_iiccomm4_0_0(s_axi_AXILiteS_AWADDR,
   input m_axi_iic_RLAST;
   input m_axi_iic_RVALID;
   output m_axi_iic_RREADY;
+  output [31:0]outValue11;
 endmodule

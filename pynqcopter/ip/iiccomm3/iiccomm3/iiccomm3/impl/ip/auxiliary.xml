@@ -22,6 +22,7 @@
   <xd:arg xd:name="outValue9" xd:originalName="outValue9" xd:direction="out" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0x98" xd:statusOffset="0x9C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:arg xd:name="outValue10" xd:originalName="outValue10" xd:direction="in" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0xA0" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="outValue10" xd:originalName="outValue10" xd:direction="out" xd:interfaceRef="s_axi_OUTPUTS" xd:busTypeRef="axilite" xd:offset="0xA8" xd:statusOffset="0xAC" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="outValue11" xd:originalName="outValue11" xd:direction="out" xd:interfaceRef="outValue11" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="32" xd:firstOut="17"/>
   <xd:latencyEstimates xd:best-case="17" xd:worst-case="17" xd:average-case="17"/>
   <xd:resourceEstimates xd:LUT="2110" xd:FF="1677" xd:BRAM="2" xd:DSP="0"/>
 </xd:acceleratorMap>

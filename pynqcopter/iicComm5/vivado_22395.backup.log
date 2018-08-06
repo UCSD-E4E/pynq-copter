@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Aug  5 20:09:11 2018
+# Process ID: 22395
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/iicComm5
+# Command line: vivado iicComm5/iicComm5.xpr
+# Log file: /home/iavendano/pynq-copter/pynqcopter/iicComm5/vivado.log
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/iicComm5/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project iicComm5/iicComm5.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iavendano/pynq-copter/pynqcopter/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'iicComm5.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+iicComm5_iiccomm5_0_0
+
+open_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:08 . Memory (MB): peak = 6220.945 ; gain = 59.141 ; free physical = 127974 ; free virtual = 505675
+update_compile_order -fileset sources_1
+open_bd_design {/home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.srcs/sources_1/bd/iicComm5/iicComm5.bd}
+Adding cell -- xilinx.com:ip:axi_iic:2.0 - axi_iic_0
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding cell -- UCSD:hlsip:iiccomm5:1.0 - iiccomm5_0
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+INFO: [BD 41-434] Could not find an IP with XCI file by name: iicComm5_auto_pc_1 
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <iicComm5> from BD file </home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.srcs/sources_1/bd/iicComm5/iicComm5.bd>
+INFO: [BD 41-433] 
+Design successfully migrated to use XCI files...
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.srcs/sources_1/bd/iicComm5/ui/bd_e1ca8366.ui> 
+open_bd_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:08 . Memory (MB): peak = 6320.332 ; gain = 61.191 ; free physical = 127903 ; free virtual = 505604
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Aug  5 20:10:06 2018...

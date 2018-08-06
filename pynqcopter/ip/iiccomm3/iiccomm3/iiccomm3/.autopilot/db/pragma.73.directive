@@ -1,0 +1,86 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="iiccomm3" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm3" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="iic"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm3" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outValue1"/>
+<option name="bundle" value="OUTPUTS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm3" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outValue2"/>
+<option name="bundle" value="OUTPUTS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm3" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outValue3"/>
+<option name="bundle" value="OUTPUTS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm3" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outValue4"/>
+<option name="bundle" value="OUTPUTS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm3" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outValue5"/>
+<option name="bundle" value="OUTPUTS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm3" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outValue6"/>
+<option name="bundle" value="OUTPUTS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm3" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outValue7"/>
+<option name="bundle" value="OUTPUTS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm3" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outValue8"/>
+<option name="bundle" value="OUTPUTS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm3" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outValue9"/>
+<option name="bundle" value="OUTPUTS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm3" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outValue10"/>
+<option name="bundle" value="OUTPUTS"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

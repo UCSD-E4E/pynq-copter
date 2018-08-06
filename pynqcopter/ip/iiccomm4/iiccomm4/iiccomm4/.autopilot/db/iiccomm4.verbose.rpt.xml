@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'iiccomm4'" level="0">
-<item name = "Date">Sat Aug  4 09:50:00 2018
+<item name = "Date">Sun Aug  5 18:55:29 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">iiccomm4</item>
@@ -95,16 +95,16 @@
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">18, 0, 18, 0</column>
 <column name="ap_reg_ioackin_iic_ARREADY">1, 0, 1, 0</column>
-<column name="iic_addr_1_read_reg_445">32, 0, 32, 0</column>
-<column name="iic_addr_2_read_reg_456">32, 0, 32, 0</column>
-<column name="iic_addr_3_read_reg_461">32, 0, 32, 0</column>
-<column name="iic_addr_4_read_reg_466">32, 0, 32, 0</column>
-<column name="iic_addr_5_read_reg_471">32, 0, 32, 0</column>
-<column name="iic_addr_6_read_reg_476">32, 0, 32, 0</column>
-<column name="iic_addr_7_read_reg_481">32, 0, 32, 0</column>
-<column name="iic_addr_8_read_reg_486">32, 0, 32, 0</column>
-<column name="iic_addr_read_reg_434">32, 0, 32, 0</column>
-<column name="iic_read_reg_423">32, 0, 32, 0</column>
+<column name="iic_addr_1_read_reg_459">32, 0, 32, 0</column>
+<column name="iic_addr_2_read_reg_470">32, 0, 32, 0</column>
+<column name="iic_addr_3_read_reg_475">32, 0, 32, 0</column>
+<column name="iic_addr_4_read_reg_480">32, 0, 32, 0</column>
+<column name="iic_addr_5_read_reg_485">32, 0, 32, 0</column>
+<column name="iic_addr_6_read_reg_490">32, 0, 32, 0</column>
+<column name="iic_addr_7_read_reg_495">32, 0, 32, 0</column>
+<column name="iic_addr_8_read_reg_500">32, 0, 32, 0</column>
+<column name="iic_addr_read_reg_448">32, 0, 32, 0</column>
+<column name="iic_read_reg_437">32, 0, 32, 0</column>
 </table>
 </item>
 </section>
@@ -196,6 +196,8 @@
 <column name="m_axi_iic_BRESP">in, 2, m_axi, iic, pointer</column>
 <column name="m_axi_iic_BID">in, 1, m_axi, iic, pointer</column>
 <column name="m_axi_iic_BUSER">in, 1, m_axi, iic, pointer</column>
+<column name="outValue11">out, 32, ap_vld, outValue11, pointer</column>
+<column name="outValue11_ap_vld">out, 1, ap_vld, outValue11, pointer</column>
 </table>
 </item>
 </section>

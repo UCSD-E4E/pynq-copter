@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'iiccomm4'
 ================================================================
-* Date:           Sat Aug  4 09:50:00 2018
+* Date:           Sun Aug  5 18:55:29 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        iiccomm4
@@ -253,30 +253,32 @@ ST_18 : Operation 125 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBi
 ST_18 : Operation 126 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue8) nounwind, !map !54"
 ST_18 : Operation 127 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue9) nounwind, !map !58"
 ST_18 : Operation 128 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue10) nounwind, !map !62"
-ST_18 : Operation 129 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @iiccomm4_str) nounwind"
-ST_18 : Operation 130 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:54]
-ST_18 : Operation 131 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %iic, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [11 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
-ST_18 : Operation 132 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue1, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:58]
-ST_18 : Operation 133 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue2, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:59]
-ST_18 : Operation 134 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue3, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:60]
-ST_18 : Operation 135 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue4, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:61]
-ST_18 : Operation 136 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue5, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:62]
-ST_18 : Operation 137 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue6, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:63]
-ST_18 : Operation 138 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue7, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:64]
-ST_18 : Operation 139 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue8, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:65]
-ST_18 : Operation 140 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue9, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:66]
-ST_18 : Operation 141 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue10, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:67]
-ST_18 : Operation 142 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue1, i32 %iic_read)" [iiccomm4.cpp:71]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_18 : Operation 143 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue2, i32 %iic_addr_read)" [iiccomm4.cpp:74]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_18 : Operation 144 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue3, i32 %iic_addr_1_read)" [iiccomm4.cpp:79]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_18 : Operation 145 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue4, i32 %iic_addr_2_read)" [iiccomm4.cpp:82]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_18 : Operation 146 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue5, i32 %iic_addr_3_read)" [iiccomm4.cpp:85]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_18 : Operation 147 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue6, i32 %iic_addr_4_read)" [iiccomm4.cpp:88]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_18 : Operation 148 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue7, i32 %iic_addr_5_read)" [iiccomm4.cpp:93]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_18 : Operation 149 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue8, i32 %iic_addr_6_read)" [iiccomm4.cpp:96]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_18 : Operation 150 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue9, i32 %iic_addr_7_read)" [iiccomm4.cpp:99]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_18 : Operation 151 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue10, i32 %iic_addr_8_read)" [iiccomm4.cpp:102]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_18 : Operation 152 [1/1] (0.00ns)   --->   "ret void" [iiccomm4.cpp:109]
+ST_18 : Operation 129 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue11) nounwind, !map !66"
+ST_18 : Operation 130 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @iiccomm4_str) nounwind"
+ST_18 : Operation 131 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:54]
+ST_18 : Operation 132 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %iic, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [11 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
+ST_18 : Operation 133 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue1, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:58]
+ST_18 : Operation 134 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue2, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:59]
+ST_18 : Operation 135 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue3, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:60]
+ST_18 : Operation 136 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue4, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:61]
+ST_18 : Operation 137 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue5, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:62]
+ST_18 : Operation 138 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue6, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:63]
+ST_18 : Operation 139 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue7, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:64]
+ST_18 : Operation 140 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue8, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:65]
+ST_18 : Operation 141 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue9, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:66]
+ST_18 : Operation 142 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outValue10, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:67]
+ST_18 : Operation 143 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue1, i32 %iic_read)" [iiccomm4.cpp:71]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_18 : Operation 144 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue2, i32 %iic_addr_read)" [iiccomm4.cpp:74]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_18 : Operation 145 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue3, i32 %iic_addr_1_read)" [iiccomm4.cpp:79]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_18 : Operation 146 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue4, i32 %iic_addr_2_read)" [iiccomm4.cpp:82]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_18 : Operation 147 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue5, i32 %iic_addr_3_read)" [iiccomm4.cpp:85]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_18 : Operation 148 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue6, i32 %iic_addr_4_read)" [iiccomm4.cpp:88]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_18 : Operation 149 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue7, i32 %iic_addr_5_read)" [iiccomm4.cpp:93]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_18 : Operation 150 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue8, i32 %iic_addr_6_read)" [iiccomm4.cpp:96]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_18 : Operation 151 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue9, i32 %iic_addr_7_read)" [iiccomm4.cpp:99]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_18 : Operation 152 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue10, i32 %iic_addr_8_read)" [iiccomm4.cpp:102]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_18 : Operation 153 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.volatile.i32P(i32* %outValue11, i32 15)" [iiccomm4.cpp:104]
+ST_18 : Operation 154 [1/1] (0.00ns)   --->   "ret void" [iiccomm4.cpp:107]
 
 
 ============================================================
@@ -286,75 +288,75 @@ Target clock period: 4ns, clock uncertainty: 0.5ns.
 
  <State 1>: 3.5ns
 The critical path consists of the following:
-	bus request on port 'iic' (iiccomm4.cpp:70) [46]  (3.5 ns)
+	bus request on port 'iic' (iiccomm4.cpp:70) [48]  (3.5 ns)
 
  <State 2>: 3.5ns
 The critical path consists of the following:
-	bus request on port 'iic' (iiccomm4.cpp:70) [46]  (3.5 ns)
+	bus request on port 'iic' (iiccomm4.cpp:70) [48]  (3.5 ns)
 
  <State 3>: 3.5ns
 The critical path consists of the following:
-	bus request on port 'iic' (iiccomm4.cpp:70) [46]  (3.5 ns)
+	bus request on port 'iic' (iiccomm4.cpp:70) [48]  (3.5 ns)
 
  <State 4>: 3.5ns
 The critical path consists of the following:
-	bus request on port 'iic' (iiccomm4.cpp:70) [46]  (3.5 ns)
+	bus request on port 'iic' (iiccomm4.cpp:70) [48]  (3.5 ns)
 
  <State 5>: 3.5ns
 The critical path consists of the following:
-	bus request on port 'iic' (iiccomm4.cpp:70) [46]  (3.5 ns)
+	bus request on port 'iic' (iiccomm4.cpp:70) [48]  (3.5 ns)
 
  <State 6>: 3.5ns
 The critical path consists of the following:
-	bus request on port 'iic' (iiccomm4.cpp:70) [46]  (3.5 ns)
+	bus request on port 'iic' (iiccomm4.cpp:70) [48]  (3.5 ns)
 
  <State 7>: 3.5ns
 The critical path consists of the following:
-	bus request on port 'iic' (iiccomm4.cpp:70) [46]  (3.5 ns)
+	bus request on port 'iic' (iiccomm4.cpp:70) [48]  (3.5 ns)
 
  <State 8>: 3.5ns
 The critical path consists of the following:
-	bus read on port 'iic' (iiccomm4.cpp:70) [47]  (3.5 ns)
+	bus read on port 'iic' (iiccomm4.cpp:70) [49]  (3.5 ns)
 
  <State 9>: 3.5ns
 The critical path consists of the following:
-	bus read on port 'iic' (iiccomm4.cpp:73) [51]  (3.5 ns)
+	bus read on port 'iic' (iiccomm4.cpp:73) [53]  (3.5 ns)
 
  <State 10>: 3.5ns
 The critical path consists of the following:
-	bus read on port 'iic' (iiccomm4.cpp:78) [55]  (3.5 ns)
+	bus read on port 'iic' (iiccomm4.cpp:78) [57]  (3.5 ns)
 
  <State 11>: 3.5ns
 The critical path consists of the following:
-	bus read on port 'iic' (iiccomm4.cpp:81) [59]  (3.5 ns)
+	bus read on port 'iic' (iiccomm4.cpp:81) [61]  (3.5 ns)
 
  <State 12>: 3.5ns
 The critical path consists of the following:
-	bus read on port 'iic' (iiccomm4.cpp:84) [63]  (3.5 ns)
+	bus read on port 'iic' (iiccomm4.cpp:84) [65]  (3.5 ns)
 
  <State 13>: 3.5ns
 The critical path consists of the following:
-	bus read on port 'iic' (iiccomm4.cpp:87) [67]  (3.5 ns)
+	bus read on port 'iic' (iiccomm4.cpp:87) [69]  (3.5 ns)
 
  <State 14>: 3.5ns
 The critical path consists of the following:
-	bus read on port 'iic' (iiccomm4.cpp:92) [71]  (3.5 ns)
+	bus read on port 'iic' (iiccomm4.cpp:92) [73]  (3.5 ns)
 
  <State 15>: 3.5ns
 The critical path consists of the following:
-	bus read on port 'iic' (iiccomm4.cpp:95) [75]  (3.5 ns)
+	bus read on port 'iic' (iiccomm4.cpp:95) [77]  (3.5 ns)
 
  <State 16>: 3.5ns
 The critical path consists of the following:
-	bus read on port 'iic' (iiccomm4.cpp:98) [79]  (3.5 ns)
+	bus read on port 'iic' (iiccomm4.cpp:98) [81]  (3.5 ns)
 
  <State 17>: 3.5ns
 The critical path consists of the following:
-	bus read on port 'iic' (iiccomm4.cpp:101) [83]  (3.5 ns)
+	bus read on port 'iic' (iiccomm4.cpp:101) [85]  (3.5 ns)
 
  <State 18>: 1ns
 The critical path consists of the following:
-	s_axi write on port 'outValue1' (iiccomm4.cpp:71) [48]  (1 ns)
+	s_axi write on port 'outValue1' (iiccomm4.cpp:71) [50]  (1 ns)
 
 
 ============================================================

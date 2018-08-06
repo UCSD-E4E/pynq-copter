@@ -35,7 +35,7 @@
 from ..HlsCore import HlsCore
 from pynq import MMIO
 
-class IicComm(HlsCore):
+class IicComm3(HlsCore):
 
     """These define the 'reg' argument to the 'ctrlloop' HLS function.
         The memory space defined here is shared between the HLS core
@@ -50,7 +50,7 @@ class IicComm(HlsCore):
         self.__hls_reg = MMIO(self.mmio.base_addr + self.__IO_REG_OFF,
                               self.__IO_REG_LEN)
 
-    bindto = ['UCSD:hlsip:iiccomm:1.0']
+    bindto = ['UCSD:hlsip:iiccomm3:1.0']
 
     def launch(self):
         """ Start and detatch computation on the io HLS core

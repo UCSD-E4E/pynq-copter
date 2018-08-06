@@ -128,13 +128,17 @@ proc create_root_design { parentCell } {
   set iiccomm4_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:iiccomm4:1.0 iiccomm4_0 ]
 
   set_property -dict [ list \
+   CONFIG.SUPPORTS_NARROW_BURST {0} \
    CONFIG.NUM_READ_OUTSTANDING {1} \
    CONFIG.NUM_WRITE_OUTSTANDING {1} \
+   CONFIG.MAX_BURST_LENGTH {1} \
  ] [get_bd_intf_pins /iiccomm4_0/s_axi_AXILiteS]
 
   set_property -dict [ list \
+   CONFIG.SUPPORTS_NARROW_BURST {0} \
    CONFIG.NUM_READ_OUTSTANDING {1} \
    CONFIG.NUM_WRITE_OUTSTANDING {1} \
+   CONFIG.MAX_BURST_LENGTH {1} \
  ] [get_bd_intf_pins /iiccomm4_0/s_axi_OUTPUTS]
 
   # Create instance: processing_system7_0, and set properties
