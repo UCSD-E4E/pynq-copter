@@ -8,7 +8,7 @@
 		<name>iiccomm</name>
 		<ret_bitwidth>0</ret_bitwidth>
 		<ports class_id="2" tracking_level="0" version="0">
-			<count>3</count>
+			<count>5</count>
 			<item_version>0</item_version>
 			<item class_id="3" tracking_level="1" version="0" object_id="_1">
 				<Value class_id="4" tracking_level="0" version="0">
@@ -30,7 +30,7 @@
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
-				<direction>0</direction>
+				<direction>2</direction>
 				<if_type>4</if_type>
 				<array_size>0</array_size>
 				<bit_vecs class_id="7" tracking_level="0" version="0">
@@ -43,7 +43,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>outValue1</name>
+						<name>stat_reg_outValue</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -52,7 +52,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>outValue1</originalName>
+						<originalName>stat_reg_outValue</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -71,7 +71,7 @@
 					<Obj>
 						<type>1</type>
 						<id>3</id>
-						<name>outValue2</name>
+						<name>interr_reg_outValue</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -80,7 +80,63 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>outValue2</originalName>
+						<originalName>interr_reg_outValue</originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<direction>2</direction>
+				<if_type>0</if_type>
+				<array_size>0</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_4">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>4</id>
+						<name>empty_pirq_outValue</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName>empty_pirq_outValue</originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<direction>2</direction>
+				<if_type>0</if_type>
+				<array_size>0</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_5">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>5</id>
+						<name>full_pirq_outValue</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName>full_pirq_outValue</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -96,17 +152,17 @@
 			</item>
 		</ports>
 		<nodes class_id="8" tracking_level="0" version="0">
-			<count>11</count>
+			<count>23</count>
 			<item_version>0</item_version>
-			<item class_id="9" tracking_level="1" version="0" object_id="_4">
+			<item class_id="9" tracking_level="1" version="0" object_id="_6">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>10</id>
-						<name>outValue1_load</name>
+						<id>14</id>
+						<name>stat_reg_outValue_lo</name>
 						<fileName>iiccomm.cpp</fileName>
 						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
-						<lineNumber>50</lineNumber>
+						<lineNumber>52</lineNumber>
 						<contextFuncName>iiccomm</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -121,7 +177,7 @@
 											<first>iiccomm.cpp</first>
 											<second>iiccomm</second>
 										</first>
-										<second>50</second>
+										<second>52</second>
 									</item>
 								</second>
 							</item>
@@ -135,21 +191,21 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>25</item>
-					<item>26</item>
+					<item>43</item>
+					<item>44</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_5">
+			<item class_id_reference="9" object_id="_7">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>12</id>
-						<name>outValue2_load</name>
+						<id>16</id>
+						<name>interr_reg_outValue_s</name>
 						<fileName>iiccomm.cpp</fileName>
 						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
-						<lineNumber>51</lineNumber>
+						<lineNumber>53</lineNumber>
 						<contextFuncName>iiccomm</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -164,7 +220,7 @@
 											<first>iiccomm.cpp</first>
 											<second>iiccomm</second>
 										</first>
-										<second>51</second>
+										<second>53</second>
 									</item>
 								</second>
 							</item>
@@ -178,17 +234,103 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>27</item>
-					<item>28</item>
+					<item>45</item>
+					<item>46</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_6">
+			<item class_id_reference="9" object_id="_8">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>14</id>
+						<id>18</id>
+						<name>empty_pirq_outValue_s</name>
+						<fileName>iiccomm.cpp</fileName>
+						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
+						<lineNumber>54</lineNumber>
+						<contextFuncName>iiccomm</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>iiccomm.cpp</first>
+											<second>iiccomm</second>
+										</first>
+										<second>54</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>47</item>
+					<item>48</item>
+				</oprand_edges>
+				<opcode>read</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_9">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>20</id>
+						<name>full_pirq_outValue_l</name>
+						<fileName>iiccomm.cpp</fileName>
+						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
+						<lineNumber>55</lineNumber>
+						<contextFuncName>iiccomm</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>iiccomm.cpp</first>
+											<second>iiccomm</second>
+										</first>
+										<second>55</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>49</item>
+					<item>50</item>
+				</oprand_edges>
+				<opcode>read</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_10">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>22</id>
 						<name>iic_addr</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -207,21 +349,21 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>29</item>
-					<item>31</item>
+					<item>51</item>
+					<item>53</item>
 				</oprand_edges>
 				<opcode>getelementptr</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_7">
+			<item class_id_reference="9" object_id="_11">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>15</id>
+						<id>23</id>
 						<name>iic_load_req</name>
 						<fileName>iiccomm.cpp</fileName>
 						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
-						<lineNumber>56</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>iiccomm</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -236,7 +378,7 @@
 											<first>iiccomm.cpp</first>
 											<second>iiccomm</second>
 										</first>
-										<second>56</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -250,22 +392,22 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>33</item>
-					<item>34</item>
-					<item>36</item>
+					<item>55</item>
+					<item>56</item>
+					<item>58</item>
 				</oprand_edges>
 				<opcode>readreq</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_8">
+			<item class_id_reference="9" object_id="_12">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>16</id>
+						<id>24</id>
 						<name>iic_addr_read</name>
 						<fileName>iiccomm.cpp</fileName>
 						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
-						<lineNumber>56</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>iiccomm</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -280,7 +422,7 @@
 											<first>iiccomm.cpp</first>
 											<second>iiccomm</second>
 										</first>
-										<second>56</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -294,22 +436,22 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>38</item>
-					<item>39</item>
-					<item>142</item>
+					<item>60</item>
+					<item>61</item>
+					<item>243</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_9">
+			<item class_id_reference="9" object_id="_13">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>17</id>
+						<id>25</id>
 						<name></name>
 						<fileName>iiccomm.cpp</fileName>
 						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
-						<lineNumber>57</lineNumber>
+						<lineNumber>59</lineNumber>
 						<contextFuncName>iiccomm</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -324,7 +466,7 @@
 											<first>iiccomm.cpp</first>
 											<second>iiccomm</second>
 										</first>
-										<second>57</second>
+										<second>59</second>
 									</item>
 								</second>
 							</item>
@@ -338,19 +480,19 @@
 				<oprand_edges>
 					<count>4</count>
 					<item_version>0</item_version>
-					<item>41</item>
-					<item>42</item>
-					<item>43</item>
-					<item>145</item>
+					<item>63</item>
+					<item>64</item>
+					<item>65</item>
+					<item>248</item>
 				</oprand_edges>
 				<opcode>write</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_10">
+			<item class_id_reference="9" object_id="_14">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>18</id>
+						<id>26</id>
 						<name>iic_addr_1</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -369,21 +511,21 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>44</item>
-					<item>46</item>
+					<item>66</item>
+					<item>68</item>
 				</oprand_edges>
 				<opcode>getelementptr</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_11">
+			<item class_id_reference="9" object_id="_15">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>19</id>
+						<id>27</id>
 						<name>iic_load_1_req</name>
 						<fileName>iiccomm.cpp</fileName>
 						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
-						<lineNumber>61</lineNumber>
+						<lineNumber>63</lineNumber>
 						<contextFuncName>iiccomm</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -398,7 +540,7 @@
 											<first>iiccomm.cpp</first>
 											<second>iiccomm</second>
 										</first>
-										<second>61</second>
+										<second>63</second>
 									</item>
 								</second>
 							</item>
@@ -412,23 +554,23 @@
 				<oprand_edges>
 					<count>4</count>
 					<item_version>0</item_version>
-					<item>47</item>
-					<item>48</item>
-					<item>49</item>
-					<item>143</item>
+					<item>69</item>
+					<item>70</item>
+					<item>71</item>
+					<item>244</item>
 				</oprand_edges>
 				<opcode>readreq</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_12">
+			<item class_id_reference="9" object_id="_16">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>20</id>
+						<id>28</id>
 						<name>iic_addr_1_read</name>
 						<fileName>iiccomm.cpp</fileName>
 						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
-						<lineNumber>61</lineNumber>
+						<lineNumber>63</lineNumber>
 						<contextFuncName>iiccomm</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -443,7 +585,7 @@
 											<first>iiccomm.cpp</first>
 											<second>iiccomm</second>
 										</first>
-										<second>61</second>
+										<second>63</second>
 									</item>
 								</second>
 							</item>
@@ -457,64 +599,19 @@
 				<oprand_edges>
 					<count>4</count>
 					<item_version>0</item_version>
-					<item>50</item>
-					<item>51</item>
-					<item>140</item>
-					<item>141</item>
+					<item>72</item>
+					<item>73</item>
+					<item>240</item>
+					<item>242</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_13">
+			<item class_id_reference="9" object_id="_17">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>21</id>
-						<name></name>
-						<fileName>iiccomm.cpp</fileName>
-						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
-						<lineNumber>62</lineNumber>
-						<contextFuncName>iiccomm</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>iiccomm.cpp</first>
-											<second>iiccomm</second>
-										</first>
-										<second>62</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>52</item>
-					<item>53</item>
-					<item>54</item>
-					<item>144</item>
-				</oprand_edges>
-				<opcode>write</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_14">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>22</id>
+						<id>29</id>
 						<name></name>
 						<fileName>iiccomm.cpp</fileName>
 						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
@@ -545,6 +642,484 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>74</item>
+					<item>75</item>
+					<item>76</item>
+					<item>247</item>
+				</oprand_edges>
+				<opcode>write</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_18">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>30</id>
+						<name>iic_addr_2</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>77</item>
+					<item>79</item>
+				</oprand_edges>
+				<opcode>getelementptr</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_19">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>31</id>
+						<name>iic_load_2_req</name>
+						<fileName>iiccomm.cpp</fileName>
+						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
+						<lineNumber>68</lineNumber>
+						<contextFuncName>iiccomm</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>iiccomm.cpp</first>
+											<second>iiccomm</second>
+										</first>
+										<second>68</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>80</item>
+					<item>81</item>
+					<item>82</item>
+					<item>241</item>
+				</oprand_edges>
+				<opcode>readreq</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_20">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>32</id>
+						<name>iic_addr_2_read</name>
+						<fileName>iiccomm.cpp</fileName>
+						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
+						<lineNumber>68</lineNumber>
+						<contextFuncName>iiccomm</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>iiccomm.cpp</first>
+											<second>iiccomm</second>
+										</first>
+										<second>68</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>83</item>
+					<item>84</item>
+					<item>238</item>
+					<item>239</item>
+				</oprand_edges>
+				<opcode>read</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_21">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>33</id>
+						<name></name>
+						<fileName>iiccomm.cpp</fileName>
+						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
+						<lineNumber>69</lineNumber>
+						<contextFuncName>iiccomm</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>iiccomm.cpp</first>
+											<second>iiccomm</second>
+										</first>
+										<second>69</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>85</item>
+					<item>86</item>
+					<item>87</item>
+					<item>246</item>
+				</oprand_edges>
+				<opcode>write</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_22">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>34</id>
+						<name>iic_addr_2_req</name>
+						<fileName>iiccomm.cpp</fileName>
+						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
+						<lineNumber>72</lineNumber>
+						<contextFuncName>iiccomm</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>iiccomm.cpp</first>
+											<second>iiccomm</second>
+										</first>
+										<second>72</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>89</item>
+					<item>90</item>
+					<item>91</item>
+					<item>237</item>
+				</oprand_edges>
+				<opcode>writereq</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_23">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>35</id>
+						<name></name>
+						<fileName>iiccomm.cpp</fileName>
+						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
+						<lineNumber>72</lineNumber>
+						<contextFuncName>iiccomm</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>iiccomm.cpp</first>
+											<second>iiccomm</second>
+										</first>
+										<second>72</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>5</count>
+					<item_version>0</item_version>
+					<item>93</item>
+					<item>94</item>
+					<item>96</item>
+					<item>98</item>
+					<item>236</item>
+				</oprand_edges>
+				<opcode>write</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_24">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>36</id>
+						<name>iic_addr_2_resp</name>
+						<fileName>iiccomm.cpp</fileName>
+						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
+						<lineNumber>72</lineNumber>
+						<contextFuncName>iiccomm</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>iiccomm.cpp</first>
+											<second>iiccomm</second>
+										</first>
+										<second>72</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>100</item>
+					<item>101</item>
+					<item>235</item>
+				</oprand_edges>
+				<opcode>writeresp</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_25">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>37</id>
+						<name>iic_load_3_req</name>
+						<fileName>iiccomm.cpp</fileName>
+						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
+						<lineNumber>73</lineNumber>
+						<contextFuncName>iiccomm</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>iiccomm.cpp</first>
+											<second>iiccomm</second>
+										</first>
+										<second>73</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>102</item>
+					<item>103</item>
+					<item>104</item>
+					<item>234</item>
+				</oprand_edges>
+				<opcode>readreq</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_26">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>38</id>
+						<name>iic_addr_2_read_1</name>
+						<fileName>iiccomm.cpp</fileName>
+						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
+						<lineNumber>73</lineNumber>
+						<contextFuncName>iiccomm</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>iiccomm.cpp</first>
+											<second>iiccomm</second>
+										</first>
+										<second>73</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>105</item>
+					<item>106</item>
+					<item>233</item>
+				</oprand_edges>
+				<opcode>read</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_27">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>39</id>
+						<name></name>
+						<fileName>iiccomm.cpp</fileName>
+						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
+						<lineNumber>74</lineNumber>
+						<contextFuncName>iiccomm</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>iiccomm.cpp</first>
+											<second>iiccomm</second>
+										</first>
+										<second>74</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>107</item>
+					<item>108</item>
+					<item>109</item>
+					<item>245</item>
+				</oprand_edges>
+				<opcode>write</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_28">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>40</id>
+						<name></name>
+						<fileName>iiccomm.cpp</fileName>
+						<fileDirectory>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</fileDirectory>
+						<lineNumber>86</lineNumber>
+						<contextFuncName>iiccomm</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>iiccomm.cpp</first>
+											<second>iiccomm</second>
+										</first>
+										<second>86</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
 					<count>0</count>
 					<item_version>0</item_version>
 				</oprand_edges>
@@ -553,13 +1128,13 @@
 			</item>
 		</nodes>
 		<consts class_id="15" tracking_level="0" version="0">
-			<count>3</count>
+			<count>6</count>
 			<item_version>0</item_version>
-			<item class_id="16" tracking_level="1" version="0" object_id="_15">
+			<item class_id="16" tracking_level="1" version="0" object_id="_29">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>30</id>
+						<id>52</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -578,11 +1153,11 @@
 				<const_type>0</const_type>
 				<content>268436545</content>
 			</item>
-			<item class_id_reference="16" object_id="_16">
+			<item class_id_reference="16" object_id="_30">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>35</id>
+						<id>57</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -601,11 +1176,11 @@
 				<const_type>0</const_type>
 				<content>1</content>
 			</item>
-			<item class_id_reference="16" object_id="_17">
+			<item class_id_reference="16" object_id="_31">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>45</id>
+						<id>67</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -624,14 +1199,83 @@
 				<const_type>0</const_type>
 				<content>268436488</content>
 			</item>
+			<item class_id_reference="16" object_id="_32">
+				<Value>
+					<Obj>
+						<type>2</type>
+						<id>78</id>
+						<name>empty</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>64</bitwidth>
+				</Value>
+				<const_type>0</const_type>
+				<content>268436552</content>
+			</item>
+			<item class_id_reference="16" object_id="_33">
+				<Value>
+					<Obj>
+						<type>2</type>
+						<id>95</id>
+						<name>empty</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<const_type>0</const_type>
+				<content>15</content>
+			</item>
+			<item class_id_reference="16" object_id="_34">
+				<Value>
+					<Obj>
+						<type>2</type>
+						<id>97</id>
+						<name>empty</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>4</bitwidth>
+				</Value>
+				<const_type>0</const_type>
+				<content>15</content>
+			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">
 			<count>1</count>
 			<item_version>0</item_version>
-			<item class_id="18" tracking_level="1" version="0" object_id="_18">
+			<item class_id="18" tracking_level="1" version="0" object_id="_35">
 				<Obj>
 					<type>3</type>
-					<id>23</id>
+					<id>41</id>
 					<name>iiccomm</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
@@ -646,163 +1290,355 @@
 					<coreName></coreName>
 				</Obj>
 				<node_objs>
-					<count>11</count>
+					<count>23</count>
 					<item_version>0</item_version>
-					<item>10</item>
-					<item>12</item>
 					<item>14</item>
-					<item>15</item>
 					<item>16</item>
-					<item>17</item>
 					<item>18</item>
-					<item>19</item>
 					<item>20</item>
-					<item>21</item>
 					<item>22</item>
+					<item>23</item>
+					<item>24</item>
+					<item>25</item>
+					<item>26</item>
+					<item>27</item>
+					<item>28</item>
+					<item>29</item>
+					<item>30</item>
+					<item>31</item>
+					<item>32</item>
+					<item>33</item>
+					<item>34</item>
+					<item>35</item>
+					<item>36</item>
+					<item>37</item>
+					<item>38</item>
+					<item>39</item>
+					<item>40</item>
 				</node_objs>
 			</item>
 		</blocks>
 		<edges class_id="19" tracking_level="0" version="0">
-			<count>22</count>
+			<count>52</count>
 			<item_version>0</item_version>
-			<item class_id="20" tracking_level="1" version="0" object_id="_19">
-				<id>26</id>
-				<edge_type>1</edge_type>
-				<source_obj>2</source_obj>
-				<sink_obj>10</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_20">
-				<id>28</id>
-				<edge_type>1</edge_type>
-				<source_obj>3</source_obj>
-				<sink_obj>12</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_21">
-				<id>29</id>
-				<edge_type>1</edge_type>
-				<source_obj>1</source_obj>
-				<sink_obj>14</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_22">
-				<id>31</id>
-				<edge_type>1</edge_type>
-				<source_obj>30</source_obj>
-				<sink_obj>14</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_23">
-				<id>34</id>
-				<edge_type>1</edge_type>
-				<source_obj>14</source_obj>
-				<sink_obj>15</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_24">
-				<id>36</id>
-				<edge_type>1</edge_type>
-				<source_obj>35</source_obj>
-				<sink_obj>15</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_25">
-				<id>39</id>
-				<edge_type>1</edge_type>
-				<source_obj>14</source_obj>
-				<sink_obj>16</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_26">
-				<id>42</id>
-				<edge_type>1</edge_type>
-				<source_obj>2</source_obj>
-				<sink_obj>17</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_27">
-				<id>43</id>
-				<edge_type>1</edge_type>
-				<source_obj>16</source_obj>
-				<sink_obj>17</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_28">
+			<item class_id="20" tracking_level="1" version="0" object_id="_36">
 				<id>44</id>
 				<edge_type>1</edge_type>
-				<source_obj>1</source_obj>
-				<sink_obj>18</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_29">
-				<id>46</id>
-				<edge_type>1</edge_type>
-				<source_obj>45</source_obj>
-				<sink_obj>18</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_30">
-				<id>48</id>
-				<edge_type>1</edge_type>
-				<source_obj>18</source_obj>
-				<sink_obj>19</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_31">
-				<id>49</id>
-				<edge_type>1</edge_type>
-				<source_obj>35</source_obj>
-				<sink_obj>19</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_32">
-				<id>51</id>
-				<edge_type>1</edge_type>
-				<source_obj>18</source_obj>
-				<sink_obj>20</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_33">
-				<id>53</id>
-				<edge_type>1</edge_type>
-				<source_obj>3</source_obj>
-				<sink_obj>21</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_34">
-				<id>54</id>
-				<edge_type>1</edge_type>
-				<source_obj>20</source_obj>
-				<sink_obj>21</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_35">
-				<id>140</id>
-				<edge_type>4</edge_type>
-				<source_obj>19</source_obj>
-				<sink_obj>20</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_36">
-				<id>141</id>
-				<edge_type>4</edge_type>
-				<source_obj>16</source_obj>
-				<sink_obj>20</sink_obj>
+				<source_obj>2</source_obj>
+				<sink_obj>14</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_37">
-				<id>142</id>
-				<edge_type>4</edge_type>
-				<source_obj>15</source_obj>
+				<id>46</id>
+				<edge_type>1</edge_type>
+				<source_obj>3</source_obj>
 				<sink_obj>16</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_38">
-				<id>143</id>
-				<edge_type>4</edge_type>
-				<source_obj>15</source_obj>
-				<sink_obj>19</sink_obj>
+				<id>48</id>
+				<edge_type>1</edge_type>
+				<source_obj>4</source_obj>
+				<sink_obj>18</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_39">
-				<id>144</id>
-				<edge_type>4</edge_type>
-				<source_obj>12</source_obj>
-				<sink_obj>21</sink_obj>
+				<id>50</id>
+				<edge_type>1</edge_type>
+				<source_obj>5</source_obj>
+				<sink_obj>20</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_40">
-				<id>145</id>
+				<id>51</id>
+				<edge_type>1</edge_type>
+				<source_obj>1</source_obj>
+				<sink_obj>22</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_41">
+				<id>53</id>
+				<edge_type>1</edge_type>
+				<source_obj>52</source_obj>
+				<sink_obj>22</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_42">
+				<id>56</id>
+				<edge_type>1</edge_type>
+				<source_obj>22</source_obj>
+				<sink_obj>23</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_43">
+				<id>58</id>
+				<edge_type>1</edge_type>
+				<source_obj>57</source_obj>
+				<sink_obj>23</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_44">
+				<id>61</id>
+				<edge_type>1</edge_type>
+				<source_obj>22</source_obj>
+				<sink_obj>24</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_45">
+				<id>64</id>
+				<edge_type>1</edge_type>
+				<source_obj>2</source_obj>
+				<sink_obj>25</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_46">
+				<id>65</id>
+				<edge_type>1</edge_type>
+				<source_obj>24</source_obj>
+				<sink_obj>25</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_47">
+				<id>66</id>
+				<edge_type>1</edge_type>
+				<source_obj>1</source_obj>
+				<sink_obj>26</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_48">
+				<id>68</id>
+				<edge_type>1</edge_type>
+				<source_obj>67</source_obj>
+				<sink_obj>26</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_49">
+				<id>70</id>
+				<edge_type>1</edge_type>
+				<source_obj>26</source_obj>
+				<sink_obj>27</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_50">
+				<id>71</id>
+				<edge_type>1</edge_type>
+				<source_obj>57</source_obj>
+				<sink_obj>27</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_51">
+				<id>73</id>
+				<edge_type>1</edge_type>
+				<source_obj>26</source_obj>
+				<sink_obj>28</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_52">
+				<id>75</id>
+				<edge_type>1</edge_type>
+				<source_obj>3</source_obj>
+				<sink_obj>29</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_53">
+				<id>76</id>
+				<edge_type>1</edge_type>
+				<source_obj>28</source_obj>
+				<sink_obj>29</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_54">
+				<id>77</id>
+				<edge_type>1</edge_type>
+				<source_obj>1</source_obj>
+				<sink_obj>30</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_55">
+				<id>79</id>
+				<edge_type>1</edge_type>
+				<source_obj>78</source_obj>
+				<sink_obj>30</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_56">
+				<id>81</id>
+				<edge_type>1</edge_type>
+				<source_obj>30</source_obj>
+				<sink_obj>31</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_57">
+				<id>82</id>
+				<edge_type>1</edge_type>
+				<source_obj>57</source_obj>
+				<sink_obj>31</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_58">
+				<id>84</id>
+				<edge_type>1</edge_type>
+				<source_obj>30</source_obj>
+				<sink_obj>32</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_59">
+				<id>86</id>
+				<edge_type>1</edge_type>
+				<source_obj>4</source_obj>
+				<sink_obj>33</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_60">
+				<id>87</id>
+				<edge_type>1</edge_type>
+				<source_obj>32</source_obj>
+				<sink_obj>33</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_61">
+				<id>90</id>
+				<edge_type>1</edge_type>
+				<source_obj>30</source_obj>
+				<sink_obj>34</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_62">
+				<id>91</id>
+				<edge_type>1</edge_type>
+				<source_obj>57</source_obj>
+				<sink_obj>34</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_63">
+				<id>94</id>
+				<edge_type>1</edge_type>
+				<source_obj>30</source_obj>
+				<sink_obj>35</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_64">
+				<id>96</id>
+				<edge_type>1</edge_type>
+				<source_obj>95</source_obj>
+				<sink_obj>35</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_65">
+				<id>98</id>
+				<edge_type>1</edge_type>
+				<source_obj>97</source_obj>
+				<sink_obj>35</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_66">
+				<id>101</id>
+				<edge_type>1</edge_type>
+				<source_obj>30</source_obj>
+				<sink_obj>36</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_67">
+				<id>103</id>
+				<edge_type>1</edge_type>
+				<source_obj>30</source_obj>
+				<sink_obj>37</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_68">
+				<id>104</id>
+				<edge_type>1</edge_type>
+				<source_obj>57</source_obj>
+				<sink_obj>37</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_69">
+				<id>106</id>
+				<edge_type>1</edge_type>
+				<source_obj>30</source_obj>
+				<sink_obj>38</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_70">
+				<id>108</id>
+				<edge_type>1</edge_type>
+				<source_obj>5</source_obj>
+				<sink_obj>39</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_71">
+				<id>109</id>
+				<edge_type>1</edge_type>
+				<source_obj>38</source_obj>
+				<sink_obj>39</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_72">
+				<id>233</id>
 				<edge_type>4</edge_type>
-				<source_obj>10</source_obj>
-				<sink_obj>17</sink_obj>
+				<source_obj>37</source_obj>
+				<sink_obj>38</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_73">
+				<id>234</id>
+				<edge_type>4</edge_type>
+				<source_obj>36</source_obj>
+				<sink_obj>37</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_74">
+				<id>235</id>
+				<edge_type>4</edge_type>
+				<source_obj>35</source_obj>
+				<sink_obj>36</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_75">
+				<id>236</id>
+				<edge_type>4</edge_type>
+				<source_obj>34</source_obj>
+				<sink_obj>35</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_76">
+				<id>237</id>
+				<edge_type>4</edge_type>
+				<source_obj>32</source_obj>
+				<sink_obj>34</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_77">
+				<id>238</id>
+				<edge_type>4</edge_type>
+				<source_obj>31</source_obj>
+				<sink_obj>32</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_78">
+				<id>239</id>
+				<edge_type>4</edge_type>
+				<source_obj>28</source_obj>
+				<sink_obj>32</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_79">
+				<id>240</id>
+				<edge_type>4</edge_type>
+				<source_obj>27</source_obj>
+				<sink_obj>28</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_80">
+				<id>241</id>
+				<edge_type>4</edge_type>
+				<source_obj>27</source_obj>
+				<sink_obj>31</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_81">
+				<id>242</id>
+				<edge_type>4</edge_type>
+				<source_obj>24</source_obj>
+				<sink_obj>28</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_82">
+				<id>243</id>
+				<edge_type>4</edge_type>
+				<source_obj>23</source_obj>
+				<sink_obj>24</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_83">
+				<id>244</id>
+				<edge_type>4</edge_type>
+				<source_obj>23</source_obj>
+				<sink_obj>27</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_84">
+				<id>245</id>
+				<edge_type>4</edge_type>
+				<source_obj>20</source_obj>
+				<sink_obj>39</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_85">
+				<id>246</id>
+				<edge_type>4</edge_type>
+				<source_obj>18</source_obj>
+				<sink_obj>33</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_86">
+				<id>247</id>
+				<edge_type>4</edge_type>
+				<source_obj>16</source_obj>
+				<sink_obj>29</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_87">
+				<id>248</id>
+				<edge_type>4</edge_type>
+				<source_obj>14</source_obj>
+				<sink_obj>25</sink_obj>
 			</item>
 		</edges>
 	</cdfg>
 	<cdfg_regions class_id="21" tracking_level="0" version="0">
 		<count>1</count>
 		<item_version>0</item_version>
-		<item class_id="22" tracking_level="1" version="0" object_id="_41">
+		<item class_id="22" tracking_level="1" version="0" object_id="_88">
 			<mId>1</mId>
 			<mTag>iiccomm</mTag>
 			<mType>0</mType>
@@ -813,13 +1649,13 @@
 			<basic_blocks>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>23</item>
+				<item>41</item>
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>9</mMinLatency>
+			<mMinLatency>25</mMinLatency>
 			<mMaxLatency>-1</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
@@ -828,34 +1664,13 @@
 	<fsm class_id="-1"></fsm>
 	<res class_id="-1"></res>
 	<node_label_latency class_id="26" tracking_level="0" version="0">
-		<count>11</count>
+		<count>23</count>
 		<item_version>0</item_version>
 		<item class_id="27" tracking_level="0" version="0">
-			<first>10</first>
+			<first>14</first>
 			<second class_id="28" tracking_level="0" version="0">
 				<first>7</first>
 				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>12</first>
-			<second>
-				<first>7</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>14</first>
-			<second>
-				<first>0</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>15</first>
-			<second>
-				<first>0</first>
-				<second>6</second>
 			</second>
 		</item>
 		<item>
@@ -866,44 +1681,149 @@
 			</second>
 		</item>
 		<item>
-			<first>17</first>
-			<second>
-				<first>9</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
 			<first>18</first>
 			<second>
-				<first>1</first>
+				<first>7</first>
 				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>19</first>
-			<second>
-				<first>1</first>
-				<second>6</second>
 			</second>
 		</item>
 		<item>
 			<first>20</first>
 			<second>
-				<first>8</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>21</first>
-			<second>
-				<first>9</first>
+				<first>7</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>22</first>
 			<second>
+				<first>0</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>23</first>
+			<second>
+				<first>0</first>
+				<second>6</second>
+			</second>
+		</item>
+		<item>
+			<first>24</first>
+			<second>
+				<first>7</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>25</first>
+			<second>
+				<first>11</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>26</first>
+			<second>
+				<first>1</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>27</first>
+			<second>
+				<first>1</first>
+				<second>6</second>
+			</second>
+		</item>
+		<item>
+			<first>28</first>
+			<second>
+				<first>8</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>29</first>
+			<second>
+				<first>11</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>30</first>
+			<second>
+				<first>2</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>31</first>
+			<second>
+				<first>2</first>
+				<second>6</second>
+			</second>
+		</item>
+		<item>
+			<first>32</first>
+			<second>
 				<first>9</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>33</first>
+			<second>
+				<first>11</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>34</first>
+			<second>
+				<first>10</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>35</first>
+			<second>
+				<first>11</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>36</first>
+			<second>
+				<first>12</first>
+				<second>4</second>
+			</second>
+		</item>
+		<item>
+			<first>37</first>
+			<second>
+				<first>17</first>
+				<second>6</second>
+			</second>
+		</item>
+		<item>
+			<first>38</first>
+			<second>
+				<first>24</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>39</first>
+			<second>
+				<first>25</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>40</first>
+			<second>
+				<first>25</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -912,10 +1832,10 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item class_id="30" tracking_level="0" version="0">
-			<first>23</first>
+			<first>41</first>
 			<second class_id="31" tracking_level="0" version="0">
 				<first>0</first>
-				<second>9</second>
+				<second>25</second>
 			</second>
 		</item>
 	</bblk_ent_exit>

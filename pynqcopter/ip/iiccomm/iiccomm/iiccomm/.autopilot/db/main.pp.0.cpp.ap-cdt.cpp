@@ -33206,8 +33206,8 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 #pragma empty_line
 };
 #pragma line 40 "./iiccomm.hpp" 2
-#pragma line 50 "./iiccomm.hpp"
-void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& outValue1, volatile uint32_t& outValue2, volatile uint32_t& outValue3, volatile uint32_t& outValue4, volatile uint32_t& outValue5, volatile uint32_t& outValue6, volatile uint32_t& outValue7, volatile uint32_t& outValue8, volatile uint32_t& outValue9, volatile uint32_t& outValue10, int& outValue11);
+#pragma line 51 "./iiccomm.hpp"
+void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue, volatile uint32_t& interr_reg_outValue, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue);
 #pragma line 36 "main.cpp" 2
 #pragma empty_line
 #pragma empty_line

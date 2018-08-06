@@ -41,12 +41,13 @@
 
 #define IIC_OFFSET 0x40001000 //0x40001000 IIC Base address
 #define IIC_INDEX (IIC_OFFSET/4)
+
 #define IIC_STATUS_REG_OFF (0x104/4)
-#define IIC_STATUS_REG 0x104
-
+#define IIC_CONTROL_REG_OFF (0x100/4)
+#define IIC_RX_FIFO_PIRQ_OFF (0x120/4)
 #define IIC_INTERR_REG_OFF (0x020/4)
-#define IIC_INTERR_REG 0x020
 
-void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& outValue1, volatile uint32_t& outValue2, volatile uint32_t& outValue3, volatile uint32_t& outValue4, volatile uint32_t& outValue5, volatile uint32_t& outValue6, volatile uint32_t& outValue7, volatile uint32_t& outValue8, volatile uint32_t& outValue9, volatile uint32_t& outValue10, int& outValue11);
+
+void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue, volatile uint32_t& interr_reg_outValue, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue);
 
 #endif

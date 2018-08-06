@@ -1,5 +1,5 @@
 set C_TypeInfoList {{ 
-"iiccomm" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"outValue1": [[], {"reference": "0"}] }, {"outValue2": [[], {"reference": "0"}] }],[],""], 
+"iiccomm" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"stat_reg_outValue": [[], {"reference": "0"}] }, {"interr_reg_outValue": [[], {"reference": "0"}] }, {"empty_pirq_outValue": [[], {"reference": "0"}] }, {"full_pirq_outValue": [[], {"reference": "0"}] }],[],""], 
 "0": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}]
 }}
 set moduleName iiccomm
@@ -14,14 +14,18 @@ set StallSigGenFlag 0
 set C_modelName {iiccomm}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ iic int 32 regular {axi_master 0}  }
-	{ outValue1 int 32 regular {axi_slave 2}  }
-	{ outValue2 int 32 regular {axi_slave 2}  }
+	{ iic int 32 regular {axi_master 2}  }
+	{ stat_reg_outValue int 32 regular {axi_slave 2}  }
+	{ interr_reg_outValue int 32 regular {axi_slave 2}  }
+	{ empty_pirq_outValue int 32 regular {axi_slave 2}  }
+	{ full_pirq_outValue int 32 regular {axi_slave 2}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "iic", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "iic","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 4095,"step" : 1}]}]}]} , 
- 	{ "Name" : "outValue1", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue1","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":16, "out":24}, "offset_end" : {"in":23, "out":31}} , 
- 	{ "Name" : "outValue2", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue2","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":32, "out":40}, "offset_end" : {"in":39, "out":47}} ]}
+	{ "Name" : "iic", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "iic","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 4095,"step" : 1}]}]}]} , 
+ 	{ "Name" : "stat_reg_outValue", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "stat_reg_outValue","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":16, "out":24}, "offset_end" : {"in":23, "out":31}} , 
+ 	{ "Name" : "interr_reg_outValue", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "interr_reg_outValue","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":32, "out":40}, "offset_end" : {"in":39, "out":47}} , 
+ 	{ "Name" : "empty_pirq_outValue", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "empty_pirq_outValue","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":48, "out":56}, "offset_end" : {"in":55, "out":63}} , 
+ 	{ "Name" : "full_pirq_outValue", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "full_pirq_outValue","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":64, "out":72}, "offset_end" : {"in":71, "out":79}} ]}
 # RTL Port declarations: 
 set portNum 65
 set portList { 
@@ -74,14 +78,14 @@ set portList {
 	{ m_axi_iic_BUSER sc_in sc_lv 1 signal 0 } 
 	{ s_axi_AXILiteS_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_AWREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_AXILiteS_AWADDR sc_in sc_lv 6 signal -1 } 
+	{ s_axi_AXILiteS_AWADDR sc_in sc_lv 7 signal -1 } 
 	{ s_axi_AXILiteS_WVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_WREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_WDATA sc_in sc_lv 32 signal -1 } 
 	{ s_axi_AXILiteS_WSTRB sc_in sc_lv 4 signal -1 } 
 	{ s_axi_AXILiteS_ARVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_ARREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_AXILiteS_ARADDR sc_in sc_lv 6 signal -1 } 
+	{ s_axi_AXILiteS_ARADDR sc_in sc_lv 7 signal -1 } 
 	{ s_axi_AXILiteS_RVALID sc_out sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_RREADY sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_RDATA sc_out sc_lv 32 signal -1 } 
@@ -92,14 +96,14 @@ set portList {
 	{ interrupt sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_AXILiteS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWADDR" },"address":[{"name":"iiccomm","role":"start","value":"0","valid_bit":"0"},{"name":"iiccomm","role":"continue","value":"0","valid_bit":"4"},{"name":"iiccomm","role":"auto_start","value":"0","valid_bit":"7"},{"name":"outValue1","role":"data","value":"16"},{"name":"outValue2","role":"data","value":"32"}] },
+	{ "name": "s_axi_AXILiteS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWADDR" },"address":[{"name":"iiccomm","role":"start","value":"0","valid_bit":"0"},{"name":"iiccomm","role":"continue","value":"0","valid_bit":"4"},{"name":"iiccomm","role":"auto_start","value":"0","valid_bit":"7"},{"name":"stat_reg_outValue","role":"data","value":"16"},{"name":"interr_reg_outValue","role":"data","value":"32"},{"name":"empty_pirq_outValue","role":"data","value":"48"},{"name":"full_pirq_outValue","role":"data","value":"64"}] },
 	{ "name": "s_axi_AXILiteS_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWVALID" } },
 	{ "name": "s_axi_AXILiteS_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWREADY" } },
 	{ "name": "s_axi_AXILiteS_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WVALID" } },
 	{ "name": "s_axi_AXILiteS_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WREADY" } },
 	{ "name": "s_axi_AXILiteS_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WDATA" } },
 	{ "name": "s_axi_AXILiteS_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WSTRB" } },
-	{ "name": "s_axi_AXILiteS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARADDR" },"address":[{"name":"iiccomm","role":"start","value":"0","valid_bit":"0"},{"name":"iiccomm","role":"done","value":"0","valid_bit":"1"},{"name":"iiccomm","role":"idle","value":"0","valid_bit":"2"},{"name":"iiccomm","role":"ready","value":"0","valid_bit":"3"},{"name":"iiccomm","role":"auto_start","value":"0","valid_bit":"7"},{"name":"outValue1","role":"data","value":"24"}, {"name":"outValue1","role":"valid","value":"28","valid_bit":"0"},{"name":"outValue2","role":"data","value":"40"}, {"name":"outValue2","role":"valid","value":"44","valid_bit":"0"}] },
+	{ "name": "s_axi_AXILiteS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARADDR" },"address":[{"name":"iiccomm","role":"start","value":"0","valid_bit":"0"},{"name":"iiccomm","role":"done","value":"0","valid_bit":"1"},{"name":"iiccomm","role":"idle","value":"0","valid_bit":"2"},{"name":"iiccomm","role":"ready","value":"0","valid_bit":"3"},{"name":"iiccomm","role":"auto_start","value":"0","valid_bit":"7"},{"name":"stat_reg_outValue","role":"data","value":"24"}, {"name":"stat_reg_outValue","role":"valid","value":"28","valid_bit":"0"},{"name":"interr_reg_outValue","role":"data","value":"40"}, {"name":"interr_reg_outValue","role":"valid","value":"44","valid_bit":"0"},{"name":"empty_pirq_outValue","role":"data","value":"56"}, {"name":"empty_pirq_outValue","role":"valid","value":"60","valid_bit":"0"},{"name":"full_pirq_outValue","role":"data","value":"72"}, {"name":"full_pirq_outValue","role":"valid","value":"76","valid_bit":"0"}] },
 	{ "name": "s_axi_AXILiteS_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARVALID" } },
 	{ "name": "s_axi_AXILiteS_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARREADY" } },
 	{ "name": "s_axi_AXILiteS_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "RVALID" } },
@@ -168,27 +172,34 @@ set RtlHierarchyInfo {[
 		"ClockEnable" : "0",
 		"VariableLatency" : "1",
 		"Port" : [
-			{"Name" : "iic", "Type" : "MAXI", "Direction" : "I",
+			{"Name" : "iic", "Type" : "MAXI", "Direction" : "IO",
 				"BlockSignal" : [
 					{"Name" : "iic_blk_n_AR", "Type" : "RtlSignal"},
-					{"Name" : "iic_blk_n_R", "Type" : "RtlSignal"}]},
-			{"Name" : "outValue1", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "outValue2", "Type" : "OVld", "Direction" : "IO"}]},
+					{"Name" : "iic_blk_n_R", "Type" : "RtlSignal"},
+					{"Name" : "iic_blk_n_AW", "Type" : "RtlSignal"},
+					{"Name" : "iic_blk_n_W", "Type" : "RtlSignal"},
+					{"Name" : "iic_blk_n_B", "Type" : "RtlSignal"}]},
+			{"Name" : "stat_reg_outValue", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "interr_reg_outValue", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "empty_pirq_outValue", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "full_pirq_outValue", "Type" : "OVld", "Direction" : "IO"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm_AXILiteS_s_axi_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm_iic_m_axi_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	iiccomm {
-		iic {Type I LastRead 8 FirstWrite -1}
-		outValue1 {Type IO LastRead 7 FirstWrite 9}
-		outValue2 {Type IO LastRead 7 FirstWrite 9}}}
+		iic {Type IO LastRead 24 FirstWrite 11}
+		stat_reg_outValue {Type IO LastRead 7 FirstWrite 11}
+		interr_reg_outValue {Type IO LastRead 7 FirstWrite 11}
+		empty_pirq_outValue {Type IO LastRead 7 FirstWrite 11}
+		full_pirq_outValue {Type IO LastRead 7 FirstWrite 25}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "9", "Max" : "9"}
-	, {"Name" : "Interval", "Min" : "10", "Max" : "10"}
+	{"Name" : "Latency", "Min" : "25", "Max" : "25"}
+	, {"Name" : "Interval", "Min" : "26", "Max" : "26"}
 ]}
 
 set PipelineEnableSignalInfo {[

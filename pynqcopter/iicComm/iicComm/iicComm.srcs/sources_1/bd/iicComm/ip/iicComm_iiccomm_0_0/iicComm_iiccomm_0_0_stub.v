@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Mon Aug  6 11:11:12 2018
+// Date        : Mon Aug  6 15:35:23 2018
 // Host        : fabricant running 64-bit Linux Mint 18 Sarah
 // Command     : write_verilog -force -mode synth_stub
 //               /home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ip/iicComm_iiccomm_0_0/iicComm_iiccomm_0_0_stub.v
@@ -29,8 +29,8 @@ module iicComm_iiccomm_0_0(s_axi_AXILiteS_AWADDR,
   m_axi_iic_ARREGION, m_axi_iic_ARCACHE, m_axi_iic_ARPROT, m_axi_iic_ARQOS, 
   m_axi_iic_ARVALID, m_axi_iic_ARREADY, m_axi_iic_RDATA, m_axi_iic_RRESP, m_axi_iic_RLAST, 
   m_axi_iic_RVALID, m_axi_iic_RREADY)
-/* synthesis syn_black_box black_box_pad_pin="s_axi_AXILiteS_AWADDR[5:0],s_axi_AXILiteS_AWVALID,s_axi_AXILiteS_AWREADY,s_axi_AXILiteS_WDATA[31:0],s_axi_AXILiteS_WSTRB[3:0],s_axi_AXILiteS_WVALID,s_axi_AXILiteS_WREADY,s_axi_AXILiteS_BRESP[1:0],s_axi_AXILiteS_BVALID,s_axi_AXILiteS_BREADY,s_axi_AXILiteS_ARADDR[5:0],s_axi_AXILiteS_ARVALID,s_axi_AXILiteS_ARREADY,s_axi_AXILiteS_RDATA[31:0],s_axi_AXILiteS_RRESP[1:0],s_axi_AXILiteS_RVALID,s_axi_AXILiteS_RREADY,ap_clk,ap_rst_n,interrupt,m_axi_iic_AWADDR[31:0],m_axi_iic_AWLEN[7:0],m_axi_iic_AWSIZE[2:0],m_axi_iic_AWBURST[1:0],m_axi_iic_AWLOCK[1:0],m_axi_iic_AWREGION[3:0],m_axi_iic_AWCACHE[3:0],m_axi_iic_AWPROT[2:0],m_axi_iic_AWQOS[3:0],m_axi_iic_AWVALID,m_axi_iic_AWREADY,m_axi_iic_WDATA[31:0],m_axi_iic_WSTRB[3:0],m_axi_iic_WLAST,m_axi_iic_WVALID,m_axi_iic_WREADY,m_axi_iic_BRESP[1:0],m_axi_iic_BVALID,m_axi_iic_BREADY,m_axi_iic_ARADDR[31:0],m_axi_iic_ARLEN[7:0],m_axi_iic_ARSIZE[2:0],m_axi_iic_ARBURST[1:0],m_axi_iic_ARLOCK[1:0],m_axi_iic_ARREGION[3:0],m_axi_iic_ARCACHE[3:0],m_axi_iic_ARPROT[2:0],m_axi_iic_ARQOS[3:0],m_axi_iic_ARVALID,m_axi_iic_ARREADY,m_axi_iic_RDATA[31:0],m_axi_iic_RRESP[1:0],m_axi_iic_RLAST,m_axi_iic_RVALID,m_axi_iic_RREADY" */;
-  input [5:0]s_axi_AXILiteS_AWADDR;
+/* synthesis syn_black_box black_box_pad_pin="s_axi_AXILiteS_AWADDR[6:0],s_axi_AXILiteS_AWVALID,s_axi_AXILiteS_AWREADY,s_axi_AXILiteS_WDATA[31:0],s_axi_AXILiteS_WSTRB[3:0],s_axi_AXILiteS_WVALID,s_axi_AXILiteS_WREADY,s_axi_AXILiteS_BRESP[1:0],s_axi_AXILiteS_BVALID,s_axi_AXILiteS_BREADY,s_axi_AXILiteS_ARADDR[6:0],s_axi_AXILiteS_ARVALID,s_axi_AXILiteS_ARREADY,s_axi_AXILiteS_RDATA[31:0],s_axi_AXILiteS_RRESP[1:0],s_axi_AXILiteS_RVALID,s_axi_AXILiteS_RREADY,ap_clk,ap_rst_n,interrupt,m_axi_iic_AWADDR[31:0],m_axi_iic_AWLEN[7:0],m_axi_iic_AWSIZE[2:0],m_axi_iic_AWBURST[1:0],m_axi_iic_AWLOCK[1:0],m_axi_iic_AWREGION[3:0],m_axi_iic_AWCACHE[3:0],m_axi_iic_AWPROT[2:0],m_axi_iic_AWQOS[3:0],m_axi_iic_AWVALID,m_axi_iic_AWREADY,m_axi_iic_WDATA[31:0],m_axi_iic_WSTRB[3:0],m_axi_iic_WLAST,m_axi_iic_WVALID,m_axi_iic_WREADY,m_axi_iic_BRESP[1:0],m_axi_iic_BVALID,m_axi_iic_BREADY,m_axi_iic_ARADDR[31:0],m_axi_iic_ARLEN[7:0],m_axi_iic_ARSIZE[2:0],m_axi_iic_ARBURST[1:0],m_axi_iic_ARLOCK[1:0],m_axi_iic_ARREGION[3:0],m_axi_iic_ARCACHE[3:0],m_axi_iic_ARPROT[2:0],m_axi_iic_ARQOS[3:0],m_axi_iic_ARVALID,m_axi_iic_ARREADY,m_axi_iic_RDATA[31:0],m_axi_iic_RRESP[1:0],m_axi_iic_RLAST,m_axi_iic_RVALID,m_axi_iic_RREADY" */;
+  input [6:0]s_axi_AXILiteS_AWADDR;
   input s_axi_AXILiteS_AWVALID;
   output s_axi_AXILiteS_AWREADY;
   input [31:0]s_axi_AXILiteS_WDATA;
@@ -40,7 +40,7 @@ module iicComm_iiccomm_0_0(s_axi_AXILiteS_AWADDR,
   output [1:0]s_axi_AXILiteS_BRESP;
   output s_axi_AXILiteS_BVALID;
   input s_axi_AXILiteS_BREADY;
-  input [5:0]s_axi_AXILiteS_ARADDR;
+  input [6:0]s_axi_AXILiteS_ARADDR;
   input s_axi_AXILiteS_ARVALID;
   output s_axi_AXILiteS_ARREADY;
   output [31:0]s_axi_AXILiteS_RDATA;

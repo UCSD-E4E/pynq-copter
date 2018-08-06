@@ -33347,35 +33347,47 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 };
 # 40 "./iiccomm.hpp" 2
-# 50 "./iiccomm.hpp"
-void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& outValue1, volatile uint32_t& outValue2, volatile uint32_t& outValue3, volatile uint32_t& outValue4, volatile uint32_t& outValue5, volatile uint32_t& outValue6, volatile uint32_t& outValue7, volatile uint32_t& outValue8, volatile uint32_t& outValue9, volatile uint32_t& outValue10, int& outValue11);
+# 51 "./iiccomm.hpp"
+void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue, volatile uint32_t& interr_reg_outValue, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue);
 # 36 "iiccomm.cpp" 2
 
 
 
 
-static uint32_t val1;
-static uint32_t val2;
+static uint32_t interr_reg_val;
+static uint32_t stat_reg_val;
+static uint32_t empty_pirq_val;
+static uint32_t full_pirq_val;
 
 
-void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& outValue1, volatile uint32_t& outValue2)
+void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue, volatile uint32_t& interr_reg_outValue, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue)
 {_ssdm_SpecArrayDimSize(iic,4096);
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
 _ssdm_op_SpecInterface(iic, "m_axi", 0, 0, "", 0, 0, "", "", "", 16, 16, 16, 16, "", "");
 
-_ssdm_op_SpecInterface(outValue1, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(outValue2, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(stat_reg_outValue, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(interr_reg_outValue, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(empty_pirq_outValue, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(full_pirq_outValue, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+
+
+ stat_reg_val = iic[(0x40001000/4)+(0x104/4)];
+    stat_reg_outValue=stat_reg_val;
 
 
 
-
- val1 = iic[(0x40001000/4)+(0x104/4)];
-    outValue1=val1;
-
+ interr_reg_val = iic[(0x40001000/4)+(0x020/4)];
+    interr_reg_outValue=interr_reg_val;
 
 
- val2 = iic[(0x40001000/4)+(0x020/4)];
-    outValue2=val2;
 
+ empty_pirq_val = iic[(0x40001000/4)+(0x120/4)];
+ empty_pirq_outValue = empty_pirq_val;
+
+
+ iic[(0x40001000/4)+(0x120/4)] = 0x0F;
+ full_pirq_val = iic[(0x40001000/4)+(0x120/4)];
+ full_pirq_outValue = full_pirq_val;
+# 86 "iiccomm.cpp"
 }

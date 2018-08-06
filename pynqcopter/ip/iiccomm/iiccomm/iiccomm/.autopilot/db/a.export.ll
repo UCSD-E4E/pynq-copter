@@ -11,31 +11,62 @@ target triple = "x86_64-unknown-linux-gnu"
 
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
-define void @iiccomm(i32* %iic, i32* %outValue1, i32* %outValue2) {
+define void @iiccomm(i32* %iic, i32* %stat_reg_outValue, i32* %interr_reg_outValue, i32* %empty_pirq_outValue, i32* %full_pirq_outValue) {
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %iic), !map !20
-  call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue1) nounwind, !map !26
-  call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue2) nounwind, !map !30
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %stat_reg_outValue) nounwind, !map !26
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %interr_reg_outValue) nounwind, !map !30
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %empty_pirq_outValue) nounwind, !map !34
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %full_pirq_outValue) nounwind, !map !38
   call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @iiccomm_str) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32* %iic, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-  %outValue1_load = call i32 @_ssdm_op_Read.s_axilite.volatile.i32P(i32* %outValue1)
-  call void (...)* @_ssdm_op_SpecInterface(i32* %outValue1, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  %outValue2_load = call i32 @_ssdm_op_Read.s_axilite.volatile.i32P(i32* %outValue2)
-  call void (...)* @_ssdm_op_SpecInterface(i32* %outValue2, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  %stat_reg_outValue_lo = call i32 @_ssdm_op_Read.s_axilite.volatile.i32P(i32* %stat_reg_outValue)
+  call void (...)* @_ssdm_op_SpecInterface(i32* %stat_reg_outValue, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  %interr_reg_outValue_s = call i32 @_ssdm_op_Read.s_axilite.volatile.i32P(i32* %interr_reg_outValue)
+  call void (...)* @_ssdm_op_SpecInterface(i32* %interr_reg_outValue, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  %empty_pirq_outValue_s = call i32 @_ssdm_op_Read.s_axilite.volatile.i32P(i32* %empty_pirq_outValue)
+  call void (...)* @_ssdm_op_SpecInterface(i32* %empty_pirq_outValue, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  %full_pirq_outValue_l = call i32 @_ssdm_op_Read.s_axilite.volatile.i32P(i32* %full_pirq_outValue)
+  call void (...)* @_ssdm_op_SpecInterface(i32* %full_pirq_outValue, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   %iic_addr = getelementptr i32* %iic, i64 268436545
   %iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)
   %iic_addr_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr)
-  call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue1, i32 %iic_addr_read)
+  call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %stat_reg_outValue, i32 %iic_addr_read)
   %iic_addr_1 = getelementptr i32* %iic, i64 268436488
   %iic_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_1, i32 1)
   %iic_addr_1_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr_1)
-  call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue2, i32 %iic_addr_1_read)
+  call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %interr_reg_outValue, i32 %iic_addr_1_read)
+  %iic_addr_2 = getelementptr i32* %iic, i64 268436552
+  %iic_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_2, i32 1)
+  %iic_addr_2_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr_2)
+  call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %empty_pirq_outValue, i32 %iic_addr_2_read)
+  %iic_addr_2_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_2, i32 1)
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_2, i32 15, i4 -1)
+  %iic_addr_2_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_2)
+  %iic_load_3_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_2, i32 1)
+  %iic_addr_2_read_1 = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr_2)
+  call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %full_pirq_outValue, i32 %iic_addr_2_read_1)
   ret void
+}
+
+define weak i1 @_ssdm_op_WriteResp.m_axi.i32P(i32*) {
+entry:
+  ret i1 true
+}
+
+define weak i1 @_ssdm_op_WriteReq.m_axi.i32P(i32*, i32) {
+entry:
+  ret i1 true
 }
 
 define weak void @_ssdm_op_Write.s_axilite.volatile.i32P(i32*, i32) {
 entry:
   store i32 %1, i32* %0
+  ret void
+}
+
+define weak void @_ssdm_op_Write.m_axi.volatile.i32P(i32*, i32, i4) {
+entry:
   ret void
 }
 
@@ -76,11 +107,11 @@ entry:
 !llvm.map.gv = !{!13}
 
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
-!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0, i32 0}
-!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none"}
-!3 = metadata !{metadata !"kernel_arg_type", metadata !"uint32_t*", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &"}
-!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"volatile", metadata !"", metadata !""}
-!5 = metadata !{metadata !"kernel_arg_name", metadata !"iic", metadata !"outValue1", metadata !"outValue2"}
+!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0, i32 0, i32 0, i32 0}
+!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!3 = metadata !{metadata !"kernel_arg_type", metadata !"uint32_t*", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &", metadata !"volatile uint32_t &"}
+!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"volatile", metadata !"", metadata !"", metadata !"", metadata !""}
+!5 = metadata !{metadata !"kernel_arg_name", metadata !"iic", metadata !"stat_reg_outValue", metadata !"interr_reg_outValue", metadata !"empty_pirq_outValue", metadata !"full_pirq_outValue"}
 !6 = metadata !{metadata !"reqd_work_group_size", i32 1, i32 1, i32 1}
 !7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}
 !8 = metadata !{metadata !"kernel_arg_addr_space"}
@@ -104,8 +135,16 @@ entry:
 !26 = metadata !{metadata !27}
 !27 = metadata !{i32 0, i32 31, metadata !28}
 !28 = metadata !{metadata !29}
-!29 = metadata !{metadata !"outValue1", metadata !18, metadata !"unsigned int", i32 0, i32 31}
+!29 = metadata !{metadata !"stat_reg_outValue", metadata !18, metadata !"unsigned int", i32 0, i32 31}
 !30 = metadata !{metadata !31}
 !31 = metadata !{i32 0, i32 31, metadata !32}
 !32 = metadata !{metadata !33}
-!33 = metadata !{metadata !"outValue2", metadata !18, metadata !"unsigned int", i32 0, i32 31}
+!33 = metadata !{metadata !"interr_reg_outValue", metadata !18, metadata !"unsigned int", i32 0, i32 31}
+!34 = metadata !{metadata !35}
+!35 = metadata !{i32 0, i32 31, metadata !36}
+!36 = metadata !{metadata !37}
+!37 = metadata !{metadata !"empty_pirq_outValue", metadata !18, metadata !"unsigned int", i32 0, i32 31}
+!38 = metadata !{metadata !39}
+!39 = metadata !{i32 0, i32 31, metadata !40}
+!40 = metadata !{metadata !41}
+!41 = metadata !{metadata !"full_pirq_outValue", metadata !18, metadata !"unsigned int", i32 0, i32 31}

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'iiccomm'" level="0">
-<item name = "Date">Mon Aug  6 10:45:49 2018
+<item name = "Date">Mon Aug  6 15:32:10 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">iiccomm</item>
@@ -22,7 +22,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">9, 9, 9, 9, none</column>
+<column name="">25, 25, 25, 25, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -47,19 +47,19 @@
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, -, -</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">2, -, 700, 876</column>
+<column name="Instance">2, -, 852, 1132</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 92</column>
-<column name="Register">-, -, 75, -</column>
+<column name="Multiplexer">-, -, -, 224</column>
+<column name="Register">-, -, 128, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">~0, 0, ~0, 1</specialColumn>
+<specialColumn name="Utilization (%)">~0, 0, ~0, 2</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="iiccomm_AXILiteS_s_axi_U">iiccomm_AXILiteS_s_axi, 0, 0, 188, 296</column>
+<column name="iiccomm_AXILiteS_s_axi_U">iiccomm_AXILiteS_s_axi, 0, 0, 340, 552</column>
 <column name="iiccomm_iic_m_axi_U">iiccomm_iic_m_axi, 2, 0, 512, 580</column>
 </table>
 </item>
@@ -81,19 +81,30 @@
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">50, 11, 1, 11</column>
+<column name="ap_NS_fsm">125, 27, 1, 27</column>
 <column name="ap_sig_ioackin_iic_ARREADY">9, 2, 1, 2</column>
-<column name="iic_ARADDR">15, 3, 32, 96</column>
+<column name="ap_sig_ioackin_iic_AWREADY">9, 2, 1, 2</column>
+<column name="ap_sig_ioackin_iic_WREADY">9, 2, 1, 2</column>
+<column name="iic_ARADDR">27, 5, 32, 160</column>
 <column name="iic_blk_n_AR">9, 2, 1, 2</column>
+<column name="iic_blk_n_AW">9, 2, 1, 2</column>
+<column name="iic_blk_n_B">9, 2, 1, 2</column>
 <column name="iic_blk_n_R">9, 2, 1, 2</column>
+<column name="iic_blk_n_W">9, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">10, 0, 10, 0</column>
+<column name="ap_CS_fsm">26, 0, 26, 0</column>
+<column name="ap_reg_ioackin_empty_pirq_outValue_dummy_ack">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_iic_ARREADY">1, 0, 1, 0</column>
-<column name="iic_addr_1_read_reg_119">32, 0, 32, 0</column>
-<column name="iic_addr_read_reg_114">32, 0, 32, 0</column>
+<column name="ap_reg_ioackin_iic_AWREADY">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_iic_WREADY">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_interr_reg_outValue_dummy_ack">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_stat_reg_outValue_dummy_ack">1, 0, 1, 0</column>
+<column name="iic_addr_1_read_reg_204">32, 0, 32, 0</column>
+<column name="iic_addr_read_reg_199">32, 0, 32, 0</column>
+<column name="reg_153">32, 0, 32, 0</column>
 </table>
 </item>
 </section>
@@ -105,14 +116,14 @@
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
 <column name="s_axi_AXILiteS_AWVALID">in, 1, s_axi, AXILiteS, pointer</column>
 <column name="s_axi_AXILiteS_AWREADY">out, 1, s_axi, AXILiteS, pointer</column>
-<column name="s_axi_AXILiteS_AWADDR">in, 6, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_AWADDR">in, 7, s_axi, AXILiteS, pointer</column>
 <column name="s_axi_AXILiteS_WVALID">in, 1, s_axi, AXILiteS, pointer</column>
 <column name="s_axi_AXILiteS_WREADY">out, 1, s_axi, AXILiteS, pointer</column>
 <column name="s_axi_AXILiteS_WDATA">in, 32, s_axi, AXILiteS, pointer</column>
 <column name="s_axi_AXILiteS_WSTRB">in, 4, s_axi, AXILiteS, pointer</column>
 <column name="s_axi_AXILiteS_ARVALID">in, 1, s_axi, AXILiteS, pointer</column>
 <column name="s_axi_AXILiteS_ARREADY">out, 1, s_axi, AXILiteS, pointer</column>
-<column name="s_axi_AXILiteS_ARADDR">in, 6, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_ARADDR">in, 7, s_axi, AXILiteS, pointer</column>
 <column name="s_axi_AXILiteS_RVALID">out, 1, s_axi, AXILiteS, pointer</column>
 <column name="s_axi_AXILiteS_RREADY">in, 1, s_axi, AXILiteS, pointer</column>
 <column name="s_axi_AXILiteS_RDATA">out, 32, s_axi, AXILiteS, pointer</column>
@@ -177,7 +188,7 @@
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
 <column name="'iic_addr'">getelementptr, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, -</column>
-<column name="'iic_load_req', iiccomm.cpp:56">readreq, 3.50, 3.50, -, -, -, m_axi, request, &apos;iic&apos;, -, -, -, -, -</column>
+<column name="'iic_load_req', iiccomm.cpp:58">readreq, 3.50, 3.50, -, -, -, m_axi, request, &apos;iic&apos;, -, -, -, -, -</column>
 </table>
 </item>
 </section>

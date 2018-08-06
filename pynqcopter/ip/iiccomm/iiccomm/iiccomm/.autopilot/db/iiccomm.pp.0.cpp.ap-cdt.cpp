@@ -33206,35 +33206,47 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 #pragma empty_line
 };
 #pragma line 40 "./iiccomm.hpp" 2
-#pragma line 50 "./iiccomm.hpp"
-void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& outValue1, volatile uint32_t& outValue2, volatile uint32_t& outValue3, volatile uint32_t& outValue4, volatile uint32_t& outValue5, volatile uint32_t& outValue6, volatile uint32_t& outValue7, volatile uint32_t& outValue8, volatile uint32_t& outValue9, volatile uint32_t& outValue10, int& outValue11);
+#pragma line 51 "./iiccomm.hpp"
+void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue, volatile uint32_t& interr_reg_outValue, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue);
 #pragma line 36 "iiccomm.cpp" 2
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-static uint32_t val1;
-static uint32_t val2;
+static uint32_t interr_reg_val;
+static uint32_t stat_reg_val;
+static uint32_t empty_pirq_val;
+static uint32_t full_pirq_val;
 #pragma empty_line
 #pragma empty_line
-void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& outValue1, volatile uint32_t& outValue2)
+void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue, volatile uint32_t& interr_reg_outValue, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue)
 {_ssdm_SpecArrayDimSize(iic,4096);
 #pragma HLS INTERFACE s_axilite port=return
 #pragma empty_line
 #pragma HLS INTERFACE m_axi port=iic
 #pragma empty_line
-#pragma HLS INTERFACE s_axilite port=outValue1
-#pragma HLS INTERFACE s_axilite port=outValue2
+#pragma HLS INTERFACE s_axilite port=stat_reg_outValue
+#pragma HLS INTERFACE s_axilite port=interr_reg_outValue
+#pragma HLS INTERFACE s_axilite port=empty_pirq_outValue
+#pragma HLS INTERFACE s_axilite port=full_pirq_outValue
+#pragma empty_line
+#pragma empty_line
+ stat_reg_val = iic[(0x40001000/4)+(0x104/4)];
+    stat_reg_outValue=stat_reg_val;
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-#pragma empty_line
- val1 = iic[(0x40001000/4)+(0x104/4)];
-    outValue1=val1;
-#pragma empty_line
+ interr_reg_val = iic[(0x40001000/4)+(0x020/4)];
+    interr_reg_outValue=interr_reg_val;
 #pragma empty_line
 #pragma empty_line
- val2 = iic[(0x40001000/4)+(0x020/4)];
-    outValue2=val2;
 #pragma empty_line
+ empty_pirq_val = iic[(0x40001000/4)+(0x120/4)];
+ empty_pirq_outValue = empty_pirq_val;
+#pragma empty_line
+#pragma empty_line
+ iic[(0x40001000/4)+(0x120/4)] = 0x0F;
+ full_pirq_val = iic[(0x40001000/4)+(0x120/4)];
+ full_pirq_outValue = full_pirq_val;
+#pragma line 86 "iiccomm.cpp"
 }

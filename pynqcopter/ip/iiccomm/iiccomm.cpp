@@ -37,28 +37,50 @@
 #include "ap_int.h"
 #include "stdint.h"
 
-static uint32_t val1;  
-static uint32_t val2; 
+static uint32_t interr_reg_val;  
+static uint32_t stat_reg_val;
+static uint32_t empty_pirq_val; //return 0
+static uint32_t full_pirq_val; //return 16
 
 
-void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& outValue1, volatile uint32_t& outValue2)
+void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue, volatile uint32_t& interr_reg_outValue, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue)
 {
     #pragma HLS INTERFACE s_axilite port=return
 	
     #pragma HLS INTERFACE m_axi port=iic
 
-    #pragma HLS INTERFACE s_axilite port=outValue1
-    #pragma HLS INTERFACE s_axilite port=outValue2 
+    #pragma HLS INTERFACE s_axilite port=stat_reg_outValue
+    #pragma HLS INTERFACE s_axilite port=interr_reg_outValue 
+    #pragma HLS INTERFACE s_axilite port=empty_pirq_outValue
+    #pragma HLS INTERFACE s_axilite port=full_pirq_outValue
 
-	
-	//STATUS REGISTER
-
-    val1 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
-    outValue1=val1;
+	//READ STATUS REGISTER
+    stat_reg_val = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
+    stat_reg_outValue=stat_reg_val;
 
 	//INTERRUPT STATUS REGISTER
 
-	val2 = iic[IIC_INDEX+IIC_INTERR_REG_OFF];
-    outValue2=val2;
+	interr_reg_val = iic[IIC_INDEX+IIC_INTERR_REG_OFF];
+    interr_reg_outValue=interr_reg_val;
+
+//INITIALIZE TO READ AND WRITE
+	
+	empty_pirq_val = iic[IIC_INDEX+IIC_RX_FIFO_PIRQ_OFF];
+	empty_pirq_outValue = empty_pirq_val;
+
+	//SET RX FIFO PIRQ DEPTH TO MAX
+	iic[IIC_INDEX+IIC_RX_FIFO_PIRQ_OFF] = 0x0F;
+	full_pirq_val = iic[IIC_INDEX+IIC_RX_FIFO_PIRQ_OFF]; //ENSURE RX FIFO PIRQ WRITTEN VALUE APPLIED
+	full_pirq_outValue = full_pirq_val;
+
+	/*//RESET TX FIFO IN CR REG
+	iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x02;
+
+	//ENABLE AXI I2C, REMOVE RESET FOR TX, DISABLE GEN. CALL IN CR REG
+	iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x01;*/
+
+
+//BEGIN READING AND WRITING TO SENSOR
+
 
 }

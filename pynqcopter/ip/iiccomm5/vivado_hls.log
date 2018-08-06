@@ -6,7 +6,7 @@
 
 source /data/opt/Xilinx/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/data/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Mon Aug 06 11:13:54 PDT 2018
+INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Mon Aug 06 14:56:11 PDT 2018
 INFO: [HLS 200-10] On os Linux Mint 18 Sarah
 INFO: [HLS 200-10] In directory '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm5'
 INFO: [HLS 200-10] Opening project '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm5/iiccomm5'.
@@ -19,23 +19,23 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
-make[2]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm5/iiccomm5/iiccomm5/csim/build'
-make[2]: 'csim.exe' is up to date.
-make[2]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm5/iiccomm5/iiccomm5/csim/build'
+make[1]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm5/iiccomm5/iiccomm5/csim/build'
+make[1]: 'csim.exe' is up to date.
+make[1]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm5/iiccomm5/iiccomm5/csim/build'
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'iiccomm5.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:21 ; elapsed = 00:00:29 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 126426 ; free virtual = 505134
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:23 ; elapsed = 00:00:31 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 126428 ; free virtual = 505136
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:23 ; elapsed = 00:00:31 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 126274 ; free virtual = 505094
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:24 ; elapsed = 00:00:32 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 126274 ; free virtual = 505094
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:24 ; elapsed = 00:00:33 . Memory (MB): peak = 360.145 ; gain = 13.582 ; free physical = 126421 ; free virtual = 505129
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:25 ; elapsed = 00:00:34 . Memory (MB): peak = 360.141 ; gain = 13.582 ; free physical = 126249 ; free virtual = 505069
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:24 ; elapsed = 00:00:33 . Memory (MB): peak = 360.145 ; gain = 13.582 ; free physical = 126419 ; free virtual = 505127
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:25 ; elapsed = 00:00:33 . Memory (MB): peak = 488.145 ; gain = 141.582 ; free physical = 126396 ; free virtual = 505104
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:26 ; elapsed = 00:00:34 . Memory (MB): peak = 488.145 ; gain = 141.582 ; free physical = 126392 ; free virtual = 505100
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:25 ; elapsed = 00:00:34 . Memory (MB): peak = 360.141 ; gain = 13.582 ; free physical = 126259 ; free virtual = 505079
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:26 ; elapsed = 00:00:34 . Memory (MB): peak = 488.141 ; gain = 141.582 ; free physical = 126240 ; free virtual = 505060
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:27 ; elapsed = 00:00:35 . Memory (MB): peak = 488.141 ; gain = 141.582 ; free physical = 126238 ; free virtual = 505058
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'iiccomm5' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -43,13 +43,13 @@ INFO: [HLS 200-42] -- Implementing module 'iiccomm5'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 34.26 seconds; current allocated memory: 77.129 MB.
+INFO: [HLS 200-111]  Elapsed time: 35.04 seconds; current allocated memory: 77.130 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 77.608 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 77.609 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'iiccomm5'
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -68,8 +68,8 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm5/outValue11' to 's
 INFO: [RTGEN 206-500] Setting interface mode on function 'iiccomm5' to 's_axilite & ap_ctrl_hs'.
 INFO: [RTGEN 206-100] Bundling port 'return', 'outValue1', 'outValue2', 'outValue3', 'outValue4', 'outValue5', 'outValue6', 'outValue7', 'outValue8', 'outValue9', 'outValue10' and 'outValue11' to AXI-Lite port AXILiteS.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'iiccomm5'.
-INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 78.491 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:27 ; elapsed = 00:00:35 . Memory (MB): peak = 488.145 ; gain = 141.582 ; free physical = 126355 ; free virtual = 505062
+INFO: [HLS 200-111]  Elapsed time: 0.06 seconds; current allocated memory: 78.492 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:28 ; elapsed = 00:00:36 . Memory (MB): peak = 488.141 ; gain = 141.582 ; free physical = 126236 ; free virtual = 505056
 INFO: [SYSC 207-301] Generating SystemC RTL for iiccomm5.
 INFO: [VHDL 208-304] Generating VHDL RTL for iiccomm5.
 INFO: [VLOG 209-307] Generating Verilog RTL for iiccomm5.
@@ -84,6 +84,6 @@ source run_ippack.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Mon Aug  6 11:14:41 2018...
-INFO: [HLS 200-112] Total elapsed time: 70.74 seconds; peak allocated memory: 78.491 MB.
-INFO: [Common 17-206] Exiting vivado_hls at Mon Aug  6 11:15:05 2018...
+INFO: [Common 17-206] Exiting Vivado at Mon Aug  6 14:57:01 2018...
+INFO: [HLS 200-112] Total elapsed time: 76.67 seconds; peak allocated memory: 78.492 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Mon Aug  6 14:57:27 2018...

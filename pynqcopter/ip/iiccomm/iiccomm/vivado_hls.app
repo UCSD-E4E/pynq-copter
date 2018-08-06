@@ -1,4 +1,7 @@
 <AutoPilot:project xmlns:AutoPilot="com.autoesl.autopilot.project" projectType="C/C++" name="iiccomm" top="iiccomm">
+    <Simulation argv="">
+        <SimFlow name="csim" setup="false" optimizeCompile="false" clean="false" ldflags="" mflags=""/>
+    </Simulation>
     <files>
         <file name="iiccomm.cpp" sc="0" tb="false" cflags="-std=c++11"/>
         <file name="main.cpp" sc="0" tb="false" cflags="-std=c++11"/>
@@ -8,8 +11,5 @@
     <solutions>
         <solution name="iiccomm" status=""/>
     </solutions>
-    <Simulation argv="">
-        <SimFlow name="csim" setup="false" optimizeCompile="false" clean="false" ldflags="" mflags=""/>
-    </Simulation>
 </AutoPilot:project>
 

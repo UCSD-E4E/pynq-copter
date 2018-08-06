@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "9",
+    "Latency": "25",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -266,7 +266,7 @@
       "mode": "slave",
       "port_prefix": "s_axi_AXILiteS",
       "param_prefix": "C_S_AXI_AXILITES",
-      "addr_bits": "6",
+      "addr_bits": "7",
       "registers": [
         {
           "offset": "0x00",
@@ -426,48 +426,48 @@
         },
         {
           "offset": "0x10",
-          "name": "outValue1_i",
+          "name": "stat_reg_outValue_i",
           "access": "W",
           "reset_value": "0x0",
-          "description": "Data signal of outValue1_i",
+          "description": "Data signal of stat_reg_outValue_i",
           "fields": [{
               "offset": "0",
               "width": "32",
-              "name": "outValue1_i",
+              "name": "stat_reg_outValue_i",
               "access": "W",
               "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of outValue1_i"
+              "description": "Bit 31 to 0 Data signal of stat_reg_outValue_i"
             }]
         },
         {
           "offset": "0x18",
-          "name": "outValue1_o",
+          "name": "stat_reg_outValue_o",
           "access": "R",
           "reset_value": "0x0",
-          "description": "Data signal of outValue1_o",
+          "description": "Data signal of stat_reg_outValue_o",
           "fields": [{
               "offset": "0",
               "width": "32",
-              "name": "outValue1_o",
+              "name": "stat_reg_outValue_o",
               "access": "R",
               "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of outValue1_o"
+              "description": "Bit 31 to 0 Data signal of stat_reg_outValue_o"
             }]
         },
         {
           "offset": "0x1c",
-          "name": "outValue1_o_ctrl",
+          "name": "stat_reg_outValue_o_ctrl",
           "access": "R",
           "reset_value": "0x0",
-          "description": "Control signal of outValue1_o",
+          "description": "Control signal of stat_reg_outValue_o",
           "fields": [
             {
               "offset": "0",
               "width": "1",
-              "name": "outValue1_o_ap_vld",
+              "name": "stat_reg_outValue_o_ap_vld",
               "access": "R",
               "reset_value": "0",
-              "description": "Control signal outValue1_o_ap_vld"
+              "description": "Control signal stat_reg_outValue_o_ap_vld"
             },
             {
               "offset": "1",
@@ -481,48 +481,158 @@
         },
         {
           "offset": "0x20",
-          "name": "outValue2_i",
+          "name": "interr_reg_outValue_i",
           "access": "W",
           "reset_value": "0x0",
-          "description": "Data signal of outValue2_i",
+          "description": "Data signal of interr_reg_outValue_i",
           "fields": [{
               "offset": "0",
               "width": "32",
-              "name": "outValue2_i",
+              "name": "interr_reg_outValue_i",
               "access": "W",
               "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of outValue2_i"
+              "description": "Bit 31 to 0 Data signal of interr_reg_outValue_i"
             }]
         },
         {
           "offset": "0x28",
-          "name": "outValue2_o",
+          "name": "interr_reg_outValue_o",
           "access": "R",
           "reset_value": "0x0",
-          "description": "Data signal of outValue2_o",
+          "description": "Data signal of interr_reg_outValue_o",
           "fields": [{
               "offset": "0",
               "width": "32",
-              "name": "outValue2_o",
+              "name": "interr_reg_outValue_o",
               "access": "R",
               "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of outValue2_o"
+              "description": "Bit 31 to 0 Data signal of interr_reg_outValue_o"
             }]
         },
         {
           "offset": "0x2c",
-          "name": "outValue2_o_ctrl",
+          "name": "interr_reg_outValue_o_ctrl",
           "access": "R",
           "reset_value": "0x0",
-          "description": "Control signal of outValue2_o",
+          "description": "Control signal of interr_reg_outValue_o",
           "fields": [
             {
               "offset": "0",
               "width": "1",
-              "name": "outValue2_o_ap_vld",
+              "name": "interr_reg_outValue_o_ap_vld",
               "access": "R",
               "reset_value": "0",
-              "description": "Control signal outValue2_o_ap_vld"
+              "description": "Control signal interr_reg_outValue_o_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x30",
+          "name": "empty_pirq_outValue_i",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of empty_pirq_outValue_i",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "empty_pirq_outValue_i",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of empty_pirq_outValue_i"
+            }]
+        },
+        {
+          "offset": "0x38",
+          "name": "empty_pirq_outValue_o",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of empty_pirq_outValue_o",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "empty_pirq_outValue_o",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of empty_pirq_outValue_o"
+            }]
+        },
+        {
+          "offset": "0x3c",
+          "name": "empty_pirq_outValue_o_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of empty_pirq_outValue_o",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "empty_pirq_outValue_o_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal empty_pirq_outValue_o_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x40",
+          "name": "full_pirq_outValue_i",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of full_pirq_outValue_i",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "full_pirq_outValue_i",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of full_pirq_outValue_i"
+            }]
+        },
+        {
+          "offset": "0x48",
+          "name": "full_pirq_outValue_o",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of full_pirq_outValue_o",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "full_pirq_outValue_o",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of full_pirq_outValue_o"
+            }]
+        },
+        {
+          "offset": "0x4c",
+          "name": "full_pirq_outValue_o_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of full_pirq_outValue_o",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "full_pirq_outValue_o_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal full_pirq_outValue_o_ap_vld"
             },
             {
               "offset": "1",
@@ -557,7 +667,7 @@
         },
         "AWADDR": {
           "Type": "integer unsigned",
-          "Width": "6"
+          "Width": "7"
         },
         "WDATA": {
           "Type": "integer unsigned",
@@ -569,7 +679,7 @@
         },
         "ARADDR": {
           "Type": "integer unsigned",
-          "Width": "6"
+          "Width": "7"
         },
         "RDATA": {
           "Type": "integer unsigned",
@@ -578,8 +688,8 @@
       },
       "data_width": "32",
       "port_width": {
-        "ARADDR": "6",
-        "AWADDR": "6",
+        "ARADDR": "7",
+        "AWADDR": "7",
         "RDATA": "32",
         "WDATA": "32",
         "WSTRB": "4"
@@ -597,7 +707,7 @@
     },
     "s_axi_AXILiteS_AWADDR": {
       "dir": "in",
-      "width": "6"
+      "width": "7"
     },
     "s_axi_AXILiteS_WVALID": {
       "dir": "in",
@@ -625,7 +735,7 @@
     },
     "s_axi_AXILiteS_ARADDR": {
       "dir": "in",
-      "width": "6"
+      "width": "7"
     },
     "s_axi_AXILiteS_RVALID": {
       "dir": "out",
@@ -860,7 +970,7 @@
     }
   },
   "CPorts": {
-    "outValue1_i": {
+    "stat_reg_outValue_i": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "in",
       "offset": "16",
@@ -868,7 +978,7 @@
       "handshakeRef": "ap_none",
       "Object": "AXILiteS"
     },
-    "outValue1_o": {
+    "stat_reg_outValue_o": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
       "offset": "24",
@@ -876,7 +986,7 @@
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS"
     },
-    "outValue2_i": {
+    "interr_reg_outValue_i": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "in",
       "offset": "32",
@@ -884,11 +994,43 @@
       "handshakeRef": "ap_none",
       "Object": "AXILiteS"
     },
-    "outValue2_o": {
+    "interr_reg_outValue_o": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
       "offset": "40",
       "statusOffset": "44",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS"
+    },
+    "empty_pirq_outValue_i": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "in",
+      "offset": "48",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "AXILiteS"
+    },
+    "empty_pirq_outValue_o": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "56",
+      "statusOffset": "60",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS"
+    },
+    "full_pirq_outValue_i": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "in",
+      "offset": "64",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "AXILiteS"
+    },
+    "full_pirq_outValue_o": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "72",
+      "statusOffset": "76",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS"
     },
@@ -906,10 +1048,10 @@
     "Hierarchy": {"ModuleName": "iiccomm"},
     "Metrics": {"iiccomm": {
         "Latency": {
-          "LatencyBest": "9",
-          "LatencyAvg": "9",
-          "LatencyWorst": "9",
-          "PipelineII": "10",
+          "LatencyBest": "25",
+          "LatencyAvg": "25",
+          "LatencyWorst": "25",
+          "PipelineII": "26",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -920,15 +1062,15 @@
         },
         "Area": {
           "BRAM_18K": "2",
-          "FF": "775",
-          "LUT": "968",
+          "FF": "980",
+          "LUT": "1356",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-06 10:45:50 PDT",
+    "Time": "2018-08-06 15:32:11 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

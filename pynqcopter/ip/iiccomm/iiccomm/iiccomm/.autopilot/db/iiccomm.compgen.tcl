@@ -12,7 +12,7 @@ ap_start { }
 ap_done { }
 ap_ready { }
 ap_idle { }
-outValue1_i { 
+stat_reg_outValue_i { 
 	dir I
 	width 32
 	depth 1
@@ -20,7 +20,7 @@ outValue1_i {
 	offset 16
 	offset_end 23
 }
-outValue1_o { 
+stat_reg_outValue_o { 
 	dir O
 	width 32
 	depth 1
@@ -28,7 +28,7 @@ outValue1_o {
 	offset 24
 	offset_end 31
 }
-outValue2_i { 
+interr_reg_outValue_i { 
 	dir I
 	width 32
 	depth 1
@@ -36,13 +36,45 @@ outValue2_i {
 	offset 32
 	offset_end 39
 }
-outValue2_o { 
+interr_reg_outValue_o { 
 	dir O
 	width 32
 	depth 1
 	mode ap_vld
 	offset 40
 	offset_end 47
+}
+empty_pirq_outValue_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 48
+	offset_end 55
+}
+empty_pirq_outValue_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 56
+	offset_end 63
+}
+full_pirq_outValue_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 64
+	offset_end 71
+}
+full_pirq_outValue_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 72
+	offset_end 79
 }
 }
 

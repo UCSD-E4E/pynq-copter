@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "iiccomm"
 set Version     "1.0"
 set DisplayName "Iiccomm"
-set Revision    "1808061045"
+set Revision    "1808061532"
 set Description "HLS Core: Iiccomm Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -86,9 +86,9 @@ set Interfaces {
         mode "slave"
         port_prefix "s_axi_AXILiteS"
         param_prefix "C_S_AXI_AXILITES"
-        addr_bits "6"
-        port_width "AWADDR 6 WDATA 32 WSTRB 4 ARADDR 6 RDATA 32"
-        registers {{0x00 CTRL       RW   0x0 "Control signals" {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 24 RESERVED_2 R 0 "Reserved.  0s on read." }}} {0x04 GIER       RW   0x0 "Global Interrupt Enable Register" {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }} } {0x08 IP_IER     RW   0x0 "IP Interrupt Enable Register" {{ 0 1 CHAN0_INT_EN RW 0 "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled." } { 1 1 CHAN1_INT_EN RW 0 "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled." } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x0c IP_ISR     RW   0x0 "IP Interrupt Status Register" {{ 0 1 CHAN0_INT_ST RTOW 0 "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup" } { 1 1 CHAN1_INT_ST RTOW 0 "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup" } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x10 outValue1_i W 0x0 "Data signal of outValue1_i" {{0 32 outValue1_i W 0 "Bit 31 to 0 Data signal of outValue1_i"}}} {0x18 outValue1_o R 0x0 "Data signal of outValue1_o" {{0 32 outValue1_o R 0 "Bit 31 to 0 Data signal of outValue1_o"}}} {0x1c outValue1_o_ctrl R 0x0 "Control signal of outValue1_o" {{0 1 outValue1_o_ap_vld R 0 "Control signal outValue1_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x20 outValue2_i W 0x0 "Data signal of outValue2_i" {{0 32 outValue2_i W 0 "Bit 31 to 0 Data signal of outValue2_i"}}} {0x28 outValue2_o R 0x0 "Data signal of outValue2_o" {{0 32 outValue2_o R 0 "Bit 31 to 0 Data signal of outValue2_o"}}} {0x2c outValue2_o_ctrl R 0x0 "Control signal of outValue2_o" {{0 1 outValue2_o_ap_vld R 0 "Control signal outValue2_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}}}
+        addr_bits "7"
+        port_width "AWADDR 7 WDATA 32 WSTRB 4 ARADDR 7 RDATA 32"
+        registers {{0x00 CTRL       RW   0x0 "Control signals" {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 24 RESERVED_2 R 0 "Reserved.  0s on read." }}} {0x04 GIER       RW   0x0 "Global Interrupt Enable Register" {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }} } {0x08 IP_IER     RW   0x0 "IP Interrupt Enable Register" {{ 0 1 CHAN0_INT_EN RW 0 "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled." } { 1 1 CHAN1_INT_EN RW 0 "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled." } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x0c IP_ISR     RW   0x0 "IP Interrupt Status Register" {{ 0 1 CHAN0_INT_ST RTOW 0 "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup" } { 1 1 CHAN1_INT_ST RTOW 0 "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup" } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x10 stat_reg_outValue_i W 0x0 "Data signal of stat_reg_outValue_i" {{0 32 stat_reg_outValue_i W 0 "Bit 31 to 0 Data signal of stat_reg_outValue_i"}}} {0x18 stat_reg_outValue_o R 0x0 "Data signal of stat_reg_outValue_o" {{0 32 stat_reg_outValue_o R 0 "Bit 31 to 0 Data signal of stat_reg_outValue_o"}}} {0x1c stat_reg_outValue_o_ctrl R 0x0 "Control signal of stat_reg_outValue_o" {{0 1 stat_reg_outValue_o_ap_vld R 0 "Control signal stat_reg_outValue_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x20 interr_reg_outValue_i W 0x0 "Data signal of interr_reg_outValue_i" {{0 32 interr_reg_outValue_i W 0 "Bit 31 to 0 Data signal of interr_reg_outValue_i"}}} {0x28 interr_reg_outValue_o R 0x0 "Data signal of interr_reg_outValue_o" {{0 32 interr_reg_outValue_o R 0 "Bit 31 to 0 Data signal of interr_reg_outValue_o"}}} {0x2c interr_reg_outValue_o_ctrl R 0x0 "Control signal of interr_reg_outValue_o" {{0 1 interr_reg_outValue_o_ap_vld R 0 "Control signal interr_reg_outValue_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x30 empty_pirq_outValue_i W 0x0 "Data signal of empty_pirq_outValue_i" {{0 32 empty_pirq_outValue_i W 0 "Bit 31 to 0 Data signal of empty_pirq_outValue_i"}}} {0x38 empty_pirq_outValue_o R 0x0 "Data signal of empty_pirq_outValue_o" {{0 32 empty_pirq_outValue_o R 0 "Bit 31 to 0 Data signal of empty_pirq_outValue_o"}}} {0x3c empty_pirq_outValue_o_ctrl R 0x0 "Control signal of empty_pirq_outValue_o" {{0 1 empty_pirq_outValue_o_ap_vld R 0 "Control signal empty_pirq_outValue_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x40 full_pirq_outValue_i W 0x0 "Data signal of full_pirq_outValue_i" {{0 32 full_pirq_outValue_i W 0 "Bit 31 to 0 Data signal of full_pirq_outValue_i"}}} {0x48 full_pirq_outValue_o R 0x0 "Data signal of full_pirq_outValue_o" {{0 32 full_pirq_outValue_o R 0 "Bit 31 to 0 Data signal of full_pirq_outValue_o"}}} {0x4c full_pirq_outValue_o_ctrl R 0x0 "Control signal of full_pirq_outValue_o" {{0 1 full_pirq_outValue_o_ap_vld R 0 "Control signal full_pirq_outValue_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}}}
         memories ""
         ctype {
             AWVALID {
@@ -153,8 +153,8 @@ set Interfaces {
             }
             AWADDR {
                 Type "integer unsigned"
-                Width "6"
-                Bits "6"
+                Width "7"
+                Bits "7"
             }
             WDATA {
                 Type "integer unsigned"
@@ -168,8 +168,8 @@ set Interfaces {
             }
             ARADDR {
                 Type "integer unsigned"
-                Width "6"
-                Bits "6"
+                Width "7"
+                Bits "7"
             }
             RDATA {
                 Type "integer unsigned"
@@ -1919,7 +1919,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_ver match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 9 II x}
+set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 25 II x}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]
