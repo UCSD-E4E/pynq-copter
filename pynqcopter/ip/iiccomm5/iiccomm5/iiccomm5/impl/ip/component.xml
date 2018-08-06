@@ -3487,8 +3487,8 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
       </xilinx:taxonomies>
       <xilinx:displayName>Iiccomm5</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808060130</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-06T08:31:00Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808061114</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-06T18:14:41Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>

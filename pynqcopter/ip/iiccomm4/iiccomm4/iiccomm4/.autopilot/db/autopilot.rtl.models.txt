@@ -1,4 +1,0 @@
-iiccomm4_AXILiteS_s_axi
-iiccomm4_OUTPUTS_s_axi
-iiccomm4_iic_m_axi
-iiccomm4

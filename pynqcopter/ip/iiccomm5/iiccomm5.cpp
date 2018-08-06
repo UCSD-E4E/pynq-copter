@@ -55,7 +55,7 @@ void iiccomm5(volatile uint32_t iic[4096], volatile uint32_t& outValue1, volatil
 
     #pragma HLS INTERFACE m_axi port=iic
 
-    #pragma HLS INTERFACE s_axilite port=outValue1
+    #pragma HLS INTERFACE s_axilite port=outValue1 
     #pragma HLS INTERFACE s_axilite port=outValue2 
     #pragma HLS INTERFACE s_axilite port=outValue3 
     #pragma HLS INTERFACE s_axilite port=outValue4 
@@ -65,7 +65,7 @@ void iiccomm5(volatile uint32_t iic[4096], volatile uint32_t& outValue1, volatil
     #pragma HLS INTERFACE s_axilite port=outValue8 
     #pragma HLS INTERFACE s_axilite port=outValue9 
     #pragma HLS INTERFACE s_axilite port=outValue10 
-    #pragma HLS INTERFACE s_axilite port=outValue11 
+    #pragma HLS INTERFACE s_axilite port=outValue11
 
 //READ
 	val1 = iic[0];
