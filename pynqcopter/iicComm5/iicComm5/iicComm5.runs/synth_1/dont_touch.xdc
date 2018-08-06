@@ -9,8 +9,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==iicComm5 || ORI
 # IP: bd/iicComm5/ip/iicComm5_axi_iic_0_0/iicComm5_axi_iic_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==iicComm5_axi_iic_0_0 || ORIG_REF_NAME==iicComm5_axi_iic_0_0} -quiet] -quiet
 
-# IP: bd/iicComm5/ip/iicComm5_iiccomm4_0_0/iicComm5_iiccomm4_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==iicComm5_iiccomm4_0_0 || ORIG_REF_NAME==iicComm5_iiccomm4_0_0} -quiet] -quiet
+# IP: bd/iicComm5/ip/iicComm5_iiccomm5_0_0/iicComm5_iiccomm5_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==iicComm5_iiccomm5_0_0 || ORIG_REF_NAME==iicComm5_iiccomm5_0_0} -quiet] -quiet
 
 # IP: bd/iicComm5/ip/iicComm5_processing_system7_0_0/iicComm5_processing_system7_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==iicComm5_processing_system7_0_0 || ORIG_REF_NAME==iicComm5_processing_system7_0_0} -quiet] -quiet
@@ -23,6 +23,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==iicComm5_rst_ps
 
 # IP: bd/iicComm5/ip/iicComm5_xbar_0/iicComm5_xbar_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==iicComm5_xbar_0 || ORIG_REF_NAME==iicComm5_xbar_0} -quiet] -quiet
+
+# IP: bd/iicComm5/ip/iicComm5_s01_mmu_0/iicComm5_s01_mmu_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==iicComm5_s01_mmu_0 || ORIG_REF_NAME==iicComm5_s01_mmu_0} -quiet] -quiet
 
 # IP: bd/iicComm5/ip/iicComm5_auto_pc_1/iicComm5_auto_pc_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==iicComm5_auto_pc_1 || ORIG_REF_NAME==iicComm5_auto_pc_1} -quiet] -quiet

@@ -6,7 +6,7 @@
 
 source /data/opt/Xilinx/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/data/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Fri Aug 03 11:00:39 PDT 2018
+INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Mon Aug 06 02:22:37 PDT 2018
 INFO: [HLS 200-10] On os Linux Mint 18 Sarah
 INFO: [HLS 200-10] In directory '/home/iavendano/pynq-copter/pynqcopter/ip/iicstat'
 INFO: [HLS 200-10] Opening project '/home/iavendano/pynq-copter/pynqcopter/ip/iicstat/iicstat'.
@@ -28,14 +28,14 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'iicstat.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:16 ; elapsed = 00:00:28 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 129470 ; free virtual = 505516
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:18 ; elapsed = 00:00:30 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 129483 ; free virtual = 505529
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:20 ; elapsed = 00:00:28 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 127985 ; free virtual = 506168
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:22 ; elapsed = 00:00:30 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 127984 ; free virtual = 506167
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:19 ; elapsed = 00:00:31 . Memory (MB): peak = 360.148 ; gain = 13.582 ; free physical = 129468 ; free virtual = 505514
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:23 ; elapsed = 00:00:31 . Memory (MB): peak = 360.141 ; gain = 13.582 ; free physical = 127963 ; free virtual = 506146
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:19 ; elapsed = 00:00:31 . Memory (MB): peak = 360.152 ; gain = 13.586 ; free physical = 129454 ; free virtual = 505501
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:20 ; elapsed = 00:00:32 . Memory (MB): peak = 488.152 ; gain = 141.586 ; free physical = 129451 ; free virtual = 505497
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:20 ; elapsed = 00:00:32 . Memory (MB): peak = 488.152 ; gain = 141.586 ; free physical = 129448 ; free virtual = 505494
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:23 ; elapsed = 00:00:31 . Memory (MB): peak = 360.145 ; gain = 13.586 ; free physical = 127968 ; free virtual = 506151
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:24 ; elapsed = 00:00:32 . Memory (MB): peak = 488.145 ; gain = 141.586 ; free physical = 127863 ; free virtual = 506046
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:24 ; elapsed = 00:00:33 . Memory (MB): peak = 488.145 ; gain = 141.586 ; free physical = 127888 ; free virtual = 506071
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'iicstat' ...
 WARNING: [SYN 201-107] Renaming port name 'iicstat/bus' to 'iicstat/bus_r' to avoid the conflict with HDL keywords or other object names.
@@ -44,23 +44,24 @@ INFO: [HLS 200-42] -- Implementing module 'iicstat'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 32.16 seconds; current allocated memory: 76.474 MB.
+INFO: [HLS 200-111]  Elapsed time: 32.73 seconds; current allocated memory: 76.496 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 76.584 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 76.617 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'iicstat'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-500] Setting interface mode on port 'iicstat/bus_r' to 'm_axi'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'iicstat/outValue' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'iicstat' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iicstat/outValue' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'iicstat' to 's_axilite & ap_ctrl_none'.
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port AXILiteS.
 INFO: [RTGEN 206-100] Bundling port 'outValue' to AXI-Lite port outValue_first.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'iicstat'.
-INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 77.136 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:21 ; elapsed = 00:00:33 . Memory (MB): peak = 488.152 ; gain = 141.586 ; free physical = 129447 ; free virtual = 505493
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 77.241 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:25 ; elapsed = 00:00:34 . Memory (MB): peak = 488.145 ; gain = 141.586 ; free physical = 127877 ; free virtual = 506059
 INFO: [SYSC 207-301] Generating SystemC RTL for iicstat.
 INFO: [VHDL 208-304] Generating VHDL RTL for iicstat.
 INFO: [VLOG 209-307] Generating Verilog RTL for iicstat.
@@ -75,6 +76,6 @@ source run_ippack.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Fri Aug  3 11:01:23 2018...
-INFO: [HLS 200-112] Total elapsed time: 63.97 seconds; peak allocated memory: 77.136 MB.
-INFO: [Common 17-206] Exiting vivado_hls at Fri Aug  3 11:01:43 2018...
+INFO: [Common 17-206] Exiting Vivado at Mon Aug  6 02:23:22 2018...
+INFO: [HLS 200-112] Total elapsed time: 65.09 seconds; peak allocated memory: 77.241 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Mon Aug  6 02:23:42 2018...

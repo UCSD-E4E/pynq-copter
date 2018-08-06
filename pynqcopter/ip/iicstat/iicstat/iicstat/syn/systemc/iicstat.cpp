@@ -41,6 +41,27 @@ const sc_lv<32> iicstat::ap_const_lv32_8 = "1000";
 const bool iicstat::ap_const_boolean_1 = true;
 
 iicstat::iicstat(sc_module_name name) : sc_module(name), mVcdFile(0) {
+    iicstat_AXILiteS_s_axi_U = new iicstat_AXILiteS_s_axi<C_S_AXI_AXILITES_ADDR_WIDTH,C_S_AXI_AXILITES_DATA_WIDTH>("iicstat_AXILiteS_s_axi_U");
+    iicstat_AXILiteS_s_axi_U->AWVALID(s_axi_AXILiteS_AWVALID);
+    iicstat_AXILiteS_s_axi_U->AWREADY(s_axi_AXILiteS_AWREADY);
+    iicstat_AXILiteS_s_axi_U->AWADDR(s_axi_AXILiteS_AWADDR);
+    iicstat_AXILiteS_s_axi_U->WVALID(s_axi_AXILiteS_WVALID);
+    iicstat_AXILiteS_s_axi_U->WREADY(s_axi_AXILiteS_WREADY);
+    iicstat_AXILiteS_s_axi_U->WDATA(s_axi_AXILiteS_WDATA);
+    iicstat_AXILiteS_s_axi_U->WSTRB(s_axi_AXILiteS_WSTRB);
+    iicstat_AXILiteS_s_axi_U->ARVALID(s_axi_AXILiteS_ARVALID);
+    iicstat_AXILiteS_s_axi_U->ARREADY(s_axi_AXILiteS_ARREADY);
+    iicstat_AXILiteS_s_axi_U->ARADDR(s_axi_AXILiteS_ARADDR);
+    iicstat_AXILiteS_s_axi_U->RVALID(s_axi_AXILiteS_RVALID);
+    iicstat_AXILiteS_s_axi_U->RREADY(s_axi_AXILiteS_RREADY);
+    iicstat_AXILiteS_s_axi_U->RDATA(s_axi_AXILiteS_RDATA);
+    iicstat_AXILiteS_s_axi_U->RRESP(s_axi_AXILiteS_RRESP);
+    iicstat_AXILiteS_s_axi_U->BVALID(s_axi_AXILiteS_BVALID);
+    iicstat_AXILiteS_s_axi_U->BREADY(s_axi_AXILiteS_BREADY);
+    iicstat_AXILiteS_s_axi_U->BRESP(s_axi_AXILiteS_BRESP);
+    iicstat_AXILiteS_s_axi_U->ACLK(ap_clk);
+    iicstat_AXILiteS_s_axi_U->ARESET(ap_rst_n_inv);
+    iicstat_AXILiteS_s_axi_U->ACLK_EN(ap_var_for_const0);
     iicstat_outValue_first_s_axi_U = new iicstat_outValue_first_s_axi<C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH,C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH>("iicstat_outValue_first_s_axi_U");
     iicstat_outValue_first_s_axi_U->AWVALID(s_axi_outValue_first_AWVALID);
     iicstat_outValue_first_s_axi_U->AWREADY(s_axi_outValue_first_AWREADY);
@@ -62,8 +83,9 @@ iicstat::iicstat(sc_module_name name) : sc_module(name), mVcdFile(0) {
     iicstat_outValue_first_s_axi_U->ACLK(ap_clk);
     iicstat_outValue_first_s_axi_U->ARESET(ap_rst_n_inv);
     iicstat_outValue_first_s_axi_U->ACLK_EN(ap_var_for_const0);
-    iicstat_outValue_first_s_axi_U->outValue(bus_addr_read_reg_72);
-    iicstat_outValue_first_s_axi_U->outValue_ap_vld(outValue_ap_vld);
+    iicstat_outValue_first_s_axi_U->outValue_o(bus_addr_read_reg_80);
+    iicstat_outValue_first_s_axi_U->outValue_o_ap_vld(outValue_o_ap_vld);
+    iicstat_outValue_first_s_axi_U->outValue_i(outValue_i);
     iicstat_bus_r_m_axi_U = new iicstat_bus_r_m_axi<32,32,5,16,16,16,16,C_M_AXI_BUS_R_ID_WIDTH,C_M_AXI_BUS_R_ADDR_WIDTH,C_M_AXI_BUS_R_DATA_WIDTH,C_M_AXI_BUS_R_AWUSER_WIDTH,C_M_AXI_BUS_R_ARUSER_WIDTH,C_M_AXI_BUS_R_WUSER_WIDTH,C_M_AXI_BUS_R_RUSER_WIDTH,C_M_AXI_BUS_R_BUSER_WIDTH,C_M_AXI_BUS_R_TARGET_ADDR,C_M_AXI_BUS_R_USER_VALUE,C_M_AXI_BUS_R_PROT_VALUE,C_M_AXI_BUS_R_CACHE_VALUE>("iicstat_bus_r_m_axi_U");
     iicstat_bus_r_m_axi_U->AWVALID(m_axi_bus_r_AWVALID);
     iicstat_bus_r_m_axi_U->AWREADY(m_axi_bus_r_AWREADY);
@@ -199,7 +221,7 @@ iicstat::iicstat(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( m_axi_bus_r_RVALID );
     sensitive << ( ap_CS_fsm_state8 );
 
-    SC_METHOD(thread_outValue_ap_vld);
+    SC_METHOD(thread_outValue_o_ap_vld);
     sensitive << ( ap_CS_fsm_state9 );
 
     SC_METHOD(thread_ap_NS_fsm);
@@ -285,6 +307,23 @@ iicstat::iicstat(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, m_axi_bus_r_BRESP, "(port)m_axi_bus_r_BRESP");
     sc_trace(mVcdFile, m_axi_bus_r_BID, "(port)m_axi_bus_r_BID");
     sc_trace(mVcdFile, m_axi_bus_r_BUSER, "(port)m_axi_bus_r_BUSER");
+    sc_trace(mVcdFile, s_axi_AXILiteS_AWVALID, "(port)s_axi_AXILiteS_AWVALID");
+    sc_trace(mVcdFile, s_axi_AXILiteS_AWREADY, "(port)s_axi_AXILiteS_AWREADY");
+    sc_trace(mVcdFile, s_axi_AXILiteS_AWADDR, "(port)s_axi_AXILiteS_AWADDR");
+    sc_trace(mVcdFile, s_axi_AXILiteS_WVALID, "(port)s_axi_AXILiteS_WVALID");
+    sc_trace(mVcdFile, s_axi_AXILiteS_WREADY, "(port)s_axi_AXILiteS_WREADY");
+    sc_trace(mVcdFile, s_axi_AXILiteS_WDATA, "(port)s_axi_AXILiteS_WDATA");
+    sc_trace(mVcdFile, s_axi_AXILiteS_WSTRB, "(port)s_axi_AXILiteS_WSTRB");
+    sc_trace(mVcdFile, s_axi_AXILiteS_ARVALID, "(port)s_axi_AXILiteS_ARVALID");
+    sc_trace(mVcdFile, s_axi_AXILiteS_ARREADY, "(port)s_axi_AXILiteS_ARREADY");
+    sc_trace(mVcdFile, s_axi_AXILiteS_ARADDR, "(port)s_axi_AXILiteS_ARADDR");
+    sc_trace(mVcdFile, s_axi_AXILiteS_RVALID, "(port)s_axi_AXILiteS_RVALID");
+    sc_trace(mVcdFile, s_axi_AXILiteS_RREADY, "(port)s_axi_AXILiteS_RREADY");
+    sc_trace(mVcdFile, s_axi_AXILiteS_RDATA, "(port)s_axi_AXILiteS_RDATA");
+    sc_trace(mVcdFile, s_axi_AXILiteS_RRESP, "(port)s_axi_AXILiteS_RRESP");
+    sc_trace(mVcdFile, s_axi_AXILiteS_BVALID, "(port)s_axi_AXILiteS_BVALID");
+    sc_trace(mVcdFile, s_axi_AXILiteS_BREADY, "(port)s_axi_AXILiteS_BREADY");
+    sc_trace(mVcdFile, s_axi_AXILiteS_BRESP, "(port)s_axi_AXILiteS_BRESP");
     sc_trace(mVcdFile, s_axi_outValue_first_AWVALID, "(port)s_axi_outValue_first_AWVALID");
     sc_trace(mVcdFile, s_axi_outValue_first_AWREADY, "(port)s_axi_outValue_first_AWREADY");
     sc_trace(mVcdFile, s_axi_outValue_first_AWADDR, "(port)s_axi_outValue_first_AWADDR");
@@ -305,7 +344,8 @@ iicstat::iicstat(sc_module_name name) : sc_module(name), mVcdFile(0) {
 #endif
 #ifdef __HLS_TRACE_LEVEL_INT__
     sc_trace(mVcdFile, ap_rst_n_inv, "ap_rst_n_inv");
-    sc_trace(mVcdFile, outValue_ap_vld, "outValue_ap_vld");
+    sc_trace(mVcdFile, outValue_i, "outValue_i");
+    sc_trace(mVcdFile, outValue_o_ap_vld, "outValue_o_ap_vld");
     sc_trace(mVcdFile, bus_r_blk_n_AR, "bus_r_blk_n_AR");
     sc_trace(mVcdFile, ap_CS_fsm, "ap_CS_fsm");
     sc_trace(mVcdFile, ap_CS_fsm_state1, "ap_CS_fsm_state1");
@@ -328,7 +368,7 @@ iicstat::iicstat(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, bus_r_BID, "bus_r_BID");
     sc_trace(mVcdFile, bus_r_BUSER, "bus_r_BUSER");
     sc_trace(mVcdFile, ap_sig_ioackin_bus_r_ARREADY, "ap_sig_ioackin_bus_r_ARREADY");
-    sc_trace(mVcdFile, bus_addr_read_reg_72, "bus_addr_read_reg_72");
+    sc_trace(mVcdFile, bus_addr_read_reg_80, "bus_addr_read_reg_80");
     sc_trace(mVcdFile, ap_reg_ioackin_bus_r_ARREADY, "ap_reg_ioackin_bus_r_ARREADY");
     sc_trace(mVcdFile, ap_CS_fsm_state9, "ap_CS_fsm_state9");
     sc_trace(mVcdFile, ap_NS_fsm, "ap_NS_fsm");
@@ -347,6 +387,7 @@ iicstat::~iicstat() {
     mHdltvoutHandle << "] " << endl;
     mHdltvinHandle.close();
     mHdltvoutHandle.close();
+    delete iicstat_AXILiteS_s_axi_U;
     delete iicstat_outValue_first_s_axi_U;
     delete iicstat_bus_r_m_axi_U;
 }
@@ -401,7 +442,7 @@ void iicstat::thread_ap_clk_no_reset_() {
         }
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read()) && esl_seteq<1,1,1>(bus_r_RVALID.read(), ap_const_logic_1))) {
-        bus_addr_read_reg_72 = bus_r_RDATA.read();
+        bus_addr_read_reg_80 = bus_r_RDATA.read();
     }
 }
 
@@ -467,11 +508,11 @@ void iicstat::thread_bus_r_blk_n_R() {
     }
 }
 
-void iicstat::thread_outValue_ap_vld() {
+void iicstat::thread_outValue_o_ap_vld() {
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state9.read())) {
-        outValue_ap_vld = ap_const_logic_1;
+        outValue_o_ap_vld = ap_const_logic_1;
     } else {
-        outValue_ap_vld = ap_const_logic_0;
+        outValue_o_ap_vld = ap_const_logic_0;
     }
 }
 
@@ -576,6 +617,23 @@ void iicstat::thread_hdltv_gen() {
         mHdltvinHandle << " , " <<  " \"m_axi_bus_r_BRESP\" :  \"" << m_axi_bus_r_BRESP.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"m_axi_bus_r_BID\" :  \"" << m_axi_bus_r_BID.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"m_axi_bus_r_BUSER\" :  \"" << m_axi_bus_r_BUSER.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_AXILiteS_AWVALID\" :  \"" << s_axi_AXILiteS_AWVALID.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_AXILiteS_AWREADY\" :  \"" << s_axi_AXILiteS_AWREADY.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_AXILiteS_AWADDR\" :  \"" << s_axi_AXILiteS_AWADDR.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_AXILiteS_WVALID\" :  \"" << s_axi_AXILiteS_WVALID.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_AXILiteS_WREADY\" :  \"" << s_axi_AXILiteS_WREADY.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_AXILiteS_WDATA\" :  \"" << s_axi_AXILiteS_WDATA.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_AXILiteS_WSTRB\" :  \"" << s_axi_AXILiteS_WSTRB.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_AXILiteS_ARVALID\" :  \"" << s_axi_AXILiteS_ARVALID.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_AXILiteS_ARREADY\" :  \"" << s_axi_AXILiteS_ARREADY.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_AXILiteS_ARADDR\" :  \"" << s_axi_AXILiteS_ARADDR.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_AXILiteS_RVALID\" :  \"" << s_axi_AXILiteS_RVALID.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_AXILiteS_RREADY\" :  \"" << s_axi_AXILiteS_RREADY.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_AXILiteS_RDATA\" :  \"" << s_axi_AXILiteS_RDATA.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_AXILiteS_RRESP\" :  \"" << s_axi_AXILiteS_RRESP.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_AXILiteS_BVALID\" :  \"" << s_axi_AXILiteS_BVALID.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_AXILiteS_BREADY\" :  \"" << s_axi_AXILiteS_BREADY.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_AXILiteS_BRESP\" :  \"" << s_axi_AXILiteS_BRESP.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"s_axi_outValue_first_AWVALID\" :  \"" << s_axi_outValue_first_AWVALID.read() << "\" ";
         mHdltvoutHandle << " , " <<  " \"s_axi_outValue_first_AWREADY\" :  \"" << s_axi_outValue_first_AWREADY.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"s_axi_outValue_first_AWADDR\" :  \"" << s_axi_outValue_first_AWADDR.read() << "\" ";

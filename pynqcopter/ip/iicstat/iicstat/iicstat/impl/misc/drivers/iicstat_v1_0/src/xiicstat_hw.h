@@ -10,14 +10,23 @@
 // 0x04 : reserved
 // 0x08 : reserved
 // 0x0c : reserved
-// 0x10 : Data signal of outValue
-//        bit 31~0 - outValue[31:0] (Read)
-// 0x14 : Control signal of outValue
-//        bit 0  - outValue_ap_vld (Read/COR)
+// 0x10 : Data signal of outValue_i
+//        bit 31~0 - outValue_i[31:0] (Read/Write)
+// 0x14 : reserved
+// 0x18 : Data signal of outValue_o
+//        bit 31~0 - outValue_o[31:0] (Read)
+// 0x1c : Control signal of outValue_o
+//        bit 0  - outValue_o_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
-#define XIICSTAT_OUTVALUE_FIRST_ADDR_OUTVALUE_DATA 0x10
-#define XIICSTAT_OUTVALUE_FIRST_BITS_OUTVALUE_DATA 32
-#define XIICSTAT_OUTVALUE_FIRST_ADDR_OUTVALUE_CTRL 0x14
+#define XIICSTAT_OUTVALUE_FIRST_ADDR_OUTVALUE_I_DATA 0x10
+#define XIICSTAT_OUTVALUE_FIRST_BITS_OUTVALUE_I_DATA 32
+#define XIICSTAT_OUTVALUE_FIRST_ADDR_OUTVALUE_O_DATA 0x18
+#define XIICSTAT_OUTVALUE_FIRST_BITS_OUTVALUE_O_DATA 32
+#define XIICSTAT_OUTVALUE_FIRST_ADDR_OUTVALUE_O_CTRL 0x1c
+
+// AXILiteS
+// (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
+
 

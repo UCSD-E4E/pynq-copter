@@ -112,7 +112,7 @@
 <RtlPorts>
 <name>outValue11</name>
 <CType>
-<TypeName>unsigned int</TypeName>
+<TypeName>int</TypeName>
 <TypeWidth>32</TypeWidth>
 <PhysicalWidth>32</PhysicalWidth>
 </CType>

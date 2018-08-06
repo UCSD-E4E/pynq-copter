@@ -68,9 +68,8 @@ module iiccomm5_AXILiteS_s_axi
     output wire [31:0]                   outValue10_i,
     input  wire [31:0]                   outValue10_o,
     input  wire                          outValue10_o_ap_vld,
-    output wire [31:0]                   outValue11_i,
-    input  wire [31:0]                   outValue11_o,
-    input  wire                          outValue11_o_ap_vld
+    input  wire [31:0]                   outValue11,
+    input  wire                          outValue11_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -171,13 +170,10 @@ module iiccomm5_AXILiteS_s_axi
 // 0xac : Control signal of outValue10_o
 //        bit 0  - outValue10_o_ap_vld (Read/COR)
 //        others - reserved
-// 0xb0 : Data signal of outValue11_i
-//        bit 31~0 - outValue11_i[31:0] (Read/Write)
-// 0xb4 : reserved
-// 0xb8 : Data signal of outValue11_o
-//        bit 31~0 - outValue11_o[31:0] (Read)
-// 0xbc : Control signal of outValue11_o
-//        bit 0  - outValue11_o_ap_vld (Read/COR)
+// 0xb0 : Data signal of outValue11
+//        bit 31~0 - outValue11[31:0] (Read)
+// 0xb4 : Control signal of outValue11
+//        bit 0  - outValue11_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -227,10 +223,8 @@ localparam
     ADDR_OUTVALUE10_I_CTRL   = 8'ha4,
     ADDR_OUTVALUE10_O_DATA_0 = 8'ha8,
     ADDR_OUTVALUE10_O_CTRL   = 8'hac,
-    ADDR_OUTVALUE11_I_DATA_0 = 8'hb0,
-    ADDR_OUTVALUE11_I_CTRL   = 8'hb4,
-    ADDR_OUTVALUE11_O_DATA_0 = 8'hb8,
-    ADDR_OUTVALUE11_O_CTRL   = 8'hbc,
+    ADDR_OUTVALUE11_DATA_0   = 8'hb0,
+    ADDR_OUTVALUE11_CTRL     = 8'hb4,
     WRIDLE                   = 2'd0,
     WRDATA                   = 2'd1,
     WRRESP                   = 2'd2,
@@ -291,9 +285,8 @@ localparam
     reg  [31:0]                   int_outValue10_i = 'b0;
     reg  [31:0]                   int_outValue10_o = 'b0;
     reg                           int_outValue10_o_ap_vld;
-    reg  [31:0]                   int_outValue11_i = 'b0;
-    reg  [31:0]                   int_outValue11_o = 'b0;
-    reg                           int_outValue11_o_ap_vld;
+    reg  [31:0]                   int_outValue11 = 'b0;
+    reg                           int_outValue11_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -491,14 +484,11 @@ always @(posedge ACLK) begin
                 ADDR_OUTVALUE10_O_CTRL: begin
                     rdata[0] <= int_outValue10_o_ap_vld;
                 end
-                ADDR_OUTVALUE11_I_DATA_0: begin
-                    rdata <= int_outValue11_i[31:0];
+                ADDR_OUTVALUE11_DATA_0: begin
+                    rdata <= int_outValue11[31:0];
                 end
-                ADDR_OUTVALUE11_O_DATA_0: begin
-                    rdata <= int_outValue11_o[31:0];
-                end
-                ADDR_OUTVALUE11_O_CTRL: begin
-                    rdata[0] <= int_outValue11_o_ap_vld;
+                ADDR_OUTVALUE11_CTRL: begin
+                    rdata[0] <= int_outValue11_ap_vld;
                 end
             endcase
         end
@@ -519,7 +509,6 @@ assign outValue7_i  = int_outValue7_i;
 assign outValue8_i  = int_outValue8_i;
 assign outValue9_i  = int_outValue9_i;
 assign outValue10_i = int_outValue10_i;
-assign outValue11_i = int_outValue11_i;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -936,35 +925,25 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_outValue11_i[31:0]
+// int_outValue11
 always @(posedge ACLK) begin
     if (ARESET)
-        int_outValue11_i[31:0] <= 0;
+        int_outValue11 <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUTVALUE11_I_DATA_0)
-            int_outValue11_i[31:0] <= (WDATA[31:0] & wmask) | (int_outValue11_i[31:0] & ~wmask);
+        if (outValue11_ap_vld)
+            int_outValue11 <= outValue11;
     end
 end
 
-// int_outValue11_o
+// int_outValue11_ap_vld
 always @(posedge ACLK) begin
     if (ARESET)
-        int_outValue11_o <= 0;
+        int_outValue11_ap_vld <= 1'b0;
     else if (ACLK_EN) begin
-        if (outValue11_o_ap_vld)
-            int_outValue11_o <= outValue11_o;
-    end
-end
-
-// int_outValue11_o_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_outValue11_o_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (outValue11_o_ap_vld)
-            int_outValue11_o_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_OUTVALUE11_O_CTRL)
-            int_outValue11_o_ap_vld <= 1'b0; // clear on read
+        if (outValue11_ap_vld)
+            int_outValue11_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_OUTVALUE11_CTRL)
+            int_outValue11_ap_vld <= 1'b0; // clear on read
     end
 end
 

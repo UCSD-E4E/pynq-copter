@@ -19,6 +19,8 @@ generic (
     C_M_AXI_BUS_R_ARUSER_WIDTH : INTEGER := 1;
     C_M_AXI_BUS_R_RUSER_WIDTH : INTEGER := 1;
     C_M_AXI_BUS_R_BUSER_WIDTH : INTEGER := 1;
+    C_S_AXI_AXILITES_ADDR_WIDTH : INTEGER := 4;
+    C_S_AXI_AXILITES_DATA_WIDTH : INTEGER := 32;
     C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH : INTEGER := 5;
     C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH : INTEGER := 32;
     C_M_AXI_BUS_R_TARGET_ADDR : INTEGER := 0;
@@ -73,6 +75,23 @@ port (
     m_axi_bus_r_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
     m_axi_bus_r_BID : IN STD_LOGIC_VECTOR (C_M_AXI_BUS_R_ID_WIDTH-1 downto 0);
     m_axi_bus_r_BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_BUS_R_BUSER_WIDTH-1 downto 0);
+    s_axi_AXILiteS_AWVALID : IN STD_LOGIC;
+    s_axi_AXILiteS_AWREADY : OUT STD_LOGIC;
+    s_axi_AXILiteS_AWADDR : IN STD_LOGIC_VECTOR (C_S_AXI_AXILITES_ADDR_WIDTH-1 downto 0);
+    s_axi_AXILiteS_WVALID : IN STD_LOGIC;
+    s_axi_AXILiteS_WREADY : OUT STD_LOGIC;
+    s_axi_AXILiteS_WDATA : IN STD_LOGIC_VECTOR (C_S_AXI_AXILITES_DATA_WIDTH-1 downto 0);
+    s_axi_AXILiteS_WSTRB : IN STD_LOGIC_VECTOR (C_S_AXI_AXILITES_DATA_WIDTH/8-1 downto 0);
+    s_axi_AXILiteS_ARVALID : IN STD_LOGIC;
+    s_axi_AXILiteS_ARREADY : OUT STD_LOGIC;
+    s_axi_AXILiteS_ARADDR : IN STD_LOGIC_VECTOR (C_S_AXI_AXILITES_ADDR_WIDTH-1 downto 0);
+    s_axi_AXILiteS_RVALID : OUT STD_LOGIC;
+    s_axi_AXILiteS_RREADY : IN STD_LOGIC;
+    s_axi_AXILiteS_RDATA : OUT STD_LOGIC_VECTOR (C_S_AXI_AXILITES_DATA_WIDTH-1 downto 0);
+    s_axi_AXILiteS_RRESP : OUT STD_LOGIC_VECTOR (1 downto 0);
+    s_axi_AXILiteS_BVALID : OUT STD_LOGIC;
+    s_axi_AXILiteS_BREADY : IN STD_LOGIC;
+    s_axi_AXILiteS_BRESP : OUT STD_LOGIC_VECTOR (1 downto 0);
     s_axi_outValue_first_AWVALID : IN STD_LOGIC;
     s_axi_outValue_first_AWREADY : OUT STD_LOGIC;
     s_axi_outValue_first_AWADDR : IN STD_LOGIC_VECTOR (C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH-1 downto 0);
@@ -96,7 +115,7 @@ end;
 architecture behav of iicstat is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "iicstat,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=622,HLS_SYN_LUT=758}";
+    "iicstat,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=696,HLS_SYN_LUT=862}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (8 downto 0) := "000000001";
@@ -122,7 +141,8 @@ architecture behav of iicstat is
     constant ap_const_boolean_1 : BOOLEAN := true;
 
     signal ap_rst_n_inv : STD_LOGIC;
-    signal outValue_ap_vld : STD_LOGIC;
+    signal outValue_i : STD_LOGIC_VECTOR (31 downto 0);
+    signal outValue_o_ap_vld : STD_LOGIC;
     signal bus_r_blk_n_AR : STD_LOGIC;
     signal ap_CS_fsm : STD_LOGIC_VECTOR (8 downto 0) := "000000001";
     attribute fsm_encoding : string;
@@ -149,11 +169,39 @@ architecture behav of iicstat is
     signal bus_r_BID : STD_LOGIC_VECTOR (0 downto 0);
     signal bus_r_BUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_sig_ioackin_bus_r_ARREADY : STD_LOGIC;
-    signal bus_addr_read_reg_72 : STD_LOGIC_VECTOR (31 downto 0);
+    signal bus_addr_read_reg_80 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_reg_ioackin_bus_r_ARREADY : STD_LOGIC := '0';
     signal ap_CS_fsm_state9 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state9 : signal is "none";
     signal ap_NS_fsm : STD_LOGIC_VECTOR (8 downto 0);
+
+    component iicstat_AXILiteS_s_axi IS
+    generic (
+        C_S_AXI_ADDR_WIDTH : INTEGER;
+        C_S_AXI_DATA_WIDTH : INTEGER );
+    port (
+        AWVALID : IN STD_LOGIC;
+        AWREADY : OUT STD_LOGIC;
+        AWADDR : IN STD_LOGIC_VECTOR (C_S_AXI_ADDR_WIDTH-1 downto 0);
+        WVALID : IN STD_LOGIC;
+        WREADY : OUT STD_LOGIC;
+        WDATA : IN STD_LOGIC_VECTOR (C_S_AXI_DATA_WIDTH-1 downto 0);
+        WSTRB : IN STD_LOGIC_VECTOR (C_S_AXI_DATA_WIDTH/8-1 downto 0);
+        ARVALID : IN STD_LOGIC;
+        ARREADY : OUT STD_LOGIC;
+        ARADDR : IN STD_LOGIC_VECTOR (C_S_AXI_ADDR_WIDTH-1 downto 0);
+        RVALID : OUT STD_LOGIC;
+        RREADY : IN STD_LOGIC;
+        RDATA : OUT STD_LOGIC_VECTOR (C_S_AXI_DATA_WIDTH-1 downto 0);
+        RRESP : OUT STD_LOGIC_VECTOR (1 downto 0);
+        BVALID : OUT STD_LOGIC;
+        BREADY : IN STD_LOGIC;
+        BRESP : OUT STD_LOGIC_VECTOR (1 downto 0);
+        ACLK : IN STD_LOGIC;
+        ARESET : IN STD_LOGIC;
+        ACLK_EN : IN STD_LOGIC );
+    end component;
+
 
     component iicstat_outValue_first_s_axi IS
     generic (
@@ -180,8 +228,9 @@ architecture behav of iicstat is
         ACLK : IN STD_LOGIC;
         ARESET : IN STD_LOGIC;
         ACLK_EN : IN STD_LOGIC;
-        outValue : IN STD_LOGIC_VECTOR (31 downto 0);
-        outValue_ap_vld : IN STD_LOGIC );
+        outValue_o : IN STD_LOGIC_VECTOR (31 downto 0);
+        outValue_o_ap_vld : IN STD_LOGIC;
+        outValue_i : OUT STD_LOGIC_VECTOR (31 downto 0) );
     end component;
 
 
@@ -305,6 +354,32 @@ architecture behav of iicstat is
 
 
 begin
+    iicstat_AXILiteS_s_axi_U : component iicstat_AXILiteS_s_axi
+    generic map (
+        C_S_AXI_ADDR_WIDTH => C_S_AXI_AXILITES_ADDR_WIDTH,
+        C_S_AXI_DATA_WIDTH => C_S_AXI_AXILITES_DATA_WIDTH)
+    port map (
+        AWVALID => s_axi_AXILiteS_AWVALID,
+        AWREADY => s_axi_AXILiteS_AWREADY,
+        AWADDR => s_axi_AXILiteS_AWADDR,
+        WVALID => s_axi_AXILiteS_WVALID,
+        WREADY => s_axi_AXILiteS_WREADY,
+        WDATA => s_axi_AXILiteS_WDATA,
+        WSTRB => s_axi_AXILiteS_WSTRB,
+        ARVALID => s_axi_AXILiteS_ARVALID,
+        ARREADY => s_axi_AXILiteS_ARREADY,
+        ARADDR => s_axi_AXILiteS_ARADDR,
+        RVALID => s_axi_AXILiteS_RVALID,
+        RREADY => s_axi_AXILiteS_RREADY,
+        RDATA => s_axi_AXILiteS_RDATA,
+        RRESP => s_axi_AXILiteS_RRESP,
+        BVALID => s_axi_AXILiteS_BVALID,
+        BREADY => s_axi_AXILiteS_BREADY,
+        BRESP => s_axi_AXILiteS_BRESP,
+        ACLK => ap_clk,
+        ARESET => ap_rst_n_inv,
+        ACLK_EN => ap_const_logic_1);
+
     iicstat_outValue_first_s_axi_U : component iicstat_outValue_first_s_axi
     generic map (
         C_S_AXI_ADDR_WIDTH => C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH,
@@ -330,8 +405,9 @@ begin
         ACLK => ap_clk,
         ARESET => ap_rst_n_inv,
         ACLK_EN => ap_const_logic_1,
-        outValue => bus_addr_read_reg_72,
-        outValue_ap_vld => outValue_ap_vld);
+        outValue_o => bus_addr_read_reg_80,
+        outValue_o_ap_vld => outValue_o_ap_vld,
+        outValue_i => outValue_i);
 
     iicstat_bus_r_m_axi_U : component iicstat_bus_r_m_axi
     generic map (
@@ -485,8 +561,8 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((ap_const_logic_1 = ap_CS_fsm_state8) and (bus_r_RVALID = ap_const_logic_1))) then
-                bus_addr_read_reg_72 <= bus_r_RDATA;
+            if (((bus_r_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state8))) then
+                bus_addr_read_reg_80 <= bus_r_RDATA;
             end if;
         end if;
     end process;
@@ -513,7 +589,7 @@ begin
             when ap_ST_fsm_state7 => 
                 ap_NS_fsm <= ap_ST_fsm_state8;
             when ap_ST_fsm_state8 => 
-                if (((ap_const_logic_1 = ap_CS_fsm_state8) and (bus_r_RVALID = ap_const_logic_1))) then
+                if (((bus_r_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state8))) then
                     ap_NS_fsm <= ap_ST_fsm_state9;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state8;
@@ -557,7 +633,7 @@ begin
 
     bus_r_RREADY_assign_proc : process(ap_CS_fsm_state8, bus_r_RVALID)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state8) and (bus_r_RVALID = ap_const_logic_1))) then 
+        if (((bus_r_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state8))) then 
             bus_r_RREADY <= ap_const_logic_1;
         else 
             bus_r_RREADY <= ap_const_logic_0;
@@ -585,12 +661,12 @@ begin
     end process;
 
 
-    outValue_ap_vld_assign_proc : process(ap_CS_fsm_state9)
+    outValue_o_ap_vld_assign_proc : process(ap_CS_fsm_state9)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state9)) then 
-            outValue_ap_vld <= ap_const_logic_1;
+            outValue_o_ap_vld <= ap_const_logic_1;
         else 
-            outValue_ap_vld <= ap_const_logic_0;
+            outValue_o_ap_vld <= ap_const_logic_0;
         end if; 
     end process;
 

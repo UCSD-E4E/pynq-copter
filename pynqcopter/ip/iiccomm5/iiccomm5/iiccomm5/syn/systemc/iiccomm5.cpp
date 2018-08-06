@@ -99,39 +99,38 @@ iiccomm5::iiccomm5(sc_module_name name) : sc_module(name), mVcdFile(0) {
     iiccomm5_AXILiteS_s_axi_U->ap_ready(ap_ready);
     iiccomm5_AXILiteS_s_axi_U->ap_done(ap_done);
     iiccomm5_AXILiteS_s_axi_U->ap_idle(ap_idle);
-    iiccomm5_AXILiteS_s_axi_U->outValue1_o(iic_read_reg_437);
+    iiccomm5_AXILiteS_s_axi_U->outValue1_o(iic_read_reg_433);
     iiccomm5_AXILiteS_s_axi_U->outValue1_o_ap_vld(outValue1_o_ap_vld);
     iiccomm5_AXILiteS_s_axi_U->outValue1_i(outValue1_i);
-    iiccomm5_AXILiteS_s_axi_U->outValue2_o(iic_addr_read_reg_448);
+    iiccomm5_AXILiteS_s_axi_U->outValue2_o(iic_addr_read_reg_444);
     iiccomm5_AXILiteS_s_axi_U->outValue2_o_ap_vld(outValue2_o_ap_vld);
     iiccomm5_AXILiteS_s_axi_U->outValue2_i(outValue2_i);
-    iiccomm5_AXILiteS_s_axi_U->outValue3_o(iic_addr_1_read_reg_459);
+    iiccomm5_AXILiteS_s_axi_U->outValue3_o(iic_addr_1_read_reg_455);
     iiccomm5_AXILiteS_s_axi_U->outValue3_o_ap_vld(outValue3_o_ap_vld);
     iiccomm5_AXILiteS_s_axi_U->outValue3_i(outValue3_i);
-    iiccomm5_AXILiteS_s_axi_U->outValue4_o(iic_addr_2_read_reg_470);
+    iiccomm5_AXILiteS_s_axi_U->outValue4_o(iic_addr_2_read_reg_466);
     iiccomm5_AXILiteS_s_axi_U->outValue4_o_ap_vld(outValue4_o_ap_vld);
     iiccomm5_AXILiteS_s_axi_U->outValue4_i(outValue4_i);
-    iiccomm5_AXILiteS_s_axi_U->outValue5_o(iic_addr_3_read_reg_475);
+    iiccomm5_AXILiteS_s_axi_U->outValue5_o(iic_addr_3_read_reg_471);
     iiccomm5_AXILiteS_s_axi_U->outValue5_o_ap_vld(outValue5_o_ap_vld);
     iiccomm5_AXILiteS_s_axi_U->outValue5_i(outValue5_i);
-    iiccomm5_AXILiteS_s_axi_U->outValue6_o(iic_addr_4_read_reg_480);
+    iiccomm5_AXILiteS_s_axi_U->outValue6_o(iic_addr_4_read_reg_476);
     iiccomm5_AXILiteS_s_axi_U->outValue6_o_ap_vld(outValue6_o_ap_vld);
     iiccomm5_AXILiteS_s_axi_U->outValue6_i(outValue6_i);
-    iiccomm5_AXILiteS_s_axi_U->outValue7_o(iic_addr_5_read_reg_485);
+    iiccomm5_AXILiteS_s_axi_U->outValue7_o(iic_addr_5_read_reg_481);
     iiccomm5_AXILiteS_s_axi_U->outValue7_o_ap_vld(outValue7_o_ap_vld);
     iiccomm5_AXILiteS_s_axi_U->outValue7_i(outValue7_i);
-    iiccomm5_AXILiteS_s_axi_U->outValue8_o(iic_addr_6_read_reg_490);
+    iiccomm5_AXILiteS_s_axi_U->outValue8_o(iic_addr_6_read_reg_486);
     iiccomm5_AXILiteS_s_axi_U->outValue8_o_ap_vld(outValue8_o_ap_vld);
     iiccomm5_AXILiteS_s_axi_U->outValue8_i(outValue8_i);
-    iiccomm5_AXILiteS_s_axi_U->outValue9_o(iic_addr_7_read_reg_495);
+    iiccomm5_AXILiteS_s_axi_U->outValue9_o(iic_addr_7_read_reg_491);
     iiccomm5_AXILiteS_s_axi_U->outValue9_o_ap_vld(outValue9_o_ap_vld);
     iiccomm5_AXILiteS_s_axi_U->outValue9_i(outValue9_i);
-    iiccomm5_AXILiteS_s_axi_U->outValue10_o(iic_addr_8_read_reg_500);
+    iiccomm5_AXILiteS_s_axi_U->outValue10_o(iic_addr_8_read_reg_496);
     iiccomm5_AXILiteS_s_axi_U->outValue10_o_ap_vld(outValue10_o_ap_vld);
     iiccomm5_AXILiteS_s_axi_U->outValue10_i(outValue10_i);
-    iiccomm5_AXILiteS_s_axi_U->outValue11_o(ap_var_for_const1);
-    iiccomm5_AXILiteS_s_axi_U->outValue11_o_ap_vld(outValue11_o_ap_vld);
-    iiccomm5_AXILiteS_s_axi_U->outValue11_i(outValue11_i);
+    iiccomm5_AXILiteS_s_axi_U->outValue11(ap_var_for_const1);
+    iiccomm5_AXILiteS_s_axi_U->outValue11_ap_vld(outValue11_ap_vld);
     iiccomm5_iic_m_axi_U = new iiccomm5_iic_m_axi<32,32,5,16,16,16,16,C_M_AXI_IIC_ID_WIDTH,C_M_AXI_IIC_ADDR_WIDTH,C_M_AXI_IIC_DATA_WIDTH,C_M_AXI_IIC_AWUSER_WIDTH,C_M_AXI_IIC_ARUSER_WIDTH,C_M_AXI_IIC_WUSER_WIDTH,C_M_AXI_IIC_RUSER_WIDTH,C_M_AXI_IIC_BUSER_WIDTH,C_M_AXI_IIC_TARGET_ADDR,C_M_AXI_IIC_USER_VALUE,C_M_AXI_IIC_PROT_VALUE,C_M_AXI_IIC_CACHE_VALUE>("iiccomm5_iic_m_axi_U");
     iiccomm5_iic_m_axi_U->AWVALID(m_axi_iic_AWVALID);
     iiccomm5_iic_m_axi_U->AWREADY(m_axi_iic_AWREADY);
@@ -376,7 +375,7 @@ iiccomm5::iiccomm5(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_outValue10_o_ap_vld);
     sensitive << ( ap_CS_fsm_state18 );
 
-    SC_METHOD(thread_outValue11_o_ap_vld);
+    SC_METHOD(thread_outValue11_ap_vld);
     sensitive << ( ap_CS_fsm_state18 );
 
     SC_METHOD(thread_outValue1_o_ap_vld);
@@ -554,8 +553,7 @@ iiccomm5::iiccomm5(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, outValue9_o_ap_vld, "outValue9_o_ap_vld");
     sc_trace(mVcdFile, outValue10_i, "outValue10_i");
     sc_trace(mVcdFile, outValue10_o_ap_vld, "outValue10_o_ap_vld");
-    sc_trace(mVcdFile, outValue11_i, "outValue11_i");
-    sc_trace(mVcdFile, outValue11_o_ap_vld, "outValue11_o_ap_vld");
+    sc_trace(mVcdFile, outValue11_ap_vld, "outValue11_ap_vld");
     sc_trace(mVcdFile, iic_blk_n_AR, "iic_blk_n_AR");
     sc_trace(mVcdFile, iic_blk_n_R, "iic_blk_n_R");
     sc_trace(mVcdFile, ap_CS_fsm_state8, "ap_CS_fsm_state8");
@@ -591,16 +589,16 @@ iiccomm5::iiccomm5(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, iic_BID, "iic_BID");
     sc_trace(mVcdFile, iic_BUSER, "iic_BUSER");
     sc_trace(mVcdFile, ap_sig_ioackin_iic_ARREADY, "ap_sig_ioackin_iic_ARREADY");
-    sc_trace(mVcdFile, iic_read_reg_437, "iic_read_reg_437");
-    sc_trace(mVcdFile, iic_addr_read_reg_448, "iic_addr_read_reg_448");
-    sc_trace(mVcdFile, iic_addr_1_read_reg_459, "iic_addr_1_read_reg_459");
-    sc_trace(mVcdFile, iic_addr_2_read_reg_470, "iic_addr_2_read_reg_470");
-    sc_trace(mVcdFile, iic_addr_3_read_reg_475, "iic_addr_3_read_reg_475");
-    sc_trace(mVcdFile, iic_addr_4_read_reg_480, "iic_addr_4_read_reg_480");
-    sc_trace(mVcdFile, iic_addr_5_read_reg_485, "iic_addr_5_read_reg_485");
-    sc_trace(mVcdFile, iic_addr_6_read_reg_490, "iic_addr_6_read_reg_490");
-    sc_trace(mVcdFile, iic_addr_7_read_reg_495, "iic_addr_7_read_reg_495");
-    sc_trace(mVcdFile, iic_addr_8_read_reg_500, "iic_addr_8_read_reg_500");
+    sc_trace(mVcdFile, iic_read_reg_433, "iic_read_reg_433");
+    sc_trace(mVcdFile, iic_addr_read_reg_444, "iic_addr_read_reg_444");
+    sc_trace(mVcdFile, iic_addr_1_read_reg_455, "iic_addr_1_read_reg_455");
+    sc_trace(mVcdFile, iic_addr_2_read_reg_466, "iic_addr_2_read_reg_466");
+    sc_trace(mVcdFile, iic_addr_3_read_reg_471, "iic_addr_3_read_reg_471");
+    sc_trace(mVcdFile, iic_addr_4_read_reg_476, "iic_addr_4_read_reg_476");
+    sc_trace(mVcdFile, iic_addr_5_read_reg_481, "iic_addr_5_read_reg_481");
+    sc_trace(mVcdFile, iic_addr_6_read_reg_486, "iic_addr_6_read_reg_486");
+    sc_trace(mVcdFile, iic_addr_7_read_reg_491, "iic_addr_7_read_reg_491");
+    sc_trace(mVcdFile, iic_addr_8_read_reg_496, "iic_addr_8_read_reg_496");
     sc_trace(mVcdFile, ap_reg_ioackin_iic_ARREADY, "ap_reg_ioackin_iic_ARREADY");
     sc_trace(mVcdFile, ap_CS_fsm_state18, "ap_CS_fsm_state18");
     sc_trace(mVcdFile, ap_NS_fsm, "ap_NS_fsm");
@@ -717,34 +715,34 @@ void iiccomm5::thread_ap_clk_no_reset_() {
         }
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state10.read()) && !(esl_seteq<1,1,1>(ap_const_logic_0, ap_sig_ioackin_iic_ARREADY.read()) || esl_seteq<1,1,1>(ap_const_logic_0, iic_RVALID.read())))) {
-        iic_addr_1_read_reg_459 = iic_RDATA.read();
+        iic_addr_1_read_reg_455 = iic_RDATA.read();
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state11.read()) && esl_seteq<1,1,1>(iic_RVALID.read(), ap_const_logic_1))) {
-        iic_addr_2_read_reg_470 = iic_RDATA.read();
+        iic_addr_2_read_reg_466 = iic_RDATA.read();
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state12.read()) && esl_seteq<1,1,1>(iic_RVALID.read(), ap_const_logic_1))) {
-        iic_addr_3_read_reg_475 = iic_RDATA.read();
+        iic_addr_3_read_reg_471 = iic_RDATA.read();
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state13.read()) && esl_seteq<1,1,1>(iic_RVALID.read(), ap_const_logic_1))) {
-        iic_addr_4_read_reg_480 = iic_RDATA.read();
+        iic_addr_4_read_reg_476 = iic_RDATA.read();
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state14.read()) && esl_seteq<1,1,1>(iic_RVALID.read(), ap_const_logic_1))) {
-        iic_addr_5_read_reg_485 = iic_RDATA.read();
+        iic_addr_5_read_reg_481 = iic_RDATA.read();
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state15.read()) && esl_seteq<1,1,1>(iic_RVALID.read(), ap_const_logic_1))) {
-        iic_addr_6_read_reg_490 = iic_RDATA.read();
+        iic_addr_6_read_reg_486 = iic_RDATA.read();
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state16.read()) && esl_seteq<1,1,1>(iic_RVALID.read(), ap_const_logic_1))) {
-        iic_addr_7_read_reg_495 = iic_RDATA.read();
+        iic_addr_7_read_reg_491 = iic_RDATA.read();
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state17.read()) && esl_seteq<1,1,1>(iic_RVALID.read(), ap_const_logic_1))) {
-        iic_addr_8_read_reg_500 = iic_RDATA.read();
+        iic_addr_8_read_reg_496 = iic_RDATA.read();
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state9.read()) && !(esl_seteq<1,1,1>(ap_const_logic_0, ap_sig_ioackin_iic_ARREADY.read()) || esl_seteq<1,1,1>(ap_const_logic_0, iic_RVALID.read())))) {
-        iic_addr_read_reg_448 = iic_RDATA.read();
+        iic_addr_read_reg_444 = iic_RDATA.read();
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state8.read()) && !(esl_seteq<1,1,1>(ap_const_logic_0, ap_sig_ioackin_iic_ARREADY.read()) || esl_seteq<1,1,1>(ap_const_logic_0, iic_RVALID.read())))) {
-        iic_read_reg_437 = iic_RDATA.read();
+        iic_read_reg_433 = iic_RDATA.read();
     }
 }
 
@@ -992,11 +990,11 @@ void iiccomm5::thread_outValue10_o_ap_vld() {
     }
 }
 
-void iiccomm5::thread_outValue11_o_ap_vld() {
+void iiccomm5::thread_outValue11_ap_vld() {
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state18.read())) {
-        outValue11_o_ap_vld = ap_const_logic_1;
+        outValue11_ap_vld = ap_const_logic_1;
     } else {
-        outValue11_o_ap_vld = ap_const_logic_0;
+        outValue11_ap_vld = ap_const_logic_0;
     }
 }
 

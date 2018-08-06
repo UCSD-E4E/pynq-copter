@@ -7,15 +7,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
-set port_outValue_first {
-outValue { 
-	dir O
-	width 32
-	depth 1
-	mode ap_vld
-	offset 16
-	offset_end 23
-}
+set port_AXILiteS {
 }
 
 
@@ -24,6 +16,45 @@ if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
 			id 1 \
+			corename iicstat_AXILiteS_axilite \
+			name iicstat_AXILiteS_s_axi \
+			ports {$port_AXILiteS} \
+			op interface \
+		} "
+	} else {
+		puts "@W \[IMPL-110\] Cannot find AXI Lite interface model in the library. Ignored generation of AXI Lite  interface for 'AXILiteS'"
+	}
+}
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler iicstat_AXILiteS_s_axi
+}
+
+set port_outValue_first {
+outValue_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 16
+	offset_end 23
+}
+outValue_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 24
+	offset_end 31
+}
+}
+
+
+# Native S_AXILite:
+if {${::AESL::PGuard_simmodel_gen}} {
+	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
+		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
+			id 2 \
 			corename iicstat_outValue_first_axilite \
 			name iicstat_outValue_first_s_axi \
 			ports {$port_outValue_first} \
@@ -42,7 +73,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 2 \
+    id 3 \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 

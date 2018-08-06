@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Sun Aug  5 18:58:24 2018
+-- Date        : Mon Aug  6 02:00:47 2018
 -- Host        : fabricant running 64-bit Linux Mint 18 Sarah
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/iavendano/pynq-copter/pynqcopter/iicComm4/iicComm4/iicComm4.srcs/sources_1/bd/iicComm4/ip/iicComm4_iiccomm4_0_0/iicComm4_iiccomm4_0_0_sim_netlist.vhdl
@@ -30595,7 +30595,7 @@ architecture STRUCTURE of iicComm4_iiccomm4_0_0 is
   attribute X_INTERFACE_INFO of m_axi_iic_WDATA : signal is "xilinx.com:interface:aximm:1.0 m_axi_iic WDATA";
   attribute X_INTERFACE_INFO of m_axi_iic_WSTRB : signal is "xilinx.com:interface:aximm:1.0 m_axi_iic WSTRB";
   attribute X_INTERFACE_INFO of outValue11 : signal is "xilinx.com:signal:data:1.0 outValue11 DATA";
-  attribute X_INTERFACE_PARAMETER of outValue11 : signal is "XIL_INTERFACENAME outValue11, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}";
+  attribute X_INTERFACE_PARAMETER of outValue11 : signal is "XIL_INTERFACENAME outValue11, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}";
   attribute X_INTERFACE_INFO of s_axi_AXILiteS_ARADDR : signal is "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS ARADDR";
   attribute X_INTERFACE_INFO of s_axi_AXILiteS_AWADDR : signal is "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS AWADDR";
   attribute X_INTERFACE_INFO of s_axi_AXILiteS_BRESP : signal is "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS BRESP";

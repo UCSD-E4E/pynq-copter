@@ -37,7 +37,7 @@
 
 static int val1;
 
-void iicstat(volatile int *bus, volatile int &outValue)
+void iicstat(volatile int *bus, volatile int& outValue)
 {
 
 	#pragma HLS INTERFACE m_axi depth=64 port=bus offset=off

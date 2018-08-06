@@ -24,8 +24,7 @@
       <arg name="outValue9" addressQualifier="0" id="17" port="S_AXI_AXILITES" size="0x4" offset="0x98" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
       <arg name="outValue10" addressQualifier="0" id="18" port="S_AXI_AXILITES" size="0x4" offset="0xA0" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
       <arg name="outValue10" addressQualifier="0" id="19" port="S_AXI_AXILITES" size="0x4" offset="0xA8" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
-      <arg name="outValue11" addressQualifier="0" id="20" port="S_AXI_AXILITES" size="0x4" offset="0xB0" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
-      <arg name="outValue11" addressQualifier="0" id="21" port="S_AXI_AXILITES" size="0x4" offset="0xB8" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="outValue11" addressQualifier="0" id="20" port="S_AXI_AXILITES" size="0x4" offset="0xB0" hostOffset="0x0" hostSize="0x4" type="int"/>
       <compileWorkGroupSize x="1" y="1" z="1"/>
     </kernel>
   </core>

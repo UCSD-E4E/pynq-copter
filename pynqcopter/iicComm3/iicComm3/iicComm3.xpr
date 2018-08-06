@@ -6,7 +6,7 @@
 <Project Version="7" Minor="35" Path="/home/iavendano/pynq-copter/pynqcopter/iicComm3/iicComm3/iicComm3.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="8c89b723e8ab4a2a8fd7920dcea8c721"/>
+    <Option Name="Id" Val="1e291a0a6e1445c6a5c269fd303aaebb"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -71,17 +71,17 @@
         <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_xbar_0/iicComm3_xbar_0.xci">
           <Proxy FileSetName="iicComm3_xbar_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_rst_ps7_0_100M_0/iicComm3_rst_ps7_0_100M_0.xci">
-          <Proxy FileSetName="iicComm3_rst_ps7_0_100M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_processing_system7_0_0/iicComm3_processing_system7_0_0.xci">
-          <Proxy FileSetName="iicComm3_processing_system7_0_0"/>
+        <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_axi_iic_0_0/iicComm3_axi_iic_0_0.xci">
+          <Proxy FileSetName="iicComm3_axi_iic_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_iiccomm3_0_0/iicComm3_iiccomm3_0_0.xci">
           <Proxy FileSetName="iicComm3_iiccomm3_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_axi_iic_0_0/iicComm3_axi_iic_0_0.xci">
-          <Proxy FileSetName="iicComm3_axi_iic_0_0"/>
+        <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_processing_system7_0_0/iicComm3_processing_system7_0_0.xci">
+          <Proxy FileSetName="iicComm3_processing_system7_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="iicComm3.bd" FileRelPathName="ip/iicComm3_rst_ps7_0_100M_0/iicComm3_rst_ps7_0_100M_0.xci">
+          <Proxy FileSetName="iicComm3_rst_ps7_0_100M_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/iicComm3/hdl/iicComm3_wrapper.v">

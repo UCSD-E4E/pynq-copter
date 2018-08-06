@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "iicstat"
 set Version     "1.0"
 set DisplayName "Iicstat"
-set Revision    "1808031101"
+set Revision    "1808060223"
 set Description "HLS Core: Iicstat Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -81,6 +81,104 @@ set BDFiles [sort_file_names [glob -nocomplain bd/*]]
 set ConstraintFiles [sort_file_names [glob -nocomplain constraints/*]]
 set MiscFiles [sort_file_names [glob -nocomplain misc/*]]
 set Interfaces {
+    s_axi_AXILiteS {
+        type "axi4lite"
+        mode "slave"
+        port_prefix "s_axi_AXILiteS"
+        param_prefix "C_S_AXI_AXILITES"
+        addr_bits "4"
+        port_width "AWADDR 4 WDATA 32 WSTRB 4 ARADDR 4 RDATA 32"
+        registers {}
+        memories ""
+        ctype {
+            AWVALID {
+                Type "bool"
+                Width "1"
+                Bits "1"
+            }
+            AWREADY {
+                Type "bool"
+                Width "1"
+                Bits "1"
+            }
+            WVALID {
+                Type "bool"
+                Width "1"
+                Bits "1"
+            }
+            WREADY {
+                Type "bool"
+                Width "1"
+                Bits "1"
+            }
+            BVALID {
+                Type "bool"
+                Width "1"
+                Bits "1"
+            }
+            BREADY {
+                Type "bool"
+                Width "1"
+                Bits "1"
+            }
+            BRESP {
+                Type "integer unsigned"
+                Width "2"
+                Bits "2"
+            }
+            ARVALID {
+                Type "bool"
+                Width "1"
+                Bits "1"
+            }
+            ARREADY {
+                Type "bool"
+                Width "1"
+                Bits "1"
+            }
+            RVALID {
+                Type "bool"
+                Width "1"
+                Bits "1"
+            }
+            RREADY {
+                Type "bool"
+                Width "1"
+                Bits "1"
+            }
+            RRESP {
+                Type "integer unsigned"
+                Width "2"
+                Bits "2"
+            }
+            AWADDR {
+                Type "integer unsigned"
+                Width "4"
+                Bits "4"
+            }
+            WDATA {
+                Type "null"
+                Width "32"
+                Bits "32"
+            }
+            WSTRB {
+                Type "integer unsigned"
+                Width "4"
+                Bits "4"
+            }
+            ARADDR {
+                Type "integer unsigned"
+                Width "4"
+                Bits "4"
+            }
+            RDATA {
+                Type "null"
+                Width "32"
+                Bits "32"
+            }
+        }
+        data_width "32"
+    }
     s_axi_outValue_first {
         type "axi4lite"
         mode "slave"
@@ -88,7 +186,7 @@ set Interfaces {
         param_prefix "C_S_AXI_OUTVALUE_FIRST"
         addr_bits "5"
         port_width "AWADDR 5 WDATA 32 WSTRB 4 ARADDR 5 RDATA 32"
-        registers {{0x10 outValue R 0x0 "Data signal of outValue" {{0 32 outValue R 0 "Bit 31 to 0 Data signal of outValue"}}} {0x14 outValue_ctrl R 0x0 "Control signal of outValue" {{0 1 outValue_ap_vld R 0 "Control signal outValue_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}}}
+        registers {{0x10 outValue_i W 0x0 "Data signal of outValue_i" {{0 32 outValue_i W 0 "Bit 31 to 0 Data signal of outValue_i"}}} {0x18 outValue_o R 0x0 "Data signal of outValue_o" {{0 32 outValue_o R 0 "Bit 31 to 0 Data signal of outValue_o"}}} {0x1c outValue_o_ctrl R 0x0 "Control signal of outValue_o" {{0 1 outValue_o_ap_vld R 0 "Control signal outValue_o_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}}}
         memories ""
         ctype {
             AWVALID {
@@ -188,7 +286,7 @@ set Interfaces {
                 Bits "1"
             }
         }
-        buses "s_axi_outValue_first m_axi_bus_r"
+        buses "s_axi_AXILiteS s_axi_outValue_first m_axi_bus_r"
         reset "ap_rst_n"
     }
     ap_rst_n {

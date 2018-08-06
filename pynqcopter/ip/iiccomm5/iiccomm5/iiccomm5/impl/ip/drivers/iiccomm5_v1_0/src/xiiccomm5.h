@@ -127,10 +127,8 @@ void XIiccomm5_Set_outValue10_i(XIiccomm5 *InstancePtr, u32 Data);
 u32 XIiccomm5_Get_outValue10_i(XIiccomm5 *InstancePtr);
 u32 XIiccomm5_Get_outValue10_o(XIiccomm5 *InstancePtr);
 u32 XIiccomm5_Get_outValue10_o_vld(XIiccomm5 *InstancePtr);
-void XIiccomm5_Set_outValue11_i(XIiccomm5 *InstancePtr, u32 Data);
-u32 XIiccomm5_Get_outValue11_i(XIiccomm5 *InstancePtr);
-u32 XIiccomm5_Get_outValue11_o(XIiccomm5 *InstancePtr);
-u32 XIiccomm5_Get_outValue11_o_vld(XIiccomm5 *InstancePtr);
+u32 XIiccomm5_Get_outValue11(XIiccomm5 *InstancePtr);
+u32 XIiccomm5_Get_outValue11_vld(XIiccomm5 *InstancePtr);
 
 void XIiccomm5_InterruptGlobalEnable(XIiccomm5 *InstancePtr);
 void XIiccomm5_InterruptGlobalDisable(XIiccomm5 *InstancePtr);

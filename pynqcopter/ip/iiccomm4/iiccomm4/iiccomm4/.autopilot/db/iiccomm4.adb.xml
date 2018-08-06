@@ -2182,7 +2182,7 @@
 
 <Node id="87" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-:74  call void @_ssdm_op_Write.ap_auto.volatile.i32P(i32* %outValue11, i32 15)
+:74  call void @_ssdm_op_Write.ap_auto.i32P(i32* %outValue11, i32 15)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -3303,7 +3303,7 @@
 </dataflow>
 <dataflow id="736" from="iic_addr_8_read" to="StgValue_152" fromId="117" toId="152">
 </dataflow>
-<dataflow id="738" from="_ssdm_op_Write.ap_auto.volatile.i32P" to="StgValue_153" fromId="737" toId="153">
+<dataflow id="738" from="_ssdm_op_Write.ap_auto.i32P" to="StgValue_153" fromId="737" toId="153">
 </dataflow>
 <dataflow id="739" from="outValue11" to="StgValue_153" fromId="183" toId="153">
 </dataflow>

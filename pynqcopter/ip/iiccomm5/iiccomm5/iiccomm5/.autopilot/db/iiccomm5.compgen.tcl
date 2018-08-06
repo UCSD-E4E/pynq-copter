@@ -172,21 +172,13 @@ outValue10_o {
 	offset 168
 	offset_end 175
 }
-outValue11_i { 
-	dir I
-	width 32
-	depth 1
-	mode ap_none
-	offset 176
-	offset_end 183
-}
-outValue11_o { 
+outValue11 { 
 	dir O
 	width 32
 	depth 1
 	mode ap_vld
-	offset 184
-	offset_end 191
+	offset 176
+	offset_end 183
 }
 }
 

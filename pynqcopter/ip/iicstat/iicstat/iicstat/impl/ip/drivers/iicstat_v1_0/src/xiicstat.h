@@ -41,11 +41,13 @@ typedef uint32_t u32;
 typedef struct {
     u16 DeviceId;
     u32 Outvalue_first_BaseAddress;
+    u32 Axilites_BaseAddress;
 } XIicstat_Config;
 #endif
 
 typedef struct {
     u32 Outvalue_first_BaseAddress;
+    u32 Axilites_BaseAddress;
     u32 IsReady;
 } XIicstat;
 
@@ -81,8 +83,10 @@ int XIicstat_Release(XIicstat *InstancePtr);
 #endif
 
 
-u32 XIicstat_Get_outValue(XIicstat *InstancePtr);
-u32 XIicstat_Get_outValue_vld(XIicstat *InstancePtr);
+void XIicstat_Set_outValue_i(XIicstat *InstancePtr, u32 Data);
+u32 XIicstat_Get_outValue_i(XIicstat *InstancePtr);
+u32 XIicstat_Get_outValue_o(XIicstat *InstancePtr);
+u32 XIicstat_Get_outValue_o_vld(XIicstat *InstancePtr);
 
 #ifdef __cplusplus
 }

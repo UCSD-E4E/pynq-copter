@@ -32825,7 +32825,7 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 };
 #39 "./iicstat.hpp" 2
 
-void iicstat(volatile int *bus, volatile int *outValue);
+void iicstat(volatile int *bus, volatile int& outValue);
 #36 "main.cpp" 2
 #1 "/data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/random" 1 3
 #32 "/data/opt/Xilinx/Vivado/2017.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/random" 3

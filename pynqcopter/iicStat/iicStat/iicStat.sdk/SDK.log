@@ -1,6 +1,0 @@
-11:15:48 INFO  : Registering command handlers for SDK TCF services
-11:15:51 INFO  : Launching XSCT server: xsct -n -interactive /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.sdk/temp_xsdb_launch_script.tcl
-11:15:52 INFO  : XSCT server has started successfully.
-11:15:52 INFO  : Successfully done setting XSCT server connection channel  
-11:15:52 INFO  : Successfully done setting SDK workspace  
-11:15:52 INFO  : Processing command line option -hwspec /home/iavendano/pynq-copter/pynqcopter/iicStat/iicStat/iicStat.sdk/iicStat_wrapper.hdf.

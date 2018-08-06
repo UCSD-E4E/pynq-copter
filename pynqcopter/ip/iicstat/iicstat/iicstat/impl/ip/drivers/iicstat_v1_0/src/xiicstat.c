@@ -15,29 +15,47 @@ int XIicstat_CfgInitialize(XIicstat *InstancePtr, XIicstat_Config *ConfigPtr) {
     Xil_AssertNonvoid(ConfigPtr != NULL);
 
     InstancePtr->Outvalue_first_BaseAddress = ConfigPtr->Outvalue_first_BaseAddress;
+    InstancePtr->Axilites_BaseAddress = ConfigPtr->Axilites_BaseAddress;
     InstancePtr->IsReady = XIL_COMPONENT_IS_READY;
 
     return XST_SUCCESS;
 }
 #endif
 
-u32 XIicstat_Get_outValue(XIicstat *InstancePtr) {
+void XIicstat_Set_outValue_i(XIicstat *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XIicstat_WriteReg(InstancePtr->Outvalue_first_BaseAddress, XIICSTAT_OUTVALUE_FIRST_ADDR_OUTVALUE_I_DATA, Data);
+}
+
+u32 XIicstat_Get_outValue_i(XIicstat *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XIicstat_ReadReg(InstancePtr->Outvalue_first_BaseAddress, XIICSTAT_OUTVALUE_FIRST_ADDR_OUTVALUE_DATA);
+    Data = XIicstat_ReadReg(InstancePtr->Outvalue_first_BaseAddress, XIICSTAT_OUTVALUE_FIRST_ADDR_OUTVALUE_I_DATA);
     return Data;
 }
 
-u32 XIicstat_Get_outValue_vld(XIicstat *InstancePtr) {
+u32 XIicstat_Get_outValue_o(XIicstat *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XIicstat_ReadReg(InstancePtr->Outvalue_first_BaseAddress, XIICSTAT_OUTVALUE_FIRST_ADDR_OUTVALUE_CTRL);
+    Data = XIicstat_ReadReg(InstancePtr->Outvalue_first_BaseAddress, XIICSTAT_OUTVALUE_FIRST_ADDR_OUTVALUE_O_DATA);
+    return Data;
+}
+
+u32 XIicstat_Get_outValue_o_vld(XIicstat *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIicstat_ReadReg(InstancePtr->Outvalue_first_BaseAddress, XIICSTAT_OUTVALUE_FIRST_ADDR_OUTVALUE_O_CTRL);
     return Data & 0x1;
 }
 

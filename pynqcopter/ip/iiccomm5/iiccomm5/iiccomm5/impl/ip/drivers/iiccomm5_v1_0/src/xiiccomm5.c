@@ -446,40 +446,23 @@ u32 XIiccomm5_Get_outValue10_o_vld(XIiccomm5 *InstancePtr) {
     return Data & 0x1;
 }
 
-void XIiccomm5_Set_outValue11_i(XIiccomm5 *InstancePtr, u32 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XIiccomm5_WriteReg(InstancePtr->Axilites_BaseAddress, XIICCOMM5_AXILITES_ADDR_OUTVALUE11_I_DATA, Data);
-}
-
-u32 XIiccomm5_Get_outValue11_i(XIiccomm5 *InstancePtr) {
+u32 XIiccomm5_Get_outValue11(XIiccomm5 *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XIiccomm5_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM5_AXILITES_ADDR_OUTVALUE11_I_DATA);
+    Data = XIiccomm5_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM5_AXILITES_ADDR_OUTVALUE11_DATA);
     return Data;
 }
 
-u32 XIiccomm5_Get_outValue11_o(XIiccomm5 *InstancePtr) {
+u32 XIiccomm5_Get_outValue11_vld(XIiccomm5 *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XIiccomm5_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM5_AXILITES_ADDR_OUTVALUE11_O_DATA);
-    return Data;
-}
-
-u32 XIiccomm5_Get_outValue11_o_vld(XIiccomm5 *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XIiccomm5_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM5_AXILITES_ADDR_OUTVALUE11_O_CTRL);
+    Data = XIiccomm5_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM5_AXILITES_ADDR_OUTVALUE11_CTRL);
     return Data & 0x1;
 }
 

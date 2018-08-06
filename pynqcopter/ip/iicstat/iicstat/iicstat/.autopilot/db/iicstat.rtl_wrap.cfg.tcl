@@ -17,12 +17,12 @@ set DataType0 "int"
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
 lappend PortList $Port0
 set PortName1 "outValue"
-set BitWidth1 "64"
+set BitWidth1 "32"
 set ArrayOpt1 ""
 set Const1 "0"
 set Volatile1 "1"
-set Pointer1 "1"
-set Reference1 "0"
+set Pointer1 "2"
+set Reference1 "1"
 set Dims1 [list 0]
 set Interface1 "wire"
 set DataType1 "int"

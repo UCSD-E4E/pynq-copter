@@ -11,6 +11,7 @@
 #include "systemc.h"
 #include "AESL_pkg.h"
 
+#include "iicstat_AXILiteS_s_axi.h"
 #include "iicstat_outValue_first_s_axi.h"
 #include "iicstat_bus_r_m_axi.h"
 
@@ -24,10 +25,12 @@ template<unsigned int C_M_AXI_BUS_R_ADDR_WIDTH = 32,
          unsigned int C_M_AXI_BUS_R_ARUSER_WIDTH = 1,
          unsigned int C_M_AXI_BUS_R_RUSER_WIDTH = 1,
          unsigned int C_M_AXI_BUS_R_BUSER_WIDTH = 1,
+         unsigned int C_S_AXI_AXILITES_ADDR_WIDTH = 4,
+         unsigned int C_S_AXI_AXILITES_DATA_WIDTH = 32,
          unsigned int C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH = 5,
          unsigned int C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH = 32>
 struct iicstat : public sc_module {
-    // Port declarations 64
+    // Port declarations 81
     sc_in_clk ap_clk;
     sc_in< sc_logic > ap_rst_n;
     sc_out< sc_logic > m_axi_bus_r_AWVALID;
@@ -75,6 +78,23 @@ struct iicstat : public sc_module {
     sc_in< sc_lv<2> > m_axi_bus_r_BRESP;
     sc_in< sc_uint<C_M_AXI_BUS_R_ID_WIDTH> > m_axi_bus_r_BID;
     sc_in< sc_uint<C_M_AXI_BUS_R_BUSER_WIDTH> > m_axi_bus_r_BUSER;
+    sc_in< sc_logic > s_axi_AXILiteS_AWVALID;
+    sc_out< sc_logic > s_axi_AXILiteS_AWREADY;
+    sc_in< sc_uint<C_S_AXI_AXILITES_ADDR_WIDTH> > s_axi_AXILiteS_AWADDR;
+    sc_in< sc_logic > s_axi_AXILiteS_WVALID;
+    sc_out< sc_logic > s_axi_AXILiteS_WREADY;
+    sc_in< sc_uint<C_S_AXI_AXILITES_DATA_WIDTH> > s_axi_AXILiteS_WDATA;
+    sc_in< sc_uint<C_S_AXI_AXILITES_DATA_WIDTH/8> > s_axi_AXILiteS_WSTRB;
+    sc_in< sc_logic > s_axi_AXILiteS_ARVALID;
+    sc_out< sc_logic > s_axi_AXILiteS_ARREADY;
+    sc_in< sc_uint<C_S_AXI_AXILITES_ADDR_WIDTH> > s_axi_AXILiteS_ARADDR;
+    sc_out< sc_logic > s_axi_AXILiteS_RVALID;
+    sc_in< sc_logic > s_axi_AXILiteS_RREADY;
+    sc_out< sc_uint<C_S_AXI_AXILITES_DATA_WIDTH> > s_axi_AXILiteS_RDATA;
+    sc_out< sc_lv<2> > s_axi_AXILiteS_RRESP;
+    sc_out< sc_logic > s_axi_AXILiteS_BVALID;
+    sc_in< sc_logic > s_axi_AXILiteS_BREADY;
+    sc_out< sc_lv<2> > s_axi_AXILiteS_BRESP;
     sc_in< sc_logic > s_axi_outValue_first_AWVALID;
     sc_out< sc_logic > s_axi_outValue_first_AWREADY;
     sc_in< sc_uint<C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH> > s_axi_outValue_first_AWADDR;
@@ -112,10 +132,12 @@ struct iicstat : public sc_module {
 
     ofstream mHdltvinHandle;
     ofstream mHdltvoutHandle;
+    iicstat_AXILiteS_s_axi<C_S_AXI_AXILITES_ADDR_WIDTH,C_S_AXI_AXILITES_DATA_WIDTH>* iicstat_AXILiteS_s_axi_U;
     iicstat_outValue_first_s_axi<C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH,C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH>* iicstat_outValue_first_s_axi_U;
     iicstat_bus_r_m_axi<32,32,5,16,16,16,16,C_M_AXI_BUS_R_ID_WIDTH,C_M_AXI_BUS_R_ADDR_WIDTH,C_M_AXI_BUS_R_DATA_WIDTH,C_M_AXI_BUS_R_AWUSER_WIDTH,C_M_AXI_BUS_R_ARUSER_WIDTH,C_M_AXI_BUS_R_WUSER_WIDTH,C_M_AXI_BUS_R_RUSER_WIDTH,C_M_AXI_BUS_R_BUSER_WIDTH,C_M_AXI_BUS_R_TARGET_ADDR,C_M_AXI_BUS_R_USER_VALUE,C_M_AXI_BUS_R_PROT_VALUE,C_M_AXI_BUS_R_CACHE_VALUE>* iicstat_bus_r_m_axi_U;
     sc_signal< sc_logic > ap_rst_n_inv;
-    sc_signal< sc_logic > outValue_ap_vld;
+    sc_signal< sc_lv<32> > outValue_i;
+    sc_signal< sc_logic > outValue_o_ap_vld;
     sc_signal< sc_logic > bus_r_blk_n_AR;
     sc_signal< sc_lv<9> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
@@ -138,7 +160,7 @@ struct iicstat : public sc_module {
     sc_signal< sc_lv<1> > bus_r_BID;
     sc_signal< sc_lv<1> > bus_r_BUSER;
     sc_signal< sc_logic > ap_sig_ioackin_bus_r_ARREADY;
-    sc_signal< sc_lv<32> > bus_addr_read_reg_72;
+    sc_signal< sc_lv<32> > bus_addr_read_reg_80;
     sc_signal< sc_logic > ap_reg_ioackin_bus_r_ARREADY;
     sc_signal< sc_logic > ap_CS_fsm_state9;
     sc_signal< sc_lv<9> > ap_NS_fsm;
@@ -189,7 +211,7 @@ struct iicstat : public sc_module {
     void thread_bus_r_RREADY();
     void thread_bus_r_blk_n_AR();
     void thread_bus_r_blk_n_R();
-    void thread_outValue_ap_vld();
+    void thread_outValue_o_ap_vld();
     void thread_ap_NS_fsm();
     void thread_hdltv_gen();
 };

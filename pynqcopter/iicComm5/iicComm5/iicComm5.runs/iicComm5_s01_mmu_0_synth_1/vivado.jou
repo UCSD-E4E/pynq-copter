@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Aug  6 01:33:35 2018
+# Process ID: 597
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.runs/iicComm5_s01_mmu_0_synth_1
+# Command line: vivado -log iicComm5_s01_mmu_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source iicComm5_s01_mmu_0.tcl
+# Log file: /home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.runs/iicComm5_s01_mmu_0_synth_1/iicComm5_s01_mmu_0.vds
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/iicComm5/iicComm5/iicComm5.runs/iicComm5_s01_mmu_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source iicComm5_s01_mmu_0.tcl -notrace

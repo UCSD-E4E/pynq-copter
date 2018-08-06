@@ -2182,7 +2182,7 @@
 
 <Node id="87" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-:74  call void @_ssdm_op_Write.ap_auto.volatile.i32P(i32* %outValue11, i32 15)
+:74  call void @_ssdm_op_Write.ap_auto.i32P(i32* %outValue11, i32 15)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>

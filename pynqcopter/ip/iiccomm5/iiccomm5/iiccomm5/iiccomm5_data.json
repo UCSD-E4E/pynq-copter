@@ -976,48 +976,33 @@
         },
         {
           "offset": "0xb0",
-          "name": "outValue11_i",
-          "access": "W",
-          "reset_value": "0x0",
-          "description": "Data signal of outValue11_i",
-          "fields": [{
-              "offset": "0",
-              "width": "32",
-              "name": "outValue11_i",
-              "access": "W",
-              "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of outValue11_i"
-            }]
-        },
-        {
-          "offset": "0xb8",
-          "name": "outValue11_o",
+          "name": "outValue11",
           "access": "R",
           "reset_value": "0x0",
-          "description": "Data signal of outValue11_o",
+          "description": "Data signal of outValue11",
           "fields": [{
               "offset": "0",
               "width": "32",
-              "name": "outValue11_o",
+              "name": "outValue11",
               "access": "R",
               "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of outValue11_o"
+              "description": "Bit 31 to 0 Data signal of outValue11"
             }]
         },
         {
-          "offset": "0xbc",
-          "name": "outValue11_o_ctrl",
+          "offset": "0xb4",
+          "name": "outValue11_ctrl",
           "access": "R",
           "reset_value": "0x0",
-          "description": "Control signal of outValue11_o",
+          "description": "Control signal of outValue11",
           "fields": [
             {
               "offset": "0",
               "width": "1",
-              "name": "outValue11_o_ap_vld",
+              "name": "outValue11_ap_vld",
               "access": "R",
               "reset_value": "0",
-              "description": "Control signal outValue11_o_ap_vld"
+              "description": "Control signal outValue11_ap_vld"
             },
             {
               "offset": "1",
@@ -1055,7 +1040,7 @@
           "Width": "8"
         },
         "WDATA": {
-          "Type": "integer unsigned",
+          "Type": "integer signed",
           "Width": "32"
         },
         "WSTRB": {
@@ -1067,7 +1052,7 @@
           "Width": "8"
         },
         "RDATA": {
-          "Type": "integer unsigned",
+          "Type": "integer signed",
           "Width": "32"
         }
       },
@@ -1515,21 +1500,14 @@
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS"
     },
-    "outValue11_i": {
-      "interfaceRef": "s_axi_AXILiteS",
-      "dir": "in",
-      "offset": "176",
-      "statusOffset": "NA",
-      "handshakeRef": "ap_none",
-      "Object": "AXILiteS"
-    },
-    "outValue11_o": {
+    "outValue11": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
-      "offset": "184",
-      "statusOffset": "188",
+      "offset": "176",
+      "statusOffset": "180",
       "handshakeRef": "ap_vld",
-      "Object": "AXILiteS"
+      "Object": "AXILiteS",
+      "firstOutLatency": "17"
     },
     "ap_ctrl": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1559,15 +1537,15 @@
         },
         "Area": {
           "BRAM_18K": "2",
-          "FF": "1723",
-          "LUT": "2198",
+          "FF": "1685",
+          "LUT": "2134",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-05 20:39:59 PDT",
+    "Time": "2018-08-06 01:30:48 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

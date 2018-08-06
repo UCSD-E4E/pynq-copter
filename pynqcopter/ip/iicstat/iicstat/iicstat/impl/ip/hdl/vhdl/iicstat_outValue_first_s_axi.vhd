@@ -36,8 +36,9 @@ port (
     RVALID                :out  STD_LOGIC;
     RREADY                :in   STD_LOGIC;
     -- user signals
-    outValue              :in   STD_LOGIC_VECTOR(31 downto 0);
-    outValue_ap_vld       :in   STD_LOGIC
+    outValue_i            :out  STD_LOGIC_VECTOR(31 downto 0);
+    outValue_o            :in   STD_LOGIC_VECTOR(31 downto 0);
+    outValue_o_ap_vld     :in   STD_LOGIC
 );
 end entity iicstat_outValue_first_s_axi;
 
@@ -46,10 +47,13 @@ end entity iicstat_outValue_first_s_axi;
 -- 0x04 : reserved
 -- 0x08 : reserved
 -- 0x0c : reserved
--- 0x10 : Data signal of outValue
---        bit 31~0 - outValue[31:0] (Read)
--- 0x14 : Control signal of outValue
---        bit 0  - outValue_ap_vld (Read/COR)
+-- 0x10 : Data signal of outValue_i
+--        bit 31~0 - outValue_i[31:0] (Read/Write)
+-- 0x14 : reserved
+-- 0x18 : Data signal of outValue_o
+--        bit 31~0 - outValue_o[31:0] (Read)
+-- 0x1c : Control signal of outValue_o
+--        bit 0  - outValue_o_ap_vld (Read/COR)
 --        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -58,8 +62,10 @@ architecture behave of iicstat_outValue_first_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_OUTVALUE_DATA_0 : INTEGER := 16#10#;
-    constant ADDR_OUTVALUE_CTRL   : INTEGER := 16#14#;
+    constant ADDR_OUTVALUE_I_DATA_0 : INTEGER := 16#10#;
+    constant ADDR_OUTVALUE_I_CTRL   : INTEGER := 16#14#;
+    constant ADDR_OUTVALUE_O_DATA_0 : INTEGER := 16#18#;
+    constant ADDR_OUTVALUE_O_CTRL   : INTEGER := 16#1c#;
     constant ADDR_BITS         : INTEGER := 5;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -74,8 +80,9 @@ architecture behave of iicstat_outValue_first_s_axi is
     signal ARREADY_t           : STD_LOGIC;
     signal RVALID_t            : STD_LOGIC;
     -- internal registers
-    signal int_outValue        : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_outValue_ap_vld : STD_LOGIC;
+    signal int_outValue_i      : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_outValue_o      : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_outValue_o_ap_vld : STD_LOGIC;
 
 
 begin
@@ -189,10 +196,12 @@ begin
             if (ACLK_EN = '1') then
                 if (ar_hs = '1') then
                     case (TO_INTEGER(raddr)) is
-                    when ADDR_OUTVALUE_DATA_0 =>
-                        rdata_data <= RESIZE(int_outValue(31 downto 0), 32);
-                    when ADDR_OUTVALUE_CTRL =>
-                        rdata_data <= (0 => int_outValue_ap_vld, others => '0');
+                    when ADDR_OUTVALUE_I_DATA_0 =>
+                        rdata_data <= RESIZE(int_outValue_i(31 downto 0), 32);
+                    when ADDR_OUTVALUE_O_DATA_0 =>
+                        rdata_data <= RESIZE(int_outValue_o(31 downto 0), 32);
+                    when ADDR_OUTVALUE_O_CTRL =>
+                        rdata_data <= (0 => int_outValue_o_ap_vld, others => '0');
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -202,15 +211,14 @@ begin
     end process;
 
 -- ----------------------- Register logic ----------------
+    outValue_i           <= STD_LOGIC_VECTOR(int_outValue_i);
 
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_outValue <= (others => '0');
-            elsif (ACLK_EN = '1') then
-                if (outValue_ap_vld = '1') then
-                    int_outValue <= UNSIGNED(outValue); -- clear on read
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_OUTVALUE_I_DATA_0) then
+                    int_outValue_i(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_outValue_i(31 downto 0));
                 end if;
             end if;
         end if;
@@ -220,12 +228,25 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_outValue_ap_vld <= '0';
+                int_outValue_o <= (others => '0');
             elsif (ACLK_EN = '1') then
-                if (outValue_ap_vld = '1') then
-                    int_outValue_ap_vld <= '1';
-                elsif (ar_hs = '1' and raddr = ADDR_OUTVALUE_CTRL) then
-                    int_outValue_ap_vld <= '0'; -- clear on read
+                if (outValue_o_ap_vld = '1') then
+                    int_outValue_o <= UNSIGNED(outValue_o); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_outValue_o_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (outValue_o_ap_vld = '1') then
+                    int_outValue_o_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_OUTVALUE_O_CTRL) then
+                    int_outValue_o_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;

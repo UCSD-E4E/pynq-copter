@@ -1,5 +1,5 @@
 set C_TypeInfoList {{ 
-"iiccomm4" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"outValue1": [[], {"reference": "0"}] }, {"outValue2": [[], {"reference": "0"}] }, {"outValue3": [[], {"reference": "0"}] }, {"outValue4": [[], {"reference": "0"}] }, {"outValue5": [[], {"reference": "0"}] }, {"outValue6": [[], {"reference": "0"}] }, {"outValue7": [[], {"reference": "0"}] }, {"outValue8": [[], {"reference": "0"}] }, {"outValue9": [[], {"reference": "0"}] }, {"outValue10": [[], {"reference": "0"}] }, {"outValue11": [[], {"reference": "0"}] }],[],""], 
+"iiccomm4" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"outValue1": [[], {"reference": "0"}] }, {"outValue2": [[], {"reference": "0"}] }, {"outValue3": [[], {"reference": "0"}] }, {"outValue4": [[], {"reference": "0"}] }, {"outValue5": [[], {"reference": "0"}] }, {"outValue6": [[], {"reference": "0"}] }, {"outValue7": [[], {"reference": "0"}] }, {"outValue8": [[], {"reference": "0"}] }, {"outValue9": [[], {"reference": "0"}] }, {"outValue10": [[], {"reference": "0"}] }, {"outValue11": [[], {"reference":  {"scalar": "int"}}] }],[],""], 
 "0": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}]
 }}
 set moduleName iiccomm4
@@ -25,7 +25,7 @@ set C_modelArgList {
 	{ outValue8 int 32 regular {axi_slave 2}  }
 	{ outValue9 int 32 regular {axi_slave 2}  }
 	{ outValue10 int 32 regular {axi_slave 2}  }
-	{ outValue11 int 32 regular {pointer 1 volatile }  }
+	{ outValue11 int 32 regular {pointer 1}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "iic", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "iic","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 4095,"step" : 1}]}]}]} , 
@@ -39,7 +39,7 @@ set C_modelArgMapList {[
  	{ "Name" : "outValue8", "interface" : "axi_slave", "bundle":"OUTPUTS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue8","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":128, "out":136}, "offset_end" : {"in":135, "out":143}} , 
  	{ "Name" : "outValue9", "interface" : "axi_slave", "bundle":"OUTPUTS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue9","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":144, "out":152}, "offset_end" : {"in":151, "out":159}} , 
  	{ "Name" : "outValue10", "interface" : "axi_slave", "bundle":"OUTPUTS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue10","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":160, "out":168}, "offset_end" : {"in":167, "out":175}} , 
- 	{ "Name" : "outValue11", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue11","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} ]}
+ 	{ "Name" : "outValue11", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "outValue11","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} ]}
 # RTL Port declarations: 
 set portNum 84
 set portList { 

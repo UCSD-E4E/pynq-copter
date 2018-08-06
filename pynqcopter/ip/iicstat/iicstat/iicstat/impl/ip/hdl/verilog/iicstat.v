@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="iicstat,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=622,HLS_SYN_LUT=758}" *)
+(* CORE_GENERATION_INFO="iicstat,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=8,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=696,HLS_SYN_LUT=862}" *)
 
 module iicstat (
         ap_clk,
@@ -57,6 +57,23 @@ module iicstat (
         m_axi_bus_r_BRESP,
         m_axi_bus_r_BID,
         m_axi_bus_r_BUSER,
+        s_axi_AXILiteS_AWVALID,
+        s_axi_AXILiteS_AWREADY,
+        s_axi_AXILiteS_AWADDR,
+        s_axi_AXILiteS_WVALID,
+        s_axi_AXILiteS_WREADY,
+        s_axi_AXILiteS_WDATA,
+        s_axi_AXILiteS_WSTRB,
+        s_axi_AXILiteS_ARVALID,
+        s_axi_AXILiteS_ARREADY,
+        s_axi_AXILiteS_ARADDR,
+        s_axi_AXILiteS_RVALID,
+        s_axi_AXILiteS_RREADY,
+        s_axi_AXILiteS_RDATA,
+        s_axi_AXILiteS_RRESP,
+        s_axi_AXILiteS_BVALID,
+        s_axi_AXILiteS_BREADY,
+        s_axi_AXILiteS_BRESP,
         s_axi_outValue_first_AWVALID,
         s_axi_outValue_first_AWREADY,
         s_axi_outValue_first_AWADDR,
@@ -85,9 +102,11 @@ parameter    ap_ST_fsm_state6 = 9'd32;
 parameter    ap_ST_fsm_state7 = 9'd64;
 parameter    ap_ST_fsm_state8 = 9'd128;
 parameter    ap_ST_fsm_state9 = 9'd256;
+parameter    C_S_AXI_AXILITES_DATA_WIDTH = 32;
+parameter    C_S_AXI_AXILITES_ADDR_WIDTH = 4;
+parameter    C_S_AXI_DATA_WIDTH = 32;
 parameter    C_S_AXI_OUTVALUE_FIRST_DATA_WIDTH = 32;
 parameter    C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH = 5;
-parameter    C_S_AXI_DATA_WIDTH = 32;
 parameter    C_M_AXI_BUS_R_ID_WIDTH = 1;
 parameter    C_M_AXI_BUS_R_ADDR_WIDTH = 32;
 parameter    C_M_AXI_BUS_R_DATA_WIDTH = 32;
@@ -102,8 +121,9 @@ parameter    C_M_AXI_BUS_R_PROT_VALUE = 0;
 parameter    C_M_AXI_BUS_R_CACHE_VALUE = 3;
 parameter    C_M_AXI_DATA_WIDTH = 32;
 
-parameter C_S_AXI_OUTVALUE_FIRST_WSTRB_WIDTH = (32 / 8);
+parameter C_S_AXI_AXILITES_WSTRB_WIDTH = (32 / 8);
 parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
+parameter C_S_AXI_OUTVALUE_FIRST_WSTRB_WIDTH = (32 / 8);
 parameter C_M_AXI_BUS_R_WSTRB_WIDTH = (32 / 8);
 parameter C_M_AXI_WSTRB_WIDTH = (32 / 8);
 
@@ -154,6 +174,23 @@ output   m_axi_bus_r_BREADY;
 input  [1:0] m_axi_bus_r_BRESP;
 input  [C_M_AXI_BUS_R_ID_WIDTH - 1:0] m_axi_bus_r_BID;
 input  [C_M_AXI_BUS_R_BUSER_WIDTH - 1:0] m_axi_bus_r_BUSER;
+input   s_axi_AXILiteS_AWVALID;
+output   s_axi_AXILiteS_AWREADY;
+input  [C_S_AXI_AXILITES_ADDR_WIDTH - 1:0] s_axi_AXILiteS_AWADDR;
+input   s_axi_AXILiteS_WVALID;
+output   s_axi_AXILiteS_WREADY;
+input  [C_S_AXI_AXILITES_DATA_WIDTH - 1:0] s_axi_AXILiteS_WDATA;
+input  [C_S_AXI_AXILITES_WSTRB_WIDTH - 1:0] s_axi_AXILiteS_WSTRB;
+input   s_axi_AXILiteS_ARVALID;
+output   s_axi_AXILiteS_ARREADY;
+input  [C_S_AXI_AXILITES_ADDR_WIDTH - 1:0] s_axi_AXILiteS_ARADDR;
+output   s_axi_AXILiteS_RVALID;
+input   s_axi_AXILiteS_RREADY;
+output  [C_S_AXI_AXILITES_DATA_WIDTH - 1:0] s_axi_AXILiteS_RDATA;
+output  [1:0] s_axi_AXILiteS_RRESP;
+output   s_axi_AXILiteS_BVALID;
+input   s_axi_AXILiteS_BREADY;
+output  [1:0] s_axi_AXILiteS_BRESP;
 input   s_axi_outValue_first_AWVALID;
 output   s_axi_outValue_first_AWREADY;
 input  [C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH - 1:0] s_axi_outValue_first_AWADDR;
@@ -173,7 +210,8 @@ input   s_axi_outValue_first_BREADY;
 output  [1:0] s_axi_outValue_first_BRESP;
 
 reg    ap_rst_n_inv;
-reg    outValue_ap_vld;
+wire   [31:0] outValue_i;
+reg    outValue_o_ap_vld;
 reg    bus_r_blk_n_AR;
 (* fsm_encoding = "none" *) reg   [8:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
@@ -196,7 +234,7 @@ wire   [1:0] bus_r_BRESP;
 wire   [0:0] bus_r_BID;
 wire   [0:0] bus_r_BUSER;
 reg    ap_sig_ioackin_bus_r_ARREADY;
-reg   [31:0] bus_addr_read_reg_72;
+reg   [31:0] bus_addr_read_reg_80;
 reg    ap_reg_ioackin_bus_r_ARREADY;
 wire    ap_CS_fsm_state9;
 reg   [8:0] ap_NS_fsm;
@@ -206,6 +244,32 @@ initial begin
 #0 ap_CS_fsm = 9'd1;
 #0 ap_reg_ioackin_bus_r_ARREADY = 1'b0;
 end
+
+iicstat_AXILiteS_s_axi #(
+    .C_S_AXI_ADDR_WIDTH( C_S_AXI_AXILITES_ADDR_WIDTH ),
+    .C_S_AXI_DATA_WIDTH( C_S_AXI_AXILITES_DATA_WIDTH ))
+iicstat_AXILiteS_s_axi_U(
+    .AWVALID(s_axi_AXILiteS_AWVALID),
+    .AWREADY(s_axi_AXILiteS_AWREADY),
+    .AWADDR(s_axi_AXILiteS_AWADDR),
+    .WVALID(s_axi_AXILiteS_WVALID),
+    .WREADY(s_axi_AXILiteS_WREADY),
+    .WDATA(s_axi_AXILiteS_WDATA),
+    .WSTRB(s_axi_AXILiteS_WSTRB),
+    .ARVALID(s_axi_AXILiteS_ARVALID),
+    .ARREADY(s_axi_AXILiteS_ARREADY),
+    .ARADDR(s_axi_AXILiteS_ARADDR),
+    .RVALID(s_axi_AXILiteS_RVALID),
+    .RREADY(s_axi_AXILiteS_RREADY),
+    .RDATA(s_axi_AXILiteS_RDATA),
+    .RRESP(s_axi_AXILiteS_RRESP),
+    .BVALID(s_axi_AXILiteS_BVALID),
+    .BREADY(s_axi_AXILiteS_BREADY),
+    .BRESP(s_axi_AXILiteS_BRESP),
+    .ACLK(ap_clk),
+    .ARESET(ap_rst_n_inv),
+    .ACLK_EN(1'b1)
+);
 
 iicstat_outValue_first_s_axi #(
     .C_S_AXI_ADDR_WIDTH( C_S_AXI_OUTVALUE_FIRST_ADDR_WIDTH ),
@@ -231,8 +295,9 @@ iicstat_outValue_first_s_axi_U(
     .ACLK(ap_clk),
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
-    .outValue(bus_addr_read_reg_72),
-    .outValue_ap_vld(outValue_ap_vld)
+    .outValue_o(bus_addr_read_reg_80),
+    .outValue_o_ap_vld(outValue_o_ap_vld),
+    .outValue_i(outValue_i)
 );
 
 iicstat_bus_r_m_axi #(
@@ -374,8 +439,8 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state8) & (bus_r_RVALID == 1'b1))) begin
-        bus_addr_read_reg_72 <= bus_r_RDATA;
+    if (((bus_r_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
+        bus_addr_read_reg_80 <= bus_r_RDATA;
     end
 end
 
@@ -396,7 +461,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state8) & (bus_r_RVALID == 1'b1))) begin
+    if (((bus_r_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
         bus_r_RREADY = 1'b1;
     end else begin
         bus_r_RREADY = 1'b0;
@@ -421,9 +486,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state9)) begin
-        outValue_ap_vld = 1'b1;
+        outValue_o_ap_vld = 1'b1;
     end else begin
-        outValue_ap_vld = 1'b0;
+        outValue_o_ap_vld = 1'b0;
     end
 end
 
@@ -455,7 +520,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state8;
         end
         ap_ST_fsm_state8 : begin
-            if (((1'b1 == ap_CS_fsm_state8) & (bus_r_RVALID == 1'b1))) begin
+            if (((bus_r_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
                 ap_NS_fsm = ap_ST_fsm_state9;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state8;

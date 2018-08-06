@@ -32966,7 +32966,7 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 };
 # 39 "./iicstat.hpp" 2
 
-void iicstat(volatile int *bus, volatile int *outValue);
+void iicstat(volatile int *bus, volatile int& outValue);
 # 36 "iicstat.cpp" 2
 # 1 "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_utils.h" 1
 # 59 "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_utils.h"
@@ -33348,17 +33348,17 @@ enum SsdmRegionTypes {
 
 static int val1;
 
-void iicstat(volatile int *bus, volatile int *outValue)
+void iicstat(volatile int *bus, volatile int& outValue)
 {
 
 _ssdm_op_SpecInterface(bus, "m_axi", 0, 0, "", 0, 64, "", "off", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecInterface(outValue, "s_axilite", 0, 0, "", 0, 0, "outValue_first", "", "", 0, 0, 0, 0, "", "");
-
+_ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "ap_ctrl_none", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
 
  val1 = bus[(0x104)/4];
-    *outValue=val1;
+    outValue=val1;
 
 
 }

@@ -267,7 +267,7 @@
       "dir": "out",
       "width": "32",
       "ctype": {"DATA": {
-          "Type": "integer unsigned",
+          "Type": "integer signed",
           "Width": "32"
         }}
     },
@@ -1649,7 +1649,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-05 18:55:05 PDT",
+    "Time": "2018-08-06 01:28:59 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

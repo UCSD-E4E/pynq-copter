@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="iiccomm5,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=17,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=1723,HLS_SYN_LUT=2198}" *)
+(* CORE_GENERATION_INFO="iiccomm5,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=17,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=1685,HLS_SYN_LUT=2134}" *)
 
 module iiccomm5 (
         ap_clk,
@@ -210,8 +210,7 @@ wire   [31:0] outValue9_i;
 reg    outValue9_o_ap_vld;
 wire   [31:0] outValue10_i;
 reg    outValue10_o_ap_vld;
-wire   [31:0] outValue11_i;
-reg    outValue11_o_ap_vld;
+reg    outValue11_ap_vld;
 reg    iic_blk_n_AR;
 reg    iic_blk_n_R;
 wire    ap_CS_fsm_state8;
@@ -247,16 +246,16 @@ wire   [1:0] iic_BRESP;
 wire   [0:0] iic_BID;
 wire   [0:0] iic_BUSER;
 reg    ap_sig_ioackin_iic_ARREADY;
-reg   [31:0] iic_read_reg_437;
-reg   [31:0] iic_addr_read_reg_448;
-reg   [31:0] iic_addr_1_read_reg_459;
-reg   [31:0] iic_addr_2_read_reg_470;
-reg   [31:0] iic_addr_3_read_reg_475;
-reg   [31:0] iic_addr_4_read_reg_480;
-reg   [31:0] iic_addr_5_read_reg_485;
-reg   [31:0] iic_addr_6_read_reg_490;
-reg   [31:0] iic_addr_7_read_reg_495;
-reg   [31:0] iic_addr_8_read_reg_500;
+reg   [31:0] iic_read_reg_433;
+reg   [31:0] iic_addr_read_reg_444;
+reg   [31:0] iic_addr_1_read_reg_455;
+reg   [31:0] iic_addr_2_read_reg_466;
+reg   [31:0] iic_addr_3_read_reg_471;
+reg   [31:0] iic_addr_4_read_reg_476;
+reg   [31:0] iic_addr_5_read_reg_481;
+reg   [31:0] iic_addr_6_read_reg_486;
+reg   [31:0] iic_addr_7_read_reg_491;
+reg   [31:0] iic_addr_8_read_reg_496;
 reg    ap_reg_ioackin_iic_ARREADY;
 wire    ap_CS_fsm_state18;
 reg   [17:0] ap_NS_fsm;
@@ -296,39 +295,38 @@ iiccomm5_AXILiteS_s_axi_U(
     .ap_ready(ap_ready),
     .ap_done(ap_done),
     .ap_idle(ap_idle),
-    .outValue1_o(iic_read_reg_437),
+    .outValue1_o(iic_read_reg_433),
     .outValue1_o_ap_vld(outValue1_o_ap_vld),
     .outValue1_i(outValue1_i),
-    .outValue2_o(iic_addr_read_reg_448),
+    .outValue2_o(iic_addr_read_reg_444),
     .outValue2_o_ap_vld(outValue2_o_ap_vld),
     .outValue2_i(outValue2_i),
-    .outValue3_o(iic_addr_1_read_reg_459),
+    .outValue3_o(iic_addr_1_read_reg_455),
     .outValue3_o_ap_vld(outValue3_o_ap_vld),
     .outValue3_i(outValue3_i),
-    .outValue4_o(iic_addr_2_read_reg_470),
+    .outValue4_o(iic_addr_2_read_reg_466),
     .outValue4_o_ap_vld(outValue4_o_ap_vld),
     .outValue4_i(outValue4_i),
-    .outValue5_o(iic_addr_3_read_reg_475),
+    .outValue5_o(iic_addr_3_read_reg_471),
     .outValue5_o_ap_vld(outValue5_o_ap_vld),
     .outValue5_i(outValue5_i),
-    .outValue6_o(iic_addr_4_read_reg_480),
+    .outValue6_o(iic_addr_4_read_reg_476),
     .outValue6_o_ap_vld(outValue6_o_ap_vld),
     .outValue6_i(outValue6_i),
-    .outValue7_o(iic_addr_5_read_reg_485),
+    .outValue7_o(iic_addr_5_read_reg_481),
     .outValue7_o_ap_vld(outValue7_o_ap_vld),
     .outValue7_i(outValue7_i),
-    .outValue8_o(iic_addr_6_read_reg_490),
+    .outValue8_o(iic_addr_6_read_reg_486),
     .outValue8_o_ap_vld(outValue8_o_ap_vld),
     .outValue8_i(outValue8_i),
-    .outValue9_o(iic_addr_7_read_reg_495),
+    .outValue9_o(iic_addr_7_read_reg_491),
     .outValue9_o_ap_vld(outValue9_o_ap_vld),
     .outValue9_i(outValue9_i),
-    .outValue10_o(iic_addr_8_read_reg_500),
+    .outValue10_o(iic_addr_8_read_reg_496),
     .outValue10_o_ap_vld(outValue10_o_ap_vld),
     .outValue10_i(outValue10_i),
-    .outValue11_o(32'd20),
-    .outValue11_o_ap_vld(outValue11_o_ap_vld),
-    .outValue11_i(outValue11_i)
+    .outValue11(32'd20),
+    .outValue11_ap_vld(outValue11_ap_vld)
 );
 
 iiccomm5_iic_m_axi #(
@@ -469,61 +467,61 @@ end
 
 always @ (posedge ap_clk) begin
     if ((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state10))) begin
-        iic_addr_1_read_reg_459 <= iic_RDATA;
+        iic_addr_1_read_reg_455 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state11))) begin
-        iic_addr_2_read_reg_470 <= iic_RDATA;
+        iic_addr_2_read_reg_466 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state12))) begin
-        iic_addr_3_read_reg_475 <= iic_RDATA;
+        iic_addr_3_read_reg_471 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state13))) begin
-        iic_addr_4_read_reg_480 <= iic_RDATA;
+        iic_addr_4_read_reg_476 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state14))) begin
-        iic_addr_5_read_reg_485 <= iic_RDATA;
+        iic_addr_5_read_reg_481 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state15))) begin
-        iic_addr_6_read_reg_490 <= iic_RDATA;
+        iic_addr_6_read_reg_486 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state16))) begin
-        iic_addr_7_read_reg_495 <= iic_RDATA;
+        iic_addr_7_read_reg_491 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((iic_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state17))) begin
-        iic_addr_8_read_reg_500 <= iic_RDATA;
+        iic_addr_8_read_reg_496 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state9))) begin
-        iic_addr_read_reg_448 <= iic_RDATA;
+        iic_addr_read_reg_444 <= iic_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((~((ap_sig_ioackin_iic_ARREADY == 1'b0) | (iic_RVALID == 1'b0)) & (1'b1 == ap_CS_fsm_state8))) begin
-        iic_read_reg_437 <= iic_RDATA;
+        iic_read_reg_433 <= iic_RDATA;
     end
 end
 
@@ -631,9 +629,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state18)) begin
-        outValue11_o_ap_vld = 1'b1;
+        outValue11_ap_vld = 1'b1;
     end else begin
-        outValue11_o_ap_vld = 1'b0;
+        outValue11_ap_vld = 1'b0;
     end
 end
 

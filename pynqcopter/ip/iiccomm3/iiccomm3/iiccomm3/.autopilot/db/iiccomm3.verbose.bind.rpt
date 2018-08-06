@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'iiccomm3'
 ================================================================
-* Date:           Sun Aug  5 18:55:04 2018
+* Date:           Mon Aug  6 01:28:58 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        iiccomm3
@@ -277,7 +277,7 @@ ST_18 : Operation 149 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axili
 ST_18 : Operation 150 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue8, i32 %iic_addr_6_read)" [iiccomm3.cpp:96]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
 ST_18 : Operation 151 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue9, i32 %iic_addr_7_read)" [iiccomm3.cpp:99]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
 ST_18 : Operation 152 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %outValue10, i32 %iic_addr_8_read)" [iiccomm3.cpp:102]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_18 : Operation 153 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.volatile.i32P(i32* %outValue11, i32 10)" [iiccomm3.cpp:104]
+ST_18 : Operation 153 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %outValue11, i32 10)" [iiccomm3.cpp:104]
 ST_18 : Operation 154 [1/1] (0.00ns)   --->   "ret void" [iiccomm3.cpp:106]
 
 
@@ -720,7 +720,7 @@ StgValue_154    (ret          ) [ 0000000000000000000]
 <pin id="73" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Write.ap_auto.volatile.i32P"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Write.ap_auto.i32P"/></StgValue>
 </bind>
 </comp>
 

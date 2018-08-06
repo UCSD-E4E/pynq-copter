@@ -97,7 +97,7 @@ end;
 architecture behav of iiccomm5 is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "iiccomm5,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=17,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=1723,HLS_SYN_LUT=2198}";
+    "iiccomm5,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=17,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=1685,HLS_SYN_LUT=2134}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (17 downto 0) := "000000000000000001";
@@ -184,8 +184,7 @@ architecture behav of iiccomm5 is
     signal outValue9_o_ap_vld : STD_LOGIC;
     signal outValue10_i : STD_LOGIC_VECTOR (31 downto 0);
     signal outValue10_o_ap_vld : STD_LOGIC;
-    signal outValue11_i : STD_LOGIC_VECTOR (31 downto 0);
-    signal outValue11_o_ap_vld : STD_LOGIC;
+    signal outValue11_ap_vld : STD_LOGIC;
     signal iic_blk_n_AR : STD_LOGIC;
     signal iic_blk_n_R : STD_LOGIC;
     signal ap_CS_fsm_state8 : STD_LOGIC;
@@ -237,16 +236,16 @@ architecture behav of iiccomm5 is
     signal iic_BID : STD_LOGIC_VECTOR (0 downto 0);
     signal iic_BUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_sig_ioackin_iic_ARREADY : STD_LOGIC;
-    signal iic_read_reg_437 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_read_reg_448 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_1_read_reg_459 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_2_read_reg_470 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_3_read_reg_475 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_4_read_reg_480 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_5_read_reg_485 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_6_read_reg_490 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_7_read_reg_495 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_8_read_reg_500 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_read_reg_433 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_addr_read_reg_444 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_addr_1_read_reg_455 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_addr_2_read_reg_466 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_addr_3_read_reg_471 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_addr_4_read_reg_476 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_addr_5_read_reg_481 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_addr_6_read_reg_486 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_addr_7_read_reg_491 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_addr_8_read_reg_496 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_reg_ioackin_iic_ARREADY : STD_LOGIC := '0';
     signal ap_CS_fsm_state18 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state18 : signal is "none";
@@ -312,9 +311,8 @@ architecture behav of iiccomm5 is
         outValue10_o : IN STD_LOGIC_VECTOR (31 downto 0);
         outValue10_o_ap_vld : IN STD_LOGIC;
         outValue10_i : OUT STD_LOGIC_VECTOR (31 downto 0);
-        outValue11_o : IN STD_LOGIC_VECTOR (31 downto 0);
-        outValue11_o_ap_vld : IN STD_LOGIC;
-        outValue11_i : OUT STD_LOGIC_VECTOR (31 downto 0) );
+        outValue11 : IN STD_LOGIC_VECTOR (31 downto 0);
+        outValue11_ap_vld : IN STD_LOGIC );
     end component;
 
 
@@ -468,39 +466,38 @@ begin
         ap_ready => ap_ready,
         ap_done => ap_done,
         ap_idle => ap_idle,
-        outValue1_o => iic_read_reg_437,
+        outValue1_o => iic_read_reg_433,
         outValue1_o_ap_vld => outValue1_o_ap_vld,
         outValue1_i => outValue1_i,
-        outValue2_o => iic_addr_read_reg_448,
+        outValue2_o => iic_addr_read_reg_444,
         outValue2_o_ap_vld => outValue2_o_ap_vld,
         outValue2_i => outValue2_i,
-        outValue3_o => iic_addr_1_read_reg_459,
+        outValue3_o => iic_addr_1_read_reg_455,
         outValue3_o_ap_vld => outValue3_o_ap_vld,
         outValue3_i => outValue3_i,
-        outValue4_o => iic_addr_2_read_reg_470,
+        outValue4_o => iic_addr_2_read_reg_466,
         outValue4_o_ap_vld => outValue4_o_ap_vld,
         outValue4_i => outValue4_i,
-        outValue5_o => iic_addr_3_read_reg_475,
+        outValue5_o => iic_addr_3_read_reg_471,
         outValue5_o_ap_vld => outValue5_o_ap_vld,
         outValue5_i => outValue5_i,
-        outValue6_o => iic_addr_4_read_reg_480,
+        outValue6_o => iic_addr_4_read_reg_476,
         outValue6_o_ap_vld => outValue6_o_ap_vld,
         outValue6_i => outValue6_i,
-        outValue7_o => iic_addr_5_read_reg_485,
+        outValue7_o => iic_addr_5_read_reg_481,
         outValue7_o_ap_vld => outValue7_o_ap_vld,
         outValue7_i => outValue7_i,
-        outValue8_o => iic_addr_6_read_reg_490,
+        outValue8_o => iic_addr_6_read_reg_486,
         outValue8_o_ap_vld => outValue8_o_ap_vld,
         outValue8_i => outValue8_i,
-        outValue9_o => iic_addr_7_read_reg_495,
+        outValue9_o => iic_addr_7_read_reg_491,
         outValue9_o_ap_vld => outValue9_o_ap_vld,
         outValue9_i => outValue9_i,
-        outValue10_o => iic_addr_8_read_reg_500,
+        outValue10_o => iic_addr_8_read_reg_496,
         outValue10_o_ap_vld => outValue10_o_ap_vld,
         outValue10_i => outValue10_i,
-        outValue11_o => ap_const_lv32_14,
-        outValue11_o_ap_vld => outValue11_o_ap_vld,
-        outValue11_i => outValue11_i);
+        outValue11 => ap_const_lv32_14,
+        outValue11_ap_vld => outValue11_ap_vld);
 
     iiccomm5_iic_m_axi_U : component iiccomm5_iic_m_axi
     generic map (
@@ -653,7 +650,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((not(((ap_sig_ioackin_iic_ARREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state10))) then
-                iic_addr_1_read_reg_459 <= iic_RDATA;
+                iic_addr_1_read_reg_455 <= iic_RDATA;
             end if;
         end if;
     end process;
@@ -661,7 +658,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state11))) then
-                iic_addr_2_read_reg_470 <= iic_RDATA;
+                iic_addr_2_read_reg_466 <= iic_RDATA;
             end if;
         end if;
     end process;
@@ -669,7 +666,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state12))) then
-                iic_addr_3_read_reg_475 <= iic_RDATA;
+                iic_addr_3_read_reg_471 <= iic_RDATA;
             end if;
         end if;
     end process;
@@ -677,7 +674,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state13))) then
-                iic_addr_4_read_reg_480 <= iic_RDATA;
+                iic_addr_4_read_reg_476 <= iic_RDATA;
             end if;
         end if;
     end process;
@@ -685,7 +682,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state14))) then
-                iic_addr_5_read_reg_485 <= iic_RDATA;
+                iic_addr_5_read_reg_481 <= iic_RDATA;
             end if;
         end if;
     end process;
@@ -693,7 +690,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state15))) then
-                iic_addr_6_read_reg_490 <= iic_RDATA;
+                iic_addr_6_read_reg_486 <= iic_RDATA;
             end if;
         end if;
     end process;
@@ -701,7 +698,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state16))) then
-                iic_addr_7_read_reg_495 <= iic_RDATA;
+                iic_addr_7_read_reg_491 <= iic_RDATA;
             end if;
         end if;
     end process;
@@ -709,7 +706,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state17))) then
-                iic_addr_8_read_reg_500 <= iic_RDATA;
+                iic_addr_8_read_reg_496 <= iic_RDATA;
             end if;
         end if;
     end process;
@@ -717,7 +714,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((not(((ap_sig_ioackin_iic_ARREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state9))) then
-                iic_addr_read_reg_448 <= iic_RDATA;
+                iic_addr_read_reg_444 <= iic_RDATA;
             end if;
         end if;
     end process;
@@ -725,7 +722,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((not(((ap_sig_ioackin_iic_ARREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state8))) then
-                iic_read_reg_437 <= iic_RDATA;
+                iic_read_reg_433 <= iic_RDATA;
             end if;
         end if;
     end process;
@@ -988,12 +985,12 @@ begin
     end process;
 
 
-    outValue11_o_ap_vld_assign_proc : process(ap_CS_fsm_state18)
+    outValue11_ap_vld_assign_proc : process(ap_CS_fsm_state18)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state18)) then 
-            outValue11_o_ap_vld <= ap_const_logic_1;
+            outValue11_ap_vld <= ap_const_logic_1;
         else 
-            outValue11_o_ap_vld <= ap_const_logic_0;
+            outValue11_ap_vld <= ap_const_logic_0;
         end if; 
     end process;
 

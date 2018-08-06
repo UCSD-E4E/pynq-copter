@@ -33348,7 +33348,7 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 };
 # 40 "./iiccomm3.hpp" 2
 # 50 "./iiccomm3.hpp"
-void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatile uint32_t &outValue2, volatile uint32_t &outValue3, volatile uint32_t &outValue4, volatile uint32_t &outValue5, volatile uint32_t &outValue6, volatile uint32_t &outValue7, volatile uint32_t &outValue8, volatile uint32_t &outValue9, volatile uint32_t &outValue10, volatile uint32_t &outValue11);
+void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t& outValue1, volatile uint32_t& outValue2, volatile uint32_t& outValue3, volatile uint32_t& outValue4, volatile uint32_t& outValue5, volatile uint32_t& outValue6, volatile uint32_t& outValue7, volatile uint32_t& outValue8, volatile uint32_t& outValue9, volatile uint32_t& outValue10, int& outValue11);
 # 36 "iiccomm3.cpp" 2
 
 
@@ -33366,7 +33366,7 @@ static uint32_t val9;
 static uint32_t val10;
 
 
-void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t &outValue1, volatile uint32_t &outValue2, volatile uint32_t &outValue3, volatile uint32_t &outValue4, volatile uint32_t &outValue5, volatile uint32_t &outValue6, volatile uint32_t &outValue7, volatile uint32_t &outValue8, volatile uint32_t &outValue9, volatile uint32_t &outValue10, volatile uint32_t &outValue11)
+void iiccomm3(volatile uint32_t iic[4096], volatile uint32_t& outValue1, volatile uint32_t& outValue2, volatile uint32_t& outValue3, volatile uint32_t& outValue4, volatile uint32_t& outValue5, volatile uint32_t& outValue6, volatile uint32_t& outValue7, volatile uint32_t& outValue8, volatile uint32_t& outValue9, volatile uint32_t& outValue10, int& outValue11)
 {_ssdm_SpecArrayDimSize(iic,4096);
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 

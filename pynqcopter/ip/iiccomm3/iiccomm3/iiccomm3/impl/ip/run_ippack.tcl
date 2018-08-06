@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "iiccomm3"
 set Version     "1.0"
 set DisplayName "Iiccomm3"
-set Revision    "1808051855"
+set Revision    "1808060128"
 set Description "HLS Core: Iiccomm3 Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -559,7 +559,7 @@ set Interfaces {
         width "32"
         ctype {
             DATA {
-                Type "integer unsigned"
+                Type "integer signed"
                 Width "32"
                 Bits "32"
             }

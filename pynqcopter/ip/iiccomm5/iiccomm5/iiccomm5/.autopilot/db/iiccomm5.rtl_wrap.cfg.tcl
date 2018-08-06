@@ -140,12 +140,12 @@ set PortName11 "outValue11"
 set BitWidth11 "32"
 set ArrayOpt11 ""
 set Const11 "0"
-set Volatile11 "1"
+set Volatile11 "0"
 set Pointer11 "2"
 set Reference11 "1"
 set Dims11 [list 0]
 set Interface11 "wire"
-set DataType11 "unsigned int"
+set DataType11 "int"
 set Port11 [list $PortName11 $Interface11 $DataType11 $Pointer11 $Dims11 $Const11 $Volatile11 $ArrayOpt11]
 lappend PortList $Port11
 set globalAPint "" 

@@ -19,7 +19,9 @@ define void @iicstat(i32* %bus_r, i32* %outValue) nounwind uwtable {
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %outValue) nounwind, !map !26
   call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @iicstat_str) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32* %bus_r, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @p_str1, [4 x i8]* @p_str2, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  %outValue_load = call i32 @_ssdm_op_Read.s_axilite.volatile.i32P(i32* %outValue) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32* %outValue, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [15 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32 0, [13 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   %bus_addr = getelementptr inbounds i32* %bus_r, i64 65
   %bus_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %bus_addr, i32 1) nounwind
@@ -54,6 +56,12 @@ entry:
   ret i1 true
 }
 
+define weak i32 @_ssdm_op_Read.s_axilite.volatile.i32P(i32*) {
+entry:
+  %empty = load i32* %0
+  ret i32 %empty
+}
+
 define weak i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32*) {
 entry:
   %empty = load i32* %0
@@ -65,10 +73,10 @@ entry:
 !llvm.map.gv = !{!13}
 
 !0 = metadata !{void (i32*, i32*)* @iicstat, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
-!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1}
+!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0}
 !2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none"}
-!3 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*"}
-!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"volatile", metadata !"volatile"}
+!3 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"volatile int &"}
+!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"volatile", metadata !""}
 !5 = metadata !{metadata !"kernel_arg_name", metadata !"bus", metadata !"outValue"}
 !6 = metadata !{metadata !"reqd_work_group_size", i32 1, i32 1, i32 1}
 !7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}

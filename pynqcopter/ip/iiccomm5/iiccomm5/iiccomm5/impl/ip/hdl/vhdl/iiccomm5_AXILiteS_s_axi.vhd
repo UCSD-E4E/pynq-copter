@@ -71,9 +71,8 @@ port (
     outValue10_i          :out  STD_LOGIC_VECTOR(31 downto 0);
     outValue10_o          :in   STD_LOGIC_VECTOR(31 downto 0);
     outValue10_o_ap_vld   :in   STD_LOGIC;
-    outValue11_i          :out  STD_LOGIC_VECTOR(31 downto 0);
-    outValue11_o          :in   STD_LOGIC_VECTOR(31 downto 0);
-    outValue11_o_ap_vld   :in   STD_LOGIC
+    outValue11            :in   STD_LOGIC_VECTOR(31 downto 0);
+    outValue11_ap_vld     :in   STD_LOGIC
 );
 end entity iiccomm5_AXILiteS_s_axi;
 
@@ -176,13 +175,10 @@ end entity iiccomm5_AXILiteS_s_axi;
 -- 0xac : Control signal of outValue10_o
 --        bit 0  - outValue10_o_ap_vld (Read/COR)
 --        others - reserved
--- 0xb0 : Data signal of outValue11_i
---        bit 31~0 - outValue11_i[31:0] (Read/Write)
--- 0xb4 : reserved
--- 0xb8 : Data signal of outValue11_o
---        bit 31~0 - outValue11_o[31:0] (Read)
--- 0xbc : Control signal of outValue11_o
---        bit 0  - outValue11_o_ap_vld (Read/COR)
+-- 0xb0 : Data signal of outValue11
+--        bit 31~0 - outValue11[31:0] (Read)
+-- 0xb4 : Control signal of outValue11
+--        bit 0  - outValue11_ap_vld (Read/COR)
 --        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -235,10 +231,8 @@ architecture behave of iiccomm5_AXILiteS_s_axi is
     constant ADDR_OUTVALUE10_I_CTRL   : INTEGER := 16#a4#;
     constant ADDR_OUTVALUE10_O_DATA_0 : INTEGER := 16#a8#;
     constant ADDR_OUTVALUE10_O_CTRL   : INTEGER := 16#ac#;
-    constant ADDR_OUTVALUE11_I_DATA_0 : INTEGER := 16#b0#;
-    constant ADDR_OUTVALUE11_I_CTRL   : INTEGER := 16#b4#;
-    constant ADDR_OUTVALUE11_O_DATA_0 : INTEGER := 16#b8#;
-    constant ADDR_OUTVALUE11_O_CTRL   : INTEGER := 16#bc#;
+    constant ADDR_OUTVALUE11_DATA_0   : INTEGER := 16#b0#;
+    constant ADDR_OUTVALUE11_CTRL     : INTEGER := 16#b4#;
     constant ADDR_BITS         : INTEGER := 8;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -291,9 +285,8 @@ architecture behave of iiccomm5_AXILiteS_s_axi is
     signal int_outValue10_i    : UNSIGNED(31 downto 0) := (others => '0');
     signal int_outValue10_o    : UNSIGNED(31 downto 0) := (others => '0');
     signal int_outValue10_o_ap_vld : STD_LOGIC;
-    signal int_outValue11_i    : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_outValue11_o    : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_outValue11_o_ap_vld : STD_LOGIC;
+    signal int_outValue11      : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_outValue11_ap_vld : STD_LOGIC;
 
 
 begin
@@ -475,12 +468,10 @@ begin
                         rdata_data <= RESIZE(int_outValue10_o(31 downto 0), 32);
                     when ADDR_OUTVALUE10_O_CTRL =>
                         rdata_data <= (0 => int_outValue10_o_ap_vld, others => '0');
-                    when ADDR_OUTVALUE11_I_DATA_0 =>
-                        rdata_data <= RESIZE(int_outValue11_i(31 downto 0), 32);
-                    when ADDR_OUTVALUE11_O_DATA_0 =>
-                        rdata_data <= RESIZE(int_outValue11_o(31 downto 0), 32);
-                    when ADDR_OUTVALUE11_O_CTRL =>
-                        rdata_data <= (0 => int_outValue11_o_ap_vld, others => '0');
+                    when ADDR_OUTVALUE11_DATA_0 =>
+                        rdata_data <= RESIZE(int_outValue11(31 downto 0), 32);
+                    when ADDR_OUTVALUE11_CTRL =>
+                        rdata_data <= (0 => int_outValue11_ap_vld, others => '0');
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -502,7 +493,6 @@ begin
     outValue8_i          <= STD_LOGIC_VECTOR(int_outValue8_i);
     outValue9_i          <= STD_LOGIC_VECTOR(int_outValue9_i);
     outValue10_i         <= STD_LOGIC_VECTOR(int_outValue10_i);
-    outValue11_i         <= STD_LOGIC_VECTOR(int_outValue11_i);
 
     process (ACLK)
     begin
@@ -1022,9 +1012,11 @@ begin
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_OUTVALUE11_I_DATA_0) then
-                    int_outValue11_i(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_outValue11_i(31 downto 0));
+            if (ARESET = '1') then
+                int_outValue11 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (outValue11_ap_vld = '1') then
+                    int_outValue11 <= UNSIGNED(outValue11); -- clear on read
                 end if;
             end if;
         end if;
@@ -1034,25 +1026,12 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_outValue11_o <= (others => '0');
+                int_outValue11_ap_vld <= '0';
             elsif (ACLK_EN = '1') then
-                if (outValue11_o_ap_vld = '1') then
-                    int_outValue11_o <= UNSIGNED(outValue11_o); -- clear on read
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_outValue11_o_ap_vld <= '0';
-            elsif (ACLK_EN = '1') then
-                if (outValue11_o_ap_vld = '1') then
-                    int_outValue11_o_ap_vld <= '1';
-                elsif (ar_hs = '1' and raddr = ADDR_OUTVALUE11_O_CTRL) then
-                    int_outValue11_o_ap_vld <= '0'; -- clear on read
+                if (outValue11_ap_vld = '1') then
+                    int_outValue11_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_OUTVALUE11_CTRL) then
+                    int_outValue11_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;

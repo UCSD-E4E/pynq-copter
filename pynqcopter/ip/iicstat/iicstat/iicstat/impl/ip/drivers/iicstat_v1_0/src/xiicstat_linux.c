@@ -129,6 +129,10 @@ int XIicstat_Initialize(XIicstat *InstancePtr, const char* InstanceName) {
     InstancePtr->Outvalue_first_BaseAddress = (u32)mmap(NULL, InfoPtr->maps[0].size, PROT_READ|PROT_WRITE, MAP_SHARED, InfoPtr->uio_fd, 0 * getpagesize());
     assert(InstancePtr->Outvalue_first_BaseAddress);
 
+    // NOTE: slave interface 'Axilites' should be mapped to uioX/map1
+    InstancePtr->Axilites_BaseAddress = (u32)mmap(NULL, InfoPtr->maps[1].size, PROT_READ|PROT_WRITE, MAP_SHARED, InfoPtr->uio_fd, 1 * getpagesize());
+    assert(InstancePtr->Axilites_BaseAddress);
+
     InstancePtr->IsReady = XIL_COMPONENT_IS_READY;
 
     return XST_SUCCESS;
@@ -141,6 +145,7 @@ int XIicstat_Release(XIicstat *InstancePtr) {
     assert(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     munmap((void*)InstancePtr->Outvalue_first_BaseAddress, InfoPtr->maps[0].size);
+    munmap((void*)InstancePtr->Axilites_BaseAddress, InfoPtr->maps[1].size);
 
     close(InfoPtr->uio_fd);
 

@@ -39,11 +39,13 @@
       "..\/..\/main.cpp"
     ],
     "Vhdl": [
+      "impl\/vhdl\/iicstat_AXILiteS_s_axi.vhd",
       "impl\/vhdl\/iicstat_bus_r_m_axi.vhd",
       "impl\/vhdl\/iicstat_outValue_first_s_axi.vhd",
       "impl\/vhdl\/iicstat.vhd"
     ],
     "Verilog": [
+      "impl\/verilog\/iicstat_AXILiteS_s_axi.v",
       "impl\/verilog\/iicstat_bus_r_m_axi.v",
       "impl\/verilog\/iicstat_outValue_first_s_axi.v",
       "impl\/verilog\/iicstat.v"
@@ -69,7 +71,7 @@
     "ap_clk": {
       "type": "clock",
       "ctype": {"CLK": {"Type": "bool"}},
-      "buses": "s_axi_outValue_first m_axi_bus_r",
+      "buses": "s_axi_AXILiteS s_axi_outValue_first m_axi_bus_r",
       "reset": "ap_rst_n"
     },
     "ap_rst_n": {
@@ -256,6 +258,64 @@
         "WUSER": "1"
       }
     },
+    "s_axi_AXILiteS": {
+      "type": "axi4lite",
+      "is_adaptor": "true",
+      "mode": "slave",
+      "port_prefix": "s_axi_AXILiteS",
+      "param_prefix": "C_S_AXI_AXILITES",
+      "addr_bits": "4",
+      "registers": [],
+      "memories": "",
+      "ctype": {
+        "AWVALID": {"Type": "bool"},
+        "AWREADY": {"Type": "bool"},
+        "WVALID": {"Type": "bool"},
+        "WREADY": {"Type": "bool"},
+        "BVALID": {"Type": "bool"},
+        "BREADY": {"Type": "bool"},
+        "BRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARVALID": {"Type": "bool"},
+        "ARREADY": {"Type": "bool"},
+        "RVALID": {"Type": "bool"},
+        "RREADY": {"Type": "bool"},
+        "RRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWADDR": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "WDATA": {
+          "Type": "null",
+          "Width": "32"
+        },
+        "WSTRB": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARADDR": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "RDATA": {
+          "Type": "null",
+          "Width": "32"
+        }
+      },
+      "data_width": "32",
+      "port_width": {
+        "ARADDR": "4",
+        "AWADDR": "4",
+        "RDATA": "32",
+        "WDATA": "32",
+        "WSTRB": "4"
+      }
+    },
     "s_axi_outValue_first": {
       "type": "axi4lite",
       "is_adaptor": "true",
@@ -266,33 +326,48 @@
       "registers": [
         {
           "offset": "0x10",
-          "name": "outValue",
-          "access": "R",
+          "name": "outValue_i",
+          "access": "W",
           "reset_value": "0x0",
-          "description": "Data signal of outValue",
+          "description": "Data signal of outValue_i",
           "fields": [{
               "offset": "0",
               "width": "32",
-              "name": "outValue",
-              "access": "R",
+              "name": "outValue_i",
+              "access": "W",
               "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of outValue"
+              "description": "Bit 31 to 0 Data signal of outValue_i"
             }]
         },
         {
-          "offset": "0x14",
-          "name": "outValue_ctrl",
+          "offset": "0x18",
+          "name": "outValue_o",
           "access": "R",
           "reset_value": "0x0",
-          "description": "Control signal of outValue",
+          "description": "Data signal of outValue_o",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "outValue_o",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of outValue_o"
+            }]
+        },
+        {
+          "offset": "0x1c",
+          "name": "outValue_o_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of outValue_o",
           "fields": [
             {
               "offset": "0",
               "width": "1",
-              "name": "outValue_ap_vld",
+              "name": "outValue_o_ap_vld",
               "access": "R",
               "reset_value": "0",
-              "description": "Control signal outValue_ap_vld"
+              "description": "Control signal outValue_o_ap_vld"
             },
             {
               "offset": "1",
@@ -357,6 +432,74 @@
     }
   },
   "RtlPorts": {
+    "s_axi_AXILiteS_AWVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_AXILiteS_AWREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_AXILiteS_AWADDR": {
+      "dir": "in",
+      "width": "4"
+    },
+    "s_axi_AXILiteS_WVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_AXILiteS_WREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_AXILiteS_WDATA": {
+      "dir": "in",
+      "width": "32"
+    },
+    "s_axi_AXILiteS_WSTRB": {
+      "dir": "in",
+      "width": "4"
+    },
+    "s_axi_AXILiteS_ARVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_AXILiteS_ARREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_AXILiteS_ARADDR": {
+      "dir": "in",
+      "width": "4"
+    },
+    "s_axi_AXILiteS_RVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_AXILiteS_RREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_AXILiteS_RDATA": {
+      "dir": "out",
+      "width": "32"
+    },
+    "s_axi_AXILiteS_RRESP": {
+      "dir": "out",
+      "width": "2"
+    },
+    "s_axi_AXILiteS_BVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_AXILiteS_BREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_AXILiteS_BRESP": {
+      "dir": "out",
+      "width": "2"
+    },
     "s_axi_outValue_first_AWVALID": {
       "dir": "in",
       "width": "1"
@@ -625,14 +768,26 @@
     }
   },
   "CPorts": {
-    "outValue": {
+    "ap_ctrl": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "in",
+      "offset": "0"
+    },
+    "outValue_i": {
+      "interfaceRef": "s_axi_outValue_first",
+      "dir": "in",
+      "offset": "16",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "outValue_first"
+    },
+    "outValue_o": {
       "interfaceRef": "s_axi_outValue_first",
       "dir": "out",
-      "offset": "16",
-      "statusOffset": "20",
+      "offset": "24",
+      "statusOffset": "28",
       "handshakeRef": "ap_vld",
-      "Object": "outValue_first",
-      "firstOutLatency": "8"
+      "Object": "outValue_first"
     },
     "bus_r": {
       "interfaceRef": "m_axi_bus_r",
@@ -657,15 +812,15 @@
         },
         "Area": {
           "BRAM_18K": "2",
-          "FF": "622",
-          "LUT": "758",
+          "FF": "696",
+          "LUT": "862",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-03 11:01:12 PDT",
+    "Time": "2018-08-06 02:23:11 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

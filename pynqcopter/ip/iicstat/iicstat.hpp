@@ -37,6 +37,6 @@
 
 #include "ap_int.h"
 
-void iicstat(volatile int *bus, volatile int *outValue);
+void iicstat(volatile int *bus, volatile int& outValue);
 
 #endif

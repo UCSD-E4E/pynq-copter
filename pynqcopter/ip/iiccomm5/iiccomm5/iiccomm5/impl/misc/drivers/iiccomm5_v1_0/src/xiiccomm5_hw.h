@@ -104,13 +104,10 @@
 // 0xac : Control signal of outValue10_o
 //        bit 0  - outValue10_o_ap_vld (Read/COR)
 //        others - reserved
-// 0xb0 : Data signal of outValue11_i
-//        bit 31~0 - outValue11_i[31:0] (Read/Write)
-// 0xb4 : reserved
-// 0xb8 : Data signal of outValue11_o
-//        bit 31~0 - outValue11_o[31:0] (Read)
-// 0xbc : Control signal of outValue11_o
-//        bit 0  - outValue11_o_ap_vld (Read/COR)
+// 0xb0 : Data signal of outValue11
+//        bit 31~0 - outValue11[31:0] (Read)
+// 0xb4 : Control signal of outValue11
+//        bit 0  - outValue11_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -168,9 +165,7 @@
 #define XIICCOMM5_AXILITES_ADDR_OUTVALUE10_O_DATA 0xa8
 #define XIICCOMM5_AXILITES_BITS_OUTVALUE10_O_DATA 32
 #define XIICCOMM5_AXILITES_ADDR_OUTVALUE10_O_CTRL 0xac
-#define XIICCOMM5_AXILITES_ADDR_OUTVALUE11_I_DATA 0xb0
-#define XIICCOMM5_AXILITES_BITS_OUTVALUE11_I_DATA 32
-#define XIICCOMM5_AXILITES_ADDR_OUTVALUE11_O_DATA 0xb8
-#define XIICCOMM5_AXILITES_BITS_OUTVALUE11_O_DATA 32
-#define XIICCOMM5_AXILITES_ADDR_OUTVALUE11_O_CTRL 0xbc
+#define XIICCOMM5_AXILITES_ADDR_OUTVALUE11_DATA   0xb0
+#define XIICCOMM5_AXILITES_BITS_OUTVALUE11_DATA   32
+#define XIICCOMM5_AXILITES_ADDR_OUTVALUE11_CTRL   0xb4
 

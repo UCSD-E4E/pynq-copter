@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Sun Aug  5 20:20:00 2018
+| Date             : Mon Aug  6 01:39:34 2018
 | Host             : fabricant running 64-bit Linux Mint 18 Sarah
 | Command          : report_power -file iicComm5_wrapper_power_routed.rpt -pb iicComm5_wrapper_power_summary_routed.pb -rpx iicComm5_wrapper_power_routed.rpx
 | Design           : iicComm5_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.418        |
+| Total On-Chip Power (W)  | 1.427        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.285        |
+| Dynamic (W)              | 1.294        |
 | Device Static (W)        | 0.133        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 68.6         |
-| Junction Temperature (C) | 41.4         |
+| Max Ambient (C)          | 68.5         |
+| Junction Temperature (C) | 41.5         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,20 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.006 |        4 |       --- |             --- |
-| Slice Logic             |     0.002 |     3533 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     1297 |     53200 |            2.44 |
+| Clocks                  |     0.010 |        4 |       --- |             --- |
+| Slice Logic             |     0.005 |     5921 |       --- |             --- |
+|   LUT as Logic          |     0.004 |     2009 |     53200 |            3.78 |
+|   Register              |    <0.001 |     2892 |    106400 |            2.72 |
 |   CARRY4                |    <0.001 |       68 |     13300 |            0.51 |
-|   Register              |    <0.001 |     1513 |    106400 |            1.42 |
-|   LUT as Shift Register |    <0.001 |       73 |     17400 |            0.42 |
-|   F7/F8 Muxes           |    <0.001 |        2 |     53200 |           <0.01 |
-|   Others                |     0.000 |      275 |       --- |             --- |
-| Signals                 |     0.003 |     2593 |       --- |             --- |
+|   F7/F8 Muxes           |    <0.001 |       11 |     53200 |            0.02 |
+|   LUT as Shift Register |    <0.001 |      115 |     17400 |            0.66 |
+|   Others                |     0.000 |      281 |       --- |             --- |
+| Signals                 |     0.006 |     4471 |       --- |             --- |
 | Block RAM               |     0.003 |      0.5 |       140 |            0.36 |
 | I/O                     |     0.000 |        6 |       125 |            4.80 |
 | PS7                     |     1.270 |        1 |       --- |             --- |
 | Static Power            |     0.133 |          |           |                 |
-| Total                   |     1.418 |          |           |                 |
+| Total                   |     1.427 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.027 |       0.014 |      0.013 |
+| Vccint    |       1.000 |     0.036 |       0.023 |      0.013 |
 | Vccaux    |       1.800 |     0.014 |       0.000 |      0.014 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -151,10 +151,10 @@ Table of Contents
 +--------------------------------------------------+-----------+
 | Name                                             | Power (W) |
 +--------------------------------------------------+-----------+
-| iicComm5_wrapper                                 |     1.285 |
+| iicComm5_wrapper                                 |     1.294 |
 |   arduino_iic_scl_iobuf                          |     0.000 |
 |   arduino_iic_sda_iobuf                          |     0.000 |
-|   iicComm5_i                                     |     1.285 |
+|   iicComm5_i                                     |     1.294 |
 |     axi_iic_0                                    |     0.002 |
 |       U0                                         |     0.002 |
 |         X_IIC                                    |     0.002 |
@@ -180,20 +180,19 @@ Table of Contents
 |                 I_DECODER                        |    <0.001 |
 |             X_INTERRUPT_CONTROL                  |    <0.001 |
 |             X_SOFT_RESET                         |    <0.001 |
-|     iiccomm4_0                                   |     0.005 |
-|       inst                                       |     0.005 |
-|         iiccomm4_AXILiteS_s_axi_U                |    <0.001 |
-|         iiccomm4_OUTPUTS_s_axi_U                 |     0.000 |
-|         iiccomm4_iic_m_axi_U                     |     0.004 |
-|           bus_read                               |     0.004 |
-|             buff_rdata                           |     0.003 |
+|     iiccomm5_0                                   |     0.012 |
+|       inst                                       |     0.012 |
+|         iiccomm5_AXILiteS_s_axi_U                |     0.004 |
+|         iiccomm5_iic_m_axi_U                     |     0.007 |
+|           bus_read                               |     0.007 |
+|             buff_rdata                           |     0.004 |
 |             fifo_rctl                            |    <0.001 |
 |             fifo_rreq                            |    <0.001 |
 |             rs_rdata                             |    <0.001 |
 |             rs_rreq                              |    <0.001 |
 |     processing_system7_0                         |     1.271 |
 |       inst                                       |     1.271 |
-|     ps7_0_axi_periph                             |     0.007 |
+|     ps7_0_axi_periph                             |     0.009 |
 |       s00_couplers                               |     0.004 |
 |         auto_pc                                  |     0.004 |
 |           inst                                   |     0.004 |
@@ -244,10 +243,16 @@ Table of Contents
 |               WR.b_channel_0                     |    <0.001 |
 |                 bid_fifo_0                       |    <0.001 |
 |                 bresp_fifo_0                     |    <0.001 |
-|       xbar                                       |     0.001 |
-|         inst                                     |     0.001 |
-|           gen_sasd.crossbar_sasd_0               |     0.001 |
-|             addr_arbiter_inst                    |    <0.001 |
+|       s01_mmu                                    |    <0.001 |
+|         inst                                     |    <0.001 |
+|           decerr_slave_inst                      |    <0.001 |
+|           register_slice_inst                    |    <0.001 |
+|             ar.ar_pipe                           |    <0.001 |
+|             aw.aw_pipe                           |    <0.001 |
+|       xbar                                       |     0.002 |
+|         inst                                     |     0.002 |
+|           gen_sasd.crossbar_sasd_0               |     0.002 |
+|             addr_arbiter_inst                    |     0.002 |
 |             gen_decerr.decerr_slave_inst         |    <0.001 |
 |             reg_slice_r                          |    <0.001 |
 |             splitter_ar                          |    <0.001 |

@@ -32805,7 +32805,7 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 };
 #pragma line 39 "./iicstat.hpp" 2
 #pragma empty_line
-void iicstat(volatile int *bus, volatile int *outValue);
+void iicstat(volatile int *bus, volatile int& outValue);
 #pragma line 36 "iicstat.cpp" 2
 #pragma line 1 "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_utils.h" 1
 #pragma line 59 "/data/opt/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_utils.h"
@@ -33186,17 +33186,17 @@ enum SsdmRegionTypes {
 #pragma empty_line
 static int val1;
 #pragma empty_line
-void iicstat(volatile int *bus, volatile int *outValue)
+void iicstat(volatile int *bus, volatile int& outValue)
 {
 #pragma empty_line
 #pragma HLS INTERFACE m_axi depth=64 port=bus offset=off
 #pragma HLS INTERFACE s_axilite port=outValue bundle=outValue_first
-#pragma empty_line
+#pragma HLS INTERFACE s_axilite port=return
 #pragma HLS INTERFACE ap_ctrl_none port=return
 #pragma empty_line
 #pragma empty_line
  val1 = bus[(0x104)/4];
-    *outValue=val1;
+    outValue=val1;
 #pragma empty_line
 #pragma empty_line
 }

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'iicstat'
 ================================================================
-* Date:           Fri Aug  3 11:01:11 2018
+* Date:           Mon Aug  6 02:23:10 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        iicstat
@@ -51,12 +51,12 @@
 |DSP              |        -|      -|       -|      -|
 |Expression       |        -|      -|       -|      -|
 |FIFO             |        -|      -|       -|      -|
-|Instance         |        2|      -|     580|    684|
+|Instance         |        2|      -|     654|    788|
 |Memory           |        -|      -|       -|      -|
 |Multiplexer      |        -|      -|       -|     74|
 |Register         |        -|      -|      42|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |        2|      0|     622|    758|
+|Total            |        2|      0|     696|    862|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
@@ -68,10 +68,11 @@
     +--------------------------------+------------------------------+---------+-------+-----+-----+
     |            Instance            |            Module            | BRAM_18K| DSP48E|  FF | LUT |
     +--------------------------------+------------------------------+---------+-------+-----+-----+
+    |iicstat_AXILiteS_s_axi_U        |iicstat_AXILiteS_s_axi        |        0|      0|   36|   40|
     |iicstat_bus_r_m_axi_U           |iicstat_bus_r_m_axi           |        2|      0|  512|  580|
-    |iicstat_outValue_first_s_axi_U  |iicstat_outValue_first_s_axi  |        0|      0|   68|  104|
+    |iicstat_outValue_first_s_axi_U  |iicstat_outValue_first_s_axi  |        0|      0|  106|  168|
     +--------------------------------+------------------------------+---------+-------+-----+-----+
-    |Total                           |                              |        2|      0|  580|  684|
+    |Total                           |                              |        2|      0|  654|  788|
     +--------------------------------+------------------------------+---------+-------+-----+-----+
 
     * DSP48: 
@@ -104,7 +105,7 @@
     +------------------------------+----+----+-----+-----------+
     |ap_CS_fsm                     |   9|   0|    9|          0|
     |ap_reg_ioackin_bus_r_ARREADY  |   1|   0|    1|          0|
-    |bus_addr_read_reg_72          |  32|   0|   32|          0|
+    |bus_addr_read_reg_80          |  32|   0|   32|          0|
     +------------------------------+----+----+-----+-----------+
     |Total                         |  42|   0|   42|          0|
     +------------------------------+----+----+-----+-----------+
@@ -118,6 +119,23 @@
 +------------------------------+-----+-----+--------------+----------------+--------------+
 |           RTL Ports          | Dir | Bits|   Protocol   |  Source Object |    C Type    |
 +------------------------------+-----+-----+--------------+----------------+--------------+
+|s_axi_AXILiteS_AWVALID        |  in |    1|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_AWREADY        | out |    1|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_AWADDR         |  in |    4|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_WVALID         |  in |    1|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_WREADY         | out |    1|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_WDATA          |  in |   32|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_WSTRB          |  in |    4|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_ARVALID        |  in |    1|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_ARREADY        | out |    1|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_ARADDR         |  in |    4|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_RVALID         | out |    1|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_RREADY         |  in |    1|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_RDATA          | out |   32|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_RRESP          | out |    2|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_BVALID         | out |    1|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_BREADY         |  in |    1|     s_axi    |    AXILiteS    |  return void |
+|s_axi_AXILiteS_BRESP          | out |    2|     s_axi    |    AXILiteS    |  return void |
 |s_axi_outValue_first_AWVALID  |  in |    1|     s_axi    | outValue_first |    pointer   |
 |s_axi_outValue_first_AWREADY  | out |    1|     s_axi    | outValue_first |    pointer   |
 |s_axi_outValue_first_AWADDR   |  in |    5|     s_axi    | outValue_first |    pointer   |
