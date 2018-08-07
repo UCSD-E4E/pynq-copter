@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Aug  6 23:27:48 2018" VIVADOVERSION="2017.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Aug  7 10:48:19 2018" VIVADOVERSION="2017.4">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="iicComm" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -2265,9 +2265,79 @@
                 </FIELD>
               </FIELDS>
             </REGISTER>
+            <REGISTER NAME="tx_fifo_outValue_i">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of tx_fifo_outValue_i"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="88"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="tx_fifo_outValue_i">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of tx_fifo_outValue_i"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="tx_fifo_outValue_o">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of tx_fifo_outValue_o"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="96"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="tx_fifo_outValue_o">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of tx_fifo_outValue_o"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="tx_fifo_outValue_o_ctrl">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Control signal of tx_fifo_outValue_o"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="100"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="tx_fifo_outValue_o_ap_vld">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Control signal tx_fifo_outValue_o_ap_vld"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
+                </FIELD>
+                <FIELD NAME="RESERVED">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Reserved.  0s on read."/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="1"/>
+                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="1"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="31"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
             <REGISTER NAME="rx_fifo_outValue_i">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of rx_fifo_outValue_i"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="88"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="104"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="write-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2287,7 +2357,7 @@
             </REGISTER>
             <REGISTER NAME="rx_fifo_outValue_o">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of rx_fifo_outValue_o"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="96"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="112"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2307,7 +2377,7 @@
             </REGISTER>
             <REGISTER NAME="rx_fifo_outValue_o_ctrl">
               <PROPERTY NAME="DESCRIPTION" VALUE="Control signal of rx_fifo_outValue_o"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="100"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="116"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2359,7 +2429,7 @@
         <PARAMETER NAME="clk_period" VALUE="4"/>
         <PARAMETER NAME="machine" VALUE="64"/>
         <PARAMETER NAME="combinational" VALUE="0"/>
-        <PARAMETER NAME="latency" VALUE="55"/>
+        <PARAMETER NAME="latency" VALUE="69"/>
         <PARAMETER NAME="II" VALUE="x"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S_AXI_AXILITES_BASEADDR" VALUE="0x40000000"/>

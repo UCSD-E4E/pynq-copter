@@ -51,6 +51,9 @@ module iiccomm_AXILiteS_s_axi
     output wire [31:0]                   stat_reg_outValue_new_i,
     input  wire [31:0]                   stat_reg_outValue_new_o,
     input  wire                          stat_reg_outValue_new_o_ap_vld,
+    output wire [31:0]                   tx_fifo_outValue_i,
+    input  wire [31:0]                   tx_fifo_outValue_o,
+    input  wire                          tx_fifo_outValue_o_ap_vld,
     output wire [31:0]                   rx_fifo_outValue_i,
     input  wire [31:0]                   rx_fifo_outValue_o,
     input  wire                          rx_fifo_outValue_o_ap_vld
@@ -109,12 +112,20 @@ module iiccomm_AXILiteS_s_axi
 // 0x54 : Control signal of stat_reg_outValue_new_o
 //        bit 0  - stat_reg_outValue_new_o_ap_vld (Read/COR)
 //        others - reserved
-// 0x58 : Data signal of rx_fifo_outValue_i
-//        bit 31~0 - rx_fifo_outValue_i[31:0] (Read/Write)
+// 0x58 : Data signal of tx_fifo_outValue_i
+//        bit 31~0 - tx_fifo_outValue_i[31:0] (Read/Write)
 // 0x5c : reserved
-// 0x60 : Data signal of rx_fifo_outValue_o
+// 0x60 : Data signal of tx_fifo_outValue_o
+//        bit 31~0 - tx_fifo_outValue_o[31:0] (Read)
+// 0x64 : Control signal of tx_fifo_outValue_o
+//        bit 0  - tx_fifo_outValue_o_ap_vld (Read/COR)
+//        others - reserved
+// 0x68 : Data signal of rx_fifo_outValue_i
+//        bit 31~0 - rx_fifo_outValue_i[31:0] (Read/Write)
+// 0x6c : reserved
+// 0x70 : Data signal of rx_fifo_outValue_o
 //        bit 31~0 - rx_fifo_outValue_o[31:0] (Read)
-// 0x64 : Control signal of rx_fifo_outValue_o
+// 0x74 : Control signal of rx_fifo_outValue_o
 //        bit 0  - rx_fifo_outValue_o_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -143,10 +154,14 @@ localparam
     ADDR_STAT_REG_OUTVALUE_NEW_I_CTRL   = 7'h4c,
     ADDR_STAT_REG_OUTVALUE_NEW_O_DATA_0 = 7'h50,
     ADDR_STAT_REG_OUTVALUE_NEW_O_CTRL   = 7'h54,
-    ADDR_RX_FIFO_OUTVALUE_I_DATA_0      = 7'h58,
-    ADDR_RX_FIFO_OUTVALUE_I_CTRL        = 7'h5c,
-    ADDR_RX_FIFO_OUTVALUE_O_DATA_0      = 7'h60,
-    ADDR_RX_FIFO_OUTVALUE_O_CTRL        = 7'h64,
+    ADDR_TX_FIFO_OUTVALUE_I_DATA_0      = 7'h58,
+    ADDR_TX_FIFO_OUTVALUE_I_CTRL        = 7'h5c,
+    ADDR_TX_FIFO_OUTVALUE_O_DATA_0      = 7'h60,
+    ADDR_TX_FIFO_OUTVALUE_O_CTRL        = 7'h64,
+    ADDR_RX_FIFO_OUTVALUE_I_DATA_0      = 7'h68,
+    ADDR_RX_FIFO_OUTVALUE_I_CTRL        = 7'h6c,
+    ADDR_RX_FIFO_OUTVALUE_O_DATA_0      = 7'h70,
+    ADDR_RX_FIFO_OUTVALUE_O_CTRL        = 7'h74,
     WRIDLE                              = 2'd0,
     WRDATA                              = 2'd1,
     WRRESP                              = 2'd2,
@@ -190,6 +205,9 @@ localparam
     reg  [31:0]                   int_stat_reg_outValue_new_i = 'b0;
     reg  [31:0]                   int_stat_reg_outValue_new_o = 'b0;
     reg                           int_stat_reg_outValue_new_o_ap_vld;
+    reg  [31:0]                   int_tx_fifo_outValue_i = 'b0;
+    reg  [31:0]                   int_tx_fifo_outValue_o = 'b0;
+    reg                           int_tx_fifo_outValue_o_ap_vld;
     reg  [31:0]                   int_rx_fifo_outValue_i = 'b0;
     reg  [31:0]                   int_rx_fifo_outValue_o = 'b0;
     reg                           int_rx_fifo_outValue_o_ap_vld;
@@ -339,6 +357,15 @@ always @(posedge ACLK) begin
                 ADDR_STAT_REG_OUTVALUE_NEW_O_CTRL: begin
                     rdata[0] <= int_stat_reg_outValue_new_o_ap_vld;
                 end
+                ADDR_TX_FIFO_OUTVALUE_I_DATA_0: begin
+                    rdata <= int_tx_fifo_outValue_i[31:0];
+                end
+                ADDR_TX_FIFO_OUTVALUE_O_DATA_0: begin
+                    rdata <= int_tx_fifo_outValue_o[31:0];
+                end
+                ADDR_TX_FIFO_OUTVALUE_O_CTRL: begin
+                    rdata[0] <= int_tx_fifo_outValue_o_ap_vld;
+                end
                 ADDR_RX_FIFO_OUTVALUE_I_DATA_0: begin
                     rdata <= int_rx_fifo_outValue_i[31:0];
                 end
@@ -362,6 +389,7 @@ assign interr_reg_outValue     = int_interr_reg_outValue;
 assign empty_pirq_outValue_i   = int_empty_pirq_outValue_i;
 assign full_pirq_outValue_i    = int_full_pirq_outValue_i;
 assign stat_reg_outValue_new_i = int_stat_reg_outValue_new_i;
+assign tx_fifo_outValue_i      = int_tx_fifo_outValue_i;
 assign rx_fifo_outValue_i      = int_rx_fifo_outValue_i;
 // int_ap_start
 always @(posedge ACLK) begin
@@ -594,6 +622,38 @@ always @(posedge ACLK) begin
             int_stat_reg_outValue_new_o_ap_vld <= 1'b1;
         else if (ar_hs && raddr == ADDR_STAT_REG_OUTVALUE_NEW_O_CTRL)
             int_stat_reg_outValue_new_o_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_tx_fifo_outValue_i[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_tx_fifo_outValue_i[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_TX_FIFO_OUTVALUE_I_DATA_0)
+            int_tx_fifo_outValue_i[31:0] <= (WDATA[31:0] & wmask) | (int_tx_fifo_outValue_i[31:0] & ~wmask);
+    end
+end
+
+// int_tx_fifo_outValue_o
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_tx_fifo_outValue_o <= 0;
+    else if (ACLK_EN) begin
+        if (tx_fifo_outValue_o_ap_vld)
+            int_tx_fifo_outValue_o <= tx_fifo_outValue_o;
+    end
+end
+
+// int_tx_fifo_outValue_o_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_tx_fifo_outValue_o_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (tx_fifo_outValue_o_ap_vld)
+            int_tx_fifo_outValue_o_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TX_FIFO_OUTVALUE_O_CTRL)
+            int_tx_fifo_outValue_o_ap_vld <= 1'b0; // clear on read
     end
 end
 
