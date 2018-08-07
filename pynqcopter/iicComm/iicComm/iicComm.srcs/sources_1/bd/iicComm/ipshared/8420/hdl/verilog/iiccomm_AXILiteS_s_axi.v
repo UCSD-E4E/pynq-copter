@@ -41,9 +41,7 @@ module iiccomm_AXILiteS_s_axi
     output wire [31:0]                   stat_reg_outValue_i,
     input  wire [31:0]                   stat_reg_outValue_o,
     input  wire                          stat_reg_outValue_o_ap_vld,
-    output wire [31:0]                   interr_reg_outValue_i,
-    input  wire [31:0]                   interr_reg_outValue_o,
-    input  wire                          interr_reg_outValue_o_ap_vld,
+    output wire [31:0]                   interr_reg_outValue,
     output wire [31:0]                   empty_pirq_outValue_i,
     input  wire [31:0]                   empty_pirq_outValue_o,
     input  wire                          empty_pirq_outValue_o_ap_vld,
@@ -78,28 +76,23 @@ module iiccomm_AXILiteS_s_axi
 // 0x1c : Control signal of stat_reg_outValue_o
 //        bit 0  - stat_reg_outValue_o_ap_vld (Read/COR)
 //        others - reserved
-// 0x20 : Data signal of interr_reg_outValue_i
-//        bit 31~0 - interr_reg_outValue_i[31:0] (Read/Write)
+// 0x20 : Data signal of interr_reg_outValue
+//        bit 31~0 - interr_reg_outValue[31:0] (Read/Write)
 // 0x24 : reserved
-// 0x28 : Data signal of interr_reg_outValue_o
-//        bit 31~0 - interr_reg_outValue_o[31:0] (Read)
-// 0x2c : Control signal of interr_reg_outValue_o
-//        bit 0  - interr_reg_outValue_o_ap_vld (Read/COR)
-//        others - reserved
-// 0x30 : Data signal of empty_pirq_outValue_i
+// 0x28 : Data signal of empty_pirq_outValue_i
 //        bit 31~0 - empty_pirq_outValue_i[31:0] (Read/Write)
-// 0x34 : reserved
-// 0x38 : Data signal of empty_pirq_outValue_o
+// 0x2c : reserved
+// 0x30 : Data signal of empty_pirq_outValue_o
 //        bit 31~0 - empty_pirq_outValue_o[31:0] (Read)
-// 0x3c : Control signal of empty_pirq_outValue_o
+// 0x34 : Control signal of empty_pirq_outValue_o
 //        bit 0  - empty_pirq_outValue_o_ap_vld (Read/COR)
 //        others - reserved
-// 0x40 : Data signal of full_pirq_outValue_i
+// 0x38 : Data signal of full_pirq_outValue_i
 //        bit 31~0 - full_pirq_outValue_i[31:0] (Read/Write)
-// 0x44 : reserved
-// 0x48 : Data signal of full_pirq_outValue_o
+// 0x3c : reserved
+// 0x40 : Data signal of full_pirq_outValue_o
 //        bit 31~0 - full_pirq_outValue_o[31:0] (Read)
-// 0x4c : Control signal of full_pirq_outValue_o
+// 0x44 : Control signal of full_pirq_outValue_o
 //        bit 0  - full_pirq_outValue_o_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -114,18 +107,16 @@ localparam
     ADDR_STAT_REG_OUTVALUE_I_CTRL     = 7'h14,
     ADDR_STAT_REG_OUTVALUE_O_DATA_0   = 7'h18,
     ADDR_STAT_REG_OUTVALUE_O_CTRL     = 7'h1c,
-    ADDR_INTERR_REG_OUTVALUE_I_DATA_0 = 7'h20,
-    ADDR_INTERR_REG_OUTVALUE_I_CTRL   = 7'h24,
-    ADDR_INTERR_REG_OUTVALUE_O_DATA_0 = 7'h28,
-    ADDR_INTERR_REG_OUTVALUE_O_CTRL   = 7'h2c,
-    ADDR_EMPTY_PIRQ_OUTVALUE_I_DATA_0 = 7'h30,
-    ADDR_EMPTY_PIRQ_OUTVALUE_I_CTRL   = 7'h34,
-    ADDR_EMPTY_PIRQ_OUTVALUE_O_DATA_0 = 7'h38,
-    ADDR_EMPTY_PIRQ_OUTVALUE_O_CTRL   = 7'h3c,
-    ADDR_FULL_PIRQ_OUTVALUE_I_DATA_0  = 7'h40,
-    ADDR_FULL_PIRQ_OUTVALUE_I_CTRL    = 7'h44,
-    ADDR_FULL_PIRQ_OUTVALUE_O_DATA_0  = 7'h48,
-    ADDR_FULL_PIRQ_OUTVALUE_O_CTRL    = 7'h4c,
+    ADDR_INTERR_REG_OUTVALUE_DATA_0   = 7'h20,
+    ADDR_INTERR_REG_OUTVALUE_CTRL     = 7'h24,
+    ADDR_EMPTY_PIRQ_OUTVALUE_I_DATA_0 = 7'h28,
+    ADDR_EMPTY_PIRQ_OUTVALUE_I_CTRL   = 7'h2c,
+    ADDR_EMPTY_PIRQ_OUTVALUE_O_DATA_0 = 7'h30,
+    ADDR_EMPTY_PIRQ_OUTVALUE_O_CTRL   = 7'h34,
+    ADDR_FULL_PIRQ_OUTVALUE_I_DATA_0  = 7'h38,
+    ADDR_FULL_PIRQ_OUTVALUE_I_CTRL    = 7'h3c,
+    ADDR_FULL_PIRQ_OUTVALUE_O_DATA_0  = 7'h40,
+    ADDR_FULL_PIRQ_OUTVALUE_O_CTRL    = 7'h44,
     WRIDLE                            = 2'd0,
     WRDATA                            = 2'd1,
     WRRESP                            = 2'd2,
@@ -159,9 +150,7 @@ localparam
     reg  [31:0]                   int_stat_reg_outValue_i = 'b0;
     reg  [31:0]                   int_stat_reg_outValue_o = 'b0;
     reg                           int_stat_reg_outValue_o_ap_vld;
-    reg  [31:0]                   int_interr_reg_outValue_i = 'b0;
-    reg  [31:0]                   int_interr_reg_outValue_o = 'b0;
-    reg                           int_interr_reg_outValue_o_ap_vld;
+    reg  [31:0]                   int_interr_reg_outValue = 'b0;
     reg  [31:0]                   int_empty_pirq_outValue_i = 'b0;
     reg  [31:0]                   int_empty_pirq_outValue_o = 'b0;
     reg                           int_empty_pirq_outValue_o_ap_vld;
@@ -284,14 +273,8 @@ always @(posedge ACLK) begin
                 ADDR_STAT_REG_OUTVALUE_O_CTRL: begin
                     rdata[0] <= int_stat_reg_outValue_o_ap_vld;
                 end
-                ADDR_INTERR_REG_OUTVALUE_I_DATA_0: begin
-                    rdata <= int_interr_reg_outValue_i[31:0];
-                end
-                ADDR_INTERR_REG_OUTVALUE_O_DATA_0: begin
-                    rdata <= int_interr_reg_outValue_o[31:0];
-                end
-                ADDR_INTERR_REG_OUTVALUE_O_CTRL: begin
-                    rdata[0] <= int_interr_reg_outValue_o_ap_vld;
+                ADDR_INTERR_REG_OUTVALUE_DATA_0: begin
+                    rdata <= int_interr_reg_outValue[31:0];
                 end
                 ADDR_EMPTY_PIRQ_OUTVALUE_I_DATA_0: begin
                     rdata <= int_empty_pirq_outValue_i[31:0];
@@ -321,7 +304,7 @@ end
 assign interrupt             = int_gie & (|int_isr);
 assign ap_start              = int_ap_start;
 assign stat_reg_outValue_i   = int_stat_reg_outValue_i;
-assign interr_reg_outValue_i = int_interr_reg_outValue_i;
+assign interr_reg_outValue   = int_interr_reg_outValue;
 assign empty_pirq_outValue_i = int_empty_pirq_outValue_i;
 assign full_pirq_outValue_i  = int_full_pirq_outValue_i;
 // int_ap_start
@@ -452,35 +435,13 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_interr_reg_outValue_i[31:0]
+// int_interr_reg_outValue[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_interr_reg_outValue_i[31:0] <= 0;
+        int_interr_reg_outValue[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_INTERR_REG_OUTVALUE_I_DATA_0)
-            int_interr_reg_outValue_i[31:0] <= (WDATA[31:0] & wmask) | (int_interr_reg_outValue_i[31:0] & ~wmask);
-    end
-end
-
-// int_interr_reg_outValue_o
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_interr_reg_outValue_o <= 0;
-    else if (ACLK_EN) begin
-        if (interr_reg_outValue_o_ap_vld)
-            int_interr_reg_outValue_o <= interr_reg_outValue_o;
-    end
-end
-
-// int_interr_reg_outValue_o_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_interr_reg_outValue_o_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (interr_reg_outValue_o_ap_vld)
-            int_interr_reg_outValue_o_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_INTERR_REG_OUTVALUE_O_CTRL)
-            int_interr_reg_outValue_o_ap_vld <= 1'b0; // clear on read
+        if (w_hs && waddr == ADDR_INTERR_REG_OUTVALUE_DATA_0)
+            int_interr_reg_outValue[31:0] <= (WDATA[31:0] & wmask) | (int_interr_reg_outValue[31:0] & ~wmask);
     end
 end
 
