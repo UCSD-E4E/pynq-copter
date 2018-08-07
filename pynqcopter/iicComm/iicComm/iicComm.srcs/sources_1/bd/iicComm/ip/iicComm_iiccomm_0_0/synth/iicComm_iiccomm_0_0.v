@@ -48,13 +48,12 @@
 
 
 // IP VLNV: UCSD:hlsip:iiccomm:1.0
-// IP Revision: 1808062036
+// IP Revision: 1808062326
 
 (* X_CORE_INFO = "iiccomm,Vivado 2017.4" *)
 (* CHECK_LICENSE_TYPE = "iicComm_iiccomm_0_0,iiccomm,{}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module iicComm_iiccomm_0_0 (
-  rx_fifo_outValue_ap_vld,
   s_axi_AXILiteS_AWADDR,
   s_axi_AXILiteS_AWVALID,
   s_axi_AXILiteS_AWREADY,
@@ -109,11 +108,9 @@ module iicComm_iiccomm_0_0 (
   m_axi_iic_RRESP,
   m_axi_iic_RLAST,
   m_axi_iic_RVALID,
-  m_axi_iic_RREADY,
-  rx_fifo_outValue
+  m_axi_iic_RREADY
 );
 
-output wire rx_fifo_outValue_ap_vld;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS AWADDR" *)
 input wire [6 : 0] s_axi_AXILiteS_AWADDR;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_AXILiteS AWVALID" *)
@@ -229,9 +226,6 @@ input wire m_axi_iic_RVALID;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axi_iic, ADDR_WIDTH 32, MAX_BURST_LENGTH 256, NUM_READ_OUTSTANDING 16, NUM_WRITE_OUTSTANDING 16, MAX_READ_BURST_LENGTH 16, MAX_WRITE_BURST_LENGTH 16, PROTOCOL AXI4, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, FREQ_HZ 100000000, ID_WIDTH 0, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 1, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, PHASE 0.000, CLK_DOMAIN iicComm_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_iic RREADY" *)
 output wire m_axi_iic_RREADY;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rx_fifo_outValue, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 rx_fifo_outValue DATA" *)
-output wire [31 : 0] rx_fifo_outValue;
 
   iiccomm #(
     .C_S_AXI_AXILITES_ADDR_WIDTH(7),
@@ -249,7 +243,6 @@ output wire [31 : 0] rx_fifo_outValue;
     .C_M_AXI_IIC_CACHE_VALUE(4'B0011),
     .C_M_AXI_IIC_TARGET_ADDR(32'H00000000)
   ) inst (
-    .rx_fifo_outValue_ap_vld(rx_fifo_outValue_ap_vld),
     .s_axi_AXILiteS_AWADDR(s_axi_AXILiteS_AWADDR),
     .s_axi_AXILiteS_AWVALID(s_axi_AXILiteS_AWVALID),
     .s_axi_AXILiteS_AWREADY(s_axi_AXILiteS_AWREADY),
@@ -314,7 +307,6 @@ output wire [31 : 0] rx_fifo_outValue;
     .m_axi_iic_RLAST(m_axi_iic_RLAST),
     .m_axi_iic_RUSER(1'B0),
     .m_axi_iic_RVALID(m_axi_iic_RVALID),
-    .m_axi_iic_RREADY(m_axi_iic_RREADY),
-    .rx_fifo_outValue(rx_fifo_outValue)
+    .m_axi_iic_RREADY(m_axi_iic_RREADY)
   );
 endmodule
