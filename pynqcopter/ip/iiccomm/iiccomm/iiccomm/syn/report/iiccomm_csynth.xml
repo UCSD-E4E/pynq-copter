@@ -21,19 +21,19 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>25</Best-caseLatency>
-<Average-caseLatency>25</Average-caseLatency>
-<Worst-caseLatency>25</Worst-caseLatency>
-<Interval-min>26</Interval-min>
-<Interval-max>26</Interval-max>
+<Best-caseLatency>82</Best-caseLatency>
+<Average-caseLatency>82</Average-caseLatency>
+<Worst-caseLatency>82</Worst-caseLatency>
+<Interval-min>83</Interval-min>
+<Interval-max>83</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <BRAM_18K>2</BRAM_18K>
-<FF>980</FF>
-<LUT>1356</LUT>
+<FF>1485</FF>
+<LUT>2314</LUT>
 <DSP48E>0</DSP48E>
 </Resources>
 <AvailableResources>
@@ -79,7 +79,7 @@
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>7</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -170,7 +170,7 @@
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>7</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>

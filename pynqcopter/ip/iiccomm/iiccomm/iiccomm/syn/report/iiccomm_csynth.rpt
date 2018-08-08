@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'iiccomm'
 ================================================================
-* Date:           Mon Aug  6 15:32:10 2018
+* Date:           Wed Aug  8 11:50:19 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        iiccomm
@@ -29,7 +29,7 @@
     |  Latency  |  Interval | Pipeline|
     | min | max | min | max |   Type  |
     +-----+-----+-----+-----+---------+
-    |   25|   25|   25|   25|   none  |
+    |   82|   82|   82|   82|   none  |
     +-----+-----+-----+-----+---------+
 
     + Detail: 
@@ -51,28 +51,28 @@
 |DSP              |        -|      -|       -|      -|
 |Expression       |        -|      -|       -|      -|
 |FIFO             |        -|      -|       -|      -|
-|Instance         |        2|      -|     852|   1132|
+|Instance         |        2|      -|    1232|   1772|
 |Memory           |        -|      -|       -|      -|
-|Multiplexer      |        -|      -|       -|    224|
-|Register         |        -|      -|     128|      -|
+|Multiplexer      |        -|      -|       -|    542|
+|Register         |        -|      -|     253|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |        2|      0|     980|   1356|
+|Total            |        2|      0|    1485|   2314|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
-|Utilization (%)  |    ~0   |      0|   ~0   |      2|
+|Utilization (%)  |    ~0   |      0|       1|      4|
 +-----------------+---------+-------+--------+-------+
 
 + Detail: 
     * Instance: 
-    +--------------------------+------------------------+---------+-------+-----+-----+
-    |         Instance         |         Module         | BRAM_18K| DSP48E|  FF | LUT |
-    +--------------------------+------------------------+---------+-------+-----+-----+
-    |iiccomm_AXILiteS_s_axi_U  |iiccomm_AXILiteS_s_axi  |        0|      0|  340|  552|
-    |iiccomm_iic_m_axi_U       |iiccomm_iic_m_axi       |        2|      0|  512|  580|
-    +--------------------------+------------------------+---------+-------+-----+-----+
-    |Total                     |                        |        2|      0|  852| 1132|
-    +--------------------------+------------------------+---------+-------+-----+-----+
+    +--------------------------+------------------------+---------+-------+-----+------+
+    |         Instance         |         Module         | BRAM_18K| DSP48E|  FF |  LUT |
+    +--------------------------+------------------------+---------+-------+-----+------+
+    |iiccomm_AXILiteS_s_axi_U  |iiccomm_AXILiteS_s_axi  |        0|      0|  720|  1192|
+    |iiccomm_iic_m_axi_U       |iiccomm_iic_m_axi       |        2|      0|  512|   580|
+    +--------------------------+------------------------+---------+-------+-----+------+
+    |Total                     |                        |        2|      0| 1232|  1772|
+    +--------------------------+------------------------+---------+-------+-----+------+
 
     * DSP48: 
     N/A
@@ -90,36 +90,44 @@
     +----------------------------+-----+-----------+-----+-----------+
     |            Name            | LUT | Input Size| Bits| Total Bits|
     +----------------------------+-----+-----------+-----+-----------+
-    |ap_NS_fsm                   |  125|         27|    1|         27|
+    |ap_NS_fsm                   |  369|         84|    1|         84|
     |ap_sig_ioackin_iic_ARREADY  |    9|          2|    1|          2|
     |ap_sig_ioackin_iic_AWREADY  |    9|          2|    1|          2|
     |ap_sig_ioackin_iic_WREADY   |    9|          2|    1|          2|
-    |iic_ARADDR                  |   27|          5|   32|        160|
+    |iic_ARADDR                  |   41|          8|   32|        256|
+    |iic_AWADDR                  |   27|          5|   32|        160|
+    |iic_WDATA                   |   33|          6|   32|        192|
     |iic_blk_n_AR                |    9|          2|    1|          2|
     |iic_blk_n_AW                |    9|          2|    1|          2|
     |iic_blk_n_B                 |    9|          2|    1|          2|
     |iic_blk_n_R                 |    9|          2|    1|          2|
     |iic_blk_n_W                 |    9|          2|    1|          2|
     +----------------------------+-----+-----------+-----+-----------+
-    |Total                       |  224|         48|   41|        203|
+    |Total                       |  542|        119|  105|        708|
     +----------------------------+-----+-----------+-----+-----------+
 
     * Register: 
     +----------------------------------------------+----+----+-----+-----------+
     |                     Name                     | FF | LUT| Bits| Const Bits|
     +----------------------------------------------+----+----+-----+-----------+
-    |ap_CS_fsm                                     |  26|   0|   26|          0|
+    |ap_CS_fsm                                     |  83|   0|   83|          0|
+    |ap_reg_ioackin_ctrl_reg_outValue_dummy_ack    |   1|   0|    1|          0|
     |ap_reg_ioackin_empty_pirq_outValue_dummy_ack  |   1|   0|    1|          0|
+    |ap_reg_ioackin_full_pirq_outValue_dummy_ack   |   1|   0|    1|          0|
     |ap_reg_ioackin_iic_ARREADY                    |   1|   0|    1|          0|
     |ap_reg_ioackin_iic_AWREADY                    |   1|   0|    1|          0|
     |ap_reg_ioackin_iic_WREADY                     |   1|   0|    1|          0|
-    |ap_reg_ioackin_interr_reg_outValue_dummy_ack  |   1|   0|    1|          0|
-    |ap_reg_ioackin_stat_reg_outValue_dummy_ack    |   1|   0|    1|          0|
-    |iic_addr_1_read_reg_204                       |  32|   0|   32|          0|
-    |iic_addr_read_reg_199                         |  32|   0|   32|          0|
-    |reg_153                                       |  32|   0|   32|          0|
+    |ap_reg_ioackin_stat_reg_outValue1_dummy_ack   |   1|   0|    1|          0|
+    |ap_reg_ioackin_stat_reg_outValue2_dummy_ack   |   1|   0|    1|          0|
+    |ap_reg_ioackin_stat_reg_outValue3_dummy_ack   |   1|   0|    1|          0|
+    |ap_reg_ioackin_tx_fifo_outValue_dummy_ack     |   1|   0|    1|          0|
+    |iic_addr_1_read_reg_371                       |  32|   0|   32|          0|
+    |iic_addr_3_read_reg_385                       |  32|   0|   32|          0|
+    |iic_addr_4_read_reg_396                       |  32|   0|   32|          0|
+    |reg_302                                       |  32|   0|   32|          0|
+    |reg_308                                       |  32|   0|   32|          0|
     +----------------------------------------------+----+----+-----+-----------+
-    |Total                                         | 128|   0|  128|          0|
+    |Total                                         | 253|   0|  253|          0|
     +----------------------------------------------+----+----+-----+-----------+
 
 
@@ -133,14 +141,14 @@
 +------------------------+-----+-----+------------+--------------+--------------+
 |s_axi_AXILiteS_AWVALID  |  in |    1|    s_axi   |   AXILiteS   |    pointer   |
 |s_axi_AXILiteS_AWREADY  | out |    1|    s_axi   |   AXILiteS   |    pointer   |
-|s_axi_AXILiteS_AWADDR   |  in |    7|    s_axi   |   AXILiteS   |    pointer   |
+|s_axi_AXILiteS_AWADDR   |  in |    8|    s_axi   |   AXILiteS   |    pointer   |
 |s_axi_AXILiteS_WVALID   |  in |    1|    s_axi   |   AXILiteS   |    pointer   |
 |s_axi_AXILiteS_WREADY   | out |    1|    s_axi   |   AXILiteS   |    pointer   |
 |s_axi_AXILiteS_WDATA    |  in |   32|    s_axi   |   AXILiteS   |    pointer   |
 |s_axi_AXILiteS_WSTRB    |  in |    4|    s_axi   |   AXILiteS   |    pointer   |
 |s_axi_AXILiteS_ARVALID  |  in |    1|    s_axi   |   AXILiteS   |    pointer   |
 |s_axi_AXILiteS_ARREADY  | out |    1|    s_axi   |   AXILiteS   |    pointer   |
-|s_axi_AXILiteS_ARADDR   |  in |    7|    s_axi   |   AXILiteS   |    pointer   |
+|s_axi_AXILiteS_ARADDR   |  in |    8|    s_axi   |   AXILiteS   |    pointer   |
 |s_axi_AXILiteS_RVALID   | out |    1|    s_axi   |   AXILiteS   |    pointer   |
 |s_axi_AXILiteS_RREADY   |  in |    1|    s_axi   |   AXILiteS   |    pointer   |
 |s_axi_AXILiteS_RDATA    | out |   32|    s_axi   |   AXILiteS   |    pointer   |

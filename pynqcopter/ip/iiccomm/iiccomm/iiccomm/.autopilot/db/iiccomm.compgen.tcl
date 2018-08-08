@@ -12,7 +12,7 @@ ap_start { }
 ap_done { }
 ap_ready { }
 ap_idle { }
-stat_reg_outValue_i { 
+stat_reg_outValue1_i { 
 	dir I
 	width 32
 	depth 1
@@ -20,7 +20,7 @@ stat_reg_outValue_i {
 	offset 16
 	offset_end 23
 }
-stat_reg_outValue_o { 
+stat_reg_outValue1_o { 
 	dir O
 	width 32
 	depth 1
@@ -28,7 +28,7 @@ stat_reg_outValue_o {
 	offset 24
 	offset_end 31
 }
-interr_reg_outValue_i { 
+empty_pirq_outValue_i { 
 	dir I
 	width 32
 	depth 1
@@ -36,7 +36,7 @@ interr_reg_outValue_i {
 	offset 32
 	offset_end 39
 }
-interr_reg_outValue_o { 
+empty_pirq_outValue_o { 
 	dir O
 	width 32
 	depth 1
@@ -44,7 +44,7 @@ interr_reg_outValue_o {
 	offset 40
 	offset_end 47
 }
-empty_pirq_outValue_i { 
+full_pirq_outValue_i { 
 	dir I
 	width 32
 	depth 1
@@ -52,7 +52,7 @@ empty_pirq_outValue_i {
 	offset 48
 	offset_end 55
 }
-empty_pirq_outValue_o { 
+full_pirq_outValue_o { 
 	dir O
 	width 32
 	depth 1
@@ -60,7 +60,7 @@ empty_pirq_outValue_o {
 	offset 56
 	offset_end 63
 }
-full_pirq_outValue_i { 
+stat_reg_outValue2_i { 
 	dir I
 	width 32
 	depth 1
@@ -68,13 +68,93 @@ full_pirq_outValue_i {
 	offset 64
 	offset_end 71
 }
-full_pirq_outValue_o { 
+stat_reg_outValue2_o { 
 	dir O
 	width 32
 	depth 1
 	mode ap_vld
 	offset 72
 	offset_end 79
+}
+stat_reg_outValue3_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 80
+	offset_end 87
+}
+stat_reg_outValue3_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 88
+	offset_end 95
+}
+stat_reg_outValue4_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 96
+	offset_end 103
+}
+stat_reg_outValue4_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 104
+	offset_end 111
+}
+tx_fifo_outValue_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 112
+	offset_end 119
+}
+tx_fifo_outValue_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 120
+	offset_end 127
+}
+rx_fifo_outValue_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 128
+	offset_end 135
+}
+rx_fifo_outValue_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 136
+	offset_end 143
+}
+ctrl_reg_outValue_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 144
+	offset_end 151
+}
+ctrl_reg_outValue_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 152
+	offset_end 159
 }
 }
 

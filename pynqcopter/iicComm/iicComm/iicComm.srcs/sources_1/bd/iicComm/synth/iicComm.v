@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Tue Aug  7 10:47:56 2018
+//Date        : Wed Aug  8 11:51:12 2018
 //Host        : fabricant running 64-bit Linux Mint 18 Sarah
 //Command     : generate_target iicComm.bd
 //Design      : iicComm
@@ -275,10 +275,10 @@ module iicComm
         .m_axi_iic_WREADY(iiccomm_0_m_axi_iic_WREADY),
         .m_axi_iic_WSTRB(iiccomm_0_m_axi_iic_WSTRB),
         .m_axi_iic_WVALID(iiccomm_0_m_axi_iic_WVALID),
-        .s_axi_AXILiteS_ARADDR(ps7_0_axi_periph_M00_AXI_ARADDR[6:0]),
+        .s_axi_AXILiteS_ARADDR(ps7_0_axi_periph_M00_AXI_ARADDR[7:0]),
         .s_axi_AXILiteS_ARREADY(ps7_0_axi_periph_M00_AXI_ARREADY),
         .s_axi_AXILiteS_ARVALID(ps7_0_axi_periph_M00_AXI_ARVALID),
-        .s_axi_AXILiteS_AWADDR(ps7_0_axi_periph_M00_AXI_AWADDR[6:0]),
+        .s_axi_AXILiteS_AWADDR(ps7_0_axi_periph_M00_AXI_AWADDR[7:0]),
         .s_axi_AXILiteS_AWREADY(ps7_0_axi_periph_M00_AXI_AWREADY),
         .s_axi_AXILiteS_AWVALID(ps7_0_axi_periph_M00_AXI_AWVALID),
         .s_axi_AXILiteS_BREADY(ps7_0_axi_periph_M00_AXI_BREADY),

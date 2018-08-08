@@ -24,37 +24,77 @@
 //        bit 0  - Channel 0 (ap_done)
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
-// 0x10 : Data signal of stat_reg_outValue_i
-//        bit 31~0 - stat_reg_outValue_i[31:0] (Read/Write)
+// 0x10 : Data signal of stat_reg_outValue1_i
+//        bit 31~0 - stat_reg_outValue1_i[31:0] (Read/Write)
 // 0x14 : reserved
-// 0x18 : Data signal of stat_reg_outValue_o
-//        bit 31~0 - stat_reg_outValue_o[31:0] (Read)
-// 0x1c : Control signal of stat_reg_outValue_o
-//        bit 0  - stat_reg_outValue_o_ap_vld (Read/COR)
+// 0x18 : Data signal of stat_reg_outValue1_o
+//        bit 31~0 - stat_reg_outValue1_o[31:0] (Read)
+// 0x1c : Control signal of stat_reg_outValue1_o
+//        bit 0  - stat_reg_outValue1_o_ap_vld (Read/COR)
 //        others - reserved
-// 0x20 : Data signal of interr_reg_outValue_i
-//        bit 31~0 - interr_reg_outValue_i[31:0] (Read/Write)
-// 0x24 : reserved
-// 0x28 : Data signal of interr_reg_outValue_o
-//        bit 31~0 - interr_reg_outValue_o[31:0] (Read)
-// 0x2c : Control signal of interr_reg_outValue_o
-//        bit 0  - interr_reg_outValue_o_ap_vld (Read/COR)
-//        others - reserved
-// 0x30 : Data signal of empty_pirq_outValue_i
+// 0x20 : Data signal of empty_pirq_outValue_i
 //        bit 31~0 - empty_pirq_outValue_i[31:0] (Read/Write)
-// 0x34 : reserved
-// 0x38 : Data signal of empty_pirq_outValue_o
+// 0x24 : reserved
+// 0x28 : Data signal of empty_pirq_outValue_o
 //        bit 31~0 - empty_pirq_outValue_o[31:0] (Read)
-// 0x3c : Control signal of empty_pirq_outValue_o
+// 0x2c : Control signal of empty_pirq_outValue_o
 //        bit 0  - empty_pirq_outValue_o_ap_vld (Read/COR)
 //        others - reserved
-// 0x40 : Data signal of full_pirq_outValue_i
+// 0x30 : Data signal of full_pirq_outValue_i
 //        bit 31~0 - full_pirq_outValue_i[31:0] (Read/Write)
-// 0x44 : reserved
-// 0x48 : Data signal of full_pirq_outValue_o
+// 0x34 : reserved
+// 0x38 : Data signal of full_pirq_outValue_o
 //        bit 31~0 - full_pirq_outValue_o[31:0] (Read)
-// 0x4c : Control signal of full_pirq_outValue_o
+// 0x3c : Control signal of full_pirq_outValue_o
 //        bit 0  - full_pirq_outValue_o_ap_vld (Read/COR)
+//        others - reserved
+// 0x40 : Data signal of stat_reg_outValue2_i
+//        bit 31~0 - stat_reg_outValue2_i[31:0] (Read/Write)
+// 0x44 : reserved
+// 0x48 : Data signal of stat_reg_outValue2_o
+//        bit 31~0 - stat_reg_outValue2_o[31:0] (Read)
+// 0x4c : Control signal of stat_reg_outValue2_o
+//        bit 0  - stat_reg_outValue2_o_ap_vld (Read/COR)
+//        others - reserved
+// 0x50 : Data signal of stat_reg_outValue3_i
+//        bit 31~0 - stat_reg_outValue3_i[31:0] (Read/Write)
+// 0x54 : reserved
+// 0x58 : Data signal of stat_reg_outValue3_o
+//        bit 31~0 - stat_reg_outValue3_o[31:0] (Read)
+// 0x5c : Control signal of stat_reg_outValue3_o
+//        bit 0  - stat_reg_outValue3_o_ap_vld (Read/COR)
+//        others - reserved
+// 0x60 : Data signal of stat_reg_outValue4_i
+//        bit 31~0 - stat_reg_outValue4_i[31:0] (Read/Write)
+// 0x64 : reserved
+// 0x68 : Data signal of stat_reg_outValue4_o
+//        bit 31~0 - stat_reg_outValue4_o[31:0] (Read)
+// 0x6c : Control signal of stat_reg_outValue4_o
+//        bit 0  - stat_reg_outValue4_o_ap_vld (Read/COR)
+//        others - reserved
+// 0x70 : Data signal of tx_fifo_outValue_i
+//        bit 31~0 - tx_fifo_outValue_i[31:0] (Read/Write)
+// 0x74 : reserved
+// 0x78 : Data signal of tx_fifo_outValue_o
+//        bit 31~0 - tx_fifo_outValue_o[31:0] (Read)
+// 0x7c : Control signal of tx_fifo_outValue_o
+//        bit 0  - tx_fifo_outValue_o_ap_vld (Read/COR)
+//        others - reserved
+// 0x80 : Data signal of rx_fifo_outValue_i
+//        bit 31~0 - rx_fifo_outValue_i[31:0] (Read/Write)
+// 0x84 : reserved
+// 0x88 : Data signal of rx_fifo_outValue_o
+//        bit 31~0 - rx_fifo_outValue_o[31:0] (Read)
+// 0x8c : Control signal of rx_fifo_outValue_o
+//        bit 0  - rx_fifo_outValue_o_ap_vld (Read/COR)
+//        others - reserved
+// 0x90 : Data signal of ctrl_reg_outValue_i
+//        bit 31~0 - ctrl_reg_outValue_i[31:0] (Read/Write)
+// 0x94 : reserved
+// 0x98 : Data signal of ctrl_reg_outValue_o
+//        bit 31~0 - ctrl_reg_outValue_o[31:0] (Read)
+// 0x9c : Control signal of ctrl_reg_outValue_o
+//        bit 0  - ctrl_reg_outValue_o_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -62,24 +102,49 @@
 #define XIICCOMM_AXILITES_ADDR_GIE                        0x04
 #define XIICCOMM_AXILITES_ADDR_IER                        0x08
 #define XIICCOMM_AXILITES_ADDR_ISR                        0x0c
-#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE_I_DATA   0x10
-#define XIICCOMM_AXILITES_BITS_STAT_REG_OUTVALUE_I_DATA   32
-#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE_O_DATA   0x18
-#define XIICCOMM_AXILITES_BITS_STAT_REG_OUTVALUE_O_DATA   32
-#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE_O_CTRL   0x1c
-#define XIICCOMM_AXILITES_ADDR_INTERR_REG_OUTVALUE_I_DATA 0x20
-#define XIICCOMM_AXILITES_BITS_INTERR_REG_OUTVALUE_I_DATA 32
-#define XIICCOMM_AXILITES_ADDR_INTERR_REG_OUTVALUE_O_DATA 0x28
-#define XIICCOMM_AXILITES_BITS_INTERR_REG_OUTVALUE_O_DATA 32
-#define XIICCOMM_AXILITES_ADDR_INTERR_REG_OUTVALUE_O_CTRL 0x2c
-#define XIICCOMM_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_I_DATA 0x30
+#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE1_I_DATA  0x10
+#define XIICCOMM_AXILITES_BITS_STAT_REG_OUTVALUE1_I_DATA  32
+#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE1_O_DATA  0x18
+#define XIICCOMM_AXILITES_BITS_STAT_REG_OUTVALUE1_O_DATA  32
+#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE1_O_CTRL  0x1c
+#define XIICCOMM_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_I_DATA 0x20
 #define XIICCOMM_AXILITES_BITS_EMPTY_PIRQ_OUTVALUE_I_DATA 32
-#define XIICCOMM_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_O_DATA 0x38
+#define XIICCOMM_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_O_DATA 0x28
 #define XIICCOMM_AXILITES_BITS_EMPTY_PIRQ_OUTVALUE_O_DATA 32
-#define XIICCOMM_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_O_CTRL 0x3c
-#define XIICCOMM_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_I_DATA  0x40
+#define XIICCOMM_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_O_CTRL 0x2c
+#define XIICCOMM_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_I_DATA  0x30
 #define XIICCOMM_AXILITES_BITS_FULL_PIRQ_OUTVALUE_I_DATA  32
-#define XIICCOMM_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_O_DATA  0x48
+#define XIICCOMM_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_O_DATA  0x38
 #define XIICCOMM_AXILITES_BITS_FULL_PIRQ_OUTVALUE_O_DATA  32
-#define XIICCOMM_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_O_CTRL  0x4c
+#define XIICCOMM_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_O_CTRL  0x3c
+#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE2_I_DATA  0x40
+#define XIICCOMM_AXILITES_BITS_STAT_REG_OUTVALUE2_I_DATA  32
+#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE2_O_DATA  0x48
+#define XIICCOMM_AXILITES_BITS_STAT_REG_OUTVALUE2_O_DATA  32
+#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE2_O_CTRL  0x4c
+#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE3_I_DATA  0x50
+#define XIICCOMM_AXILITES_BITS_STAT_REG_OUTVALUE3_I_DATA  32
+#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE3_O_DATA  0x58
+#define XIICCOMM_AXILITES_BITS_STAT_REG_OUTVALUE3_O_DATA  32
+#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE3_O_CTRL  0x5c
+#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE4_I_DATA  0x60
+#define XIICCOMM_AXILITES_BITS_STAT_REG_OUTVALUE4_I_DATA  32
+#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE4_O_DATA  0x68
+#define XIICCOMM_AXILITES_BITS_STAT_REG_OUTVALUE4_O_DATA  32
+#define XIICCOMM_AXILITES_ADDR_STAT_REG_OUTVALUE4_O_CTRL  0x6c
+#define XIICCOMM_AXILITES_ADDR_TX_FIFO_OUTVALUE_I_DATA    0x70
+#define XIICCOMM_AXILITES_BITS_TX_FIFO_OUTVALUE_I_DATA    32
+#define XIICCOMM_AXILITES_ADDR_TX_FIFO_OUTVALUE_O_DATA    0x78
+#define XIICCOMM_AXILITES_BITS_TX_FIFO_OUTVALUE_O_DATA    32
+#define XIICCOMM_AXILITES_ADDR_TX_FIFO_OUTVALUE_O_CTRL    0x7c
+#define XIICCOMM_AXILITES_ADDR_RX_FIFO_OUTVALUE_I_DATA    0x80
+#define XIICCOMM_AXILITES_BITS_RX_FIFO_OUTVALUE_I_DATA    32
+#define XIICCOMM_AXILITES_ADDR_RX_FIFO_OUTVALUE_O_DATA    0x88
+#define XIICCOMM_AXILITES_BITS_RX_FIFO_OUTVALUE_O_DATA    32
+#define XIICCOMM_AXILITES_ADDR_RX_FIFO_OUTVALUE_O_CTRL    0x8c
+#define XIICCOMM_AXILITES_ADDR_CTRL_REG_OUTVALUE_I_DATA   0x90
+#define XIICCOMM_AXILITES_BITS_CTRL_REG_OUTVALUE_I_DATA   32
+#define XIICCOMM_AXILITES_ADDR_CTRL_REG_OUTVALUE_O_DATA   0x98
+#define XIICCOMM_AXILITES_BITS_CTRL_REG_OUTVALUE_O_DATA   32
+#define XIICCOMM_AXILITES_ADDR_CTRL_REG_OUTVALUE_O_CTRL   0x9c
 

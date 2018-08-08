@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity iiccomm_AXILiteS_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 7;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 8;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     -- axi4 lite slave signals
@@ -41,18 +41,33 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    stat_reg_outValue_i   :out  STD_LOGIC_VECTOR(31 downto 0);
-    stat_reg_outValue_o   :in   STD_LOGIC_VECTOR(31 downto 0);
-    stat_reg_outValue_o_ap_vld :in   STD_LOGIC;
-    interr_reg_outValue_i :out  STD_LOGIC_VECTOR(31 downto 0);
-    interr_reg_outValue_o :in   STD_LOGIC_VECTOR(31 downto 0);
-    interr_reg_outValue_o_ap_vld :in   STD_LOGIC;
+    stat_reg_outValue1_i  :out  STD_LOGIC_VECTOR(31 downto 0);
+    stat_reg_outValue1_o  :in   STD_LOGIC_VECTOR(31 downto 0);
+    stat_reg_outValue1_o_ap_vld :in   STD_LOGIC;
     empty_pirq_outValue_i :out  STD_LOGIC_VECTOR(31 downto 0);
     empty_pirq_outValue_o :in   STD_LOGIC_VECTOR(31 downto 0);
     empty_pirq_outValue_o_ap_vld :in   STD_LOGIC;
     full_pirq_outValue_i  :out  STD_LOGIC_VECTOR(31 downto 0);
     full_pirq_outValue_o  :in   STD_LOGIC_VECTOR(31 downto 0);
-    full_pirq_outValue_o_ap_vld :in   STD_LOGIC
+    full_pirq_outValue_o_ap_vld :in   STD_LOGIC;
+    stat_reg_outValue2_i  :out  STD_LOGIC_VECTOR(31 downto 0);
+    stat_reg_outValue2_o  :in   STD_LOGIC_VECTOR(31 downto 0);
+    stat_reg_outValue2_o_ap_vld :in   STD_LOGIC;
+    stat_reg_outValue3_i  :out  STD_LOGIC_VECTOR(31 downto 0);
+    stat_reg_outValue3_o  :in   STD_LOGIC_VECTOR(31 downto 0);
+    stat_reg_outValue3_o_ap_vld :in   STD_LOGIC;
+    stat_reg_outValue4_i  :out  STD_LOGIC_VECTOR(31 downto 0);
+    stat_reg_outValue4_o  :in   STD_LOGIC_VECTOR(31 downto 0);
+    stat_reg_outValue4_o_ap_vld :in   STD_LOGIC;
+    tx_fifo_outValue_i    :out  STD_LOGIC_VECTOR(31 downto 0);
+    tx_fifo_outValue_o    :in   STD_LOGIC_VECTOR(31 downto 0);
+    tx_fifo_outValue_o_ap_vld :in   STD_LOGIC;
+    rx_fifo_outValue_i    :out  STD_LOGIC_VECTOR(31 downto 0);
+    rx_fifo_outValue_o    :in   STD_LOGIC_VECTOR(31 downto 0);
+    rx_fifo_outValue_o_ap_vld :in   STD_LOGIC;
+    ctrl_reg_outValue_i   :out  STD_LOGIC_VECTOR(31 downto 0);
+    ctrl_reg_outValue_o   :in   STD_LOGIC_VECTOR(31 downto 0);
+    ctrl_reg_outValue_o_ap_vld :in   STD_LOGIC
 );
 end entity iiccomm_AXILiteS_s_axi;
 
@@ -75,37 +90,77 @@ end entity iiccomm_AXILiteS_s_axi;
 --        bit 0  - Channel 0 (ap_done)
 --        bit 1  - Channel 1 (ap_ready)
 --        others - reserved
--- 0x10 : Data signal of stat_reg_outValue_i
---        bit 31~0 - stat_reg_outValue_i[31:0] (Read/Write)
+-- 0x10 : Data signal of stat_reg_outValue1_i
+--        bit 31~0 - stat_reg_outValue1_i[31:0] (Read/Write)
 -- 0x14 : reserved
--- 0x18 : Data signal of stat_reg_outValue_o
---        bit 31~0 - stat_reg_outValue_o[31:0] (Read)
--- 0x1c : Control signal of stat_reg_outValue_o
---        bit 0  - stat_reg_outValue_o_ap_vld (Read/COR)
+-- 0x18 : Data signal of stat_reg_outValue1_o
+--        bit 31~0 - stat_reg_outValue1_o[31:0] (Read)
+-- 0x1c : Control signal of stat_reg_outValue1_o
+--        bit 0  - stat_reg_outValue1_o_ap_vld (Read/COR)
 --        others - reserved
--- 0x20 : Data signal of interr_reg_outValue_i
---        bit 31~0 - interr_reg_outValue_i[31:0] (Read/Write)
--- 0x24 : reserved
--- 0x28 : Data signal of interr_reg_outValue_o
---        bit 31~0 - interr_reg_outValue_o[31:0] (Read)
--- 0x2c : Control signal of interr_reg_outValue_o
---        bit 0  - interr_reg_outValue_o_ap_vld (Read/COR)
---        others - reserved
--- 0x30 : Data signal of empty_pirq_outValue_i
+-- 0x20 : Data signal of empty_pirq_outValue_i
 --        bit 31~0 - empty_pirq_outValue_i[31:0] (Read/Write)
--- 0x34 : reserved
--- 0x38 : Data signal of empty_pirq_outValue_o
+-- 0x24 : reserved
+-- 0x28 : Data signal of empty_pirq_outValue_o
 --        bit 31~0 - empty_pirq_outValue_o[31:0] (Read)
--- 0x3c : Control signal of empty_pirq_outValue_o
+-- 0x2c : Control signal of empty_pirq_outValue_o
 --        bit 0  - empty_pirq_outValue_o_ap_vld (Read/COR)
 --        others - reserved
--- 0x40 : Data signal of full_pirq_outValue_i
+-- 0x30 : Data signal of full_pirq_outValue_i
 --        bit 31~0 - full_pirq_outValue_i[31:0] (Read/Write)
--- 0x44 : reserved
--- 0x48 : Data signal of full_pirq_outValue_o
+-- 0x34 : reserved
+-- 0x38 : Data signal of full_pirq_outValue_o
 --        bit 31~0 - full_pirq_outValue_o[31:0] (Read)
--- 0x4c : Control signal of full_pirq_outValue_o
+-- 0x3c : Control signal of full_pirq_outValue_o
 --        bit 0  - full_pirq_outValue_o_ap_vld (Read/COR)
+--        others - reserved
+-- 0x40 : Data signal of stat_reg_outValue2_i
+--        bit 31~0 - stat_reg_outValue2_i[31:0] (Read/Write)
+-- 0x44 : reserved
+-- 0x48 : Data signal of stat_reg_outValue2_o
+--        bit 31~0 - stat_reg_outValue2_o[31:0] (Read)
+-- 0x4c : Control signal of stat_reg_outValue2_o
+--        bit 0  - stat_reg_outValue2_o_ap_vld (Read/COR)
+--        others - reserved
+-- 0x50 : Data signal of stat_reg_outValue3_i
+--        bit 31~0 - stat_reg_outValue3_i[31:0] (Read/Write)
+-- 0x54 : reserved
+-- 0x58 : Data signal of stat_reg_outValue3_o
+--        bit 31~0 - stat_reg_outValue3_o[31:0] (Read)
+-- 0x5c : Control signal of stat_reg_outValue3_o
+--        bit 0  - stat_reg_outValue3_o_ap_vld (Read/COR)
+--        others - reserved
+-- 0x60 : Data signal of stat_reg_outValue4_i
+--        bit 31~0 - stat_reg_outValue4_i[31:0] (Read/Write)
+-- 0x64 : reserved
+-- 0x68 : Data signal of stat_reg_outValue4_o
+--        bit 31~0 - stat_reg_outValue4_o[31:0] (Read)
+-- 0x6c : Control signal of stat_reg_outValue4_o
+--        bit 0  - stat_reg_outValue4_o_ap_vld (Read/COR)
+--        others - reserved
+-- 0x70 : Data signal of tx_fifo_outValue_i
+--        bit 31~0 - tx_fifo_outValue_i[31:0] (Read/Write)
+-- 0x74 : reserved
+-- 0x78 : Data signal of tx_fifo_outValue_o
+--        bit 31~0 - tx_fifo_outValue_o[31:0] (Read)
+-- 0x7c : Control signal of tx_fifo_outValue_o
+--        bit 0  - tx_fifo_outValue_o_ap_vld (Read/COR)
+--        others - reserved
+-- 0x80 : Data signal of rx_fifo_outValue_i
+--        bit 31~0 - rx_fifo_outValue_i[31:0] (Read/Write)
+-- 0x84 : reserved
+-- 0x88 : Data signal of rx_fifo_outValue_o
+--        bit 31~0 - rx_fifo_outValue_o[31:0] (Read)
+-- 0x8c : Control signal of rx_fifo_outValue_o
+--        bit 0  - rx_fifo_outValue_o_ap_vld (Read/COR)
+--        others - reserved
+-- 0x90 : Data signal of ctrl_reg_outValue_i
+--        bit 31~0 - ctrl_reg_outValue_i[31:0] (Read/Write)
+-- 0x94 : reserved
+-- 0x98 : Data signal of ctrl_reg_outValue_o
+--        bit 31~0 - ctrl_reg_outValue_o[31:0] (Read)
+-- 0x9c : Control signal of ctrl_reg_outValue_o
+--        bit 0  - ctrl_reg_outValue_o_ap_vld (Read/COR)
 --        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -118,23 +173,43 @@ architecture behave of iiccomm_AXILiteS_s_axi is
     constant ADDR_GIE                          : INTEGER := 16#04#;
     constant ADDR_IER                          : INTEGER := 16#08#;
     constant ADDR_ISR                          : INTEGER := 16#0c#;
-    constant ADDR_STAT_REG_OUTVALUE_I_DATA_0   : INTEGER := 16#10#;
-    constant ADDR_STAT_REG_OUTVALUE_I_CTRL     : INTEGER := 16#14#;
-    constant ADDR_STAT_REG_OUTVALUE_O_DATA_0   : INTEGER := 16#18#;
-    constant ADDR_STAT_REG_OUTVALUE_O_CTRL     : INTEGER := 16#1c#;
-    constant ADDR_INTERR_REG_OUTVALUE_I_DATA_0 : INTEGER := 16#20#;
-    constant ADDR_INTERR_REG_OUTVALUE_I_CTRL   : INTEGER := 16#24#;
-    constant ADDR_INTERR_REG_OUTVALUE_O_DATA_0 : INTEGER := 16#28#;
-    constant ADDR_INTERR_REG_OUTVALUE_O_CTRL   : INTEGER := 16#2c#;
-    constant ADDR_EMPTY_PIRQ_OUTVALUE_I_DATA_0 : INTEGER := 16#30#;
-    constant ADDR_EMPTY_PIRQ_OUTVALUE_I_CTRL   : INTEGER := 16#34#;
-    constant ADDR_EMPTY_PIRQ_OUTVALUE_O_DATA_0 : INTEGER := 16#38#;
-    constant ADDR_EMPTY_PIRQ_OUTVALUE_O_CTRL   : INTEGER := 16#3c#;
-    constant ADDR_FULL_PIRQ_OUTVALUE_I_DATA_0  : INTEGER := 16#40#;
-    constant ADDR_FULL_PIRQ_OUTVALUE_I_CTRL    : INTEGER := 16#44#;
-    constant ADDR_FULL_PIRQ_OUTVALUE_O_DATA_0  : INTEGER := 16#48#;
-    constant ADDR_FULL_PIRQ_OUTVALUE_O_CTRL    : INTEGER := 16#4c#;
-    constant ADDR_BITS         : INTEGER := 7;
+    constant ADDR_STAT_REG_OUTVALUE1_I_DATA_0  : INTEGER := 16#10#;
+    constant ADDR_STAT_REG_OUTVALUE1_I_CTRL    : INTEGER := 16#14#;
+    constant ADDR_STAT_REG_OUTVALUE1_O_DATA_0  : INTEGER := 16#18#;
+    constant ADDR_STAT_REG_OUTVALUE1_O_CTRL    : INTEGER := 16#1c#;
+    constant ADDR_EMPTY_PIRQ_OUTVALUE_I_DATA_0 : INTEGER := 16#20#;
+    constant ADDR_EMPTY_PIRQ_OUTVALUE_I_CTRL   : INTEGER := 16#24#;
+    constant ADDR_EMPTY_PIRQ_OUTVALUE_O_DATA_0 : INTEGER := 16#28#;
+    constant ADDR_EMPTY_PIRQ_OUTVALUE_O_CTRL   : INTEGER := 16#2c#;
+    constant ADDR_FULL_PIRQ_OUTVALUE_I_DATA_0  : INTEGER := 16#30#;
+    constant ADDR_FULL_PIRQ_OUTVALUE_I_CTRL    : INTEGER := 16#34#;
+    constant ADDR_FULL_PIRQ_OUTVALUE_O_DATA_0  : INTEGER := 16#38#;
+    constant ADDR_FULL_PIRQ_OUTVALUE_O_CTRL    : INTEGER := 16#3c#;
+    constant ADDR_STAT_REG_OUTVALUE2_I_DATA_0  : INTEGER := 16#40#;
+    constant ADDR_STAT_REG_OUTVALUE2_I_CTRL    : INTEGER := 16#44#;
+    constant ADDR_STAT_REG_OUTVALUE2_O_DATA_0  : INTEGER := 16#48#;
+    constant ADDR_STAT_REG_OUTVALUE2_O_CTRL    : INTEGER := 16#4c#;
+    constant ADDR_STAT_REG_OUTVALUE3_I_DATA_0  : INTEGER := 16#50#;
+    constant ADDR_STAT_REG_OUTVALUE3_I_CTRL    : INTEGER := 16#54#;
+    constant ADDR_STAT_REG_OUTVALUE3_O_DATA_0  : INTEGER := 16#58#;
+    constant ADDR_STAT_REG_OUTVALUE3_O_CTRL    : INTEGER := 16#5c#;
+    constant ADDR_STAT_REG_OUTVALUE4_I_DATA_0  : INTEGER := 16#60#;
+    constant ADDR_STAT_REG_OUTVALUE4_I_CTRL    : INTEGER := 16#64#;
+    constant ADDR_STAT_REG_OUTVALUE4_O_DATA_0  : INTEGER := 16#68#;
+    constant ADDR_STAT_REG_OUTVALUE4_O_CTRL    : INTEGER := 16#6c#;
+    constant ADDR_TX_FIFO_OUTVALUE_I_DATA_0    : INTEGER := 16#70#;
+    constant ADDR_TX_FIFO_OUTVALUE_I_CTRL      : INTEGER := 16#74#;
+    constant ADDR_TX_FIFO_OUTVALUE_O_DATA_0    : INTEGER := 16#78#;
+    constant ADDR_TX_FIFO_OUTVALUE_O_CTRL      : INTEGER := 16#7c#;
+    constant ADDR_RX_FIFO_OUTVALUE_I_DATA_0    : INTEGER := 16#80#;
+    constant ADDR_RX_FIFO_OUTVALUE_I_CTRL      : INTEGER := 16#84#;
+    constant ADDR_RX_FIFO_OUTVALUE_O_DATA_0    : INTEGER := 16#88#;
+    constant ADDR_RX_FIFO_OUTVALUE_O_CTRL      : INTEGER := 16#8c#;
+    constant ADDR_CTRL_REG_OUTVALUE_I_DATA_0   : INTEGER := 16#90#;
+    constant ADDR_CTRL_REG_OUTVALUE_I_CTRL     : INTEGER := 16#94#;
+    constant ADDR_CTRL_REG_OUTVALUE_O_DATA_0   : INTEGER := 16#98#;
+    constant ADDR_CTRL_REG_OUTVALUE_O_CTRL     : INTEGER := 16#9c#;
+    constant ADDR_BITS         : INTEGER := 8;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(31 downto 0);
@@ -156,18 +231,33 @@ architecture behave of iiccomm_AXILiteS_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_stat_reg_outValue_i : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_stat_reg_outValue_o : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_stat_reg_outValue_o_ap_vld : STD_LOGIC;
-    signal int_interr_reg_outValue_i : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_interr_reg_outValue_o : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_interr_reg_outValue_o_ap_vld : STD_LOGIC;
+    signal int_stat_reg_outValue1_i : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_stat_reg_outValue1_o : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_stat_reg_outValue1_o_ap_vld : STD_LOGIC;
     signal int_empty_pirq_outValue_i : UNSIGNED(31 downto 0) := (others => '0');
     signal int_empty_pirq_outValue_o : UNSIGNED(31 downto 0) := (others => '0');
     signal int_empty_pirq_outValue_o_ap_vld : STD_LOGIC;
     signal int_full_pirq_outValue_i : UNSIGNED(31 downto 0) := (others => '0');
     signal int_full_pirq_outValue_o : UNSIGNED(31 downto 0) := (others => '0');
     signal int_full_pirq_outValue_o_ap_vld : STD_LOGIC;
+    signal int_stat_reg_outValue2_i : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_stat_reg_outValue2_o : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_stat_reg_outValue2_o_ap_vld : STD_LOGIC;
+    signal int_stat_reg_outValue3_i : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_stat_reg_outValue3_o : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_stat_reg_outValue3_o_ap_vld : STD_LOGIC;
+    signal int_stat_reg_outValue4_i : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_stat_reg_outValue4_o : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_stat_reg_outValue4_o_ap_vld : STD_LOGIC;
+    signal int_tx_fifo_outValue_i : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_tx_fifo_outValue_o : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_tx_fifo_outValue_o_ap_vld : STD_LOGIC;
+    signal int_rx_fifo_outValue_i : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_rx_fifo_outValue_o : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_rx_fifo_outValue_o_ap_vld : STD_LOGIC;
+    signal int_ctrl_reg_outValue_i : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_ctrl_reg_outValue_o : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_ctrl_reg_outValue_o_ap_vld : STD_LOGIC;
 
 
 begin
@@ -289,18 +379,12 @@ begin
                         rdata_data <= (1 => int_ier(1), 0 => int_ier(0), others => '0');
                     when ADDR_ISR =>
                         rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
-                    when ADDR_STAT_REG_OUTVALUE_I_DATA_0 =>
-                        rdata_data <= RESIZE(int_stat_reg_outValue_i(31 downto 0), 32);
-                    when ADDR_STAT_REG_OUTVALUE_O_DATA_0 =>
-                        rdata_data <= RESIZE(int_stat_reg_outValue_o(31 downto 0), 32);
-                    when ADDR_STAT_REG_OUTVALUE_O_CTRL =>
-                        rdata_data <= (0 => int_stat_reg_outValue_o_ap_vld, others => '0');
-                    when ADDR_INTERR_REG_OUTVALUE_I_DATA_0 =>
-                        rdata_data <= RESIZE(int_interr_reg_outValue_i(31 downto 0), 32);
-                    when ADDR_INTERR_REG_OUTVALUE_O_DATA_0 =>
-                        rdata_data <= RESIZE(int_interr_reg_outValue_o(31 downto 0), 32);
-                    when ADDR_INTERR_REG_OUTVALUE_O_CTRL =>
-                        rdata_data <= (0 => int_interr_reg_outValue_o_ap_vld, others => '0');
+                    when ADDR_STAT_REG_OUTVALUE1_I_DATA_0 =>
+                        rdata_data <= RESIZE(int_stat_reg_outValue1_i(31 downto 0), 32);
+                    when ADDR_STAT_REG_OUTVALUE1_O_DATA_0 =>
+                        rdata_data <= RESIZE(int_stat_reg_outValue1_o(31 downto 0), 32);
+                    when ADDR_STAT_REG_OUTVALUE1_O_CTRL =>
+                        rdata_data <= (0 => int_stat_reg_outValue1_o_ap_vld, others => '0');
                     when ADDR_EMPTY_PIRQ_OUTVALUE_I_DATA_0 =>
                         rdata_data <= RESIZE(int_empty_pirq_outValue_i(31 downto 0), 32);
                     when ADDR_EMPTY_PIRQ_OUTVALUE_O_DATA_0 =>
@@ -313,6 +397,42 @@ begin
                         rdata_data <= RESIZE(int_full_pirq_outValue_o(31 downto 0), 32);
                     when ADDR_FULL_PIRQ_OUTVALUE_O_CTRL =>
                         rdata_data <= (0 => int_full_pirq_outValue_o_ap_vld, others => '0');
+                    when ADDR_STAT_REG_OUTVALUE2_I_DATA_0 =>
+                        rdata_data <= RESIZE(int_stat_reg_outValue2_i(31 downto 0), 32);
+                    when ADDR_STAT_REG_OUTVALUE2_O_DATA_0 =>
+                        rdata_data <= RESIZE(int_stat_reg_outValue2_o(31 downto 0), 32);
+                    when ADDR_STAT_REG_OUTVALUE2_O_CTRL =>
+                        rdata_data <= (0 => int_stat_reg_outValue2_o_ap_vld, others => '0');
+                    when ADDR_STAT_REG_OUTVALUE3_I_DATA_0 =>
+                        rdata_data <= RESIZE(int_stat_reg_outValue3_i(31 downto 0), 32);
+                    when ADDR_STAT_REG_OUTVALUE3_O_DATA_0 =>
+                        rdata_data <= RESIZE(int_stat_reg_outValue3_o(31 downto 0), 32);
+                    when ADDR_STAT_REG_OUTVALUE3_O_CTRL =>
+                        rdata_data <= (0 => int_stat_reg_outValue3_o_ap_vld, others => '0');
+                    when ADDR_STAT_REG_OUTVALUE4_I_DATA_0 =>
+                        rdata_data <= RESIZE(int_stat_reg_outValue4_i(31 downto 0), 32);
+                    when ADDR_STAT_REG_OUTVALUE4_O_DATA_0 =>
+                        rdata_data <= RESIZE(int_stat_reg_outValue4_o(31 downto 0), 32);
+                    when ADDR_STAT_REG_OUTVALUE4_O_CTRL =>
+                        rdata_data <= (0 => int_stat_reg_outValue4_o_ap_vld, others => '0');
+                    when ADDR_TX_FIFO_OUTVALUE_I_DATA_0 =>
+                        rdata_data <= RESIZE(int_tx_fifo_outValue_i(31 downto 0), 32);
+                    when ADDR_TX_FIFO_OUTVALUE_O_DATA_0 =>
+                        rdata_data <= RESIZE(int_tx_fifo_outValue_o(31 downto 0), 32);
+                    when ADDR_TX_FIFO_OUTVALUE_O_CTRL =>
+                        rdata_data <= (0 => int_tx_fifo_outValue_o_ap_vld, others => '0');
+                    when ADDR_RX_FIFO_OUTVALUE_I_DATA_0 =>
+                        rdata_data <= RESIZE(int_rx_fifo_outValue_i(31 downto 0), 32);
+                    when ADDR_RX_FIFO_OUTVALUE_O_DATA_0 =>
+                        rdata_data <= RESIZE(int_rx_fifo_outValue_o(31 downto 0), 32);
+                    when ADDR_RX_FIFO_OUTVALUE_O_CTRL =>
+                        rdata_data <= (0 => int_rx_fifo_outValue_o_ap_vld, others => '0');
+                    when ADDR_CTRL_REG_OUTVALUE_I_DATA_0 =>
+                        rdata_data <= RESIZE(int_ctrl_reg_outValue_i(31 downto 0), 32);
+                    when ADDR_CTRL_REG_OUTVALUE_O_DATA_0 =>
+                        rdata_data <= RESIZE(int_ctrl_reg_outValue_o(31 downto 0), 32);
+                    when ADDR_CTRL_REG_OUTVALUE_O_CTRL =>
+                        rdata_data <= (0 => int_ctrl_reg_outValue_o_ap_vld, others => '0');
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -324,10 +444,15 @@ begin
 -- ----------------------- Register logic ----------------
     interrupt            <= int_gie and (int_isr(0) or int_isr(1));
     ap_start             <= int_ap_start;
-    stat_reg_outValue_i  <= STD_LOGIC_VECTOR(int_stat_reg_outValue_i);
-    interr_reg_outValue_i <= STD_LOGIC_VECTOR(int_interr_reg_outValue_i);
+    stat_reg_outValue1_i <= STD_LOGIC_VECTOR(int_stat_reg_outValue1_i);
     empty_pirq_outValue_i <= STD_LOGIC_VECTOR(int_empty_pirq_outValue_i);
     full_pirq_outValue_i <= STD_LOGIC_VECTOR(int_full_pirq_outValue_i);
+    stat_reg_outValue2_i <= STD_LOGIC_VECTOR(int_stat_reg_outValue2_i);
+    stat_reg_outValue3_i <= STD_LOGIC_VECTOR(int_stat_reg_outValue3_i);
+    stat_reg_outValue4_i <= STD_LOGIC_VECTOR(int_stat_reg_outValue4_i);
+    tx_fifo_outValue_i   <= STD_LOGIC_VECTOR(int_tx_fifo_outValue_i);
+    rx_fifo_outValue_i   <= STD_LOGIC_VECTOR(int_rx_fifo_outValue_i);
+    ctrl_reg_outValue_i  <= STD_LOGIC_VECTOR(int_ctrl_reg_outValue_i);
 
     process (ACLK)
     begin
@@ -458,8 +583,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_STAT_REG_OUTVALUE_I_DATA_0) then
-                    int_stat_reg_outValue_i(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_stat_reg_outValue_i(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_STAT_REG_OUTVALUE1_I_DATA_0) then
+                    int_stat_reg_outValue1_i(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_stat_reg_outValue1_i(31 downto 0));
                 end if;
             end if;
         end if;
@@ -469,10 +594,10 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_stat_reg_outValue_o <= (others => '0');
+                int_stat_reg_outValue1_o <= (others => '0');
             elsif (ACLK_EN = '1') then
-                if (stat_reg_outValue_o_ap_vld = '1') then
-                    int_stat_reg_outValue_o <= UNSIGNED(stat_reg_outValue_o); -- clear on read
+                if (stat_reg_outValue1_o_ap_vld = '1') then
+                    int_stat_reg_outValue1_o <= UNSIGNED(stat_reg_outValue1_o); -- clear on read
                 end if;
             end if;
         end if;
@@ -482,51 +607,12 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_stat_reg_outValue_o_ap_vld <= '0';
+                int_stat_reg_outValue1_o_ap_vld <= '0';
             elsif (ACLK_EN = '1') then
-                if (stat_reg_outValue_o_ap_vld = '1') then
-                    int_stat_reg_outValue_o_ap_vld <= '1';
-                elsif (ar_hs = '1' and raddr = ADDR_STAT_REG_OUTVALUE_O_CTRL) then
-                    int_stat_reg_outValue_o_ap_vld <= '0'; -- clear on read
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_INTERR_REG_OUTVALUE_I_DATA_0) then
-                    int_interr_reg_outValue_i(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_interr_reg_outValue_i(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_interr_reg_outValue_o <= (others => '0');
-            elsif (ACLK_EN = '1') then
-                if (interr_reg_outValue_o_ap_vld = '1') then
-                    int_interr_reg_outValue_o <= UNSIGNED(interr_reg_outValue_o); -- clear on read
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_interr_reg_outValue_o_ap_vld <= '0';
-            elsif (ACLK_EN = '1') then
-                if (interr_reg_outValue_o_ap_vld = '1') then
-                    int_interr_reg_outValue_o_ap_vld <= '1';
-                elsif (ar_hs = '1' and raddr = ADDR_INTERR_REG_OUTVALUE_O_CTRL) then
-                    int_interr_reg_outValue_o_ap_vld <= '0'; -- clear on read
+                if (stat_reg_outValue1_o_ap_vld = '1') then
+                    int_stat_reg_outValue1_o_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_STAT_REG_OUTVALUE1_O_CTRL) then
+                    int_stat_reg_outValue1_o_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;
@@ -605,6 +691,240 @@ begin
                     int_full_pirq_outValue_o_ap_vld <= '1';
                 elsif (ar_hs = '1' and raddr = ADDR_FULL_PIRQ_OUTVALUE_O_CTRL) then
                     int_full_pirq_outValue_o_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_STAT_REG_OUTVALUE2_I_DATA_0) then
+                    int_stat_reg_outValue2_i(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_stat_reg_outValue2_i(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_stat_reg_outValue2_o <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (stat_reg_outValue2_o_ap_vld = '1') then
+                    int_stat_reg_outValue2_o <= UNSIGNED(stat_reg_outValue2_o); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_stat_reg_outValue2_o_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (stat_reg_outValue2_o_ap_vld = '1') then
+                    int_stat_reg_outValue2_o_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_STAT_REG_OUTVALUE2_O_CTRL) then
+                    int_stat_reg_outValue2_o_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_STAT_REG_OUTVALUE3_I_DATA_0) then
+                    int_stat_reg_outValue3_i(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_stat_reg_outValue3_i(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_stat_reg_outValue3_o <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (stat_reg_outValue3_o_ap_vld = '1') then
+                    int_stat_reg_outValue3_o <= UNSIGNED(stat_reg_outValue3_o); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_stat_reg_outValue3_o_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (stat_reg_outValue3_o_ap_vld = '1') then
+                    int_stat_reg_outValue3_o_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_STAT_REG_OUTVALUE3_O_CTRL) then
+                    int_stat_reg_outValue3_o_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_STAT_REG_OUTVALUE4_I_DATA_0) then
+                    int_stat_reg_outValue4_i(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_stat_reg_outValue4_i(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_stat_reg_outValue4_o <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (stat_reg_outValue4_o_ap_vld = '1') then
+                    int_stat_reg_outValue4_o <= UNSIGNED(stat_reg_outValue4_o); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_stat_reg_outValue4_o_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (stat_reg_outValue4_o_ap_vld = '1') then
+                    int_stat_reg_outValue4_o_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_STAT_REG_OUTVALUE4_O_CTRL) then
+                    int_stat_reg_outValue4_o_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_TX_FIFO_OUTVALUE_I_DATA_0) then
+                    int_tx_fifo_outValue_i(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_tx_fifo_outValue_i(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_tx_fifo_outValue_o <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (tx_fifo_outValue_o_ap_vld = '1') then
+                    int_tx_fifo_outValue_o <= UNSIGNED(tx_fifo_outValue_o); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_tx_fifo_outValue_o_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (tx_fifo_outValue_o_ap_vld = '1') then
+                    int_tx_fifo_outValue_o_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TX_FIFO_OUTVALUE_O_CTRL) then
+                    int_tx_fifo_outValue_o_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_RX_FIFO_OUTVALUE_I_DATA_0) then
+                    int_rx_fifo_outValue_i(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_rx_fifo_outValue_i(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_rx_fifo_outValue_o <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (rx_fifo_outValue_o_ap_vld = '1') then
+                    int_rx_fifo_outValue_o <= UNSIGNED(rx_fifo_outValue_o); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_rx_fifo_outValue_o_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (rx_fifo_outValue_o_ap_vld = '1') then
+                    int_rx_fifo_outValue_o_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_RX_FIFO_OUTVALUE_O_CTRL) then
+                    int_rx_fifo_outValue_o_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_CTRL_REG_OUTVALUE_I_DATA_0) then
+                    int_ctrl_reg_outValue_i(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_ctrl_reg_outValue_i(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_ctrl_reg_outValue_o <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (ctrl_reg_outValue_o_ap_vld = '1') then
+                    int_ctrl_reg_outValue_o <= UNSIGNED(ctrl_reg_outValue_o); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_ctrl_reg_outValue_o_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ctrl_reg_outValue_o_ap_vld = '1') then
+                    int_ctrl_reg_outValue_o_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_CTRL_REG_OUTVALUE_O_CTRL) then
+                    int_ctrl_reg_outValue_o_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;

@@ -37,31 +37,34 @@
 #include "ap_int.h"
 #include "stdint.h"
 
-static uint32_t interr_reg_val;  
-static uint32_t stat_reg_val;
+
 static uint32_t empty_pirq_val; //return 0
-static uint32_t full_pirq_val; //return 16
+static uint32_t full_pirq_val; //return 16 
+static uint32_t ctrl_reg_val;
+static uint32_t stat_reg_val1;
+static uint32_t tx_fifo_val;
+static uint32_t stat_reg_val2;
+static uint32_t stat_reg_val3;
+static uint32_t stat_reg_val4;
+static uint32_t rx_fifo_val;
 
 
-void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue, volatile uint32_t& interr_reg_outValue, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue)
+
+void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t& stat_reg_outValue2, volatile uint32_t& stat_reg_outValue3, volatile uint32_t& stat_reg_outValue4, volatile uint32_t& tx_fifo_outValue, volatile uint32_t& rx_fifo_outValue, volatile uint32_t&ctrl_reg_outValue)
 {
     #pragma HLS INTERFACE s_axilite port=return
 	
     #pragma HLS INTERFACE m_axi port=iic
 
-    #pragma HLS INTERFACE s_axilite port=stat_reg_outValue
-    #pragma HLS INTERFACE s_axilite port=interr_reg_outValue 
+    #pragma HLS INTERFACE s_axilite port=stat_reg_outValue1
+    #pragma HLS INTERFACE s_axilite port=stat_reg_outValue2
+    #pragma HLS INTERFACE s_axilite port=stat_reg_outValue3
+    #pragma HLS INTERFACE s_axilite port=stat_reg_outValue4
     #pragma HLS INTERFACE s_axilite port=empty_pirq_outValue
     #pragma HLS INTERFACE s_axilite port=full_pirq_outValue
-
-	//READ STATUS REGISTER
-    stat_reg_val = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
-    stat_reg_outValue=stat_reg_val;
-
-	//INTERRUPT STATUS REGISTER
-
-	interr_reg_val = iic[IIC_INDEX+IIC_INTERR_REG_OFF];
-    interr_reg_outValue=interr_reg_val;
+    #pragma HLS INTERFACE s_axilite port=rx_fifo_outValue
+    #pragma HLS INTERFACE s_axilite port=tx_fifo_outValue
+    #pragma HLS INTERFACE s_axilite port=ctrl_reg_outValue
 
 //INITIALIZE TO READ AND WRITE
 	
@@ -73,14 +76,47 @@ void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue, 
 	full_pirq_val = iic[IIC_INDEX+IIC_RX_FIFO_PIRQ_OFF]; //ENSURE RX FIFO PIRQ WRITTEN VALUE APPLIED
 	full_pirq_outValue = full_pirq_val;
 
-	/*//RESET TX FIFO IN CR REG
-	iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x02;
+	//RESET TX FIFO IN CR REG
+	//iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x02;
 
 	//ENABLE AXI I2C, REMOVE RESET FOR TX, DISABLE GEN. CALL IN CR REG
-	iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x01;*/
+	iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 1;
+	ctrl_reg_val = iic[IIC_INDEX+IIC_CONTROL_REG_OFF]; //ENSURE CTL REG IS UPDATED
+	ctrl_reg_outValue = ctrl_reg_val;
 
+	//READ STATUS REGISTER
+    stat_reg_val1 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
+    stat_reg_outValue1=stat_reg_val1;
 
 //BEGIN READING AND WRITING TO SENSOR
+	
+	//WRITE SENSOR ADDRESS TO TX_FIFO WRITE ACCESS
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
+
+	tx_fifo_val = iic[IIC_INDEX+IIC_TX_FIFO_OFF];
+	tx_fifo_outValue = tx_fifo_val;
+
+	//read status register again
+  	stat_reg_val2 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
+    stat_reg_outValue2=stat_reg_val2;
+
+	//WRITE CHIP ID REGISTER ADDRESS TO TX FIFO 
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xD0;
+	
+	//read status register again
+  	stat_reg_val3 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
+    stat_reg_outValue3=stat_reg_val3;
+
+	//WRITE SENSOR ADDRESS TO TX_FIFO READ ACCESS
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1ED;
 
 
+	//READ RX_FIFO 
+	stat_reg_val4 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
+    stat_reg_outValue4=stat_reg_val4;
+	//if(stat_reg_val_new == 0x88)
+	//{
+	rx_fifo_val = iic[IIC_INDEX+IIC_RX_FIFO_OFF];
+    rx_fifo_outValue=rx_fifo_val;				
+	//}
 }
