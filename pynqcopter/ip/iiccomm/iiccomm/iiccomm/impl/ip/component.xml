@@ -3342,8 +3342,8 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </xilinx:taxonomies>
       <xilinx:displayName>Iiccomm</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808081150</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-08T18:50:31Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808092052</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-10T03:52:34Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>

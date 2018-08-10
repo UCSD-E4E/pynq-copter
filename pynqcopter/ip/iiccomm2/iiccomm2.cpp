@@ -43,16 +43,18 @@ static temp32 empty_pirq_val; //return 0
 static temp32 full_pirq_val; //return 16 
 static temp32 ctrl_reg_val;
 static temp32 stat_reg_val1;
-static temp32 tx_fifo_val;
+static temp32 tx_fifo_val1;
 static temp32 stat_reg_val2;
 static temp32 stat_reg_val3;
 static temp32 stat_reg_val4;
 static temp32 rx_fifo_val;
+static temp32 tx_fifo_val2;
+static temp32 tx_fifo_val3;
 
-void iiccomm2(temp32 iic[4096], temp32& stat_reg_outValue1, temp32& stat_reg_outValue2, temp32& stat_reg_outValue3, temp32& stat_reg_outValue4, temp32& ctrl_reg_outValue, temp32& empty_pirq_outValue, temp32& full_pirq_outValue, temp32& tx_fifo_outValue, temp32& rx_fifo_outValue)
+void iiccomm2(temp32 iic[4096], temp32& stat_reg_outValue1, temp32& stat_reg_outValue2, temp32& stat_reg_outValue3, temp32& stat_reg_outValue4, temp32& ctrl_reg_outValue, temp32& empty_pirq_outValue, temp32& full_pirq_outValue, temp32& tx_fifo_outValue1,temp32& tx_fifo_outValue2,temp32& tx_fifo_outValue3, temp32& rx_fifo_outValue)
 {
     #pragma HLS INTERFACE s_axilite port=return
-	
+	, temp32& tx_fifo_outValue1
     #pragma HLS INTERFACE m_axi port=iic
 
     #pragma HLS INTERFACE s_axilite port=stat_reg_outValue1
@@ -62,8 +64,10 @@ void iiccomm2(temp32 iic[4096], temp32& stat_reg_outValue1, temp32& stat_reg_out
     #pragma HLS INTERFACE s_axilite port=empty_pirq_outValue
     #pragma HLS INTERFACE s_axilite port=full_pirq_outValue
     #pragma HLS INTERFACE s_axilite port=rx_fifo_outValue
-    #pragma HLS INTERFACE s_axilite port=tx_fifo_outValue
+    #pragma HLS INTERFACE s_axilite port=tx_fifo_outValue1
     #pragma HLS INTERFACE s_axilite port=ctrl_reg_outValue
+    #pragma HLS INTERFACE s_axilite port=tx_fifo_outValue2
+    #pragma HLS INTERFACE s_axilite port=tx_fifo_outValue3
 
 //INITIALIZE TO READ AND WRITE
 	
@@ -76,12 +80,14 @@ void iiccomm2(temp32 iic[4096], temp32& stat_reg_outValue1, temp32& stat_reg_out
 	full_pirq_outValue = full_pirq_val;
 
 	//RESET TX FIFO IN CR REG
-	//iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x02;
+	iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x02;
+	ctrl_reg_val1 = iic[IIC_INDEX+IIC_CONTROL_REG_OFF]; //ENSURE CTL REG IS UPDATED
+	ctrl_reg_outValue1 = ctrl_reg_val1;
 
 	//ENABLE AXI I2C, REMOVE RESET FOR TX, DISABLE GEN. CALL IN CR REG
 	iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 1;
-	ctrl_reg_val = iic[IIC_INDEX+IIC_CONTROL_REG_OFF]; //ENSURE CTL REG IS UPDATED
-	ctrl_reg_outValue = ctrl_reg_val;
+	ctrl_reg_val2 = iic[IIC_INDEX+IIC_CONTROL_REG_OFF]; //ENSURE CTL REG IS UPDATED
+	ctrl_reg_outValue2 = ctrl_reg_val2;
 
 	//READ STATUS REGISTER
     stat_reg_val1 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
@@ -92,8 +98,8 @@ void iiccomm2(temp32 iic[4096], temp32& stat_reg_outValue1, temp32& stat_reg_out
 	//WRITE SENSOR ADDRESS TO TX_FIFO WRITE ACCESS
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
 
-	tx_fifo_val = iic[IIC_INDEX+IIC_TX_FIFO_OFF];
-	tx_fifo_outValue = tx_fifo_val;
+	tx_fifo_val1 = iic[IIC_INDEX+IIC_TX_FIFO_OFF];
+	tx_fifo_outValue1 = tx_fifo_val1;
 
 	//read status register again
   	stat_reg_val2 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
@@ -101,6 +107,9 @@ void iiccomm2(temp32 iic[4096], temp32& stat_reg_outValue1, temp32& stat_reg_out
 
 	//WRITE CHIP ID REGISTER ADDRESS TO TX FIFO 
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xD0;
+
+	tx_fifo_val2 = iic[IIC_INDEX+IIC_TX_FIFO_OFF];
+	tx_fifo_outValue2 = tx_fifo_val2;
 	
 	//read status register again
   	stat_reg_val3 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
@@ -109,6 +118,8 @@ void iiccomm2(temp32 iic[4096], temp32& stat_reg_outValue1, temp32& stat_reg_out
 	//WRITE SENSOR ADDRESS TO TX_FIFO READ ACCESS
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1ED;
 
+	tx_fifo_val3 = iic[IIC_INDEX+IIC_TX_FIFO_OFF];
+	tx_fifo_outValue3 = tx_fifo_val3;
 
 	//READ RX_FIFO 
 	stat_reg_val4 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];

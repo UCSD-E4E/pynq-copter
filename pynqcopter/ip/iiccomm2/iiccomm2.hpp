@@ -51,6 +51,6 @@ typedef ap_uint<32> temp32;
 #define IIC_TX_FIFO_OFF (0x108/4)
 #define IIC_RX_FIFO_OFF (0x10C/4)
 
-void iiccomm2(temp32 iic[4096], temp32& stat_reg_outValue1, temp32& stat_reg_outValue2, temp32& stat_reg_outValue3, temp32& stat_reg_outValue4, temp32& ctrl_reg_outValue, temp32& empty_pirq_outValue, temp32& full_pirq_outValue, temp32& tx_fifo_outValue, temp32& rx_fifo_outValue);
+void iiccomm2(temp32 iic[4096], temp32& stat_reg_outValue1, temp32& stat_reg_outValue2, temp32& stat_reg_outValue3, temp32& stat_reg_outValue4, temp32& ctrl_reg_outValue, temp32& empty_pirq_outValue, temp32& full_pirq_outValue, temp32& tx_fifo_outValue1,temp32& tx_fifo_outValue2,temp32& tx_fifo_outValue3, temp32& rx_fifo_outValue);
 
 #endif

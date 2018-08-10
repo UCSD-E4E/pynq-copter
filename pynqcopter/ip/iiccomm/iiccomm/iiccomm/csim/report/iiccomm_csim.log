@@ -1,7 +1,8 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch CLANG as the compiler.
-make[2]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm/iiccomm/iiccomm/csim/build'
-make[2]: 'csim.exe' is up to date.
-make[2]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm/iiccomm/iiccomm/csim/build'
+make[1]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm/iiccomm/iiccomm/csim/build'
+   Compiling ../../../../iiccomm.cpp in debug mode
+   Generating csim.exe
+make[1]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm/iiccomm/iiccomm/csim/build'
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************
