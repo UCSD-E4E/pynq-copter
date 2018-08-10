@@ -855,7 +855,7 @@ always @ (*) begin
         if ((1'b1 == ap_CS_fsm_state68)) begin
             iic_WDATA = 32'd493;
         end else if ((1'b1 == ap_CS_fsm_state54)) begin
-            iic_WDATA = 32'd208;
+            iic_WDATA = 32'd247;
         end else if ((1'b1 == ap_CS_fsm_state39)) begin
             iic_WDATA = 32'd492;
         end else if ((1'b1 == ap_CS_fsm_state24)) begin
