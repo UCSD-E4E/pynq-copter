@@ -24,7 +24,7 @@ set C_modelArgList {
 	{ regs_in_4 int 32 unused {axi_slave 0}  }
 	{ min_high int 32 regular {axi_slave 0}  }
 	{ max_high int 32 regular {axi_slave 0}  }
-	{ m_V int 16 regular {axi_master 2}  }
+	{ m_V int 16 regular {axi_master 1}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "regs_in_0", "interface" : "axi_slave", "bundle":"in","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "regs_in","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 2}]}]}], "offset" : {"in":16}, "offset_end" : {"in":23}} , 
@@ -34,7 +34,7 @@ set C_modelArgMapList {[
  	{ "Name" : "regs_in_4", "interface" : "axi_slave", "bundle":"in","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "regs_in","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 4,"up" : 4,"step" : 2}]}]}], "offset" : {"in":48}, "offset_end" : {"in":55}} , 
  	{ "Name" : "min_high", "interface" : "axi_slave", "bundle":"in","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "min_high","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":56}, "offset_end" : {"in":63}} , 
  	{ "Name" : "max_high", "interface" : "axi_slave", "bundle":"in","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "max_high","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":64}, "offset_end" : {"in":71}} , 
- 	{ "Name" : "m_V", "interface" : "axi_master", "bitwidth" : 16, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "m.V","cData": "int16","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 4095,"step" : 1}]}]}]} ]}
+ 	{ "Name" : "m_V", "interface" : "axi_master", "bitwidth" : 16, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "m.V","cData": "int16","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 4095,"step" : 1}]}]}]} ]}
 # RTL Port declarations: 
 set portNum 65
 set portList { 
@@ -172,7 +172,7 @@ set NewPortList {[
  	{ "name": "m_axi_m_V_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "m_V", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4"],
 		"CDFG" : "normalizer",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"FunctionPipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -188,35 +188,34 @@ set RtlHierarchyInfo {[
 			{"Name" : "regs_in_4", "Type" : "None", "Direction" : "I"},
 			{"Name" : "min_high", "Type" : "None", "Direction" : "I"},
 			{"Name" : "max_high", "Type" : "None", "Direction" : "I"},
-			{"Name" : "m_V", "Type" : "MAXI", "Direction" : "IO",
+			{"Name" : "m_V", "Type" : "MAXI", "Direction" : "O",
 				"BlockSignal" : [
-					{"Name" : "m_V_blk_n_AR", "Type" : "RtlSignal"},
-					{"Name" : "m_V_blk_n_R", "Type" : "RtlSignal"},
 					{"Name" : "m_V_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "m_V_blk_n_W", "Type" : "RtlSignal"},
 					{"Name" : "m_V_blk_n_B", "Type" : "RtlSignal"}]},
 			{"Name" : "changed", "Type" : "OVld", "Direction" : "IO"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.normalizer_in_s_axi_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.normalizer_m_V_m_axi_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.normalizer_udiv_8bkb_U1", "Parent" : "0"}]}
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.normalizer_mux_83bkb_U1", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.normalizer_udiv_8cud_U2", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	normalizer {
-		regs_in_0 {Type I LastRead 6 FirstWrite -1}
-		regs_in_1 {Type I LastRead 6 FirstWrite -1}
-		regs_in_2 {Type I LastRead 6 FirstWrite -1}
-		regs_in_3 {Type I LastRead 6 FirstWrite -1}
+		regs_in_0 {Type I LastRead 0 FirstWrite -1}
+		regs_in_1 {Type I LastRead 0 FirstWrite -1}
+		regs_in_2 {Type I LastRead 0 FirstWrite -1}
+		regs_in_3 {Type I LastRead 0 FirstWrite -1}
 		regs_in_4 {Type I LastRead -1 FirstWrite -1}
-		min_high {Type I LastRead 6 FirstWrite -1}
-		max_high {Type I LastRead 6 FirstWrite -1}
-		m_V {Type IO LastRead 23 FirstWrite 22}
+		min_high {Type I LastRead 0 FirstWrite -1}
+		max_high {Type I LastRead 0 FirstWrite -1}
+		m_V {Type O LastRead 17 FirstWrite 16}
 		changed {Type IO LastRead -1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "27", "Max" : "27"}
+	{"Name" : "Latency", "Min" : "21", "Max" : "21"}
 	, {"Name" : "Interval", "Min" : "1", "Max" : "1"}
 ]}
 

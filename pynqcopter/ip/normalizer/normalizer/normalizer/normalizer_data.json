@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "1",
-    "Latency": "27",
+    "Latency": "21",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -41,13 +41,15 @@
     "Vhdl": [
       "impl\/vhdl\/normalizer_in_s_axi.vhd",
       "impl\/vhdl\/normalizer_m_V_m_axi.vhd",
-      "impl\/vhdl\/normalizer_udiv_8bkb.vhd",
+      "impl\/vhdl\/normalizer_mux_83bkb.vhd",
+      "impl\/vhdl\/normalizer_udiv_8cud.vhd",
       "impl\/vhdl\/normalizer.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/normalizer_in_s_axi.v",
       "impl\/verilog\/normalizer_m_V_m_axi.v",
-      "impl\/verilog\/normalizer_udiv_8bkb.v",
+      "impl\/verilog\/normalizer_mux_83bkb.v",
+      "impl\/verilog\/normalizer_udiv_8cud.v",
       "impl\/verilog\/normalizer.v"
     ],
     "SwDriver": [
@@ -927,11 +929,11 @@
     "Hierarchy": {"ModuleName": "normalizer"},
     "Metrics": {"normalizer": {
         "Latency": {
-          "LatencyBest": "27",
-          "LatencyAvg": "27",
-          "LatencyWorst": "27",
+          "LatencyBest": "21",
+          "LatencyAvg": "21",
+          "LatencyWorst": "21",
           "PipelineII": "1",
-          "PipelineDepth": "28",
+          "PipelineDepth": "22",
           "PipelineType": "function"
         },
         "Timing": {
@@ -941,15 +943,15 @@
         },
         "Area": {
           "BRAM_18K": "2",
-          "FF": "1777",
-          "LUT": "1839",
+          "FF": "1621",
+          "LUT": "1808",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-13 16:37:01 PDT",
+    "Time": "2018-08-13 19:05:55 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

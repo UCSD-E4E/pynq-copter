@@ -1,4 +1,5 @@
-normalizer_udiv_8bkb
+normalizer_mux_83bkb
+normalizer_udiv_8cud
 normalizer_in_s_axi
 normalizer_m_V_m_axi
 normalizer

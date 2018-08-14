@@ -35265,20 +35265,17 @@ typedef ap_uint<64> concatTick_t;
 # 36 "rc_receiver.cpp" 2
 
 void rc_receiver(
-   unsigned int min_high,
-   unsigned int max_high,
-   F_t mixer_out[4096],
+   unsigned int norm_out[4096],
 
    C_t channels){
 
 
-#pragma HLS INTERFACE s_axilite port=min_high bundle=in
-#pragma HLS INTERFACE s_axilite port=max_high bundle=in
 #pragma HLS INTERFACE s_axilite port=return bundle=in
 
-#pragma HLS INTERFACE m_axi port=mixer_out offset=off
+#pragma HLS INTERFACE m_axi port=norm_out offset=off
 
 #pragma HLS INTERFACE ap_none port=channels
+
 #pragma HLS PIPELINE
 
 
@@ -35290,6 +35287,7 @@ void rc_receiver(
  bool should_write;
  should_write = false;
  unsigned int write_val=0;
+
  for(int i =0; i < 5; i++) {
 
   if(channels[i]) {
@@ -35307,8 +35305,7 @@ void rc_receiver(
 
 
  if(should_write) {
-  mixer_out[write_to]=F_t(ap_ufixed<48,32>(write_val-min_high)/
-              ap_ufixed<48,32>(max_high-min_high));
+  norm_out[2*write_to]=write_val;
  }
  last_on=channels;
 

@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:rc_receiver:1.0
-// IP Revision: 1808131604
+// IP Revision: 1808131832
 
 `timescale 1ns/1ps
 
@@ -74,46 +74,46 @@ module pwm_rc_receiver_0_1 (
   ap_clk,
   ap_rst_n,
   interrupt,
-  m_axi_mixer_out_V_AWADDR,
-  m_axi_mixer_out_V_AWLEN,
-  m_axi_mixer_out_V_AWSIZE,
-  m_axi_mixer_out_V_AWBURST,
-  m_axi_mixer_out_V_AWLOCK,
-  m_axi_mixer_out_V_AWREGION,
-  m_axi_mixer_out_V_AWCACHE,
-  m_axi_mixer_out_V_AWPROT,
-  m_axi_mixer_out_V_AWQOS,
-  m_axi_mixer_out_V_AWVALID,
-  m_axi_mixer_out_V_AWREADY,
-  m_axi_mixer_out_V_WDATA,
-  m_axi_mixer_out_V_WSTRB,
-  m_axi_mixer_out_V_WLAST,
-  m_axi_mixer_out_V_WVALID,
-  m_axi_mixer_out_V_WREADY,
-  m_axi_mixer_out_V_BRESP,
-  m_axi_mixer_out_V_BVALID,
-  m_axi_mixer_out_V_BREADY,
-  m_axi_mixer_out_V_ARADDR,
-  m_axi_mixer_out_V_ARLEN,
-  m_axi_mixer_out_V_ARSIZE,
-  m_axi_mixer_out_V_ARBURST,
-  m_axi_mixer_out_V_ARLOCK,
-  m_axi_mixer_out_V_ARREGION,
-  m_axi_mixer_out_V_ARCACHE,
-  m_axi_mixer_out_V_ARPROT,
-  m_axi_mixer_out_V_ARQOS,
-  m_axi_mixer_out_V_ARVALID,
-  m_axi_mixer_out_V_ARREADY,
-  m_axi_mixer_out_V_RDATA,
-  m_axi_mixer_out_V_RRESP,
-  m_axi_mixer_out_V_RLAST,
-  m_axi_mixer_out_V_RVALID,
-  m_axi_mixer_out_V_RREADY,
+  m_axi_norm_out_AWADDR,
+  m_axi_norm_out_AWLEN,
+  m_axi_norm_out_AWSIZE,
+  m_axi_norm_out_AWBURST,
+  m_axi_norm_out_AWLOCK,
+  m_axi_norm_out_AWREGION,
+  m_axi_norm_out_AWCACHE,
+  m_axi_norm_out_AWPROT,
+  m_axi_norm_out_AWQOS,
+  m_axi_norm_out_AWVALID,
+  m_axi_norm_out_AWREADY,
+  m_axi_norm_out_WDATA,
+  m_axi_norm_out_WSTRB,
+  m_axi_norm_out_WLAST,
+  m_axi_norm_out_WVALID,
+  m_axi_norm_out_WREADY,
+  m_axi_norm_out_BRESP,
+  m_axi_norm_out_BVALID,
+  m_axi_norm_out_BREADY,
+  m_axi_norm_out_ARADDR,
+  m_axi_norm_out_ARLEN,
+  m_axi_norm_out_ARSIZE,
+  m_axi_norm_out_ARBURST,
+  m_axi_norm_out_ARLOCK,
+  m_axi_norm_out_ARREGION,
+  m_axi_norm_out_ARCACHE,
+  m_axi_norm_out_ARPROT,
+  m_axi_norm_out_ARQOS,
+  m_axi_norm_out_ARVALID,
+  m_axi_norm_out_ARREADY,
+  m_axi_norm_out_RDATA,
+  m_axi_norm_out_RRESP,
+  m_axi_norm_out_RLAST,
+  m_axi_norm_out_RVALID,
+  m_axi_norm_out_RREADY,
   channels_V
 );
 
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_in AWADDR" *)
-input wire [4 : 0] s_axi_in_AWADDR;
+input wire [3 : 0] s_axi_in_AWADDR;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_in AWVALID" *)
 input wire s_axi_in_AWVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_in AWREADY" *)
@@ -133,7 +133,7 @@ output wire s_axi_in_BVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_in BREADY" *)
 input wire s_axi_in_BREADY;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_in ARADDR" *)
-input wire [4 : 0] s_axi_in_ARADDR;
+input wire [3 : 0] s_axi_in_ARADDR;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_in ARVALID" *)
 input wire s_axi_in_ARVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_in ARREADY" *)
@@ -144,10 +144,10 @@ output wire [31 : 0] s_axi_in_RDATA;
 output wire [1 : 0] s_axi_in_RRESP;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_in RVALID" *)
 output wire s_axi_in_RVALID;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_in, ADDR_WIDTH 5, DATA_WIDTH 32, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}, FREQ_HZ 100000000, ID_WIDTH 0, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_in, ADDR_WIDTH 4, DATA_WIDTH 32, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}, FREQ_HZ 100000000, ID_WIDTH 0, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_in RREADY" *)
 input wire s_axi_in_RREADY;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME ap_clk, ASSOCIATED_BUSIF s_axi_in:m_axi_mixer_out_V, ASSOCIATED_RESET ap_rst_n, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME ap_clk, ASSOCIATED_BUSIF s_axi_in:m_axi_norm_out, ASSOCIATED_RESET ap_rst_n, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 ap_clk CLK" *)
 input wire ap_clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME ap_rst_n, POLARITY ACTIVE_LOW, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {RST {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}" *)
@@ -156,96 +156,96 @@ input wire ap_rst_n;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME interrupt, SENSITIVITY LEVEL_HIGH, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {INTERRUPT {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}, PortWidth 1" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:interrupt:1.0 interrupt INTERRUPT" *)
 output wire interrupt;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V AWADDR" *)
-output wire [31 : 0] m_axi_mixer_out_V_AWADDR;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V AWLEN" *)
-output wire [7 : 0] m_axi_mixer_out_V_AWLEN;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V AWSIZE" *)
-output wire [2 : 0] m_axi_mixer_out_V_AWSIZE;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V AWBURST" *)
-output wire [1 : 0] m_axi_mixer_out_V_AWBURST;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V AWLOCK" *)
-output wire [1 : 0] m_axi_mixer_out_V_AWLOCK;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V AWREGION" *)
-output wire [3 : 0] m_axi_mixer_out_V_AWREGION;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V AWCACHE" *)
-output wire [3 : 0] m_axi_mixer_out_V_AWCACHE;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V AWPROT" *)
-output wire [2 : 0] m_axi_mixer_out_V_AWPROT;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V AWQOS" *)
-output wire [3 : 0] m_axi_mixer_out_V_AWQOS;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V AWVALID" *)
-output wire m_axi_mixer_out_V_AWVALID;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V AWREADY" *)
-input wire m_axi_mixer_out_V_AWREADY;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V WDATA" *)
-output wire [31 : 0] m_axi_mixer_out_V_WDATA;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V WSTRB" *)
-output wire [3 : 0] m_axi_mixer_out_V_WSTRB;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V WLAST" *)
-output wire m_axi_mixer_out_V_WLAST;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V WVALID" *)
-output wire m_axi_mixer_out_V_WVALID;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V WREADY" *)
-input wire m_axi_mixer_out_V_WREADY;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V BRESP" *)
-input wire [1 : 0] m_axi_mixer_out_V_BRESP;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V BVALID" *)
-input wire m_axi_mixer_out_V_BVALID;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V BREADY" *)
-output wire m_axi_mixer_out_V_BREADY;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V ARADDR" *)
-output wire [31 : 0] m_axi_mixer_out_V_ARADDR;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V ARLEN" *)
-output wire [7 : 0] m_axi_mixer_out_V_ARLEN;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V ARSIZE" *)
-output wire [2 : 0] m_axi_mixer_out_V_ARSIZE;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V ARBURST" *)
-output wire [1 : 0] m_axi_mixer_out_V_ARBURST;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V ARLOCK" *)
-output wire [1 : 0] m_axi_mixer_out_V_ARLOCK;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V ARREGION" *)
-output wire [3 : 0] m_axi_mixer_out_V_ARREGION;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V ARCACHE" *)
-output wire [3 : 0] m_axi_mixer_out_V_ARCACHE;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V ARPROT" *)
-output wire [2 : 0] m_axi_mixer_out_V_ARPROT;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V ARQOS" *)
-output wire [3 : 0] m_axi_mixer_out_V_ARQOS;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V ARVALID" *)
-output wire m_axi_mixer_out_V_ARVALID;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V ARREADY" *)
-input wire m_axi_mixer_out_V_ARREADY;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V RDATA" *)
-input wire [31 : 0] m_axi_mixer_out_V_RDATA;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V RRESP" *)
-input wire [1 : 0] m_axi_mixer_out_V_RRESP;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V RLAST" *)
-input wire m_axi_mixer_out_V_RLAST;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V RVALID" *)
-input wire m_axi_mixer_out_V_RVALID;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axi_mixer_out_V, ADDR_WIDTH 32, MAX_BURST_LENGTH 256, NUM_READ_OUTSTANDING 16, NUM_WRITE_OUTSTANDING 16, MAX_READ_BURST_LENGTH 16, MAX_WRITE_BURST_LENGTH 16, PROTOCOL AXI4, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, FREQ_HZ 100000000, ID_WIDTH 0, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 1, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, PHASE 0.000, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *)
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_mixer_out_V RREADY" *)
-output wire m_axi_mixer_out_V_RREADY;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out AWADDR" *)
+output wire [31 : 0] m_axi_norm_out_AWADDR;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out AWLEN" *)
+output wire [7 : 0] m_axi_norm_out_AWLEN;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out AWSIZE" *)
+output wire [2 : 0] m_axi_norm_out_AWSIZE;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out AWBURST" *)
+output wire [1 : 0] m_axi_norm_out_AWBURST;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out AWLOCK" *)
+output wire [1 : 0] m_axi_norm_out_AWLOCK;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out AWREGION" *)
+output wire [3 : 0] m_axi_norm_out_AWREGION;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out AWCACHE" *)
+output wire [3 : 0] m_axi_norm_out_AWCACHE;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out AWPROT" *)
+output wire [2 : 0] m_axi_norm_out_AWPROT;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out AWQOS" *)
+output wire [3 : 0] m_axi_norm_out_AWQOS;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out AWVALID" *)
+output wire m_axi_norm_out_AWVALID;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out AWREADY" *)
+input wire m_axi_norm_out_AWREADY;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out WDATA" *)
+output wire [31 : 0] m_axi_norm_out_WDATA;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out WSTRB" *)
+output wire [3 : 0] m_axi_norm_out_WSTRB;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out WLAST" *)
+output wire m_axi_norm_out_WLAST;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out WVALID" *)
+output wire m_axi_norm_out_WVALID;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out WREADY" *)
+input wire m_axi_norm_out_WREADY;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out BRESP" *)
+input wire [1 : 0] m_axi_norm_out_BRESP;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out BVALID" *)
+input wire m_axi_norm_out_BVALID;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out BREADY" *)
+output wire m_axi_norm_out_BREADY;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out ARADDR" *)
+output wire [31 : 0] m_axi_norm_out_ARADDR;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out ARLEN" *)
+output wire [7 : 0] m_axi_norm_out_ARLEN;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out ARSIZE" *)
+output wire [2 : 0] m_axi_norm_out_ARSIZE;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out ARBURST" *)
+output wire [1 : 0] m_axi_norm_out_ARBURST;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out ARLOCK" *)
+output wire [1 : 0] m_axi_norm_out_ARLOCK;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out ARREGION" *)
+output wire [3 : 0] m_axi_norm_out_ARREGION;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out ARCACHE" *)
+output wire [3 : 0] m_axi_norm_out_ARCACHE;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out ARPROT" *)
+output wire [2 : 0] m_axi_norm_out_ARPROT;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out ARQOS" *)
+output wire [3 : 0] m_axi_norm_out_ARQOS;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out ARVALID" *)
+output wire m_axi_norm_out_ARVALID;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out ARREADY" *)
+input wire m_axi_norm_out_ARREADY;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out RDATA" *)
+input wire [31 : 0] m_axi_norm_out_RDATA;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out RRESP" *)
+input wire [1 : 0] m_axi_norm_out_RRESP;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out RLAST" *)
+input wire m_axi_norm_out_RLAST;
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out RVALID" *)
+input wire m_axi_norm_out_RVALID;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axi_norm_out, ADDR_WIDTH 32, MAX_BURST_LENGTH 256, NUM_READ_OUTSTANDING 16, NUM_WRITE_OUTSTANDING 16, MAX_READ_BURST_LENGTH 16, MAX_WRITE_BURST_LENGTH 16, PROTOCOL AXI4, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, FREQ_HZ 100000000, ID_WIDTH 0, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 1, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, PHASE 0.000, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_norm_out RREADY" *)
+output wire m_axi_norm_out_RREADY;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME channels_V, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 5} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 channels_V DATA" *)
 input wire [4 : 0] channels_V;
 
   rc_receiver #(
-    .C_S_AXI_IN_ADDR_WIDTH(5),
+    .C_S_AXI_IN_ADDR_WIDTH(4),
     .C_S_AXI_IN_DATA_WIDTH(32),
-    .C_M_AXI_MIXER_OUT_V_ID_WIDTH(1),
-    .C_M_AXI_MIXER_OUT_V_ADDR_WIDTH(32),
-    .C_M_AXI_MIXER_OUT_V_DATA_WIDTH(32),
-    .C_M_AXI_MIXER_OUT_V_AWUSER_WIDTH(1),
-    .C_M_AXI_MIXER_OUT_V_ARUSER_WIDTH(1),
-    .C_M_AXI_MIXER_OUT_V_WUSER_WIDTH(1),
-    .C_M_AXI_MIXER_OUT_V_RUSER_WIDTH(1),
-    .C_M_AXI_MIXER_OUT_V_BUSER_WIDTH(1),
-    .C_M_AXI_MIXER_OUT_V_USER_VALUE(32'H00000000),
-    .C_M_AXI_MIXER_OUT_V_PROT_VALUE(3'B000),
-    .C_M_AXI_MIXER_OUT_V_CACHE_VALUE(4'B0011),
-    .C_M_AXI_MIXER_OUT_V_TARGET_ADDR(32'H4000d010)
+    .C_M_AXI_NORM_OUT_ID_WIDTH(1),
+    .C_M_AXI_NORM_OUT_ADDR_WIDTH(32),
+    .C_M_AXI_NORM_OUT_DATA_WIDTH(32),
+    .C_M_AXI_NORM_OUT_AWUSER_WIDTH(1),
+    .C_M_AXI_NORM_OUT_ARUSER_WIDTH(1),
+    .C_M_AXI_NORM_OUT_WUSER_WIDTH(1),
+    .C_M_AXI_NORM_OUT_RUSER_WIDTH(1),
+    .C_M_AXI_NORM_OUT_BUSER_WIDTH(1),
+    .C_M_AXI_NORM_OUT_USER_VALUE(32'H00000000),
+    .C_M_AXI_NORM_OUT_PROT_VALUE(3'B000),
+    .C_M_AXI_NORM_OUT_CACHE_VALUE(4'B0011),
+    .C_M_AXI_NORM_OUT_TARGET_ADDR(32'H4000d010)
   ) inst (
     .s_axi_in_AWADDR(s_axi_in_AWADDR),
     .s_axi_in_AWVALID(s_axi_in_AWVALID),
@@ -267,51 +267,51 @@ input wire [4 : 0] channels_V;
     .ap_clk(ap_clk),
     .ap_rst_n(ap_rst_n),
     .interrupt(interrupt),
-    .m_axi_mixer_out_V_AWID(),
-    .m_axi_mixer_out_V_AWADDR(m_axi_mixer_out_V_AWADDR),
-    .m_axi_mixer_out_V_AWLEN(m_axi_mixer_out_V_AWLEN),
-    .m_axi_mixer_out_V_AWSIZE(m_axi_mixer_out_V_AWSIZE),
-    .m_axi_mixer_out_V_AWBURST(m_axi_mixer_out_V_AWBURST),
-    .m_axi_mixer_out_V_AWLOCK(m_axi_mixer_out_V_AWLOCK),
-    .m_axi_mixer_out_V_AWREGION(m_axi_mixer_out_V_AWREGION),
-    .m_axi_mixer_out_V_AWCACHE(m_axi_mixer_out_V_AWCACHE),
-    .m_axi_mixer_out_V_AWPROT(m_axi_mixer_out_V_AWPROT),
-    .m_axi_mixer_out_V_AWQOS(m_axi_mixer_out_V_AWQOS),
-    .m_axi_mixer_out_V_AWUSER(),
-    .m_axi_mixer_out_V_AWVALID(m_axi_mixer_out_V_AWVALID),
-    .m_axi_mixer_out_V_AWREADY(m_axi_mixer_out_V_AWREADY),
-    .m_axi_mixer_out_V_WID(),
-    .m_axi_mixer_out_V_WDATA(m_axi_mixer_out_V_WDATA),
-    .m_axi_mixer_out_V_WSTRB(m_axi_mixer_out_V_WSTRB),
-    .m_axi_mixer_out_V_WLAST(m_axi_mixer_out_V_WLAST),
-    .m_axi_mixer_out_V_WUSER(),
-    .m_axi_mixer_out_V_WVALID(m_axi_mixer_out_V_WVALID),
-    .m_axi_mixer_out_V_WREADY(m_axi_mixer_out_V_WREADY),
-    .m_axi_mixer_out_V_BID(1'B0),
-    .m_axi_mixer_out_V_BRESP(m_axi_mixer_out_V_BRESP),
-    .m_axi_mixer_out_V_BUSER(1'B0),
-    .m_axi_mixer_out_V_BVALID(m_axi_mixer_out_V_BVALID),
-    .m_axi_mixer_out_V_BREADY(m_axi_mixer_out_V_BREADY),
-    .m_axi_mixer_out_V_ARID(),
-    .m_axi_mixer_out_V_ARADDR(m_axi_mixer_out_V_ARADDR),
-    .m_axi_mixer_out_V_ARLEN(m_axi_mixer_out_V_ARLEN),
-    .m_axi_mixer_out_V_ARSIZE(m_axi_mixer_out_V_ARSIZE),
-    .m_axi_mixer_out_V_ARBURST(m_axi_mixer_out_V_ARBURST),
-    .m_axi_mixer_out_V_ARLOCK(m_axi_mixer_out_V_ARLOCK),
-    .m_axi_mixer_out_V_ARREGION(m_axi_mixer_out_V_ARREGION),
-    .m_axi_mixer_out_V_ARCACHE(m_axi_mixer_out_V_ARCACHE),
-    .m_axi_mixer_out_V_ARPROT(m_axi_mixer_out_V_ARPROT),
-    .m_axi_mixer_out_V_ARQOS(m_axi_mixer_out_V_ARQOS),
-    .m_axi_mixer_out_V_ARUSER(),
-    .m_axi_mixer_out_V_ARVALID(m_axi_mixer_out_V_ARVALID),
-    .m_axi_mixer_out_V_ARREADY(m_axi_mixer_out_V_ARREADY),
-    .m_axi_mixer_out_V_RID(1'B0),
-    .m_axi_mixer_out_V_RDATA(m_axi_mixer_out_V_RDATA),
-    .m_axi_mixer_out_V_RRESP(m_axi_mixer_out_V_RRESP),
-    .m_axi_mixer_out_V_RLAST(m_axi_mixer_out_V_RLAST),
-    .m_axi_mixer_out_V_RUSER(1'B0),
-    .m_axi_mixer_out_V_RVALID(m_axi_mixer_out_V_RVALID),
-    .m_axi_mixer_out_V_RREADY(m_axi_mixer_out_V_RREADY),
+    .m_axi_norm_out_AWID(),
+    .m_axi_norm_out_AWADDR(m_axi_norm_out_AWADDR),
+    .m_axi_norm_out_AWLEN(m_axi_norm_out_AWLEN),
+    .m_axi_norm_out_AWSIZE(m_axi_norm_out_AWSIZE),
+    .m_axi_norm_out_AWBURST(m_axi_norm_out_AWBURST),
+    .m_axi_norm_out_AWLOCK(m_axi_norm_out_AWLOCK),
+    .m_axi_norm_out_AWREGION(m_axi_norm_out_AWREGION),
+    .m_axi_norm_out_AWCACHE(m_axi_norm_out_AWCACHE),
+    .m_axi_norm_out_AWPROT(m_axi_norm_out_AWPROT),
+    .m_axi_norm_out_AWQOS(m_axi_norm_out_AWQOS),
+    .m_axi_norm_out_AWUSER(),
+    .m_axi_norm_out_AWVALID(m_axi_norm_out_AWVALID),
+    .m_axi_norm_out_AWREADY(m_axi_norm_out_AWREADY),
+    .m_axi_norm_out_WID(),
+    .m_axi_norm_out_WDATA(m_axi_norm_out_WDATA),
+    .m_axi_norm_out_WSTRB(m_axi_norm_out_WSTRB),
+    .m_axi_norm_out_WLAST(m_axi_norm_out_WLAST),
+    .m_axi_norm_out_WUSER(),
+    .m_axi_norm_out_WVALID(m_axi_norm_out_WVALID),
+    .m_axi_norm_out_WREADY(m_axi_norm_out_WREADY),
+    .m_axi_norm_out_BID(1'B0),
+    .m_axi_norm_out_BRESP(m_axi_norm_out_BRESP),
+    .m_axi_norm_out_BUSER(1'B0),
+    .m_axi_norm_out_BVALID(m_axi_norm_out_BVALID),
+    .m_axi_norm_out_BREADY(m_axi_norm_out_BREADY),
+    .m_axi_norm_out_ARID(),
+    .m_axi_norm_out_ARADDR(m_axi_norm_out_ARADDR),
+    .m_axi_norm_out_ARLEN(m_axi_norm_out_ARLEN),
+    .m_axi_norm_out_ARSIZE(m_axi_norm_out_ARSIZE),
+    .m_axi_norm_out_ARBURST(m_axi_norm_out_ARBURST),
+    .m_axi_norm_out_ARLOCK(m_axi_norm_out_ARLOCK),
+    .m_axi_norm_out_ARREGION(m_axi_norm_out_ARREGION),
+    .m_axi_norm_out_ARCACHE(m_axi_norm_out_ARCACHE),
+    .m_axi_norm_out_ARPROT(m_axi_norm_out_ARPROT),
+    .m_axi_norm_out_ARQOS(m_axi_norm_out_ARQOS),
+    .m_axi_norm_out_ARUSER(),
+    .m_axi_norm_out_ARVALID(m_axi_norm_out_ARVALID),
+    .m_axi_norm_out_ARREADY(m_axi_norm_out_ARREADY),
+    .m_axi_norm_out_RID(1'B0),
+    .m_axi_norm_out_RDATA(m_axi_norm_out_RDATA),
+    .m_axi_norm_out_RRESP(m_axi_norm_out_RRESP),
+    .m_axi_norm_out_RLAST(m_axi_norm_out_RLAST),
+    .m_axi_norm_out_RUSER(1'B0),
+    .m_axi_norm_out_RVALID(m_axi_norm_out_RVALID),
+    .m_axi_norm_out_RREADY(m_axi_norm_out_RREADY),
     .channels_V(channels_V)
   );
 endmodule

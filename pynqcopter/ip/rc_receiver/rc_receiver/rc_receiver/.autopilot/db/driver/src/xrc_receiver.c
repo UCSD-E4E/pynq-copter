@@ -76,40 +76,6 @@ void XRc_receiver_DisableAutoRestart(XRc_receiver *InstancePtr) {
     XRc_receiver_WriteReg(InstancePtr->In_BaseAddress, XRC_RECEIVER_IN_ADDR_AP_CTRL, 0);
 }
 
-void XRc_receiver_Set_min_high(XRc_receiver *InstancePtr, u32 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XRc_receiver_WriteReg(InstancePtr->In_BaseAddress, XRC_RECEIVER_IN_ADDR_MIN_HIGH_DATA, Data);
-}
-
-u32 XRc_receiver_Get_min_high(XRc_receiver *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XRc_receiver_ReadReg(InstancePtr->In_BaseAddress, XRC_RECEIVER_IN_ADDR_MIN_HIGH_DATA);
-    return Data;
-}
-
-void XRc_receiver_Set_max_high(XRc_receiver *InstancePtr, u32 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XRc_receiver_WriteReg(InstancePtr->In_BaseAddress, XRC_RECEIVER_IN_ADDR_MAX_HIGH_DATA, Data);
-}
-
-u32 XRc_receiver_Get_max_high(XRc_receiver *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XRc_receiver_ReadReg(InstancePtr->In_BaseAddress, XRC_RECEIVER_IN_ADDR_MAX_HIGH_DATA);
-    return Data;
-}
-
 void XRc_receiver_InterruptGlobalEnable(XRc_receiver *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

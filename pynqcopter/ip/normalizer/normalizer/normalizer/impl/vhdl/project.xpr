@@ -6,7 +6,7 @@
 <Project Version="7" Minor="35" Path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer/normalizer/normalizer/impl/vhdl/project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="7eee7f44f7b74f5f9a7888ed0f992be2"/>
+    <Option Name="Id" Val="24c55f05a1a94e1cb83143dae5154576"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -67,7 +67,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/normalizer_udiv_8bkb.vhd">
+      <File Path="$PPRDIR/normalizer_udiv_8cud.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/normalizer_mux_83bkb.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>

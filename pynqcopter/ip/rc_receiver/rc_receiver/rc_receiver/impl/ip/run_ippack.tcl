@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "rc_receiver"
 set Version     "1.0"
 set DisplayName "Rc_receiver"
-set Revision    "1808131604"
+set Revision    "1808131832"
 set Description "HLS Core: Rc_receiver Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -86,9 +86,9 @@ set Interfaces {
         mode "slave"
         port_prefix "s_axi_in"
         param_prefix "C_S_AXI_IN"
-        addr_bits "5"
-        port_width "AWADDR 5 WDATA 32 WSTRB 4 ARADDR 5 RDATA 32"
-        registers {{0x00 CTRL       RW   0x0 "Control signals" {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 24 RESERVED_2 R 0 "Reserved.  0s on read." }}} {0x04 GIER       RW   0x0 "Global Interrupt Enable Register" {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }} } {0x08 IP_IER     RW   0x0 "IP Interrupt Enable Register" {{ 0 1 CHAN0_INT_EN RW 0 "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled." } { 1 1 CHAN1_INT_EN RW 0 "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled." } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x0c IP_ISR     RW   0x0 "IP Interrupt Status Register" {{ 0 1 CHAN0_INT_ST RTOW 0 "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup" } { 1 1 CHAN1_INT_ST RTOW 0 "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup" } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x10 min_high W 0x0 "Data signal of min_high" {{0 32 min_high W 0 "Bit 31 to 0 Data signal of min_high"}}} {0x18 max_high W 0x0 "Data signal of max_high" {{0 32 max_high W 0 "Bit 31 to 0 Data signal of max_high"}}}}
+        addr_bits "4"
+        port_width "AWADDR 4 WDATA 32 WSTRB 4 ARADDR 4 RDATA 32"
+        registers {{0x00 CTRL       RW   0x0 "Control signals" {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 24 RESERVED_2 R 0 "Reserved.  0s on read." }}} {0x04 GIER       RW   0x0 "Global Interrupt Enable Register" {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }} } {0x08 IP_IER     RW   0x0 "IP Interrupt Enable Register" {{ 0 1 CHAN0_INT_EN RW 0 "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled." } { 1 1 CHAN1_INT_EN RW 0 "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled." } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x0c IP_ISR     RW   0x0 "IP Interrupt Status Register" {{ 0 1 CHAN0_INT_ST RTOW 0 "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup" } { 1 1 CHAN1_INT_ST RTOW 0 "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup" } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}}}
         memories ""
         ctype {
             AWVALID {
@@ -153,11 +153,11 @@ set Interfaces {
             }
             AWADDR {
                 Type "integer unsigned"
-                Width "5"
-                Bits "5"
+                Width "4"
+                Bits "4"
             }
             WDATA {
-                Type "integer unsigned"
+                Type "null"
                 Width "32"
                 Bits "32"
             }
@@ -168,11 +168,11 @@ set Interfaces {
             }
             ARADDR {
                 Type "integer unsigned"
-                Width "5"
-                Bits "5"
+                Width "4"
+                Bits "4"
             }
             RDATA {
-                Type "integer unsigned"
+                Type "null"
                 Width "32"
                 Bits "32"
             }
@@ -188,7 +188,7 @@ set Interfaces {
                 Bits "1"
             }
         }
-        buses "s_axi_in m_axi_mixer_out_V"
+        buses "s_axi_in m_axi_norm_out"
         reset "ap_rst_n"
     }
     ap_rst_n {
@@ -212,12 +212,12 @@ set Interfaces {
             }
         }
     }
-    m_axi_mixer_out_V {
+    m_axi_norm_out {
         type "native_axim"
         mode "master"
-        port_prefix "m_axi_mixer_out_V"
+        port_prefix "m_axi_norm_out"
         data_width "32"
-        param_prefix "C_M_AXI_MIXER_OUT_V"
+        param_prefix "C_M_AXI_NORM_OUT"
         port_width "AWADDR 32 AWID 1 AWUSER 1 WDATA 32 WSTRB 4 WID 1 WUSER 1 ARADDR 32 ARID 1 ARUSER 1 RDATA 32 RID 1 RUSER 1 BID 1 BUSER 1"
         ctype {
             AWLEN {
@@ -386,9 +386,9 @@ set Interfaces {
                 Bits "1"
             }
             WDATA {
-                Type "real fixed signed 15"
-                Width "16"
-                Bits "16"
+                Type "integer unsigned"
+                Width "32"
+                Bits "32"
             }
             WSTRB {
                 Type "integer unsigned"
@@ -421,9 +421,9 @@ set Interfaces {
                 Bits "1"
             }
             RDATA {
-                Type "real fixed signed 15"
-                Width "16"
-                Bits "16"
+                Type "integer unsigned"
+                Width "32"
+                Bits "32"
             }
             RID {
                 Type "integer unsigned"
@@ -1931,7 +1931,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_ver match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 75 II 1}
+set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 8 II 1}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]

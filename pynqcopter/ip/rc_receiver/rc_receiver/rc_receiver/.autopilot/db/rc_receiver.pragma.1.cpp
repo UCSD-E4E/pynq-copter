@@ -35285,20 +35285,17 @@ typedef ap_uint<64> concatTick_t;
 #36 "rc_receiver.cpp" 2
 
 void rc_receiver(
-   unsigned int min_high,
-   unsigned int max_high,
-   F_t mixer_out[4096],
+   unsigned int norm_out[4096],
 
-   C_t channels){_ssdm_SpecArrayDimSize(mixer_out,4096);
+   C_t channels){_ssdm_SpecArrayDimSize(norm_out,4096);
 
 
-_ssdm_op_SpecInterface(min_high, "s_axilite", 0, 0, "", 0, 0, "in", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(max_high, "s_axilite", 0, 0, "", 0, 0, "in", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "in", "", "", 0, 0, 0, 0, "", "");
 
-_ssdm_op_SpecInterface(mixer_out, "m_axi", 0, 0, "", 0, 0, "", "off", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(norm_out, "m_axi", 0, 0, "", 0, 0, "", "off", "", 16, 16, 16, 16, "", "");
 
 _ssdm_op_SpecInterface(&channels, "ap_none", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 
 
@@ -35310,6 +35307,7 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  bool should_write;
  should_write = false;
  unsigned int write_val=0;
+
  for(int i =0; i < 5; i++) {
 
   if(channels[i]) {
@@ -35327,8 +35325,7 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 
 
  if(should_write) {
-  mixer_out[write_to]=F_t(ap_ufixed<48,32>(write_val-min_high)/
-              ap_ufixed<48,32>(max_high-min_high));
+  norm_out[2*write_to]=write_val;
  }
  last_on=channels;
 

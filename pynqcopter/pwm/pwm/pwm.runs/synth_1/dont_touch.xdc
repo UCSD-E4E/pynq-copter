@@ -51,8 +51,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_rc_receiver
 # IP: bd/pwm/ip/pwm_normalizer_0_0/pwm_normalizer_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_normalizer_0_0 || ORIG_REF_NAME==pwm_normalizer_0_0} -quiet] -quiet
 
-# IP: bd/pwm/ip/pwm_system_ila_0_0/pwm_system_ila_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_system_ila_0_0 || ORIG_REF_NAME==pwm_system_ila_0_0} -quiet] -quiet
+# IP: bd/pwm/ip/pwm_system_ila_0_1/pwm_system_ila_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_system_ila_0_1 || ORIG_REF_NAME==pwm_system_ila_0_1} -quiet] -quiet
 
 # IP: bd/pwm/ip/pwm_auto_pc_3/pwm_auto_pc_3.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==pwm_auto_pc_3 || ORIG_REF_NAME==pwm_auto_pc_3} -quiet] -quiet

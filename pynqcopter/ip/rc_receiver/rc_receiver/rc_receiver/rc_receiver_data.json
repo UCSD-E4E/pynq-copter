@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "1",
-    "Latency": "75",
+    "Latency": "8",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -40,14 +40,12 @@
     ],
     "Vhdl": [
       "impl\/vhdl\/rc_receiver_in_s_axi.vhd",
-      "impl\/vhdl\/rc_receiver_mixer_out_V_m_axi.vhd",
-      "impl\/vhdl\/rc_receiver_udiv_bkb.vhd",
+      "impl\/vhdl\/rc_receiver_norm_out_m_axi.vhd",
       "impl\/vhdl\/rc_receiver.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/rc_receiver_in_s_axi.v",
-      "impl\/verilog\/rc_receiver_mixer_out_V_m_axi.v",
-      "impl\/verilog\/rc_receiver_udiv_bkb.v",
+      "impl\/verilog\/rc_receiver_norm_out_m_axi.v",
       "impl\/verilog\/rc_receiver.v"
     ],
     "SwDriver": [
@@ -71,7 +69,7 @@
     "ap_clk": {
       "type": "clock",
       "ctype": {"CLK": {"Type": "bool"}},
-      "buses": "s_axi_in m_axi_mixer_out_V",
+      "buses": "s_axi_in m_axi_norm_out",
       "reset": "ap_rst_n"
     },
     "ap_rst_n": {
@@ -92,13 +90,13 @@
       "type": "interrupt",
       "ctype": {"INTERRUPT": {"Type": "bool"}}
     },
-    "m_axi_mixer_out_V": {
+    "m_axi_norm_out": {
       "type": "native_axim",
       "is_adaptor": "true",
       "mode": "master",
-      "port_prefix": "m_axi_mixer_out_V",
+      "port_prefix": "m_axi_norm_out",
       "data_width": "32",
-      "param_prefix": "C_M_AXI_MIXER_OUT_V",
+      "param_prefix": "C_M_AXI_NORM_OUT",
       "ctype": {
         "AWLEN": {
           "Type": "integer unsigned",
@@ -197,8 +195,8 @@
           "Width": "1"
         },
         "WDATA": {
-          "Type": "real fixed signed 15",
-          "Width": "16"
+          "Type": "integer unsigned",
+          "Width": "32"
         },
         "WSTRB": {
           "Type": "integer unsigned",
@@ -225,8 +223,8 @@
           "Width": "1"
         },
         "RDATA": {
-          "Type": "real fixed signed 15",
-          "Width": "16"
+          "Type": "integer unsigned",
+          "Width": "32"
         },
         "RID": {
           "Type": "integer unsigned",
@@ -277,7 +275,7 @@
       "mode": "slave",
       "port_prefix": "s_axi_in",
       "param_prefix": "C_S_AXI_IN",
-      "addr_bits": "5",
+      "addr_bits": "4",
       "registers": [
         {
           "offset": "0x00",
@@ -434,36 +432,6 @@
               "description": "Reserved.  0s on read."
             }
           ]
-        },
-        {
-          "offset": "0x10",
-          "name": "min_high",
-          "access": "W",
-          "reset_value": "0x0",
-          "description": "Data signal of min_high",
-          "fields": [{
-              "offset": "0",
-              "width": "32",
-              "name": "min_high",
-              "access": "W",
-              "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of min_high"
-            }]
-        },
-        {
-          "offset": "0x18",
-          "name": "max_high",
-          "access": "W",
-          "reset_value": "0x0",
-          "description": "Data signal of max_high",
-          "fields": [{
-              "offset": "0",
-              "width": "32",
-              "name": "max_high",
-              "access": "W",
-              "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of max_high"
-            }]
         }
       ],
       "memories": "",
@@ -488,10 +456,10 @@
         },
         "AWADDR": {
           "Type": "integer unsigned",
-          "Width": "5"
+          "Width": "4"
         },
         "WDATA": {
-          "Type": "integer unsigned",
+          "Type": "null",
           "Width": "32"
         },
         "WSTRB": {
@@ -500,17 +468,17 @@
         },
         "ARADDR": {
           "Type": "integer unsigned",
-          "Width": "5"
+          "Width": "4"
         },
         "RDATA": {
-          "Type": "integer unsigned",
+          "Type": "null",
           "Width": "32"
         }
       },
       "data_width": "32",
       "port_width": {
-        "ARADDR": "5",
-        "AWADDR": "5",
+        "ARADDR": "4",
+        "AWADDR": "4",
         "RDATA": "32",
         "WDATA": "32",
         "WSTRB": "4"
@@ -528,7 +496,7 @@
     },
     "s_axi_in_AWADDR": {
       "dir": "in",
-      "width": "5"
+      "width": "4"
     },
     "s_axi_in_WVALID": {
       "dir": "in",
@@ -556,7 +524,7 @@
     },
     "s_axi_in_ARADDR": {
       "dir": "in",
-      "width": "5"
+      "width": "4"
     },
     "s_axi_in_RVALID": {
       "dir": "out",
@@ -599,192 +567,192 @@
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_mixer_out_V_AWVALID": {
+    "m_axi_norm_out_AWVALID": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_mixer_out_V_AWREADY": {
+    "m_axi_norm_out_AWREADY": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_mixer_out_V_AWADDR": {
+    "m_axi_norm_out_AWADDR": {
       "dir": "out",
       "width": "32"
     },
-    "m_axi_mixer_out_V_AWID": {
+    "m_axi_norm_out_AWID": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_mixer_out_V_AWLEN": {
+    "m_axi_norm_out_AWLEN": {
       "dir": "out",
       "width": "8"
     },
-    "m_axi_mixer_out_V_AWSIZE": {
+    "m_axi_norm_out_AWSIZE": {
       "dir": "out",
       "width": "3"
     },
-    "m_axi_mixer_out_V_AWBURST": {
+    "m_axi_norm_out_AWBURST": {
       "dir": "out",
       "width": "2"
     },
-    "m_axi_mixer_out_V_AWLOCK": {
+    "m_axi_norm_out_AWLOCK": {
       "dir": "out",
       "width": "2"
     },
-    "m_axi_mixer_out_V_AWCACHE": {
+    "m_axi_norm_out_AWCACHE": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_mixer_out_V_AWPROT": {
+    "m_axi_norm_out_AWPROT": {
       "dir": "out",
       "width": "3"
     },
-    "m_axi_mixer_out_V_AWQOS": {
+    "m_axi_norm_out_AWQOS": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_mixer_out_V_AWREGION": {
+    "m_axi_norm_out_AWREGION": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_mixer_out_V_AWUSER": {
+    "m_axi_norm_out_AWUSER": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_mixer_out_V_WVALID": {
+    "m_axi_norm_out_WVALID": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_mixer_out_V_WREADY": {
+    "m_axi_norm_out_WREADY": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_mixer_out_V_WDATA": {
+    "m_axi_norm_out_WDATA": {
       "dir": "out",
       "width": "32"
     },
-    "m_axi_mixer_out_V_WSTRB": {
+    "m_axi_norm_out_WSTRB": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_mixer_out_V_WLAST": {
+    "m_axi_norm_out_WLAST": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_mixer_out_V_WID": {
+    "m_axi_norm_out_WID": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_mixer_out_V_WUSER": {
+    "m_axi_norm_out_WUSER": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_mixer_out_V_ARVALID": {
+    "m_axi_norm_out_ARVALID": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_mixer_out_V_ARREADY": {
+    "m_axi_norm_out_ARREADY": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_mixer_out_V_ARADDR": {
+    "m_axi_norm_out_ARADDR": {
       "dir": "out",
       "width": "32"
     },
-    "m_axi_mixer_out_V_ARID": {
+    "m_axi_norm_out_ARID": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_mixer_out_V_ARLEN": {
+    "m_axi_norm_out_ARLEN": {
       "dir": "out",
       "width": "8"
     },
-    "m_axi_mixer_out_V_ARSIZE": {
+    "m_axi_norm_out_ARSIZE": {
       "dir": "out",
       "width": "3"
     },
-    "m_axi_mixer_out_V_ARBURST": {
+    "m_axi_norm_out_ARBURST": {
       "dir": "out",
       "width": "2"
     },
-    "m_axi_mixer_out_V_ARLOCK": {
+    "m_axi_norm_out_ARLOCK": {
       "dir": "out",
       "width": "2"
     },
-    "m_axi_mixer_out_V_ARCACHE": {
+    "m_axi_norm_out_ARCACHE": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_mixer_out_V_ARPROT": {
+    "m_axi_norm_out_ARPROT": {
       "dir": "out",
       "width": "3"
     },
-    "m_axi_mixer_out_V_ARQOS": {
+    "m_axi_norm_out_ARQOS": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_mixer_out_V_ARREGION": {
+    "m_axi_norm_out_ARREGION": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_mixer_out_V_ARUSER": {
+    "m_axi_norm_out_ARUSER": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_mixer_out_V_RVALID": {
+    "m_axi_norm_out_RVALID": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_mixer_out_V_RREADY": {
+    "m_axi_norm_out_RREADY": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_mixer_out_V_RDATA": {
+    "m_axi_norm_out_RDATA": {
       "dir": "in",
       "width": "32"
     },
-    "m_axi_mixer_out_V_RLAST": {
+    "m_axi_norm_out_RLAST": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_mixer_out_V_RID": {
+    "m_axi_norm_out_RID": {
       "dir": "in",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_mixer_out_V_RUSER": {
+    "m_axi_norm_out_RUSER": {
       "dir": "in",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_mixer_out_V_RRESP": {
+    "m_axi_norm_out_RRESP": {
       "dir": "in",
       "width": "2"
     },
-    "m_axi_mixer_out_V_BVALID": {
+    "m_axi_norm_out_BVALID": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_mixer_out_V_BREADY": {
+    "m_axi_norm_out_BREADY": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_mixer_out_V_BRESP": {
+    "m_axi_norm_out_BRESP": {
       "dir": "in",
       "width": "2"
     },
-    "m_axi_mixer_out_V_BID": {
+    "m_axi_norm_out_BID": {
       "dir": "in",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_mixer_out_V_BUSER": {
+    "m_axi_norm_out_BUSER": {
       "dir": "in",
       "width": "1",
       "isVector": "true"
@@ -795,29 +763,13 @@
     }
   },
   "CPorts": {
-    "min_high": {
-      "interfaceRef": "s_axi_in",
-      "dir": "in",
-      "offset": "16",
-      "statusOffset": "NA",
-      "handshakeRef": "ap_none",
-      "Object": "in"
-    },
-    "max_high": {
-      "interfaceRef": "s_axi_in",
-      "dir": "in",
-      "offset": "24",
-      "statusOffset": "NA",
-      "handshakeRef": "ap_none",
-      "Object": "in"
-    },
     "ap_ctrl": {
       "interfaceRef": "s_axi_in",
       "dir": "in",
       "offset": "0"
     },
-    "mixer_out_V": {
-      "interfaceRef": "m_axi_mixer_out_V",
+    "norm_out": {
+      "interfaceRef": "m_axi_norm_out",
       "dir": "inout"
     },
     "channels_V": {
@@ -831,11 +783,11 @@
     "Hierarchy": {"ModuleName": "rc_receiver"},
     "Metrics": {"rc_receiver": {
         "Latency": {
-          "LatencyBest": "75",
-          "LatencyAvg": "75",
-          "LatencyWorst": "75",
+          "LatencyBest": "8",
+          "LatencyAvg": "8",
+          "LatencyWorst": "8",
           "PipelineII": "1",
-          "PipelineDepth": "76",
+          "PipelineDepth": "9",
           "PipelineType": "function"
         },
         "Timing": {
@@ -845,15 +797,15 @@
         },
         "Area": {
           "BRAM_18K": "2",
-          "FF": "9653",
-          "LUT": "8620",
+          "FF": "893",
+          "LUT": "1744",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-13 16:04:44 PDT",
+    "Time": "2018-08-13 18:32:35 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

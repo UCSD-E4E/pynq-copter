@@ -185,16 +185,6 @@ proc create_root_design { parentCell } {
  ] $normalizer_0
 
   set_property -dict [ list \
-   CONFIG.DATA_WIDTH {32} \
-   CONFIG.ID_WIDTH {0} \
-   CONFIG.AWUSER_WIDTH {0} \
-   CONFIG.ARUSER_WIDTH {0} \
-   CONFIG.WUSER_WIDTH {0} \
-   CONFIG.RUSER_WIDTH {0} \
-   CONFIG.BUSER_WIDTH {0} \
- ] [get_bd_intf_pins /normalizer_0/m_axi_m_V]
-
-  set_property -dict [ list \
    CONFIG.NUM_READ_OUTSTANDING {1} \
    CONFIG.NUM_WRITE_OUTSTANDING {1} \
  ] [get_bd_intf_pins /normalizer_0/s_axi_in]
@@ -1088,18 +1078,8 @@ proc create_root_design { parentCell } {
   # Create instance: rc_receiver_0, and set properties
   set rc_receiver_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:rc_receiver:1.0 rc_receiver_0 ]
   set_property -dict [ list \
-   CONFIG.C_M_AXI_MIXER_OUT_V_TARGET_ADDR {0x4000d010} \
+   CONFIG.C_M_AXI_NORM_OUT_TARGET_ADDR {0x4000d010} \
  ] $rc_receiver_0
-
-  set_property -dict [ list \
-   CONFIG.DATA_WIDTH {32} \
-   CONFIG.ID_WIDTH {0} \
-   CONFIG.AWUSER_WIDTH {0} \
-   CONFIG.ARUSER_WIDTH {0} \
-   CONFIG.WUSER_WIDTH {0} \
-   CONFIG.RUSER_WIDTH {0} \
-   CONFIG.BUSER_WIDTH {0} \
- ] [get_bd_intf_pins /rc_receiver_0/m_axi_mixer_out_V]
 
   set_property -dict [ list \
    CONFIG.NUM_READ_OUTSTANDING {1} \
@@ -1290,7 +1270,7 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets ps7_0_axi_periph_M03_AXI] [get_b
   set_property -dict [ list \
 HDL_ATTRIBUTE.DEBUG {true} \
  ] [get_bd_intf_nets ps7_0_axi_periph_M03_AXI]
-  connect_bd_intf_net -intf_net rc_receiver_0_m_axi_out_V [get_bd_intf_pins ps7_0_axi_periph/S01_AXI] [get_bd_intf_pins rc_receiver_0/m_axi_mixer_out_V]
+  connect_bd_intf_net -intf_net rc_receiver_0_m_axi_out_V [get_bd_intf_pins ps7_0_axi_periph/S01_AXI] [get_bd_intf_pins rc_receiver_0/m_axi_norm_out]
 connect_bd_intf_net -intf_net [get_bd_intf_nets rc_receiver_0_m_axi_out_V] [get_bd_intf_pins ps7_0_axi_periph/S01_AXI] [get_bd_intf_pins system_ila_0/SLOT_3_AXI]
   set_property -dict [ list \
 HDL_ATTRIBUTE.DEBUG {true} \
@@ -1319,7 +1299,7 @@ HDL_ATTRIBUTE.DEBUG {true} \
   create_bd_addr_seg -range 0x00001000 -offset 0x4000D000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x4000F000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x4000C000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs rc_receiver_0/s_axi_in/Reg] SEG_rc_receiver_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x4000D000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_mixer_out_V] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000D000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_norm_out] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
 
   # Exclude Address Segments
   create_bd_addr_seg -range 0x00001000 -offset 0x4000D000 [get_bd_addr_spaces mixer_0/Data_m_axi_m_V] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
@@ -1334,14 +1314,14 @@ HDL_ATTRIBUTE.DEBUG {true} \
   create_bd_addr_seg -range 0x00001000 -offset 0x4000C000 [get_bd_addr_spaces normalizer_0/Data_m_axi_m_V] [get_bd_addr_segs rc_receiver_0/s_axi_in/Reg] SEG_rc_receiver_0_Reg
   exclude_bd_addr_seg [get_bd_addr_segs normalizer_0/Data_m_axi_m_V/SEG_rc_receiver_0_Reg]
 
-  create_bd_addr_seg -range 0x00001000 -offset 0x4000E000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_mixer_out_V] [get_bd_addr_segs mixer_0/s_axi_AXILiteS/Reg] SEG_mixer_0_Reg
-  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_mixer_out_V/SEG_mixer_0_Reg]
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000E000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_norm_out] [get_bd_addr_segs mixer_0/s_axi_AXILiteS/Reg] SEG_mixer_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_norm_out/SEG_mixer_0_Reg]
 
-  create_bd_addr_seg -range 0x00001000 -offset 0x4000F000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_mixer_out_V] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
-  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_mixer_out_V/SEG_pwm_0_Reg]
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000F000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_norm_out] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_norm_out/SEG_pwm_0_Reg]
 
-  create_bd_addr_seg -range 0x00001000 -offset 0x4000C000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_mixer_out_V] [get_bd_addr_segs rc_receiver_0/s_axi_in/Reg] SEG_rc_receiver_0_Reg
-  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_mixer_out_V/SEG_rc_receiver_0_Reg]
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000C000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_norm_out] [get_bd_addr_segs rc_receiver_0/s_axi_in/Reg] SEG_rc_receiver_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_norm_out/SEG_rc_receiver_0_Reg]
 
 
 

@@ -87,10 +87,6 @@ u32 XRc_receiver_IsReady(XRc_receiver *InstancePtr);
 void XRc_receiver_EnableAutoRestart(XRc_receiver *InstancePtr);
 void XRc_receiver_DisableAutoRestart(XRc_receiver *InstancePtr);
 
-void XRc_receiver_Set_min_high(XRc_receiver *InstancePtr, u32 Data);
-u32 XRc_receiver_Get_min_high(XRc_receiver *InstancePtr);
-void XRc_receiver_Set_max_high(XRc_receiver *InstancePtr, u32 Data);
-u32 XRc_receiver_Get_max_high(XRc_receiver *InstancePtr);
 
 void XRc_receiver_InterruptGlobalEnable(XRc_receiver *InstancePtr);
 void XRc_receiver_InterruptGlobalDisable(XRc_receiver *InstancePtr);

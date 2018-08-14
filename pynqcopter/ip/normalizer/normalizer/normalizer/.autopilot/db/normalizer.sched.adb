@@ -226,7 +226,7 @@
 					</Obj>
 					<bitwidth>16</bitwidth>
 				</Value>
-				<direction>2</direction>
+				<direction>1</direction>
 				<if_type>4</if_type>
 				<array_size>0</array_size>
 				<bit_vecs>
@@ -236,7 +236,7 @@
 			</item>
 		</ports>
 		<nodes class_id="8" tracking_level="0" version="0">
-			<count>53</count>
+			<count>44</count>
 			<item_version>0</item_version>
 			<item class_id="9" tracking_level="1" version="0" object_id="_9">
 				<Value>
@@ -261,8 +261,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>84</item>
-					<item>85</item>
+					<item>73</item>
+					<item>74</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
@@ -290,8 +290,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>86</item>
-					<item>87</item>
+					<item>75</item>
+					<item>76</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
@@ -333,8 +333,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>88</item>
-					<item>89</item>
+					<item>77</item>
+					<item>78</item>
 				</oprand_edges>
 				<opcode>sub</opcode>
 				<m_Display>0</m_Display>
@@ -376,7 +376,7 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>90</item>
+					<item>79</item>
 				</oprand_edges>
 				<opcode>trunc</opcode>
 				<m_Display>0</m_Display>
@@ -418,9 +418,9 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>92</item>
-					<item>93</item>
-					<item>95</item>
+					<item>81</item>
+					<item>82</item>
+					<item>84</item>
 				</oprand_edges>
 				<opcode>bitconcatenate</opcode>
 				<m_Display>0</m_Display>
@@ -430,10 +430,10 @@
 					<Obj>
 						<type>0</type>
 						<id>30</id>
-						<name>tmp_2</name>
+						<name>regs_in_0_read</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>79</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>normalizer</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -448,7 +448,7 @@
 											<first>normalizer.cpp</first>
 											<second>normalizer</second>
 										</first>
-										<second>79</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -462,10 +462,10 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>96</item>
-					<item>97</item>
+					<item>86</item>
+					<item>87</item>
 				</oprand_edges>
-				<opcode>add</opcode>
+				<opcode>read</opcode>
 				<m_Display>0</m_Display>
 			</item>
 			<item class_id_reference="9" object_id="_15">
@@ -473,7 +473,50 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>m_V_addr</name>
+						<name>tmp_4</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>88</item>
+					<item>90</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_16">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>32</id>
+						<name>changed_load</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -486,59 +529,14 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>2</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>2</count>
+					<count>1</count>
 					<item_version>0</item_version>
-					<item>98</item>
-					<item>100</item>
+					<item>91</item>
 				</oprand_edges>
-				<opcode>getelementptr</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_16">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>32</id>
-						<name>m_V_load_req</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>79</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>79</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>102</item>
-					<item>103</item>
-					<item>105</item>
-				</oprand_edges>
-				<opcode>readreq</opcode>
+				<opcode>load</opcode>
 				<m_Display>0</m_Display>
 			</item>
 			<item class_id_reference="9" object_id="_17">
@@ -546,10 +544,10 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>m_V_addr_read</name>
+						<name>changed_load_s</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>79</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>normalizer</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -564,7 +562,7 @@
 											<first>normalizer.cpp</first>
 											<second>normalizer</second>
 										</first>
-										<second>79</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -573,16 +571,16 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>2</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>107</item>
-					<item>108</item>
-					<item>353</item>
+					<item>92</item>
+					<item>93</item>
+					<item>94</item>
 				</oprand_edges>
-				<opcode>read</opcode>
+				<opcode>select</opcode>
 				<m_Display>0</m_Display>
 			</item>
 			<item class_id_reference="9" object_id="_18">
@@ -590,10 +588,10 @@
 					<Obj>
 						<type>0</type>
 						<id>34</id>
-						<name>tmp_3_cast</name>
+						<name>regs_in_1_read</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>79</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>normalizer</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -608,7 +606,7 @@
 											<first>normalizer.cpp</first>
 											<second>normalizer</second>
 										</first>
-										<second>79</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
@@ -617,14 +615,15 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>46</bitwidth>
+					<bitwidth>32</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>1</count>
+					<count>2</count>
 					<item_version>0</item_version>
-					<item>109</item>
+					<item>95</item>
+					<item>96</item>
 				</oprand_edges>
-				<opcode>sext</opcode>
+				<opcode>read</opcode>
 				<m_Display>0</m_Display>
 			</item>
 			<item class_id_reference="9" object_id="_19">
@@ -632,10 +631,10 @@
 					<Obj>
 						<type>0</type>
 						<id>35</id>
-						<name>tmp_1</name>
+						<name>tmp_4_1</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>79</lineNumber>
+						<lineNumber>83</lineNumber>
 						<contextFuncName>normalizer</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -650,101 +649,12 @@
 											<first>normalizer.cpp</first>
 											<second>normalizer</second>
 										</first>
-										<second>79</second>
+										<second>83</second>
 									</item>
 								</second>
 							</item>
 						</inlineStackInfo>
 						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>31</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>111</item>
-					<item>112</item>
-					<item>113</item>
-					<item>115</item>
-				</oprand_edges>
-				<opcode>partselect</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_20">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>36</id>
-						<name>tmp_5</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>79</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>79</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>46</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>117</item>
-					<item>118</item>
-					<item>120</item>
-				</oprand_edges>
-				<opcode>bitconcatenate</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_21">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>37</id>
-						<name>output</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>79</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>79</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName>output</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -753,10 +663,96 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>121</item>
-					<item>122</item>
+					<item>97</item>
+					<item>98</item>
 				</oprand_edges>
 				<opcode>icmp</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_20">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>36</id>
+						<name>tmp_1</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>99</item>
+					<item>100</item>
+				</oprand_edges>
+				<opcode>or</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_21">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>37</id>
+						<name>not_tmp_4_1</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>101</item>
+					<item>103</item>
+				</oprand_edges>
+				<opcode>xor</opcode>
 				<m_Display>0</m_Display>
 			</item>
 			<item class_id_reference="9" object_id="_22">
@@ -764,7 +760,353 @@
 					<Obj>
 						<type>0</type>
 						<id>38</id>
-						<name>regs_in_0_read</name>
+						<name>changed_new_1_cast</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>2</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>104</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_23">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>39</id>
+						<name>changed_loc_1</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>2</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>105</item>
+					<item>106</item>
+					<item>108</item>
+				</oprand_edges>
+				<opcode>select</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_24">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>40</id>
+						<name>regs_in_2_read</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>109</item>
+					<item>110</item>
+				</oprand_edges>
+				<opcode>read</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_25">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>41</id>
+						<name>tmp_4_2</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>111</item>
+					<item>112</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_26">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>42</id>
+						<name>changed_new_1_s</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>2</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>113</item>
+					<item>114</item>
+					<item>116</item>
+				</oprand_edges>
+				<opcode>select</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_27">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>43</id>
+						<name>changed_loc_1_s</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>2</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>117</item>
+					<item>118</item>
+					<item>119</item>
+				</oprand_edges>
+				<opcode>select</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_28">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>44</id>
+						<name>regs_in_3_read</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>120</item>
+					<item>121</item>
+				</oprand_edges>
+				<opcode>read</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_29">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>45</id>
+						<name>tmp_4_3</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>122</item>
+					<item>123</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_30">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>46</id>
+						<name>tmp_8</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
 						<lineNumber>83</lineNumber>
@@ -799,15 +1141,58 @@
 					<item>124</item>
 					<item>125</item>
 				</oprand_edges>
-				<opcode>read</opcode>
+				<opcode>or</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_23">
+			<item class_id_reference="9" object_id="_31">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>39</id>
+						<id>47</id>
 						<name>tmp_9</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>126</item>
+					<item>127</item>
+				</oprand_edges>
+				<opcode>or</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_32">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>48</id>
+						<name>tmp_3</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
 						<lineNumber>83</lineNumber>
@@ -839,46 +1224,18 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>126</item>
 					<item>128</item>
+					<item>129</item>
 				</oprand_edges>
 				<opcode>icmp</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_24">
+			<item class_id_reference="9" object_id="_33">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>40</id>
-						<name>changed_load</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>2</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>129</item>
-				</oprand_edges>
-				<opcode>load</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_25">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>41</id>
-						<name>changed_load_s</name>
+						<id>49</id>
+						<name>changed_new_3</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
 						<lineNumber>83</lineNumber>
@@ -912,353 +1269,9 @@
 					<item_version>0</item_version>
 					<item>130</item>
 					<item>131</item>
-					<item>132</item>
-				</oprand_edges>
-				<opcode>select</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_26">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>42</id>
-						<name>regs_in_1_read</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
 					<item>133</item>
-					<item>134</item>
-				</oprand_edges>
-				<opcode>read</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_27">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>43</id>
-						<name>tmp_9_1</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>135</item>
-					<item>136</item>
-				</oprand_edges>
-				<opcode>icmp</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_28">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>44</id>
-						<name>tmp_3</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>137</item>
-					<item>138</item>
-				</oprand_edges>
-				<opcode>or</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_29">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>45</id>
-						<name>not_tmp_9_1</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>139</item>
-					<item>141</item>
-				</oprand_edges>
-				<opcode>xor</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_30">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>46</id>
-						<name>changed_new_1_cast</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>2</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>142</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_31">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>47</id>
-						<name>changed_loc_1</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>2</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>143</item>
-					<item>144</item>
-					<item>146</item>
 				</oprand_edges>
 				<opcode>select</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_32">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>48</id>
-						<name>regs_in_2_read</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>147</item>
-					<item>148</item>
-				</oprand_edges>
-				<opcode>read</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_33">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>49</id>
-						<name>tmp_9_2</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>149</item>
-					<item>150</item>
-				</oprand_edges>
-				<opcode>icmp</opcode>
 				<m_Display>0</m_Display>
 			</item>
 			<item class_id_reference="9" object_id="_34">
@@ -1266,353 +1279,6 @@
 					<Obj>
 						<type>0</type>
 						<id>50</id>
-						<name>changed_new_1_s</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>2</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>151</item>
-					<item>152</item>
-					<item>154</item>
-				</oprand_edges>
-				<opcode>select</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_35">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>51</id>
-						<name>changed_loc_1_s</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>2</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>155</item>
-					<item>156</item>
-					<item>157</item>
-				</oprand_edges>
-				<opcode>select</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_36">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>52</id>
-						<name>regs_in_3_read</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>158</item>
-					<item>159</item>
-				</oprand_edges>
-				<opcode>read</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_37">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>53</id>
-						<name>tmp_9_3</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>160</item>
-					<item>161</item>
-				</oprand_edges>
-				<opcode>icmp</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_38">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>54</id>
-						<name>tmp_4</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>162</item>
-					<item>163</item>
-				</oprand_edges>
-				<opcode>or</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_39">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>55</id>
-						<name>tmp_s</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>164</item>
-					<item>165</item>
-				</oprand_edges>
-				<opcode>or</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_40">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>56</id>
-						<name>tmp_12</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>166</item>
-					<item>167</item>
-				</oprand_edges>
-				<opcode>icmp</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_41">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>57</id>
-						<name>changed_new_3</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>83</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>83</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>2</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>168</item>
-					<item>169</item>
-					<item>171</item>
-				</oprand_edges>
-				<opcode>select</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_42">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>58</id>
 						<name>changed_loc_3</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
@@ -1645,19 +1311,19 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>172</item>
-					<item>173</item>
-					<item>174</item>
+					<item>134</item>
+					<item>135</item>
+					<item>136</item>
 				</oprand_edges>
 				<opcode>select</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_43">
+			<item class_id_reference="9" object_id="_35">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>59</id>
-						<name>tmp_7</name>
+						<id>51</id>
+						<name>tmp_2</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -1689,16 +1355,58 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>175</item>
+					<item>137</item>
 				</oprand_edges>
 				<opcode>zext</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_44">
+			<item class_id_reference="9" object_id="_36">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>60</id>
+						<id>52</id>
+						<name>changed_load_t</name>
+						<fileName>normalizer.cpp</fileName>
+						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
+						<lineNumber>83</lineNumber>
+						<contextFuncName>normalizer</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>normalizer.cpp</first>
+											<second>normalizer</second>
+										</first>
+										<second>83</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>3</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>138</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+				<m_Display>0</m_Display>
+			</item>
+			<item class_id_reference="9" object_id="_37">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>53</id>
 						<name></name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
@@ -1731,18 +1439,18 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>176</item>
-					<item>177</item>
-					<item>178</item>
+					<item>139</item>
+					<item>140</item>
+					<item>141</item>
 				</oprand_edges>
 				<opcode>br</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_45">
+			<item class_id_reference="9" object_id="_38">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>62</id>
+						<id>55</id>
 						<name></name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
@@ -1775,18 +1483,18 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>216</item>
-					<item>217</item>
-					<item>356</item>
+					<item>142</item>
+					<item>143</item>
+					<item>318</item>
 				</oprand_edges>
 				<opcode>store</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_46">
+			<item class_id_reference="9" object_id="_39">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>63</id>
+						<id>56</id>
 						<name></name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -1805,17 +1513,17 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>218</item>
+					<item>144</item>
 				</oprand_edges>
 				<opcode>br</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_47">
+			<item class_id_reference="9" object_id="_40">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>65</id>
-						<name></name>
+						<id>58</id>
+						<name>regs_in_load_phi</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -1842,23 +1550,30 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>0</bitwidth>
+					<bitwidth>32</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>3</count>
+					<count>10</count>
 					<item_version>0</item_version>
-					<item>219</item>
-					<item>220</item>
-					<item>221</item>
+					<item>146</item>
+					<item>147</item>
+					<item>148</item>
+					<item>149</item>
+					<item>150</item>
+					<item>151</item>
+					<item>152</item>
+					<item>153</item>
+					<item>154</item>
+					<item>155</item>
 				</oprand_edges>
-				<opcode>br</opcode>
+				<opcode>mux</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_48">
+			<item class_id_reference="9" object_id="_41">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>67</id>
+						<id>59</id>
 						<name>p_Val2_1</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
@@ -1891,18 +1606,18 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>179</item>
-					<item>180</item>
+					<item>156</item>
+					<item>157</item>
 				</oprand_edges>
 				<opcode>sub</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_49">
+			<item class_id_reference="9" object_id="_42">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>68</id>
-						<name>tmp_13</name>
+						<id>60</id>
+						<name>tmp_5</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -1934,16 +1649,16 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>181</item>
+					<item>158</item>
 				</oprand_edges>
 				<opcode>trunc</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_50">
+			<item class_id_reference="9" object_id="_43">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>69</id>
+						<id>61</id>
 						<name>tmp_6</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
@@ -1976,19 +1691,19 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>183</item>
-					<item>184</item>
-					<item>186</item>
+					<item>160</item>
+					<item>161</item>
+					<item>163</item>
 				</oprand_edges>
 				<opcode>bitconcatenate</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_51">
+			<item class_id_reference="9" object_id="_44">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>70</id>
-						<name>tmp_8</name>
+						<id>62</id>
+						<name>tmp_7</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -2020,16 +1735,16 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>187</item>
+					<item>164</item>
 				</oprand_edges>
 				<opcode>zext</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_52">
+			<item class_id_reference="9" object_id="_45">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>71</id>
+						<id>63</id>
 						<name>p_Val2_2</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
@@ -2062,18 +1777,18 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>188</item>
-					<item>189</item>
+					<item>165</item>
+					<item>166</item>
 				</oprand_edges>
 				<opcode>udiv</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_53">
+			<item class_id_reference="9" object_id="_46">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>72</id>
-						<name>tmp_14</name>
+						<id>64</id>
+						<name>tmp_10</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -2105,17 +1820,17 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>190</item>
+					<item>167</item>
 				</oprand_edges>
 				<opcode>trunc</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_54">
+			<item class_id_reference="9" object_id="_47">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>73</id>
-						<name>tmp_10</name>
+						<id>65</id>
+						<name>tmp_s</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -2147,106 +1862,19 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>192</item>
-					<item>193</item>
-					<item>195</item>
+					<item>169</item>
+					<item>170</item>
+					<item>172</item>
 				</oprand_edges>
 				<opcode>bitconcatenate</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_55">
+			<item class_id_reference="9" object_id="_48">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>74</id>
-						<name></name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>88</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>88</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>196</item>
-				</oprand_edges>
-				<opcode>br</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_56">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>76</id>
-						<name>tmp_11</name>
-						<fileName>normalizer.cpp</fileName>
-						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
-						<lineNumber>88</lineNumber>
-						<contextFuncName>normalizer</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>normalizer.cpp</first>
-											<second>normalizer</second>
-										</first>
-										<second>88</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>16</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>197</item>
-					<item>198</item>
-					<item>200</item>
-					<item>201</item>
-				</oprand_edges>
-				<opcode>phi</opcode>
-				<m_Display>0</m_Display>
-			</item>
-			<item class_id_reference="9" object_id="_57">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>77</id>
-						<name>m_V_addr_1</name>
+						<id>66</id>
+						<name>m_V_addr</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -2278,18 +1906,18 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>202</item>
-					<item>203</item>
+					<item>173</item>
+					<item>174</item>
 				</oprand_edges>
 				<opcode>getelementptr</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_58">
+			<item class_id_reference="9" object_id="_49">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>78</id>
-						<name>m_V_addr_1_req</name>
+						<id>67</id>
+						<name>m_V_addr_req</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -2321,18 +1949,18 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>205</item>
-					<item>206</item>
-					<item>207</item>
+					<item>176</item>
+					<item>177</item>
+					<item>179</item>
 				</oprand_edges>
 				<opcode>writereq</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_59">
+			<item class_id_reference="9" object_id="_50">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>79</id>
+						<id>68</id>
 						<name></name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
@@ -2363,25 +1991,23 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>7</count>
+					<count>5</count>
 					<item_version>0</item_version>
-					<item>209</item>
-					<item>210</item>
-					<item>211</item>
-					<item>212</item>
-					<item>355</item>
-					<item>357</item>
-					<item>358</item>
+					<item>181</item>
+					<item>182</item>
+					<item>183</item>
+					<item>184</item>
+					<item>317</item>
 				</oprand_edges>
 				<opcode>write</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_60">
+			<item class_id_reference="9" object_id="_51">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>80</id>
-						<name>m_V_addr_1_resp</name>
+						<id>69</id>
+						<name>m_V_addr_resp</name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
 						<lineNumber>88</lineNumber>
@@ -2413,18 +2039,18 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>214</item>
-					<item>215</item>
-					<item>354</item>
+					<item>186</item>
+					<item>187</item>
+					<item>316</item>
 				</oprand_edges>
 				<opcode>writeresp</opcode>
 				<m_Display>0</m_Display>
 			</item>
-			<item class_id_reference="9" object_id="_61">
+			<item class_id_reference="9" object_id="_52">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>81</id>
+						<id>70</id>
 						<name></name>
 						<fileName>normalizer.cpp</fileName>
 						<fileDirectory>/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer</fileDirectory>
@@ -2463,13 +2089,13 @@
 			</item>
 		</nodes>
 		<consts class_id="15" tracking_level="0" version="0">
-			<count>13</count>
+			<count>9</count>
 			<item_version>0</item_version>
-			<item class_id="16" tracking_level="1" version="0" object_id="_62">
+			<item class_id="16" tracking_level="1" version="0" object_id="_53">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>94</id>
+						<id>83</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -2488,103 +2114,11 @@
 				<const_type>0</const_type>
 				<content>0</content>
 			</item>
-			<item class_id_reference="16" object_id="_63">
+			<item class_id_reference="16" object_id="_54">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>99</id>
-						<name>empty</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>64</bitwidth>
-				</Value>
-				<const_type>0</const_type>
-				<content>4</content>
-			</item>
-			<item class_id_reference="16" object_id="_64">
-				<Value>
-					<Obj>
-						<type>2</type>
-						<id>104</id>
-						<name>empty</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<const_type>0</const_type>
-				<content>1</content>
-			</item>
-			<item class_id_reference="16" object_id="_65">
-				<Value>
-					<Obj>
-						<type>2</type>
-						<id>114</id>
-						<name>empty</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<const_type>0</const_type>
-				<content>31</content>
-			</item>
-			<item class_id_reference="16" object_id="_66">
-				<Value>
-					<Obj>
-						<type>2</type>
-						<id>119</id>
-						<name>empty</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>15</bitwidth>
-				</Value>
-				<const_type>0</const_type>
-				<content>0</content>
-			</item>
-			<item class_id_reference="16" object_id="_67">
-				<Value>
-					<Obj>
-						<type>2</type>
-						<id>127</id>
+						<id>89</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -2603,11 +2137,11 @@
 				<const_type>0</const_type>
 				<content>0</content>
 			</item>
-			<item class_id_reference="16" object_id="_68">
+			<item class_id_reference="16" object_id="_55">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>140</id>
+						<id>102</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -2626,11 +2160,11 @@
 				<const_type>0</const_type>
 				<content>1</content>
 			</item>
-			<item class_id_reference="16" object_id="_69">
+			<item class_id_reference="16" object_id="_56">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>145</id>
+						<id>107</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -2649,11 +2183,11 @@
 				<const_type>0</const_type>
 				<content>1</content>
 			</item>
-			<item class_id_reference="16" object_id="_70">
+			<item class_id_reference="16" object_id="_57">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>153</id>
+						<id>115</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -2672,11 +2206,11 @@
 				<const_type>0</const_type>
 				<content>2</content>
 			</item>
-			<item class_id_reference="16" object_id="_71">
+			<item class_id_reference="16" object_id="_58">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>170</id>
+						<id>132</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -2695,11 +2229,11 @@
 				<const_type>0</const_type>
 				<content>3</content>
 			</item>
-			<item class_id_reference="16" object_id="_72">
+			<item class_id_reference="16" object_id="_59">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>185</id>
+						<id>162</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -2718,11 +2252,11 @@
 				<const_type>0</const_type>
 				<content>0</content>
 			</item>
-			<item class_id_reference="16" object_id="_73">
+			<item class_id_reference="16" object_id="_60">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>194</id>
+						<id>171</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -2741,11 +2275,11 @@
 				<const_type>0</const_type>
 				<content>0</content>
 			</item>
-			<item class_id_reference="16" object_id="_74">
+			<item class_id_reference="16" object_id="_61">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>199</id>
+						<id>178</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -2759,19 +2293,19 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>32</bitwidth>
 				</Value>
 				<const_type>0</const_type>
-				<content>0</content>
+				<content>1</content>
 			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">
-			<count>5</count>
+			<count>3</count>
 			<item_version>0</item_version>
-			<item class_id="18" tracking_level="1" version="0" object_id="_75">
+			<item class_id="18" tracking_level="1" version="0" object_id="_62">
 				<Obj>
 					<type>3</type>
-					<id>61</id>
+					<id>54</id>
 					<name>._crit_edge.0</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
@@ -2786,7 +2320,7 @@
 					<coreName></coreName>
 				</Obj>
 				<node_objs>
-					<count>36</count>
+					<count>29</count>
 					<item_version>0</item_version>
 					<item>19</item>
 					<item>20</item>
@@ -2817,19 +2351,12 @@
 					<item>51</item>
 					<item>52</item>
 					<item>53</item>
-					<item>54</item>
-					<item>55</item>
-					<item>56</item>
-					<item>57</item>
-					<item>58</item>
-					<item>59</item>
-					<item>60</item>
 				</node_objs>
 			</item>
-			<item class_id_reference="18" object_id="_76">
+			<item class_id_reference="18" object_id="_63">
 				<Obj>
 					<type>3</type>
-					<id>64</id>
+					<id>57</id>
 					<name>mergeST</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
@@ -2846,14 +2373,14 @@
 				<node_objs>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>62</item>
-					<item>63</item>
+					<item>55</item>
+					<item>56</item>
 				</node_objs>
 			</item>
-			<item class_id_reference="18" object_id="_77">
+			<item class_id_reference="18" object_id="_64">
 				<Obj>
 					<type>3</type>
-					<id>66</id>
+					<id>71</id>
 					<name>._crit_edge.3.new</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
@@ -2868,739 +2395,579 @@
 					<coreName></coreName>
 				</Obj>
 				<node_objs>
-					<count>1</count>
+					<count>13</count>
 					<item_version>0</item_version>
+					<item>58</item>
+					<item>59</item>
+					<item>60</item>
+					<item>61</item>
+					<item>62</item>
+					<item>63</item>
+					<item>64</item>
 					<item>65</item>
-				</node_objs>
-			</item>
-			<item class_id_reference="18" object_id="_78">
-				<Obj>
-					<type>3</type>
-					<id>75</id>
-					<name></name>
-					<fileName></fileName>
-					<fileDirectory></fileDirectory>
-					<lineNumber>0</lineNumber>
-					<contextFuncName></contextFuncName>
-					<inlineStackInfo>
-						<count>0</count>
-						<item_version>0</item_version>
-					</inlineStackInfo>
-					<originalName></originalName>
-					<rtlName></rtlName>
-					<coreName></coreName>
-				</Obj>
-				<node_objs>
-					<count>8</count>
-					<item_version>0</item_version>
+					<item>66</item>
 					<item>67</item>
 					<item>68</item>
 					<item>69</item>
 					<item>70</item>
-					<item>71</item>
-					<item>72</item>
-					<item>73</item>
-					<item>74</item>
-				</node_objs>
-			</item>
-			<item class_id_reference="18" object_id="_79">
-				<Obj>
-					<type>3</type>
-					<id>82</id>
-					<name></name>
-					<fileName></fileName>
-					<fileDirectory></fileDirectory>
-					<lineNumber>0</lineNumber>
-					<contextFuncName></contextFuncName>
-					<inlineStackInfo>
-						<count>0</count>
-						<item_version>0</item_version>
-					</inlineStackInfo>
-					<originalName></originalName>
-					<rtlName></rtlName>
-					<coreName></coreName>
-				</Obj>
-				<node_objs>
-					<count>6</count>
-					<item_version>0</item_version>
-					<item>76</item>
-					<item>77</item>
-					<item>78</item>
-					<item>79</item>
-					<item>80</item>
-					<item>81</item>
 				</node_objs>
 			</item>
 		</blocks>
 		<edges class_id="19" tracking_level="0" version="0">
-			<count>110</count>
+			<count>91</count>
 			<item_version>0</item_version>
-			<item class_id="20" tracking_level="1" version="0" object_id="_80">
-				<id>85</id>
+			<item class_id="20" tracking_level="1" version="0" object_id="_65">
+				<id>74</id>
 				<edge_type>1</edge_type>
 				<source_obj>7</source_obj>
 				<sink_obj>19</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_81">
-				<id>87</id>
+			<item class_id_reference="20" object_id="_66">
+				<id>76</id>
 				<edge_type>1</edge_type>
 				<source_obj>6</source_obj>
 				<sink_obj>20</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_82">
-				<id>88</id>
+			<item class_id_reference="20" object_id="_67">
+				<id>77</id>
 				<edge_type>1</edge_type>
 				<source_obj>19</source_obj>
 				<sink_obj>27</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_83">
-				<id>89</id>
+			<item class_id_reference="20" object_id="_68">
+				<id>78</id>
 				<edge_type>1</edge_type>
 				<source_obj>20</source_obj>
 				<sink_obj>27</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_84">
-				<id>90</id>
+			<item class_id_reference="20" object_id="_69">
+				<id>79</id>
 				<edge_type>1</edge_type>
 				<source_obj>27</source_obj>
 				<sink_obj>28</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_85">
-				<id>93</id>
+			<item class_id_reference="20" object_id="_70">
+				<id>82</id>
 				<edge_type>1</edge_type>
 				<source_obj>28</source_obj>
 				<sink_obj>29</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_86">
-				<id>95</id>
+			<item class_id_reference="20" object_id="_71">
+				<id>84</id>
 				<edge_type>1</edge_type>
-				<source_obj>94</source_obj>
+				<source_obj>83</source_obj>
 				<sink_obj>29</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_87">
-				<id>96</id>
+			<item class_id_reference="20" object_id="_72">
+				<id>87</id>
 				<edge_type>1</edge_type>
-				<source_obj>20</source_obj>
+				<source_obj>1</source_obj>
 				<sink_obj>30</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_88">
-				<id>97</id>
+			<item class_id_reference="20" object_id="_73">
+				<id>88</id>
 				<edge_type>1</edge_type>
-				<source_obj>19</source_obj>
-				<sink_obj>30</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_89">
-				<id>98</id>
-				<edge_type>1</edge_type>
-				<source_obj>8</source_obj>
+				<source_obj>30</source_obj>
 				<sink_obj>31</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_90">
-				<id>100</id>
+			<item class_id_reference="20" object_id="_74">
+				<id>90</id>
 				<edge_type>1</edge_type>
-				<source_obj>99</source_obj>
+				<source_obj>89</source_obj>
 				<sink_obj>31</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_91">
-				<id>103</id>
+			<item class_id_reference="20" object_id="_75">
+				<id>91</id>
 				<edge_type>1</edge_type>
-				<source_obj>31</source_obj>
+				<source_obj>9</source_obj>
 				<sink_obj>32</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_92">
-				<id>105</id>
-				<edge_type>1</edge_type>
-				<source_obj>104</source_obj>
-				<sink_obj>32</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_93">
-				<id>108</id>
+			<item class_id_reference="20" object_id="_76">
+				<id>92</id>
 				<edge_type>1</edge_type>
 				<source_obj>31</source_obj>
 				<sink_obj>33</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_94">
-				<id>109</id>
+			<item class_id_reference="20" object_id="_77">
+				<id>93</id>
 				<edge_type>1</edge_type>
-				<source_obj>33</source_obj>
+				<source_obj>32</source_obj>
+				<sink_obj>33</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_78">
+				<id>94</id>
+				<edge_type>1</edge_type>
+				<source_obj>83</source_obj>
+				<sink_obj>33</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_79">
+				<id>96</id>
+				<edge_type>1</edge_type>
+				<source_obj>2</source_obj>
 				<sink_obj>34</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_95">
-				<id>112</id>
-				<edge_type>1</edge_type>
-				<source_obj>30</source_obj>
-				<sink_obj>35</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_96">
-				<id>113</id>
-				<edge_type>1</edge_type>
-				<source_obj>104</source_obj>
-				<sink_obj>35</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_97">
-				<id>115</id>
-				<edge_type>1</edge_type>
-				<source_obj>114</source_obj>
-				<sink_obj>35</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_98">
-				<id>118</id>
-				<edge_type>1</edge_type>
-				<source_obj>35</source_obj>
-				<sink_obj>36</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_99">
-				<id>120</id>
-				<edge_type>1</edge_type>
-				<source_obj>119</source_obj>
-				<sink_obj>36</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_100">
-				<id>121</id>
+			<item class_id_reference="20" object_id="_80">
+				<id>97</id>
 				<edge_type>1</edge_type>
 				<source_obj>34</source_obj>
+				<sink_obj>35</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_81">
+				<id>98</id>
+				<edge_type>1</edge_type>
+				<source_obj>89</source_obj>
+				<sink_obj>35</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_82">
+				<id>99</id>
+				<edge_type>1</edge_type>
+				<source_obj>34</source_obj>
+				<sink_obj>36</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_83">
+				<id>100</id>
+				<edge_type>1</edge_type>
+				<source_obj>30</source_obj>
+				<sink_obj>36</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_84">
+				<id>101</id>
+				<edge_type>1</edge_type>
+				<source_obj>35</source_obj>
 				<sink_obj>37</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_101">
-				<id>122</id>
+			<item class_id_reference="20" object_id="_85">
+				<id>103</id>
 				<edge_type>1</edge_type>
-				<source_obj>36</source_obj>
+				<source_obj>102</source_obj>
 				<sink_obj>37</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_102">
-				<id>125</id>
+			<item class_id_reference="20" object_id="_86">
+				<id>104</id>
 				<edge_type>1</edge_type>
-				<source_obj>1</source_obj>
+				<source_obj>37</source_obj>
 				<sink_obj>38</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_103">
-				<id>126</id>
+			<item class_id_reference="20" object_id="_87">
+				<id>105</id>
 				<edge_type>1</edge_type>
-				<source_obj>38</source_obj>
+				<source_obj>35</source_obj>
 				<sink_obj>39</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_104">
-				<id>128</id>
+			<item class_id_reference="20" object_id="_88">
+				<id>106</id>
 				<edge_type>1</edge_type>
-				<source_obj>127</source_obj>
+				<source_obj>33</source_obj>
 				<sink_obj>39</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_105">
-				<id>129</id>
+			<item class_id_reference="20" object_id="_89">
+				<id>108</id>
 				<edge_type>1</edge_type>
-				<source_obj>9</source_obj>
+				<source_obj>107</source_obj>
+				<sink_obj>39</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_90">
+				<id>110</id>
+				<edge_type>1</edge_type>
+				<source_obj>3</source_obj>
 				<sink_obj>40</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_106">
-				<id>130</id>
-				<edge_type>1</edge_type>
-				<source_obj>39</source_obj>
-				<sink_obj>41</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_107">
-				<id>131</id>
+			<item class_id_reference="20" object_id="_91">
+				<id>111</id>
 				<edge_type>1</edge_type>
 				<source_obj>40</source_obj>
 				<sink_obj>41</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_108">
-				<id>132</id>
+			<item class_id_reference="20" object_id="_92">
+				<id>112</id>
 				<edge_type>1</edge_type>
-				<source_obj>94</source_obj>
+				<source_obj>89</source_obj>
 				<sink_obj>41</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_109">
-				<id>134</id>
-				<edge_type>1</edge_type>
-				<source_obj>2</source_obj>
-				<sink_obj>42</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_110">
-				<id>135</id>
-				<edge_type>1</edge_type>
-				<source_obj>42</source_obj>
-				<sink_obj>43</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_111">
-				<id>136</id>
-				<edge_type>1</edge_type>
-				<source_obj>127</source_obj>
-				<sink_obj>43</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_112">
-				<id>137</id>
-				<edge_type>1</edge_type>
-				<source_obj>42</source_obj>
-				<sink_obj>44</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_113">
-				<id>138</id>
-				<edge_type>1</edge_type>
-				<source_obj>38</source_obj>
-				<sink_obj>44</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_114">
-				<id>139</id>
-				<edge_type>1</edge_type>
-				<source_obj>43</source_obj>
-				<sink_obj>45</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_115">
-				<id>141</id>
-				<edge_type>1</edge_type>
-				<source_obj>140</source_obj>
-				<sink_obj>45</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_116">
-				<id>142</id>
-				<edge_type>1</edge_type>
-				<source_obj>45</source_obj>
-				<sink_obj>46</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_117">
-				<id>143</id>
-				<edge_type>1</edge_type>
-				<source_obj>43</source_obj>
-				<sink_obj>47</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_118">
-				<id>144</id>
+			<item class_id_reference="20" object_id="_93">
+				<id>113</id>
 				<edge_type>1</edge_type>
 				<source_obj>41</source_obj>
-				<sink_obj>47</sink_obj>
+				<sink_obj>42</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_119">
-				<id>146</id>
+			<item class_id_reference="20" object_id="_94">
+				<id>114</id>
 				<edge_type>1</edge_type>
-				<source_obj>145</source_obj>
-				<sink_obj>47</sink_obj>
+				<source_obj>38</source_obj>
+				<sink_obj>42</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_120">
-				<id>148</id>
+			<item class_id_reference="20" object_id="_95">
+				<id>116</id>
 				<edge_type>1</edge_type>
-				<source_obj>3</source_obj>
-				<sink_obj>48</sink_obj>
+				<source_obj>115</source_obj>
+				<sink_obj>42</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_121">
-				<id>149</id>
+			<item class_id_reference="20" object_id="_96">
+				<id>117</id>
 				<edge_type>1</edge_type>
-				<source_obj>48</source_obj>
-				<sink_obj>49</sink_obj>
+				<source_obj>41</source_obj>
+				<sink_obj>43</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_122">
-				<id>150</id>
+			<item class_id_reference="20" object_id="_97">
+				<id>118</id>
 				<edge_type>1</edge_type>
-				<source_obj>127</source_obj>
-				<sink_obj>49</sink_obj>
+				<source_obj>39</source_obj>
+				<sink_obj>43</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_123">
-				<id>151</id>
+			<item class_id_reference="20" object_id="_98">
+				<id>119</id>
 				<edge_type>1</edge_type>
-				<source_obj>49</source_obj>
-				<sink_obj>50</sink_obj>
+				<source_obj>115</source_obj>
+				<sink_obj>43</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_124">
-				<id>152</id>
-				<edge_type>1</edge_type>
-				<source_obj>46</source_obj>
-				<sink_obj>50</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_125">
-				<id>154</id>
-				<edge_type>1</edge_type>
-				<source_obj>153</source_obj>
-				<sink_obj>50</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_126">
-				<id>155</id>
-				<edge_type>1</edge_type>
-				<source_obj>49</source_obj>
-				<sink_obj>51</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_127">
-				<id>156</id>
-				<edge_type>1</edge_type>
-				<source_obj>47</source_obj>
-				<sink_obj>51</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_128">
-				<id>157</id>
-				<edge_type>1</edge_type>
-				<source_obj>153</source_obj>
-				<sink_obj>51</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_129">
-				<id>159</id>
+			<item class_id_reference="20" object_id="_99">
+				<id>121</id>
 				<edge_type>1</edge_type>
 				<source_obj>4</source_obj>
-				<sink_obj>52</sink_obj>
+				<sink_obj>44</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_130">
-				<id>160</id>
-				<edge_type>1</edge_type>
-				<source_obj>52</source_obj>
-				<sink_obj>53</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_131">
-				<id>161</id>
-				<edge_type>1</edge_type>
-				<source_obj>127</source_obj>
-				<sink_obj>53</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_132">
-				<id>162</id>
-				<edge_type>1</edge_type>
-				<source_obj>48</source_obj>
-				<sink_obj>54</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_133">
-				<id>163</id>
-				<edge_type>1</edge_type>
-				<source_obj>52</source_obj>
-				<sink_obj>54</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_134">
-				<id>164</id>
-				<edge_type>1</edge_type>
-				<source_obj>54</source_obj>
-				<sink_obj>55</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_135">
-				<id>165</id>
+			<item class_id_reference="20" object_id="_100">
+				<id>122</id>
 				<edge_type>1</edge_type>
 				<source_obj>44</source_obj>
-				<sink_obj>55</sink_obj>
+				<sink_obj>45</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_136">
-				<id>166</id>
+			<item class_id_reference="20" object_id="_101">
+				<id>123</id>
 				<edge_type>1</edge_type>
-				<source_obj>55</source_obj>
-				<sink_obj>56</sink_obj>
+				<source_obj>89</source_obj>
+				<sink_obj>45</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_137">
-				<id>167</id>
+			<item class_id_reference="20" object_id="_102">
+				<id>124</id>
 				<edge_type>1</edge_type>
-				<source_obj>127</source_obj>
-				<sink_obj>56</sink_obj>
+				<source_obj>40</source_obj>
+				<sink_obj>46</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_138">
-				<id>168</id>
+			<item class_id_reference="20" object_id="_103">
+				<id>125</id>
 				<edge_type>1</edge_type>
-				<source_obj>53</source_obj>
-				<sink_obj>57</sink_obj>
+				<source_obj>44</source_obj>
+				<sink_obj>46</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_139">
-				<id>169</id>
+			<item class_id_reference="20" object_id="_104">
+				<id>126</id>
+				<edge_type>1</edge_type>
+				<source_obj>46</source_obj>
+				<sink_obj>47</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_105">
+				<id>127</id>
+				<edge_type>1</edge_type>
+				<source_obj>36</source_obj>
+				<sink_obj>47</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_106">
+				<id>128</id>
+				<edge_type>1</edge_type>
+				<source_obj>47</source_obj>
+				<sink_obj>48</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_107">
+				<id>129</id>
+				<edge_type>1</edge_type>
+				<source_obj>89</source_obj>
+				<sink_obj>48</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_108">
+				<id>130</id>
+				<edge_type>1</edge_type>
+				<source_obj>45</source_obj>
+				<sink_obj>49</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_109">
+				<id>131</id>
+				<edge_type>1</edge_type>
+				<source_obj>42</source_obj>
+				<sink_obj>49</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_110">
+				<id>133</id>
+				<edge_type>1</edge_type>
+				<source_obj>132</source_obj>
+				<sink_obj>49</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_111">
+				<id>134</id>
+				<edge_type>1</edge_type>
+				<source_obj>45</source_obj>
+				<sink_obj>50</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_112">
+				<id>135</id>
+				<edge_type>1</edge_type>
+				<source_obj>43</source_obj>
+				<sink_obj>50</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_113">
+				<id>136</id>
+				<edge_type>1</edge_type>
+				<source_obj>132</source_obj>
+				<sink_obj>50</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_114">
+				<id>137</id>
 				<edge_type>1</edge_type>
 				<source_obj>50</source_obj>
-				<sink_obj>57</sink_obj>
+				<sink_obj>51</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_140">
-				<id>171</id>
+			<item class_id_reference="20" object_id="_115">
+				<id>138</id>
 				<edge_type>1</edge_type>
-				<source_obj>170</source_obj>
-				<sink_obj>57</sink_obj>
+				<source_obj>50</source_obj>
+				<sink_obj>52</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_141">
-				<id>172</id>
+			<item class_id_reference="20" object_id="_116">
+				<id>139</id>
 				<edge_type>1</edge_type>
-				<source_obj>53</source_obj>
+				<source_obj>48</source_obj>
+				<sink_obj>53</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_117">
+				<id>140</id>
+				<edge_type>2</edge_type>
+				<source_obj>57</source_obj>
+				<sink_obj>53</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_118">
+				<id>141</id>
+				<edge_type>2</edge_type>
+				<source_obj>71</source_obj>
+				<sink_obj>53</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_119">
+				<id>142</id>
+				<edge_type>1</edge_type>
+				<source_obj>49</source_obj>
+				<sink_obj>55</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_120">
+				<id>143</id>
+				<edge_type>1</edge_type>
+				<source_obj>9</source_obj>
+				<sink_obj>55</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_121">
+				<id>144</id>
+				<edge_type>2</edge_type>
+				<source_obj>71</source_obj>
+				<sink_obj>56</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_122">
+				<id>147</id>
+				<edge_type>1</edge_type>
+				<source_obj>30</source_obj>
 				<sink_obj>58</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_142">
-				<id>173</id>
+			<item class_id_reference="20" object_id="_123">
+				<id>148</id>
 				<edge_type>1</edge_type>
-				<source_obj>51</source_obj>
+				<source_obj>34</source_obj>
 				<sink_obj>58</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_143">
-				<id>174</id>
+			<item class_id_reference="20" object_id="_124">
+				<id>149</id>
 				<edge_type>1</edge_type>
-				<source_obj>170</source_obj>
+				<source_obj>40</source_obj>
 				<sink_obj>58</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_144">
-				<id>175</id>
+			<item class_id_reference="20" object_id="_125">
+				<id>150</id>
+				<edge_type>1</edge_type>
+				<source_obj>44</source_obj>
+				<sink_obj>58</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_126">
+				<id>151</id>
+				<edge_type>1</edge_type>
+				<source_obj>44</source_obj>
+				<sink_obj>58</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_127">
+				<id>152</id>
+				<edge_type>1</edge_type>
+				<source_obj>44</source_obj>
+				<sink_obj>58</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_128">
+				<id>153</id>
+				<edge_type>1</edge_type>
+				<source_obj>44</source_obj>
+				<sink_obj>58</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_129">
+				<id>154</id>
+				<edge_type>1</edge_type>
+				<source_obj>44</source_obj>
+				<sink_obj>58</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_130">
+				<id>155</id>
+				<edge_type>1</edge_type>
+				<source_obj>52</source_obj>
+				<sink_obj>58</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_131">
+				<id>156</id>
 				<edge_type>1</edge_type>
 				<source_obj>58</source_obj>
 				<sink_obj>59</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_145">
-				<id>176</id>
-				<edge_type>1</edge_type>
-				<source_obj>56</source_obj>
-				<sink_obj>60</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_146">
-				<id>177</id>
-				<edge_type>2</edge_type>
-				<source_obj>64</source_obj>
-				<sink_obj>60</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_147">
-				<id>178</id>
-				<edge_type>2</edge_type>
-				<source_obj>66</source_obj>
-				<sink_obj>60</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_148">
-				<id>179</id>
-				<edge_type>1</edge_type>
-				<source_obj>38</source_obj>
-				<sink_obj>67</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_149">
-				<id>180</id>
+			<item class_id_reference="20" object_id="_132">
+				<id>157</id>
 				<edge_type>1</edge_type>
 				<source_obj>20</source_obj>
+				<sink_obj>59</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_133">
+				<id>158</id>
+				<edge_type>1</edge_type>
+				<source_obj>59</source_obj>
+				<sink_obj>60</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_134">
+				<id>161</id>
+				<edge_type>1</edge_type>
+				<source_obj>60</source_obj>
+				<sink_obj>61</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_135">
+				<id>163</id>
+				<edge_type>1</edge_type>
+				<source_obj>162</source_obj>
+				<sink_obj>61</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_136">
+				<id>164</id>
+				<edge_type>1</edge_type>
+				<source_obj>29</source_obj>
+				<sink_obj>62</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_137">
+				<id>165</id>
+				<edge_type>1</edge_type>
+				<source_obj>61</source_obj>
+				<sink_obj>63</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_138">
+				<id>166</id>
+				<edge_type>1</edge_type>
+				<source_obj>62</source_obj>
+				<sink_obj>63</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_139">
+				<id>167</id>
+				<edge_type>1</edge_type>
+				<source_obj>63</source_obj>
+				<sink_obj>64</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_140">
+				<id>170</id>
+				<edge_type>1</edge_type>
+				<source_obj>64</source_obj>
+				<sink_obj>65</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_141">
+				<id>172</id>
+				<edge_type>1</edge_type>
+				<source_obj>171</source_obj>
+				<sink_obj>65</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_142">
+				<id>173</id>
+				<edge_type>1</edge_type>
+				<source_obj>8</source_obj>
+				<sink_obj>66</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_143">
+				<id>174</id>
+				<edge_type>1</edge_type>
+				<source_obj>51</source_obj>
+				<sink_obj>66</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_144">
+				<id>177</id>
+				<edge_type>1</edge_type>
+				<source_obj>66</source_obj>
 				<sink_obj>67</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_150">
-				<id>181</id>
+			<item class_id_reference="20" object_id="_145">
+				<id>179</id>
 				<edge_type>1</edge_type>
-				<source_obj>67</source_obj>
+				<source_obj>178</source_obj>
+				<sink_obj>67</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_146">
+				<id>182</id>
+				<edge_type>1</edge_type>
+				<source_obj>66</source_obj>
 				<sink_obj>68</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_151">
+			<item class_id_reference="20" object_id="_147">
+				<id>183</id>
+				<edge_type>1</edge_type>
+				<source_obj>65</source_obj>
+				<sink_obj>68</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_148">
 				<id>184</id>
 				<edge_type>1</edge_type>
+				<source_obj>132</source_obj>
+				<sink_obj>68</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_149">
+				<id>187</id>
+				<edge_type>1</edge_type>
+				<source_obj>66</source_obj>
+				<sink_obj>69</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_150">
+				<id>313</id>
+				<edge_type>2</edge_type>
+				<source_obj>54</source_obj>
+				<sink_obj>71</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_151">
+				<id>314</id>
+				<edge_type>2</edge_type>
+				<source_obj>54</source_obj>
+				<sink_obj>57</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_152">
+				<id>315</id>
+				<edge_type>2</edge_type>
+				<source_obj>57</source_obj>
+				<sink_obj>71</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_153">
+				<id>316</id>
+				<edge_type>4</edge_type>
 				<source_obj>68</source_obj>
 				<sink_obj>69</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_152">
-				<id>186</id>
-				<edge_type>1</edge_type>
-				<source_obj>185</source_obj>
-				<sink_obj>69</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_153">
-				<id>187</id>
-				<edge_type>1</edge_type>
-				<source_obj>29</source_obj>
-				<sink_obj>70</sink_obj>
-			</item>
 			<item class_id_reference="20" object_id="_154">
-				<id>188</id>
-				<edge_type>1</edge_type>
-				<source_obj>69</source_obj>
-				<sink_obj>71</sink_obj>
+				<id>317</id>
+				<edge_type>4</edge_type>
+				<source_obj>67</source_obj>
+				<sink_obj>68</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_155">
-				<id>189</id>
-				<edge_type>1</edge_type>
-				<source_obj>70</source_obj>
-				<sink_obj>71</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_156">
-				<id>190</id>
-				<edge_type>1</edge_type>
-				<source_obj>71</source_obj>
-				<sink_obj>72</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_157">
-				<id>193</id>
-				<edge_type>1</edge_type>
-				<source_obj>72</source_obj>
-				<sink_obj>73</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_158">
-				<id>195</id>
-				<edge_type>1</edge_type>
-				<source_obj>194</source_obj>
-				<sink_obj>73</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_159">
-				<id>196</id>
-				<edge_type>2</edge_type>
-				<source_obj>82</source_obj>
-				<sink_obj>74</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_160">
-				<id>197</id>
-				<edge_type>1</edge_type>
-				<source_obj>73</source_obj>
-				<sink_obj>76</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_161">
-				<id>198</id>
-				<edge_type>2</edge_type>
-				<source_obj>75</source_obj>
-				<sink_obj>76</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_162">
-				<id>200</id>
-				<edge_type>1</edge_type>
-				<source_obj>199</source_obj>
-				<sink_obj>76</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_163">
-				<id>201</id>
-				<edge_type>2</edge_type>
-				<source_obj>66</source_obj>
-				<sink_obj>76</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_164">
-				<id>202</id>
-				<edge_type>1</edge_type>
-				<source_obj>8</source_obj>
-				<sink_obj>77</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_165">
-				<id>203</id>
-				<edge_type>1</edge_type>
-				<source_obj>59</source_obj>
-				<sink_obj>77</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_166">
-				<id>206</id>
-				<edge_type>1</edge_type>
-				<source_obj>77</source_obj>
-				<sink_obj>78</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_167">
-				<id>207</id>
-				<edge_type>1</edge_type>
-				<source_obj>104</source_obj>
-				<sink_obj>78</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_168">
-				<id>210</id>
-				<edge_type>1</edge_type>
-				<source_obj>77</source_obj>
-				<sink_obj>79</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_169">
-				<id>211</id>
-				<edge_type>1</edge_type>
-				<source_obj>76</source_obj>
-				<sink_obj>79</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_170">
-				<id>212</id>
-				<edge_type>1</edge_type>
-				<source_obj>170</source_obj>
-				<sink_obj>79</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_171">
-				<id>215</id>
-				<edge_type>1</edge_type>
-				<source_obj>77</source_obj>
-				<sink_obj>80</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_172">
-				<id>216</id>
-				<edge_type>1</edge_type>
-				<source_obj>57</source_obj>
-				<sink_obj>62</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_173">
-				<id>217</id>
-				<edge_type>1</edge_type>
-				<source_obj>9</source_obj>
-				<sink_obj>62</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_174">
-				<id>218</id>
-				<edge_type>2</edge_type>
-				<source_obj>66</source_obj>
-				<sink_obj>63</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_175">
-				<id>219</id>
-				<edge_type>1</edge_type>
-				<source_obj>37</source_obj>
-				<sink_obj>65</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_176">
-				<id>220</id>
-				<edge_type>2</edge_type>
-				<source_obj>82</source_obj>
-				<sink_obj>65</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_177">
-				<id>221</id>
-				<edge_type>2</edge_type>
-				<source_obj>75</source_obj>
-				<sink_obj>65</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_178">
-				<id>347</id>
-				<edge_type>2</edge_type>
-				<source_obj>61</source_obj>
-				<sink_obj>66</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_179">
-				<id>348</id>
-				<edge_type>2</edge_type>
-				<source_obj>61</source_obj>
-				<sink_obj>64</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_180">
-				<id>349</id>
-				<edge_type>2</edge_type>
-				<source_obj>64</source_obj>
-				<sink_obj>66</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_181">
-				<id>350</id>
-				<edge_type>2</edge_type>
-				<source_obj>66</source_obj>
-				<sink_obj>75</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_182">
-				<id>351</id>
-				<edge_type>2</edge_type>
-				<source_obj>66</source_obj>
-				<sink_obj>82</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_183">
-				<id>352</id>
-				<edge_type>2</edge_type>
-				<source_obj>75</source_obj>
-				<sink_obj>82</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_184">
-				<id>353</id>
+				<id>318</id>
 				<edge_type>4</edge_type>
 				<source_obj>32</source_obj>
-				<sink_obj>33</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_185">
-				<id>354</id>
-				<edge_type>4</edge_type>
-				<source_obj>79</source_obj>
-				<sink_obj>80</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_186">
-				<id>355</id>
-				<edge_type>4</edge_type>
-				<source_obj>78</source_obj>
-				<sink_obj>79</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_187">
-				<id>356</id>
-				<edge_type>4</edge_type>
-				<source_obj>40</source_obj>
-				<sink_obj>62</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_188">
-				<id>357</id>
-				<edge_type>4</edge_type>
-				<source_obj>32</source_obj>
-				<sink_obj>79</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_189">
-				<id>358</id>
-				<edge_type>4</edge_type>
-				<source_obj>33</source_obj>
-				<sink_obj>79</sink_obj>
+				<sink_obj>55</sink_obj>
 			</item>
 		</edges>
 	</cdfg>
 	<cdfg_regions class_id="21" tracking_level="0" version="0">
 		<count>1</count>
 		<item_version>0</item_version>
-		<item class_id="22" tracking_level="1" version="0" object_id="_190">
+		<item class_id="22" tracking_level="1" version="0" object_id="_156">
 			<mId>1</mId>
 			<mTag>normalizer</mTag>
 			<mType>0</mType>
@@ -3609,19 +2976,17 @@
 				<item_version>0</item_version>
 			</sub_regions>
 			<basic_blocks>
-				<count>5</count>
+				<count>3</count>
 				<item_version>0</item_version>
-				<item>61</item>
-				<item>64</item>
-				<item>66</item>
-				<item>75</item>
-				<item>82</item>
+				<item>54</item>
+				<item>57</item>
+				<item>71</item>
 			</basic_blocks>
 			<mII>1</mII>
-			<mDepth>28</mDepth>
+			<mDepth>22</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>27</mMinLatency>
+			<mMinLatency>21</mMinLatency>
 			<mMaxLatency>-1</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
@@ -3630,47 +2995,47 @@
 	<fsm class_id="-1"></fsm>
 	<res class_id="-1"></res>
 	<node_label_latency class_id="26" tracking_level="0" version="0">
-		<count>53</count>
+		<count>44</count>
 		<item_version>0</item_version>
 		<item class_id="27" tracking_level="0" version="0">
 			<first>19</first>
 			<second class_id="28" tracking_level="0" version="0">
-				<first>6</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>20</first>
 			<second>
-				<first>6</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>27</first>
 			<second>
-				<first>7</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>28</first>
 			<second>
-				<first>7</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>29</first>
 			<second>
-				<first>9</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>30</first>
 			<second>
-				<first>7</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -3684,378 +3049,299 @@
 		<item>
 			<first>32</first>
 			<second>
-				<first>0</first>
-				<second>6</second>
+				<first>1</first>
+				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>33</first>
 			<second>
-				<first>7</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>34</first>
 			<second>
-				<first>8</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>35</first>
 			<second>
-				<first>7</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>36</first>
 			<second>
-				<first>8</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>37</first>
 			<second>
-				<first>8</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>38</first>
 			<second>
-				<first>6</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>39</first>
 			<second>
-				<first>6</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>40</first>
 			<second>
-				<first>7</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>41</first>
 			<second>
-				<first>7</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>42</first>
 			<second>
-				<first>6</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>43</first>
 			<second>
-				<first>6</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>44</first>
 			<second>
-				<first>6</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>45</first>
 			<second>
-				<first>7</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>46</first>
 			<second>
-				<first>7</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>47</first>
 			<second>
-				<first>7</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>48</first>
 			<second>
-				<first>6</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>49</first>
 			<second>
-				<first>6</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>50</first>
 			<second>
-				<first>7</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>51</first>
 			<second>
-				<first>7</first>
+				<first>15</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>52</first>
 			<second>
-				<first>6</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>53</first>
 			<second>
-				<first>6</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>54</first>
-			<second>
-				<first>6</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>55</first>
 			<second>
-				<first>6</first>
+				<first>1</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>56</first>
 			<second>
-				<first>6</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>57</first>
-			<second>
-				<first>7</first>
+				<first>21</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>58</first>
 			<second>
-				<first>7</first>
+				<first>2</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>59</first>
 			<second>
-				<first>21</first>
+				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>60</first>
 			<second>
-				<first>6</first>
+				<first>3</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>61</first>
+			<second>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>62</first>
 			<second>
-				<first>7</first>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>63</first>
 			<second>
-				<first>27</first>
+				<first>4</first>
+				<second>11</second>
+			</second>
+		</item>
+		<item>
+			<first>64</first>
+			<second>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>65</first>
 			<second>
-				<first>9</first>
+				<first>16</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>66</first>
+			<second>
+				<first>15</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>67</first>
 			<second>
-				<first>8</first>
+				<first>15</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>68</first>
 			<second>
-				<first>8</first>
+				<first>16</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>69</first>
 			<second>
-				<first>9</first>
-				<second>0</second>
+				<first>17</first>
+				<second>4</second>
 			</second>
 		</item>
 		<item>
 			<first>70</first>
 			<second>
-				<first>9</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>71</first>
-			<second>
-				<first>9</first>
-				<second>11</second>
-			</second>
-		</item>
-		<item>
-			<first>72</first>
-			<second>
 				<first>21</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>73</first>
-			<second>
-				<first>21</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>74</first>
-			<second>
-				<first>21</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>76</first>
-			<second>
-				<first>22</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>77</first>
-			<second>
-				<first>21</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>78</first>
-			<second>
-				<first>21</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>79</first>
-			<second>
-				<first>22</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>80</first>
-			<second>
-				<first>23</first>
-				<second>4</second>
-			</second>
-		</item>
-		<item>
-			<first>81</first>
-			<second>
-				<first>27</first>
 				<second>0</second>
 			</second>
 		</item>
 	</node_label_latency>
 	<bblk_ent_exit class_id="29" tracking_level="0" version="0">
-		<count>5</count>
+		<count>3</count>
 		<item_version>0</item_version>
 		<item class_id="30" tracking_level="0" version="0">
-			<first>61</first>
+			<first>54</first>
 			<second class_id="31" tracking_level="0" version="0">
 				<first>0</first>
-				<second>27</second>
-			</second>
-		</item>
-		<item>
-			<first>64</first>
-			<second>
-				<first>6</first>
-				<second>27</second>
-			</second>
-		</item>
-		<item>
-			<first>66</first>
-			<second>
-				<first>9</first>
-				<second>9</second>
-			</second>
-		</item>
-		<item>
-			<first>75</first>
-			<second>
-				<first>8</first>
 				<second>21</second>
 			</second>
 		</item>
 		<item>
-			<first>82</first>
+			<first>57</first>
+			<second>
+				<first>1</first>
+				<second>21</second>
+			</second>
+		</item>
+		<item>
+			<first>71</first>
 			<second>
 				<first>0</first>
-				<second>27</second>
+				<second>21</second>
 			</second>
 		</item>
 	</bblk_ent_exit>
 	<regions class_id="32" tracking_level="0" version="0">
 		<count>1</count>
 		<item_version>0</item_version>
-		<item class_id="33" tracking_level="1" version="0" object_id="_191">
+		<item class_id="33" tracking_level="1" version="0" object_id="_157">
 			<region_name>normalizer</region_name>
 			<basic_blocks>
-				<count>5</count>
+				<count>3</count>
 				<item_version>0</item_version>
-				<item>61</item>
-				<item>64</item>
-				<item>66</item>
-				<item>75</item>
-				<item>82</item>
+				<item>54</item>
+				<item>57</item>
+				<item>71</item>
 			</basic_blocks>
 			<nodes>
 				<count>0</count>
@@ -4064,7 +3350,7 @@
 			<anchor_node>-1</anchor_node>
 			<region_type>8</region_type>
 			<interval>1</interval>
-			<pipe_depth>28</pipe_depth>
+			<pipe_depth>22</pipe_depth>
 		</item>
 	</regions>
 	<dp_fu_nodes class_id="34" tracking_level="0" version="0">

@@ -8,7 +8,7 @@
   <xd:arg xd:name="regs_in[4]" xd:originalName="regs_in4" xd:direction="in" xd:interfaceRef="s_axi_in" xd:busTypeRef="axilite" xd:offset="0x30" xd:handshakeRef="ap_none" xd:arraySize="1" xd:dataWidth="32"/>
   <xd:arg xd:name="min_high" xd:originalName="min_high" xd:direction="in" xd:interfaceRef="s_axi_in" xd:busTypeRef="axilite" xd:offset="0x38" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="max_high" xd:originalName="max_high" xd:direction="in" xd:interfaceRef="s_axi_in" xd:busTypeRef="axilite" xd:offset="0x40" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
-  <xd:arg xd:name="m[]" xd:originalName="m" xd:direction="inout" xd:interfaceRef="m_axi_m_V" xd:busTypeRef="aximm" xd:arraySize="4096" xd:dataWidth="16" xd:bufferDirection="inout"/>
-  <xd:latencyEstimates xd:best-case="27" xd:worst-case="27" xd:average-case="27"/>
-  <xd:resourceEstimates xd:LUT="1839" xd:FF="1777" xd:BRAM="2" xd:DSP="0"/>
+  <xd:arg xd:name="m[]" xd:originalName="m" xd:direction="inout" xd:interfaceRef="m_axi_m_V" xd:busTypeRef="aximm" xd:arraySize="4096" xd:dataWidth="16" xd:bufferDirection="out"/>
+  <xd:latencyEstimates xd:best-case="21" xd:worst-case="21" xd:average-case="21"/>
+  <xd:resourceEstimates xd:LUT="1808" xd:FF="1621" xd:BRAM="2" xd:DSP="0"/>
 </xd:acceleratorMap>

@@ -35277,7 +35277,7 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  bigBigF_t range = max_high-min_high;
 
  static unsigned int last[5] = {0,0,0,0,0};
- bool output=(m[4]>(max_high+min_high)/2) ? true : false;
+
 
  static unsigned int changed=0;
  for(int i =0; i < 4; ++i) {
@@ -35286,6 +35286,6 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
   }
  }
 
- m[changed]=output ? F_t(bigBigF_t(regs_in[0]-min_high)/range) : F_t(0);
+ m[changed]= F_t(bigBigF_t(regs_in[changed]-min_high)/range);
 
 }

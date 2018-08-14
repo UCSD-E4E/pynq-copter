@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "normalizer"
 set Version     "1.0"
 set DisplayName "Normalizer"
-set Revision    "1808131637"
+set Revision    "1808131905"
 set Description "HLS Core: Normalizer Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -1919,7 +1919,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_ver match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 27 II 1}
+set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 21 II 1}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]

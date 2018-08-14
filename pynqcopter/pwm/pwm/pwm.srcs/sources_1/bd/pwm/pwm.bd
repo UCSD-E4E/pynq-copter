@@ -842,26 +842,10 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>rc_receiver_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hlsip" spirit:name="rc_receiver" spirit:vendor="UCSD" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">pwm_rc_receiver_0_1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_M_AXI_MIXER_OUT_V_TARGET_ADDR">0x4000d010</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>normalizer_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hlsip" spirit:name="normalizer" spirit:vendor="UCSD" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">pwm_normalizer_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_M_AXI_M_V_TARGET_ADDR">0x4000e010</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>system_ila_0</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="system_ila" spirit:vendor="xilinx.com" spirit:version="1.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">pwm_system_ila_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">pwm_system_ila_0_1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_SLOT_0_APC_EN">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_SLOT_1_APC_EN">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_SLOT_2_APC_EN">0</spirit:configurableElementValue>
@@ -950,6 +934,22 @@
           <spirit:configurableElementValue spirit:referenceId="C_MON_TYPE">INTERFACE</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>normalizer_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hlsip" spirit:name="normalizer" spirit:vendor="UCSD" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">pwm_normalizer_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_M_AXI_M_V_TARGET_ADDR">0x4000e010</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>rc_receiver_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hlsip" spirit:name="rc_receiver" spirit:vendor="UCSD" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">pwm_rc_receiver_0_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_M_AXI_NORM_OUT_TARGET_ADDR">0x4000d010</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
@@ -1001,7 +1001,7 @@
       </spirit:monitorInterconnection>
       <spirit:interconnection>
         <spirit:name>rc_receiver_0_m_axi_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="m_axi_mixer_out_V" spirit:componentRef="rc_receiver_0"/>
+        <spirit:activeInterface spirit:busRef="m_axi_norm_out" spirit:componentRef="rc_receiver_0"/>
         <spirit:activeInterface spirit:busRef="S01_AXI" spirit:componentRef="ps7_0_axi_periph"/>
         <bd:hdl_attributes>
           <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
@@ -1010,7 +1010,7 @@
       </spirit:interconnection>
       <spirit:monitorInterconnection>
         <spirit:name>rc_receiver_0_m_axi_out_V</spirit:name>
-        <spirit:monitoredActiveInterface spirit:busRef="m_axi_mixer_out_V" spirit:componentRef="rc_receiver_0"/>
+        <spirit:monitoredActiveInterface spirit:busRef="m_axi_norm_out" spirit:componentRef="rc_receiver_0"/>
         <spirit:monitorInterface spirit:busRef="SLOT_3_AXI" spirit:componentRef="system_ila_0"/>
       </spirit:monitorInterconnection>
       <spirit:interconnection>
@@ -1116,11 +1116,11 @@
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M02_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S01_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S02_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="rc_receiver_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S03_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M03_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="normalizer_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="clk"/>
+        <spirit:internalPortReference spirit:componentRef="normalizer_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="rc_receiver_0" spirit:portRef="ap_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_ps7_0_100M_peripheral_aresetn</spirit:name>
@@ -1133,11 +1133,11 @@
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M02_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S01_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S02_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="rc_receiver_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S03_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M03_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="normalizer_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="resetn"/>
+        <spirit:internalPortReference spirit:componentRef="normalizer_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="rc_receiver_0" spirit:portRef="ap_rst_n"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_ps7_0_100M_interconnect_aresetn</spirit:name>
@@ -3500,64 +3500,6 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>UCSD</spirit:vendor>
-    <spirit:library>Addressing/rc_receiver_0</spirit:library>
-    <spirit:name>rc_receiver</spirit:name>
-    <spirit:version>1.0</spirit:version>
-    <spirit:busInterfaces>
-      <spirit:busInterface>
-        <spirit:name>s_axi_in</spirit:name>
-        <spirit:slave>
-          <spirit:memoryMapRef spirit:memoryMapRef="s_axi_in"/>
-        </spirit:slave>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>m_axi_mixer_out_V</spirit:name>
-        <spirit:master>
-          <spirit:addressSpaceRef spirit:addressSpaceRef="Data_m_axi_mixer_out_V"/>
-        </spirit:master>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-    </spirit:busInterfaces>
-    <spirit:addressSpaces>
-      <spirit:addressSpace>
-        <spirit:name>Data_m_axi_mixer_out_V</spirit:name>
-        <spirit:range>4G</spirit:range>
-        <spirit:width>32</spirit:width>
-        <spirit:segments>
-          <spirit:segment>
-            <spirit:name>SEG_normalizer_0_Reg</spirit:name>
-            <spirit:displayName>/normalizer_0/s_axi_in/Reg</spirit:displayName>
-            <spirit:addressOffset>0x4000D000</spirit:addressOffset>
-            <spirit:range>4K</spirit:range>
-          </spirit:segment>
-          <spirit:segment bd:isExcluded="true">
-            <spirit:name>SEG_mixer_0_Reg</spirit:name>
-            <spirit:displayName>/mixer_0/s_axi_AXILiteS/Reg</spirit:displayName>
-            <spirit:addressOffset>0x4000E000</spirit:addressOffset>
-            <spirit:range>4K</spirit:range>
-          </spirit:segment>
-          <spirit:segment bd:isExcluded="true">
-            <spirit:name>SEG_pwm_0_Reg</spirit:name>
-            <spirit:displayName>/pwm_0/s_axi_ctrl/Reg</spirit:displayName>
-            <spirit:addressOffset>0x4000F000</spirit:addressOffset>
-            <spirit:range>4K</spirit:range>
-          </spirit:segment>
-          <spirit:segment bd:isExcluded="true">
-            <spirit:name>SEG_rc_receiver_0_Reg</spirit:name>
-            <spirit:displayName>/rc_receiver_0/s_axi_in/Reg</spirit:displayName>
-            <spirit:addressOffset>0x4000C000</spirit:addressOffset>
-            <spirit:range>4K</spirit:range>
-          </spirit:segment>
-        </spirit:segments>
-      </spirit:addressSpace>
-    </spirit:addressSpaces>
-  </spirit:component>
-
-  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>UCSD</spirit:vendor>
     <spirit:library>Addressing/normalizer_0</spirit:library>
     <spirit:name>normalizer</spirit:name>
     <spirit:version>1.0</spirit:version>
@@ -3595,6 +3537,64 @@
             <spirit:name>SEG_normalizer_0_Reg</spirit:name>
             <spirit:displayName>/normalizer_0/s_axi_in/Reg</spirit:displayName>
             <spirit:addressOffset>0x4000D000</spirit:addressOffset>
+            <spirit:range>4K</spirit:range>
+          </spirit:segment>
+          <spirit:segment bd:isExcluded="true">
+            <spirit:name>SEG_pwm_0_Reg</spirit:name>
+            <spirit:displayName>/pwm_0/s_axi_ctrl/Reg</spirit:displayName>
+            <spirit:addressOffset>0x4000F000</spirit:addressOffset>
+            <spirit:range>4K</spirit:range>
+          </spirit:segment>
+          <spirit:segment bd:isExcluded="true">
+            <spirit:name>SEG_rc_receiver_0_Reg</spirit:name>
+            <spirit:displayName>/rc_receiver_0/s_axi_in/Reg</spirit:displayName>
+            <spirit:addressOffset>0x4000C000</spirit:addressOffset>
+            <spirit:range>4K</spirit:range>
+          </spirit:segment>
+        </spirit:segments>
+      </spirit:addressSpace>
+    </spirit:addressSpaces>
+  </spirit:component>
+
+  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>UCSD</spirit:vendor>
+    <spirit:library>Addressing/rc_receiver_0</spirit:library>
+    <spirit:name>rc_receiver</spirit:name>
+    <spirit:version>1.0</spirit:version>
+    <spirit:busInterfaces>
+      <spirit:busInterface>
+        <spirit:name>s_axi_in</spirit:name>
+        <spirit:slave>
+          <spirit:memoryMapRef spirit:memoryMapRef="s_axi_in"/>
+        </spirit:slave>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>m_axi_norm_out</spirit:name>
+        <spirit:master>
+          <spirit:addressSpaceRef spirit:addressSpaceRef="Data_m_axi_norm_out"/>
+        </spirit:master>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+    </spirit:busInterfaces>
+    <spirit:addressSpaces>
+      <spirit:addressSpace>
+        <spirit:name>Data_m_axi_norm_out</spirit:name>
+        <spirit:range>4G</spirit:range>
+        <spirit:width>32</spirit:width>
+        <spirit:segments>
+          <spirit:segment>
+            <spirit:name>SEG_normalizer_0_Reg</spirit:name>
+            <spirit:displayName>/normalizer_0/s_axi_in/Reg</spirit:displayName>
+            <spirit:addressOffset>0x4000D000</spirit:addressOffset>
+            <spirit:range>4K</spirit:range>
+          </spirit:segment>
+          <spirit:segment bd:isExcluded="true">
+            <spirit:name>SEG_mixer_0_Reg</spirit:name>
+            <spirit:displayName>/mixer_0/s_axi_AXILiteS/Reg</spirit:displayName>
+            <spirit:addressOffset>0x4000E000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
           <spirit:segment bd:isExcluded="true">

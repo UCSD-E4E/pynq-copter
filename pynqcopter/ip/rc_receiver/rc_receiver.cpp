@@ -42,7 +42,7 @@ void rc_receiver(
 	// HLS PRAGMAS
 	#pragma HLS INTERFACE s_axilite port=return bundle=in
 
-	#pragma HLS INTERFACE m_axi port=mixer_out offset=off
+	#pragma HLS INTERFACE m_axi port=norm_out offset=off
 
 	#pragma HLS INTERFACE ap_none port=channels
 
@@ -75,7 +75,7 @@ void rc_receiver(
 
 
 	if(should_write) {
-		norm_out[write_to]=write_val;
+		norm_out[2*write_to]=write_val;
 	}
 	last_on=channels;
 
