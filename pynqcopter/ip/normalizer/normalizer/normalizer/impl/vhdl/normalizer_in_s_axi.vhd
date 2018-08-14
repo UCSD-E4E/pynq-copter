@@ -46,6 +46,7 @@ port (
     regs_in_2             :out  STD_LOGIC_VECTOR(31 downto 0);
     regs_in_3             :out  STD_LOGIC_VECTOR(31 downto 0);
     regs_in_4             :out  STD_LOGIC_VECTOR(31 downto 0);
+    regs_in_5             :out  STD_LOGIC_VECTOR(31 downto 0);
     min_high              :out  STD_LOGIC_VECTOR(31 downto 0);
     max_high              :out  STD_LOGIC_VECTOR(31 downto 0)
 );
@@ -85,12 +86,15 @@ end entity normalizer_in_s_axi;
 -- 0x30 : Data signal of regs_in_4
 --        bit 31~0 - regs_in_4[31:0] (Read/Write)
 -- 0x34 : reserved
--- 0x38 : Data signal of min_high
---        bit 31~0 - min_high[31:0] (Read/Write)
+-- 0x38 : Data signal of regs_in_5
+--        bit 31~0 - regs_in_5[31:0] (Read/Write)
 -- 0x3c : reserved
--- 0x40 : Data signal of max_high
---        bit 31~0 - max_high[31:0] (Read/Write)
+-- 0x40 : Data signal of min_high
+--        bit 31~0 - min_high[31:0] (Read/Write)
 -- 0x44 : reserved
+-- 0x48 : Data signal of max_high
+--        bit 31~0 - max_high[31:0] (Read/Write)
+-- 0x4c : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of normalizer_in_s_axi is
@@ -112,10 +116,12 @@ architecture behave of normalizer_in_s_axi is
     constant ADDR_REGS_IN_3_CTRL   : INTEGER := 16#2c#;
     constant ADDR_REGS_IN_4_DATA_0 : INTEGER := 16#30#;
     constant ADDR_REGS_IN_4_CTRL   : INTEGER := 16#34#;
-    constant ADDR_MIN_HIGH_DATA_0  : INTEGER := 16#38#;
-    constant ADDR_MIN_HIGH_CTRL    : INTEGER := 16#3c#;
-    constant ADDR_MAX_HIGH_DATA_0  : INTEGER := 16#40#;
-    constant ADDR_MAX_HIGH_CTRL    : INTEGER := 16#44#;
+    constant ADDR_REGS_IN_5_DATA_0 : INTEGER := 16#38#;
+    constant ADDR_REGS_IN_5_CTRL   : INTEGER := 16#3c#;
+    constant ADDR_MIN_HIGH_DATA_0  : INTEGER := 16#40#;
+    constant ADDR_MIN_HIGH_CTRL    : INTEGER := 16#44#;
+    constant ADDR_MAX_HIGH_DATA_0  : INTEGER := 16#48#;
+    constant ADDR_MAX_HIGH_CTRL    : INTEGER := 16#4c#;
     constant ADDR_BITS         : INTEGER := 7;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -143,6 +149,7 @@ architecture behave of normalizer_in_s_axi is
     signal int_regs_in_2       : UNSIGNED(31 downto 0) := (others => '0');
     signal int_regs_in_3       : UNSIGNED(31 downto 0) := (others => '0');
     signal int_regs_in_4       : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_regs_in_5       : UNSIGNED(31 downto 0) := (others => '0');
     signal int_min_high        : UNSIGNED(31 downto 0) := (others => '0');
     signal int_max_high        : UNSIGNED(31 downto 0) := (others => '0');
 
@@ -276,6 +283,8 @@ begin
                         rdata_data <= RESIZE(int_regs_in_3(31 downto 0), 32);
                     when ADDR_REGS_IN_4_DATA_0 =>
                         rdata_data <= RESIZE(int_regs_in_4(31 downto 0), 32);
+                    when ADDR_REGS_IN_5_DATA_0 =>
+                        rdata_data <= RESIZE(int_regs_in_5(31 downto 0), 32);
                     when ADDR_MIN_HIGH_DATA_0 =>
                         rdata_data <= RESIZE(int_min_high(31 downto 0), 32);
                     when ADDR_MAX_HIGH_DATA_0 =>
@@ -296,6 +305,7 @@ begin
     regs_in_2            <= STD_LOGIC_VECTOR(int_regs_in_2);
     regs_in_3            <= STD_LOGIC_VECTOR(int_regs_in_3);
     regs_in_4            <= STD_LOGIC_VECTOR(int_regs_in_4);
+    regs_in_5            <= STD_LOGIC_VECTOR(int_regs_in_5);
     min_high             <= STD_LOGIC_VECTOR(int_min_high);
     max_high             <= STD_LOGIC_VECTOR(int_max_high);
 
@@ -474,6 +484,17 @@ begin
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_REGS_IN_4_DATA_0) then
                     int_regs_in_4(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_regs_in_4(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_REGS_IN_5_DATA_0) then
+                    int_regs_in_5(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_regs_in_5(31 downto 0));
                 end if;
             end if;
         end if;

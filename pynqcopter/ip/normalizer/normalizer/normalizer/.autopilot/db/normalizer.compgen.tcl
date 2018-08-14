@@ -110,23 +110,23 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 
 
 set id 2
-set name normalizer_udiv_8cud
+set name normalizer_udiv_6cud
 set corename simcore_udiv
 set op udiv
-set stage_num 12
+set stage_num 67
 set max_latency -1
 set registered_input 1
 set clk_width 1
 set clk_signed 0
 set reset_width 1
 set reset_signed 0
-set in0_width 8
+set in0_width 63
 set in0_signed 0
-set in1_width 6
+set in1_width 48
 set in1_signed 0
 set ce_width 1
 set ce_signed 0
-set out_width 3
+set out_width 16
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_udiv] == "ap_gen_simcore_udiv"} {
 eval "ap_gen_simcore_udiv { \
@@ -246,7 +246,7 @@ regs_in_4 {
 	offset 48
 	offset_end 55
 }
-min_high { 
+regs_in_5 { 
 	dir I
 	width 32
 	depth 1
@@ -254,13 +254,21 @@ min_high {
 	offset 56
 	offset_end 63
 }
-max_high { 
+min_high { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
 	offset 64
 	offset_end 71
+}
+max_high { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 72
+	offset_end 79
 }
 }
 

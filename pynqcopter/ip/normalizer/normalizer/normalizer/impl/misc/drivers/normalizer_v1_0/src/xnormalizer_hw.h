@@ -39,12 +39,15 @@
 // 0x30 : Data signal of regs_in_4
 //        bit 31~0 - regs_in_4[31:0] (Read/Write)
 // 0x34 : reserved
-// 0x38 : Data signal of min_high
-//        bit 31~0 - min_high[31:0] (Read/Write)
+// 0x38 : Data signal of regs_in_5
+//        bit 31~0 - regs_in_5[31:0] (Read/Write)
 // 0x3c : reserved
-// 0x40 : Data signal of max_high
-//        bit 31~0 - max_high[31:0] (Read/Write)
+// 0x40 : Data signal of min_high
+//        bit 31~0 - min_high[31:0] (Read/Write)
 // 0x44 : reserved
+// 0x48 : Data signal of max_high
+//        bit 31~0 - max_high[31:0] (Read/Write)
+// 0x4c : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XNORMALIZER_IN_ADDR_AP_CTRL        0x00
@@ -61,8 +64,10 @@
 #define XNORMALIZER_IN_BITS_REGS_IN_3_DATA 32
 #define XNORMALIZER_IN_ADDR_REGS_IN_4_DATA 0x30
 #define XNORMALIZER_IN_BITS_REGS_IN_4_DATA 32
-#define XNORMALIZER_IN_ADDR_MIN_HIGH_DATA  0x38
+#define XNORMALIZER_IN_ADDR_REGS_IN_5_DATA 0x38
+#define XNORMALIZER_IN_BITS_REGS_IN_5_DATA 32
+#define XNORMALIZER_IN_ADDR_MIN_HIGH_DATA  0x40
 #define XNORMALIZER_IN_BITS_MIN_HIGH_DATA  32
-#define XNORMALIZER_IN_ADDR_MAX_HIGH_DATA  0x40
+#define XNORMALIZER_IN_ADDR_MAX_HIGH_DATA  0x48
 #define XNORMALIZER_IN_BITS_MAX_HIGH_DATA  32
 

@@ -35261,8 +35261,6 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 #pragma line 43 "./mixer.hpp" 2
 #pragma empty_line
 #pragma empty_line
-#pragma empty_line
-#pragma empty_line
 typedef ap_fixed<16 +3,4> bigF_t;
 #pragma empty_line
 #pragma empty_line

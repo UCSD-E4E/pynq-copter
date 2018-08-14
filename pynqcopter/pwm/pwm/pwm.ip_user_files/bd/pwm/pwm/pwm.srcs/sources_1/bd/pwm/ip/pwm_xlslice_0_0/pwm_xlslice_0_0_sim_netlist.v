@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Thu Aug  9 10:43:17 2018
+// Date        : Tue Aug 14 10:32:01 2018
 // Host        : apple running 64-bit Ubuntu 16.04.5 LTS
-// Command     : write_verilog -force -mode funcsim -rename_top pwm_xlslice_0_0 -prefix
-//               pwm_xlslice_0_0_ pwm_xlslice_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_xlslice_0_0/pwm_xlslice_0_0_sim_netlist.v
 // Design      : pwm_xlslice_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -18,11 +18,11 @@ module pwm_xlslice_0_0
    (Din,
     Dout);
   input [19:0]Din;
-  output [4:0]Dout;
+  output [5:0]Dout;
 
   wire [19:0]Din;
 
-  assign Dout[4:0] = Din[19:15];
+  assign Dout[5:0] = Din[19:14];
 endmodule
 `ifndef GLBL
 `define GLBL

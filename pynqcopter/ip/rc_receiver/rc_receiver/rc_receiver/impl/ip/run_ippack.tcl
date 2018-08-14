@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "rc_receiver"
 set Version     "1.0"
 set DisplayName "Rc_receiver"
-set Revision    "1808131832"
+set Revision    "1808141015"
 set Description "HLS Core: Rc_receiver Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -458,12 +458,12 @@ set Interfaces {
     channels_V {
         type "data"
         dir "in"
-        width "5"
+        width "6"
         ctype {
             DATA {
                 Type "integer unsigned"
-                Width "5"
-                Bits "5"
+                Width "6"
+                Bits "6"
             }
         }
     }

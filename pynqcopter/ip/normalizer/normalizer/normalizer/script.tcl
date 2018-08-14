@@ -15,5 +15,5 @@ create_clock -period 4 -name default
 #source "./normalizer/normalizer/directives.tcl"
 csim_design
 csynth_design
-cosim_design
+cosim_design -compiler gcc
 export_design -format ip_catalog -description "HLS Core: Normalizer Function" -vendor "UCSD" -library "hlsip" -display_name "Normalizer"

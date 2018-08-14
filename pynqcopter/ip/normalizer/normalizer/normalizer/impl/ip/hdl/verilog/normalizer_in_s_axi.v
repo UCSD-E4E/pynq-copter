@@ -43,6 +43,7 @@ module normalizer_in_s_axi
     output wire [31:0]                   regs_in_2,
     output wire [31:0]                   regs_in_3,
     output wire [31:0]                   regs_in_4,
+    output wire [31:0]                   regs_in_5,
     output wire [31:0]                   min_high,
     output wire [31:0]                   max_high
 );
@@ -80,12 +81,15 @@ module normalizer_in_s_axi
 // 0x30 : Data signal of regs_in_4
 //        bit 31~0 - regs_in_4[31:0] (Read/Write)
 // 0x34 : reserved
-// 0x38 : Data signal of min_high
-//        bit 31~0 - min_high[31:0] (Read/Write)
+// 0x38 : Data signal of regs_in_5
+//        bit 31~0 - regs_in_5[31:0] (Read/Write)
 // 0x3c : reserved
-// 0x40 : Data signal of max_high
-//        bit 31~0 - max_high[31:0] (Read/Write)
+// 0x40 : Data signal of min_high
+//        bit 31~0 - min_high[31:0] (Read/Write)
 // 0x44 : reserved
+// 0x48 : Data signal of max_high
+//        bit 31~0 - max_high[31:0] (Read/Write)
+// 0x4c : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
@@ -104,10 +108,12 @@ localparam
     ADDR_REGS_IN_3_CTRL   = 7'h2c,
     ADDR_REGS_IN_4_DATA_0 = 7'h30,
     ADDR_REGS_IN_4_CTRL   = 7'h34,
-    ADDR_MIN_HIGH_DATA_0  = 7'h38,
-    ADDR_MIN_HIGH_CTRL    = 7'h3c,
-    ADDR_MAX_HIGH_DATA_0  = 7'h40,
-    ADDR_MAX_HIGH_CTRL    = 7'h44,
+    ADDR_REGS_IN_5_DATA_0 = 7'h38,
+    ADDR_REGS_IN_5_CTRL   = 7'h3c,
+    ADDR_MIN_HIGH_DATA_0  = 7'h40,
+    ADDR_MIN_HIGH_CTRL    = 7'h44,
+    ADDR_MAX_HIGH_DATA_0  = 7'h48,
+    ADDR_MAX_HIGH_CTRL    = 7'h4c,
     WRIDLE                = 2'd0,
     WRDATA                = 2'd1,
     WRRESP                = 2'd2,
@@ -143,6 +149,7 @@ localparam
     reg  [31:0]                   int_regs_in_2 = 'b0;
     reg  [31:0]                   int_regs_in_3 = 'b0;
     reg  [31:0]                   int_regs_in_4 = 'b0;
+    reg  [31:0]                   int_regs_in_5 = 'b0;
     reg  [31:0]                   int_min_high = 'b0;
     reg  [31:0]                   int_max_high = 'b0;
 
@@ -267,6 +274,9 @@ always @(posedge ACLK) begin
                 ADDR_REGS_IN_4_DATA_0: begin
                     rdata <= int_regs_in_4[31:0];
                 end
+                ADDR_REGS_IN_5_DATA_0: begin
+                    rdata <= int_regs_in_5[31:0];
+                end
                 ADDR_MIN_HIGH_DATA_0: begin
                     rdata <= int_min_high[31:0];
                 end
@@ -287,6 +297,7 @@ assign regs_in_1 = int_regs_in_1;
 assign regs_in_2 = int_regs_in_2;
 assign regs_in_3 = int_regs_in_3;
 assign regs_in_4 = int_regs_in_4;
+assign regs_in_5 = int_regs_in_5;
 assign min_high  = int_min_high;
 assign max_high  = int_max_high;
 // int_ap_start
@@ -432,6 +443,16 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_REGS_IN_4_DATA_0)
             int_regs_in_4[31:0] <= (WDATA[31:0] & wmask) | (int_regs_in_4[31:0] & ~wmask);
+    end
+end
+
+// int_regs_in_5[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_regs_in_5[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_REGS_IN_5_DATA_0)
+            int_regs_in_5[31:0] <= (WDATA[31:0] & wmask) | (int_regs_in_5[31:0] & ~wmask);
     end
 end
 

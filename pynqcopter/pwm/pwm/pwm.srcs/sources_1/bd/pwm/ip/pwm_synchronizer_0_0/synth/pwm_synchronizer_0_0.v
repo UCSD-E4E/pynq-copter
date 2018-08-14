@@ -63,15 +63,15 @@ module pwm_synchronizer_0_0 (
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN pwm_processing_system7_0_0_FCLK_CLK0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK CLK" *)
 input wire CLK;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST_IN, POLARITY ACTIVE_LOW" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST_IN, POLARITY ACTIVE_HIGH" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST_IN RST" *)
 input wire RST_IN;
-input wire [4 : 0] WR_DATA;
-output wire [504 : 0] RD_DATA;
+input wire [5 : 0] WR_DATA;
+output wire [605 : 0] RD_DATA;
 
   shiftreg #(
     .C_DEPTH(100),
-    .C_DATA_WIDTH(5),
+    .C_DATA_WIDTH(6),
     .C_RESET_VALUE(0)
   ) inst (
     .CLK(CLK),

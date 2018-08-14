@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Fri Aug 10 11:39:36 2018
+-- Date        : Tue Aug 14 10:28:38 2018
 -- Host        : apple running 64-bit Ubuntu 16.04.5 LTS
--- Command     : write_vhdl -force -mode funcsim -rename_top pwm_mixer_0_1 -prefix
---               pwm_mixer_0_1_ pwm_mixer_0_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_mixer_0_1/pwm_mixer_0_1_sim_netlist.vhdl
 -- Design      : pwm_mixer_0_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -105,6 +105,8 @@ entity pwm_mixer_0_1_mixer_AXILiteS_s_axi_ram is
     int_regs_in_V_write_reg : in STD_LOGIC;
     s_axi_AXILiteS_WVALID : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_AXILiteS_s_axi_ram : entity is "mixer_AXILiteS_s_axi_ram";
 end pwm_mixer_0_1_mixer_AXILiteS_s_axi_ram;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_AXILiteS_s_axi_ram is
@@ -754,6 +756,8 @@ entity pwm_mixer_0_1_mixer_m_V_m_axi_buffer is
     \bus_wide_gen.len_cnt_reg[1]\ : in STD_LOGIC;
     \usedw_reg[5]_0\ : in STD_LOGIC_VECTOR ( 6 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_m_V_m_axi_buffer : entity is "mixer_m_V_m_axi_buffer";
 end pwm_mixer_0_1_mixer_m_V_m_axi_buffer;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_m_V_m_axi_buffer is
@@ -3540,6 +3544,8 @@ entity pwm_mixer_0_1_mixer_m_V_m_axi_fifo is
     m_axi_m_V_WSTRB : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \dout_buf_reg[17]\ : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_m_V_m_axi_fifo : entity is "mixer_m_V_m_axi_fifo";
 end pwm_mixer_0_1_mixer_m_V_m_axi_fifo;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_m_V_m_axi_fifo is
@@ -6627,6 +6633,8 @@ entity pwm_mixer_0_1_mixer_m_V_m_axi_reg_slice is
     tmp_15_fu_1187_p4 : in STD_LOGIC_VECTOR ( 9 downto 0 );
     rs2f_wreq_ack : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_m_V_m_axi_reg_slice : entity is "mixer_m_V_m_axi_reg_slice";
 end pwm_mixer_0_1_mixer_m_V_m_axi_reg_slice;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_m_V_m_axi_reg_slice is
@@ -7083,6 +7091,8 @@ entity pwm_mixer_0_1_mixer_m_V_m_axi_throttl is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     ap_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_m_V_m_axi_throttl : entity is "mixer_m_V_m_axi_throttl";
 end pwm_mixer_0_1_mixer_m_V_m_axi_throttl;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_m_V_m_axi_throttl is
@@ -7305,6 +7315,8 @@ entity pwm_mixer_0_1_mixer_mul_53ns_49bkb_Mul6S_0 is
     grp_fu_545_ce : in STD_LOGIC;
     ap_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_mul_53ns_49bkb_Mul6S_0 : entity is "mixer_mul_53ns_49bkb_Mul6S_0";
 end pwm_mixer_0_1_mixer_mul_53ns_49bkb_Mul6S_0;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_mul_53ns_49bkb_Mul6S_0 is
@@ -43879,6 +43891,8 @@ entity pwm_mixer_0_1_mixer_mul_mul_16neOg_DSP48_1 is
     p_8_in : in STD_LOGIC;
     ap_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_mul_mul_16neOg_DSP48_1 : entity is "mixer_mul_mul_16neOg_DSP48_1";
 end pwm_mixer_0_1_mixer_mul_mul_16neOg_DSP48_1;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_mul_mul_16neOg_DSP48_1 is
@@ -44186,6 +44200,8 @@ entity pwm_mixer_0_1_mixer_mul_mul_16sdEe_DSP48_0 is
     grp_fu_1415_ce : in STD_LOGIC;
     ap_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_mul_mul_16sdEe_DSP48_0 : entity is "mixer_mul_mul_16sdEe_DSP48_0";
 end pwm_mixer_0_1_mixer_mul_mul_16sdEe_DSP48_0;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_mul_mul_16sdEe_DSP48_0 is
@@ -46001,6 +46017,8 @@ entity pwm_mixer_0_1_mixer_AXILiteS_s_axi is
     s_axi_AXILiteS_AWVALID : in STD_LOGIC;
     s_axi_AXILiteS_BREADY : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_AXILiteS_s_axi : entity is "mixer_AXILiteS_s_axi";
 end pwm_mixer_0_1_mixer_AXILiteS_s_axi;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_AXILiteS_s_axi is
@@ -47372,6 +47390,8 @@ entity pwm_mixer_0_1_mixer_m_V_m_axi_read is
     m_axi_m_V_RVALID : in STD_LOGIC;
     ap_rst_n : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_m_V_m_axi_read : entity is "mixer_m_V_m_axi_read";
 end pwm_mixer_0_1_mixer_m_V_m_axi_read;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_m_V_m_axi_read is
@@ -47644,6 +47664,8 @@ entity pwm_mixer_0_1_mixer_m_V_m_axi_write is
     m_axi_m_V_AWVALID : in STD_LOGIC;
     m_axi_m_V_BVALID : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_m_V_m_axi_write : entity is "mixer_m_V_m_axi_write";
 end pwm_mixer_0_1_mixer_m_V_m_axi_write;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_m_V_m_axi_write is
@@ -51322,6 +51344,8 @@ entity pwm_mixer_0_1_mixer_mul_53ns_49bkb is
     grp_fu_545_ce : in STD_LOGIC;
     ap_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_mul_53ns_49bkb : entity is "mixer_mul_53ns_49bkb";
 end pwm_mixer_0_1_mixer_mul_53ns_49bkb;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_mul_53ns_49bkb is
@@ -51480,6 +51504,8 @@ entity pwm_mixer_0_1_mixer_mul_mul_16neOg is
     p_8_in : in STD_LOGIC;
     ap_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_mul_mul_16neOg : entity is "mixer_mul_mul_16neOg";
 end pwm_mixer_0_1_mixer_mul_mul_16neOg;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_mul_mul_16neOg is
@@ -51503,6 +51529,8 @@ entity pwm_mixer_0_1_mixer_mul_mul_16sdEe is
     grp_fu_1415_ce : in STD_LOGIC;
     ap_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_mul_mul_16sdEe : entity is "mixer_mul_mul_16sdEe";
 end pwm_mixer_0_1_mixer_mul_mul_16sdEe;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_mul_mul_16sdEe is
@@ -51527,6 +51555,8 @@ entity pwm_mixer_0_1_mixer_sub_101ns_1cud_AddSubnS_0 is
     Q : in STD_LOGIC_VECTOR ( 67 downto 0 );
     tmp_58_reg_1732 : in STD_LOGIC_VECTOR ( 32 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_sub_101ns_1cud_AddSubnS_0 : entity is "mixer_sub_101ns_1cud_AddSubnS_0";
 end pwm_mixer_0_1_mixer_sub_101ns_1cud_AddSubnS_0;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_sub_101ns_1cud_AddSubnS_0 is
@@ -61007,6 +61037,8 @@ entity pwm_mixer_0_1_mixer_m_V_m_axi is
     m_axi_m_V_AWREADY : in STD_LOGIC;
     m_axi_m_V_BVALID : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_m_V_m_axi : entity is "mixer_m_V_m_axi";
 end pwm_mixer_0_1_mixer_m_V_m_axi;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_m_V_m_axi is
@@ -61203,6 +61235,8 @@ entity pwm_mixer_0_1_mixer_sub_101ns_1cud is
     Q : in STD_LOGIC_VECTOR ( 67 downto 0 );
     tmp_75_reg_1757 : in STD_LOGIC_VECTOR ( 32 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer_sub_101ns_1cud : entity is "mixer_sub_101ns_1cud";
 end pwm_mixer_0_1_mixer_sub_101ns_1cud;
 
 architecture STRUCTURE of pwm_mixer_0_1_mixer_sub_101ns_1cud is
@@ -61463,6 +61497,8 @@ entity pwm_mixer_0_1_mixer is
   attribute C_S_AXI_DATA_WIDTH of pwm_mixer_0_1_mixer : entity is 32;
   attribute C_S_AXI_WSTRB_WIDTH : integer;
   attribute C_S_AXI_WSTRB_WIDTH of pwm_mixer_0_1_mixer : entity is 4;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of pwm_mixer_0_1_mixer : entity is "mixer";
   attribute ap_ST_fsm_pp0_stage0 : string;
   attribute ap_ST_fsm_pp0_stage0 of pwm_mixer_0_1_mixer : entity is "6'b000001";
   attribute ap_ST_fsm_pp0_stage1 : string;

@@ -2669,8 +2669,8 @@ y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_t
       </xilinx:taxonomies>
       <xilinx:displayName>Mixer</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808131439</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-13T21:39:39Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808141009</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-14T17:10:31Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>

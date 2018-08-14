@@ -5,77 +5,124 @@ target triple = "x86_64-unknown-linux-gnu"
 @normalizer_str = internal unnamed_addr constant [11 x i8] c"normalizer\00"
 @llvm_global_ctors_1 = appending global [0 x void ()*] zeroinitializer
 @llvm_global_ctors_0 = appending global [0 x i32] zeroinitializer
-@changed = internal global i2 0
+@last_5 = internal unnamed_addr global i32 0
+@last_4 = internal unnamed_addr global i32 0
+@last_3 = internal unnamed_addr global i32 0
+@last_2 = internal unnamed_addr global i32 0
+@last_1 = internal unnamed_addr global i32 0
+@last_0 = internal unnamed_addr global i32 0
 @p_str5 = private unnamed_addr constant [4 x i8] c"off\00", align 1
 @p_str4 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1
 @p_str2 = private unnamed_addr constant [3 x i8] c"in\00", align 1
 @p_str1 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
 @p_str = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1
 
-define void @normalizer(i32* %regs_in_0, i32* %regs_in_1, i32* %regs_in_2, i32* %regs_in_3, i32* %regs_in_4, i32 %min_high, i32 %max_high, i16* %m_V) {
-._crit_edge.0:
-  call void (...)* @_ssdm_op_SpecBitsMap(i32* %regs_in_4), !map !41
-  call void (...)* @_ssdm_op_SpecBitsMap(i32* %regs_in_3), !map !47
-  call void (...)* @_ssdm_op_SpecBitsMap(i32* %regs_in_2), !map !53
-  call void (...)* @_ssdm_op_SpecBitsMap(i32* %regs_in_1), !map !59
-  call void (...)* @_ssdm_op_SpecBitsMap(i32* %regs_in_0), !map !65
-  call void (...)* @_ssdm_op_SpecBitsMap(i32 %min_high), !map !71
-  call void (...)* @_ssdm_op_SpecBitsMap(i32 %max_high), !map !77
-  call void (...)* @_ssdm_op_SpecBitsMap(i16* %m_V), !map !81
+define void @normalizer(i32* %regs_in_0, i32* %regs_in_1, i32* %regs_in_2, i32* %regs_in_3, i32* %regs_in_4, i32* %regs_in_5, i32 %min_high, i32 %max_high, i16* %m_V) {
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %regs_in_5), !map !41
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %regs_in_4), !map !47
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %regs_in_3), !map !53
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %regs_in_2), !map !59
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %regs_in_1), !map !65
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %regs_in_0), !map !71
+  call void (...)* @_ssdm_op_SpecBitsMap(i32 %min_high), !map !77
+  call void (...)* @_ssdm_op_SpecBitsMap(i32 %max_high), !map !83
+  call void (...)* @_ssdm_op_SpecBitsMap(i16* %m_V), !map !87
   call void (...)* @_ssdm_op_SpecTopModule([11 x i8]* @normalizer_str) nounwind
   %max_high_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %max_high)
   %min_high_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %min_high)
   call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [3 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32* %regs_in_0, i32* %regs_in_1, i32* %regs_in_2, i32* %regs_in_3, i32* %regs_in_4, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [3 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32* %regs_in_0, i32* %regs_in_1, i32* %regs_in_2, i32* %regs_in_3, i32* %regs_in_4, i32* %regs_in_5, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [3 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32 %min_high, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [3 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32 %max_high, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [3 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i16* %m_V, [6 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [4 x i8]* @p_str5, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
   call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind
-  %p_Val2_s = sub i32 %max_high_read, %min_high_read
-  %tmp = trunc i32 %p_Val2_s to i4
-  %range_V = call i6 @_ssdm_op_BitConcatenate.i6.i4.i2(i4 %tmp, i2 0)
   %regs_in_0_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_0)
-  %tmp_4 = icmp eq i32 %regs_in_0_read, 0
-  %changed_load = load i2* @changed, align 1
-  %changed_load_s = select i1 %tmp_4, i2 %changed_load, i2 0
+  %last_0_load = load i32* @last_0, align 16
+  %tmp_2 = icmp eq i32 %regs_in_0_read, %last_0_load
+  br i1 %tmp_2, label %._crit_edge.0, label %1
+
+; <label>:1                                       ; preds = %0
+  store i32 %regs_in_0_read, i32* @last_0, align 16
+  br label %._crit_edge.0
+
+._crit_edge.0:                                    ; preds = %1, %0
   %regs_in_1_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_1)
-  %tmp_4_1 = icmp eq i32 %regs_in_1_read, 0
-  %tmp_1 = or i32 %regs_in_1_read, %regs_in_0_read
-  %not_tmp_4_1 = xor i1 %tmp_4_1, true
-  %changed_new_1_cast = zext i1 %not_tmp_4_1 to i2
-  %changed_loc_1 = select i1 %tmp_4_1, i2 %changed_load_s, i2 1
+  %last_1_load = load i32* @last_1, align 4
+  %tmp_2_1 = icmp eq i32 %regs_in_1_read, %last_1_load
+  br i1 %tmp_2_1, label %._crit_edge.1, label %2
+
+; <label>:2                                       ; preds = %._crit_edge.0
+  store i32 %regs_in_1_read, i32* @last_1, align 4
+  br label %._crit_edge.1
+
+._crit_edge.1:                                    ; preds = %2, %._crit_edge.0
+  %changed_1_1 = phi i1 [ true, %2 ], [ false, %._crit_edge.0 ]
+  %changed_1_1_cast = zext i1 %changed_1_1 to i2
   %regs_in_2_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_2)
-  %tmp_4_2 = icmp eq i32 %regs_in_2_read, 0
-  %changed_new_1_s = select i1 %tmp_4_2, i2 %changed_new_1_cast, i2 -2
-  %changed_loc_1_s = select i1 %tmp_4_2, i2 %changed_loc_1, i2 -2
+  %last_2_load = load i32* @last_2, align 8
+  %tmp_2_2 = icmp eq i32 %regs_in_2_read, %last_2_load
+  br i1 %tmp_2_2, label %._crit_edge.2, label %3
+
+; <label>:3                                       ; preds = %._crit_edge.1
+  store i32 %regs_in_2_read, i32* @last_2, align 8
+  br label %._crit_edge.2
+
+._crit_edge.2:                                    ; preds = %3, %._crit_edge.1
+  %changed_1_2 = phi i2 [ -2, %3 ], [ %changed_1_1_cast, %._crit_edge.1 ]
   %regs_in_3_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_3)
-  %tmp_4_3 = icmp eq i32 %regs_in_3_read, 0
-  %tmp_8 = or i32 %regs_in_2_read, %regs_in_3_read
-  %tmp_9 = or i32 %tmp_8, %tmp_1
-  %tmp_3 = icmp eq i32 %tmp_9, 0
-  %changed_new_3 = select i1 %tmp_4_3, i2 %changed_new_1_s, i2 -1
-  %changed_loc_3 = select i1 %tmp_4_3, i2 %changed_loc_1_s, i2 -1
-  %tmp_2 = zext i2 %changed_loc_3 to i64
-  %changed_load_t = zext i2 %changed_loc_3 to i3
-  br i1 %tmp_3, label %._crit_edge.3.new, label %mergeST
+  %last_3_load = load i32* @last_3, align 4
+  %tmp_2_3 = icmp eq i32 %regs_in_3_read, %last_3_load
+  br i1 %tmp_2_3, label %._crit_edge.3, label %4
 
-mergeST:                                          ; preds = %._crit_edge.0
-  store i2 %changed_new_3, i2* @changed, align 1
-  br label %._crit_edge.3.new
+; <label>:4                                       ; preds = %._crit_edge.2
+  store i32 %regs_in_3_read, i32* @last_3, align 4
+  br label %._crit_edge.3
 
-._crit_edge.3.new:                                ; preds = %mergeST, %._crit_edge.0
-  %regs_in_load_phi = call i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32 %regs_in_0_read, i32 %regs_in_1_read, i32 %regs_in_2_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i3 %changed_load_t)
-  %p_Val2_1 = sub i32 %regs_in_load_phi, %min_high_read
-  %tmp_5 = trunc i32 %p_Val2_1 to i4
-  %tmp_6 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %tmp_5, i4 0)
-  %tmp_7 = zext i6 %range_V to i8
-  %p_Val2_2 = udiv i8 %tmp_6, %tmp_7
-  %tmp_10 = trunc i8 %p_Val2_2 to i3
-  %tmp_s = call i16 @_ssdm_op_BitConcatenate.i16.i3.i13(i3 %tmp_10, i13 0)
-  %m_V_addr = getelementptr i16* %m_V, i64 %tmp_2
+._crit_edge.3:                                    ; preds = %4, %._crit_edge.2
+  %changed_1_3 = phi i2 [ -1, %4 ], [ %changed_1_2, %._crit_edge.2 ]
+  %changed_1_3_cast = zext i2 %changed_1_3 to i3
+  %regs_in_4_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_4)
+  %last_4_load = load i32* @last_4, align 16
+  %tmp_2_4 = icmp eq i32 %regs_in_4_read, %last_4_load
+  br i1 %tmp_2_4, label %._crit_edge.4, label %5
+
+; <label>:5                                       ; preds = %._crit_edge.3
+  store i32 %regs_in_4_read, i32* @last_4, align 16
+  br label %._crit_edge.4
+
+._crit_edge.4:                                    ; preds = %5, %._crit_edge.3
+  %changed_1_4 = phi i3 [ -4, %5 ], [ %changed_1_3_cast, %._crit_edge.3 ]
+  %regs_in_5_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_5)
+  %last_5_load = load i32* @last_5, align 4
+  %tmp_2_5 = icmp eq i32 %regs_in_5_read, %last_5_load
+  br i1 %tmp_2_5, label %._crit_edge.5, label %6
+
+; <label>:6                                       ; preds = %._crit_edge.4
+  store i32 %regs_in_5_read, i32* @last_5, align 4
+  br label %._crit_edge.5
+
+._crit_edge.5:                                    ; preds = %6, %._crit_edge.4
+  %changed_1_5 = phi i3 [ -3, %6 ], [ %changed_1_4, %._crit_edge.4 ]
+  %tmp = call i1 @_ssdm_op_BitSelect.i1.i3.i32(i3 %changed_1_5, i32 2)
+  br i1 %tmp, label %._crit_edge40, label %branch0
+
+branch0:                                          ; preds = %._crit_edge.5
+  %tmp_3 = zext i3 %changed_1_5 to i64
+  %regs_in_load_1_phi = call i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32 %regs_in_0_read, i32 %regs_in_1_read, i32 %regs_in_2_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i3 %changed_1_5)
+  %p_Val2_s = sub i32 %regs_in_load_1_phi, %min_high_read
+  %p_Val2_1 = sub i32 %max_high_read, %min_high_read
+  %tmp_7 = call i48 @_ssdm_op_BitConcatenate.i48.i32.i16(i32 %p_Val2_1, i16 0)
+  %tmp_9 = call i63 @_ssdm_op_BitConcatenate.i63.i32.i31(i32 %p_Val2_s, i31 0)
+  %tmp_cast = zext i48 %tmp_7 to i63
+  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
+  %tmp_1 = trunc i63 %tmp_5 to i16
+  %m_V_addr = getelementptr i16* %m_V, i64 %tmp_3
   %m_V_addr_req = call i1 @_ssdm_op_WriteReq.m_axi.i16P(i16* %m_V_addr, i32 1)
-  call void @_ssdm_op_Write.m_axi.i16P(i16* %m_V_addr, i16 %tmp_s, i2 -1)
+  call void @_ssdm_op_Write.m_axi.i16P(i16* %m_V_addr, i16 %tmp_1, i2 -1)
   %m_V_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %m_V_addr)
+  br label %._crit_edge40
+
+._crit_edge40:                                    ; preds = %._crit_edge.5, %branch0
   ret void
 }
 
@@ -127,9 +174,7 @@ entry:
   ret i32 %0
 }
 
-declare i4 @_ssdm_op_PartSelect.i4.i32.i32.i32(i32, i32, i32) nounwind readnone
-
-declare i3 @_ssdm_op_PartSelect.i3.i8.i32.i32(i8, i32, i32) nounwind readnone
+declare i16 @_ssdm_op_PartSelect.i16.i63.i32.i32(i63, i32, i32) nounwind readnone
 
 define weak i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32, i32, i32, i32, i32, i32, i32, i32, i3) {
 entry:
@@ -169,31 +214,31 @@ case7:                                            ; preds = %entry
   br label %case0
 }
 
-define weak i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4, i4) nounwind readnone {
+define weak i1 @_ssdm_op_BitSelect.i1.i3.i32(i3, i32) nounwind readnone {
 entry:
-  %empty = zext i4 %0 to i8
-  %empty_2 = zext i4 %1 to i8
-  %empty_3 = shl i8 %empty, 4
-  %empty_4 = or i8 %empty_3, %empty_2
-  ret i8 %empty_4
+  %empty = trunc i32 %1 to i3
+  %empty_2 = shl i3 1, %empty
+  %empty_3 = and i3 %0, %empty_2
+  %empty_4 = icmp ne i3 %empty_3, 0
+  ret i1 %empty_4
 }
 
-define weak i6 @_ssdm_op_BitConcatenate.i6.i4.i2(i4, i2) nounwind readnone {
+define weak i63 @_ssdm_op_BitConcatenate.i63.i32.i31(i32, i31) nounwind readnone {
 entry:
-  %empty = zext i4 %0 to i6
-  %empty_5 = zext i2 %1 to i6
-  %empty_6 = shl i6 %empty, 2
-  %empty_7 = or i6 %empty_6, %empty_5
-  ret i6 %empty_7
+  %empty = zext i32 %0 to i63
+  %empty_5 = zext i31 %1 to i63
+  %empty_6 = shl i63 %empty, 31
+  %empty_7 = or i63 %empty_6, %empty_5
+  ret i63 %empty_7
 }
 
-define weak i16 @_ssdm_op_BitConcatenate.i16.i3.i13(i3, i13) nounwind readnone {
+define weak i48 @_ssdm_op_BitConcatenate.i48.i32.i16(i32, i16) nounwind readnone {
 entry:
-  %empty = zext i3 %0 to i16
-  %empty_8 = zext i13 %1 to i16
-  %empty_9 = shl i16 %empty, 13
-  %empty_10 = or i16 %empty_9, %empty_8
-  ret i16 %empty_10
+  %empty = zext i32 %0 to i48
+  %empty_8 = zext i16 %1 to i48
+  %empty_9 = shl i48 %empty, 16
+  %empty_10 = or i48 %empty_9, %empty_8
+  ret i48 %empty_10
 }
 
 !opencl.kernels = !{!0, !7, !13, !13, !13, !15, !21, !24, !24, !15, !15, !15, !25, !25, !28, !30, !30, !15, !32, !32, !24, !15, !15}
@@ -214,7 +259,7 @@ entry:
 !11 = metadata !{metadata !"kernel_arg_type_qual", metadata !""}
 !12 = metadata !{metadata !"kernel_arg_name", metadata !"op"}
 !13 = metadata !{null, metadata !8, metadata !9, metadata !14, metadata !11, metadata !12, metadata !6}
-!14 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_fixed_base<8, 6, false, (enum ap_q_mode)5, (enum ap_o_mode)3, 0> &"}
+!14 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_fixed_base<64, 48, false, (enum ap_q_mode)5, (enum ap_o_mode)3, 0> &"}
 !15 = metadata !{null, metadata !16, metadata !17, metadata !18, metadata !19, metadata !20, metadata !6}
 !16 = metadata !{metadata !"kernel_arg_addr_space"}
 !17 = metadata !{metadata !"kernel_arg_access_qual"}
@@ -222,7 +267,7 @@ entry:
 !19 = metadata !{metadata !"kernel_arg_type_qual"}
 !20 = metadata !{metadata !"kernel_arg_name"}
 !21 = metadata !{null, metadata !8, metadata !9, metadata !22, metadata !11, metadata !23, metadata !6}
-!22 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_fixed_base<6, 4, false, (enum ap_q_mode)5, (enum ap_o_mode)3, 0> &"}
+!22 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_fixed_base<48, 32, false, (enum ap_q_mode)5, (enum ap_o_mode)3, 0> &"}
 !23 = metadata !{metadata !"kernel_arg_name", metadata !"op2"}
 !24 = metadata !{null, metadata !8, metadata !9, metadata !22, metadata !11, metadata !12, metadata !6}
 !25 = metadata !{null, metadata !8, metadata !9, metadata !26, metadata !11, metadata !27, metadata !6}
@@ -246,44 +291,50 @@ entry:
 !43 = metadata !{metadata !44}
 !44 = metadata !{metadata !"regs_in", metadata !45, metadata !"unsigned int", i32 0, i32 31}
 !45 = metadata !{metadata !46}
-!46 = metadata !{i32 4, i32 4, i32 2}
+!46 = metadata !{i32 5, i32 5, i32 2}
 !47 = metadata !{metadata !48}
 !48 = metadata !{i32 0, i32 31, metadata !49}
 !49 = metadata !{metadata !50}
 !50 = metadata !{metadata !"regs_in", metadata !51, metadata !"unsigned int", i32 0, i32 31}
 !51 = metadata !{metadata !52}
-!52 = metadata !{i32 3, i32 3, i32 2}
+!52 = metadata !{i32 4, i32 4, i32 2}
 !53 = metadata !{metadata !54}
 !54 = metadata !{i32 0, i32 31, metadata !55}
 !55 = metadata !{metadata !56}
 !56 = metadata !{metadata !"regs_in", metadata !57, metadata !"unsigned int", i32 0, i32 31}
 !57 = metadata !{metadata !58}
-!58 = metadata !{i32 2, i32 2, i32 2}
+!58 = metadata !{i32 3, i32 3, i32 2}
 !59 = metadata !{metadata !60}
 !60 = metadata !{i32 0, i32 31, metadata !61}
 !61 = metadata !{metadata !62}
 !62 = metadata !{metadata !"regs_in", metadata !63, metadata !"unsigned int", i32 0, i32 31}
 !63 = metadata !{metadata !64}
-!64 = metadata !{i32 1, i32 1, i32 2}
+!64 = metadata !{i32 2, i32 2, i32 2}
 !65 = metadata !{metadata !66}
 !66 = metadata !{i32 0, i32 31, metadata !67}
 !67 = metadata !{metadata !68}
 !68 = metadata !{metadata !"regs_in", metadata !69, metadata !"unsigned int", i32 0, i32 31}
 !69 = metadata !{metadata !70}
-!70 = metadata !{i32 0, i32 0, i32 2}
+!70 = metadata !{i32 1, i32 1, i32 2}
 !71 = metadata !{metadata !72}
 !72 = metadata !{i32 0, i32 31, metadata !73}
 !73 = metadata !{metadata !74}
-!74 = metadata !{metadata !"min_high", metadata !75, metadata !"unsigned int", i32 0, i32 31}
+!74 = metadata !{metadata !"regs_in", metadata !75, metadata !"unsigned int", i32 0, i32 31}
 !75 = metadata !{metadata !76}
-!76 = metadata !{i32 0, i32 0, i32 0}
+!76 = metadata !{i32 0, i32 0, i32 2}
 !77 = metadata !{metadata !78}
 !78 = metadata !{i32 0, i32 31, metadata !79}
 !79 = metadata !{metadata !80}
-!80 = metadata !{metadata !"max_high", metadata !75, metadata !"unsigned int", i32 0, i32 31}
+!80 = metadata !{metadata !"min_high", metadata !81, metadata !"unsigned int", i32 0, i32 31}
 !81 = metadata !{metadata !82}
-!82 = metadata !{i32 0, i32 15, metadata !83}
+!82 = metadata !{i32 0, i32 0, i32 0}
 !83 = metadata !{metadata !84}
-!84 = metadata !{metadata !"m.V", metadata !85, metadata !"int16", i32 0, i32 15}
+!84 = metadata !{i32 0, i32 31, metadata !85}
 !85 = metadata !{metadata !86}
-!86 = metadata !{i32 0, i32 4095, i32 1}
+!86 = metadata !{metadata !"max_high", metadata !81, metadata !"unsigned int", i32 0, i32 31}
+!87 = metadata !{metadata !88}
+!88 = metadata !{i32 0, i32 15, metadata !89}
+!89 = metadata !{metadata !90}
+!90 = metadata !{metadata !"m.V", metadata !91, metadata !"int16", i32 0, i32 15}
+!91 = metadata !{metadata !92}
+!92 = metadata !{i32 0, i32 4095, i32 1}

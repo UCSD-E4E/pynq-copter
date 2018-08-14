@@ -40,8 +40,6 @@
 #include "ap_int.h"
 #include "ap_fixed.h"
 #include "../pwm/pwm.hpp"
-#define PWM_ARR_OFFSET 0x30
-#define PWM_ARR_INDEX (PWM_ARR_OFFSET/sizeof(F_t))
 
 #define clip(in,low,high) (in<low?low:(in>high?high:in))
 typedef ap_fixed<RESOLUTION+3,4> bigF_t;

@@ -14,7 +14,7 @@
 <TargetClockPeriod>4.00</TargetClockPeriod>
 <ClockUncertainty>0.50</ClockUncertainty>
 <TargetInitiationInterval>1</TargetInitiationInterval>
-<EstimatedClockPeriod>43.48</EstimatedClockPeriod>
+<EstimatedClockPeriod>52.67</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>8</Best-caseLatency>
@@ -28,8 +28,8 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>2</BRAM_18K>
-<FF>893</FF>
-<LUT>1744</LUT>
+<FF>960</FF>
+<LUT>1955</LUT>
 <DSP48E>0</DSP48E>
 </Resources>
 </AreaEstimates>
@@ -836,7 +836,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>5</Bits>
+<Bits>6</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>

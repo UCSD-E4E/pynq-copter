@@ -5,7 +5,7 @@ target triple = "x86_64-unknown-linux-gnu"
 @rc_receiver_str = internal unnamed_addr constant [12 x i8] c"rc_receiver\00"
 @llvm_global_ctors_1 = appending global [2 x void ()*] [void ()* @_GLOBAL__I_a, void ()* @_GLOBAL__I_a12]
 @llvm_global_ctors_0 = appending global [2 x i32] [i32 65535, i32 65535]
-@last_on_V = internal unnamed_addr global i5 0
+@last_on_V = internal unnamed_addr global i6 0
 @acc = internal unnamed_addr global i32 0, align 4
 @p_str6 = private unnamed_addr constant [8 x i8] c"ap_none\00", align 1
 @p_str5 = private unnamed_addr constant [4 x i8] c"off\00", align 1
@@ -14,32 +14,32 @@ target triple = "x86_64-unknown-linux-gnu"
 @p_str2 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
 @p_str = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1
 
-define void @rc_receiver(i32* %norm_out, i5 %channels_V) {
+define void @rc_receiver(i32* %norm_out, i6 %channels_V) {
 codeRepl:
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %norm_out), !map !73
-  call void (...)* @_ssdm_op_SpecBitsMap(i5 %channels_V), !map !79
+  call void (...)* @_ssdm_op_SpecBitsMap(i6 %channels_V), !map !79
   call void (...)* @_ssdm_op_SpecTopModule([12 x i8]* @rc_receiver_str) nounwind
-  %channels_V_read = call i5 @_ssdm_op_Read.ap_none.i5(i5 %channels_V)
+  %channels_V_read = call i6 @_ssdm_op_Read.ap_none.i6(i6 %channels_V)
   call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [3 x i8]* @p_str3, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32* %norm_out, [6 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str2, [4 x i8]* @p_str5, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2)
-  call void (...)* @_ssdm_op_SpecInterface(i5 %channels_V, [8 x i8]* @p_str6, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i6 %channels_V, [8 x i8]* @p_str6, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
   call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
-  %p_Val2_s = load i5* @last_on_V, align 1
-  %tmp_1 = trunc i5 %channels_V_read to i1
+  %p_Val2_s = load i6* @last_on_V, align 1
+  %tmp_1 = trunc i6 %channels_V_read to i1
   %acc_load = load i32* @acc, align 4
   %tmp_5 = add i32 1, %acc_load
   %acc_loc = select i1 %tmp_1, i32 %tmp_5, i32 %acc_load
-  %tmp_2 = trunc i5 %p_Val2_s to i1
+  %tmp_2 = trunc i6 %p_Val2_s to i1
   %tmp_6 = xor i1 %tmp_1, true
   %tmp_7 = and i1 %tmp_2, %tmp_6
   %tmp_9 = icmp ugt i32 %acc_loc, 10
   %or_cond = and i1 %tmp_7, %tmp_9
   %p_acc_loc = select i1 %or_cond, i32 0, i32 %acc_loc
   %acc_loc_s = select i1 %or_cond, i32 %acc_loc, i32 0
-  %tmp_8 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %channels_V_read, i32 1)
+  %tmp_8 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %channels_V_read, i32 1)
   %tmp_5_1 = add i32 1, %p_acc_loc
   %acc_new_1 = select i1 %tmp_8, i32 %tmp_5_1, i32 %p_acc_loc
-  %tmp_10 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %p_Val2_s, i32 1)
+  %tmp_10 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %p_Val2_s, i32 1)
   %tmp_6_1 = xor i1 %tmp_8, true
   %tmp_7_1 = and i1 %tmp_10, %tmp_6_1
   %tmp_9_1 = icmp ugt i32 %acc_new_1, 10
@@ -47,74 +47,89 @@ codeRepl:
   %p_acc_new_1 = select i1 %or_cond_1, i32 0, i32 %acc_new_1
   %p_cast = zext i1 %or_cond_1 to i2
   %write_val_2_1_write_s = select i1 %or_cond_1, i32 %acc_new_1, i32 %acc_loc_s
-  %tmp_11 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %channels_V_read, i32 2)
+  %tmp_11 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %channels_V_read, i32 2)
   %tmp_5_2 = add i32 1, %p_acc_new_1
   %acc_new_3 = select i1 %tmp_11, i32 %tmp_5_2, i32 %p_acc_new_1
-  %tmp_12 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %p_Val2_s, i32 2)
+  %tmp_12 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %p_Val2_s, i32 2)
   %tmp_6_2 = xor i1 %tmp_11, true
   %tmp_7_2 = and i1 %tmp_12, %tmp_6_2
   %tmp_9_2 = icmp ugt i32 %acc_new_3, 10
   %or_cond_2 = and i1 %tmp_7_2, %tmp_9_2
   %p_acc_new_3 = select i1 %or_cond_2, i32 0, i32 %acc_new_3
-  %p_write_to_1_1 = select i1 %or_cond_2, i2 -2, i2 %p_cast
-  %p_write_to_1_1_cast = zext i2 %p_write_to_1_1 to i3
   %write_val_2_2_write_s = select i1 %or_cond_2, i32 %acc_new_3, i32 %write_val_2_1_write_s
-  %tmp_13 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %channels_V_read, i32 3)
+  %tmp_13 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %channels_V_read, i32 3)
   %tmp_5_3 = add i32 1, %p_acc_new_3
   %acc_new_5 = select i1 %tmp_13, i32 %tmp_5_3, i32 %p_acc_new_3
-  %tmp_14 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %p_Val2_s, i32 3)
+  %tmp_14 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %p_Val2_s, i32 3)
   %tmp_6_3 = xor i1 %tmp_13, true
   %tmp_7_3 = and i1 %tmp_14, %tmp_6_3
   %tmp_9_3 = icmp ugt i32 %acc_new_5, 10
   %or_cond_3 = and i1 %tmp_7_3, %tmp_9_3
   %p_acc_new_5 = select i1 %or_cond_3, i32 0, i32 %acc_new_5
+  %p_write_to_1_1 = select i1 %or_cond_3, i2 -1, i2 -2
+  %tmp = or i1 %or_cond_3, %or_cond_2
+  %p_write_to_1_2 = select i1 %tmp, i2 %p_write_to_1_1, i2 %p_cast
+  %p_write_to_1_2_cast = zext i2 %p_write_to_1_2 to i3
   %write_val_2_3_write_s = select i1 %or_cond_3, i32 %acc_new_5, i32 %write_val_2_2_write_s
-  %tmp_15 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %channels_V_read, i32 4)
+  %tmp_15 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %channels_V_read, i32 4)
   %tmp_5_4 = add i32 1, %p_acc_new_5
   %acc_new_7 = select i1 %tmp_15, i32 %tmp_5_4, i32 %p_acc_new_5
-  %tmp_16 = call i1 @_ssdm_op_BitSelect.i1.i5.i32(i5 %p_Val2_s, i32 4)
+  %tmp_16 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %p_Val2_s, i32 4)
   %tmp_6_4 = xor i1 %tmp_15, true
   %tmp_7_4 = and i1 %tmp_16, %tmp_6_4
   %tmp_9_4 = icmp ugt i32 %acc_new_7, 10
   %or_cond_4 = and i1 %tmp_7_4, %tmp_9_4
-  %tmp2 = or i1 %or_cond, %tmp_1
-  %tmp4 = or i1 %or_cond_1, %tmp_11
-  %tmp3 = or i1 %tmp4, %tmp_8
-  %tmp1 = or i1 %tmp3, %tmp2
-  %tmp6 = or i1 %or_cond_2, %tmp_13
-  %tmp8 = or i1 %tmp_15, %or_cond_4
-  %tmp7 = or i1 %tmp8, %or_cond_3
-  %tmp5 = or i1 %tmp7, %tmp6
-  %p_acc_flag_7 = or i1 %tmp5, %tmp1
   %p_acc_new_7 = select i1 %or_cond_4, i32 0, i32 %acc_new_7
-  %p_write_to_1_2 = select i1 %or_cond_4, i3 -4, i3 3
-  %tmp = or i1 %or_cond_4, %or_cond_3
-  %p_write_to_1_3 = select i1 %tmp, i3 %p_write_to_1_2, i3 %p_write_to_1_1_cast
-  %tmp9 = or i1 %or_cond_1, %or_cond
-  %tmp10 = or i1 %tmp, %or_cond_2
-  %p_should_write_1_3 = or i1 %tmp10, %tmp9
   %write_val_2_4_write_s = select i1 %or_cond_4, i32 %acc_new_7, i32 %write_val_2_3_write_s
-  br i1 %p_acc_flag_7, label %mergeST, label %._crit_edge30.4.new
+  %tmp_17 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %channels_V_read, i32 5)
+  %tmp_5_5 = add i32 1, %p_acc_new_7
+  %acc_new_9 = select i1 %tmp_17, i32 %tmp_5_5, i32 %p_acc_new_7
+  %tmp_18 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %p_Val2_s, i32 5)
+  %tmp_6_5 = xor i1 %tmp_17, true
+  %tmp_7_5 = and i1 %tmp_18, %tmp_6_5
+  %tmp_9_5 = icmp ugt i32 %acc_new_9, 10
+  %or_cond_5 = and i1 %tmp_7_5, %tmp_9_5
+  %tmp3 = or i1 %tmp_1, %tmp_8
+  %tmp2 = or i1 %tmp3, %or_cond
+  %tmp5 = or i1 %tmp_11, %or_cond_2
+  %tmp4 = or i1 %tmp5, %or_cond_1
+  %tmp1 = or i1 %tmp4, %tmp2
+  %tmp8 = or i1 %or_cond_3, %tmp_15
+  %tmp7 = or i1 %tmp8, %tmp_13
+  %tmp10 = or i1 %tmp_17, %or_cond_5
+  %tmp9 = or i1 %tmp10, %or_cond_4
+  %tmp6 = or i1 %tmp9, %tmp7
+  %p_acc_flag_9 = or i1 %tmp6, %tmp1
+  %p_acc_new_9 = select i1 %or_cond_5, i32 0, i32 %acc_new_9
+  %p_write_to_1_3 = select i1 %or_cond_5, i3 -3, i3 -4
+  %tmp_s = or i1 %or_cond_5, %or_cond_4
+  %p_write_to_1_4 = select i1 %tmp_s, i3 %p_write_to_1_3, i3 %p_write_to_1_2_cast
+  %tmp12 = or i1 %or_cond, %or_cond_2
+  %tmp11 = or i1 %tmp12, %or_cond_1
+  %tmp13 = or i1 %tmp_s, %or_cond_3
+  %p_should_write_1_4 = or i1 %tmp13, %tmp11
+  %write_val_2_5_write_s = select i1 %or_cond_5, i32 %acc_new_9, i32 %write_val_2_4_write_s
+  br i1 %p_acc_flag_9, label %mergeST, label %._crit_edge30.5.new
 
-; <label>:0                                       ; preds = %._crit_edge30.4.new
-  %tmp_3 = call i4 @_ssdm_op_BitConcatenate.i4.i3.i1(i3 %p_write_to_1_3, i1 false)
+; <label>:0                                       ; preds = %._crit_edge30.5.new
+  %tmp_3 = call i4 @_ssdm_op_BitConcatenate.i4.i3.i1(i3 %p_write_to_1_4, i1 false)
   %tmp_4 = zext i4 %tmp_3 to i64
   %norm_out_addr = getelementptr i32* %norm_out, i64 %tmp_4
   %norm_out_addr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %norm_out_addr, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %norm_out_addr, i32 %write_val_2_4_write_s, i4 -1)
+  call void @_ssdm_op_Write.m_axi.i32P(i32* %norm_out_addr, i32 %write_val_2_5_write_s, i4 -1)
   %norm_out_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %norm_out_addr)
   br label %._crit_edge31
 
-._crit_edge31:                                    ; preds = %._crit_edge30.4.new, %0
-  store i5 %channels_V_read, i5* @last_on_V, align 1
+._crit_edge31:                                    ; preds = %._crit_edge30.5.new, %0
+  store i6 %channels_V_read, i6* @last_on_V, align 1
   ret void
 
 mergeST:                                          ; preds = %codeRepl
-  store i32 %p_acc_new_7, i32* @acc, align 4
-  br label %._crit_edge30.4.new
+  store i32 %p_acc_new_9, i32* @acc, align 4
+  br label %._crit_edge30.5.new
 
-._crit_edge30.4.new:                              ; preds = %mergeST, %codeRepl
-  br i1 %p_should_write_1_3, label %0, label %._crit_edge31
+._crit_edge30.5.new:                              ; preds = %mergeST, %codeRepl
+  br i1 %p_should_write_1_4, label %0, label %._crit_edge31
 }
 
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
@@ -154,19 +169,19 @@ entry:
   ret void
 }
 
-define weak i5 @_ssdm_op_Read.ap_none.i5(i5) {
+define weak i6 @_ssdm_op_Read.ap_none.i6(i6) {
 entry:
-  ret i5 %0
+  ret i6 %0
 }
 
-declare i1 @_ssdm_op_PartSelect.i1.i5.i32.i32(i5, i32, i32) nounwind readnone
+declare i1 @_ssdm_op_PartSelect.i1.i6.i32.i32(i6, i32, i32) nounwind readnone
 
-define weak i1 @_ssdm_op_BitSelect.i1.i5.i32(i5, i32) nounwind readnone {
+define weak i1 @_ssdm_op_BitSelect.i1.i6.i32(i6, i32) nounwind readnone {
 entry:
-  %empty = trunc i32 %1 to i5
-  %empty_2 = shl i5 1, %empty
-  %empty_3 = and i5 %0, %empty_2
-  %empty_4 = icmp ne i5 %empty_3, 0
+  %empty = trunc i32 %1 to i6
+  %empty_2 = shl i6 1, %empty
+  %empty_3 = and i6 %0, %empty_2
+  %empty_4 = icmp ne i6 %empty_3, 0
   ret i1 %empty_4
 }
 
@@ -197,7 +212,7 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}
 !8 = metadata !{metadata !"kernel_arg_addr_space", i32 0}
 !9 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none"}
-!10 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_uint<5> &"}
+!10 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_uint<6> &"}
 !11 = metadata !{metadata !"kernel_arg_type_qual", metadata !""}
 !12 = metadata !{metadata !"kernel_arg_name", metadata !"op2"}
 !13 = metadata !{null, metadata !14, metadata !15, metadata !16, metadata !17, metadata !18, metadata !6}
@@ -210,7 +225,7 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !20 = metadata !{metadata !"kernel_arg_type", metadata !"int"}
 !21 = metadata !{metadata !"kernel_arg_name", metadata !"index"}
 !22 = metadata !{null, metadata !1, metadata !2, metadata !23, metadata !4, metadata !24, metadata !6}
-!23 = metadata !{metadata !"kernel_arg_type", metadata !"ap_int_base<5, false>*", metadata !"int"}
+!23 = metadata !{metadata !"kernel_arg_type", metadata !"ap_int_base<6, false>*", metadata !"int"}
 !24 = metadata !{metadata !"kernel_arg_name", metadata !"bv", metadata !"index"}
 !25 = metadata !{null, metadata !8, metadata !9, metadata !20, metadata !11, metadata !26, metadata !6}
 !26 = metadata !{metadata !"kernel_arg_name", metadata !"val"}
@@ -267,8 +282,8 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !77 = metadata !{metadata !78}
 !78 = metadata !{i32 0, i32 4095, i32 1}
 !79 = metadata !{metadata !80}
-!80 = metadata !{i32 0, i32 4, metadata !81}
+!80 = metadata !{i32 0, i32 5, metadata !81}
 !81 = metadata !{metadata !82}
-!82 = metadata !{metadata !"channels.V", metadata !83, metadata !"uint5", i32 0, i32 4}
+!82 = metadata !{metadata !"channels.V", metadata !83, metadata !"uint6", i32 0, i32 5}
 !83 = metadata !{metadata !84}
 !84 = metadata !{i32 0, i32 0, i32 0}

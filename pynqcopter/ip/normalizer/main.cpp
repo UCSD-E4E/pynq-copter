@@ -42,54 +42,30 @@
 using namespace std;
 
 #include "normalizer.hpp"
+//void normalizer(unsigned int regs_in[CHANNELS],unsigned int min_high, unsigned int max_high, F_t m[6]);
 
 int main() {
 //	char delim = '\t';
 //	ofstream myfile;
 //	myfile.open("out.csv");
-//    F_t regs[4] = { 0x0,0x0,0x0,0x0 };
+//    unsigned int regs[6] = { 0x0,0x18800,0x18800,0x18800,0x18800,0x18800 };
 //    F_t m[6];
 //
 //    //setup
 //    cout << "------------------" << endl;
 //    cout << "---  TESTBENCH ---" << endl;
 //    cout << "------------------" << endl;
-
-//    for(F_t i =0; i < 1-F_t(1.0/128); i=i+F_t(1.0/128))
+//
+//    for(unsigned int i =0x18800; i < 0x31800; i+=0x10)
 //    {
-//    	regs[3]=i;
-//        mixer(regs,m);
-//        myfile <<i<<delim<<m[0]<<delim<<m[1]<<delim<<m[2]<<delim<<m[3]<<delim<<m[4]<<delim<<m[5]<<endl;
+//    	regs[0]=i;
+//        normalizer(regs,0x18000,0x32000,m);
+//        cout << m[0] <<endl;
+//        myfile <<i<<","<<m[0]<<endl;
 //    }
-//    for(F_t i =1-F_t(1.0/128); i >=.5; i=i-F_t(1.0/128))
-//   	{
-//   		regs[3]=i;
-//   		mixer(regs,m);
-//   		myfile <<i<<delim<<m[0]<<delim<<m[1]<<delim<<m[2]<<delim<<m[3]<<delim<<m[4]<<delim<<m[5]<<endl;
-//   	}
-//    regs[3]=.5;
-//    for(F_t i =-1; i < 1-F_t(1.0/128); i=i+F_t(1.0/128))
-//   	{
-//   		regs[0]=i;
-//   		mixer(regs,m);
-//   		myfile <<i<<delim<<m[0]<<delim<<m[1]<<delim<<m[2]<<delim<<m[3]<<delim<<m[4]<<delim<<m[5]<<endl;
-//   	}
-//    regs[0]=0;
-//    for(F_t i =-1; i < 1-F_t(1.0/128); i=i+F_t(1.0/128))
-//	{
-//		regs[1]=i;
-//		mixer(regs,m);
-//		myfile <<i<<delim<<m[0]<<delim<<m[1]<<delim<<m[2]<<delim<<m[3]<<delim<<m[4]<<delim<<m[5]<<endl;
-//	}
-//    regs[1]=0;
-//    for(F_t i =-1; i < 1-F_t(1.0/128); i=i+F_t(1.0/128))
-//    	{
-//    		regs[2]=i;
-//    		mixer(regs,m);
-//    		myfile <<i<<delim<<m[0]<<delim<<m[1]<<delim<<m[2]<<delim<<m[3]<<delim<<m[4]<<delim<<m[5]<<endl;
-//    	}
+//
 //    myfile.close();
-
+//
 
     return 0;
 }

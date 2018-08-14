@@ -35403,9 +35403,9 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 # 43 "./normalizer.hpp" 2
 # 41 "normalizer.cpp" 2
 # 63 "normalizer.cpp"
-typedef ap_ufixed<sizeof(unsigned int)+sizeof(F_t),sizeof(unsigned int)> bigBigF_t;
+typedef ap_ufixed<sizeof(unsigned int)*8+sizeof(F_t)*8,sizeof(unsigned int)*8> bigBigF_t;
 
-void normalizer(unsigned int regs_in[5],unsigned int min_high, unsigned int max_high, F_t m[4096]) {_ssdm_SpecArrayDimSize(regs_in,5);_ssdm_SpecArrayDimSize(m,4096);
+void normalizer(unsigned int regs_in[6],unsigned int min_high, unsigned int max_high, F_t m[4096]) {_ssdm_SpecArrayDimSize(regs_in,6);_ssdm_SpecArrayDimSize(m,4096);
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "in", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(regs_in, "s_axilite", 0, 0, "", 0, 0, "in", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(min_high, "s_axilite", 0, 0, "", 0, 0, "in", "", "", 0, 0, 0, 0, "", "");
@@ -35416,18 +35416,16 @@ _ssdm_op_SpecInterface(m, "m_axi", 0, 0, "", 0, 0, "", "off", "", 16, 16, 16, 16
 
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 
- bigBigF_t range = max_high-min_high;
+ static unsigned int last[6] = {0,0,0,0,0,0};
 
- static unsigned int last[5] = {0,0,0,0,0};
-
-
- static unsigned int changed=0;
- for(int i =0; i < 4; ++i) {
+ int changed=0;
+ for(int i =0; i < 6; ++i) {
   if(regs_in[i]!=last[i]) {
    changed=i;
+   last[i]=regs_in[i];
   }
  }
-
- m[changed]= F_t(bigBigF_t(regs_in[changed]-min_high)/range);
-
+ if(changed<4) {
+  m[changed]= F_t(bigBigF_t(regs_in[changed]-min_high)/bigBigF_t(max_high-min_high));
+ }
 }

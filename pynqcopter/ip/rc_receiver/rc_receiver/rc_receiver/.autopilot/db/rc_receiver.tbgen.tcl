@@ -1,7 +1,7 @@
 set C_TypeInfoList {{ 
 "rc_receiver" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"norm_out": [[], {"array": [ {"scalar": "unsigned int"}, [4096]]}] }, {"channels": [[],"0"] }],[],""], 
 "0": [ "C_t", {"typedef": [[[],"1"],""]}], 
-"1": [ "ap_uint<5>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 5}}]],""]}}]
+"1": [ "ap_uint<6>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 6}}]],""]}}]
 }}
 set moduleName rc_receiver
 set isCombinational 0
@@ -16,11 +16,11 @@ set C_modelName {rc_receiver}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ norm_out int 32 regular {axi_master 1}  }
-	{ channels_V int 5 regular  }
+	{ channels_V int 6 regular  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "norm_out", "interface" : "axi_master", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "norm_out","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 4095,"step" : 1}]}]}]} , 
- 	{ "Name" : "channels_V", "interface" : "wire", "bitwidth" : 5, "direction" : "READONLY", "bitSlice":[{"low":0,"up":4,"cElement": [{"cName": "channels.V","cData": "uint5","bit_use": { "low": 0,"up": 4},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} ]}
+ 	{ "Name" : "channels_V", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY", "bitSlice":[{"low":0,"up":5,"cElement": [{"cName": "channels.V","cData": "uint6","bit_use": { "low": 0,"up": 5},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} ]}
 # RTL Port declarations: 
 set portNum 66
 set portList { 
@@ -71,7 +71,7 @@ set portList {
 	{ m_axi_norm_out_BRESP sc_in sc_lv 2 signal 0 } 
 	{ m_axi_norm_out_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_norm_out_BUSER sc_in sc_lv 1 signal 0 } 
-	{ channels_V sc_in sc_lv 5 signal 1 } 
+	{ channels_V sc_in sc_lv 6 signal 1 } 
 	{ s_axi_in_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_in_AWREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_in_AWADDR sc_in sc_lv 4 signal -1 } 
@@ -157,7 +157,7 @@ set NewPortList {[
  	{ "name": "m_axi_norm_out_BRESP", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "norm_out", "role": "BRESP" }} , 
  	{ "name": "m_axi_norm_out_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "norm_out", "role": "BID" }} , 
  	{ "name": "m_axi_norm_out_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "norm_out", "role": "BUSER" }} , 
- 	{ "name": "channels_V", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "channels_V", "role": "default" }}  ]}
+ 	{ "name": "channels_V", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "channels_V", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2"],
@@ -201,7 +201,7 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	norm_out { m_axi {  { m_axi_norm_out_AWVALID VALID 1 1 }  { m_axi_norm_out_AWREADY READY 0 1 }  { m_axi_norm_out_AWADDR ADDR 1 32 }  { m_axi_norm_out_AWID ID 1 1 }  { m_axi_norm_out_AWLEN LEN 1 8 }  { m_axi_norm_out_AWSIZE SIZE 1 3 }  { m_axi_norm_out_AWBURST BURST 1 2 }  { m_axi_norm_out_AWLOCK LOCK 1 2 }  { m_axi_norm_out_AWCACHE CACHE 1 4 }  { m_axi_norm_out_AWPROT PROT 1 3 }  { m_axi_norm_out_AWQOS QOS 1 4 }  { m_axi_norm_out_AWREGION REGION 1 4 }  { m_axi_norm_out_AWUSER USER 1 1 }  { m_axi_norm_out_WVALID VALID 1 1 }  { m_axi_norm_out_WREADY READY 0 1 }  { m_axi_norm_out_WDATA DATA 1 32 }  { m_axi_norm_out_WSTRB STRB 1 4 }  { m_axi_norm_out_WLAST LAST 1 1 }  { m_axi_norm_out_WID ID 1 1 }  { m_axi_norm_out_WUSER USER 1 1 }  { m_axi_norm_out_ARVALID VALID 1 1 }  { m_axi_norm_out_ARREADY READY 0 1 }  { m_axi_norm_out_ARADDR ADDR 1 32 }  { m_axi_norm_out_ARID ID 1 1 }  { m_axi_norm_out_ARLEN LEN 1 8 }  { m_axi_norm_out_ARSIZE SIZE 1 3 }  { m_axi_norm_out_ARBURST BURST 1 2 }  { m_axi_norm_out_ARLOCK LOCK 1 2 }  { m_axi_norm_out_ARCACHE CACHE 1 4 }  { m_axi_norm_out_ARPROT PROT 1 3 }  { m_axi_norm_out_ARQOS QOS 1 4 }  { m_axi_norm_out_ARREGION REGION 1 4 }  { m_axi_norm_out_ARUSER USER 1 1 }  { m_axi_norm_out_RVALID VALID 0 1 }  { m_axi_norm_out_RREADY READY 1 1 }  { m_axi_norm_out_RDATA DATA 0 32 }  { m_axi_norm_out_RLAST LAST 0 1 }  { m_axi_norm_out_RID ID 0 1 }  { m_axi_norm_out_RUSER USER 0 1 }  { m_axi_norm_out_RRESP RESP 0 2 }  { m_axi_norm_out_BVALID VALID 0 1 }  { m_axi_norm_out_BREADY READY 1 1 }  { m_axi_norm_out_BRESP RESP 0 2 }  { m_axi_norm_out_BID ID 0 1 }  { m_axi_norm_out_BUSER USER 0 1 } } }
-	channels_V { ap_none {  { channels_V in_data 0 5 } } }
+	channels_V { ap_none {  { channels_V in_data 0 6 } } }
 }
 
 set busDeadlockParameterList { 

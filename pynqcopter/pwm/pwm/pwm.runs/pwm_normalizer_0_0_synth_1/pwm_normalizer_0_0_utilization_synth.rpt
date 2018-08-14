@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Mon Aug 13 18:43:16 2018
+| Date         : Tue Aug 14 12:45:06 2018
 | Host         : apple running 64-bit Ubuntu 16.04.5 LTS
 | Command      : report_utilization -file pwm_normalizer_0_0_utilization_synth.rpt -pb pwm_normalizer_0_0_utilization_synth.pb
 | Design       : pwm_normalizer_0_0
@@ -30,15 +30,15 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  780 |     0 |     53200 |  1.47 |
-|   LUT as Logic             |  757 |     0 |     53200 |  1.42 |
-|   LUT as Memory            |   23 |     0 |     17400 |  0.13 |
+| Slice LUTs*                | 8327 |     0 |     53200 | 15.65 |
+|   LUT as Logic             | 8159 |     0 |     53200 | 15.34 |
+|   LUT as Memory            |  168 |     0 |     17400 |  0.97 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
-|     LUT as Shift Register  |   23 |     0 |           |       |
-| Slice Registers            |  720 |     0 |    106400 |  0.68 |
-|   Register as Flip Flop    |  720 |     0 |    106400 |  0.68 |
+|     LUT as Shift Register  |  168 |     0 |           |       |
+| Slice Registers            | 6948 |     0 |    106400 |  6.53 |
+|   Register as Flip Flop    | 6948 |     0 |    106400 |  6.53 |
 |   Register as Latch        |    0 |     0 |    106400 |  0.00 |
-| F7 Muxes                   |   30 |     0 |     26600 |  0.11 |
+| F7 Muxes                   |    5 |     0 |     26600 |  0.02 |
 | F8 Muxes                   |    0 |     0 |     13300 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 5     |          Yes |         Set |            - |
-| 715   |          Yes |       Reset |            - |
+| 6943  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,16 +149,17 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  715 |        Flop & Latch |
-| LUT3     |  329 |                 LUT |
-| LUT6     |  171 |                 LUT |
-| LUT4     |  141 |                 LUT |
-| LUT2     |  137 |                 LUT |
-| LUT5     |   86 |                 LUT |
-| CARRY4   |   52 |          CarryLogic |
-| LUT1     |   38 |                 LUT |
-| MUXF7    |   30 |               MuxFx |
-| SRL16E   |   23 |  Distributed Memory |
+| FDRE     | 6943 |        Flop & Latch |
+| LUT3     | 3931 |                 LUT |
+| LUT2     | 2178 |                 LUT |
+| LUT1     | 1756 |                 LUT |
+| CARRY4   | 1044 |          CarryLogic |
+| LUT6     |  274 |                 LUT |
+| SRL16E   |  140 |  Distributed Memory |
+| LUT5     |  101 |                 LUT |
+| LUT4     |   86 |                 LUT |
+| SRLC32E  |   28 |  Distributed Memory |
+| MUXF7    |    5 |               MuxFx |
 | FDSE     |    5 |        Flop & Latch |
 | RAMB18E1 |    1 |        Block Memory |
 +----------+------+---------------------+

@@ -58,13 +58,13 @@ module pwm_xlslice_1_0 (
   Dout
 );
 
-input wire [504 : 0] Din;
-output wire [4 : 0] Dout;
+input wire [605 : 0] Din;
+output wire [5 : 0] Dout;
 
   xlslice_v1_0_1_xlslice #(
-    .DIN_WIDTH(505),
-    .DIN_FROM(504),
-    .DIN_TO(500)
+    .DIN_WIDTH(606),
+    .DIN_FROM(605),
+    .DIN_TO(600)
   ) inst (
     .Din(Din),
     .Dout(Dout)

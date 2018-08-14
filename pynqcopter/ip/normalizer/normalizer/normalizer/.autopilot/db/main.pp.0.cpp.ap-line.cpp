@@ -37173,7 +37173,8 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 #pragma line 43 "./normalizer.hpp" 2
 #pragma line 45 "main.cpp" 2
 #pragma empty_line
+#pragma empty_line
 int main() {
-#pragma line 94 "main.cpp"
+#pragma line 70 "main.cpp"
     return 0;
 }

@@ -1070,10 +1070,33 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
           </spirit:field>
         </spirit:register>
         <spirit:register>
+          <spirit:name>regs_in_5</spirit:name>
+          <spirit:displayName>regs_in_5</spirit:displayName>
+          <spirit:description>Data signal of regs_in_5</spirit:description>
+          <spirit:addressOffset>56</spirit:addressOffset>
+          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>regs_in_5</spirit:name>
+            <spirit:description>Bit 31 to 0 Data signal of regs_in_5</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
           <spirit:name>min_high</spirit:name>
           <spirit:displayName>min_high</spirit:displayName>
           <spirit:description>Data signal of min_high</spirit:description>
-          <spirit:addressOffset>56</spirit:addressOffset>
+          <spirit:addressOffset>64</spirit:addressOffset>
           <spirit:size spirit:format="long">32</spirit:size>
           <spirit:access>write-only</spirit:access>
           <spirit:reset>
@@ -1096,7 +1119,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
           <spirit:name>max_high</spirit:name>
           <spirit:displayName>max_high</spirit:displayName>
           <spirit:description>Data signal of max_high</spirit:description>
-          <spirit:addressOffset>64</spirit:addressOffset>
+          <spirit:addressOffset>72</spirit:addressOffset>
           <spirit:size spirit:format="long">32</spirit:size>
           <spirit:access>write-only</spirit:access>
           <spirit:reset>
@@ -1132,7 +1155,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>1a667a5e</spirit:value>
+            <spirit:value>bbe6d934</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1148,7 +1171,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>0882b636</spirit:value>
+            <spirit:value>305c7bb2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1164,7 +1187,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>5f5f4e9e</spirit:value>
+            <spirit:value>95df5edf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1180,7 +1203,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>5011d732</spirit:value>
+            <spirit:value>942e18f8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1194,7 +1217,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c3723277</spirit:value>
+            <spirit:value>3dff06cb</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2464,7 +2487,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/normalizer_udiv_8cud.v</spirit:name>
+        <spirit:name>hdl/verilog/normalizer_udiv_6cud.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2488,7 +2511,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/normalizer_udiv_8cud.v</spirit:name>
+        <spirit:name>hdl/verilog/normalizer_udiv_6cud.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -2524,11 +2547,11 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/normalizer_udiv_8cud.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/normalizer_mux_83bkb.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/normalizer_mux_83bkb.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/normalizer_udiv_6cud.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2550,12 +2573,12 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/normalizer_udiv_8cud.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/normalizer_mux_83bkb.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/normalizer_mux_83bkb.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/normalizer_udiv_6cud.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -2766,7 +2789,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="18">21</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="18">80</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -2783,18 +2806,18 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </xilinx:taxonomies>
       <xilinx:displayName>Normalizer</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808131905</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-14T02:06:16Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808141236</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-14T19:37:24Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9b0def40"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="fb30e1b8"/>
-      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="9a7707c6"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4afa6861"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="1684fd4d"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="90645ee7"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="537ab5cb"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="3b41b4ea"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="da503643"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="73280a32"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

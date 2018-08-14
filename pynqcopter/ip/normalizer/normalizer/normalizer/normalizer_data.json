@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "1",
-    "Latency": "21",
+    "Latency": "80",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -42,14 +42,14 @@
       "impl\/vhdl\/normalizer_in_s_axi.vhd",
       "impl\/vhdl\/normalizer_m_V_m_axi.vhd",
       "impl\/vhdl\/normalizer_mux_83bkb.vhd",
-      "impl\/vhdl\/normalizer_udiv_8cud.vhd",
+      "impl\/vhdl\/normalizer_udiv_6cud.vhd",
       "impl\/vhdl\/normalizer.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/normalizer_in_s_axi.v",
       "impl\/verilog\/normalizer_m_V_m_axi.v",
       "impl\/verilog\/normalizer_mux_83bkb.v",
-      "impl\/verilog\/normalizer_udiv_8cud.v",
+      "impl\/verilog\/normalizer_udiv_6cud.v",
       "impl\/verilog\/normalizer.v"
     ],
     "SwDriver": [
@@ -505,6 +505,21 @@
         },
         {
           "offset": "0x38",
+          "name": "regs_in_5",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of regs_in_5",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "regs_in_5",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of regs_in_5"
+            }]
+        },
+        {
+          "offset": "0x40",
           "name": "min_high",
           "access": "W",
           "reset_value": "0x0",
@@ -519,7 +534,7 @@
             }]
         },
         {
-          "offset": "0x40",
+          "offset": "0x48",
           "name": "max_high",
           "access": "W",
           "reset_value": "0x0",
@@ -899,7 +914,7 @@
       "handshakeRef": "ap_none",
       "Object": "in"
     },
-    "min_high": {
+    "regs_in_5": {
       "interfaceRef": "s_axi_in",
       "dir": "in",
       "offset": "56",
@@ -907,10 +922,18 @@
       "handshakeRef": "ap_none",
       "Object": "in"
     },
-    "max_high": {
+    "min_high": {
       "interfaceRef": "s_axi_in",
       "dir": "in",
       "offset": "64",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "in"
+    },
+    "max_high": {
+      "interfaceRef": "s_axi_in",
+      "dir": "in",
+      "offset": "72",
       "statusOffset": "NA",
       "handshakeRef": "ap_none",
       "Object": "in"
@@ -929,29 +952,29 @@
     "Hierarchy": {"ModuleName": "normalizer"},
     "Metrics": {"normalizer": {
         "Latency": {
-          "LatencyBest": "21",
-          "LatencyAvg": "21",
-          "LatencyWorst": "21",
+          "LatencyBest": "80",
+          "LatencyAvg": "80",
+          "LatencyWorst": "80",
           "PipelineII": "1",
-          "PipelineDepth": "22",
+          "PipelineDepth": "81",
           "PipelineType": "function"
         },
         "Timing": {
           "Target": "4.00",
           "Uncertainty": "0.50",
-          "Estimate": "4.39"
+          "Estimate": "5.24"
         },
         "Area": {
           "BRAM_18K": "2",
-          "FF": "1621",
-          "LUT": "1808",
+          "FF": "10218",
+          "LUT": "8337",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-13 19:05:55 PDT",
+    "Time": "2018-08-14 12:36:52 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

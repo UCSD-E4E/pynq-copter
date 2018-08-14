@@ -1,5 +1,5 @@
 set C_TypeInfoList {{ 
-"normalizer" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"regs_in": [[], {"array": [ {"scalar": "unsigned int"}, [5]]}] }, {"min_high": [[], {"scalar": "unsigned int"}] }, {"max_high": [[], {"scalar": "unsigned int"}] }, {"m": [[], {"array": ["0", [4096]]}] }],[],""], 
+"normalizer" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"regs_in": [[], {"array": [ {"scalar": "unsigned int"}, [6]]}] }, {"min_high": [[], {"scalar": "unsigned int"}] }, {"max_high": [[], {"scalar": "unsigned int"}] }, {"m": [[], {"array": ["0", [4096]]}] }],[],""], 
 "0": [ "F_t", {"typedef": [[[],"1"],""]}], 
 "1": [ "ap_fixed<16, 1, 5, 3, 0>", {"hls_type": {"ap_fixed": [[[[], {"scalar": { "int": 16}}],[[], {"scalar": { "int": 1}}],[[], {"scalar": { "2": 5}}],[[], {"scalar": { "3": 3}}],[[], {"scalar": { "int": 0}}]],""]}}], 
 "2": [ "sc_q_mode", {"enum": [[],[],[{"SC_RND":  {"scalar": "__integer__"}},{"SC_RND_ZERO":  {"scalar": "__integer__"}},{"SC_RND_MIN_INF":  {"scalar": "__integer__"}},{"SC_RND_INF":  {"scalar": "__integer__"}},{"SC_RND_CONV":  {"scalar": "__integer__"}},{"SC_TRN":  {"scalar": "__integer__"}},{"SC_TRN_ZERO":  {"scalar": "__integer__"}}],""]}], 
@@ -21,7 +21,8 @@ set C_modelArgList {
 	{ regs_in_1 int 32 regular {axi_slave 0}  }
 	{ regs_in_2 int 32 regular {axi_slave 0}  }
 	{ regs_in_3 int 32 regular {axi_slave 0}  }
-	{ regs_in_4 int 32 unused {axi_slave 0}  }
+	{ regs_in_4 int 32 regular {axi_slave 0}  }
+	{ regs_in_5 int 32 regular {axi_slave 0}  }
 	{ min_high int 32 regular {axi_slave 0}  }
 	{ max_high int 32 regular {axi_slave 0}  }
 	{ m_V int 16 regular {axi_master 1}  }
@@ -32,59 +33,60 @@ set C_modelArgMapList {[
  	{ "Name" : "regs_in_2", "interface" : "axi_slave", "bundle":"in","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "regs_in","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 2,"up" : 2,"step" : 2}]}]}], "offset" : {"in":32}, "offset_end" : {"in":39}} , 
  	{ "Name" : "regs_in_3", "interface" : "axi_slave", "bundle":"in","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "regs_in","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 3,"up" : 3,"step" : 2}]}]}], "offset" : {"in":40}, "offset_end" : {"in":47}} , 
  	{ "Name" : "regs_in_4", "interface" : "axi_slave", "bundle":"in","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "regs_in","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 4,"up" : 4,"step" : 2}]}]}], "offset" : {"in":48}, "offset_end" : {"in":55}} , 
- 	{ "Name" : "min_high", "interface" : "axi_slave", "bundle":"in","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "min_high","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":56}, "offset_end" : {"in":63}} , 
- 	{ "Name" : "max_high", "interface" : "axi_slave", "bundle":"in","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "max_high","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":64}, "offset_end" : {"in":71}} , 
+ 	{ "Name" : "regs_in_5", "interface" : "axi_slave", "bundle":"in","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "regs_in","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 5,"up" : 5,"step" : 2}]}]}], "offset" : {"in":56}, "offset_end" : {"in":63}} , 
+ 	{ "Name" : "min_high", "interface" : "axi_slave", "bundle":"in","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "min_high","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":64}, "offset_end" : {"in":71}} , 
+ 	{ "Name" : "max_high", "interface" : "axi_slave", "bundle":"in","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "max_high","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":72}, "offset_end" : {"in":79}} , 
  	{ "Name" : "m_V", "interface" : "axi_master", "bitwidth" : 16, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "m.V","cData": "int16","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 4095,"step" : 1}]}]}]} ]}
 # RTL Port declarations: 
 set portNum 65
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst_n sc_in sc_logic 1 reset -1 active_low_sync } 
-	{ m_axi_m_V_AWVALID sc_out sc_logic 1 signal 7 } 
-	{ m_axi_m_V_AWREADY sc_in sc_logic 1 signal 7 } 
-	{ m_axi_m_V_AWADDR sc_out sc_lv 32 signal 7 } 
-	{ m_axi_m_V_AWID sc_out sc_lv 1 signal 7 } 
-	{ m_axi_m_V_AWLEN sc_out sc_lv 8 signal 7 } 
-	{ m_axi_m_V_AWSIZE sc_out sc_lv 3 signal 7 } 
-	{ m_axi_m_V_AWBURST sc_out sc_lv 2 signal 7 } 
-	{ m_axi_m_V_AWLOCK sc_out sc_lv 2 signal 7 } 
-	{ m_axi_m_V_AWCACHE sc_out sc_lv 4 signal 7 } 
-	{ m_axi_m_V_AWPROT sc_out sc_lv 3 signal 7 } 
-	{ m_axi_m_V_AWQOS sc_out sc_lv 4 signal 7 } 
-	{ m_axi_m_V_AWREGION sc_out sc_lv 4 signal 7 } 
-	{ m_axi_m_V_AWUSER sc_out sc_lv 1 signal 7 } 
-	{ m_axi_m_V_WVALID sc_out sc_logic 1 signal 7 } 
-	{ m_axi_m_V_WREADY sc_in sc_logic 1 signal 7 } 
-	{ m_axi_m_V_WDATA sc_out sc_lv 32 signal 7 } 
-	{ m_axi_m_V_WSTRB sc_out sc_lv 4 signal 7 } 
-	{ m_axi_m_V_WLAST sc_out sc_logic 1 signal 7 } 
-	{ m_axi_m_V_WID sc_out sc_lv 1 signal 7 } 
-	{ m_axi_m_V_WUSER sc_out sc_lv 1 signal 7 } 
-	{ m_axi_m_V_ARVALID sc_out sc_logic 1 signal 7 } 
-	{ m_axi_m_V_ARREADY sc_in sc_logic 1 signal 7 } 
-	{ m_axi_m_V_ARADDR sc_out sc_lv 32 signal 7 } 
-	{ m_axi_m_V_ARID sc_out sc_lv 1 signal 7 } 
-	{ m_axi_m_V_ARLEN sc_out sc_lv 8 signal 7 } 
-	{ m_axi_m_V_ARSIZE sc_out sc_lv 3 signal 7 } 
-	{ m_axi_m_V_ARBURST sc_out sc_lv 2 signal 7 } 
-	{ m_axi_m_V_ARLOCK sc_out sc_lv 2 signal 7 } 
-	{ m_axi_m_V_ARCACHE sc_out sc_lv 4 signal 7 } 
-	{ m_axi_m_V_ARPROT sc_out sc_lv 3 signal 7 } 
-	{ m_axi_m_V_ARQOS sc_out sc_lv 4 signal 7 } 
-	{ m_axi_m_V_ARREGION sc_out sc_lv 4 signal 7 } 
-	{ m_axi_m_V_ARUSER sc_out sc_lv 1 signal 7 } 
-	{ m_axi_m_V_RVALID sc_in sc_logic 1 signal 7 } 
-	{ m_axi_m_V_RREADY sc_out sc_logic 1 signal 7 } 
-	{ m_axi_m_V_RDATA sc_in sc_lv 32 signal 7 } 
-	{ m_axi_m_V_RLAST sc_in sc_logic 1 signal 7 } 
-	{ m_axi_m_V_RID sc_in sc_lv 1 signal 7 } 
-	{ m_axi_m_V_RUSER sc_in sc_lv 1 signal 7 } 
-	{ m_axi_m_V_RRESP sc_in sc_lv 2 signal 7 } 
-	{ m_axi_m_V_BVALID sc_in sc_logic 1 signal 7 } 
-	{ m_axi_m_V_BREADY sc_out sc_logic 1 signal 7 } 
-	{ m_axi_m_V_BRESP sc_in sc_lv 2 signal 7 } 
-	{ m_axi_m_V_BID sc_in sc_lv 1 signal 7 } 
-	{ m_axi_m_V_BUSER sc_in sc_lv 1 signal 7 } 
+	{ m_axi_m_V_AWVALID sc_out sc_logic 1 signal 8 } 
+	{ m_axi_m_V_AWREADY sc_in sc_logic 1 signal 8 } 
+	{ m_axi_m_V_AWADDR sc_out sc_lv 32 signal 8 } 
+	{ m_axi_m_V_AWID sc_out sc_lv 1 signal 8 } 
+	{ m_axi_m_V_AWLEN sc_out sc_lv 8 signal 8 } 
+	{ m_axi_m_V_AWSIZE sc_out sc_lv 3 signal 8 } 
+	{ m_axi_m_V_AWBURST sc_out sc_lv 2 signal 8 } 
+	{ m_axi_m_V_AWLOCK sc_out sc_lv 2 signal 8 } 
+	{ m_axi_m_V_AWCACHE sc_out sc_lv 4 signal 8 } 
+	{ m_axi_m_V_AWPROT sc_out sc_lv 3 signal 8 } 
+	{ m_axi_m_V_AWQOS sc_out sc_lv 4 signal 8 } 
+	{ m_axi_m_V_AWREGION sc_out sc_lv 4 signal 8 } 
+	{ m_axi_m_V_AWUSER sc_out sc_lv 1 signal 8 } 
+	{ m_axi_m_V_WVALID sc_out sc_logic 1 signal 8 } 
+	{ m_axi_m_V_WREADY sc_in sc_logic 1 signal 8 } 
+	{ m_axi_m_V_WDATA sc_out sc_lv 32 signal 8 } 
+	{ m_axi_m_V_WSTRB sc_out sc_lv 4 signal 8 } 
+	{ m_axi_m_V_WLAST sc_out sc_logic 1 signal 8 } 
+	{ m_axi_m_V_WID sc_out sc_lv 1 signal 8 } 
+	{ m_axi_m_V_WUSER sc_out sc_lv 1 signal 8 } 
+	{ m_axi_m_V_ARVALID sc_out sc_logic 1 signal 8 } 
+	{ m_axi_m_V_ARREADY sc_in sc_logic 1 signal 8 } 
+	{ m_axi_m_V_ARADDR sc_out sc_lv 32 signal 8 } 
+	{ m_axi_m_V_ARID sc_out sc_lv 1 signal 8 } 
+	{ m_axi_m_V_ARLEN sc_out sc_lv 8 signal 8 } 
+	{ m_axi_m_V_ARSIZE sc_out sc_lv 3 signal 8 } 
+	{ m_axi_m_V_ARBURST sc_out sc_lv 2 signal 8 } 
+	{ m_axi_m_V_ARLOCK sc_out sc_lv 2 signal 8 } 
+	{ m_axi_m_V_ARCACHE sc_out sc_lv 4 signal 8 } 
+	{ m_axi_m_V_ARPROT sc_out sc_lv 3 signal 8 } 
+	{ m_axi_m_V_ARQOS sc_out sc_lv 4 signal 8 } 
+	{ m_axi_m_V_ARREGION sc_out sc_lv 4 signal 8 } 
+	{ m_axi_m_V_ARUSER sc_out sc_lv 1 signal 8 } 
+	{ m_axi_m_V_RVALID sc_in sc_logic 1 signal 8 } 
+	{ m_axi_m_V_RREADY sc_out sc_logic 1 signal 8 } 
+	{ m_axi_m_V_RDATA sc_in sc_lv 32 signal 8 } 
+	{ m_axi_m_V_RLAST sc_in sc_logic 1 signal 8 } 
+	{ m_axi_m_V_RID sc_in sc_lv 1 signal 8 } 
+	{ m_axi_m_V_RUSER sc_in sc_lv 1 signal 8 } 
+	{ m_axi_m_V_RRESP sc_in sc_lv 2 signal 8 } 
+	{ m_axi_m_V_BVALID sc_in sc_logic 1 signal 8 } 
+	{ m_axi_m_V_BREADY sc_out sc_logic 1 signal 8 } 
+	{ m_axi_m_V_BRESP sc_in sc_lv 2 signal 8 } 
+	{ m_axi_m_V_BID sc_in sc_lv 1 signal 8 } 
+	{ m_axi_m_V_BUSER sc_in sc_lv 1 signal 8 } 
 	{ s_axi_in_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_in_AWREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_in_AWADDR sc_in sc_lv 7 signal -1 } 
@@ -105,7 +107,7 @@ set portList {
 	{ interrupt sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_in_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "in", "role": "AWADDR" },"address":[{"name":"normalizer","role":"start","value":"0","valid_bit":"0"},{"name":"normalizer","role":"continue","value":"0","valid_bit":"4"},{"name":"normalizer","role":"auto_start","value":"0","valid_bit":"7"},{"name":"regs_in_0","role":"data","value":"16"},{"name":"regs_in_1","role":"data","value":"24"},{"name":"regs_in_2","role":"data","value":"32"},{"name":"regs_in_3","role":"data","value":"40"},{"name":"regs_in_4","role":"data","value":"48"},{"name":"min_high","role":"data","value":"56"},{"name":"max_high","role":"data","value":"64"}] },
+	{ "name": "s_axi_in_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "in", "role": "AWADDR" },"address":[{"name":"normalizer","role":"start","value":"0","valid_bit":"0"},{"name":"normalizer","role":"continue","value":"0","valid_bit":"4"},{"name":"normalizer","role":"auto_start","value":"0","valid_bit":"7"},{"name":"regs_in_0","role":"data","value":"16"},{"name":"regs_in_1","role":"data","value":"24"},{"name":"regs_in_2","role":"data","value":"32"},{"name":"regs_in_3","role":"data","value":"40"},{"name":"regs_in_4","role":"data","value":"48"},{"name":"regs_in_5","role":"data","value":"56"},{"name":"min_high","role":"data","value":"64"},{"name":"max_high","role":"data","value":"72"}] },
 	{ "name": "s_axi_in_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "in", "role": "AWVALID" } },
 	{ "name": "s_axi_in_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "in", "role": "AWREADY" } },
 	{ "name": "s_axi_in_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "in", "role": "WVALID" } },
@@ -186,6 +188,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "regs_in_2", "Type" : "None", "Direction" : "I"},
 			{"Name" : "regs_in_3", "Type" : "None", "Direction" : "I"},
 			{"Name" : "regs_in_4", "Type" : "None", "Direction" : "I"},
+			{"Name" : "regs_in_5", "Type" : "None", "Direction" : "I"},
 			{"Name" : "min_high", "Type" : "None", "Direction" : "I"},
 			{"Name" : "max_high", "Type" : "None", "Direction" : "I"},
 			{"Name" : "m_V", "Type" : "MAXI", "Direction" : "O",
@@ -193,29 +196,40 @@ set RtlHierarchyInfo {[
 					{"Name" : "m_V_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "m_V_blk_n_W", "Type" : "RtlSignal"},
 					{"Name" : "m_V_blk_n_B", "Type" : "RtlSignal"}]},
-			{"Name" : "changed", "Type" : "OVld", "Direction" : "IO"}]},
+			{"Name" : "last_0", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "last_1", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "last_2", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "last_3", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "last_4", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "last_5", "Type" : "OVld", "Direction" : "IO"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.normalizer_in_s_axi_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.normalizer_m_V_m_axi_U", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.normalizer_mux_83bkb_U1", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.normalizer_udiv_8cud_U2", "Parent" : "0"}]}
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.normalizer_udiv_6cud_U2", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	normalizer {
-		regs_in_0 {Type I LastRead 0 FirstWrite -1}
+		regs_in_0 {Type I LastRead 6 FirstWrite -1}
 		regs_in_1 {Type I LastRead 0 FirstWrite -1}
-		regs_in_2 {Type I LastRead 0 FirstWrite -1}
-		regs_in_3 {Type I LastRead 0 FirstWrite -1}
-		regs_in_4 {Type I LastRead -1 FirstWrite -1}
-		min_high {Type I LastRead 0 FirstWrite -1}
-		max_high {Type I LastRead 0 FirstWrite -1}
-		m_V {Type O LastRead 17 FirstWrite 16}
-		changed {Type IO LastRead -1 FirstWrite -1}}}
+		regs_in_2 {Type I LastRead 1 FirstWrite -1}
+		regs_in_3 {Type I LastRead 2 FirstWrite -1}
+		regs_in_4 {Type I LastRead 3 FirstWrite -1}
+		regs_in_5 {Type I LastRead 4 FirstWrite -1}
+		min_high {Type I LastRead 6 FirstWrite -1}
+		max_high {Type I LastRead 6 FirstWrite -1}
+		m_V {Type O LastRead 76 FirstWrite 75}
+		last_0 {Type IO LastRead -1 FirstWrite -1}
+		last_1 {Type IO LastRead -1 FirstWrite -1}
+		last_2 {Type IO LastRead -1 FirstWrite -1}
+		last_3 {Type IO LastRead -1 FirstWrite -1}
+		last_4 {Type IO LastRead -1 FirstWrite -1}
+		last_5 {Type IO LastRead -1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "21", "Max" : "21"}
+	{"Name" : "Latency", "Min" : "80", "Max" : "80"}
 	, {"Name" : "Interval", "Min" : "1", "Max" : "1"}
 ]}
 

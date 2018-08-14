@@ -58,11 +58,11 @@ module pwm_xlslice_2_0 (
   Dout
 );
 
-input wire [4 : 0] Din;
+input wire [5 : 0] Din;
 output wire [3 : 0] Dout;
 
   xlslice_v1_0_1_xlslice #(
-    .DIN_WIDTH(5),
+    .DIN_WIDTH(6),
     .DIN_FROM(3),
     .DIN_TO(0)
   ) inst (

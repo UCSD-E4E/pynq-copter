@@ -35263,8 +35263,6 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 #pragma line 43 "./../mixer/mixer.hpp" 2
 #pragma empty_line
 #pragma empty_line
-#pragma empty_line
-#pragma empty_line
 typedef ap_fixed<16 +3,4> bigF_t;
 #pragma empty_line
 #pragma empty_line
@@ -35279,7 +35277,7 @@ const bigF_t MIX_C[6][3] = {
 #pragma line 42 "./rc_receiver.hpp" 2
 #pragma empty_line
 #pragma empty_line
-typedef ap_uint<5> C_t;
+typedef ap_uint<6> C_t;
 typedef ap_uint<32> tick_t;
 typedef ap_uint<64> concatTick_t;
 #pragma line 36 "rc_receiver.cpp" 2
@@ -35300,7 +35298,7 @@ void rc_receiver(
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
- static C_t last_on = 0b00000;
+ static C_t last_on = 0;
  static unsigned int acc=0;
 #pragma empty_line
  char write_to = 0;
@@ -35308,7 +35306,7 @@ void rc_receiver(
  should_write = false;
  unsigned int write_val=0;
 #pragma empty_line
- for(int i =0; i < 5; i++) {
+ for(int i =0; i < 6; i++) {
 #pragma empty_line
   if(channels[i]) {
    ++acc;

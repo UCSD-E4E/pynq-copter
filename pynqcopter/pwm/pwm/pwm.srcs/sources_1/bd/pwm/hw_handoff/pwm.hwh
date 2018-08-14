@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Aug 13 18:41:40 2018" VIVADOVERSION="2017.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Aug 14 12:42:01 2018" VIVADOVERSION="2017.4">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="pwm" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -1440,9 +1440,29 @@
                 </FIELD>
               </FIELDS>
             </REGISTER>
+            <REGISTER NAME="regs_in_5">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of regs_in_5"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="56"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="regs_in_5">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of regs_in_5"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
             <REGISTER NAME="min_high">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of min_high"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="56"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="64"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="write-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -1462,7 +1482,7 @@
             </REGISTER>
             <REGISTER NAME="max_high">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of max_high"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="64"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="72"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="write-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -1776,9 +1796,29 @@
                 </FIELD>
               </FIELDS>
             </REGISTER>
+            <REGISTER NAME="regs_in_5">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of regs_in_5"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="56"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="regs_in_5">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of regs_in_5"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
             <REGISTER NAME="min_high">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of min_high"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="56"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="64"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="write-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -1798,7 +1838,7 @@
             </REGISTER>
             <REGISTER NAME="max_high">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of max_high"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="64"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="72"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="write-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2112,9 +2152,29 @@
                 </FIELD>
               </FIELDS>
             </REGISTER>
+            <REGISTER NAME="regs_in_5">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of regs_in_5"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="56"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="regs_in_5">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of regs_in_5"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
             <REGISTER NAME="min_high">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of min_high"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="56"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="64"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="write-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2134,7 +2194,7 @@
             </REGISTER>
             <REGISTER NAME="max_high">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of max_high"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="64"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="72"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="write-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2448,9 +2508,29 @@
                 </FIELD>
               </FIELDS>
             </REGISTER>
+            <REGISTER NAME="regs_in_5">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of regs_in_5"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="56"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="regs_in_5">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of regs_in_5"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
             <REGISTER NAME="min_high">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of min_high"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="56"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="64"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="write-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2470,7 +2550,7 @@
             </REGISTER>
             <REGISTER NAME="max_high">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of max_high"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="64"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="72"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="write-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2512,7 +2592,7 @@
         <PARAMETER NAME="clk_period" VALUE="4"/>
         <PARAMETER NAME="machine" VALUE="64"/>
         <PARAMETER NAME="combinational" VALUE="0"/>
-        <PARAMETER NAME="latency" VALUE="19"/>
+        <PARAMETER NAME="latency" VALUE="80"/>
         <PARAMETER NAME="II" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S_AXI_IN_BASEADDR" VALUE="0x4000D000"/>
@@ -4229,7 +4309,9 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP1_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP2_ACLK"/>
+            <CONNECTION INSTANCE="system_ila_0" PORT="clk"/>
             <CONNECTION INSTANCE="mixer_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="rc_receiver_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ACLK"/>
@@ -4239,9 +4321,7 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S02_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S03_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_ACLK"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="clk"/>
             <CONNECTION INSTANCE="normalizer_0" PORT="ap_clk"/>
-            <CONNECTION INSTANCE="rc_receiver_0" PORT="ap_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="50000000" DIR="O" NAME="FCLK_CLK1" SIGIS="clk"/>
@@ -8628,7 +8708,7 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S01_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="channels_V" RIGHT="0" SIGIS="data" SIGNAME="xlslice_1_Dout">
+        <PORT DIR="I" LEFT="5" NAME="channels_V" RIGHT="0" SIGIS="data" SIGNAME="xlslice_1_Dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlslice_1" PORT="Dout"/>
           </CONNECTIONS>
@@ -8760,10 +8840,10 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
       <MEMORYMAP>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_IN_BASEADDR" BASEVALUE="0x4000C000" HIGHNAME="C_S_AXI_IN_HIGHADDR" HIGHVALUE="0x4000CFFF" INSTANCE="rc_receiver_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="m_axi_norm_out" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_in"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_IN_BASEADDR" BASEVALUE="0x4000C000" HIGHNAME="C_S_AXI_IN_HIGHADDR" HIGHVALUE="0x4000CFFF" INSTANCE="rc_receiver_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_in"/>
         <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_IN_BASEADDR" BASEVALUE="0x4000D000" HIGHNAME="C_S_AXI_IN_HIGHADDR" HIGHVALUE="0x4000DFFF" INSTANCE="normalizer_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="m_axi_norm_out" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_in"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_AXILITES_BASEADDR" BASEVALUE="0x4000E000" HIGHNAME="C_S_AXI_AXILITES_HIGHADDR" HIGHVALUE="0x4000EFFF" INSTANCE="mixer_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="m_axi_norm_out" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_AXILiteS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x4000F000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x4000FFFF" INSTANCE="pwm_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="m_axi_norm_out" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_ctrl"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_AXILITES_BASEADDR" BASEVALUE="0x4000E000" HIGHNAME="C_S_AXI_AXILITES_HIGHADDR" HIGHVALUE="0x4000EFFF" INSTANCE="mixer_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_AXILiteS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BASEADDR" BASEVALUE="0x4000F000" HIGHNAME="C_S_AXI_CTRL_HIGHADDR" HIGHVALUE="0x4000FFFF" INSTANCE="pwm_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_ctrl"/>
       </MEMORYMAP>
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="rc_receiver_0"/>
@@ -8820,7 +8900,9 @@
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" RIGHT="0" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="pwm_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="system_ila_0" PORT="resetn"/>
             <CONNECTION INSTANCE="mixer_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="rc_receiver_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_ARESETN"/>
@@ -8829,9 +8911,7 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S02_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S03_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_ARESETN"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="resetn"/>
             <CONNECTION INSTANCE="normalizer_0" PORT="ap_rst_n"/>
-            <CONNECTION INSTANCE="rc_receiver_0" PORT="ap_rst_n"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -8841,7 +8921,7 @@
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="C_DEPTH" VALUE="100"/>
-        <PARAMETER NAME="C_DATA_WIDTH" VALUE="5"/>
+        <PARAMETER NAME="C_DATA_WIDTH" VALUE="6"/>
         <PARAMETER NAME="C_RESET_VALUE" VALUE="0"/>
         <PARAMETER NAME="Component_Name" VALUE="pwm_synchronizer_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
@@ -8857,12 +8937,12 @@
             <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_reset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="WR_DATA" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+        <PORT DIR="I" LEFT="5" NAME="WR_DATA" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="504" NAME="RD_DATA" RIGHT="0" SIGIS="undef" SIGNAME="synchronizer_0_RD_DATA">
+        <PORT DIR="O" LEFT="605" NAME="RD_DATA" RIGHT="0" SIGIS="undef" SIGNAME="synchronizer_0_RD_DATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlslice_1" PORT="Din"/>
           </CONNECTIONS>
@@ -13294,9 +13374,9 @@
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="20"/>
         <PARAMETER NAME="DIN_FROM" VALUE="19"/>
-        <PARAMETER NAME="DIN_TO" VALUE="15"/>
+        <PARAMETER NAME="DIN_TO" VALUE="14"/>
         <PARAMETER NAME="Component_Name" VALUE="pwm_xlslice_0_0"/>
-        <PARAMETER NAME="DOUT_WIDTH" VALUE="5"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="6"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -13305,7 +13385,7 @@
             <CONNECTION INSTANCE="wire_distributor_0" PORT="wire_i_i"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="4" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+        <PORT DIR="O" LEFT="5" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synchronizer_0" PORT="WR_DATA"/>
           </CONNECTIONS>
@@ -13316,20 +13396,20 @@
     <MODULE FULLNAME="/xlslice_1" HWVERSION="1.0" INSTANCE="xlslice_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="505"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="504"/>
-        <PARAMETER NAME="DIN_TO" VALUE="500"/>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="606"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="605"/>
+        <PARAMETER NAME="DIN_TO" VALUE="600"/>
         <PARAMETER NAME="Component_Name" VALUE="pwm_xlslice_1_0"/>
-        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="6"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="504" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="synchronizer_0_RD_DATA">
+        <PORT DIR="I" LEFT="605" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="synchronizer_0_RD_DATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synchronizer_0" PORT="RD_DATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="4" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
+        <PORT DIR="O" LEFT="5" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlslice_2" PORT="Din"/>
             <CONNECTION INSTANCE="rc_receiver_0" PORT="channels_V"/>
@@ -13341,7 +13421,7 @@
     <MODULE FULLNAME="/xlslice_2" HWVERSION="1.0" INSTANCE="xlslice_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="5"/>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="6"/>
         <PARAMETER NAME="DIN_FROM" VALUE="3"/>
         <PARAMETER NAME="DIN_TO" VALUE="0"/>
         <PARAMETER NAME="Component_Name" VALUE="pwm_xlslice_2_0"/>
@@ -13349,7 +13429,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="4" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
+        <PORT DIR="I" LEFT="5" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlslice_1" PORT="Dout"/>
           </CONNECTIONS>

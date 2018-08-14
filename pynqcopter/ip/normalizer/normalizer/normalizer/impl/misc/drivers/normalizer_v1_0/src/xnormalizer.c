@@ -161,6 +161,23 @@ u32 XNormalizer_Get_regs_in_4(XNormalizer *InstancePtr) {
     return Data;
 }
 
+void XNormalizer_Set_regs_in_5(XNormalizer *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XNormalizer_WriteReg(InstancePtr->In_BaseAddress, XNORMALIZER_IN_ADDR_REGS_IN_5_DATA, Data);
+}
+
+u32 XNormalizer_Get_regs_in_5(XNormalizer *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XNormalizer_ReadReg(InstancePtr->In_BaseAddress, XNORMALIZER_IN_ADDR_REGS_IN_5_DATA);
+    return Data;
+}
+
 void XNormalizer_Set_min_high(XNormalizer *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

@@ -65,7 +65,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_channels_V \
     op interface \
-    ports { channels_V { I 5 vector } } \
+    ports { channels_V { I 6 vector } } \
 } "
 }
 

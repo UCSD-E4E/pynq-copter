@@ -97,6 +97,8 @@ void XNormalizer_Set_regs_in_3(XNormalizer *InstancePtr, u32 Data);
 u32 XNormalizer_Get_regs_in_3(XNormalizer *InstancePtr);
 void XNormalizer_Set_regs_in_4(XNormalizer *InstancePtr, u32 Data);
 u32 XNormalizer_Get_regs_in_4(XNormalizer *InstancePtr);
+void XNormalizer_Set_regs_in_5(XNormalizer *InstancePtr, u32 Data);
+u32 XNormalizer_Get_regs_in_5(XNormalizer *InstancePtr);
 void XNormalizer_Set_min_high(XNormalizer *InstancePtr, u32 Data);
 u32 XNormalizer_Get_min_high(XNormalizer *InstancePtr);
 void XNormalizer_Set_max_high(XNormalizer *InstancePtr, u32 Data);

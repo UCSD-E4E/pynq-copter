@@ -80,10 +80,10 @@
     "channels_V": {
       "type": "data",
       "dir": "in",
-      "width": "5",
+      "width": "6",
       "ctype": {"DATA": {
           "Type": "integer unsigned",
-          "Width": "5"
+          "Width": "6"
         }}
     },
     "interrupt": {
@@ -759,7 +759,7 @@
     },
     "channels_V": {
       "dir": "in",
-      "width": "5"
+      "width": "6"
     }
   },
   "CPorts": {
@@ -775,7 +775,7 @@
     "channels_V": {
       "interfaceRef": "channels_V",
       "dir": "in",
-      "dataWidth": "5",
+      "dataWidth": "6",
       "handshakeRef": "ap_none"
     }
   },
@@ -793,19 +793,19 @@
         "Timing": {
           "Target": "4.00",
           "Uncertainty": "0.50",
-          "Estimate": "43.48"
+          "Estimate": "52.67"
         },
         "Area": {
           "BRAM_18K": "2",
-          "FF": "893",
-          "LUT": "1744",
+          "FF": "960",
+          "LUT": "1955",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-13 18:32:35 PDT",
+    "Time": "2018-08-14 10:15:48 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

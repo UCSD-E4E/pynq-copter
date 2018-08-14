@@ -1153,7 +1153,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>LAYERED_METADATA</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CHANNELS_V.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 5} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CHANNELS_V.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 6} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -1448,11 +1448,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Aug 14 01:41:34 UTC 2018</spirit:value>
+            <spirit:value>Tue Aug 14 17:20:13 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:abd042ca</spirit:value>
+            <spirit:value>7:d4257c70</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1467,11 +1467,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Aug 14 01:41:34 UTC 2018</spirit:value>
+            <spirit:value>Tue Aug 14 17:20:13 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:abd042ca</spirit:value>
+            <spirit:value>7:d4257c70</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1486,11 +1486,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Aug 14 01:41:34 UTC 2018</spirit:value>
+            <spirit:value>Tue Aug 14 17:20:13 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:3265aaeb</spirit:value>
+            <spirit:value>7:cf789647</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1505,11 +1505,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Aug 14 01:41:34 UTC 2018</spirit:value>
+            <spirit:value>Tue Aug 14 17:20:13 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:3265aaeb</spirit:value>
+            <spirit:value>7:cf789647</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1523,11 +1523,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Aug 14 01:43:16 UTC 2018</spirit:value>
+            <spirit:value>Tue Aug 14 17:28:34 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:abd042ca</spirit:value>
+            <spirit:value>7:d4257c70</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2619,7 +2619,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long">4</spirit:left>
+            <spirit:left spirit:format="long">5</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2760,15 +2760,15 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3c55/hdl/verilog/rc_receiver_in_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/1583/hdl/verilog/rc_receiver_in_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3c55/hdl/verilog/rc_receiver.v</spirit:name>
+        <spirit:name>../../ipshared/1583/hdl/verilog/rc_receiver.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3c55/hdl/verilog/rc_receiver_norm_out_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/1583/hdl/verilog/rc_receiver_norm_out_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -2783,17 +2783,17 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/3c55/hdl/verilog/rc_receiver_in_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/1583/hdl/verilog/rc_receiver_in_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3c55/hdl/verilog/rc_receiver.v</spirit:name>
+        <spirit:name>../../ipshared/1583/hdl/verilog/rc_receiver.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3c55/hdl/verilog/rc_receiver_norm_out_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/1583/hdl/verilog/rc_receiver_norm_out_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -3022,10 +3022,10 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>Rc_receiver</xilinx:displayName>
-      <xilinx:coreRevision>1808131832</xilinx:coreRevision>
+      <xilinx:coreRevision>1808141015</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_NORM_OUT.ARUSER_WIDTH" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_NORM_OUT.AWUSER_WIDTH" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_NORM_OUT.BUSER_WIDTH" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
@@ -3070,11 +3070,11 @@
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="6b292013"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="061858cf"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="07f39049"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="8cd44484"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="647035f2"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="3c684768"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="0def3327"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="6152411d"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="2014d8b6"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="5aa3a5cb"/>
     </xilinx:packagingInfo>

@@ -59,12 +59,12 @@ module pwm_xlslice_0_0 (
 );
 
 input wire [19 : 0] Din;
-output wire [4 : 0] Dout;
+output wire [5 : 0] Dout;
 
   xlslice_v1_0_1_xlslice #(
     .DIN_WIDTH(20),
     .DIN_FROM(19),
-    .DIN_TO(15)
+    .DIN_TO(14)
   ) inst (
     .Din(Din),
     .Dout(Dout)

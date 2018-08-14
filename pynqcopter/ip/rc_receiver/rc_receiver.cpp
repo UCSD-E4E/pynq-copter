@@ -50,7 +50,7 @@ void rc_receiver(
 
 
 	// static variables
-	static C_t last_on = 0b00000;
+	static C_t last_on = 0;
 	static unsigned int acc=0;
 
 	char write_to = 0;
@@ -58,7 +58,7 @@ void rc_receiver(
 	should_write = false;
 	unsigned int write_val=0;
 
-	for(int i =0; i < 5; i++) {
+	for(int i =0; i < CHANNELS; i++) {
 		//if was high now low reset and output
 		if(channels[i]) { //if high
 			++acc;

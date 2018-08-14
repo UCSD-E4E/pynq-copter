@@ -35261,9 +35261,9 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 #pragma line 43 "./normalizer.hpp" 2
 #pragma line 41 "normalizer.cpp" 2
 #pragma line 63 "normalizer.cpp"
-typedef ap_ufixed<sizeof(unsigned int)+sizeof(F_t),sizeof(unsigned int)> bigBigF_t;
+typedef ap_ufixed<sizeof(unsigned int)*8+sizeof(F_t)*8,sizeof(unsigned int)*8> bigBigF_t;
 #pragma empty_line
-void normalizer(unsigned int regs_in[5],unsigned int min_high, unsigned int max_high, F_t m[4096]) {_ssdm_SpecArrayDimSize(regs_in,5);_ssdm_SpecArrayDimSize(m,4096);
+void normalizer(unsigned int regs_in[6],unsigned int min_high, unsigned int max_high, F_t m[4096]) {_ssdm_SpecArrayDimSize(regs_in,6);_ssdm_SpecArrayDimSize(m,4096);
 #pragma HLS INTERFACE s_axilite port=return bundle=in
 #pragma HLS INTERFACE s_axilite port=regs_in bundle=in
 #pragma HLS INTERFACE s_axilite port=min_high bundle=in
@@ -35274,18 +35274,16 @@ void normalizer(unsigned int regs_in[5],unsigned int min_high, unsigned int max_
 #pragma empty_line
 #pragma HLS PIPELINE
 #pragma empty_line
- bigBigF_t range = max_high-min_high;
+ static unsigned int last[6] = {0,0,0,0,0,0};
 #pragma empty_line
- static unsigned int last[5] = {0,0,0,0,0};
-#pragma empty_line
-#pragma empty_line
- static unsigned int changed=0;
- for(int i =0; i < 4; ++i) {
+ int changed=0;
+ for(int i =0; i < 6; ++i) {
   if(regs_in[i]!=last[i]) {
    changed=i;
+   last[i]=regs_in[i];
   }
  }
-#pragma empty_line
- m[changed]= F_t(bigBigF_t(regs_in[changed]-min_high)/range);
-#pragma empty_line
+ if(changed<4) {
+  m[changed]= F_t(bigBigF_t(regs_in[changed]-min_high)/bigBigF_t(max_high-min_high));
+ }
 }

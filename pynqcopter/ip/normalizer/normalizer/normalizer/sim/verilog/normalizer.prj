@@ -1,0 +1,10 @@
+sv work "glbl.v"
+sv xil_defaultlib "normalizer_m_V_m_axi.v"
+sv xil_defaultlib "normalizer_udiv_6cud.v"
+sv xil_defaultlib "AESL_axi_slave_in.v"
+sv xil_defaultlib "AESL_axi_master_m_V.v"
+sv xil_defaultlib "normalizer.autotb.v"
+sv xil_defaultlib "normalizer_mux_83bkb.v"
+sv xil_defaultlib "normalizer.v"
+sv xil_defaultlib "normalizer_in_s_axi.v"
+

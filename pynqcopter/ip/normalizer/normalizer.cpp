@@ -60,9 +60,9 @@
  * | 5 | -.5  | 0.57735026919  | 1   |
  *
  */
-typedef ap_ufixed<sizeof(unsigned int)+sizeof(F_t),sizeof(unsigned int)> bigBigF_t;
+typedef ap_ufixed<sizeof(unsigned int)*8+sizeof(F_t)*8,sizeof(unsigned int)*8> bigBigF_t;
 
-void normalizer(unsigned int regs_in[5],unsigned int min_high, unsigned int max_high, F_t m[4096]) {
+void normalizer(unsigned int regs_in[CHANNELS],unsigned int min_high, unsigned int max_high, F_t m[4096]) {
 #pragma HLS INTERFACE s_axilite port=return bundle=in
 #pragma HLS INTERFACE s_axilite port=regs_in bundle=in
 #pragma HLS INTERFACE s_axilite port=min_high bundle=in
@@ -73,18 +73,16 @@ void normalizer(unsigned int regs_in[5],unsigned int min_high, unsigned int max_
 
 #pragma HLS PIPELINE
 
- 	bigBigF_t range = max_high-min_high;
+	static unsigned int last[CHANNELS] = {0,0,0,0,0,0};
 
-	static unsigned int last[5] = {0,0,0,0,0};
-	//bool output=(regs_in[4]>(max_high+min_high)/2) ? true : false;
-
-	static unsigned int changed=0;
-	for(int i =0; i < 4; ++i) {
+	int changed=0;
+	for(int i =0; i < CHANNELS; ++i) {
 		if(regs_in[i]!=last[i]) {
 			changed=i;
+			last[i]=regs_in[i];
 		}
 	}
-
-	m[changed]= F_t(bigBigF_t(regs_in[changed]-min_high)/range);//output ? F_t(bigBigF_t(regs_in[0]-min_high)/range) : F_t(0);
-
+	if(changed<4) {
+		m[changed]= F_t(bigBigF_t(regs_in[changed]-min_high)/bigBigF_t(max_high-min_high));
+	}
 }

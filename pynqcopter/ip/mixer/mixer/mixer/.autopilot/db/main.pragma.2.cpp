@@ -37337,8 +37337,6 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 # 43 "./mixer.hpp" 2
 
 
-
-
 typedef ap_fixed<16 +3,4> bigF_t;
 
 

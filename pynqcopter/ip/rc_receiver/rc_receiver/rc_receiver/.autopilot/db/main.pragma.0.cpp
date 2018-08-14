@@ -35263,8 +35263,6 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 #43 "./../mixer/mixer.hpp" 2
 
 
-
-
 typedef ap_fixed<16 +3,4> bigF_t;
 
 
@@ -35279,7 +35277,7 @@ const bigF_t MIX_C[6][3] = {
 #42 "./rc_receiver.hpp" 2
 
 
-typedef ap_uint<5> C_t;
+typedef ap_uint<6> C_t;
 typedef ap_uint<32> tick_t;
 typedef ap_uint<64> concatTick_t;
 #36 "main.cpp" 2

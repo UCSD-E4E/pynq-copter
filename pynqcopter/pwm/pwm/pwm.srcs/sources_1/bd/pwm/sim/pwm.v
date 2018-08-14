@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Mon Aug 13 18:41:33 2018
+//Date        : Tue Aug 14 12:41:53 2018
 //Host        : apple running 64-bit Ubuntu 16.04.5 LTS
 //Command     : generate_target pwm.bd
 //Design      : pwm
@@ -878,15 +878,15 @@ module pwm
   wire [0:0]rst_ps7_0_100M_interconnect_aresetn;
   wire [0:0]rst_ps7_0_100M_peripheral_aresetn;
   wire [0:0]rst_ps7_0_100M_peripheral_reset;
-  wire [504:0]synchronizer_0_RD_DATA;
+  wire [605:0]synchronizer_0_RD_DATA;
   wire [19:0]wire_distributor_0_gpio_output_TRI_I;
   wire [19:0]wire_distributor_0_gpio_output_TRI_O;
   wire [19:0]wire_distributor_0_gpio_output_TRI_T;
   wire [19:0]wire_distributor_0_wire_i_i;
   wire [19:0]xlconcat_0_dout;
   wire [19:0]xlconstant_0_dout;
-  wire [4:0]xlslice_0_Dout;
-  wire [4:0]xlslice_1_Dout;
+  wire [5:0]xlslice_0_Dout;
+  wire [5:0]xlslice_1_Dout;
   wire [3:0]xlslice_2_Dout;
 
   assign arduino_gpio_tri_o[19:0] = wire_distributor_0_gpio_output_TRI_O;

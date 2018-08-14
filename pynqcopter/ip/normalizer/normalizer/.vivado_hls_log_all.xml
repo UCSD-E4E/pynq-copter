@@ -12,12 +12,16 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Register 'changed' is power-on initialization." projectName="normalizer" solutionName="normalizer" date="2018-08-13T16:35:37.235-0700" type="Warning"/>
-        <logs message="WARNING: [SCHED 204-21] The critical path consists of the following:&#xA;&#x9;'udiv' operation ('__Val2__', normalizer.cpp:88) (4.39 ns)" projectName="normalizer" solutionName="normalizer" date="2018-08-13T16:35:37.094-0700" type="Warning"/>
-        <logs message="WARNING: [SCHED 204-21] Estimated clock period (4.386ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns)." projectName="normalizer" solutionName="normalizer" date="2018-08-13T16:35:37.086-0700" type="Warning"/>
-        <logs message="WARNING: [SCHED 204-63] Unable to schedule bus write on port 'm_V' (normalizer.cpp:88) within the last cycle (II = 1).&#xA;Please consider increasing the initiation interval of the pipeline." projectName="normalizer" solutionName="normalizer" date="2018-08-13T16:35:37.079-0700" type="Warning"/>
-        <logs message="WARNING: [SCHED 204-63] Unable to schedule bus read on port 'm_V' (normalizer.cpp:79) within the first cycle (II = 1).&#xA;Please consider increasing the target initiation interval of the pipeline." projectName="normalizer" solutionName="normalizer" date="2018-08-13T16:35:37.073-0700" type="Warning"/>
-        <logs message="WARNING: [SCHED 204-21] Estimated delay (4.39ns) of 'udiv' operation ('__Val2__', normalizer.cpp:88) exceeds the target cycle time (target cycle time: 4ns, clock uncertainty: 0.5ns, effective cycle time: 3.5ns)." projectName="normalizer" solutionName="normalizer" date="2018-08-13T16:35:36.851-0700" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'last_5' is power-on initialization." projectName="normalizer" solutionName="normalizer" date="2018-08-14T12:34:07.870-0700" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'last_4' is power-on initialization." projectName="normalizer" solutionName="normalizer" date="2018-08-14T12:34:07.867-0700" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'last_3' is power-on initialization." projectName="normalizer" solutionName="normalizer" date="2018-08-14T12:34:07.865-0700" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'last_2' is power-on initialization." projectName="normalizer" solutionName="normalizer" date="2018-08-14T12:34:07.862-0700" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'last_1' is power-on initialization." projectName="normalizer" solutionName="normalizer" date="2018-08-14T12:34:07.860-0700" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'last_0' is power-on initialization." projectName="normalizer" solutionName="normalizer" date="2018-08-14T12:34:07.858-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-21] The critical path consists of the following:&#xA;&#x9;'udiv' operation ('tmp_5', normalizer.cpp:86) (5.24 ns)" projectName="normalizer" solutionName="normalizer" date="2018-08-14T12:34:07.566-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-21] Estimated clock period (5.23857ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns)." projectName="normalizer" solutionName="normalizer" date="2018-08-14T12:34:07.564-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-63] Unable to schedule bus write on port 'm_V' (normalizer.cpp:86) within the last cycle (II = 1).&#xA;Please consider increasing the initiation interval of the pipeline." projectName="normalizer" solutionName="normalizer" date="2018-08-14T12:34:07.535-0700" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-21] Estimated delay (5.24ns) of 'udiv' operation ('tmp_5', normalizer.cpp:86) exceeds the target cycle time (target cycle time: 4ns, clock uncertainty: 0.5ns, effective cycle time: 3.5ns)." projectName="normalizer" solutionName="normalizer" date="2018-08-14T12:34:07.531-0700" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

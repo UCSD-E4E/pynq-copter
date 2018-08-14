@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Mon Aug 13 18:41:47 2018
-# Process ID: 8663
+# Start of session at: Tue Aug 14 12:42:15 2018
+# Process ID: 22341
 # Current directory: /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_normalizer_0_0_synth_1
 # Command line: vivado -log pwm_normalizer_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pwm_normalizer_0_0.tcl
 # Log file: /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_normalizer_0_0_synth_1/pwm_normalizer_0_0.vds
@@ -15,12 +15,12 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8678 
+INFO: Helper process launched with PID 22357 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1262.051 ; gain = 81.996 ; free physical = 1305 ; free virtual = 10194
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1263.055 ; gain = 82.996 ; free physical = 1812 ; free virtual = 11257
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'pwm_normalizer_0_0' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_normalizer_0_0/synth/pwm_normalizer_0_0.v:56]
-INFO: [Synth 8-638] synthesizing module 'normalizer' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer.v:12]
+INFO: [Synth 8-638] synthesizing module 'normalizer' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:12]
 	Parameter ap_ST_fsm_pp0_stage0 bound to: 1'b1 
 	Parameter C_S_AXI_IN_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_IN_ADDR_WIDTH bound to: 7 - type: integer 
@@ -42,8 +42,8 @@ INFO: [Synth 8-638] synthesizing module 'normalizer' [/home/brennan/Documents/py
 	Parameter C_S_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
 	Parameter C_M_AXI_M_V_WSTRB_WIDTH bound to: 4 - type: integer 
 	Parameter C_M_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer.v:173]
-INFO: [Synth 8-638] synthesizing module 'normalizer_in_s_axi' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_in_s_axi.v:9]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:173]
+INFO: [Synth 8-638] synthesizing module 'normalizer_in_s_axi' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_in_s_axi.v:9]
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter ADDR_AP_CTRL bound to: 7'b0000000 
@@ -60,10 +60,12 @@ INFO: [Synth 8-638] synthesizing module 'normalizer_in_s_axi' [/home/brennan/Doc
 	Parameter ADDR_REGS_IN_3_CTRL bound to: 7'b0101100 
 	Parameter ADDR_REGS_IN_4_DATA_0 bound to: 7'b0110000 
 	Parameter ADDR_REGS_IN_4_CTRL bound to: 7'b0110100 
-	Parameter ADDR_MIN_HIGH_DATA_0 bound to: 7'b0111000 
-	Parameter ADDR_MIN_HIGH_CTRL bound to: 7'b0111100 
-	Parameter ADDR_MAX_HIGH_DATA_0 bound to: 7'b1000000 
-	Parameter ADDR_MAX_HIGH_CTRL bound to: 7'b1000100 
+	Parameter ADDR_REGS_IN_5_DATA_0 bound to: 7'b0111000 
+	Parameter ADDR_REGS_IN_5_CTRL bound to: 7'b0111100 
+	Parameter ADDR_MIN_HIGH_DATA_0 bound to: 7'b1000000 
+	Parameter ADDR_MIN_HIGH_CTRL bound to: 7'b1000100 
+	Parameter ADDR_MAX_HIGH_DATA_0 bound to: 7'b1001000 
+	Parameter ADDR_MAX_HIGH_CTRL bound to: 7'b1001100 
 	Parameter WRIDLE bound to: 2'b00 
 	Parameter WRDATA bound to: 2'b01 
 	Parameter WRRESP bound to: 2'b10 
@@ -72,9 +74,9 @@ INFO: [Synth 8-638] synthesizing module 'normalizer_in_s_axi' [/home/brennan/Doc
 	Parameter RDDATA bound to: 2'b01 
 	Parameter RDRESET bound to: 2'b10 
 	Parameter ADDR_BITS bound to: 7 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_in_s_axi.v:238]
-INFO: [Synth 8-256] done synthesizing module 'normalizer_in_s_axi' (1#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_in_s_axi.v:9]
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:10]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_in_s_axi.v:245]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_in_s_axi' (1#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_in_s_axi.v:9]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:10]
 	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
 	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
@@ -94,12 +96,12 @@ INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi' [/home/brennan/Do
 	Parameter USER_DW bound to: 16 - type: integer 
 	Parameter USER_AW bound to: 32 - type: integer 
 	Parameter USER_MAXREQS bound to: 5 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_throttl' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:689]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_throttl' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:689]
 	Parameter USED_FIX bound to: 0 - type: integer 
 	Parameter FIX_VALUE bound to: 4 - type: integer 
 	Parameter threshold bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_throttl' (2#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:689]
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_write' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:1536]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_throttl' (2#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:689]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_write' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:1536]
 	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -124,43 +126,43 @@ INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_write' [/home/bren
 	Parameter NUM_WRITE_WIDTH bound to: 4 - type: integer 
 	Parameter TARGET_ADDR bound to: 1073799184 - type: integer 
 	Parameter BOUNDARY_BEATS bound to: 10'b1111111111 
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_fifo' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:399]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_fifo' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:399]
 	Parameter DATA_BITS bound to: 10 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_fifo' (3#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:399]
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_decoder' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:673]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_fifo' (3#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:399]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_decoder' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:673]
 	Parameter DIN_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_decoder' (4#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:673]
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_reg_slice' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:295]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_decoder' (4#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:673]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_reg_slice' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:295]
 	Parameter N bound to: 64 - type: integer 
 	Parameter ZERO bound to: 2'b10 
 	Parameter ONE bound to: 2'b11 
 	Parameter TWO bound to: 2'b01 
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_reg_slice' (5#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:295]
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_fifo__parameterized0' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:399]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_reg_slice' (5#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:295]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_fifo__parameterized0' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:399]
 	Parameter DATA_BITS bound to: 64 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_fifo__parameterized0' (5#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:399]
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_buffer' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:508]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_fifo__parameterized0' (5#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:399]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_buffer' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:508]
 	Parameter MEM_STYLE bound to: block - type: string 
 	Parameter DATA_WIDTH bound to: 18 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_buffer' (6#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:508]
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_fifo__parameterized1' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:399]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_buffer' (6#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:508]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_fifo__parameterized1' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:399]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 15 - type: integer 
 	Parameter DEPTH_BITS bound to: 4 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_fifo__parameterized1' (6#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:399]
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_fifo__parameterized2' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:399]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_fifo__parameterized1' (6#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:399]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_fifo__parameterized2' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:399]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_fifo__parameterized2' (6#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:399]
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_write' (7#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:1536]
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_read' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:741]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_fifo__parameterized2' (6#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:399]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_write' (7#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:1536]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_read' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:741]
 	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -184,48 +186,72 @@ INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_read' [/home/brenn
 	Parameter NUM_READ_WIDTH bound to: 4 - type: integer 
 	Parameter TARGET_ADDR bound to: 1073799184 - type: integer 
 	Parameter BOUNDARY_BEATS bound to: 10'b1111111111 
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_buffer__parameterized0' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:508]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_buffer__parameterized0' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:508]
 	Parameter MEM_STYLE bound to: block - type: string 
 	Parameter DATA_WIDTH bound to: 35 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_buffer__parameterized0' (7#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:508]
-INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_reg_slice__parameterized0' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:295]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_buffer__parameterized0' (7#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:508]
+INFO: [Synth 8-638] synthesizing module 'normalizer_m_V_m_axi_reg_slice__parameterized0' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:295]
 	Parameter N bound to: 18 - type: integer 
 	Parameter ZERO bound to: 2'b10 
 	Parameter ONE bound to: 2'b11 
 	Parameter TWO bound to: 2'b01 
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_reg_slice__parameterized0' (7#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:295]
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_read' (8#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:741]
-INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi' (9#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:10]
-INFO: [Synth 8-638] synthesizing module 'normalizer_udiv_8bkb' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:131]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_reg_slice__parameterized0' (7#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:295]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi_read' (8#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:741]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_m_V_m_axi' (9#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:10]
+INFO: [Synth 8-638] synthesizing module 'normalizer_mux_83bkb' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_mux_83bkb.v:11]
 	Parameter ID bound to: 1 - type: integer 
-	Parameter NUM_STAGE bound to: 12 - type: integer 
-	Parameter din0_WIDTH bound to: 8 - type: integer 
-	Parameter din1_WIDTH bound to: 6 - type: integer 
-	Parameter dout_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'normalizer_udiv_8bkb_div' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:70]
-	Parameter in0_WIDTH bound to: 8 - type: integer 
-	Parameter in1_WIDTH bound to: 6 - type: integer 
-	Parameter out_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'normalizer_udiv_8bkb_div_u' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:10]
-	Parameter in0_WIDTH bound to: 8 - type: integer 
-	Parameter in1_WIDTH bound to: 6 - type: integer 
-	Parameter out_WIDTH bound to: 3 - type: integer 
-	Parameter cal_WIDTH bound to: 8 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element loop[7].divisor_tmp_reg[8] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:54]
-INFO: [Synth 8-256] done synthesizing module 'normalizer_udiv_8bkb_div_u' (10#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:10]
-INFO: [Synth 8-256] done synthesizing module 'normalizer_udiv_8bkb_div' (11#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:70]
-INFO: [Synth 8-256] done synthesizing module 'normalizer_udiv_8bkb' (12#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:131]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer.v:970]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer.v:972]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer.v:974]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer.v:976]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer.v:980]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer.v:982]
-INFO: [Synth 8-256] done synthesizing module 'normalizer' (13#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer.v:12]
-INFO: [Synth 8-256] done synthesizing module 'pwm_normalizer_0_0' (14#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_normalizer_0_0/synth/pwm_normalizer_0_0.v:56]
-WARNING: [Synth 8-3331] design normalizer_udiv_8bkb_div_u has unconnected port reset
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter din2_WIDTH bound to: 32 - type: integer 
+	Parameter din3_WIDTH bound to: 32 - type: integer 
+	Parameter din4_WIDTH bound to: 32 - type: integer 
+	Parameter din5_WIDTH bound to: 32 - type: integer 
+	Parameter din6_WIDTH bound to: 32 - type: integer 
+	Parameter din7_WIDTH bound to: 32 - type: integer 
+	Parameter din8_WIDTH bound to: 3 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'normalizer_mux_83bkb' (10#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_mux_83bkb.v:11]
+INFO: [Synth 8-638] synthesizing module 'normalizer_udiv_6cud' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:131]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 67 - type: integer 
+	Parameter din0_WIDTH bound to: 63 - type: integer 
+	Parameter din1_WIDTH bound to: 48 - type: integer 
+	Parameter dout_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'normalizer_udiv_6cud_div' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:70]
+	Parameter in0_WIDTH bound to: 63 - type: integer 
+	Parameter in1_WIDTH bound to: 48 - type: integer 
+	Parameter out_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'normalizer_udiv_6cud_div_u' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:10]
+	Parameter in0_WIDTH bound to: 63 - type: integer 
+	Parameter in1_WIDTH bound to: 48 - type: integer 
+	Parameter out_WIDTH bound to: 16 - type: integer 
+	Parameter cal_WIDTH bound to: 63 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element loop[62].divisor_tmp_reg[63] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:54]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_udiv_6cud_div_u' (11#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:10]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_udiv_6cud_div' (12#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:70]
+INFO: [Synth 8-256] done synthesizing module 'normalizer_udiv_6cud' (13#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:131]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter1_changed_1_1_reg_158_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1789]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter1_changed_1_2_reg_171_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1790]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter1_changed_1_3_reg_183_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1791]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter1_changed_1_4_reg_195_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1792]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter1_changed_1_5_reg_207_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1793]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter2_changed_1_2_reg_171_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1799]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter2_changed_1_3_reg_183_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1800]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter2_changed_1_4_reg_195_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1801]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter2_changed_1_5_reg_207_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1802]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter3_changed_1_3_reg_183_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1808]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter3_changed_1_4_reg_195_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1809]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter3_changed_1_5_reg_207_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1810]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter4_changed_1_4_reg_195_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1816]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter4_changed_1_5_reg_207_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1817]
+WARNING: [Synth 8-6014] Unused sequential element ap_phi_reg_pp0_iter5_changed_1_5_reg_207_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:1823]
+WARNING: [Synth 8-6014] Unused sequential element last_0_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:2008]
+INFO: [Synth 8-256] done synthesizing module 'normalizer' (14#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer.v:12]
+INFO: [Synth 8-256] done synthesizing module 'pwm_normalizer_0_0' (15#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_normalizer_0_0/synth/pwm_normalizer_0_0.v:56]
+WARNING: [Synth 8-3331] design normalizer_udiv_6cud_div_u has unconnected port reset
 WARNING: [Synth 8-3331] design normalizer_m_V_m_axi_read has unconnected port RID[0]
 WARNING: [Synth 8-3331] design normalizer_m_V_m_axi_read has unconnected port RUSER[0]
 WARNING: [Synth 8-3331] design normalizer_m_V_m_axi_read has unconnected port rreq_cache[3]
@@ -266,7 +292,7 @@ WARNING: [Synth 8-3331] design normalizer_m_V_m_axi has unconnected port I_ARBUR
 WARNING: [Synth 8-3331] design normalizer_m_V_m_axi has unconnected port I_ARLOCK[1]
 WARNING: [Synth 8-3331] design normalizer_m_V_m_axi has unconnected port I_ARLOCK[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1313.582 ; gain = 133.527 ; free physical = 1316 ; free virtual = 10207
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1335.586 ; gain = 155.527 ; free physical = 1791 ; free virtual = 11240
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -276,7 +302,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1313.582 ; gain = 133.527 ; free physical = 1303 ; free virtual = 10195
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1335.586 ; gain = 155.527 ; free physical = 1801 ; free virtual = 11248
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -292,85 +318,132 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.20 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1667.574 ; gain = 0.000 ; free physical = 715 ; free virtual = 9643
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.41 ; elapsed = 00:00:00.15 . Memory (MB): peak = 1704.594 ; gain = 4.000 ; free physical = 1474 ; free virtual = 10935
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:51 . Memory (MB): peak = 1667.574 ; gain = 487.520 ; free physical = 892 ; free virtual = 9821
+Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:00:57 . Memory (MB): peak = 1704.594 ; gain = 524.535 ; free physical = 1584 ; free virtual = 11045
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:51 . Memory (MB): peak = 1667.574 ; gain = 487.520 ; free physical = 892 ; free virtual = 9821
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:00:57 . Memory (MB): peak = 1704.594 ; gain = 524.535 ; free physical = 1584 ; free virtual = 11045
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_normalizer_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:51 . Memory (MB): peak = 1667.574 ; gain = 487.520 ; free physical = 896 ; free virtual = 9824
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:58 . Memory (MB): peak = 1704.594 ; gain = 524.535 ; free physical = 1586 ; free virtual = 11047
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'normalizer_in_s_axi'
 INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element throttl_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:723]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:591]
-WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:589]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:487]
-WARNING: [Synth 8-6014] Unused sequential element pout_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:485]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[5] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[6] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[7] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[8] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[9] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[10] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[11] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[12] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[13] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[14] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:1976]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.len_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:2361]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:591]
-WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:589]
-WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:1161]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.len_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:1379]
-WARNING: [Synth 8-3936] Found unconnected internal register 'loop[7].remd_tmp_reg[8]' and it is trimmed from '8' to '3' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:53]
-WARNING: [Synth 8-3936] Found unconnected internal register 'loop[7].dividend_tmp_reg[8]' and it is trimmed from '8' to '3' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:53]
-WARNING: [Synth 8-3936] Found unconnected internal register 'loop[6].remd_tmp_reg[7]' and it is trimmed from '8' to '7' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:53]
-WARNING: [Synth 8-3936] Found unconnected internal register 'loop[5].remd_tmp_reg[6]' and it is trimmed from '8' to '7' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:53]
-WARNING: [Synth 8-3936] Found unconnected internal register 'loop[4].remd_tmp_reg[5]' and it is trimmed from '8' to '7' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:53]
-WARNING: [Synth 8-3936] Found unconnected internal register 'loop[3].remd_tmp_reg[4]' and it is trimmed from '8' to '7' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:53]
-WARNING: [Synth 8-3936] Found unconnected internal register 'loop[2].remd_tmp_reg[3]' and it is trimmed from '8' to '7' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:53]
-WARNING: [Synth 8-3936] Found unconnected internal register 'loop[1].remd_tmp_reg[2]' and it is trimmed from '8' to '7' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:53]
-WARNING: [Synth 8-3936] Found unconnected internal register 'loop[0].remd_tmp_reg[1]' and it is trimmed from '8' to '7' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:53]
-WARNING: [Synth 8-3936] Found unconnected internal register 'regs_in_0_read_reg_310_reg' and it is trimmed from '32' to '4' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer.v:760]
-WARNING: [Synth 8-3936] Found unconnected internal register 'min_high_read_reg_304_reg' and it is trimmed from '32' to '4' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer.v:759]
-WARNING: [Synth 8-3936] Found unconnected internal register 'max_high_read_reg_299_reg' and it is trimmed from '32' to '4' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer.v:758]
-INFO: [Synth 8-5545] ROM "tmp_3_fu_170_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "tmp_4_1_fu_134_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "tmp_4_2_fu_146_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "tmp_4_3_fu_152_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "tmp_4_fu_128_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element throttl_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:723]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:591]
+WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:589]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:487]
+WARNING: [Synth 8-6014] Unused sequential element pout_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:485]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[5] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[6] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[7] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[8] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[9] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[10] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[11] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[12] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[13] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[14] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:1976]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.len_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:2361]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:591]
+WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:589]
+WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:1161]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.len_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:1379]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[62].remd_tmp_reg[63]' and it is trimmed from '63' to '16' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[62].dividend_tmp_reg[63]' and it is trimmed from '63' to '16' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[61].remd_tmp_reg[62]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[60].remd_tmp_reg[61]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[59].remd_tmp_reg[60]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[58].remd_tmp_reg[59]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[57].remd_tmp_reg[58]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[56].remd_tmp_reg[57]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[55].remd_tmp_reg[56]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[54].remd_tmp_reg[55]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[53].remd_tmp_reg[54]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[52].remd_tmp_reg[53]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[51].remd_tmp_reg[52]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[50].remd_tmp_reg[51]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[49].remd_tmp_reg[50]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[48].remd_tmp_reg[49]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[47].remd_tmp_reg[48]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[46].remd_tmp_reg[47]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[45].remd_tmp_reg[46]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[44].remd_tmp_reg[45]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[43].remd_tmp_reg[44]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[42].remd_tmp_reg[43]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[41].remd_tmp_reg[42]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[40].remd_tmp_reg[41]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[39].remd_tmp_reg[40]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[38].remd_tmp_reg[39]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[37].remd_tmp_reg[38]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[36].remd_tmp_reg[37]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[35].remd_tmp_reg[36]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[34].remd_tmp_reg[35]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[33].remd_tmp_reg[34]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[32].remd_tmp_reg[33]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[31].remd_tmp_reg[32]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[30].remd_tmp_reg[31]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[29].remd_tmp_reg[30]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[28].remd_tmp_reg[29]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[27].remd_tmp_reg[28]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[26].remd_tmp_reg[27]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[25].remd_tmp_reg[26]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[24].remd_tmp_reg[25]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[23].remd_tmp_reg[24]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[22].remd_tmp_reg[23]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[21].remd_tmp_reg[22]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[20].remd_tmp_reg[21]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[19].remd_tmp_reg[20]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[18].remd_tmp_reg[19]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[17].remd_tmp_reg[18]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[16].remd_tmp_reg[17]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[15].remd_tmp_reg[16]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[14].remd_tmp_reg[15]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[13].remd_tmp_reg[14]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[12].remd_tmp_reg[13]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[11].remd_tmp_reg[12]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[10].remd_tmp_reg[11]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[9].remd_tmp_reg[10]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[8].remd_tmp_reg[9]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[7].remd_tmp_reg[8]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[6].remd_tmp_reg[7]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[5].remd_tmp_reg[6]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[4].remd_tmp_reg[5]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[3].remd_tmp_reg[4]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[2].remd_tmp_reg[3]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[1].remd_tmp_reg[2]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[0].remd_tmp_reg[1]' and it is trimmed from '63' to '62' bits. [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:53]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -382,7 +455,7 @@ INFO: [Synth 8-5545] ROM "tmp_4_fu_128_p2" won't be mapped to RAM because addres
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'normalizer_in_s_axi'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:52 . Memory (MB): peak = 1667.574 ; gain = 487.520 ; free physical = 878 ; free virtual = 9806
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:36 ; elapsed = 00:01:00 . Memory (MB): peak = 1704.594 ; gain = 524.535 ; free physical = 1564 ; free virtual = 11029
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -395,58 +468,61 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   3 Input     64 Bit       Adders := 63    
 	   2 Input     32 Bit       Adders := 8     
+	   3 Input     32 Bit       Adders := 2     
 	   2 Input     20 Bit       Adders := 2     
 	   2 Input     12 Bit       Adders := 2     
 	   2 Input      9 Bit       Adders := 2     
-	   3 Input      9 Bit       Adders := 8     
 	   2 Input      8 Bit       Adders := 9     
 	   2 Input      6 Bit       Adders := 2     
 	   2 Input      4 Bit       Adders := 2     
-	   3 Input      4 Bit       Adders := 2     
 	   2 Input      3 Bit       Adders := 10    
 	   2 Input      1 Bit       Adders := 1     
 +---XORs : 
-	   2 Input      1 Bit         XORs := 3     
+	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
 	               64 Bit    Registers := 6     
+	               63 Bit    Registers := 65    
+	               62 Bit    Registers := 62    
+	               48 Bit    Registers := 64    
 	               35 Bit    Registers := 3     
-	               32 Bit    Registers := 21    
+	               32 Bit    Registers := 47    
 	               20 Bit    Registers := 2     
 	               18 Bit    Registers := 5     
-	               16 Bit    Registers := 2     
+	               16 Bit    Registers := 7     
 	               10 Bit    Registers := 6     
-	                8 Bit    Registers := 19    
-	                7 Bit    Registers := 8     
-	                6 Bit    Registers := 11    
-	                4 Bit    Registers := 7     
-	                3 Bit    Registers := 10    
-	                2 Bit    Registers := 28    
-	                1 Bit    Registers := 88    
+	                8 Bit    Registers := 9     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 75    
+	                2 Bit    Registers := 17    
+	                1 Bit    Registers := 224   
 +---RAMs : 
 	               8K Bit         RAMs := 1     
 	               4K Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input     64 Bit        Muxes := 2     
+	   2 Input     62 Bit        Muxes := 62    
 	   2 Input     35 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 17    
-	  12 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 25    
 	   2 Input     20 Bit        Muxes := 2     
 	   2 Input     18 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 1     
 	   4 Input     12 Bit        Muxes := 2     
 	   2 Input     10 Bit        Muxes := 4     
 	   2 Input      8 Bit        Muxes := 9     
 	   4 Input      8 Bit        Muxes := 2     
-	   2 Input      7 Bit        Muxes := 7     
 	   7 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 4     
-	   2 Input      3 Bit        Muxes := 6     
-	   2 Input      2 Bit        Muxes := 35    
+	   2 Input      3 Bit        Muxes := 5     
+	   3 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 31    
 	   5 Input      2 Bit        Muxes := 9     
-	   3 Input      2 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 3     
 	   5 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 81    
+	   2 Input      1 Bit        Muxes := 76    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -459,13 +535,12 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
-	               32 Bit    Registers := 8     
+	               32 Bit    Registers := 9     
 	                7 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 8     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 7     
-	  12 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 8     
 	   7 Input      4 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
@@ -629,39 +704,42 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 15    
-Module normalizer_udiv_8bkb_div_u 
+Module normalizer_mux_83bkb 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 7     
+Module normalizer_udiv_6cud_div_u 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input      9 Bit       Adders := 8     
+	   3 Input     64 Bit       Adders := 63    
 +---Registers : 
-	                8 Bit    Registers := 9     
-	                7 Bit    Registers := 7     
-	                6 Bit    Registers := 8     
-	                3 Bit    Registers := 2     
+	               63 Bit    Registers := 64    
+	               62 Bit    Registers := 62    
+	               48 Bit    Registers := 63    
+	               16 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input      7 Bit        Muxes := 7     
-	   2 Input      3 Bit        Muxes := 1     
-Module normalizer_udiv_8bkb_div 
+	   2 Input     62 Bit        Muxes := 62    
+	   2 Input     16 Bit        Muxes := 1     
+Module normalizer_udiv_6cud_div 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
-	                6 Bit    Registers := 1     
-	                3 Bit    Registers := 2     
+	               63 Bit    Registers := 1     
+	               48 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
 Module normalizer 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input      4 Bit       Adders := 2     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 1     
+	   3 Input     32 Bit       Adders := 2     
 +---Registers : 
-	                4 Bit    Registers := 5     
-	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 13    
-	                1 Bit    Registers := 27    
+	               32 Bit    Registers := 25    
+	               16 Bit    Registers := 1     
+	                3 Bit    Registers := 70    
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 163   
 +---Muxes : 
-	   4 Input      2 Bit        Muxes := 2     
-	   2 Input      2 Bit        Muxes := 4     
-	   2 Input      1 Bit        Muxes := 9     
+	   3 Input      3 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -677,23 +755,18 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element throttl_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:723]
-WARNING: [Synth 8-6014] Unused sequential element buff_wdata/usedw_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:589]
-WARNING: [Synth 8-6014] Unused sequential element fifo_resp/pout_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:485]
-WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:1976]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.len_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:2361]
-WARNING: [Synth 8-6014] Unused sequential element fifo_rctl/q_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:437]
-WARNING: [Synth 8-6014] Unused sequential element buff_rdata/usedw_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:589]
-WARNING: [Synth 8-6014] Unused sequential element fifo_rctl/pout_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:485]
-WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:1161]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.len_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_m_V_m_axi.v:1379]
-WARNING: [Synth 8-6014] Unused sequential element normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[7].remd_tmp_reg[8] was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:53]
-WARNING: [Synth 8-6014] Unused sequential element normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/remd_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/030c/hdl/verilog/normalizer_udiv_8bkb.v:122]
-INFO: [Synth 8-5545] ROM "tmp_4_fu_128_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "tmp_4_2_fu_146_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "tmp_4_3_fu_152_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "tmp_3_fu_170_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "tmp_4_1_fu_134_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element throttl_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:723]
+WARNING: [Synth 8-6014] Unused sequential element buff_wdata/usedw_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:589]
+WARNING: [Synth 8-6014] Unused sequential element fifo_resp/pout_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:485]
+WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:1976]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.len_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:2361]
+WARNING: [Synth 8-6014] Unused sequential element fifo_rctl/q_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:437]
+WARNING: [Synth 8-6014] Unused sequential element buff_rdata/usedw_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:589]
+WARNING: [Synth 8-6014] Unused sequential element fifo_rctl/pout_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:485]
+WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:1161]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.len_cnt_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v:1379]
+WARNING: [Synth 8-6014] Unused sequential element normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/remd_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v:122]
+WARNING: [Synth 8-3331] design normalizer_udiv_6cud_div_u has unconnected port reset
 WARNING: [Synth 8-3331] design normalizer_m_V_m_axi_read has unconnected port RID[0]
 WARNING: [Synth 8-3331] design normalizer_m_V_m_axi_read has unconnected port RUSER[0]
 WARNING: [Synth 8-3331] design normalizer_m_V_m_axi_read has unconnected port rreq_cache[3]
@@ -733,55 +806,116 @@ WARNING: [Synth 8-3331] design normalizer_m_V_m_axi has unconnected port I_ARBUR
 WARNING: [Synth 8-3331] design normalizer_m_V_m_axi has unconnected port I_ARBURST[0]
 WARNING: [Synth 8-3331] design normalizer_m_V_m_axi has unconnected port I_ARLOCK[1]
 WARNING: [Synth 8-3331] design normalizer_m_V_m_axi has unconnected port I_ARLOCK[0]
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/dividend0_reg[0]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/divisor0_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/divisor0_reg[0]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/divisor0_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/dividend_tmp_reg[0][0]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/divisor_tmp_reg[0][0]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/dividend0_reg[1]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/divisor0_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/dividend0_reg[2]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/divisor0_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/dividend0_reg[3]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/divisor0_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/divisor_tmp_reg[0][0]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/divisor_tmp_reg[0][1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/divisor0_reg[1] )
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[0].dividend_tmp_reg[1][1]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[0].divisor_tmp_reg[1][0]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/dividend_tmp_reg[0][1]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/divisor_tmp_reg[0][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/dividend_tmp_reg[0][2]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/divisor_tmp_reg[0][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/dividend_tmp_reg[0][3]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/divisor_tmp_reg[0][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[0].divisor_tmp_reg[1][0]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[0].divisor_tmp_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][0]' (FDRE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][7]' (FDRE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/divisor_tmp_reg[0][1]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/divisor0_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][1]' (FDRE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][2]' (FDRE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][3]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][3]' (FDRE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][4]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][4]' (FDRE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][5]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][5]' (FDRE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][6]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/remd_tmp_reg[0][6] )
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[1].dividend_tmp_reg[2][2]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[1].divisor_tmp_reg[2][0]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[0].dividend_tmp_reg[1][2]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[0].divisor_tmp_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[0].dividend_tmp_reg[1][3]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[0].divisor_tmp_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[0].dividend_tmp_reg[1][4]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[0].divisor_tmp_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[1].divisor_tmp_reg[2][0]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[1].divisor_tmp_reg[2][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[2].dividend_tmp_reg[3][3]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[2].divisor_tmp_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[1].dividend_tmp_reg[2][3]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[1].divisor_tmp_reg[2][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[1].dividend_tmp_reg[2][4]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[1].divisor_tmp_reg[2][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[1].dividend_tmp_reg[2][5]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[1].divisor_tmp_reg[2][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[2].divisor_tmp_reg[3][0]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[2].divisor_tmp_reg[3][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[3].dividend_tmp_reg[4][4]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[3].divisor_tmp_reg[4][0]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[2].dividend_tmp_reg[3][4]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[2].divisor_tmp_reg[3][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[2].dividend_tmp_reg[3][5]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[2].divisor_tmp_reg[3][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[2].dividend_tmp_reg[3][6]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[2].divisor_tmp_reg[3][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[3].divisor_tmp_reg[4][0]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[3].divisor_tmp_reg[4][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[4].dividend_tmp_reg[5][5]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[4].divisor_tmp_reg[5][0]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[3].dividend_tmp_reg[4][5]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[3].divisor_tmp_reg[4][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[3].dividend_tmp_reg[4][6]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[3].divisor_tmp_reg[4][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[4].divisor_tmp_reg[5][0]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[4].divisor_tmp_reg[5][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[3].dividend_tmp_reg[4][7]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[3].divisor_tmp_reg[4][1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[0]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[0]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[1]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[2]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[3]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[4]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[5]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[6]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[7]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[8]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[9]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[10]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[11]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[12]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[13]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[14]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[15]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[16]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[17]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[18]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[19]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[20]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[21]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[22]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[23]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[24]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[25]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[26]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[27]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[28]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[29]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/dividend0_reg[30]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[1]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[2]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[3]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[4]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[5]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[6]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[7]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[8]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[9]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[10]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[11]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[12]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[12]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[13]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[14]' (FDE) to 'inst/normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/divisor0_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][33] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][34] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][35] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][37] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][38] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][39] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][40] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][41] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][42] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][43] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][44] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][45] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][46] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][47] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][48] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][49] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][50] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][51] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][52] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][53] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][54] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][55] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][56] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][57] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][58] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][59] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][60] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0 /\remd_tmp_reg[0][61] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[2] )
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[5].dividend_tmp_reg[6][6]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[5].divisor_tmp_reg[6][0]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[4].dividend_tmp_reg[5][6]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[4].divisor_tmp_reg[5][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[5].divisor_tmp_reg[6][0]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[5].divisor_tmp_reg[6][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[4].dividend_tmp_reg[5][7]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[4].divisor_tmp_reg[5][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[2]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[3]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[31]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[3]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[3] )
@@ -818,36 +952,9 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\nor
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[60] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[59] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[58] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[57] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[56] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[55] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[54] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[53] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[52] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[51] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[50] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[49] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[48] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[47] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[46] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[45] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[44] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[43] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[42] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[41] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[40] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[39] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[38] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[37] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[36] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[35] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[34] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[33] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[32] )
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[6].dividend_tmp_reg[7][7]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[6].divisor_tmp_reg[7][0]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[6].divisor_tmp_reg[7][0]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[6].divisor_tmp_reg[7][1]'
-INFO: [Synth 8-3886] merging instance 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[5].dividend_tmp_reg[6][7]' (FDE) to 'inst/normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[5].divisor_tmp_reg[6][1]'
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[63]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[31]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[3]'
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[61]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[3]'
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[62]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[3]'
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[60]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[3]'
@@ -878,7 +985,6 @@ INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[35]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[3]'
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[34]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[3]'
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[3]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[32] )
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[3]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[4]'
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[4]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[5]'
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[5]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[6]'
@@ -899,42 +1005,9 @@ INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[20]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[21]'
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[21]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[22]'
 INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[22]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[23]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[23]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[24]'
+INFO: [Synth 8-3886] merging instance 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[24]' (FDE) to 'inst/normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[25]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/start_addr_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_write/start_addr_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_write/buff_wdata/q_tmp_reg[12] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/\ap_CS_fsm_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_write/bus_wide_gen.pad_oh_reg_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/could_multi_bursts.arlen_buf_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/could_multi_bursts.arlen_buf_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_write/could_multi_bursts.awlen_buf_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_write/could_multi_bursts.awlen_buf_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[0].remd_tmp_reg[1][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[33] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[34] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[35] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[36] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[37] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[38] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[39] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[40] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[41] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[42] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[43] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[44] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[45] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[2] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/fifo_rreq/full_n_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[32] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p1_reg[8] )
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]) is unused and will be removed from module normalizer.
 WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p2_reg[30]) is unused and will be removed from module normalizer.
 WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_write/rs_wreq/data_p1_reg[32]) is unused and will be removed from module normalizer.
@@ -951,7 +1024,6 @@ WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_write/cou
 WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_write/could_multi_bursts.awlen_buf_reg[4]) is unused and will be removed from module normalizer.
 WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_write/sect_addr_buf_reg[0]) is unused and will be removed from module normalizer.
 WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_write/bus_wide_gen.pad_oh_reg_reg[0]) is unused and will be removed from module normalizer.
-WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_write/buff_wdata/q_tmp_reg[12]) is unused and will be removed from module normalizer.
 WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_write/sect_end_buf_reg[0]) is unused and will be removed from module normalizer.
 WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_write/bresp_tmp_reg[1]) is unused and will be removed from module normalizer.
 WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_write/bresp_tmp_reg[0]) is unused and will be removed from module normalizer.
@@ -1035,9 +1107,10 @@ WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_read/rs_r
 WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[14]) is unused and will be removed from module normalizer.
 WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[13]) is unused and will be removed from module normalizer.
 WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[12]) is unused and will be removed from module normalizer.
+WARNING: [Synth 8-3332] Sequential element (normalizer_m_V_m_axi_U/bus_read/rs_rreq/data_p2_reg[11]) is unused and will be removed from module normalizer.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:58 . Memory (MB): peak = 1667.574 ; gain = 487.520 ; free physical = 814 ; free virtual = 9752
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:22 ; elapsed = 00:01:51 . Memory (MB): peak = 1704.594 ; gain = 524.535 ; free physical = 1525 ; free virtual = 10990
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1064,13 +1137,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:01:08 . Memory (MB): peak = 1667.574 ; gain = 487.520 ; free physical = 554 ; free virtual = 9493
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:30 ; elapsed = 00:02:03 . Memory (MB): peak = 1704.594 ; gain = 524.535 ; free physical = 1393 ; free virtual = 10866
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:01:11 . Memory (MB): peak = 1709.113 ; gain = 529.059 ; free physical = 543 ; free virtual = 9481
+Finished Timing Optimization : Time (s): cpu = 00:01:37 ; elapsed = 00:02:11 . Memory (MB): peak = 1746.648 ; gain = 566.590 ; free physical = 1348 ; free virtual = 10820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1097,7 +1170,7 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4480] The timing for the instance inst/normalizer_m_V_m_axi_U/bus_write/buff_wdata/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:01:12 . Memory (MB): peak = 1709.113 ; gain = 529.059 ; free physical = 534 ; free virtual = 9473
+Finished Technology Mapping : Time (s): cpu = 00:01:43 ; elapsed = 00:02:17 . Memory (MB): peak = 1768.008 ; gain = 587.949 ; free physical = 1329 ; free virtual = 10805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1121,7 +1194,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:47 ; elapsed = 00:01:13 . Memory (MB): peak = 1709.113 ; gain = 529.059 ; free physical = 479 ; free virtual = 9418
+Finished IO Insertion : Time (s): cpu = 00:01:45 ; elapsed = 00:02:18 . Memory (MB): peak = 1768.008 ; gain = 587.949 ; free physical = 1322 ; free virtual = 10802
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1134,7 +1207,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:47 ; elapsed = 00:01:13 . Memory (MB): peak = 1709.113 ; gain = 529.059 ; free physical = 479 ; free virtual = 9418
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:45 ; elapsed = 00:02:18 . Memory (MB): peak = 1768.008 ; gain = 587.949 ; free physical = 1318 ; free virtual = 10802
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1146,42 +1219,87 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:47 ; elapsed = 00:01:13 . Memory (MB): peak = 1709.113 ; gain = 529.059 ; free physical = 479 ; free virtual = 9418
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:46 ; elapsed = 00:02:20 . Memory (MB): peak = 1768.008 ; gain = 587.949 ; free physical = 1307 ; free virtual = 10798
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:47 ; elapsed = 00:01:13 . Memory (MB): peak = 1709.113 ; gain = 529.059 ; free physical = 479 ; free virtual = 9418
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:46 ; elapsed = 00:02:20 . Memory (MB): peak = 1768.008 ; gain = 587.949 ; free physical = 1307 ; free virtual = 10798
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:48 ; elapsed = 00:01:13 . Memory (MB): peak = 1709.113 ; gain = 529.059 ; free physical = 479 ; free virtual = 9418
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:47 ; elapsed = 00:02:21 . Memory (MB): peak = 1768.008 ; gain = 587.949 ; free physical = 1310 ; free virtual = 10799
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:48 ; elapsed = 00:01:13 . Memory (MB): peak = 1709.113 ; gain = 529.059 ; free physical = 479 ; free virtual = 9418
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:47 ; elapsed = 00:02:21 . Memory (MB): peak = 1768.008 ; gain = 587.949 ; free physical = 1310 ; free virtual = 10800
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Static Shift Register Report:
-+------------+----------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name | RTL Name                                                                                                       | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+------------+----------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|normalizer  | normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/divisor_tmp_reg[0][5]          | 3      | 4     | NO           | NO                 | YES               | 4      | 0       | 
-|normalizer  | normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[0].dividend_tmp_reg[1][7] | 4      | 2     | NO           | NO                 | YES               | 2      | 0       | 
-|normalizer  | normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[1].dividend_tmp_reg[2][7] | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|normalizer  | normalizer_udiv_8bkb_U1/normalizer_udiv_8bkb_div_U/normalizer_udiv_8bkb_div_u_0/loop[2].dividend_tmp_reg[3][7] | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|normalizer  | ap_reg_pp0_iter12_changed_loc_3_reg_347_reg[1]                                                                 | 12     | 2     | NO           | NO                 | YES               | 2      | 0       | 
-|normalizer  | p_Val2_2_reg_367_reg[2]                                                                                        | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|normalizer  | p_Val2_2_reg_367_reg[1]                                                                                        | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-+------------+----------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
++------------+-------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                                                                          | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[0].dividend_tmp_reg[1][62]   | 3      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[1].dividend_tmp_reg[2][62]   | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[2].dividend_tmp_reg[3][62]   | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[3].dividend_tmp_reg[4][62]   | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[4].dividend_tmp_reg[5][62]   | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[5].dividend_tmp_reg[6][62]   | 8      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[6].dividend_tmp_reg[7][62]   | 9      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[7].dividend_tmp_reg[8][62]   | 10     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[8].dividend_tmp_reg[9][62]   | 11     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[9].dividend_tmp_reg[10][62]  | 12     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[10].dividend_tmp_reg[11][62] | 13     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[11].dividend_tmp_reg[12][62] | 14     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[12].dividend_tmp_reg[13][62] | 15     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[13].dividend_tmp_reg[14][62] | 16     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[14].dividend_tmp_reg[15][62] | 17     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[15].dividend_tmp_reg[16][62] | 18     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[16].dividend_tmp_reg[17][62] | 19     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[17].dividend_tmp_reg[18][62] | 20     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[18].dividend_tmp_reg[19][62] | 21     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[19].dividend_tmp_reg[20][62] | 22     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[20].dividend_tmp_reg[21][62] | 23     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[21].dividend_tmp_reg[22][62] | 24     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[22].dividend_tmp_reg[23][62] | 25     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[23].dividend_tmp_reg[24][62] | 26     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[24].dividend_tmp_reg[25][62] | 27     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[25].dividend_tmp_reg[26][62] | 28     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[26].dividend_tmp_reg[27][62] | 29     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[27].dividend_tmp_reg[28][62] | 30     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[28].dividend_tmp_reg[29][62] | 31     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[29].dividend_tmp_reg[30][62] | 32     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/normalizer_udiv_6cud_div_u_0/loop[30].dividend_tmp_reg[31][62] | 33     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|normalizer  | ap_reg_pp0_iter73_tmp_reg_458_reg[0]                                                                              | 67     | 1     | NO           | NO                 | YES               | 0      | 3       | 
+|normalizer  | ap_reg_pp0_iter79_tmp_reg_458_reg[0]                                                                              | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|normalizer  | ap_reg_pp0_iter73_changed_1_5_reg_207_reg[2]                                                                      | 67     | 3     | NO           | NO                 | YES               | 0      | 9       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[15]                                                   | 17     | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[14]                                                   | 16     | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[13]                                                   | 15     | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[12]                                                   | 14     | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[11]                                                   | 13     | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[10]                                                   | 12     | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[9]                                                    | 11     | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[8]                                                    | 10     | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[7]                                                    | 9      | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[6]                                                    | 8      | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[5]                                                    | 7      | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[4]                                                    | 6      | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[3]                                                    | 5      | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[2]                                                    | 4      | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | normalizer_udiv_6cud_U2/normalizer_udiv_6cud_div_U/quot_reg[1]                                                    | 3      | 1     | NO           | YES                | NO                | 1      | 0       | 
+|normalizer  | ap_reg_pp0_iter5_regs_in_1_read_reg_394_reg[31]                                                                   | 6      | 32    | NO           | NO                 | YES               | 32     | 0       | 
+|normalizer  | ap_reg_pp0_iter5_regs_in_2_read_reg_403_reg[31]                                                                   | 5      | 32    | NO           | NO                 | YES               | 32     | 0       | 
+|normalizer  | ap_reg_pp0_iter5_regs_in_3_read_reg_417_reg[31]                                                                   | 4      | 32    | NO           | NO                 | YES               | 32     | 0       | 
++------------+-------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 
 Dynamic Shift Register Report:
@@ -1211,67 +1329,67 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |CARRY4   |    52|
-|2     |LUT1     |    38|
-|3     |LUT2     |   137|
-|4     |LUT3     |   329|
-|5     |LUT4     |   141|
-|6     |LUT5     |    86|
-|7     |LUT6     |   171|
-|8     |MUXF7    |    30|
+|1     |CARRY4   |  1044|
+|2     |LUT1     |  1756|
+|3     |LUT2     |  2178|
+|4     |LUT3     |  3931|
+|5     |LUT4     |    86|
+|6     |LUT5     |   101|
+|7     |LUT6     |   274|
+|8     |MUXF7    |     5|
 |9     |RAMB18E1 |     1|
-|10    |SRL16E   |    23|
-|11    |FDRE     |   715|
-|12    |FDSE     |     5|
+|10    |SRL16E   |   140|
+|11    |SRLC32E  |    28|
+|12    |FDRE     |  6943|
+|13    |FDSE     |     5|
 +------+---------+------+
 
 Report Instance Areas: 
 +------+-------------------------------------+-----------------------------------------------+------+
 |      |Instance                             |Module                                         |Cells |
 +------+-------------------------------------+-----------------------------------------------+------+
-|1     |top                                  |                                               |  1728|
-|2     |  inst                               |normalizer                                     |  1728|
-|3     |    normalizer_in_s_axi_U            |normalizer_in_s_axi                            |   749|
-|4     |    normalizer_m_V_m_axi_U           |normalizer_m_V_m_axi                           |   722|
+|1     |top                                  |                                               | 16492|
+|2     |  inst                               |normalizer                                     | 16492|
+|3     |    normalizer_in_s_axi_U            |normalizer_in_s_axi                            |   864|
+|4     |    normalizer_m_V_m_axi_U           |normalizer_m_V_m_axi                           |   763|
 |5     |      bus_read                       |normalizer_m_V_m_axi_read                      |    41|
 |6     |        buff_rdata                   |normalizer_m_V_m_axi_buffer__parameterized0    |    31|
 |7     |        rs_rdata                     |normalizer_m_V_m_axi_reg_slice__parameterized0 |     6|
-|8     |      bus_write                      |normalizer_m_V_m_axi_write                     |   659|
-|9     |        buff_wdata                   |normalizer_m_V_m_axi_buffer                    |   124|
-|10    |        \bus_wide_gen.fifo_burst     |normalizer_m_V_m_axi_fifo                      |   102|
+|8     |      bus_write                      |normalizer_m_V_m_axi_write                     |   700|
+|9     |        buff_wdata                   |normalizer_m_V_m_axi_buffer                    |   135|
+|10    |        \bus_wide_gen.fifo_burst     |normalizer_m_V_m_axi_fifo                      |   100|
 |11    |        fifo_resp                    |normalizer_m_V_m_axi_fifo__parameterized1      |    27|
-|12    |        fifo_resp_to_user            |normalizer_m_V_m_axi_fifo__parameterized2      |    25|
-|13    |        fifo_wreq                    |normalizer_m_V_m_axi_fifo__parameterized0      |    34|
-|14    |        rs_wreq                      |normalizer_m_V_m_axi_reg_slice                 |    15|
+|12    |        fifo_resp_to_user            |normalizer_m_V_m_axi_fifo__parameterized2      |    45|
+|13    |        fifo_wreq                    |normalizer_m_V_m_axi_fifo__parameterized0      |    33|
+|14    |        rs_wreq                      |normalizer_m_V_m_axi_reg_slice                 |    20|
 |15    |      wreq_throttl                   |normalizer_m_V_m_axi_throttl                   |    22|
-|16    |    normalizer_udiv_8bkb_U1          |normalizer_udiv_8bkb                           |   208|
-|17    |      normalizer_udiv_8bkb_div_U     |normalizer_udiv_8bkb_div                       |   208|
-|18    |        normalizer_udiv_8bkb_div_u_0 |normalizer_udiv_8bkb_div_u                     |   196|
+|16    |    normalizer_udiv_6cud_U2          |normalizer_udiv_6cud                           | 14134|
+|17    |      normalizer_udiv_6cud_div_U     |normalizer_udiv_6cud_div                       | 14134|
+|18    |        normalizer_udiv_6cud_div_u_0 |normalizer_udiv_6cud_div_u                     | 14086|
 +------+-------------------------------------+-----------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:48 ; elapsed = 00:01:13 . Memory (MB): peak = 1709.113 ; gain = 529.059 ; free physical = 479 ; free virtual = 9418
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:47 ; elapsed = 00:02:21 . Memory (MB): peak = 1768.008 ; gain = 587.949 ; free physical = 1310 ; free virtual = 10800
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 851 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 1709.113 ; gain = 175.066 ; free physical = 538 ; free virtual = 9477
-Synthesis Optimization Complete : Time (s): cpu = 00:00:48 ; elapsed = 00:01:13 . Memory (MB): peak = 1709.121 ; gain = 529.059 ; free physical = 538 ; free virtual = 9477
+Synthesis finished with 0 errors, 0 critical warnings and 5446 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:34 ; elapsed = 00:01:50 . Memory (MB): peak = 1768.008 ; gain = 218.941 ; free physical = 1374 ; free virtual = 10858
+Synthesis Optimization Complete : Time (s): cpu = 00:01:47 ; elapsed = 00:02:21 . Memory (MB): peak = 1768.016 ; gain = 587.949 ; free physical = 1374 ; free virtual = 10858
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 83 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1050 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'pwm_normalizer_0_0' is not ideal for floorplanning, since the cellview 'normalizer_udiv_6cud_div_u' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-272 Infos, 248 Warnings, 0 Critical Warnings and 0 Errors encountered.
+264 Infos, 311 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:50 ; elapsed = 00:01:15 . Memory (MB): peak = 1709.121 ; gain = 548.168 ; free physical = 643 ; free virtual = 9583
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.collectionResultDisplayLimit
+synth_design: Time (s): cpu = 00:01:52 ; elapsed = 00:02:27 . Memory (MB): peak = 1768.016 ; gain = 607.059 ; free physical = 1400 ; free virtual = 10883
 INFO: [Common 17-1381] The checkpoint '/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_normalizer_0_0_synth_1/pwm_normalizer_0_0.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_normalizer_0_0/pwm_normalizer_0_0.xci
 INFO: [Coretcl 2-1174] Renamed 17 cell refs.
 INFO: [Common 17-1381] The checkpoint '/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_normalizer_0_0_synth_1/pwm_normalizer_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file pwm_normalizer_0_0_utilization_synth.rpt -pb pwm_normalizer_0_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.17 . Memory (MB): peak = 1733.125 ; gain = 0.000 ; free physical = 635 ; free virtual = 9577
-INFO: [Common 17-206] Exiting Vivado at Mon Aug 13 18:43:17 2018...
+report_utilization: Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.86 . Memory (MB): peak = 1792.020 ; gain = 0.000 ; free physical = 1390 ; free virtual = 10885
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 14 12:45:07 2018...

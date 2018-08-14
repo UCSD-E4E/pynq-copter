@@ -41,7 +41,7 @@
 #include "../mixer/mixer.hpp"
 
 
-typedef ap_uint<5> C_t;
+typedef ap_uint<6> C_t;
 typedef ap_uint<32> tick_t;
 typedef ap_uint<64> concatTick_t;
 #endif

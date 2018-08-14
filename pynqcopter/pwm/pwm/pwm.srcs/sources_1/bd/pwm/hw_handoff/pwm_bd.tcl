@@ -1082,8 +1082,10 @@ proc create_root_design { parentCell } {
  ] $rc_receiver_0
 
   set_property -dict [ list \
+   CONFIG.SUPPORTS_NARROW_BURST {0} \
    CONFIG.NUM_READ_OUTSTANDING {1} \
    CONFIG.NUM_WRITE_OUTSTANDING {1} \
+   CONFIG.MAX_BURST_LENGTH {1} \
  ] [get_bd_intf_pins /rc_receiver_0/s_axi_in]
 
   # Create instance: rst_ps7_0_100M, and set properties
@@ -1092,7 +1094,7 @@ proc create_root_design { parentCell } {
   # Create instance: synchronizer_0, and set properties
   set synchronizer_0 [ create_bd_cell -type ip -vlnv ucsd.edu:ip:synchronizer:1.0 synchronizer_0 ]
   set_property -dict [ list \
-   CONFIG.C_DATA_WIDTH {5} \
+   CONFIG.C_DATA_WIDTH {6} \
    CONFIG.C_DEPTH {100} \
  ] $synchronizer_0
 
@@ -1213,18 +1215,18 @@ proc create_root_design { parentCell } {
   set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
   set_property -dict [ list \
    CONFIG.DIN_FROM {19} \
-   CONFIG.DIN_TO {15} \
+   CONFIG.DIN_TO {14} \
    CONFIG.DIN_WIDTH {20} \
-   CONFIG.DOUT_WIDTH {5} \
+   CONFIG.DOUT_WIDTH {6} \
  ] $xlslice_0
 
   # Create instance: xlslice_1, and set properties
   set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
   set_property -dict [ list \
-   CONFIG.DIN_FROM {504} \
-   CONFIG.DIN_TO {500} \
-   CONFIG.DIN_WIDTH {505} \
-   CONFIG.DOUT_WIDTH {1} \
+   CONFIG.DIN_FROM {605} \
+   CONFIG.DIN_TO {600} \
+   CONFIG.DIN_WIDTH {606} \
+   CONFIG.DOUT_WIDTH {6} \
  ] $xlslice_1
 
   # Create instance: xlslice_2, and set properties
@@ -1232,7 +1234,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.DIN_FROM {3} \
    CONFIG.DIN_TO {0} \
-   CONFIG.DIN_WIDTH {5} \
+   CONFIG.DIN_WIDTH {6} \
    CONFIG.DOUT_WIDTH {4} \
  ] $xlslice_2
 
