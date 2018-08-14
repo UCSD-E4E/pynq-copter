@@ -6,7 +6,7 @@
 <Project Version="7" Minor="35" Path="/home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor/bmeSensor.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="0cb2d7c758644f2fa8e3f79485feb84a"/>
+    <Option Name="Id" Val="fd6f9ac9e86a4975a59b7d8031bb68ec"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -62,8 +62,11 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="bmeSensor.bd" FileRelPathName="ip/bmeSensor_bmesensor_0_0/bmeSensor_bmesensor_0_0.xci">
-          <Proxy FileSetName="bmeSensor_bmesensor_0_0"/>
+        <CompFileExtendedInfo CompFileName="bmeSensor.bd" FileRelPathName="ip/bmeSensor_auto_pc_0/bmeSensor_auto_pc_0.xci">
+          <Proxy FileSetName="bmeSensor_auto_pc_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="bmeSensor.bd" FileRelPathName="ip/bmeSensor_auto_pc_1/bmeSensor_auto_pc_1.xci">
+          <Proxy FileSetName="bmeSensor_auto_pc_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="bmeSensor.bd" FileRelPathName="ip/bmeSensor_s01_mmu_0/bmeSensor_s01_mmu_0.xci">
           <Proxy FileSetName="bmeSensor_s01_mmu_0"/>
@@ -71,17 +74,14 @@
         <CompFileExtendedInfo CompFileName="bmeSensor.bd" FileRelPathName="ip/bmeSensor_xbar_0/bmeSensor_xbar_0.xci">
           <Proxy FileSetName="bmeSensor_xbar_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="bmeSensor.bd" FileRelPathName="ip/bmeSensor_auto_pc_1/bmeSensor_auto_pc_1.xci">
-          <Proxy FileSetName="bmeSensor_auto_pc_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="bmeSensor.bd" FileRelPathName="ip/bmeSensor_auto_pc_0/bmeSensor_auto_pc_0.xci">
-          <Proxy FileSetName="bmeSensor_auto_pc_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="bmeSensor.bd" FileRelPathName="ip/bmeSensor_rst_ps7_0_100M_0/bmeSensor_rst_ps7_0_100M_0.xci">
           <Proxy FileSetName="bmeSensor_rst_ps7_0_100M_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="bmeSensor.bd" FileRelPathName="ip/bmeSensor_axi_iic_0_0/bmeSensor_axi_iic_0_0.xci">
           <Proxy FileSetName="bmeSensor_axi_iic_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="bmeSensor.bd" FileRelPathName="ip/bmeSensor_bmesensor_0_0/bmeSensor_bmesensor_0_0.xci">
+          <Proxy FileSetName="bmeSensor_bmesensor_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="bmeSensor.bd" FileRelPathName="ip/bmeSensor_processing_system7_0_0/bmeSensor_processing_system7_0_0.xci">
           <Proxy FileSetName="bmeSensor_processing_system7_0_0"/>
@@ -120,9 +120,15 @@
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
-    <FileSet Name="bmeSensor_bmesensor_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bmeSensor_bmesensor_0_0">
+    <FileSet Name="bmeSensor_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bmeSensor_auto_pc_0">
       <Config>
-        <Option Name="TopModule" Val="bmeSensor_bmesensor_0_0"/>
+        <Option Name="TopModule" Val="bmeSensor_auto_pc_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="bmeSensor_auto_pc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bmeSensor_auto_pc_1">
+      <Config>
+        <Option Name="TopModule" Val="bmeSensor_auto_pc_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -138,18 +144,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="bmeSensor_auto_pc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bmeSensor_auto_pc_1">
-      <Config>
-        <Option Name="TopModule" Val="bmeSensor_auto_pc_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="bmeSensor_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bmeSensor_auto_pc_0">
-      <Config>
-        <Option Name="TopModule" Val="bmeSensor_auto_pc_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="bmeSensor_rst_ps7_0_100M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bmeSensor_rst_ps7_0_100M_0">
       <Config>
         <Option Name="TopModule" Val="bmeSensor_rst_ps7_0_100M_0"/>
@@ -159,6 +153,12 @@
     <FileSet Name="bmeSensor_axi_iic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bmeSensor_axi_iic_0_0">
       <Config>
         <Option Name="TopModule" Val="bmeSensor_axi_iic_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="bmeSensor_bmesensor_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bmeSensor_bmesensor_0_0">
+      <Config>
+        <Option Name="TopModule" Val="bmeSensor_bmesensor_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -202,7 +202,18 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="bmeSensor_bmesensor_0_0_synth_1" Type="Ft3:Synth" SrcSet="bmeSensor_bmesensor_0_0" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_bmesensor_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeSensor_bmesensor_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="bmeSensor_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="bmeSensor_auto_pc_0" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_auto_pc_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeSensor_auto_pc_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="bmeSensor_auto_pc_1_synth_1" Type="Ft3:Synth" SrcSet="bmeSensor_auto_pc_1" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_auto_pc_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeSensor_auto_pc_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -235,28 +246,6 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="bmeSensor_auto_pc_1_synth_1" Type="Ft3:Synth" SrcSet="bmeSensor_auto_pc_1" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_auto_pc_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeSensor_auto_pc_1_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="bmeSensor_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="bmeSensor_auto_pc_0" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_auto_pc_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeSensor_auto_pc_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="bmeSensor_rst_ps7_0_100M_0_synth_1" Type="Ft3:Synth" SrcSet="bmeSensor_rst_ps7_0_100M_0" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_rst_ps7_0_100M_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeSensor_rst_ps7_0_100M_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
@@ -269,6 +258,17 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="bmeSensor_axi_iic_0_0_synth_1" Type="Ft3:Synth" SrcSet="bmeSensor_axi_iic_0_0" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_axi_iic_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeSensor_axi_iic_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="bmeSensor_bmesensor_0_0_synth_1" Type="Ft3:Synth" SrcSet="bmeSensor_bmesensor_0_0" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_bmesensor_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeSensor_bmesensor_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -309,7 +309,25 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="bmeSensor_bmesensor_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_bmesensor_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeSensor_bmesensor_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="bmeSensor_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_auto_pc_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeSensor_auto_pc_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="bmeSensor_auto_pc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_auto_pc_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeSensor_auto_pc_1_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -363,42 +381,6 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="bmeSensor_auto_pc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_auto_pc_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeSensor_auto_pc_1_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="bmeSensor_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_auto_pc_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeSensor_auto_pc_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="bmeSensor_rst_ps7_0_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_rst_ps7_0_100M_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeSensor_rst_ps7_0_100M_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
@@ -418,6 +400,24 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="bmeSensor_axi_iic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_axi_iic_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeSensor_axi_iic_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="bmeSensor_bmesensor_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeSensor_bmesensor_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeSensor_bmesensor_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
