@@ -1,0 +1,87 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source /data/opt/Xilinx/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/data/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Mon Aug 13 20:59:29 PDT 2018
+INFO: [HLS 200-10] On os Linux Mint 18 Sarah
+INFO: [HLS 200-10] In directory '/home/iavendano/pynq-copter/pynqcopter/ip/bmesensor'
+INFO: [HLS 200-10] Opening project '/home/iavendano/pynq-copter/pynqcopter/ip/bmesensor/bmesensor'.
+INFO: [HLS 200-10] Adding test bench file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'bmesensor.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'bmesensor.cpp' to the project
+INFO: [HLS 200-10] Opening solution '/home/iavendano/pynq-copter/pynqcopter/ip/bmesensor/bmesensor/bmesensor'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+make[2]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/bmesensor/bmesensor/bmesensor/csim/build'
+make[2]: 'csim.exe' is up to date.
+make[2]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/bmesensor/bmesensor/bmesensor/csim/build'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-10] Analyzing design file 'bmesensor.cpp' ...
+INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:31 ; elapsed = 00:00:41 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 111342 ; free virtual = 494005
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:33 ; elapsed = 00:00:43 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 111388 ; free virtual = 494051
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:35 ; elapsed = 00:00:45 . Memory (MB): peak = 360.160 ; gain = 13.598 ; free physical = 111402 ; free virtual = 494065
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:35 ; elapsed = 00:00:45 . Memory (MB): peak = 360.160 ; gain = 13.598 ; free physical = 111398 ; free virtual = 494060
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (bmesensor.cpp:238:51) to (bmesensor.cpp:259:2) in function 'bmesensor'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (bmesensor.cpp:147:3) to (bmesensor.cpp:172:2) in function 'bmesensor'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:36 ; elapsed = 00:00:46 . Memory (MB): peak = 488.148 ; gain = 141.586 ; free physical = 111348 ; free virtual = 494010
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:37 ; elapsed = 00:00:47 . Memory (MB): peak = 488.148 ; gain = 141.586 ; free physical = 111371 ; free virtual = 494033
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bmesensor' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bmesensor'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 47.24 seconds; current allocated memory: 85.533 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 86.841 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bmesensor'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor/iic' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor/stat_reg_outValue1' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor/empty_pirq_outValue' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor/full_pirq_outValue' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor/ctrl_reg_outValue1' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor/pressure_msb' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor/pressure_lsb' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor/pressure_xlsb' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bmesensor' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'stat_reg_outValue1', 'empty_pirq_outValue', 'full_pirq_outValue', 'ctrl_reg_outValue1', 'pressure_msb', 'pressure_lsb' and 'pressure_xlsb' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bmesensor'.
+INFO: [HLS 200-111]  Elapsed time: 0.33 seconds; current allocated memory: 90.510 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:39 ; elapsed = 00:00:49 . Memory (MB): peak = 488.148 ; gain = 141.586 ; free physical = 111318 ; free virtual = 493981
+INFO: [SYSC 207-301] Generating SystemC RTL for bmesensor.
+INFO: [VHDL 208-304] Generating VHDL RTL for bmesensor.
+INFO: [VLOG 209-307] Generating Verilog RTL for bmesensor.
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Mon Aug 13 21:00:42 2018...
+INFO: [HLS 200-112] Total elapsed time: 110.75 seconds; peak allocated memory: 90.510 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Mon Aug 13 21:01:20 2018...
