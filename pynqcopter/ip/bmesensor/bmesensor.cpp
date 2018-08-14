@@ -51,7 +51,7 @@ static uint32_t stat_reg_val5;
 static uint32_t rx_fifo_val;
 
 
-void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t&ctrl_reg_outValue1, uint32_t&pressure_msb, uint32_t&pressure_lsb, uint32_t&pressure_xlsb)
+void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t&ctrl_reg_outValue1, volatile uint32_t& clearedInterrStatus1, volatile uint32_t& rxFifoDepth1, int& resetAxiEnabled,int& ctrl2RegState_enabled, int& byteCountZero, int& clearedInterruptStatus2, volatile uint32_t& interrStatus2, int& disableTxBitDirection, int& pressByteCountEnabled, int& byteTracker, int& interrStatus3StateEnabled,int& checkInterrReg, volatile int& ctrl_reg_val3, volatile uint32_t& lastByteRead, volatile uint32_t& rx_fifo, volatile uint32_t& clearLatchedInterr, int& releaseBus, int& receivedSuccess, volatile uint32_t& pressure_msb, volatile uint32_t& pressure_lsb, volatile uint32_t& pressure_xlsb, uint32_t stat_reg_val6_state)
 {
     #pragma HLS INTERFACE s_axilite port=return
 	
@@ -62,11 +62,30 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
     #pragma HLS INTERFACE s_axilite port=ctrl_reg_outValue1
     #pragma HLS INTERFACE s_axilite port=stat_reg_outValue1
 
+    #pragma HLS INTERFACE s_axilite port=clearedInterrStatus1
+	#pragma HLS INTERFACE s_axilite port=rxFifoDepth1
+	#pragma HLS INTERFACE s_axilite port=resetAxiEnabled
+	#pragma HLS INTERFACE s_axilite port=ctrl2RegState_enabled
+	#pragma HLS INTERFACE s_axilite port=byteCountZero
+	#pragma HLS INTERFACE s_axilite port=clearedInterruptStatus2
+	#pragma HLS INTERFACE s_axilite port=interrStatus2
+	#pragma HLS INTERFACE s_axilite port=disableTxBitDirection
+	#pragma HLS INTERFACE s_axilite port=pressByteCountEnabled
+	#pragma HLS INTERFACE s_axilite port=byteTracker
+	#pragma HLS INTERFACE s_axilite port=interrStatus3StateEnabled
+	#pragma HLS INTERFACE s_axilite port=checkInterrReg
+	#pragma HLS INTERFACE s_axilite port=ctrl_reg_val3
+	#pragma HLS INTERFACE s_axilite port=lastByteRead
+	#pragma HLS INTERFACE s_axilite port=rx_fifo
+	#pragma HLS INTERFACE s_axilite port=clearLatchedInterr
+	#pragma HLS INTERFACE s_axilite port=releaseBus
+	#pragma HLS INTERFACE s_axilite port=receivedSuccess
 	#pragma HLS INTERFACE s_axilite port=pressure_msb
-    #pragma HLS INTERFACE s_axilite port=pressure_lsb
-    #pragma HLS INTERFACE s_axilite port=pressure_xlsb
+	#pragma HLS INTERFACE s_axilite port=pressure_lsb
+	#pragma HLS INTERFACE s_axilite port=pressure_xlsb
+	#pragma HLS INTERFACE s_axilite port=stat_reg_val6_state
 
-//INITIALIZING I2C CORE TO READ AND WRITE TO SENSOR
+	///////////////INITIALIZING I2C CORE TO READ AND WRITE TO SENSOR/////////////////
 	
 	empty_pirq_val = iic[IIC_INDEX+IIC_RX_FIFO_PIRQ_OFF];
 	empty_pirq_outValue = empty_pirq_val;
@@ -88,8 +107,7 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
     stat_reg_val1 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
     stat_reg_outValue1=stat_reg_val1;
 
-//BME280 SET UP
-	
+	//////////////////BME280 SET UP////////////////
 	//WRITE TO RESET REGISTER ON BAROMETER SENSOR
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xE0;
@@ -110,20 +128,18 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF5; 
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x24;
 
-//MULTIBYTE READINGS
+	///////////////////////MULTIBYTE READINGS///////////////////////
 	int pressByteCount = 3; //PRESSURE BYTE COUNT
-	//const char endOption[10] = "XIIC_STOP";
-	//receivedData Vector	
-	//std::vector<uint32_t> receivedData;
-	int receivedData[3]; 
-
+	uint32_t receivedData[3]; 
+	
+	//reset axi if turned off
 	uint32_t resetAxiState = iic[IIC_INDEX+IIC_CONTROL_REG_OFF];
-	if(resetAxiState == 0) //reset axi if turned off
-	{
+	if(resetAxiState == 0)
+	{	
+		resetAxiEnabled = 100; //return PRAGMA
 		iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x02;
 		iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x01;
 	}
-	
 	//send axi device address and pressure MSB register address
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x2F7;
@@ -131,120 +147,119 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 	//clear interrupt status register
 	uint32_t interrStatus = iic[IIC_INDEX+IIC_INTERR_REG_OFF];
 	iic[IIC_INDEX+IIC_INTERR_REG_OFF] = (interrStatus & 11);
-	
-	//set receive fifo occupancy depth for 1 byte (zero based) through PIRQ register
-	iic[IIC_INDEX+IIC_RX_FIFO_PIRQ_OFF] = 0x0;
+	clearedInterrStatus1 = iic[IIC_INDEX+IIC_INTERR_REG_OFF]; //return PRAGMA
 
-	//check to see if "Master is on the Bus". If Repeated bit is not set send Start 
+	//set receive fifo occupancy depth for 1 byte (zero based) through PIRQ register
+	iic[IIC_INDEX+IIC_RX_FIFO_PIRQ_OFF] = 0;
+	rxFifoDepth1 = iic[IIC_INDEX+IIC_RX_FIFO_PIRQ_OFF]; //return PRAGMA
+
+	//check to see if "Master is on the Bus" already. If Repeated bit is not set send Start 
 	//bit by setting MSMS bit, else Send Address
-	ctrl_reg_val2 = iic[IIC_INDEX+IIC_CONTROL_REG_OFF];
+	uint32_t ctrl_reg_val2 = iic[IIC_INDEX+IIC_CONTROL_REG_OFF];
 	uint32_t ctrl_reg_val2_copy = ctrl_reg_val2;
 	uint32_t ctrl2RegState = ctrl_reg_val2_copy & 32;
 	if(ctrl2RegState == 0)
 	{
-		printf("Master already on bus");
+		ctrl2RegState_enabled = 101; //return PRAGMA
 		//7 bit slave address, read operation, and set state to indicate address has been set
 		iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xED;
-		
+
 		//MSMS gets set after putting data in FIFO. Start the master receive operation by setting 
 		//CR bits MSMS to master, if buffer is only one byte, then it should not be acknowledged to 
 		//indicate the end of data
 		ctrl_reg_val2_copy = 5;
 		if(pressByteCount==0)
 		{
-			ctrl_reg_val2_copy = (ctrl_reg_val2_copy | 16);
+			byteCountZero = 102; //return PRAGMA
+			ctrl_reg_val2_copy = ctrl_reg_val2_copy | 16;
 		}
 		//write out the control register to start receiving data and call function to receive each byte
 		//into the buffer
 		iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = ctrl_reg_val2_copy;
-		
-		//clear the latched interrupt status for the bus not busy bit which must be done while the bus is busy
-		uint32_t stat_reg_val5 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
-		uint32_t stat_reg_val5_copy = stat_reg_val5;
-		uint32_t statRegState = (stat_reg_val5_copy & 4);
+		//clear the latched interrupt status for the bus not busy bit which must be done while the bus 			is busy
+		uint32_t stat_reg_val = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
+		uint32_t stat_reg_val_copy = stat_reg_val;
+		uint32_t statRegState = stat_reg_val_copy & 4;
 		while(statRegState == 0)
 		{
-			stat_reg_val5_copy = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
+			clearedInterruptStatus2 = 103; //return PRAGMA
+			stat_reg_val_copy = iic[IIC_INDEX+IIC_STATUS_REG_OFF]; 
 		}
-		uint32_t interrStatus2 = iic[IIC_INDEX+IIC_INTERR_REG_OFF];
+		interrStatus2 = iic[IIC_INDEX+IIC_INTERR_REG_OFF]; //return PRAGMA
 		uint32_t clearInterrStatus = interrStatus2 & 16;
 		iic[IIC_INDEX+IIC_INTERR_REG_OFF] = clearInterrStatus;
 	}
 	else
 	{
-		printf("Master not on bus");
+		disableTxBitDirection = 104; 
 		//before writing 7bit slave address the Direction of TX bit must be disabled
 		ctrl_reg_val2_copy = ctrl_reg_val2_copy & 7;
+
 		if(pressByteCount == 0)
 		{
-			ctrl_reg_val2_copy = (ctrl_reg_val2_copy | 16);
+			ctrl_reg_val2_copy = ctrl_reg_val2_copy | 16;
 		}
 		iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = ctrl_reg_val2_copy;
 
 		//already owns bus indicating that its a repeated start call. 7 bit slave address, send address
 		//for a read operation and set state to indicate address has been sent
-		iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1ED;
+		iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1ED;	
 	}
-
 	while(pressByteCount > 0)
 	{
-		//set up mask to use for checking errors because when receiving one byte or last byte of multibyte
-		//message an error naturally occurs when no ack is done to tell slave last byte
-		uint32_t interruptStatusMask;		
+		pressByteCountEnabled = 105; 
+		//set up mask to use for checking errors because when receiving one byte or last byte of multibyte message an error naturally occurs when no ack is done to tell slave last byte	
+		int interruptStatusMask;
 		if(pressByteCount == 1)
 		{
+			byteTracker = 1; 
 			interruptStatusMask = 17;
 		}
 		else
 		{
+			byteTracker = 2; 
 			interruptStatusMask = 19;
 		}
-		//wait for prev transmit and 1st receive to complete by checkin interrupt status register of IPIF
+		//wait for previous transmit and 1st receive to complete by checking interrupt status register 			of IPIF
 		while(true)
 		{
-			uint32_t interrStatus3 = iic[IIC_INDEX+IIC_INTERR_REG_OFF];
+			checkInterrReg = 106;
+			uint32_t interrStatus3 = iic[IIC_INDEX+IIC_INTERR_REG_OFF]; 
 			uint32_t interrStatus3State = interrStatus3 & 8;
-			if(interrStatus3State)
-			{
+			if(interrStatus3State) // TRUE if interrStatus3State =! interrStatus3 & 8
+			{	
+				interrStatus3StateEnabled = 1; 
 				break;
 			}
-			//return error. check transmit error after receive full because when sending only one byte transmit
-			//error will occur because of the no ack to indicate end of data
 			if(interrStatus3 & interruptStatusMask)
 			{
 				printf("Error");
 			}
 		}
-		uint32_t ctrl_reg_val3 = iic[IIC_INDEX+IIC_CONTROL_REG_OFF];
+		ctrl_reg_val3 = iic[IIC_INDEX+IIC_CONTROL_REG_OFF];
 
-		//Special conditions exist for last 2 bytes so check for them. Note that control register must be setup
-		//for these conditions before data byte which was already received is read from receive FIFO while bus is throttled
+		//Special conditions exist for last 2 bytes so check for them.
 		if(pressByteCount == 1)
 		{
-		//if the option is to release the bus after the last data byte, it has already been read and no ack has been done, so clear MSMS while leaving the device enabled so it can get off the I2C bus appropriately with a Stop
-			iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x01;
+			iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 1;
 		}
-		//before the last byte is received set NOACK to tell slace I2C device that it is the end, this must be done
-		//before reading byte from FIFO
 		if(pressByteCount == 2)
 		{ 	
-			//write control reg with NOACK allowing last byte to have the NOACK set to indicate to slave
-			//last byte read
-			uint32_t lastByteRead = ctrl_reg_val3 | 16;
+			lastByteRead = ctrl_reg_val3 | 16;
 			iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = lastByteRead;
 		}
 
-		//read in data from FIFO and unthrottle bus such that next byte is read from I2C bus
-		uint32_t rx_fifo = iic[IIC_INDEX+IIC_RX_FIFO_OFF]; 
+		rx_fifo = iic[IIC_INDEX+IIC_RX_FIFO_OFF]; 
+
 		if(pressByteCount == 3)
 		{
 			receivedData[2] = rx_fifo;  
 		}
-		else if(pressByteCount == 2)
+		if(pressByteCount == 2)
 		{
 			receivedData[1] = rx_fifo; 
 		}
-		else if(pressByteCount == 1)
+		if(pressByteCount == 1)
 		{
 			receivedData[0] = rx_fifo; 
 		}
@@ -252,20 +267,23 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 		//clear latched interrupt status so that it will be updated with new state when it changes
 		//must be done after receive register is read
 		uint32_t interrStatus4 = iic[IIC_INDEX+IIC_INTERR_REG_OFF];
-		uint32_t clearLatchedInterr = interrStatus4 & 37;
+		clearLatchedInterr = interrStatus4 & 11; //return PRAGMA
 		iic[IIC_INDEX+IIC_INTERR_REG_OFF] = clearLatchedInterr;
-
+		
 		pressByteCount -= 1;
 	}
-	//if Option is to release the bus after reception of data, wait for the bus to transition to not busy before returning, the IIC device cannot be disabled until this occurs. It should transition as the MSMS bit of the control register was cleared before the last byte was read from the FIFO
 	while(true)
 	{
+		releaseBus = 107;
+		
 		uint32_t interrStatus5 = iic[IIC_INDEX+IIC_INTERR_REG_OFF];
-		if(interrStatus5 & 16)
+		uint32_t interrStatus5State = interrStatus5 & 16;
+		if(interrStatus5State)
 		{
 			break;
 		}
 	}
+	//////////////RECEIVE IS COMPLETE///////////////
 
 	uint32_t ctrl_reg_val4 = iic[IIC_INDEX+IIC_CONTROL_REG_OFF];
 	uint32_t ctrl_reg_val4_copy = ctrl_reg_val4;
@@ -274,8 +292,6 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 	int counter = 0;
 	if(ctrl_reg_val4_state == 0)
 	{
-		//the receive is complete, disable the I2C device if the Option is to release the Bus after Reception 
-		//of data and return number of bytes that was received
 		iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x00;
 		//wait until I2C bus is freed, exit if timed out
 		counter = 0;
@@ -284,21 +300,28 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 	{
 		uint32_t stat_reg_val6 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
 		counter += 1;
-		if(stat_reg_val6 & 4)
+		stat_reg_val6_state = stat_reg_val6 & 4;
+		if(stat_reg_val6_state)
 		{
 			if(counter == 1000)
 			{
-				printf("FAIL");
 				break;
 			}
 		}
 		else
 		{
-			printf("SUCCESS");
+			receivedSuccess = 1; 
 			break;
 		}
 	}
-	pressure_msb = receivedData[2];
-	pressure_lsb = receivedData[1];
-	pressure_xlsb = receivedData[0];	
+
+	if(receivedSuccess == 1)
+	{
+		pressure_msb = receivedData[2];
+		pressure_lsb = receivedData[1];
+		pressure_xlsb = receivedData[0];
+	}
+
+	
 }  
+

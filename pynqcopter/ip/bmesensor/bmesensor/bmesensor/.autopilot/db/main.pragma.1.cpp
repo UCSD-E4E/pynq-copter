@@ -33206,8 +33206,6 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 };
 #40 "./bmesensor.hpp" 2
-#53 "./bmesensor.hpp"
-void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t&ctrl_reg_outValue1, uint32_t&pressure_msb, uint32_t&pressure_lsb, uint32_t&pressure_xlsb);
 #36 "main.cpp" 2
 
 

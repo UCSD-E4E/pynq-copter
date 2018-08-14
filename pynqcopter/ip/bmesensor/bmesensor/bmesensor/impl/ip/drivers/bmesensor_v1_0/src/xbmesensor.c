@@ -224,64 +224,622 @@ u32 XBmesensor_Get_ctrl_reg_outValue1_o_vld(XBmesensor *InstancePtr) {
     return Data & 0x1;
 }
 
-u32 XBmesensor_Get_pressure_msb(XBmesensor *InstancePtr) {
+void XBmesensor_Set_clearedInterrStatus1_i(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CLEAREDINTERRSTATUS1_I_DATA, Data);
+}
+
+u32 XBmesensor_Get_clearedInterrStatus1_i(XBmesensor *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_MSB_DATA);
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CLEAREDINTERRSTATUS1_I_DATA);
     return Data;
 }
 
-u32 XBmesensor_Get_pressure_msb_vld(XBmesensor *InstancePtr) {
+u32 XBmesensor_Get_clearedInterrStatus1_o(XBmesensor *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_MSB_CTRL);
-    return Data & 0x1;
-}
-
-u32 XBmesensor_Get_pressure_lsb(XBmesensor *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_LSB_DATA);
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CLEAREDINTERRSTATUS1_O_DATA);
     return Data;
 }
 
-u32 XBmesensor_Get_pressure_lsb_vld(XBmesensor *InstancePtr) {
+u32 XBmesensor_Get_clearedInterrStatus1_o_vld(XBmesensor *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_LSB_CTRL);
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CLEAREDINTERRSTATUS1_O_CTRL);
     return Data & 0x1;
 }
 
-u32 XBmesensor_Get_pressure_xlsb(XBmesensor *InstancePtr) {
+void XBmesensor_Set_rxFifoDepth1_i(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RXFIFODEPTH1_I_DATA, Data);
+}
+
+u32 XBmesensor_Get_rxFifoDepth1_i(XBmesensor *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_XLSB_DATA);
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RXFIFODEPTH1_I_DATA);
     return Data;
 }
 
-u32 XBmesensor_Get_pressure_xlsb_vld(XBmesensor *InstancePtr) {
+u32 XBmesensor_Get_rxFifoDepth1_o(XBmesensor *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_XLSB_CTRL);
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RXFIFODEPTH1_O_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_rxFifoDepth1_o_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RXFIFODEPTH1_O_CTRL);
     return Data & 0x1;
+}
+
+u32 XBmesensor_Get_resetAxiEnabled(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RESETAXIENABLED_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_resetAxiEnabled_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RESETAXIENABLED_CTRL);
+    return Data & 0x1;
+}
+
+u32 XBmesensor_Get_ctrl2RegState_enabled(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CTRL2REGSTATE_ENABLED_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_ctrl2RegState_enabled_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CTRL2REGSTATE_ENABLED_CTRL);
+    return Data & 0x1;
+}
+
+void XBmesensor_Set_byteCountZero(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_BYTECOUNTZERO_DATA, Data);
+}
+
+u32 XBmesensor_Get_byteCountZero(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_BYTECOUNTZERO_DATA);
+    return Data;
+}
+
+void XBmesensor_Set_clearedInterruptStatus2(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CLEAREDINTERRUPTSTATUS2_DATA, Data);
+}
+
+u32 XBmesensor_Get_clearedInterruptStatus2(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CLEAREDINTERRUPTSTATUS2_DATA);
+    return Data;
+}
+
+void XBmesensor_Set_interrStatus2_i(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_INTERRSTATUS2_I_DATA, Data);
+}
+
+u32 XBmesensor_Get_interrStatus2_i(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_INTERRSTATUS2_I_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_interrStatus2_o(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_INTERRSTATUS2_O_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_interrStatus2_o_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_INTERRSTATUS2_O_CTRL);
+    return Data & 0x1;
+}
+
+u32 XBmesensor_Get_disableTxBitDirection(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_DISABLETXBITDIRECTION_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_disableTxBitDirection_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_DISABLETXBITDIRECTION_CTRL);
+    return Data & 0x1;
+}
+
+u32 XBmesensor_Get_pressByteCountEnabled(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSBYTECOUNTENABLED_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_pressByteCountEnabled_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSBYTECOUNTENABLED_CTRL);
+    return Data & 0x1;
+}
+
+u32 XBmesensor_Get_byteTracker(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_BYTETRACKER_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_byteTracker_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_BYTETRACKER_CTRL);
+    return Data & 0x1;
+}
+
+u32 XBmesensor_Get_interrStatus3StateEnabled(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_INTERRSTATUS3STATEENABLED_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_interrStatus3StateEnabled_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_INTERRSTATUS3STATEENABLED_CTRL);
+    return Data & 0x1;
+}
+
+u32 XBmesensor_Get_checkInterrReg(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CHECKINTERRREG_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_checkInterrReg_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CHECKINTERRREG_CTRL);
+    return Data & 0x1;
+}
+
+void XBmesensor_Set_ctrl_reg_val3_i(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CTRL_REG_VAL3_I_DATA, Data);
+}
+
+u32 XBmesensor_Get_ctrl_reg_val3_i(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CTRL_REG_VAL3_I_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_ctrl_reg_val3_o(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CTRL_REG_VAL3_O_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_ctrl_reg_val3_o_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CTRL_REG_VAL3_O_CTRL);
+    return Data & 0x1;
+}
+
+void XBmesensor_Set_lastByteRead_i(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_LASTBYTEREAD_I_DATA, Data);
+}
+
+u32 XBmesensor_Get_lastByteRead_i(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_LASTBYTEREAD_I_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_lastByteRead_o(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_LASTBYTEREAD_O_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_lastByteRead_o_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_LASTBYTEREAD_O_CTRL);
+    return Data & 0x1;
+}
+
+void XBmesensor_Set_rx_fifo_i(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RX_FIFO_I_DATA, Data);
+}
+
+u32 XBmesensor_Get_rx_fifo_i(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RX_FIFO_I_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_rx_fifo_o(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RX_FIFO_O_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_rx_fifo_o_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RX_FIFO_O_CTRL);
+    return Data & 0x1;
+}
+
+void XBmesensor_Set_clearLatchedInterr_i(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CLEARLATCHEDINTERR_I_DATA, Data);
+}
+
+u32 XBmesensor_Get_clearLatchedInterr_i(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CLEARLATCHEDINTERR_I_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_clearLatchedInterr_o(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CLEARLATCHEDINTERR_O_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_clearLatchedInterr_o_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_CLEARLATCHEDINTERR_O_CTRL);
+    return Data & 0x1;
+}
+
+u32 XBmesensor_Get_releaseBus(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RELEASEBUS_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_releaseBus_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RELEASEBUS_CTRL);
+    return Data & 0x1;
+}
+
+void XBmesensor_Set_receivedSuccess_i(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RECEIVEDSUCCESS_I_DATA, Data);
+}
+
+u32 XBmesensor_Get_receivedSuccess_i(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RECEIVEDSUCCESS_I_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_receivedSuccess_o(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RECEIVEDSUCCESS_O_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_receivedSuccess_o_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_RECEIVEDSUCCESS_O_CTRL);
+    return Data & 0x1;
+}
+
+void XBmesensor_Set_pressure_msb_i(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_MSB_I_DATA, Data);
+}
+
+u32 XBmesensor_Get_pressure_msb_i(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_MSB_I_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_pressure_msb_o(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_MSB_O_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_pressure_msb_o_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_MSB_O_CTRL);
+    return Data & 0x1;
+}
+
+void XBmesensor_Set_pressure_lsb_i(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_LSB_I_DATA, Data);
+}
+
+u32 XBmesensor_Get_pressure_lsb_i(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_LSB_I_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_pressure_lsb_o(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_LSB_O_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_pressure_lsb_o_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_LSB_O_CTRL);
+    return Data & 0x1;
+}
+
+void XBmesensor_Set_pressure_xlsb_i(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_XLSB_I_DATA, Data);
+}
+
+u32 XBmesensor_Get_pressure_xlsb_i(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_XLSB_I_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_pressure_xlsb_o(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_XLSB_O_DATA);
+    return Data;
+}
+
+u32 XBmesensor_Get_pressure_xlsb_o_vld(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_PRESSURE_XLSB_O_CTRL);
+    return Data & 0x1;
+}
+
+void XBmesensor_Set_stat_reg_val6_state(XBmesensor *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBmesensor_WriteReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_STAT_REG_VAL6_STATE_DATA, Data);
+}
+
+u32 XBmesensor_Get_stat_reg_val6_state(XBmesensor *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBmesensor_ReadReg(InstancePtr->Axilites_BaseAddress, XBMESENSOR_AXILITES_ADDR_STAT_REG_VAL6_STATE_DATA);
+    return Data;
 }
 
 void XBmesensor_InterruptGlobalEnable(XBmesensor *InstancePtr) {

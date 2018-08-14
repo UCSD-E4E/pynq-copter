@@ -6,104 +6,302 @@
 // ==============================================================
 
 // AXILiteS
-// 0x00 : Control signals
-//        bit 0  - ap_start (Read/Write/COH)
-//        bit 1  - ap_done (Read/COR)
-//        bit 2  - ap_idle (Read)
-//        bit 3  - ap_ready (Read)
-//        bit 7  - auto_restart (Read/Write)
-//        others - reserved
-// 0x04 : Global Interrupt Enable Register
-//        bit 0  - Global Interrupt Enable (Read/Write)
-//        others - reserved
-// 0x08 : IP Interrupt Enable Register (Read/Write)
-//        bit 0  - Channel 0 (ap_done)
-//        bit 1  - Channel 1 (ap_ready)
-//        others - reserved
-// 0x0c : IP Interrupt Status Register (Read/TOW)
-//        bit 0  - Channel 0 (ap_done)
-//        bit 1  - Channel 1 (ap_ready)
-//        others - reserved
-// 0x10 : Data signal of stat_reg_outValue1_i
-//        bit 31~0 - stat_reg_outValue1_i[31:0] (Read/Write)
-// 0x14 : reserved
-// 0x18 : Data signal of stat_reg_outValue1_o
-//        bit 31~0 - stat_reg_outValue1_o[31:0] (Read)
-// 0x1c : Control signal of stat_reg_outValue1_o
-//        bit 0  - stat_reg_outValue1_o_ap_vld (Read/COR)
-//        others - reserved
-// 0x20 : Data signal of empty_pirq_outValue_i
-//        bit 31~0 - empty_pirq_outValue_i[31:0] (Read/Write)
-// 0x24 : reserved
-// 0x28 : Data signal of empty_pirq_outValue_o
-//        bit 31~0 - empty_pirq_outValue_o[31:0] (Read)
-// 0x2c : Control signal of empty_pirq_outValue_o
-//        bit 0  - empty_pirq_outValue_o_ap_vld (Read/COR)
-//        others - reserved
-// 0x30 : Data signal of full_pirq_outValue_i
-//        bit 31~0 - full_pirq_outValue_i[31:0] (Read/Write)
-// 0x34 : reserved
-// 0x38 : Data signal of full_pirq_outValue_o
-//        bit 31~0 - full_pirq_outValue_o[31:0] (Read)
-// 0x3c : Control signal of full_pirq_outValue_o
-//        bit 0  - full_pirq_outValue_o_ap_vld (Read/COR)
-//        others - reserved
-// 0x40 : Data signal of ctrl_reg_outValue1_i
-//        bit 31~0 - ctrl_reg_outValue1_i[31:0] (Read/Write)
-// 0x44 : reserved
-// 0x48 : Data signal of ctrl_reg_outValue1_o
-//        bit 31~0 - ctrl_reg_outValue1_o[31:0] (Read)
-// 0x4c : Control signal of ctrl_reg_outValue1_o
-//        bit 0  - ctrl_reg_outValue1_o_ap_vld (Read/COR)
-//        others - reserved
-// 0x50 : Data signal of pressure_msb
-//        bit 31~0 - pressure_msb[31:0] (Read)
-// 0x54 : Control signal of pressure_msb
-//        bit 0  - pressure_msb_ap_vld (Read/COR)
-//        others - reserved
-// 0x58 : Data signal of pressure_lsb
-//        bit 31~0 - pressure_lsb[31:0] (Read)
-// 0x5c : Control signal of pressure_lsb
-//        bit 0  - pressure_lsb_ap_vld (Read/COR)
-//        others - reserved
-// 0x60 : Data signal of pressure_xlsb
-//        bit 31~0 - pressure_xlsb[31:0] (Read)
-// 0x64 : Control signal of pressure_xlsb
-//        bit 0  - pressure_xlsb_ap_vld (Read/COR)
-//        others - reserved
+// 0x000 : Control signals
+//         bit 0  - ap_start (Read/Write/COH)
+//         bit 1  - ap_done (Read/COR)
+//         bit 2  - ap_idle (Read)
+//         bit 3  - ap_ready (Read)
+//         bit 7  - auto_restart (Read/Write)
+//         others - reserved
+// 0x004 : Global Interrupt Enable Register
+//         bit 0  - Global Interrupt Enable (Read/Write)
+//         others - reserved
+// 0x008 : IP Interrupt Enable Register (Read/Write)
+//         bit 0  - Channel 0 (ap_done)
+//         bit 1  - Channel 1 (ap_ready)
+//         others - reserved
+// 0x00c : IP Interrupt Status Register (Read/TOW)
+//         bit 0  - Channel 0 (ap_done)
+//         bit 1  - Channel 1 (ap_ready)
+//         others - reserved
+// 0x010 : Data signal of stat_reg_outValue1_i
+//         bit 31~0 - stat_reg_outValue1_i[31:0] (Read/Write)
+// 0x014 : reserved
+// 0x018 : Data signal of stat_reg_outValue1_o
+//         bit 31~0 - stat_reg_outValue1_o[31:0] (Read)
+// 0x01c : Control signal of stat_reg_outValue1_o
+//         bit 0  - stat_reg_outValue1_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x020 : Data signal of empty_pirq_outValue_i
+//         bit 31~0 - empty_pirq_outValue_i[31:0] (Read/Write)
+// 0x024 : reserved
+// 0x028 : Data signal of empty_pirq_outValue_o
+//         bit 31~0 - empty_pirq_outValue_o[31:0] (Read)
+// 0x02c : Control signal of empty_pirq_outValue_o
+//         bit 0  - empty_pirq_outValue_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x030 : Data signal of full_pirq_outValue_i
+//         bit 31~0 - full_pirq_outValue_i[31:0] (Read/Write)
+// 0x034 : reserved
+// 0x038 : Data signal of full_pirq_outValue_o
+//         bit 31~0 - full_pirq_outValue_o[31:0] (Read)
+// 0x03c : Control signal of full_pirq_outValue_o
+//         bit 0  - full_pirq_outValue_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x040 : Data signal of ctrl_reg_outValue1_i
+//         bit 31~0 - ctrl_reg_outValue1_i[31:0] (Read/Write)
+// 0x044 : reserved
+// 0x048 : Data signal of ctrl_reg_outValue1_o
+//         bit 31~0 - ctrl_reg_outValue1_o[31:0] (Read)
+// 0x04c : Control signal of ctrl_reg_outValue1_o
+//         bit 0  - ctrl_reg_outValue1_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x050 : Data signal of clearedInterrStatus1_i
+//         bit 31~0 - clearedInterrStatus1_i[31:0] (Read/Write)
+// 0x054 : reserved
+// 0x058 : Data signal of clearedInterrStatus1_o
+//         bit 31~0 - clearedInterrStatus1_o[31:0] (Read)
+// 0x05c : Control signal of clearedInterrStatus1_o
+//         bit 0  - clearedInterrStatus1_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x060 : Data signal of rxFifoDepth1_i
+//         bit 31~0 - rxFifoDepth1_i[31:0] (Read/Write)
+// 0x064 : reserved
+// 0x068 : Data signal of rxFifoDepth1_o
+//         bit 31~0 - rxFifoDepth1_o[31:0] (Read)
+// 0x06c : Control signal of rxFifoDepth1_o
+//         bit 0  - rxFifoDepth1_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x070 : Data signal of resetAxiEnabled
+//         bit 31~0 - resetAxiEnabled[31:0] (Read)
+// 0x074 : Control signal of resetAxiEnabled
+//         bit 0  - resetAxiEnabled_ap_vld (Read/COR)
+//         others - reserved
+// 0x078 : Data signal of ctrl2RegState_enabled
+//         bit 31~0 - ctrl2RegState_enabled[31:0] (Read)
+// 0x07c : Control signal of ctrl2RegState_enabled
+//         bit 0  - ctrl2RegState_enabled_ap_vld (Read/COR)
+//         others - reserved
+// 0x080 : Data signal of byteCountZero
+//         bit 31~0 - byteCountZero[31:0] (Read/Write)
+// 0x084 : reserved
+// 0x088 : Data signal of clearedInterruptStatus2
+//         bit 31~0 - clearedInterruptStatus2[31:0] (Read/Write)
+// 0x08c : reserved
+// 0x090 : Data signal of interrStatus2_i
+//         bit 31~0 - interrStatus2_i[31:0] (Read/Write)
+// 0x094 : reserved
+// 0x098 : Data signal of interrStatus2_o
+//         bit 31~0 - interrStatus2_o[31:0] (Read)
+// 0x09c : Control signal of interrStatus2_o
+//         bit 0  - interrStatus2_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x0a0 : Data signal of disableTxBitDirection
+//         bit 31~0 - disableTxBitDirection[31:0] (Read)
+// 0x0a4 : Control signal of disableTxBitDirection
+//         bit 0  - disableTxBitDirection_ap_vld (Read/COR)
+//         others - reserved
+// 0x0a8 : Data signal of pressByteCountEnabled
+//         bit 31~0 - pressByteCountEnabled[31:0] (Read)
+// 0x0ac : Control signal of pressByteCountEnabled
+//         bit 0  - pressByteCountEnabled_ap_vld (Read/COR)
+//         others - reserved
+// 0x0b0 : Data signal of byteTracker
+//         bit 31~0 - byteTracker[31:0] (Read)
+// 0x0b4 : Control signal of byteTracker
+//         bit 0  - byteTracker_ap_vld (Read/COR)
+//         others - reserved
+// 0x0b8 : Data signal of interrStatus3StateEnabled
+//         bit 31~0 - interrStatus3StateEnabled[31:0] (Read)
+// 0x0bc : Control signal of interrStatus3StateEnabled
+//         bit 0  - interrStatus3StateEnabled_ap_vld (Read/COR)
+//         others - reserved
+// 0x0c0 : Data signal of checkInterrReg
+//         bit 31~0 - checkInterrReg[31:0] (Read)
+// 0x0c4 : Control signal of checkInterrReg
+//         bit 0  - checkInterrReg_ap_vld (Read/COR)
+//         others - reserved
+// 0x0c8 : Data signal of ctrl_reg_val3_i
+//         bit 31~0 - ctrl_reg_val3_i[31:0] (Read/Write)
+// 0x0cc : reserved
+// 0x0d0 : Data signal of ctrl_reg_val3_o
+//         bit 31~0 - ctrl_reg_val3_o[31:0] (Read)
+// 0x0d4 : Control signal of ctrl_reg_val3_o
+//         bit 0  - ctrl_reg_val3_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x0d8 : Data signal of lastByteRead_i
+//         bit 31~0 - lastByteRead_i[31:0] (Read/Write)
+// 0x0dc : reserved
+// 0x0e0 : Data signal of lastByteRead_o
+//         bit 31~0 - lastByteRead_o[31:0] (Read)
+// 0x0e4 : Control signal of lastByteRead_o
+//         bit 0  - lastByteRead_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x0e8 : Data signal of rx_fifo_i
+//         bit 31~0 - rx_fifo_i[31:0] (Read/Write)
+// 0x0ec : reserved
+// 0x0f0 : Data signal of rx_fifo_o
+//         bit 31~0 - rx_fifo_o[31:0] (Read)
+// 0x0f4 : Control signal of rx_fifo_o
+//         bit 0  - rx_fifo_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x0f8 : Data signal of clearLatchedInterr_i
+//         bit 31~0 - clearLatchedInterr_i[31:0] (Read/Write)
+// 0x0fc : reserved
+// 0x100 : Data signal of clearLatchedInterr_o
+//         bit 31~0 - clearLatchedInterr_o[31:0] (Read)
+// 0x104 : Control signal of clearLatchedInterr_o
+//         bit 0  - clearLatchedInterr_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x108 : Data signal of releaseBus
+//         bit 31~0 - releaseBus[31:0] (Read)
+// 0x10c : Control signal of releaseBus
+//         bit 0  - releaseBus_ap_vld (Read/COR)
+//         others - reserved
+// 0x110 : Data signal of receivedSuccess_i
+//         bit 31~0 - receivedSuccess_i[31:0] (Read/Write)
+// 0x114 : reserved
+// 0x118 : Data signal of receivedSuccess_o
+//         bit 31~0 - receivedSuccess_o[31:0] (Read)
+// 0x11c : Control signal of receivedSuccess_o
+//         bit 0  - receivedSuccess_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x120 : Data signal of pressure_msb_i
+//         bit 31~0 - pressure_msb_i[31:0] (Read/Write)
+// 0x124 : reserved
+// 0x128 : Data signal of pressure_msb_o
+//         bit 31~0 - pressure_msb_o[31:0] (Read)
+// 0x12c : Control signal of pressure_msb_o
+//         bit 0  - pressure_msb_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x130 : Data signal of pressure_lsb_i
+//         bit 31~0 - pressure_lsb_i[31:0] (Read/Write)
+// 0x134 : reserved
+// 0x138 : Data signal of pressure_lsb_o
+//         bit 31~0 - pressure_lsb_o[31:0] (Read)
+// 0x13c : Control signal of pressure_lsb_o
+//         bit 0  - pressure_lsb_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x140 : Data signal of pressure_xlsb_i
+//         bit 31~0 - pressure_xlsb_i[31:0] (Read/Write)
+// 0x144 : reserved
+// 0x148 : Data signal of pressure_xlsb_o
+//         bit 31~0 - pressure_xlsb_o[31:0] (Read)
+// 0x14c : Control signal of pressure_xlsb_o
+//         bit 0  - pressure_xlsb_o_ap_vld (Read/COR)
+//         others - reserved
+// 0x150 : Data signal of stat_reg_val6_state
+//         bit 31~0 - stat_reg_val6_state[31:0] (Read/Write)
+// 0x154 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
-#define XBMESENSOR_AXILITES_ADDR_AP_CTRL                    0x00
-#define XBMESENSOR_AXILITES_ADDR_GIE                        0x04
-#define XBMESENSOR_AXILITES_ADDR_IER                        0x08
-#define XBMESENSOR_AXILITES_ADDR_ISR                        0x0c
-#define XBMESENSOR_AXILITES_ADDR_STAT_REG_OUTVALUE1_I_DATA  0x10
-#define XBMESENSOR_AXILITES_BITS_STAT_REG_OUTVALUE1_I_DATA  32
-#define XBMESENSOR_AXILITES_ADDR_STAT_REG_OUTVALUE1_O_DATA  0x18
-#define XBMESENSOR_AXILITES_BITS_STAT_REG_OUTVALUE1_O_DATA  32
-#define XBMESENSOR_AXILITES_ADDR_STAT_REG_OUTVALUE1_O_CTRL  0x1c
-#define XBMESENSOR_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_I_DATA 0x20
-#define XBMESENSOR_AXILITES_BITS_EMPTY_PIRQ_OUTVALUE_I_DATA 32
-#define XBMESENSOR_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_O_DATA 0x28
-#define XBMESENSOR_AXILITES_BITS_EMPTY_PIRQ_OUTVALUE_O_DATA 32
-#define XBMESENSOR_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_O_CTRL 0x2c
-#define XBMESENSOR_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_I_DATA  0x30
-#define XBMESENSOR_AXILITES_BITS_FULL_PIRQ_OUTVALUE_I_DATA  32
-#define XBMESENSOR_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_O_DATA  0x38
-#define XBMESENSOR_AXILITES_BITS_FULL_PIRQ_OUTVALUE_O_DATA  32
-#define XBMESENSOR_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_O_CTRL  0x3c
-#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_OUTVALUE1_I_DATA  0x40
-#define XBMESENSOR_AXILITES_BITS_CTRL_REG_OUTVALUE1_I_DATA  32
-#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_OUTVALUE1_O_DATA  0x48
-#define XBMESENSOR_AXILITES_BITS_CTRL_REG_OUTVALUE1_O_DATA  32
-#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_OUTVALUE1_O_CTRL  0x4c
-#define XBMESENSOR_AXILITES_ADDR_PRESSURE_MSB_DATA          0x50
-#define XBMESENSOR_AXILITES_BITS_PRESSURE_MSB_DATA          32
-#define XBMESENSOR_AXILITES_ADDR_PRESSURE_MSB_CTRL          0x54
-#define XBMESENSOR_AXILITES_ADDR_PRESSURE_LSB_DATA          0x58
-#define XBMESENSOR_AXILITES_BITS_PRESSURE_LSB_DATA          32
-#define XBMESENSOR_AXILITES_ADDR_PRESSURE_LSB_CTRL          0x5c
-#define XBMESENSOR_AXILITES_ADDR_PRESSURE_XLSB_DATA         0x60
-#define XBMESENSOR_AXILITES_BITS_PRESSURE_XLSB_DATA         32
-#define XBMESENSOR_AXILITES_ADDR_PRESSURE_XLSB_CTRL         0x64
+#define XBMESENSOR_AXILITES_ADDR_AP_CTRL                        0x000
+#define XBMESENSOR_AXILITES_ADDR_GIE                            0x004
+#define XBMESENSOR_AXILITES_ADDR_IER                            0x008
+#define XBMESENSOR_AXILITES_ADDR_ISR                            0x00c
+#define XBMESENSOR_AXILITES_ADDR_STAT_REG_OUTVALUE1_I_DATA      0x010
+#define XBMESENSOR_AXILITES_BITS_STAT_REG_OUTVALUE1_I_DATA      32
+#define XBMESENSOR_AXILITES_ADDR_STAT_REG_OUTVALUE1_O_DATA      0x018
+#define XBMESENSOR_AXILITES_BITS_STAT_REG_OUTVALUE1_O_DATA      32
+#define XBMESENSOR_AXILITES_ADDR_STAT_REG_OUTVALUE1_O_CTRL      0x01c
+#define XBMESENSOR_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_I_DATA     0x020
+#define XBMESENSOR_AXILITES_BITS_EMPTY_PIRQ_OUTVALUE_I_DATA     32
+#define XBMESENSOR_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_O_DATA     0x028
+#define XBMESENSOR_AXILITES_BITS_EMPTY_PIRQ_OUTVALUE_O_DATA     32
+#define XBMESENSOR_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_O_CTRL     0x02c
+#define XBMESENSOR_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_I_DATA      0x030
+#define XBMESENSOR_AXILITES_BITS_FULL_PIRQ_OUTVALUE_I_DATA      32
+#define XBMESENSOR_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_O_DATA      0x038
+#define XBMESENSOR_AXILITES_BITS_FULL_PIRQ_OUTVALUE_O_DATA      32
+#define XBMESENSOR_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_O_CTRL      0x03c
+#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_OUTVALUE1_I_DATA      0x040
+#define XBMESENSOR_AXILITES_BITS_CTRL_REG_OUTVALUE1_I_DATA      32
+#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_OUTVALUE1_O_DATA      0x048
+#define XBMESENSOR_AXILITES_BITS_CTRL_REG_OUTVALUE1_O_DATA      32
+#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_OUTVALUE1_O_CTRL      0x04c
+#define XBMESENSOR_AXILITES_ADDR_CLEAREDINTERRSTATUS1_I_DATA    0x050
+#define XBMESENSOR_AXILITES_BITS_CLEAREDINTERRSTATUS1_I_DATA    32
+#define XBMESENSOR_AXILITES_ADDR_CLEAREDINTERRSTATUS1_O_DATA    0x058
+#define XBMESENSOR_AXILITES_BITS_CLEAREDINTERRSTATUS1_O_DATA    32
+#define XBMESENSOR_AXILITES_ADDR_CLEAREDINTERRSTATUS1_O_CTRL    0x05c
+#define XBMESENSOR_AXILITES_ADDR_RXFIFODEPTH1_I_DATA            0x060
+#define XBMESENSOR_AXILITES_BITS_RXFIFODEPTH1_I_DATA            32
+#define XBMESENSOR_AXILITES_ADDR_RXFIFODEPTH1_O_DATA            0x068
+#define XBMESENSOR_AXILITES_BITS_RXFIFODEPTH1_O_DATA            32
+#define XBMESENSOR_AXILITES_ADDR_RXFIFODEPTH1_O_CTRL            0x06c
+#define XBMESENSOR_AXILITES_ADDR_RESETAXIENABLED_DATA           0x070
+#define XBMESENSOR_AXILITES_BITS_RESETAXIENABLED_DATA           32
+#define XBMESENSOR_AXILITES_ADDR_RESETAXIENABLED_CTRL           0x074
+#define XBMESENSOR_AXILITES_ADDR_CTRL2REGSTATE_ENABLED_DATA     0x078
+#define XBMESENSOR_AXILITES_BITS_CTRL2REGSTATE_ENABLED_DATA     32
+#define XBMESENSOR_AXILITES_ADDR_CTRL2REGSTATE_ENABLED_CTRL     0x07c
+#define XBMESENSOR_AXILITES_ADDR_BYTECOUNTZERO_DATA             0x080
+#define XBMESENSOR_AXILITES_BITS_BYTECOUNTZERO_DATA             32
+#define XBMESENSOR_AXILITES_ADDR_CLEAREDINTERRUPTSTATUS2_DATA   0x088
+#define XBMESENSOR_AXILITES_BITS_CLEAREDINTERRUPTSTATUS2_DATA   32
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS2_I_DATA           0x090
+#define XBMESENSOR_AXILITES_BITS_INTERRSTATUS2_I_DATA           32
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS2_O_DATA           0x098
+#define XBMESENSOR_AXILITES_BITS_INTERRSTATUS2_O_DATA           32
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS2_O_CTRL           0x09c
+#define XBMESENSOR_AXILITES_ADDR_DISABLETXBITDIRECTION_DATA     0x0a0
+#define XBMESENSOR_AXILITES_BITS_DISABLETXBITDIRECTION_DATA     32
+#define XBMESENSOR_AXILITES_ADDR_DISABLETXBITDIRECTION_CTRL     0x0a4
+#define XBMESENSOR_AXILITES_ADDR_PRESSBYTECOUNTENABLED_DATA     0x0a8
+#define XBMESENSOR_AXILITES_BITS_PRESSBYTECOUNTENABLED_DATA     32
+#define XBMESENSOR_AXILITES_ADDR_PRESSBYTECOUNTENABLED_CTRL     0x0ac
+#define XBMESENSOR_AXILITES_ADDR_BYTETRACKER_DATA               0x0b0
+#define XBMESENSOR_AXILITES_BITS_BYTETRACKER_DATA               32
+#define XBMESENSOR_AXILITES_ADDR_BYTETRACKER_CTRL               0x0b4
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS3STATEENABLED_DATA 0x0b8
+#define XBMESENSOR_AXILITES_BITS_INTERRSTATUS3STATEENABLED_DATA 32
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS3STATEENABLED_CTRL 0x0bc
+#define XBMESENSOR_AXILITES_ADDR_CHECKINTERRREG_DATA            0x0c0
+#define XBMESENSOR_AXILITES_BITS_CHECKINTERRREG_DATA            32
+#define XBMESENSOR_AXILITES_ADDR_CHECKINTERRREG_CTRL            0x0c4
+#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_VAL3_I_DATA           0x0c8
+#define XBMESENSOR_AXILITES_BITS_CTRL_REG_VAL3_I_DATA           32
+#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_VAL3_O_DATA           0x0d0
+#define XBMESENSOR_AXILITES_BITS_CTRL_REG_VAL3_O_DATA           32
+#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_VAL3_O_CTRL           0x0d4
+#define XBMESENSOR_AXILITES_ADDR_LASTBYTEREAD_I_DATA            0x0d8
+#define XBMESENSOR_AXILITES_BITS_LASTBYTEREAD_I_DATA            32
+#define XBMESENSOR_AXILITES_ADDR_LASTBYTEREAD_O_DATA            0x0e0
+#define XBMESENSOR_AXILITES_BITS_LASTBYTEREAD_O_DATA            32
+#define XBMESENSOR_AXILITES_ADDR_LASTBYTEREAD_O_CTRL            0x0e4
+#define XBMESENSOR_AXILITES_ADDR_RX_FIFO_I_DATA                 0x0e8
+#define XBMESENSOR_AXILITES_BITS_RX_FIFO_I_DATA                 32
+#define XBMESENSOR_AXILITES_ADDR_RX_FIFO_O_DATA                 0x0f0
+#define XBMESENSOR_AXILITES_BITS_RX_FIFO_O_DATA                 32
+#define XBMESENSOR_AXILITES_ADDR_RX_FIFO_O_CTRL                 0x0f4
+#define XBMESENSOR_AXILITES_ADDR_CLEARLATCHEDINTERR_I_DATA      0x0f8
+#define XBMESENSOR_AXILITES_BITS_CLEARLATCHEDINTERR_I_DATA      32
+#define XBMESENSOR_AXILITES_ADDR_CLEARLATCHEDINTERR_O_DATA      0x100
+#define XBMESENSOR_AXILITES_BITS_CLEARLATCHEDINTERR_O_DATA      32
+#define XBMESENSOR_AXILITES_ADDR_CLEARLATCHEDINTERR_O_CTRL      0x104
+#define XBMESENSOR_AXILITES_ADDR_RELEASEBUS_DATA                0x108
+#define XBMESENSOR_AXILITES_BITS_RELEASEBUS_DATA                32
+#define XBMESENSOR_AXILITES_ADDR_RELEASEBUS_CTRL                0x10c
+#define XBMESENSOR_AXILITES_ADDR_RECEIVEDSUCCESS_I_DATA         0x110
+#define XBMESENSOR_AXILITES_BITS_RECEIVEDSUCCESS_I_DATA         32
+#define XBMESENSOR_AXILITES_ADDR_RECEIVEDSUCCESS_O_DATA         0x118
+#define XBMESENSOR_AXILITES_BITS_RECEIVEDSUCCESS_O_DATA         32
+#define XBMESENSOR_AXILITES_ADDR_RECEIVEDSUCCESS_O_CTRL         0x11c
+#define XBMESENSOR_AXILITES_ADDR_PRESSURE_MSB_I_DATA            0x120
+#define XBMESENSOR_AXILITES_BITS_PRESSURE_MSB_I_DATA            32
+#define XBMESENSOR_AXILITES_ADDR_PRESSURE_MSB_O_DATA            0x128
+#define XBMESENSOR_AXILITES_BITS_PRESSURE_MSB_O_DATA            32
+#define XBMESENSOR_AXILITES_ADDR_PRESSURE_MSB_O_CTRL            0x12c
+#define XBMESENSOR_AXILITES_ADDR_PRESSURE_LSB_I_DATA            0x130
+#define XBMESENSOR_AXILITES_BITS_PRESSURE_LSB_I_DATA            32
+#define XBMESENSOR_AXILITES_ADDR_PRESSURE_LSB_O_DATA            0x138
+#define XBMESENSOR_AXILITES_BITS_PRESSURE_LSB_O_DATA            32
+#define XBMESENSOR_AXILITES_ADDR_PRESSURE_LSB_O_CTRL            0x13c
+#define XBMESENSOR_AXILITES_ADDR_PRESSURE_XLSB_I_DATA           0x140
+#define XBMESENSOR_AXILITES_BITS_PRESSURE_XLSB_I_DATA           32
+#define XBMESENSOR_AXILITES_ADDR_PRESSURE_XLSB_O_DATA           0x148
+#define XBMESENSOR_AXILITES_BITS_PRESSURE_XLSB_O_DATA           32
+#define XBMESENSOR_AXILITES_ADDR_PRESSURE_XLSB_O_CTRL           0x14c
+#define XBMESENSOR_AXILITES_ADDR_STAT_REG_VAL6_STATE_DATA       0x150
+#define XBMESENSOR_AXILITES_BITS_STAT_REG_VAL6_STATE_DATA       32
 

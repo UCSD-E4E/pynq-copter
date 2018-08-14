@@ -76,15 +76,15 @@ ctrl_reg_outValue1_o {
 	offset 72
 	offset_end 79
 }
-pressure_msb { 
-	dir O
+clearedInterrStatus1_i { 
+	dir I
 	width 32
 	depth 1
-	mode ap_vld
+	mode ap_none
 	offset 80
 	offset_end 87
 }
-pressure_lsb { 
+clearedInterrStatus1_o { 
 	dir O
 	width 32
 	depth 1
@@ -92,13 +92,253 @@ pressure_lsb {
 	offset 88
 	offset_end 95
 }
-pressure_xlsb { 
+rxFifoDepth1_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 96
+	offset_end 103
+}
+rxFifoDepth1_o { 
 	dir O
 	width 32
 	depth 1
 	mode ap_vld
-	offset 96
-	offset_end 103
+	offset 104
+	offset_end 111
+}
+resetAxiEnabled { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 112
+	offset_end 119
+}
+ctrl2RegState_enabled { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 120
+	offset_end 127
+}
+byteCountZero { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 128
+	offset_end 135
+}
+clearedInterruptStatus2 { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 136
+	offset_end 143
+}
+interrStatus2_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 144
+	offset_end 151
+}
+interrStatus2_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 152
+	offset_end 159
+}
+disableTxBitDirection { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 160
+	offset_end 167
+}
+pressByteCountEnabled { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 168
+	offset_end 175
+}
+byteTracker { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 176
+	offset_end 183
+}
+interrStatus3StateEnabled { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 184
+	offset_end 191
+}
+checkInterrReg { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 192
+	offset_end 199
+}
+ctrl_reg_val3_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 200
+	offset_end 207
+}
+ctrl_reg_val3_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 208
+	offset_end 215
+}
+lastByteRead_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 216
+	offset_end 223
+}
+lastByteRead_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 224
+	offset_end 231
+}
+rx_fifo_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 232
+	offset_end 239
+}
+rx_fifo_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 240
+	offset_end 247
+}
+clearLatchedInterr_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 248
+	offset_end 255
+}
+clearLatchedInterr_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 256
+	offset_end 263
+}
+releaseBus { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 264
+	offset_end 271
+}
+receivedSuccess_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 272
+	offset_end 279
+}
+receivedSuccess_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 280
+	offset_end 287
+}
+pressure_msb_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 288
+	offset_end 295
+}
+pressure_msb_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 296
+	offset_end 303
+}
+pressure_lsb_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 304
+	offset_end 311
+}
+pressure_lsb_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 312
+	offset_end 319
+}
+pressure_xlsb_i { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 320
+	offset_end 327
+}
+pressure_xlsb_o { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 328
+	offset_end 335
+}
+stat_reg_val6_state { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 336
+	offset_end 343
 }
 }
 

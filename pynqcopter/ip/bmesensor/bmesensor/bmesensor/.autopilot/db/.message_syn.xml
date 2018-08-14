@@ -3,16 +3,16 @@
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;bmesensor.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;main.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:01:31 ; elapsed = 00:00:41 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 111342 ; free virtual = 494005" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:33 ; elapsed = 00:00:43 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 111388 ; free virtual = 494051" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:01:42 ; elapsed = 00:00:47 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 76595 ; free virtual = 497043" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:44 ; elapsed = 00:00:49 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 76565 ; free virtual = 497012" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:35 ; elapsed = 00:00:45 . Memory (MB): peak = 360.160 ; gain = 13.598 ; free physical = 111402 ; free virtual = 494065" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:46 ; elapsed = 00:00:51 . Memory (MB): peak = 360.148 ; gain = 13.590 ; free physical = 76518 ; free virtual = 496966" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:35 ; elapsed = 00:00:45 . Memory (MB): peak = 360.160 ; gain = 13.598 ; free physical = 111398 ; free virtual = 494060" tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (bmesensor.cpp:238:51) to (bmesensor.cpp:259:2) in function &apos;bmesensor&apos;... converting 3 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (bmesensor.cpp:147:3) to (bmesensor.cpp:172:2) in function &apos;bmesensor&apos;... converting 3 basic blocks." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:36 ; elapsed = 00:00:46 . Memory (MB): peak = 488.148 ; gain = 141.586 ; free physical = 111348 ; free virtual = 494010" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:37 ; elapsed = 00:00:47 . Memory (MB): peak = 488.148 ; gain = 141.586 ; free physical = 111371 ; free virtual = 494033" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:46 ; elapsed = 00:00:51 . Memory (MB): peak = 360.148 ; gain = 13.590 ; free physical = 76530 ; free virtual = 496978" tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (bmesensor.cpp:163:3) to (bmesensor.cpp:191:2) in function &apos;bmesensor&apos;... converting 3 basic blocks." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:47 ; elapsed = 00:00:52 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 76384 ; free virtual = 496831" tag=""/>
+	<Message prefix="[XFORM 203-562]" severity="WARNING" keynum="810" content="Loop &apos;Loop-3&apos; (bmesensor.cpp:304) in function &apos;bmesensor&apos; has unknown bound because it has multiple exiting blocks." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:48 ; elapsed = 00:00:53 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 76433 ; free virtual = 496881" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;bmesensor&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
@@ -20,13 +20,13 @@
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 47.24 seconds; current allocated memory: 85.533 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 53.14 seconds; current allocated memory: 87.354 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.15 seconds; current allocated memory: 86.841 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.17 seconds; current allocated memory: 88.968 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;bmesensor&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
@@ -35,14 +35,33 @@
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/empty_pirq_outValue&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/full_pirq_outValue&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/ctrl_reg_outValue1&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/pressure_msb&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/pressure_lsb&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/pressure_xlsb&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/clearedInterrStatus1&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/rxFifoDepth1&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/resetAxiEnabled&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/ctrl2RegState_enabled&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/byteCountZero&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/clearedInterruptStatus2&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/interrStatus2&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/disableTxBitDirection&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/pressByteCountEnabled&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/byteTracker&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/interrStatus3StateEnabled&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/checkInterrReg&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/ctrl_reg_val3&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/lastByteRead&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/rx_fifo&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/clearLatchedInterr&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/releaseBus&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/receivedSuccess&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/pressure_msb&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/pressure_lsb&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/pressure_xlsb&apos; to &apos;s_axilite &amp; ap_ovld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmesensor/stat_reg_val6_state&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;bmesensor&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos;, &apos;stat_reg_outValue1&apos;, &apos;empty_pirq_outValue&apos;, &apos;full_pirq_outValue&apos;, &apos;ctrl_reg_outValue1&apos;, &apos;pressure_msb&apos;, &apos;pressure_lsb&apos; and &apos;pressure_xlsb&apos; to AXI-Lite port AXILiteS." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos;, &apos;stat_reg_outValue1&apos;, &apos;empty_pirq_outValue&apos;, &apos;full_pirq_outValue&apos;, &apos;ctrl_reg_outValue1&apos;, &apos;clearedInterrStatus1&apos;, &apos;rxFifoDepth1&apos;, &apos;resetAxiEnabled&apos;, &apos;ctrl2RegState_enabled&apos;, &apos;byteCountZero&apos;, &apos;clearedInterruptStatus2&apos;, &apos;interrStatus2&apos;, &apos;disableTxBitDirection&apos;, &apos;pressByteCountEnabled&apos;, &apos;byteTracker&apos;, &apos;interrStatus3StateEnabled&apos;, &apos;checkInterrReg&apos;, &apos;ctrl_reg_val3&apos;, &apos;lastByteRead&apos;, &apos;rx_fifo&apos;, &apos;clearLatchedInterr&apos;, &apos;releaseBus&apos;, &apos;receivedSuccess&apos;, &apos;pressure_msb&apos;, &apos;pressure_lsb&apos;, &apos;pressure_xlsb&apos; and &apos;stat_reg_val6_state&apos; to AXI-Lite port AXILiteS." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;bmesensor&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.33 seconds; current allocated memory: 90.510 MB." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:39 ; elapsed = 00:00:49 . Memory (MB): peak = 488.148 ; gain = 141.586 ; free physical = 111318 ; free virtual = 493981" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.48 seconds; current allocated memory: 93.087 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:50 ; elapsed = 00:00:55 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 76455 ; free virtual = 496903" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for bmesensor." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for bmesensor." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for bmesensor." tag=""/>

@@ -64,11 +64,11 @@ set Interface4 "wire"
 set DataType4 "unsigned int"
 set Port4 [list $PortName4 $Interface4 $DataType4 $Pointer4 $Dims4 $Const4 $Volatile4 $ArrayOpt4]
 lappend PortList $Port4
-set PortName5 "pressure_msb"
+set PortName5 "clearedInterrStatus1"
 set BitWidth5 "32"
 set ArrayOpt5 ""
 set Const5 "0"
-set Volatile5 "0"
+set Volatile5 "1"
 set Pointer5 "2"
 set Reference5 "1"
 set Dims5 [list 0]
@@ -76,11 +76,11 @@ set Interface5 "wire"
 set DataType5 "unsigned int"
 set Port5 [list $PortName5 $Interface5 $DataType5 $Pointer5 $Dims5 $Const5 $Volatile5 $ArrayOpt5]
 lappend PortList $Port5
-set PortName6 "pressure_lsb"
+set PortName6 "rxFifoDepth1"
 set BitWidth6 "32"
 set ArrayOpt6 ""
 set Const6 "0"
-set Volatile6 "0"
+set Volatile6 "1"
 set Pointer6 "2"
 set Reference6 "1"
 set Dims6 [list 0]
@@ -88,7 +88,7 @@ set Interface6 "wire"
 set DataType6 "unsigned int"
 set Port6 [list $PortName6 $Interface6 $DataType6 $Pointer6 $Dims6 $Const6 $Volatile6 $ArrayOpt6]
 lappend PortList $Port6
-set PortName7 "pressure_xlsb"
+set PortName7 "resetAxiEnabled"
 set BitWidth7 "32"
 set ArrayOpt7 ""
 set Const7 "0"
@@ -97,9 +97,237 @@ set Pointer7 "2"
 set Reference7 "1"
 set Dims7 [list 0]
 set Interface7 "wire"
-set DataType7 "unsigned int"
+set DataType7 "int"
 set Port7 [list $PortName7 $Interface7 $DataType7 $Pointer7 $Dims7 $Const7 $Volatile7 $ArrayOpt7]
 lappend PortList $Port7
+set PortName8 "ctrl2RegState_enabled"
+set BitWidth8 "32"
+set ArrayOpt8 ""
+set Const8 "0"
+set Volatile8 "0"
+set Pointer8 "2"
+set Reference8 "1"
+set Dims8 [list 0]
+set Interface8 "wire"
+set DataType8 "int"
+set Port8 [list $PortName8 $Interface8 $DataType8 $Pointer8 $Dims8 $Const8 $Volatile8 $ArrayOpt8]
+lappend PortList $Port8
+set PortName9 "byteCountZero"
+set BitWidth9 "32"
+set ArrayOpt9 ""
+set Const9 "0"
+set Volatile9 "0"
+set Pointer9 "2"
+set Reference9 "1"
+set Dims9 [list 0]
+set Interface9 "wire"
+set DataType9 "int"
+set Port9 [list $PortName9 $Interface9 $DataType9 $Pointer9 $Dims9 $Const9 $Volatile9 $ArrayOpt9]
+lappend PortList $Port9
+set PortName10 "clearedInterruptStatus2"
+set BitWidth10 "32"
+set ArrayOpt10 ""
+set Const10 "0"
+set Volatile10 "0"
+set Pointer10 "2"
+set Reference10 "1"
+set Dims10 [list 0]
+set Interface10 "wire"
+set DataType10 "int"
+set Port10 [list $PortName10 $Interface10 $DataType10 $Pointer10 $Dims10 $Const10 $Volatile10 $ArrayOpt10]
+lappend PortList $Port10
+set PortName11 "interrStatus2"
+set BitWidth11 "32"
+set ArrayOpt11 ""
+set Const11 "0"
+set Volatile11 "1"
+set Pointer11 "2"
+set Reference11 "1"
+set Dims11 [list 0]
+set Interface11 "wire"
+set DataType11 "unsigned int"
+set Port11 [list $PortName11 $Interface11 $DataType11 $Pointer11 $Dims11 $Const11 $Volatile11 $ArrayOpt11]
+lappend PortList $Port11
+set PortName12 "disableTxBitDirection"
+set BitWidth12 "32"
+set ArrayOpt12 ""
+set Const12 "0"
+set Volatile12 "0"
+set Pointer12 "2"
+set Reference12 "1"
+set Dims12 [list 0]
+set Interface12 "wire"
+set DataType12 "int"
+set Port12 [list $PortName12 $Interface12 $DataType12 $Pointer12 $Dims12 $Const12 $Volatile12 $ArrayOpt12]
+lappend PortList $Port12
+set PortName13 "pressByteCountEnabled"
+set BitWidth13 "32"
+set ArrayOpt13 ""
+set Const13 "0"
+set Volatile13 "0"
+set Pointer13 "2"
+set Reference13 "1"
+set Dims13 [list 0]
+set Interface13 "wire"
+set DataType13 "int"
+set Port13 [list $PortName13 $Interface13 $DataType13 $Pointer13 $Dims13 $Const13 $Volatile13 $ArrayOpt13]
+lappend PortList $Port13
+set PortName14 "byteTracker"
+set BitWidth14 "32"
+set ArrayOpt14 ""
+set Const14 "0"
+set Volatile14 "0"
+set Pointer14 "2"
+set Reference14 "1"
+set Dims14 [list 0]
+set Interface14 "wire"
+set DataType14 "int"
+set Port14 [list $PortName14 $Interface14 $DataType14 $Pointer14 $Dims14 $Const14 $Volatile14 $ArrayOpt14]
+lappend PortList $Port14
+set PortName15 "interrStatus3StateEnabled"
+set BitWidth15 "32"
+set ArrayOpt15 ""
+set Const15 "0"
+set Volatile15 "0"
+set Pointer15 "2"
+set Reference15 "1"
+set Dims15 [list 0]
+set Interface15 "wire"
+set DataType15 "int"
+set Port15 [list $PortName15 $Interface15 $DataType15 $Pointer15 $Dims15 $Const15 $Volatile15 $ArrayOpt15]
+lappend PortList $Port15
+set PortName16 "checkInterrReg"
+set BitWidth16 "32"
+set ArrayOpt16 ""
+set Const16 "0"
+set Volatile16 "0"
+set Pointer16 "2"
+set Reference16 "1"
+set Dims16 [list 0]
+set Interface16 "wire"
+set DataType16 "int"
+set Port16 [list $PortName16 $Interface16 $DataType16 $Pointer16 $Dims16 $Const16 $Volatile16 $ArrayOpt16]
+lappend PortList $Port16
+set PortName17 "ctrl_reg_val3"
+set BitWidth17 "32"
+set ArrayOpt17 ""
+set Const17 "0"
+set Volatile17 "1"
+set Pointer17 "2"
+set Reference17 "1"
+set Dims17 [list 0]
+set Interface17 "wire"
+set DataType17 "int"
+set Port17 [list $PortName17 $Interface17 $DataType17 $Pointer17 $Dims17 $Const17 $Volatile17 $ArrayOpt17]
+lappend PortList $Port17
+set PortName18 "lastByteRead"
+set BitWidth18 "32"
+set ArrayOpt18 ""
+set Const18 "0"
+set Volatile18 "1"
+set Pointer18 "2"
+set Reference18 "1"
+set Dims18 [list 0]
+set Interface18 "wire"
+set DataType18 "unsigned int"
+set Port18 [list $PortName18 $Interface18 $DataType18 $Pointer18 $Dims18 $Const18 $Volatile18 $ArrayOpt18]
+lappend PortList $Port18
+set PortName19 "rx_fifo"
+set BitWidth19 "32"
+set ArrayOpt19 ""
+set Const19 "0"
+set Volatile19 "1"
+set Pointer19 "2"
+set Reference19 "1"
+set Dims19 [list 0]
+set Interface19 "wire"
+set DataType19 "unsigned int"
+set Port19 [list $PortName19 $Interface19 $DataType19 $Pointer19 $Dims19 $Const19 $Volatile19 $ArrayOpt19]
+lappend PortList $Port19
+set PortName20 "clearLatchedInterr"
+set BitWidth20 "32"
+set ArrayOpt20 ""
+set Const20 "0"
+set Volatile20 "1"
+set Pointer20 "2"
+set Reference20 "1"
+set Dims20 [list 0]
+set Interface20 "wire"
+set DataType20 "unsigned int"
+set Port20 [list $PortName20 $Interface20 $DataType20 $Pointer20 $Dims20 $Const20 $Volatile20 $ArrayOpt20]
+lappend PortList $Port20
+set PortName21 "releaseBus"
+set BitWidth21 "32"
+set ArrayOpt21 ""
+set Const21 "0"
+set Volatile21 "0"
+set Pointer21 "2"
+set Reference21 "1"
+set Dims21 [list 0]
+set Interface21 "wire"
+set DataType21 "int"
+set Port21 [list $PortName21 $Interface21 $DataType21 $Pointer21 $Dims21 $Const21 $Volatile21 $ArrayOpt21]
+lappend PortList $Port21
+set PortName22 "receivedSuccess"
+set BitWidth22 "32"
+set ArrayOpt22 ""
+set Const22 "0"
+set Volatile22 "0"
+set Pointer22 "2"
+set Reference22 "1"
+set Dims22 [list 0]
+set Interface22 "wire"
+set DataType22 "int"
+set Port22 [list $PortName22 $Interface22 $DataType22 $Pointer22 $Dims22 $Const22 $Volatile22 $ArrayOpt22]
+lappend PortList $Port22
+set PortName23 "pressure_msb"
+set BitWidth23 "32"
+set ArrayOpt23 ""
+set Const23 "0"
+set Volatile23 "1"
+set Pointer23 "2"
+set Reference23 "1"
+set Dims23 [list 0]
+set Interface23 "wire"
+set DataType23 "unsigned int"
+set Port23 [list $PortName23 $Interface23 $DataType23 $Pointer23 $Dims23 $Const23 $Volatile23 $ArrayOpt23]
+lappend PortList $Port23
+set PortName24 "pressure_lsb"
+set BitWidth24 "32"
+set ArrayOpt24 ""
+set Const24 "0"
+set Volatile24 "1"
+set Pointer24 "2"
+set Reference24 "1"
+set Dims24 [list 0]
+set Interface24 "wire"
+set DataType24 "unsigned int"
+set Port24 [list $PortName24 $Interface24 $DataType24 $Pointer24 $Dims24 $Const24 $Volatile24 $ArrayOpt24]
+lappend PortList $Port24
+set PortName25 "pressure_xlsb"
+set BitWidth25 "32"
+set ArrayOpt25 ""
+set Const25 "0"
+set Volatile25 "1"
+set Pointer25 "2"
+set Reference25 "1"
+set Dims25 [list 0]
+set Interface25 "wire"
+set DataType25 "unsigned int"
+set Port25 [list $PortName25 $Interface25 $DataType25 $Pointer25 $Dims25 $Const25 $Volatile25 $ArrayOpt25]
+lappend PortList $Port25
+set PortName26 "stat_reg_val6_state"
+set BitWidth26 "32"
+set ArrayOpt26 ""
+set Const26 "0"
+set Volatile26 "0"
+set Pointer26 "0"
+set Reference26 "0"
+set Dims26 [list 0]
+set Interface26 "wire"
+set DataType26 "unsigned int"
+set Port26 [list $PortName26 $Interface26 $DataType26 $Pointer26 $Dims26 $Const26 $Volatile26 $ArrayOpt26]
+lappend PortList $Port26
 set globalAPint "" 
 set returnAPInt "" 
 set hasCPPAPInt 0 

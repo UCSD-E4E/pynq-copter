@@ -50,6 +50,6 @@
 #define IIC_RX_FIFO_OFF (0x10C/4)
 
 
-void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t&ctrl_reg_outValue1, uint32_t&pressure_msb, uint32_t&pressure_lsb, uint32_t&pressure_xlsb);
+//void initializeSensor(volatile uint32_t iic2[4096]);
 
 #endif

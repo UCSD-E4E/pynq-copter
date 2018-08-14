@@ -33186,8 +33186,6 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 };
 # 40 "./bmesensor.hpp" 2
-# 53 "./bmesensor.hpp"
-void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t&ctrl_reg_outValue1, uint32_t&pressure_msb, uint32_t&pressure_lsb, uint32_t&pressure_xlsb);
 # 36 "bmesensor.cpp" 2
 
 
@@ -33207,7 +33205,7 @@ static uint32_t stat_reg_val5;
 static uint32_t rx_fifo_val;
 
 
-void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t&ctrl_reg_outValue1, uint32_t&pressure_msb, uint32_t&pressure_lsb, uint32_t&pressure_xlsb)
+void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t&ctrl_reg_outValue1, volatile uint32_t& clearedInterrStatus1, volatile uint32_t& rxFifoDepth1, int& resetAxiEnabled,int& ctrl2RegState_enabled, int& byteCountZero, int& clearedInterruptStatus2, volatile uint32_t& interrStatus2, int& disableTxBitDirection, int& pressByteCountEnabled, int& byteTracker, int& interrStatus3StateEnabled,int& checkInterrReg, volatile int& ctrl_reg_val3, volatile uint32_t& lastByteRead, volatile uint32_t& rx_fifo, volatile uint32_t& clearLatchedInterr, int& releaseBus, int& receivedSuccess, volatile uint32_t& pressure_msb, volatile uint32_t& pressure_lsb, volatile uint32_t& pressure_xlsb, uint32_t stat_reg_val6_state)
 {
 #pragma HLS INTERFACE s_axilite port=return
 
@@ -33218,9 +33216,28 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 #pragma HLS INTERFACE s_axilite port=ctrl_reg_outValue1
 #pragma HLS INTERFACE s_axilite port=stat_reg_outValue1
 
+#pragma HLS INTERFACE s_axilite port=clearedInterrStatus1
+#pragma HLS INTERFACE s_axilite port=rxFifoDepth1
+#pragma HLS INTERFACE s_axilite port=resetAxiEnabled
+#pragma HLS INTERFACE s_axilite port=ctrl2RegState_enabled
+#pragma HLS INTERFACE s_axilite port=byteCountZero
+#pragma HLS INTERFACE s_axilite port=clearedInterruptStatus2
+#pragma HLS INTERFACE s_axilite port=interrStatus2
+#pragma HLS INTERFACE s_axilite port=disableTxBitDirection
+#pragma HLS INTERFACE s_axilite port=pressByteCountEnabled
+#pragma HLS INTERFACE s_axilite port=byteTracker
+#pragma HLS INTERFACE s_axilite port=interrStatus3StateEnabled
+#pragma HLS INTERFACE s_axilite port=checkInterrReg
+#pragma HLS INTERFACE s_axilite port=ctrl_reg_val3
+#pragma HLS INTERFACE s_axilite port=lastByteRead
+#pragma HLS INTERFACE s_axilite port=rx_fifo
+#pragma HLS INTERFACE s_axilite port=clearLatchedInterr
+#pragma HLS INTERFACE s_axilite port=releaseBus
+#pragma HLS INTERFACE s_axilite port=receivedSuccess
 #pragma HLS INTERFACE s_axilite port=pressure_msb
 #pragma HLS INTERFACE s_axilite port=pressure_lsb
 #pragma HLS INTERFACE s_axilite port=pressure_xlsb
+#pragma HLS INTERFACE s_axilite port=stat_reg_val6_state
 
 
 
@@ -33246,7 +33263,6 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 
 
 
-
  iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
  iic[(0x40001000/4)+(0x108/4)] = 0xE0;
  iic[(0x40001000/4)+(0x108/4)] = 0xB6;
@@ -33268,18 +33284,16 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 
 
  int pressByteCount = 3;
+ uint32_t receivedData[3];
 
-
-
- int receivedData[3];
 
  uint32_t resetAxiState = iic[(0x40001000/4)+(0x100/4)];
  if(resetAxiState == 0)
  {
+  resetAxiEnabled = 100;
   iic[(0x40001000/4)+(0x100/4)] = 0x02;
   iic[(0x40001000/4)+(0x100/4)] = 0x01;
  }
-
 
  iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
  iic[(0x40001000/4)+(0x108/4)] = 0x2F7;
@@ -33287,18 +33301,20 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 
  uint32_t interrStatus = iic[(0x40001000/4)+(0x020/4)];
  iic[(0x40001000/4)+(0x020/4)] = (interrStatus & 11);
+ clearedInterrStatus1 = iic[(0x40001000/4)+(0x020/4)];
 
 
- iic[(0x40001000/4)+(0x120/4)] = 0x0;
+ iic[(0x40001000/4)+(0x120/4)] = 0;
+ rxFifoDepth1 = iic[(0x40001000/4)+(0x120/4)];
 
 
 
- ctrl_reg_val2 = iic[(0x40001000/4)+(0x100/4)];
+ uint32_t ctrl_reg_val2 = iic[(0x40001000/4)+(0x100/4)];
  uint32_t ctrl_reg_val2_copy = ctrl_reg_val2;
  uint32_t ctrl2RegState = ctrl_reg_val2_copy & 32;
  if(ctrl2RegState == 0)
  {
-  printf("Master already on bus");
+  ctrl2RegState_enabled = 101;
 
   iic[(0x40001000/4)+(0x108/4)] = 0xED;
 
@@ -33308,32 +33324,34 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
   ctrl_reg_val2_copy = 5;
   if(pressByteCount==0)
   {
-   ctrl_reg_val2_copy = (ctrl_reg_val2_copy | 16);
+   byteCountZero = 102;
+   ctrl_reg_val2_copy = ctrl_reg_val2_copy | 16;
   }
 
 
   iic[(0x40001000/4)+(0x100/4)] = ctrl_reg_val2_copy;
 
-
-  uint32_t stat_reg_val5 = iic[(0x40001000/4)+(0x104/4)];
-  uint32_t stat_reg_val5_copy = stat_reg_val5;
-  uint32_t statRegState = (stat_reg_val5_copy & 4);
+  uint32_t stat_reg_val = iic[(0x40001000/4)+(0x104/4)];
+  uint32_t stat_reg_val_copy = stat_reg_val;
+  uint32_t statRegState = stat_reg_val_copy & 4;
   while(statRegState == 0)
   {
-   stat_reg_val5_copy = iic[(0x40001000/4)+(0x104/4)];
+   clearedInterruptStatus2 = 103;
+   stat_reg_val_copy = iic[(0x40001000/4)+(0x104/4)];
   }
-  uint32_t interrStatus2 = iic[(0x40001000/4)+(0x020/4)];
+  interrStatus2 = iic[(0x40001000/4)+(0x020/4)];
   uint32_t clearInterrStatus = interrStatus2 & 16;
   iic[(0x40001000/4)+(0x020/4)] = clearInterrStatus;
  }
  else
  {
-  printf("Master not on bus");
+  disableTxBitDirection = 104;
 
   ctrl_reg_val2_copy = ctrl_reg_val2_copy & 7;
+
   if(pressByteCount == 0)
   {
-   ctrl_reg_val2_copy = (ctrl_reg_val2_copy | 16);
+   ctrl_reg_val2_copy = ctrl_reg_val2_copy | 16;
   }
   iic[(0x40001000/4)+(0x100/4)] = ctrl_reg_val2_copy;
 
@@ -33341,66 +33359,61 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 
   iic[(0x40001000/4)+(0x108/4)] = 0x1ED;
  }
-
  while(pressByteCount > 0)
  {
+  pressByteCountEnabled = 105;
 
-
-  uint32_t interruptStatusMask;
+  int interruptStatusMask;
   if(pressByteCount == 1)
   {
+   byteTracker = 1;
    interruptStatusMask = 17;
   }
   else
   {
+   byteTracker = 2;
    interruptStatusMask = 19;
   }
 
   while(true)
   {
+   checkInterrReg = 106;
    uint32_t interrStatus3 = iic[(0x40001000/4)+(0x020/4)];
    uint32_t interrStatus3State = interrStatus3 & 8;
    if(interrStatus3State)
    {
+    interrStatus3StateEnabled = 1;
     break;
    }
-
-
    if(interrStatus3 & interruptStatusMask)
    {
     printf("Error");
    }
   }
-  uint32_t ctrl_reg_val3 = iic[(0x40001000/4)+(0x100/4)];
-
+  ctrl_reg_val3 = iic[(0x40001000/4)+(0x100/4)];
 
 
   if(pressByteCount == 1)
   {
-
-   iic[(0x40001000/4)+(0x100/4)] = 0x01;
+   iic[(0x40001000/4)+(0x100/4)] = 1;
   }
-
-
   if(pressByteCount == 2)
   {
-
-
-   uint32_t lastByteRead = ctrl_reg_val3 | 16;
+   lastByteRead = ctrl_reg_val3 | 16;
    iic[(0x40001000/4)+(0x100/4)] = lastByteRead;
   }
 
+  rx_fifo = iic[(0x40001000/4)+(0x10C/4)];
 
-  uint32_t rx_fifo = iic[(0x40001000/4)+(0x10C/4)];
   if(pressByteCount == 3)
   {
    receivedData[2] = rx_fifo;
   }
-  else if(pressByteCount == 2)
+  if(pressByteCount == 2)
   {
    receivedData[1] = rx_fifo;
   }
-  else if(pressByteCount == 1)
+  if(pressByteCount == 1)
   {
    receivedData[0] = rx_fifo;
   }
@@ -33408,20 +33421,23 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 
 
   uint32_t interrStatus4 = iic[(0x40001000/4)+(0x020/4)];
-  uint32_t clearLatchedInterr = interrStatus4 & 37;
+  clearLatchedInterr = interrStatus4 & 11;
   iic[(0x40001000/4)+(0x020/4)] = clearLatchedInterr;
 
   pressByteCount -= 1;
  }
-
  while(true)
  {
+  releaseBus = 107;
+
   uint32_t interrStatus5 = iic[(0x40001000/4)+(0x020/4)];
-  if(interrStatus5 & 16)
+  uint32_t interrStatus5State = interrStatus5 & 16;
+  if(interrStatus5State)
   {
    break;
   }
  }
+
 
  uint32_t ctrl_reg_val4 = iic[(0x40001000/4)+(0x100/4)];
  uint32_t ctrl_reg_val4_copy = ctrl_reg_val4;
@@ -33430,8 +33446,6 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
  int counter = 0;
  if(ctrl_reg_val4_state == 0)
  {
-
-
   iic[(0x40001000/4)+(0x100/4)] = 0x00;
 
   counter = 0;
@@ -33440,21 +33454,27 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
  {
   uint32_t stat_reg_val6 = iic[(0x40001000/4)+(0x104/4)];
   counter += 1;
-  if(stat_reg_val6 & 4)
+  stat_reg_val6_state = stat_reg_val6 & 4;
+  if(stat_reg_val6_state)
   {
    if(counter == 1000)
    {
-    printf("FAIL");
     break;
    }
   }
   else
   {
-   printf("SUCCESS");
+   receivedSuccess = 1;
    break;
   }
  }
- pressure_msb = receivedData[2];
- pressure_lsb = receivedData[1];
- pressure_xlsb = receivedData[0];
+
+ if(receivedSuccess == 1)
+ {
+  pressure_msb = receivedData[2];
+  pressure_lsb = receivedData[1];
+  pressure_xlsb = receivedData[0];
+ }
+
+
 }
