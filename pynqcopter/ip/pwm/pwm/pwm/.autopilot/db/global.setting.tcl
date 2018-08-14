@@ -41,8 +41,8 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7z020:clg400:-1"
-set SourceFiles {sc {} c {../../pwm.cpp ../../main.cpp ../../pwm.hpp}}
-set SourceFlags {sc {} c {{ -std=c++0x} { -std=c++0x} { }}}
+set SourceFiles {sc {} c {../../pwm.cpp ../../main.cpp}}
+set SourceFlags {sc {} c {{ -std=c++0x} { -std=c++0x}}}
 set DirectiveFile {/home/brennan/Documents/pynq-copter/pynqcopter/ip/pwm/pwm/pwm/pwm.directive}
 set TBFiles {verilog {../../pwm.cpp ../../main.cpp} bc {../../pwm.cpp ../../main.cpp} sc {../../pwm.cpp ../../main.cpp} vhdl {../../pwm.cpp ../../main.cpp} c {} cas {../../pwm.cpp ../../main.cpp}}
 set SpecLanguage "C"

@@ -1,13 +1,13 @@
 set C_TypeInfoList {{ 
 "pwm" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"min_duty": [[],"0"] }, {"max_duty": [[],"0"] }, {"period": [[],"0"] }, {"m": [[], {"array": ["1", [6]]}] }, {"out": [[], {"reference": "2"}] }],[],""], 
 "0": [ "N_t", {"typedef": [[[],"3"],""]}], 
+"3": [ "ap_uint<16>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 16}}]],""]}}], 
 "1": [ "F_t", {"typedef": [[[],"4"],""]}], 
 "4": [ "ap_fixed<16, 1, 5, 3, 0>", {"hls_type": {"ap_fixed": [[[[], {"scalar": { "int": 16}}],[[], {"scalar": { "int": 1}}],[[], {"scalar": { "5": 5}}],[[], {"scalar": { "6": 3}}],[[], {"scalar": { "int": 0}}]],""]}}], 
+"6": [ "sc_o_mode", {"enum": [[],[],[{"SC_SAT":  {"scalar": "__integer__"}},{"SC_SAT_ZERO":  {"scalar": "__integer__"}},{"SC_SAT_SYM":  {"scalar": "__integer__"}},{"SC_WRAP":  {"scalar": "__integer__"}},{"SC_WRAP_SM":  {"scalar": "__integer__"}}],""]}], 
 "5": [ "sc_q_mode", {"enum": [[],[],[{"SC_RND":  {"scalar": "__integer__"}},{"SC_RND_ZERO":  {"scalar": "__integer__"}},{"SC_RND_MIN_INF":  {"scalar": "__integer__"}},{"SC_RND_INF":  {"scalar": "__integer__"}},{"SC_RND_CONV":  {"scalar": "__integer__"}},{"SC_TRN":  {"scalar": "__integer__"}},{"SC_TRN_ZERO":  {"scalar": "__integer__"}}],""]}], 
 "2": [ "O_t", {"typedef": [[[],"7"],""]}], 
-"7": [ "ap_uint<6>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 6}}]],""]}}], 
-"3": [ "ap_uint<16>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 16}}]],""]}}], 
-"6": [ "sc_o_mode", {"enum": [[],[],[{"SC_SAT":  {"scalar": "__integer__"}},{"SC_SAT_ZERO":  {"scalar": "__integer__"}},{"SC_SAT_SYM":  {"scalar": "__integer__"}},{"SC_WRAP":  {"scalar": "__integer__"}},{"SC_WRAP_SM":  {"scalar": "__integer__"}}],""]}]
+"7": [ "ap_uint<6>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 6}}]],""]}}]
 }}
 set moduleName pwm
 set isCombinational 0
@@ -96,15 +96,15 @@ set RtlHierarchyInfo {[
 			{"Name" : "period_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "m_V", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "out_V", "Type" : "None", "Direction" : "O"},
-			{"Name" : "accumulator_V", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "acc_V", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "out_p_V", "Type" : "OVld", "Direction" : "IO"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_ctrl_s_axi_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_mul_mul_16s_1bkb_U1", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_mul_mul_16s_1bkb_U2", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_mul_mul_16s_1bkb_U3", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_mul_mul_16s_1bkb_U4", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_mul_mul_16s_1bkb_U5", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_mul_mul_16s_1bkb_U6", "Parent" : "0"}]}
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_mul_mul_17s_1bkb_U1", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_mul_mul_17s_1bkb_U2", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_mul_mul_17s_1bkb_U3", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_mul_mul_17s_1bkb_U4", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_mul_mul_17s_1bkb_U5", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.pwm_mul_mul_17s_1bkb_U6", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -113,14 +113,14 @@ set ArgLastReadFirstWriteLatency {
 		max_duty_V {Type I LastRead 1 FirstWrite -1}
 		period_V {Type I LastRead 1 FirstWrite -1}
 		m_V {Type I LastRead 5 FirstWrite -1}
-		out_V {Type O LastRead -1 FirstWrite 13}
-		accumulator_V {Type IO LastRead -1 FirstWrite -1}
+		out_V {Type O LastRead -1 FirstWrite 12}
+		acc_V {Type IO LastRead -1 FirstWrite -1}
 		out_p_V {Type IO LastRead -1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "13", "Max" : "13"}
+	{"Name" : "Latency", "Min" : "12", "Max" : "12"}
 	, {"Name" : "Interval", "Min" : "6", "Max" : "6"}
 ]}
 

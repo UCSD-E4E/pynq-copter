@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "6",
-    "Latency": "13",
+    "Latency": "12",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -36,17 +36,16 @@
   "Files": {
     "CSource": [
       "..\/..\/pwm.cpp",
-      "..\/..\/main.cpp",
-      "..\/..\/pwm.hpp"
+      "..\/..\/main.cpp"
     ],
     "Vhdl": [
       "impl\/vhdl\/pwm_ctrl_s_axi.vhd",
-      "impl\/vhdl\/pwm_mul_mul_16s_1bkb.vhd",
+      "impl\/vhdl\/pwm_mul_mul_17s_1bkb.vhd",
       "impl\/vhdl\/pwm.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/pwm_ctrl_s_axi.v",
-      "impl\/verilog\/pwm_mul_mul_16s_1bkb.v",
+      "impl\/verilog\/pwm_mul_mul_17s_1bkb.v",
       "impl\/verilog\/pwm.v"
     ],
     "SwDriver": [
@@ -511,18 +510,18 @@
       "dir": "out",
       "dataWidth": "6",
       "handshakeRef": "ap_none",
-      "firstOutLatency": "13"
+      "firstOutLatency": "12"
     }
   },
   "ModuleInfo": {
     "Hierarchy": {"ModuleName": "pwm"},
     "Metrics": {"pwm": {
         "Latency": {
-          "LatencyBest": "13",
-          "LatencyAvg": "13",
-          "LatencyWorst": "13",
+          "LatencyBest": "12",
+          "LatencyAvg": "12",
+          "LatencyWorst": "12",
           "PipelineII": "6",
-          "PipelineDepth": "14",
+          "PipelineDepth": "13",
           "PipelineType": "function"
         },
         "Timing": {
@@ -533,14 +532,14 @@
         "Area": {
           "BRAM_18K": "2",
           "DSP48E": "6",
-          "FF": "1051",
-          "LUT": "1333"
+          "FF": "1037",
+          "LUT": "1288"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-01 04:33:15 PDT",
+    "Time": "2018-08-09 10:06:36 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

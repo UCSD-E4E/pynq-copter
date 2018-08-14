@@ -687,7 +687,7 @@ y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_t
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>23037eb5</spirit:value>
+            <spirit:value>512e9728</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -703,7 +703,7 @@ y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_t
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>20f514fe</spirit:value>
+            <spirit:value>1dbf7177</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -719,7 +719,7 @@ y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_t
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e8e443fc</spirit:value>
+            <spirit:value>36e81d15</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -735,7 +735,7 @@ y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_t
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>a097f093</spirit:value>
+            <spirit:value>a6ec8568</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1139,7 +1139,7 @@ y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_t
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/pwm_mul_mul_16s_1bkb.v</spirit:name>
+        <spirit:name>hdl/verilog/pwm_mul_mul_17s_1bkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1156,7 +1156,7 @@ y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_t
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/pwm_mul_mul_16s_1bkb.v</spirit:name>
+        <spirit:name>hdl/verilog/pwm_mul_mul_17s_1bkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -1173,13 +1173,13 @@ y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_t
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/pwm_mul_mul_16s_1bkb.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/pwm_mul_mul_17s_1bkb.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/pwm.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_3b00e92a</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_d3760a7b</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1190,7 +1190,7 @@ y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_t
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/pwm_mul_mul_16s_1bkb.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/pwm_mul_mul_17s_1bkb.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -1287,7 +1287,7 @@ y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_t
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">13</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -1304,17 +1304,17 @@ y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_t
       </xilinx:taxonomies>
       <xilinx:displayName>Pwm</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808010433</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-01T11:33:28Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808091006</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-09T17:06:51Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="42a57330"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="715956c0"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="80c60a4f"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="83c92af9"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="176ee6a3"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="9f3463c0"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="6d4a0126"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="486ea6a7"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

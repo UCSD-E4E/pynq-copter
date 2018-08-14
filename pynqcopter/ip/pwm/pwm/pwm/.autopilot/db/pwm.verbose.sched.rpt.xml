@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'pwm'" level="0">
-<item name = "Date">Wed Aug  1 04:33:13 2018
+<item name = "Date">Thu Aug  9 10:06:35 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">pwm</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">13, 13, 6, 6, function</column>
+<column name="">12, 12, 6, 6, function</column>
 </table>
 </item>
 <item name = "Detail">

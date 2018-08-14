@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="normalizer.cpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer/normalizer.cpp"/>
+    <originFiles name="main.cpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer/main.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="normalizer.cpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer/normalizer.cpp"/>
+    <originFiles name="main.cpp" path="/home/brennan/Documents/pynq-copter/pynqcopter/ip/normalizer/main.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

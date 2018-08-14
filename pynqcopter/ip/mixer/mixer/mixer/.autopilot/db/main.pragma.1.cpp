@@ -37195,9 +37195,6 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 
 
 
-
-
-
 typedef ap_fixed<16 +3,4> bigF_t;
 
 
@@ -37209,9 +37206,6 @@ const bigF_t MIX_C[6][3] = {
  {-1,0,-1},
  {-.5,.57735026919,1}
 };
-
-
-void mixer(F_t regs_in[4],F_t m[4096]) ;
 #45 "main.cpp" 2
 void mixer(F_t regs_in[4],F_t m[4096]);
 

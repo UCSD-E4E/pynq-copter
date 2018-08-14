@@ -4,24 +4,24 @@
 //
 // Copyright (c) 2018, The Regents of the University of California All
 // rights reserved.
-// 
+//
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
 // met:
-// 
+//
 //	 * Redistributions of source code must retain the above copyright
 //	   notice, this list of conditions and the following disclaimer.
-// 
+//
 //	 * Redistributions in binary form must reproduce the above
 //	   copyright notice, this list of conditions and the following
 //	   disclaimer in the documentation and/or other materials provided
 //	   with the distribution.
-// 
+//
 //	 * Neither the name of The Regents of the University of California
 //	   nor the names of its contributors may be used to endorse or
 //	   promote products derived from this software without specific
 //	   prior written permission.
-// 
+//
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 // "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
 // LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -48,7 +48,7 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[CHANNELS] , O_t& out) {
 #pragma HLS INTERFACE ap_none port=out
 #pragma HLS INTERFACE s_axilite port=return bundle=ctrl
 #pragma HLS PIPELINE
-	static N_t accumulator=0;
+	static N_t acc=0;
 
 	static N_t in_p[CHANNELS]; //saves input for integrity
 	static O_t out_p=0x3F; //prepares output
@@ -57,29 +57,13 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[CHANNELS] , O_t& out) {
 		in_p[u]=duty_range*m[u]+min_duty;
 	}
 
-	if(accumulator<min_duty) {
-		out_p=0x3F;
-	}
-	if(min_duty<accumulator and accumulator<max_duty){
-		for(int u =0; u <CHANNELS; u++) { // for each pwm, is iteration under{
-			out_p&=~((accumulator>in_p[u])<<u);
-		}
-	}
-	if(max_duty<accumulator and accumulator<period) {
-		out_p=0;
+
+	for(int u =0; u <CHANNELS; u++) { //for each channel, do pwm logic
+		out_p[u]=((acc<min_duty) | (acc<in_p[u] & out_p[u] )) & (acc<max_duty);
 	}
 
-
-	if(period<accumulator) {
-		out_p=0x3F;
-		accumulator=0;
-	}
-
-
-
-	accumulator++;
+	acc=(acc<period) ? N_t(acc+1) : N_t(0); //inc acc if > per else reset
 
 	out=out_p;
 
 }
-

@@ -40,9 +40,6 @@
 #include "ap_int.h"
 #include "ap_fixed.h"
 #include "../pwm/pwm.hpp"
-
-#define PWM_OFFSET 0x40001000
-#define PWM_INDEX (PWM_OFFSET/sizeof(F_t))
 #define PWM_ARR_OFFSET 0x30
 #define PWM_ARR_INDEX (PWM_ARR_OFFSET/sizeof(F_t))
 
@@ -58,6 +55,3 @@ const bigF_t MIX_C[6][3] = {
 	{-1,0,-1},
 	{-.5,.57735026919,1}
 };
-
-
-void mixer(F_t regs_in[4],F_t m[4096]) ;

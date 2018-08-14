@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Messages>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;main.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;mixer.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;main.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:52 ; elapsed = 00:00:37 . Memory (MB): peak = 359.949 ; gain = 13.375 ; free physical = 1681 ; free virtual = 11230" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:54 ; elapsed = 00:00:40 . Memory (MB): peak = 359.949 ; gain = 13.375 ; free physical = 1673 ; free virtual = 11230" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:59 ; elapsed = 00:00:49 . Memory (MB): peak = 359.941 ; gain = 13.375 ; free physical = 1396 ; free virtual = 9697" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:00 ; elapsed = 00:00:52 . Memory (MB): peak = 359.941 ; gain = 13.375 ; free physical = 1388 ; free virtual = 9696" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:55 ; elapsed = 00:00:43 . Memory (MB): peak = 488.789 ; gain = 142.215 ; free physical = 1639 ; free virtual = 11207" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:02 ; elapsed = 00:00:54 . Memory (MB): peak = 488.852 ; gain = 142.285 ; free physical = 1353 ; free virtual = 9673" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:55 ; elapsed = 00:00:43 . Memory (MB): peak = 488.789 ; gain = 142.215 ; free physical = 1626 ; free virtual = 11197" tag=""/>
-	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="817" content="Unrolling all loops for pipelining in function &apos;mixer&apos; (mixer.cpp:76)." tag=""/>
-	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1&apos; (mixer.cpp:98) in function &apos;mixer&apos; completely." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock to (mixer.cpp:103:1) in function &apos;mixer&apos;... converting 21 basic blocks." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:56 ; elapsed = 00:00:43 . Memory (MB): peak = 488.789 ; gain = 142.215 ; free physical = 1587 ; free virtual = 11167" tag=""/>
-	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="832" content="Inferring bus burst write of length 6 on port &apos;m.V&apos; (mixer.cpp:101:91)." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:56 ; elapsed = 00:00:44 . Memory (MB): peak = 488.789 ; gain = 142.215 ; free physical = 1583 ; free virtual = 11164" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:02 ; elapsed = 00:00:54 . Memory (MB): peak = 488.852 ; gain = 142.285 ; free physical = 1337 ; free virtual = 9662" tag=""/>
+	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="817" content="Unrolling all loops for pipelining in function &apos;mixer&apos; (mixer.cpp:65)." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1&apos; (mixer.cpp:77) in function &apos;mixer&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock to (mixer.cpp:82:1) in function &apos;mixer&apos;... converting 21 basic blocks." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:02 ; elapsed = 00:00:55 . Memory (MB): peak = 488.852 ; gain = 142.285 ; free physical = 1294 ; free virtual = 9628" tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="832" content="Inferring bus burst write of length 6 on port &apos;m.V&apos; (mixer.cpp:80:47)." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:03 ; elapsed = 00:00:57 . Memory (MB): peak = 488.852 ; gain = 142.285 ; free physical = 1293 ; free virtual = 9625" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;mixer&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;mixer&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
-	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="86" content="Estimated delay (4.35ns) of &apos;mul&apos; operation (&apos;mul1&apos;, mixer.cpp:100) exceeds the target cycle time (target cycle time: 4ns, clock uncertainty: 0.5ns, effective cycle time: 3.5ns)." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="86" content="Estimated delay (4.85ns) of &apos;mul&apos; operation (&apos;mul1&apos;, mixer.cpp:79) exceeds the target cycle time (target cycle time: 4ns, clock uncertainty: 0.5ns, effective cycle time: 3.5ns)." tag=""/>
 	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="112" content="Pipelining function &apos;mixer&apos;." tag=""/>
 	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
-   between bus write on port &apos;m_V&apos; (mixer.cpp:101) and bus write on port &apos;m_V&apos; (mixer.cpp:101)." tag=""/>
+   between bus write on port &apos;m_V&apos; (mixer.cpp:80) and bus write on port &apos;m_V&apos; (mixer.cpp:80)." tag=""/>
 	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
-   between bus write on port &apos;m_V&apos; (mixer.cpp:101) and bus write on port &apos;m_V&apos; (mixer.cpp:101)." tag=""/>
+   between bus write on port &apos;m_V&apos; (mixer.cpp:80) and bus write on port &apos;m_V&apos; (mixer.cpp:80)." tag=""/>
 	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
-   between bus write on port &apos;m_V&apos; (mixer.cpp:101) and bus write on port &apos;m_V&apos; (mixer.cpp:101)." tag=""/>
+   between bus write on port &apos;m_V&apos; (mixer.cpp:80) and bus write on port &apos;m_V&apos; (mixer.cpp:80)." tag=""/>
 	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
-   between bus write on port &apos;m_V&apos; (mixer.cpp:101) and bus write on port &apos;m_V&apos; (mixer.cpp:101)." tag=""/>
-	<Message prefix="[SCHED 204-63]" severity="WARNING" keynum="117" content="Unable to schedule bus write on port &apos;m_V&apos; (mixer.cpp:101) within the last 7 cycles (II = 7).
+   between bus write on port &apos;m_V&apos; (mixer.cpp:80) and bus write on port &apos;m_V&apos; (mixer.cpp:80)." tag=""/>
+	<Message prefix="[SCHED 204-63]" severity="WARNING" keynum="117" content="Unable to schedule bus write on port &apos;m_V&apos; (mixer.cpp:80) within the last 7 cycles (II = 7).
 Please consider increasing the initiation interval of the pipeline." tag=""/>
 	<Message prefix="[SCHED 204-68]" severity="WARNING" keynum="98" content="Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1)
-   between bus write on port &apos;m_V&apos; (mixer.cpp:101) and bus write on port &apos;m_V&apos; (mixer.cpp:101)." tag=""/>
-	<Message prefix="[SCHED 204-63]" severity="WARNING" keynum="117" content="Unable to schedule bus write on port &apos;m_V&apos; (mixer.cpp:101) within the last 6 cycles (II = 6).
+   between bus write on port &apos;m_V&apos; (mixer.cpp:80) and bus write on port &apos;m_V&apos; (mixer.cpp:80)." tag=""/>
+	<Message prefix="[SCHED 204-63]" severity="WARNING" keynum="117" content="Unable to schedule bus write on port &apos;m_V&apos; (mixer.cpp:80) within the last 6 cycles (II = 6).
 Please consider increasing the initiation interval of the pipeline." tag=""/>
 	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 6, Depth = 32." tag=""/>
-	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="137" content="Estimated clock period (4.3456ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns)." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="137" content="Estimated clock period (4.8508ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns)." tag=""/>
 	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="135" content="The critical path consists of the following:
-	&apos;mul&apos; operation (&apos;mul2&apos;, mixer.cpp:100) (4.35 ns)" tag=""/>
+	&apos;mul&apos; operation (&apos;mul2&apos;, mixer.cpp:79) (4.85 ns)" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 44.63 seconds; current allocated memory: 104.671 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 57.34 seconds; current allocated memory: 108.868 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.22 seconds; current allocated memory: 105.783 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.74 seconds; current allocated memory: 110.037 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;mixer&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
@@ -56,27 +56,20 @@ Please consider increasing the initiation interval of the pipeline." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;mixer/m_V&apos; to &apos;m_axi&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;mixer&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos; to AXI-Lite port AXILiteS." tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mixer_mul_51ns_47s_97_6_1&apos; to &apos;mixer_mul_51ns_47bkb&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mixer_mul_51ns_48s_98_6_1&apos; to &apos;mixer_mul_51ns_48cud&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mixer_sub_97ns_97ns_97_2_1&apos; to &apos;mixer_sub_97ns_97dEe&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mixer_sub_98ns_98ns_98_2_1&apos; to &apos;mixer_sub_98ns_98eOg&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mixer_mul_mul_16s_16s_32_3_1&apos; to &apos;mixer_mul_mul_16sfYi&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mixer_mul_mul_16ns_16s_32_3_1&apos; to &apos;mixer_mul_mul_16ng8j&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mixer_mul_51ns_47bkb&apos;: 1 instance(s)." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mixer_mul_51ns_48cud&apos;: 5 instance(s)." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mixer_mul_mul_16ng8j&apos;: 1 instance(s)." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mixer_mul_mul_16sfYi&apos;: 1 instance(s)." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mixer_sub_97ns_97dEe&apos;: 1 instance(s)." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mixer_sub_98ns_98eOg&apos;: 5 instance(s)." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mixer_mul_53ns_49s_101_6_1&apos; to &apos;mixer_mul_53ns_49bkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mixer_sub_101ns_101ns_101_2_1&apos; to &apos;mixer_sub_101ns_1cud&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mixer_mul_mul_16s_18s_33_3_1&apos; to &apos;mixer_mul_mul_16sdEe&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;mixer_mul_mul_16ns_18s_33_3_1&apos; to &apos;mixer_mul_mul_16neOg&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mixer_mul_53ns_49bkb&apos;: 6 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mixer_mul_mul_16neOg&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mixer_mul_mul_16sdEe&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;mixer_sub_101ns_1cud&apos;: 6 instance(s)." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;mixer&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.45 seconds; current allocated memory: 108.286 MB." tag=""/>
-	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;mixer_mul_51ns_47bkb_Mul6S_0&apos;" tag=""/>
-	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;mixer_mul_51ns_48cud_Mul6S_1&apos;" tag=""/>
-	<Message prefix="[RTMG 210-283]" severity="INFO" keynum="RTMG_283_1797" content="Generating pipelined adder/subtractor : &apos;mixer_sub_97ns_97dEe_AddSubnS_0&apos;" tag=""/>
-	<Message prefix="[RTMG 210-283]" severity="INFO" keynum="RTMG_283_1797" content="Generating pipelined adder/subtractor : &apos;mixer_sub_98ns_98eOg_AddSubnS_1&apos;" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:58 ; elapsed = 00:00:48 . Memory (MB): peak = 488.789 ; gain = 142.215 ; free physical = 1567 ; free virtual = 11155" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.38 seconds; current allocated memory: 112.651 MB." tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;mixer_mul_53ns_49bkb_Mul6S_0&apos;" tag=""/>
+	<Message prefix="[RTMG 210-283]" severity="INFO" keynum="RTMG_283_1797" content="Generating pipelined adder/subtractor : &apos;mixer_sub_101ns_1cud_AddSubnS_0&apos;" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:06 ; elapsed = 00:01:02 . Memory (MB): peak = 488.852 ; gain = 142.285 ; free physical = 1247 ; free virtual = 9611" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for mixer." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for mixer." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for mixer." tag=""/>
-	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 47.66 seconds; peak allocated memory: 108.286 MB." tag=""/>
 </Messages>

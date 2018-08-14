@@ -35,29 +35,27 @@
   },
   "Files": {
     "CSource": [
+      "..\/..\/mixer.cpp",
       "..\/..\/main.cpp",
-      "..\/..\/mixer.cpp"
+      "..\/..\/..\/pwm\/pwm.hpp",
+      "..\/..\/mixer.hpp"
     ],
     "Vhdl": [
       "impl\/vhdl\/mixer_AXILiteS_s_axi.vhd",
       "impl\/vhdl\/mixer_m_V_m_axi.vhd",
-      "impl\/vhdl\/mixer_mul_51ns_47bkb.vhd",
-      "impl\/vhdl\/mixer_mul_51ns_48cud.vhd",
-      "impl\/vhdl\/mixer_mul_mul_16ng8j.vhd",
-      "impl\/vhdl\/mixer_mul_mul_16sfYi.vhd",
-      "impl\/vhdl\/mixer_sub_97ns_97dEe.vhd",
-      "impl\/vhdl\/mixer_sub_98ns_98eOg.vhd",
+      "impl\/vhdl\/mixer_mul_53ns_49bkb.vhd",
+      "impl\/vhdl\/mixer_mul_mul_16neOg.vhd",
+      "impl\/vhdl\/mixer_mul_mul_16sdEe.vhd",
+      "impl\/vhdl\/mixer_sub_101ns_1cud.vhd",
       "impl\/vhdl\/mixer.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/mixer_AXILiteS_s_axi.v",
       "impl\/verilog\/mixer_m_V_m_axi.v",
-      "impl\/verilog\/mixer_mul_51ns_47bkb.v",
-      "impl\/verilog\/mixer_mul_51ns_48cud.v",
-      "impl\/verilog\/mixer_mul_mul_16ng8j.v",
-      "impl\/verilog\/mixer_mul_mul_16sfYi.v",
-      "impl\/verilog\/mixer_sub_97ns_97dEe.v",
-      "impl\/verilog\/mixer_sub_98ns_98eOg.v",
+      "impl\/verilog\/mixer_mul_53ns_49bkb.v",
+      "impl\/verilog\/mixer_mul_mul_16neOg.v",
+      "impl\/verilog\/mixer_mul_mul_16sdEe.v",
+      "impl\/verilog\/mixer_sub_101ns_1cud.v",
       "impl\/verilog\/mixer.v"
     ],
     "SwDriver": [
@@ -793,19 +791,19 @@
         "Timing": {
           "Target": "4.00",
           "Uncertainty": "0.50",
-          "Estimate": "4.35"
+          "Estimate": "4.85"
         },
         "Area": {
           "BRAM_18K": "4",
           "DSP48E": "56",
-          "FF": "8926",
-          "LUT": "4656"
+          "FF": "9542",
+          "LUT": "5069"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-02 10:17:53 PDT",
+    "Time": "2018-08-13 14:39:05 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

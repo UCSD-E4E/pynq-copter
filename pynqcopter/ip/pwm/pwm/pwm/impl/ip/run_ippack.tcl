@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "pwm"
 set Version     "1.0"
 set DisplayName "Pwm"
-set Revision    "1808010433"
+set Revision    "1808091006"
 set Description "HLS Core: Pwm Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -1688,7 +1688,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_ver match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 13 II 6}
+set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 12 II 6}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]

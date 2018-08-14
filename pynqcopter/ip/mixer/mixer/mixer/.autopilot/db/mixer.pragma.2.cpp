@@ -35405,9 +35405,6 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out);
 
 
 
-
-
-
 typedef ap_fixed<16 +3,4> bigF_t;
 
 
@@ -35419,27 +35416,24 @@ const bigF_t MIX_C[6][3] = {
  {-1,0,-1},
  {-.5,.57735026919,1}
 };
-
-
-void mixer(F_t regs_in[4],F_t m[4096]) ;
 # 41 "mixer.cpp" 2
-# 76 "mixer.cpp"
+# 65 "mixer.cpp"
 void mixer(F_t regs_in[4],F_t m[4096]) {_ssdm_SpecArrayDimSize(regs_in,4);_ssdm_SpecArrayDimSize(m,4096);
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(regs_in, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(m, "m_axi", 0, 0, "", 0, 0, "", "", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(m, "m_axi", 0, 0, "", 0, 0, "", "off", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 
- bigF_t r_c = (regs_in[0]<F_t(-.99)?F_t(-.99):(regs_in[0]>F_t(.99)?F_t(.99):regs_in[0]));
- bigF_t p_c = (regs_in[1]<F_t(-.99)?F_t(-.99):(regs_in[1]>F_t(.99)?F_t(.99):regs_in[1]));
- bigF_t y_c = (regs_in[2]<F_t(-.99)?F_t(-.99):(regs_in[2]>F_t(.99)?F_t(.99):regs_in[2]));
- bigF_t t_c = (regs_in[3]<F_t(0)?F_t(0):(regs_in[3]>F_t(.99)?F_t(.99):regs_in[3]));
+ bigF_t r_c = (regs_in[0]<F_t(0)?F_t(0):(regs_in[0]>F_t(.99)?F_t(.99):regs_in[0]))*2-1;
+ bigF_t p_c = (regs_in[1]<F_t(0)?F_t(0):(regs_in[1]>F_t(.99)?F_t(.99):regs_in[1]))*2-1;
+ bigF_t y_c = (regs_in[3]<F_t(0)?F_t(0):(regs_in[3]>F_t(.99)?F_t(.99):regs_in[3]))*2-1;
+ bigF_t t_c = (regs_in[2]<F_t(0)?F_t(0):(regs_in[2]>F_t(.99)?F_t(.99):regs_in[2]));
  bigF_t scaled_power;
-# 98 "mixer.cpp"
+
  for(int i=0; i < 6; i++) {
 _ssdm_Unroll(0,0,0, "");
  scaled_power = t_c+(r_c*MIX_C[i][0]+p_c*MIX_C[i][1]+y_c*MIX_C[i][2])/bigF_t(3.0);
-  m[(0x40001000/sizeof(F_t))+(0x30/sizeof(F_t))+i]=F_t((scaled_power<bigF_t(0)?bigF_t(0):(scaled_power>bigF_t(.99)?bigF_t(.99):scaled_power)));
+  m[i]=F_t((scaled_power<bigF_t(0)?bigF_t(0):(scaled_power>bigF_t(.99)?bigF_t(.99):scaled_power)));
  }
 }
 

@@ -165,30 +165,39 @@ proc create_root_design { parentCell } {
   set led_o [ create_bd_port -dir O -from 3 -to 0 led_o ]
   set pb_i [ create_bd_port -dir I -from 3 -to 0 pb_i ]
 
-  # Create instance: atoi_0, and set properties
-  set atoi_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:atoi:1.0 atoi_0 ]
+  # Create instance: mixer_0, and set properties
+  set mixer_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:mixer:1.0 mixer_0 ]
+  set_property -dict [ list \
+   CONFIG.C_M_AXI_M_V_TARGET_ADDR {0x4000F030} \
+ ] $mixer_0
 
   set_property -dict [ list \
    CONFIG.SUPPORTS_NARROW_BURST {0} \
    CONFIG.NUM_READ_OUTSTANDING {1} \
    CONFIG.NUM_WRITE_OUTSTANDING {1} \
    CONFIG.MAX_BURST_LENGTH {1} \
- ] [get_bd_intf_pins /atoi_0/s_axi_AXILiteS]
+ ] [get_bd_intf_pins /mixer_0/s_axi_AXILiteS]
 
-  # Create instance: axi_interconnect_0, and set properties
-  set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
+  # Create instance: normalizer_0, and set properties
+  set normalizer_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:normalizer:1.0 normalizer_0 ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {3} \
-   CONFIG.NUM_SI {2} \
- ] $axi_interconnect_0
+   CONFIG.C_M_AXI_M_V_TARGET_ADDR {0x4000e010} \
+ ] $normalizer_0
 
-  # Create instance: mixer_0, and set properties
-  set mixer_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:mixer:1.0 mixer_0 ]
+  set_property -dict [ list \
+   CONFIG.DATA_WIDTH {32} \
+   CONFIG.ID_WIDTH {0} \
+   CONFIG.AWUSER_WIDTH {0} \
+   CONFIG.ARUSER_WIDTH {0} \
+   CONFIG.WUSER_WIDTH {0} \
+   CONFIG.RUSER_WIDTH {0} \
+   CONFIG.BUSER_WIDTH {0} \
+ ] [get_bd_intf_pins /normalizer_0/m_axi_m_V]
 
   set_property -dict [ list \
    CONFIG.NUM_READ_OUTSTANDING {1} \
    CONFIG.NUM_WRITE_OUTSTANDING {1} \
- ] [get_bd_intf_pins /mixer_0/s_axi_AXILiteS]
+ ] [get_bd_intf_pins /normalizer_0/s_axi_in]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -1059,6 +1068,13 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_WDT_WDT_IO {<Select>} \
  ] $processing_system7_0
 
+  # Create instance: ps7_0_axi_periph, and set properties
+  set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
+  set_property -dict [ list \
+   CONFIG.NUM_MI {4} \
+   CONFIG.NUM_SI {4} \
+ ] $ps7_0_axi_periph
+
   # Create instance: pwm_0, and set properties
   set pwm_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:pwm:1.0 pwm_0 ]
 
@@ -1069,14 +1085,42 @@ proc create_root_design { parentCell } {
    CONFIG.MAX_BURST_LENGTH {1} \
  ] [get_bd_intf_pins /pwm_0/s_axi_ctrl]
 
+  # Create instance: rc_receiver_0, and set properties
+  set rc_receiver_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:rc_receiver:1.0 rc_receiver_0 ]
+  set_property -dict [ list \
+   CONFIG.C_M_AXI_MIXER_OUT_V_TARGET_ADDR {0x4000d010} \
+ ] $rc_receiver_0
+
+  set_property -dict [ list \
+   CONFIG.DATA_WIDTH {32} \
+   CONFIG.ID_WIDTH {0} \
+   CONFIG.AWUSER_WIDTH {0} \
+   CONFIG.ARUSER_WIDTH {0} \
+   CONFIG.WUSER_WIDTH {0} \
+   CONFIG.RUSER_WIDTH {0} \
+   CONFIG.BUSER_WIDTH {0} \
+ ] [get_bd_intf_pins /rc_receiver_0/m_axi_mixer_out_V]
+
+  set_property -dict [ list \
+   CONFIG.NUM_READ_OUTSTANDING {1} \
+   CONFIG.NUM_WRITE_OUTSTANDING {1} \
+ ] [get_bd_intf_pins /rc_receiver_0/s_axi_in]
+
   # Create instance: rst_ps7_0_100M, and set properties
   set rst_ps7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_100M ]
+
+  # Create instance: synchronizer_0, and set properties
+  set synchronizer_0 [ create_bd_cell -type ip -vlnv ucsd.edu:ip:synchronizer:1.0 synchronizer_0 ]
+  set_property -dict [ list \
+   CONFIG.C_DATA_WIDTH {5} \
+   CONFIG.C_DEPTH {100} \
+ ] $synchronizer_0
 
   # Create instance: system_ila_0, and set properties
   set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
   set_property -dict [ list \
    CONFIG.C_MON_TYPE {INTERFACE} \
-   CONFIG.C_NUM_MONITOR_SLOTS {2} \
+   CONFIG.C_NUM_MONITOR_SLOTS {7} \
    CONFIG.C_SLOT_0_APC_EN {0} \
    CONFIG.C_SLOT_0_AXI_AR_SEL_DATA {1} \
    CONFIG.C_SLOT_0_AXI_AR_SEL_TRIG {1} \
@@ -1101,6 +1145,66 @@ proc create_root_design { parentCell } {
    CONFIG.C_SLOT_1_AXI_W_SEL_DATA {1} \
    CONFIG.C_SLOT_1_AXI_W_SEL_TRIG {1} \
    CONFIG.C_SLOT_1_INTF_TYPE {xilinx.com:interface:aximm_rtl:1.0} \
+   CONFIG.C_SLOT_2_APC_EN {0} \
+   CONFIG.C_SLOT_2_AXI_AR_SEL_DATA {1} \
+   CONFIG.C_SLOT_2_AXI_AR_SEL_TRIG {1} \
+   CONFIG.C_SLOT_2_AXI_AW_SEL_DATA {1} \
+   CONFIG.C_SLOT_2_AXI_AW_SEL_TRIG {1} \
+   CONFIG.C_SLOT_2_AXI_B_SEL_DATA {1} \
+   CONFIG.C_SLOT_2_AXI_B_SEL_TRIG {1} \
+   CONFIG.C_SLOT_2_AXI_R_SEL_DATA {1} \
+   CONFIG.C_SLOT_2_AXI_R_SEL_TRIG {1} \
+   CONFIG.C_SLOT_2_AXI_W_SEL_DATA {1} \
+   CONFIG.C_SLOT_2_AXI_W_SEL_TRIG {1} \
+   CONFIG.C_SLOT_2_INTF_TYPE {xilinx.com:interface:aximm_rtl:1.0} \
+   CONFIG.C_SLOT_3_APC_EN {0} \
+   CONFIG.C_SLOT_3_AXI_AR_SEL_DATA {1} \
+   CONFIG.C_SLOT_3_AXI_AR_SEL_TRIG {1} \
+   CONFIG.C_SLOT_3_AXI_AW_SEL_DATA {1} \
+   CONFIG.C_SLOT_3_AXI_AW_SEL_TRIG {1} \
+   CONFIG.C_SLOT_3_AXI_B_SEL_DATA {1} \
+   CONFIG.C_SLOT_3_AXI_B_SEL_TRIG {1} \
+   CONFIG.C_SLOT_3_AXI_R_SEL_DATA {1} \
+   CONFIG.C_SLOT_3_AXI_R_SEL_TRIG {1} \
+   CONFIG.C_SLOT_3_AXI_W_SEL_DATA {1} \
+   CONFIG.C_SLOT_3_AXI_W_SEL_TRIG {1} \
+   CONFIG.C_SLOT_3_INTF_TYPE {xilinx.com:interface:aximm_rtl:1.0} \
+   CONFIG.C_SLOT_4_APC_EN {0} \
+   CONFIG.C_SLOT_4_AXI_AR_SEL_DATA {1} \
+   CONFIG.C_SLOT_4_AXI_AR_SEL_TRIG {1} \
+   CONFIG.C_SLOT_4_AXI_AW_SEL_DATA {1} \
+   CONFIG.C_SLOT_4_AXI_AW_SEL_TRIG {1} \
+   CONFIG.C_SLOT_4_AXI_B_SEL_DATA {1} \
+   CONFIG.C_SLOT_4_AXI_B_SEL_TRIG {1} \
+   CONFIG.C_SLOT_4_AXI_R_SEL_DATA {1} \
+   CONFIG.C_SLOT_4_AXI_R_SEL_TRIG {1} \
+   CONFIG.C_SLOT_4_AXI_W_SEL_DATA {1} \
+   CONFIG.C_SLOT_4_AXI_W_SEL_TRIG {1} \
+   CONFIG.C_SLOT_4_INTF_TYPE {xilinx.com:interface:aximm_rtl:1.0} \
+   CONFIG.C_SLOT_5_APC_EN {0} \
+   CONFIG.C_SLOT_5_AXI_AR_SEL_DATA {1} \
+   CONFIG.C_SLOT_5_AXI_AR_SEL_TRIG {1} \
+   CONFIG.C_SLOT_5_AXI_AW_SEL_DATA {1} \
+   CONFIG.C_SLOT_5_AXI_AW_SEL_TRIG {1} \
+   CONFIG.C_SLOT_5_AXI_B_SEL_DATA {1} \
+   CONFIG.C_SLOT_5_AXI_B_SEL_TRIG {1} \
+   CONFIG.C_SLOT_5_AXI_R_SEL_DATA {1} \
+   CONFIG.C_SLOT_5_AXI_R_SEL_TRIG {1} \
+   CONFIG.C_SLOT_5_AXI_W_SEL_DATA {1} \
+   CONFIG.C_SLOT_5_AXI_W_SEL_TRIG {1} \
+   CONFIG.C_SLOT_5_INTF_TYPE {xilinx.com:interface:aximm_rtl:1.0} \
+   CONFIG.C_SLOT_6_APC_EN {0} \
+   CONFIG.C_SLOT_6_AXI_AR_SEL_DATA {1} \
+   CONFIG.C_SLOT_6_AXI_AR_SEL_TRIG {1} \
+   CONFIG.C_SLOT_6_AXI_AW_SEL_DATA {1} \
+   CONFIG.C_SLOT_6_AXI_AW_SEL_TRIG {1} \
+   CONFIG.C_SLOT_6_AXI_B_SEL_DATA {1} \
+   CONFIG.C_SLOT_6_AXI_B_SEL_TRIG {1} \
+   CONFIG.C_SLOT_6_AXI_R_SEL_DATA {1} \
+   CONFIG.C_SLOT_6_AXI_R_SEL_TRIG {1} \
+   CONFIG.C_SLOT_6_AXI_W_SEL_DATA {1} \
+   CONFIG.C_SLOT_6_AXI_W_SEL_TRIG {1} \
+   CONFIG.C_SLOT_6_INTF_TYPE {xilinx.com:interface:aximm_rtl:1.0} \
  ] $system_ila_0
 
   # Create instance: wire_distributor_0, and set properties
@@ -1118,54 +1222,126 @@ proc create_root_design { parentCell } {
    CONFIG.NUM_PORTS {15} \
  ] $xlconcat_0
 
-  # Create instance: xlconcat_1, and set properties
-  set xlconcat_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1 ]
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
   set_property -dict [ list \
-   CONFIG.IN0_WIDTH {1} \
-   CONFIG.IN8_WIDTH {6} \
-   CONFIG.NUM_PORTS {15} \
- ] $xlconcat_1
+   CONFIG.CONST_VAL {0xFc000} \
+   CONFIG.CONST_WIDTH {20} \
+ ] $xlconstant_0
+
+  # Create instance: xlslice_0, and set properties
+  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {19} \
+   CONFIG.DIN_TO {15} \
+   CONFIG.DIN_WIDTH {20} \
+   CONFIG.DOUT_WIDTH {5} \
+ ] $xlslice_0
+
+  # Create instance: xlslice_1, and set properties
+  set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {504} \
+   CONFIG.DIN_TO {500} \
+   CONFIG.DIN_WIDTH {505} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_1
+
+  # Create instance: xlslice_2, and set properties
+  set xlslice_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_2 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {3} \
+   CONFIG.DIN_TO {0} \
+   CONFIG.DIN_WIDTH {5} \
+   CONFIG.DOUT_WIDTH {4} \
+ ] $xlslice_2
 
   # Create interface connections
-  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins mixer_0/s_axi_AXILiteS]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins pwm_0/s_axi_ctrl]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axi_interconnect_0_M01_AXI] [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins system_ila_0/SLOT_1_AXI]
-  set_property -dict [ list \
-HDL_ATTRIBUTE.DEBUG {true} \
- ] [get_bd_intf_nets axi_interconnect_0_M01_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins atoi_0/s_axi_AXILiteS] [get_bd_intf_pins axi_interconnect_0/M02_AXI]
-  connect_bd_intf_net -intf_net mixer_0_m_axi_m_V [get_bd_intf_pins axi_interconnect_0/S01_AXI] [get_bd_intf_pins mixer_0/m_axi_m_V]
-connect_bd_intf_net -intf_net [get_bd_intf_nets mixer_0_m_axi_m_V] [get_bd_intf_pins axi_interconnect_0/S01_AXI] [get_bd_intf_pins system_ila_0/SLOT_0_AXI]
+  connect_bd_intf_net -intf_net mixer_0_m_axi_m_V [get_bd_intf_pins mixer_0/m_axi_m_V] [get_bd_intf_pins ps7_0_axi_periph/S02_AXI]
+connect_bd_intf_net -intf_net [get_bd_intf_nets mixer_0_m_axi_m_V] [get_bd_intf_pins ps7_0_axi_periph/S02_AXI] [get_bd_intf_pins system_ila_0/SLOT_2_AXI]
   set_property -dict [ list \
 HDL_ATTRIBUTE.DEBUG {true} \
  ] [get_bd_intf_nets mixer_0_m_axi_m_V]
+  connect_bd_intf_net -intf_net normalizer_0_m_axi_m_V [get_bd_intf_pins normalizer_0/m_axi_m_V] [get_bd_intf_pins ps7_0_axi_periph/S03_AXI]
+connect_bd_intf_net -intf_net [get_bd_intf_nets normalizer_0_m_axi_m_V] [get_bd_intf_pins ps7_0_axi_periph/S03_AXI] [get_bd_intf_pins system_ila_0/SLOT_5_AXI]
+  set_property -dict [ list \
+HDL_ATTRIBUTE.DEBUG {true} \
+ ] [get_bd_intf_nets normalizer_0_m_axi_m_V]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
-  connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins processing_system7_0/M_AXI_GP0]
+  connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins pwm_0/s_axi_ctrl]
+connect_bd_intf_net -intf_net [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins system_ila_0/SLOT_0_AXI]
+  set_property -dict [ list \
+HDL_ATTRIBUTE.DEBUG {true} \
+ ] [get_bd_intf_nets ps7_0_axi_periph_M00_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins ps7_0_axi_periph/M01_AXI] [get_bd_intf_pins rc_receiver_0/s_axi_in]
+connect_bd_intf_net -intf_net [get_bd_intf_nets ps7_0_axi_periph_M01_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI] [get_bd_intf_pins system_ila_0/SLOT_4_AXI]
+  set_property -dict [ list \
+HDL_ATTRIBUTE.DEBUG {true} \
+ ] [get_bd_intf_nets ps7_0_axi_periph_M01_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins mixer_0/s_axi_AXILiteS] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
+connect_bd_intf_net -intf_net [get_bd_intf_nets ps7_0_axi_periph_M02_AXI] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI] [get_bd_intf_pins system_ila_0/SLOT_1_AXI]
+  set_property -dict [ list \
+HDL_ATTRIBUTE.DEBUG {true} \
+ ] [get_bd_intf_nets ps7_0_axi_periph_M02_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M03_AXI [get_bd_intf_pins normalizer_0/s_axi_in] [get_bd_intf_pins ps7_0_axi_periph/M03_AXI]
+connect_bd_intf_net -intf_net [get_bd_intf_nets ps7_0_axi_periph_M03_AXI] [get_bd_intf_pins ps7_0_axi_periph/M03_AXI] [get_bd_intf_pins system_ila_0/SLOT_6_AXI]
+  set_property -dict [ list \
+HDL_ATTRIBUTE.DEBUG {true} \
+ ] [get_bd_intf_nets ps7_0_axi_periph_M03_AXI]
+  connect_bd_intf_net -intf_net rc_receiver_0_m_axi_out_V [get_bd_intf_pins ps7_0_axi_periph/S01_AXI] [get_bd_intf_pins rc_receiver_0/m_axi_mixer_out_V]
+connect_bd_intf_net -intf_net [get_bd_intf_nets rc_receiver_0_m_axi_out_V] [get_bd_intf_pins ps7_0_axi_periph/S01_AXI] [get_bd_intf_pins system_ila_0/SLOT_3_AXI]
+  set_property -dict [ list \
+HDL_ATTRIBUTE.DEBUG {true} \
+ ] [get_bd_intf_nets rc_receiver_0_m_axi_out_V]
   connect_bd_intf_net -intf_net wire_distributor_0_gpio_output [get_bd_intf_ports arduino_gpio] [get_bd_intf_pins wire_distributor_0/gpio_output]
 
   # Create port connections
-  connect_bd_net -net atoi_0_out_V [get_bd_pins atoi_0/out_V] [get_bd_pins xlconcat_1/In8]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins atoi_0/ap_clk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_0/S01_ACLK] [get_bd_pins mixer_0/ap_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP1_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP2_ACLK] [get_bd_pins pwm_0/ap_clk] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins system_ila_0/clk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins mixer_0/ap_clk] [get_bd_pins normalizer_0/ap_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP1_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP2_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins ps7_0_axi_periph/S01_ACLK] [get_bd_pins ps7_0_axi_periph/S02_ACLK] [get_bd_pins ps7_0_axi_periph/S03_ACLK] [get_bd_pins pwm_0/ap_clk] [get_bd_pins rc_receiver_0/ap_clk] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins synchronizer_0/CLK] [get_bd_pins system_ila_0/clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
   connect_bd_net -net pwm_0_out_V [get_bd_pins pwm_0/out_V] [get_bd_pins xlconcat_0/In8]
-  connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins atoi_0/ap_rst_n] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/S01_ARESETN] [get_bd_pins mixer_0/ap_rst_n] [get_bd_pins pwm_0/ap_rst_n] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins system_ila_0/resetn]
+  connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins mixer_0/ap_rst_n] [get_bd_pins normalizer_0/ap_rst_n] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins ps7_0_axi_periph/S01_ARESETN] [get_bd_pins ps7_0_axi_periph/S02_ARESETN] [get_bd_pins ps7_0_axi_periph/S03_ARESETN] [get_bd_pins pwm_0/ap_rst_n] [get_bd_pins rc_receiver_0/ap_rst_n] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins system_ila_0/resetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_reset [get_bd_pins rst_ps7_0_100M/peripheral_reset] [get_bd_pins synchronizer_0/RST_IN]
+  connect_bd_net -net synchronizer_0_RD_DATA [get_bd_pins synchronizer_0/RD_DATA] [get_bd_pins xlslice_1/Din]
+  connect_bd_net -net wire_distributor_0_wire_i_i [get_bd_pins wire_distributor_0/wire_i_i] [get_bd_pins xlslice_0/Din]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins wire_distributor_0/wire_i_o] [get_bd_pins xlconcat_0/dout]
-  connect_bd_net -net xlconcat_1_dout [get_bd_pins wire_distributor_0/wire_i_t] [get_bd_pins xlconcat_1/dout]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins wire_distributor_0/wire_i_t] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins synchronizer_0/WR_DATA] [get_bd_pins xlslice_0/Dout]
+  connect_bd_net -net xlslice_1_Dout [get_bd_pins rc_receiver_0/channels_V] [get_bd_pins xlslice_1/Dout] [get_bd_pins xlslice_2/Din]
+  connect_bd_net -net xlslice_2_Dout [get_bd_ports led_o] [get_bd_pins xlslice_2/Dout]
 
   # Create address segments
-  create_bd_addr_seg -range 0x00001000 -offset 0x40001000 [get_bd_addr_spaces mixer_0/Data_m_axi_m_V] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x40002000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs atoi_0/s_axi_AXILiteS/Reg] SEG_atoi_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x40000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs mixer_0/s_axi_AXILiteS/Reg] SEG_mixer_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x40001000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000F000 [get_bd_addr_spaces mixer_0/Data_m_axi_m_V] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000E000 [get_bd_addr_spaces normalizer_0/Data_m_axi_m_V] [get_bd_addr_segs mixer_0/s_axi_AXILiteS/Reg] SEG_mixer_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000E000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs mixer_0/s_axi_AXILiteS/Reg] SEG_mixer_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000D000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000F000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000C000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs rc_receiver_0/s_axi_in/Reg] SEG_rc_receiver_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000D000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_mixer_out_V] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
 
   # Exclude Address Segments
-  create_bd_addr_seg -range 0x00001000 -offset 0x40002000 [get_bd_addr_spaces mixer_0/Data_m_axi_m_V] [get_bd_addr_segs atoi_0/s_axi_AXILiteS/Reg] SEG_atoi_0_Reg
-  exclude_bd_addr_seg [get_bd_addr_segs mixer_0/Data_m_axi_m_V/SEG_atoi_0_Reg]
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000D000 [get_bd_addr_spaces mixer_0/Data_m_axi_m_V] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs mixer_0/Data_m_axi_m_V/SEG_normalizer_0_Reg]
 
-  create_bd_addr_seg -range 0x00001000 -offset 0x40000000 [get_bd_addr_spaces mixer_0/Data_m_axi_m_V] [get_bd_addr_segs mixer_0/s_axi_AXILiteS/Reg] SEG_mixer_0_Reg
-  exclude_bd_addr_seg [get_bd_addr_segs mixer_0/Data_m_axi_m_V/SEG_mixer_0_Reg]
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000D000 [get_bd_addr_spaces normalizer_0/Data_m_axi_m_V] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs normalizer_0/Data_m_axi_m_V/SEG_normalizer_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000F000 [get_bd_addr_spaces normalizer_0/Data_m_axi_m_V] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs normalizer_0/Data_m_axi_m_V/SEG_pwm_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000C000 [get_bd_addr_spaces normalizer_0/Data_m_axi_m_V] [get_bd_addr_segs rc_receiver_0/s_axi_in/Reg] SEG_rc_receiver_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs normalizer_0/Data_m_axi_m_V/SEG_rc_receiver_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000E000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_mixer_out_V] [get_bd_addr_segs mixer_0/s_axi_AXILiteS/Reg] SEG_mixer_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_mixer_out_V/SEG_mixer_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000F000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_mixer_out_V] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_mixer_out_V/SEG_pwm_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x4000C000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_mixer_out_V] [get_bd_addr_segs rc_receiver_0/s_axi_in/Reg] SEG_rc_receiver_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_mixer_out_V/SEG_rc_receiver_0_Reg]
 
 
 

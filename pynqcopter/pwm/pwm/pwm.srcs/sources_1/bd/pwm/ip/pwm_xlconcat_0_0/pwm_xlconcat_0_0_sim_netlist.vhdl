@@ -1,8 +1,8 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Tue Jul 24 18:04:54 2018
--- Host        : apple running 64-bit Ubuntu 16.04.4 LTS
+-- Date        : Thu Aug  9 10:13:21 2018
+-- Host        : apple running 64-bit Ubuntu 16.04.5 LTS
 -- Command     : write_vhdl -force -mode funcsim -rename_top pwm_xlconcat_0_0 -prefix
 --               pwm_xlconcat_0_0_ pwm_xlconcat_0_0_sim_netlist.vhdl
 -- Design      : pwm_xlconcat_0_0

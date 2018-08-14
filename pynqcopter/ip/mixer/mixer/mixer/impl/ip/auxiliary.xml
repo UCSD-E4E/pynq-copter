@@ -4,5 +4,5 @@
   <xd:arg xd:name="regs_in[]" xd:originalName="regs_in" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x10" xd:arraySize="4" xd:dataWidth="16"/>
   <xd:arg xd:name="m[]" xd:originalName="m" xd:direction="inout" xd:interfaceRef="m_axi_m_V" xd:busTypeRef="aximm" xd:arraySize="4096" xd:dataWidth="16" xd:bufferDirection="out"/>
   <xd:latencyEstimates xd:best-case="31" xd:worst-case="31" xd:average-case="31"/>
-  <xd:resourceEstimates xd:LUT="4656" xd:FF="8926" xd:BRAM="4" xd:DSP="56"/>
+  <xd:resourceEstimates xd:LUT="5069" xd:FF="9542" xd:BRAM="4" xd:DSP="56"/>
 </xd:acceleratorMap>

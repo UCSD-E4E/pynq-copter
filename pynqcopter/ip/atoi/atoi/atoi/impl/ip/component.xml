@@ -1178,8 +1178,8 @@ um {} maximum {}} value false}}}} WDATA {datatype {name {attribs {resolve_type i
       </xilinx:taxonomies>
       <xilinx:displayName>Atoi</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1807231929</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-07-23T23:30:07Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808091007</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-09T17:08:13Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>

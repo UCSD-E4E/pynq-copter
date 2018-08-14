@@ -14,12 +14,12 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1850 
+INFO: Helper process launched with PID 16030 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1255.328 ; gain = 80.996 ; free physical = 2396 ; free virtual = 12073
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1255.336 ; gain = 80.996 ; free physical = 481 ; free virtual = 9310
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'pwm_atoi_0_0' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_atoi_0_0/synth/pwm_atoi_0_0.v:56]
-INFO: [Synth 8-638] synthesizing module 'atoi' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/6b34/hdl/verilog/atoi.v:12]
+INFO: [Synth 8-638] synthesizing module 'atoi' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/c58f/hdl/verilog/atoi.v:12]
 	Parameter ap_ST_fsm_state1 bound to: 2'b01 
 	Parameter ap_ST_fsm_state2 bound to: 2'b10 
 	Parameter C_S_AXI_AXILITES_DATA_WIDTH bound to: 32 - type: integer 
@@ -27,8 +27,8 @@ INFO: [Synth 8-638] synthesizing module 'atoi' [/home/brennan/Documents/pynq-cop
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_AXILITES_WSTRB_WIDTH bound to: 4 - type: integer 
 	Parameter C_S_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/6b34/hdl/verilog/atoi.v:71]
-INFO: [Synth 8-638] synthesizing module 'atoi_AXILiteS_s_axi' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/6b34/hdl/verilog/atoi_AXILiteS_s_axi.v:9]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/c58f/hdl/verilog/atoi.v:71]
+INFO: [Synth 8-638] synthesizing module 'atoi_AXILiteS_s_axi' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/c58f/hdl/verilog/atoi_AXILiteS_s_axi.v:9]
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter ADDR_AP_CTRL bound to: 5'b00000 
@@ -45,17 +45,17 @@ INFO: [Synth 8-638] synthesizing module 'atoi_AXILiteS_s_axi' [/home/brennan/Doc
 	Parameter RDDATA bound to: 2'b01 
 	Parameter RDRESET bound to: 2'b10 
 	Parameter ADDR_BITS bound to: 5 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'atoi_AXILiteS_s_axi_ram' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/6b34/hdl/verilog/atoi_AXILiteS_s_axi.v:414]
+INFO: [Synth 8-638] synthesizing module 'atoi_AXILiteS_s_axi_ram' [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/c58f/hdl/verilog/atoi_AXILiteS_s_axi.v:414]
 	Parameter BYTES bound to: 4 - type: integer 
 	Parameter DEPTH bound to: 2 - type: integer 
 	Parameter AWIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'atoi_AXILiteS_s_axi_ram' (1#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/6b34/hdl/verilog/atoi_AXILiteS_s_axi.v:414]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/6b34/hdl/verilog/atoi_AXILiteS_s_axi.v:237]
-INFO: [Synth 8-256] done synthesizing module 'atoi_AXILiteS_s_axi' (2#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/6b34/hdl/verilog/atoi_AXILiteS_s_axi.v:9]
-INFO: [Synth 8-256] done synthesizing module 'atoi' (3#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/6b34/hdl/verilog/atoi.v:12]
+INFO: [Synth 8-256] done synthesizing module 'atoi_AXILiteS_s_axi_ram' (1#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/c58f/hdl/verilog/atoi_AXILiteS_s_axi.v:414]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/c58f/hdl/verilog/atoi_AXILiteS_s_axi.v:237]
+INFO: [Synth 8-256] done synthesizing module 'atoi_AXILiteS_s_axi' (2#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/c58f/hdl/verilog/atoi_AXILiteS_s_axi.v:9]
+INFO: [Synth 8-256] done synthesizing module 'atoi' (3#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/c58f/hdl/verilog/atoi.v:12]
 INFO: [Synth 8-256] done synthesizing module 'pwm_atoi_0_0' (4#1) [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ip/pwm_atoi_0_0/synth/pwm_atoi_0_0.v:56]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1297.859 ; gain = 123.527 ; free physical = 2403 ; free virtual = 12080
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1297.867 ; gain = 123.527 ; free physical = 391 ; free virtual = 9250
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -65,7 +65,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1297.859 ; gain = 123.527 ; free physical = 2403 ; free virtual = 12079
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1297.867 ; gain = 123.527 ; free physical = 416 ; free virtual = 9277
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -81,29 +81,29 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1644.867 ; gain = 0.000 ; free physical = 2105 ; free virtual = 11782
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1645.867 ; gain = 0.000 ; free physical = 200 ; free virtual = 9133
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 2081 ; free virtual = 11758
+Finished Constraint Validation : Time (s): cpu = 00:00:44 ; elapsed = 00:01:22 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 710 ; free virtual = 9785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 2081 ; free virtual = 11758
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:44 ; elapsed = 00:01:22 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 718 ; free virtual = 9794
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_atoi_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 2083 ; free virtual = 11760
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:01:22 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 720 ; free virtual = 9795
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element int_in_r_shift_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/6b34/hdl/verilog/atoi_AXILiteS_s_axi.v:370]
+WARNING: [Synth 8-6014] Unused sequential element int_in_r_shift_reg was removed.  [/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.srcs/sources_1/bd/pwm/ipshared/c58f/hdl/verilog/atoi_AXILiteS_s_axi.v:370]
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
 INFO: [Synth 8-3971] The signal gen_write[1].mem_reg was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 2074 ; free virtual = 11752
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:45 ; elapsed = 00:01:23 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 742 ; free virtual = 9819
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -218,7 +218,7 @@ WARNING: [Synth 8-3332] Sequential element (i_63) is unused and will be removed 
 WARNING: [Synth 8-3332] Sequential element (atoi_AXILiteS_s_axi_U/int_in_r_shift_reg[1]) is unused and will be removed from module atoi.
 WARNING: [Synth 8-3332] Sequential element (atoi_AXILiteS_s_axi_U/int_in_r_shift_reg[0]) is unused and will be removed from module atoi.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 2064 ; free virtual = 11741
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:01:23 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 719 ; free virtual = 9801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -245,7 +245,7 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:53 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 1920 ; free virtual = 11597
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:01:40 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 563 ; free virtual = 9620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -283,7 +283,7 @@ WARNING: [Synth 8-3332] Sequential element (i_59) is unused and will be removed 
 WARNING: [Synth 8-3332] Sequential element (i_61) is unused and will be removed from module atoi.
 WARNING: [Synth 8-3332] Sequential element (i_63) is unused and will be removed from module atoi.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:53 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 1918 ; free virtual = 11595
+Finished Timing Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:01:40 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 561 ; free virtual = 9618
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -311,7 +311,7 @@ Start Technology Mapping
 INFO: [Synth 8-4480] The timing for the instance inst/atoi_AXILiteS_s_axi_U/int_in_r/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance inst/atoi_AXILiteS_s_axi_U/int_in_r/gen_write[1].mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:53 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 1917 ; free virtual = 11594
+Finished Technology Mapping : Time (s): cpu = 00:00:57 ; elapsed = 00:01:40 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 559 ; free virtual = 9617
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -335,7 +335,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:53 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 1917 ; free virtual = 11594
+Finished IO Insertion : Time (s): cpu = 00:00:58 ; elapsed = 00:01:41 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 429 ; free virtual = 9486
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -348,7 +348,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:53 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 1917 ; free virtual = 11594
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:58 ; elapsed = 00:01:41 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 423 ; free virtual = 9481
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -360,25 +360,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:53 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 1917 ; free virtual = 11594
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:58 ; elapsed = 00:01:41 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 392 ; free virtual = 9449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:53 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 1917 ; free virtual = 11594
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:58 ; elapsed = 00:01:41 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 386 ; free virtual = 9444
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:53 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 1917 ; free virtual = 11594
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:58 ; elapsed = 00:01:41 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 359 ; free virtual = 9417
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:53 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 1917 ; free virtual = 11594
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:58 ; elapsed = 00:01:41 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 354 ; free virtual = 9412
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -415,11 +415,11 @@ Report Instance Areas:
 |4     |      int_in_r            |atoi_AXILiteS_s_axi_ram |    39|
 +------+--------------------------+------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:53 . Memory (MB): peak = 1644.867 ; gain = 470.535 ; free physical = 1917 ; free virtual = 11594
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:58 ; elapsed = 00:01:41 . Memory (MB): peak = 1645.867 ; gain = 471.527 ; free physical = 349 ; free virtual = 9407
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 65 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1644.867 ; gain = 123.527 ; free physical = 1974 ; free virtual = 11652
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:54 . Memory (MB): peak = 1644.875 ; gain = 470.535 ; free physical = 1974 ; free virtual = 11652
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:00:53 . Memory (MB): peak = 1645.867 ; gain = 123.527 ; free physical = 390 ; free virtual = 9448
+Synthesis Optimization Complete : Time (s): cpu = 00:00:59 ; elapsed = 00:01:42 . Memory (MB): peak = 1645.875 ; gain = 471.527 ; free physical = 390 ; free virtual = 9448
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -431,5 +431,5 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 28 Infos, 65 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:55 . Memory (MB): peak = 1644.875 ; gain = 483.918 ; free physical = 1966 ; free virtual = 11643
+synth_design: Time (s): cpu = 00:01:01 ; elapsed = 00:01:43 . Memory (MB): peak = 1645.875 ; gain = 484.910 ; free physical = 342 ; free virtual = 9400
 INFO: [Common 17-1381] The checkpoint '/home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/pwm_atoi_0_0_synth_1/pwm_atoi_0_0.dcp' has been generated.

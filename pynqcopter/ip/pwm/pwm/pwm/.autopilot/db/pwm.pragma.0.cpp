@@ -32846,7 +32846,7 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out) {_ssdm_SpecA
 #pragma HLS INTERFACE ap_none port=&out
 #pragma HLS INTERFACE s_axilite port=return bundle=ctrl
 #pragma HLS PIPELINE
- static N_t accumulator=0;
+ static N_t acc=0;
 
  static N_t in_p[6];
  static O_t out_p=0x3F;
@@ -32855,27 +32855,12 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[6] , O_t& out) {_ssdm_SpecA
   in_p[u]=(max_duty-min_duty)*m[u]+min_duty;
  }
 
- if(accumulator<min_duty) {
-  out_p=0x3F;
- }
- if(min_duty<accumulator and accumulator<max_duty){
-  for(int u =0; u <6; u++) {
-   out_p&=~((accumulator>in_p[u])<<u);
-  }
- }
- if(max_duty<accumulator and accumulator<period) {
-  out_p=0;
+
+ for(int u =0; u <6; u++) {
+  out_p[u]=((acc<min_duty) | (acc<in_p[u] & out_p[u] )) & (acc<max_duty);
  }
 
-
- if(period<accumulator) {
-  out_p=0x3F;
-  accumulator=0;
- }
-
-
-
- accumulator++;
+ acc=(acc<period) ? N_t(acc+1) : N_t(0);
 
  out=out_p;
 

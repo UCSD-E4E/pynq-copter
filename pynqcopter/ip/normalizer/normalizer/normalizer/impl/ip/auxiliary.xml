@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="normalizer" xd:componentRef="normalizer" xd:initiationInterval="1" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_in" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="regs_in[0]" xd:originalName="regs_in0" xd:direction="in" xd:interfaceRef="s_axi_in" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:arraySize="1" xd:dataWidth="32"/>
+  <xd:arg xd:name="regs_in[1]" xd:originalName="regs_in1" xd:direction="in" xd:interfaceRef="s_axi_in" xd:busTypeRef="axilite" xd:offset="0x18" xd:handshakeRef="ap_none" xd:arraySize="1" xd:dataWidth="32"/>
+  <xd:arg xd:name="regs_in[2]" xd:originalName="regs_in2" xd:direction="in" xd:interfaceRef="s_axi_in" xd:busTypeRef="axilite" xd:offset="0x20" xd:handshakeRef="ap_none" xd:arraySize="1" xd:dataWidth="32"/>
+  <xd:arg xd:name="regs_in[3]" xd:originalName="regs_in3" xd:direction="in" xd:interfaceRef="s_axi_in" xd:busTypeRef="axilite" xd:offset="0x28" xd:handshakeRef="ap_none" xd:arraySize="1" xd:dataWidth="32"/>
+  <xd:arg xd:name="regs_in[4]" xd:originalName="regs_in4" xd:direction="in" xd:interfaceRef="s_axi_in" xd:busTypeRef="axilite" xd:offset="0x30" xd:handshakeRef="ap_none" xd:arraySize="1" xd:dataWidth="32"/>
+  <xd:arg xd:name="min_high" xd:originalName="min_high" xd:direction="in" xd:interfaceRef="s_axi_in" xd:busTypeRef="axilite" xd:offset="0x38" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="max_high" xd:originalName="max_high" xd:direction="in" xd:interfaceRef="s_axi_in" xd:busTypeRef="axilite" xd:offset="0x40" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="m[]" xd:originalName="m" xd:direction="inout" xd:interfaceRef="m_axi_m_V" xd:busTypeRef="aximm" xd:arraySize="4096" xd:dataWidth="16" xd:bufferDirection="inout"/>
+  <xd:latencyEstimates xd:best-case="27" xd:worst-case="27" xd:average-case="27"/>
+  <xd:resourceEstimates xd:LUT="1839" xd:FF="1777" xd:BRAM="2" xd:DSP="0"/>
+</xd:acceleratorMap>

@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:mixer:1.0
-// IP Revision: 1808021017
+// IP Revision: 1808131439
 
 (* X_CORE_INFO = "mixer,Vivado 2017.4" *)
 (* CHECK_LICENSE_TYPE = "pwm_mixer_0_1,mixer,{}" *)
@@ -241,7 +241,7 @@ output wire m_axi_m_V_RREADY;
     .C_M_AXI_M_V_USER_VALUE(32'H00000000),
     .C_M_AXI_M_V_PROT_VALUE(3'B000),
     .C_M_AXI_M_V_CACHE_VALUE(4'B0011),
-    .C_M_AXI_M_V_TARGET_ADDR(32'H00000000)
+    .C_M_AXI_M_V_TARGET_ADDR(32'H4000F030)
   ) inst (
     .s_axi_AXILiteS_AWADDR(s_axi_AXILiteS_AWADDR),
     .s_axi_AXILiteS_AWVALID(s_axi_AXILiteS_AWVALID),

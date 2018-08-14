@@ -1,3 +1,48 @@
 <AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
-<sourceFile name=""/>
+<sourceFile name="">
+<directive functionLabel="" functionName="pwm" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="min_duty"/>
+<option name="bundle" value="ctrl"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pwm" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="max_duty"/>
+<option name="bundle" value="ctrl"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pwm" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="period"/>
+<option name="bundle" value="ctrl"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pwm" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m"/>
+<option name="bundle" value="ctrl"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pwm" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="out"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pwm" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="ctrl"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pwm" label="">
+<pragma name="PIPELINE"/>
+</directive>
+</sourceFile>
 </AutoPilot:ProjectResources>

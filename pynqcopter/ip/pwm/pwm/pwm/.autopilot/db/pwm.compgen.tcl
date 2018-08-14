@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 1
-set name pwm_mul_mul_16s_1bkb
+set name pwm_mul_mul_17s_1bkb
 set corename simcore_mul
 set op mul
 set stage_num 3
@@ -11,15 +11,15 @@ set clk_width 1
 set clk_signed 0
 set reset_width 1
 set reset_signed 0
-set in0_width 16
+set in0_width 17
 set in0_signed 1
-set in1_width 17
+set in1_width 16
 set in1_signed 1
 set ce_width 1
 set ce_signed 0
 set out_width 33
 set exp i0*i1
-set arg_lists {i0 {16 1 +} i1 {17 1 +} p {33 1 +} acc {0} }
+set arg_lists {i0 {17 1 +} i1 {16 1 +} p {33 1 +} acc {0} }
 set TrueReset 0
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {

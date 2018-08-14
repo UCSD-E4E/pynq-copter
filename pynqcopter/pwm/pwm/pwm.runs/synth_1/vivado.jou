@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Thu Aug  2 10:31:32 2018
-# Process ID: 28599
+# Start of session at: Mon Aug 13 16:59:59 2018
+# Process ID: 25724
 # Current directory: /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/synth_1
 # Command line: vivado -log pwm_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pwm_wrapper.tcl
 # Log file: /home/brennan/Documents/pynq-copter/pynqcopter/pwm/pwm/pwm.runs/synth_1/pwm_wrapper.vds

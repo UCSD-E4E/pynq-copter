@@ -7,8 +7,8 @@ open_project mixer
 set_top mixer
 add_files mixer.cpp -cflags "-std=c++0x"
 add_files main.cpp -cflags "-std=c++0x"
-add_files mixer.hpp
 add_files ../pwm/pwm.hpp
+add_files mixer.hpp
 add_files -tb mixer.cpp -cflags "-std=c++0x"
 add_files -tb main.cpp -cflags "-std=c++0x"
 open_solution "mixer"

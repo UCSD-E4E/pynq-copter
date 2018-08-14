@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;rc_receiver.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;main.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:52 ; elapsed = 00:00:29 . Memory (MB): peak = 359.941 ; gain = 13.375 ; free physical = 2097 ; free virtual = 10583" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:54 ; elapsed = 00:00:31 . Memory (MB): peak = 359.941 ; gain = 13.375 ; free physical = 2092 ; free virtual = 10583" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:55 ; elapsed = 00:00:32 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 2072 ; free virtual = 10563" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
+	<Message prefix="[SYNCHK 200-23]" severity="WARNING" keynum="579" content="rc_receiver.cpp:65: variable-indexed range selection may cause suboptimal QoR." tag=""/>
+	<Message prefix="[SYNCHK 200-10]" severity="INFO" keynum="597" content="0 error(s), 1 warning(s)." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:55 ; elapsed = 00:00:32 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 2061 ; free virtual = 10554" tag=""/>
+	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="817" content="Unrolling all loops for pipelining in function &apos;rc_receiver&apos; (rc_receiver.cpp:38)." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1&apos; (rc_receiver.cpp:63) in function &apos;rc_receiver&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-11]" severity="INFO" keynum="754" content="Balancing expressions in function &apos;rc_receiver&apos; (rc_receiver.cpp:38)...13 expression(s) balanced." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:56 ; elapsed = 00:00:33 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 2027 ; free virtual = 10523" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:56 ; elapsed = 00:00:33 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 2025 ; free virtual = 10521" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;rc_receiver&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;rc_receiver&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="86" content="Estimated delay (5.24ns) of &apos;udiv&apos; operation (&apos;tmp_s&apos;, rc_receiver.cpp:80) exceeds the target cycle time (target cycle time: 4ns, clock uncertainty: 0.5ns, effective cycle time: 3.5ns)." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="112" content="Pipelining function &apos;rc_receiver&apos;." tag=""/>
+	<Message prefix="[SCHED 204-63]" severity="WARNING" keynum="117" content="Unable to schedule bus write on port &apos;mixer_out_V&apos; (rc_receiver.cpp:80) within the last cycle (II = 1).
+Please consider increasing the initiation interval of the pipeline." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 76." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="137" content="Estimated clock period (43.48ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns)." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="135" content="The critical path consists of the following:
+	&apos;load&apos; operation (&apos;acc_load&apos;, rc_receiver.cpp:69) on static variable &apos;acc&apos; (0 ns)
+	&apos;add&apos; operation (&apos;tmp_1&apos;, rc_receiver.cpp:66) (2.55 ns)
+	&apos;select&apos; operation (&apos;acc_loc&apos;, rc_receiver.cpp:65) (1.37 ns)
+	&apos;icmp&apos; operation (&apos;tmp_3&apos;, rc_receiver.cpp:69) (2.47 ns)
+	&apos;and&apos; operation (&apos;or_cond&apos;, rc_receiver.cpp:69) (0.931 ns)
+	&apos;select&apos; operation (&apos;p_acc_loc&apos;, rc_receiver.cpp:69) (1.37 ns)
+	&apos;add&apos; operation (&apos;tmp_10_1&apos;, rc_receiver.cpp:66) (2.55 ns)
+	&apos;select&apos; operation (&apos;acc_new_1&apos;, rc_receiver.cpp:65) (1.37 ns)
+	&apos;icmp&apos; operation (&apos;tmp_14_1&apos;, rc_receiver.cpp:69) (2.47 ns)
+	&apos;and&apos; operation (&apos;or_cond_1&apos;, rc_receiver.cpp:69) (0.931 ns)
+	&apos;select&apos; operation (&apos;p_acc_new_1&apos;, rc_receiver.cpp:69) (1.37 ns)
+	&apos;add&apos; operation (&apos;tmp_10_2&apos;, rc_receiver.cpp:66) (2.55 ns)
+	&apos;select&apos; operation (&apos;acc_new_3&apos;, rc_receiver.cpp:65) (1.37 ns)
+	&apos;icmp&apos; operation (&apos;tmp_14_2&apos;, rc_receiver.cpp:69) (2.47 ns)
+	&apos;and&apos; operation (&apos;or_cond_2&apos;, rc_receiver.cpp:69) (0.931 ns)
+	&apos;select&apos; operation (&apos;p_acc_new_3&apos;, rc_receiver.cpp:69) (1.37 ns)
+	&apos;add&apos; operation (&apos;tmp_10_3&apos;, rc_receiver.cpp:66) (2.55 ns)
+	&apos;select&apos; operation (&apos;acc_new_5&apos;, rc_receiver.cpp:65) (1.37 ns)
+	&apos;icmp&apos; operation (&apos;tmp_14_3&apos;, rc_receiver.cpp:69) (2.47 ns)
+	&apos;and&apos; operation (&apos;or_cond_3&apos;, rc_receiver.cpp:69) (0.931 ns)
+	&apos;select&apos; operation (&apos;p_acc_new_5&apos;, rc_receiver.cpp:69) (1.37 ns)
+	&apos;add&apos; operation (&apos;tmp_10_4&apos;, rc_receiver.cpp:66) (2.55 ns)
+	&apos;select&apos; operation (&apos;acc_new_7&apos;, rc_receiver.cpp:65) (1.37 ns)
+	&apos;icmp&apos; operation (&apos;tmp_14_4&apos;, rc_receiver.cpp:69) (2.47 ns)
+	&apos;and&apos; operation (&apos;or_cond_4&apos;, rc_receiver.cpp:69) (0.931 ns)
+	&apos;select&apos; operation (&apos;p_acc_new_7&apos;, rc_receiver.cpp:69) (1.37 ns)" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 33.52 seconds; current allocated memory: 100.415 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.23 seconds; current allocated memory: 101.153 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;rc_receiver&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;rc_receiver/min_high&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;rc_receiver/max_high&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;rc_receiver/mixer_out_V&apos; to &apos;m_axi&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;rc_receiver/channels_V&apos; to &apos;ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;rc_receiver&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;last_on_V&apos; is power-on initialization." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;acc&apos; is power-on initialization." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos; and &apos;max_high&apos; to AXI-Lite port in." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;rc_receiver_udiv_63ns_48ns_16_67_1&apos; to &apos;rc_receiver_udiv_bkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;rc_receiver_udiv_bkb&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;rc_receiver&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.3 seconds; current allocated memory: 103.769 MB." tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;rc_receiver_udiv_bkb_div&apos;" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:58 ; elapsed = 00:00:35 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 2016 ; free virtual = 10510" tag=""/>
+	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for rc_receiver." tag=""/>
+	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for rc_receiver." tag=""/>
+	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for rc_receiver." tag=""/>
+</Messages>
