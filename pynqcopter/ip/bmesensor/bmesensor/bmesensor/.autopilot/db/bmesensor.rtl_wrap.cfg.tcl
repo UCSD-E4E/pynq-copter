@@ -321,13 +321,205 @@ set BitWidth26 "32"
 set ArrayOpt26 ""
 set Const26 "0"
 set Volatile26 "0"
-set Pointer26 "0"
-set Reference26 "0"
+set Pointer26 "2"
+set Reference26 "1"
 set Dims26 [list 0]
 set Interface26 "wire"
 set DataType26 "unsigned int"
 set Port26 [list $PortName26 $Interface26 $DataType26 $Pointer26 $Dims26 $Const26 $Volatile26 $ArrayOpt26]
 lappend PortList $Port26
+set PortName27 "ctrl_reg_val2"
+set BitWidth27 "32"
+set ArrayOpt27 ""
+set Const27 "0"
+set Volatile27 "0"
+set Pointer27 "2"
+set Reference27 "1"
+set Dims27 [list 0]
+set Interface27 "wire"
+set DataType27 "unsigned int"
+set Port27 [list $PortName27 $Interface27 $DataType27 $Pointer27 $Dims27 $Const27 $Volatile27 $ArrayOpt27]
+lappend PortList $Port27
+set PortName28 "ctrl2RegState"
+set BitWidth28 "32"
+set ArrayOpt28 ""
+set Const28 "0"
+set Volatile28 "0"
+set Pointer28 "2"
+set Reference28 "1"
+set Dims28 [list 0]
+set Interface28 "wire"
+set DataType28 "unsigned int"
+set Port28 [list $PortName28 $Interface28 $DataType28 $Pointer28 $Dims28 $Const28 $Volatile28 $ArrayOpt28]
+lappend PortList $Port28
+set PortName29 "ctrl_reg_check"
+set BitWidth29 "32"
+set ArrayOpt29 ""
+set Const29 "0"
+set Volatile29 "0"
+set Pointer29 "2"
+set Reference29 "1"
+set Dims29 [list 0]
+set Interface29 "wire"
+set DataType29 "unsigned int"
+set Port29 [list $PortName29 $Interface29 $DataType29 $Pointer29 $Dims29 $Const29 $Volatile29 $ArrayOpt29]
+lappend PortList $Port29
+set PortName30 "zeroBytes"
+set BitWidth30 "32"
+set ArrayOpt30 ""
+set Const30 "0"
+set Volatile30 "0"
+set Pointer30 "2"
+set Reference30 "1"
+set Dims30 [list 0]
+set Interface30 "wire"
+set DataType30 "unsigned int"
+set Port30 [list $PortName30 $Interface30 $DataType30 $Pointer30 $Dims30 $Const30 $Volatile30 $ArrayOpt30]
+lappend PortList $Port30
+set PortName31 "interrStatus3State"
+set BitWidth31 "32"
+set ArrayOpt31 ""
+set Const31 "0"
+set Volatile31 "0"
+set Pointer31 "2"
+set Reference31 "1"
+set Dims31 [list 0]
+set Interface31 "wire"
+set DataType31 "unsigned int"
+set Port31 [list $PortName31 $Interface31 $DataType31 $Pointer31 $Dims31 $Const31 $Volatile31 $ArrayOpt31]
+lappend PortList $Port31
+set PortName32 "interrStatus5State"
+set BitWidth32 "32"
+set ArrayOpt32 ""
+set Const32 "0"
+set Volatile32 "0"
+set Pointer32 "2"
+set Reference32 "1"
+set Dims32 [list 0]
+set Interface32 "wire"
+set DataType32 "unsigned int"
+set Port32 [list $PortName32 $Interface32 $DataType32 $Pointer32 $Dims32 $Const32 $Volatile32 $ArrayOpt32]
+lappend PortList $Port32
+set PortName33 "tx_fifo_1"
+set BitWidth33 "32"
+set ArrayOpt33 ""
+set Const33 "0"
+set Volatile33 "0"
+set Pointer33 "2"
+set Reference33 "1"
+set Dims33 [list 0]
+set Interface33 "wire"
+set DataType33 "unsigned int"
+set Port33 [list $PortName33 $Interface33 $DataType33 $Pointer33 $Dims33 $Const33 $Volatile33 $ArrayOpt33]
+lappend PortList $Port33
+set PortName34 "tx_fifo_2"
+set BitWidth34 "32"
+set ArrayOpt34 ""
+set Const34 "0"
+set Volatile34 "0"
+set Pointer34 "2"
+set Reference34 "1"
+set Dims34 [list 0]
+set Interface34 "wire"
+set DataType34 "unsigned int"
+set Port34 [list $PortName34 $Interface34 $DataType34 $Pointer34 $Dims34 $Const34 $Volatile34 $ArrayOpt34]
+lappend PortList $Port34
+set PortName35 "interrStatus"
+set BitWidth35 "32"
+set ArrayOpt35 ""
+set Const35 "0"
+set Volatile35 "0"
+set Pointer35 "2"
+set Reference35 "1"
+set Dims35 [list 0]
+set Interface35 "wire"
+set DataType35 "unsigned int"
+set Port35 [list $PortName35 $Interface35 $DataType35 $Pointer35 $Dims35 $Const35 $Volatile35 $ArrayOpt35]
+lappend PortList $Port35
+set PortName36 "stat_reg_val"
+set BitWidth36 "32"
+set ArrayOpt36 ""
+set Const36 "0"
+set Volatile36 "0"
+set Pointer36 "2"
+set Reference36 "1"
+set Dims36 [list 0]
+set Interface36 "wire"
+set DataType36 "unsigned int"
+set Port36 [list $PortName36 $Interface36 $DataType36 $Pointer36 $Dims36 $Const36 $Volatile36 $ArrayOpt36]
+lappend PortList $Port36
+set PortName37 "statRegState"
+set BitWidth37 "32"
+set ArrayOpt37 ""
+set Const37 "0"
+set Volatile37 "0"
+set Pointer37 "2"
+set Reference37 "1"
+set Dims37 [list 0]
+set Interface37 "wire"
+set DataType37 "unsigned int"
+set Port37 [list $PortName37 $Interface37 $DataType37 $Pointer37 $Dims37 $Const37 $Volatile37 $ArrayOpt37]
+lappend PortList $Port37
+set PortName38 "clearInterrStatus"
+set BitWidth38 "32"
+set ArrayOpt38 ""
+set Const38 "0"
+set Volatile38 "0"
+set Pointer38 "2"
+set Reference38 "1"
+set Dims38 [list 0]
+set Interface38 "wire"
+set DataType38 "unsigned int"
+set Port38 [list $PortName38 $Interface38 $DataType38 $Pointer38 $Dims38 $Const38 $Volatile38 $ArrayOpt38]
+lappend PortList $Port38
+set PortName39 "clearInterrStatusCheck"
+set BitWidth39 "32"
+set ArrayOpt39 ""
+set Const39 "0"
+set Volatile39 "0"
+set Pointer39 "2"
+set Reference39 "1"
+set Dims39 [list 0]
+set Interface39 "wire"
+set DataType39 "unsigned int"
+set Port39 [list $PortName39 $Interface39 $DataType39 $Pointer39 $Dims39 $Const39 $Volatile39 $ArrayOpt39]
+lappend PortList $Port39
+set PortName40 "error1"
+set BitWidth40 "32"
+set ArrayOpt40 ""
+set Const40 "0"
+set Volatile40 "0"
+set Pointer40 "2"
+set Reference40 "1"
+set Dims40 [list 0]
+set Interface40 "wire"
+set DataType40 "int"
+set Port40 [list $PortName40 $Interface40 $DataType40 $Pointer40 $Dims40 $Const40 $Volatile40 $ArrayOpt40]
+lappend PortList $Port40
+set PortName41 "tx_fifo_3"
+set BitWidth41 "32"
+set ArrayOpt41 ""
+set Const41 "0"
+set Volatile41 "0"
+set Pointer41 "2"
+set Reference41 "1"
+set Dims41 [list 0]
+set Interface41 "wire"
+set DataType41 "unsigned int"
+set Port41 [list $PortName41 $Interface41 $DataType41 $Pointer41 $Dims41 $Const41 $Volatile41 $ArrayOpt41]
+lappend PortList $Port41
+set PortName42 "interrStatus3"
+set BitWidth42 "32"
+set ArrayOpt42 ""
+set Const42 "0"
+set Volatile42 "0"
+set Pointer42 "2"
+set Reference42 "1"
+set Dims42 [list 0]
+set Interface42 "wire"
+set DataType42 "unsigned int"
+set Port42 [list $PortName42 $Interface42 $DataType42 $Pointer42 $Dims42 $Const42 $Volatile42 $ArrayOpt42]
+lappend PortList $Port42
 set globalAPint "" 
 set returnAPInt "" 
 set hasCPPAPInt 0 

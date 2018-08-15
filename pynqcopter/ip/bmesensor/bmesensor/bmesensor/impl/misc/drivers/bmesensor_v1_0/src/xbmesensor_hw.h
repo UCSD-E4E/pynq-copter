@@ -191,8 +191,88 @@
 //         bit 0  - pressure_xlsb_o_ap_vld (Read/COR)
 //         others - reserved
 // 0x150 : Data signal of stat_reg_val6_state
-//         bit 31~0 - stat_reg_val6_state[31:0] (Read/Write)
-// 0x154 : reserved
+//         bit 31~0 - stat_reg_val6_state[31:0] (Read)
+// 0x154 : Control signal of stat_reg_val6_state
+//         bit 0  - stat_reg_val6_state_ap_vld (Read/COR)
+//         others - reserved
+// 0x158 : Data signal of ctrl_reg_val2
+//         bit 31~0 - ctrl_reg_val2[31:0] (Read)
+// 0x15c : Control signal of ctrl_reg_val2
+//         bit 0  - ctrl_reg_val2_ap_vld (Read/COR)
+//         others - reserved
+// 0x160 : Data signal of ctrl2RegState
+//         bit 31~0 - ctrl2RegState[31:0] (Read)
+// 0x164 : Control signal of ctrl2RegState
+//         bit 0  - ctrl2RegState_ap_vld (Read/COR)
+//         others - reserved
+// 0x168 : Data signal of ctrl_reg_check
+//         bit 31~0 - ctrl_reg_check[31:0] (Read)
+// 0x16c : Control signal of ctrl_reg_check
+//         bit 0  - ctrl_reg_check_ap_vld (Read/COR)
+//         others - reserved
+// 0x170 : Data signal of zeroBytes
+//         bit 31~0 - zeroBytes[31:0] (Read/Write)
+// 0x174 : reserved
+// 0x178 : Data signal of interrStatus3State
+//         bit 31~0 - interrStatus3State[31:0] (Read)
+// 0x17c : Control signal of interrStatus3State
+//         bit 0  - interrStatus3State_ap_vld (Read/COR)
+//         others - reserved
+// 0x180 : Data signal of interrStatus5State
+//         bit 31~0 - interrStatus5State[31:0] (Read)
+// 0x184 : Control signal of interrStatus5State
+//         bit 0  - interrStatus5State_ap_vld (Read/COR)
+//         others - reserved
+// 0x188 : Data signal of tx_fifo_1
+//         bit 31~0 - tx_fifo_1[31:0] (Read)
+// 0x18c : Control signal of tx_fifo_1
+//         bit 0  - tx_fifo_1_ap_vld (Read/COR)
+//         others - reserved
+// 0x190 : Data signal of tx_fifo_2
+//         bit 31~0 - tx_fifo_2[31:0] (Read)
+// 0x194 : Control signal of tx_fifo_2
+//         bit 0  - tx_fifo_2_ap_vld (Read/COR)
+//         others - reserved
+// 0x198 : Data signal of interrStatus
+//         bit 31~0 - interrStatus[31:0] (Read)
+// 0x19c : Control signal of interrStatus
+//         bit 0  - interrStatus_ap_vld (Read/COR)
+//         others - reserved
+// 0x1a0 : Data signal of stat_reg_val
+//         bit 31~0 - stat_reg_val[31:0] (Read)
+// 0x1a4 : Control signal of stat_reg_val
+//         bit 0  - stat_reg_val_ap_vld (Read/COR)
+//         others - reserved
+// 0x1a8 : Data signal of statRegState
+//         bit 31~0 - statRegState[31:0] (Read)
+// 0x1ac : Control signal of statRegState
+//         bit 0  - statRegState_ap_vld (Read/COR)
+//         others - reserved
+// 0x1b0 : Data signal of clearInterrStatus
+//         bit 31~0 - clearInterrStatus[31:0] (Read)
+// 0x1b4 : Control signal of clearInterrStatus
+//         bit 0  - clearInterrStatus_ap_vld (Read/COR)
+//         others - reserved
+// 0x1b8 : Data signal of clearInterrStatusCheck
+//         bit 31~0 - clearInterrStatusCheck[31:0] (Read)
+// 0x1bc : Control signal of clearInterrStatusCheck
+//         bit 0  - clearInterrStatusCheck_ap_vld (Read/COR)
+//         others - reserved
+// 0x1c0 : Data signal of error1
+//         bit 31~0 - error1[31:0] (Read)
+// 0x1c4 : Control signal of error1
+//         bit 0  - error1_ap_vld (Read/COR)
+//         others - reserved
+// 0x1c8 : Data signal of tx_fifo_3
+//         bit 31~0 - tx_fifo_3[31:0] (Read)
+// 0x1cc : Control signal of tx_fifo_3
+//         bit 0  - tx_fifo_3_ap_vld (Read/COR)
+//         others - reserved
+// 0x1d0 : Data signal of interrStatus3
+//         bit 31~0 - interrStatus3[31:0] (Read)
+// 0x1d4 : Control signal of interrStatus3
+//         bit 0  - interrStatus3_ap_vld (Read/COR)
+//         others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XBMESENSOR_AXILITES_ADDR_AP_CTRL                        0x000
@@ -304,4 +384,52 @@
 #define XBMESENSOR_AXILITES_ADDR_PRESSURE_XLSB_O_CTRL           0x14c
 #define XBMESENSOR_AXILITES_ADDR_STAT_REG_VAL6_STATE_DATA       0x150
 #define XBMESENSOR_AXILITES_BITS_STAT_REG_VAL6_STATE_DATA       32
+#define XBMESENSOR_AXILITES_ADDR_STAT_REG_VAL6_STATE_CTRL       0x154
+#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_VAL2_DATA             0x158
+#define XBMESENSOR_AXILITES_BITS_CTRL_REG_VAL2_DATA             32
+#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_VAL2_CTRL             0x15c
+#define XBMESENSOR_AXILITES_ADDR_CTRL2REGSTATE_DATA             0x160
+#define XBMESENSOR_AXILITES_BITS_CTRL2REGSTATE_DATA             32
+#define XBMESENSOR_AXILITES_ADDR_CTRL2REGSTATE_CTRL             0x164
+#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_CHECK_DATA            0x168
+#define XBMESENSOR_AXILITES_BITS_CTRL_REG_CHECK_DATA            32
+#define XBMESENSOR_AXILITES_ADDR_CTRL_REG_CHECK_CTRL            0x16c
+#define XBMESENSOR_AXILITES_ADDR_ZEROBYTES_DATA                 0x170
+#define XBMESENSOR_AXILITES_BITS_ZEROBYTES_DATA                 32
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS3STATE_DATA        0x178
+#define XBMESENSOR_AXILITES_BITS_INTERRSTATUS3STATE_DATA        32
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS3STATE_CTRL        0x17c
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS5STATE_DATA        0x180
+#define XBMESENSOR_AXILITES_BITS_INTERRSTATUS5STATE_DATA        32
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS5STATE_CTRL        0x184
+#define XBMESENSOR_AXILITES_ADDR_TX_FIFO_1_DATA                 0x188
+#define XBMESENSOR_AXILITES_BITS_TX_FIFO_1_DATA                 32
+#define XBMESENSOR_AXILITES_ADDR_TX_FIFO_1_CTRL                 0x18c
+#define XBMESENSOR_AXILITES_ADDR_TX_FIFO_2_DATA                 0x190
+#define XBMESENSOR_AXILITES_BITS_TX_FIFO_2_DATA                 32
+#define XBMESENSOR_AXILITES_ADDR_TX_FIFO_2_CTRL                 0x194
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS_DATA              0x198
+#define XBMESENSOR_AXILITES_BITS_INTERRSTATUS_DATA              32
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS_CTRL              0x19c
+#define XBMESENSOR_AXILITES_ADDR_STAT_REG_VAL_DATA              0x1a0
+#define XBMESENSOR_AXILITES_BITS_STAT_REG_VAL_DATA              32
+#define XBMESENSOR_AXILITES_ADDR_STAT_REG_VAL_CTRL              0x1a4
+#define XBMESENSOR_AXILITES_ADDR_STATREGSTATE_DATA              0x1a8
+#define XBMESENSOR_AXILITES_BITS_STATREGSTATE_DATA              32
+#define XBMESENSOR_AXILITES_ADDR_STATREGSTATE_CTRL              0x1ac
+#define XBMESENSOR_AXILITES_ADDR_CLEARINTERRSTATUS_DATA         0x1b0
+#define XBMESENSOR_AXILITES_BITS_CLEARINTERRSTATUS_DATA         32
+#define XBMESENSOR_AXILITES_ADDR_CLEARINTERRSTATUS_CTRL         0x1b4
+#define XBMESENSOR_AXILITES_ADDR_CLEARINTERRSTATUSCHECK_DATA    0x1b8
+#define XBMESENSOR_AXILITES_BITS_CLEARINTERRSTATUSCHECK_DATA    32
+#define XBMESENSOR_AXILITES_ADDR_CLEARINTERRSTATUSCHECK_CTRL    0x1bc
+#define XBMESENSOR_AXILITES_ADDR_ERROR1_DATA                    0x1c0
+#define XBMESENSOR_AXILITES_BITS_ERROR1_DATA                    32
+#define XBMESENSOR_AXILITES_ADDR_ERROR1_CTRL                    0x1c4
+#define XBMESENSOR_AXILITES_ADDR_TX_FIFO_3_DATA                 0x1c8
+#define XBMESENSOR_AXILITES_BITS_TX_FIFO_3_DATA                 32
+#define XBMESENSOR_AXILITES_ADDR_TX_FIFO_3_CTRL                 0x1cc
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS3_DATA             0x1d0
+#define XBMESENSOR_AXILITES_BITS_INTERRSTATUS3_DATA             32
+#define XBMESENSOR_AXILITES_ADDR_INTERRSTATUS3_CTRL             0x1d4
 

@@ -1602,17 +1602,657 @@
         {
           "offset": "0x150",
           "name": "stat_reg_val6_state",
-          "access": "W",
+          "access": "R",
           "reset_value": "0x0",
           "description": "Data signal of stat_reg_val6_state",
           "fields": [{
               "offset": "0",
               "width": "32",
               "name": "stat_reg_val6_state",
-              "access": "W",
+              "access": "R",
               "reset_value": "0",
               "description": "Bit 31 to 0 Data signal of stat_reg_val6_state"
             }]
+        },
+        {
+          "offset": "0x154",
+          "name": "stat_reg_val6_state_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of stat_reg_val6_state",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "stat_reg_val6_state_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal stat_reg_val6_state_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x158",
+          "name": "ctrl_reg_val2",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of ctrl_reg_val2",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "ctrl_reg_val2",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of ctrl_reg_val2"
+            }]
+        },
+        {
+          "offset": "0x15c",
+          "name": "ctrl_reg_val2_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of ctrl_reg_val2",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "ctrl_reg_val2_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal ctrl_reg_val2_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x160",
+          "name": "ctrl2RegState",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of ctrl2RegState",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "ctrl2RegState",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of ctrl2RegState"
+            }]
+        },
+        {
+          "offset": "0x164",
+          "name": "ctrl2RegState_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of ctrl2RegState",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "ctrl2RegState_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal ctrl2RegState_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x168",
+          "name": "ctrl_reg_check",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of ctrl_reg_check",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "ctrl_reg_check",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of ctrl_reg_check"
+            }]
+        },
+        {
+          "offset": "0x16c",
+          "name": "ctrl_reg_check_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of ctrl_reg_check",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "ctrl_reg_check_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal ctrl_reg_check_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x170",
+          "name": "zeroBytes",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of zeroBytes",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "zeroBytes",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of zeroBytes"
+            }]
+        },
+        {
+          "offset": "0x178",
+          "name": "interrStatus3State",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of interrStatus3State",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "interrStatus3State",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of interrStatus3State"
+            }]
+        },
+        {
+          "offset": "0x17c",
+          "name": "interrStatus3State_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of interrStatus3State",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "interrStatus3State_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal interrStatus3State_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x180",
+          "name": "interrStatus5State",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of interrStatus5State",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "interrStatus5State",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of interrStatus5State"
+            }]
+        },
+        {
+          "offset": "0x184",
+          "name": "interrStatus5State_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of interrStatus5State",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "interrStatus5State_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal interrStatus5State_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x188",
+          "name": "tx_fifo_1",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of tx_fifo_1",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "tx_fifo_1",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of tx_fifo_1"
+            }]
+        },
+        {
+          "offset": "0x18c",
+          "name": "tx_fifo_1_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of tx_fifo_1",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "tx_fifo_1_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal tx_fifo_1_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x190",
+          "name": "tx_fifo_2",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of tx_fifo_2",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "tx_fifo_2",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of tx_fifo_2"
+            }]
+        },
+        {
+          "offset": "0x194",
+          "name": "tx_fifo_2_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of tx_fifo_2",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "tx_fifo_2_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal tx_fifo_2_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x198",
+          "name": "interrStatus",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of interrStatus",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "interrStatus",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of interrStatus"
+            }]
+        },
+        {
+          "offset": "0x19c",
+          "name": "interrStatus_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of interrStatus",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "interrStatus_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal interrStatus_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x1a0",
+          "name": "stat_reg_val",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of stat_reg_val",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "stat_reg_val",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of stat_reg_val"
+            }]
+        },
+        {
+          "offset": "0x1a4",
+          "name": "stat_reg_val_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of stat_reg_val",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "stat_reg_val_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal stat_reg_val_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x1a8",
+          "name": "statRegState",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of statRegState",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "statRegState",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of statRegState"
+            }]
+        },
+        {
+          "offset": "0x1ac",
+          "name": "statRegState_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of statRegState",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "statRegState_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal statRegState_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x1b0",
+          "name": "clearInterrStatus",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of clearInterrStatus",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "clearInterrStatus",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of clearInterrStatus"
+            }]
+        },
+        {
+          "offset": "0x1b4",
+          "name": "clearInterrStatus_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of clearInterrStatus",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "clearInterrStatus_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal clearInterrStatus_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x1b8",
+          "name": "clearInterrStatusCheck",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of clearInterrStatusCheck",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "clearInterrStatusCheck",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of clearInterrStatusCheck"
+            }]
+        },
+        {
+          "offset": "0x1bc",
+          "name": "clearInterrStatusCheck_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of clearInterrStatusCheck",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "clearInterrStatusCheck_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal clearInterrStatusCheck_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x1c0",
+          "name": "error1",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of error1",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "error1",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of error1"
+            }]
+        },
+        {
+          "offset": "0x1c4",
+          "name": "error1_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of error1",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "error1_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal error1_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x1c8",
+          "name": "tx_fifo_3",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of tx_fifo_3",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "tx_fifo_3",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of tx_fifo_3"
+            }]
+        },
+        {
+          "offset": "0x1cc",
+          "name": "tx_fifo_3_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of tx_fifo_3",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "tx_fifo_3_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal tx_fifo_3_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x1d0",
+          "name": "interrStatus3",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of interrStatus3",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "interrStatus3",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of interrStatus3"
+            }]
+        },
+        {
+          "offset": "0x1d4",
+          "name": "interrStatus3_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of interrStatus3",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "interrStatus3_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal interrStatus3_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
         }
       ],
       "memories": "",
@@ -2052,7 +2692,7 @@
       "statusOffset": "124",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "117"
+      "firstOutLatency": "133"
     },
     "byteCountZero": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2093,7 +2733,7 @@
       "statusOffset": "164",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "118"
+      "firstOutLatency": "133"
     },
     "pressByteCountEnabled": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2102,7 +2742,7 @@
       "statusOffset": "172",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "141"
+      "firstOutLatency": "180"
     },
     "byteTracker": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2111,7 +2751,7 @@
       "statusOffset": "180",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "141"
+      "firstOutLatency": "180"
     },
     "interrStatus3StateEnabled": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2120,7 +2760,7 @@
       "statusOffset": "188",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "157"
+      "firstOutLatency": "197"
     },
     "checkInterrReg": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2129,7 +2769,7 @@
       "statusOffset": "196",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "149"
+      "firstOutLatency": "189"
     },
     "ctrl_reg_val3_i": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2202,7 +2842,7 @@
       "statusOffset": "268",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "149"
+      "firstOutLatency": "189"
     },
     "receivedSuccess_i": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2270,11 +2910,155 @@
     },
     "stat_reg_val6_state": {
       "interfaceRef": "s_axi_AXILiteS",
-      "dir": "in",
+      "dir": "out",
       "offset": "336",
+      "statusOffset": "340",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "212"
+    },
+    "ctrl_reg_val2": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "344",
+      "statusOffset": "348",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "132"
+    },
+    "ctrl2RegState": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "352",
+      "statusOffset": "356",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "132"
+    },
+    "ctrl_reg_check": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "360",
+      "statusOffset": "364",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "163"
+    },
+    "zeroBytes": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "in",
+      "offset": "368",
       "statusOffset": "NA",
       "handshakeRef": "ap_none",
       "Object": "AXILiteS"
+    },
+    "interrStatus3State": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "376",
+      "statusOffset": "380",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "189"
+    },
+    "interrStatus5State": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "384",
+      "statusOffset": "388",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "189"
+    },
+    "tx_fifo_1": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "392",
+      "statusOffset": "396",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "87"
+    },
+    "tx_fifo_2": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "400",
+      "statusOffset": "404",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "103"
+    },
+    "interrStatus": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "408",
+      "statusOffset": "412",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "103"
+    },
+    "stat_reg_val": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "416",
+      "statusOffset": "420",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "163"
+    },
+    "statRegState": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "424",
+      "statusOffset": "428",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "163"
+    },
+    "clearInterrStatus": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "432",
+      "statusOffset": "436",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "165"
+    },
+    "clearInterrStatusCheck": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "440",
+      "statusOffset": "444",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "179"
+    },
+    "error1": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "448",
+      "statusOffset": "452",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "189"
+    },
+    "tx_fifo_3": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "456",
+      "statusOffset": "460",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "147"
+    },
+    "interrStatus3": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "464",
+      "statusOffset": "468",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "189"
     },
     "ap_ctrl": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2314,7 +3098,7 @@
                 "TripCount": "",
                 "Latency": "",
                 "PipelineII": "",
-                "PipelineDepth": "8"
+                "PipelineDepth": "9"
               }]
           },
           {
@@ -2322,27 +3106,27 @@
             "TripCount": "",
             "Latency": "",
             "PipelineII": "",
-            "PipelineDepth": "8"
+            "PipelineDepth": "9"
           },
           {
             "Name": "Loop 3",
             "TripCount": "",
             "Latency": "",
             "PipelineII": "",
-            "PipelineDepth": "8"
+            "PipelineDepth": "9"
           }
         ],
         "Area": {
           "BRAM_18K": "2",
-          "FF": "2726",
-          "LUT": "4876",
+          "FF": "3414",
+          "LUT": "6193",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-14 14:54:23 PDT",
+    "Time": "2018-08-15 12:16:59 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

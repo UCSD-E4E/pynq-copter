@@ -35,18 +35,18 @@
 <Loop1.1>
 <TripCount>undef</TripCount>
 <Latency>undef</Latency>
-<IterationLatency>8</IterationLatency>
+<IterationLatency>9</IterationLatency>
 </Loop1.1>
 </Loop1>
 <Loop2>
 <TripCount>undef</TripCount>
 <Latency>undef</Latency>
-<IterationLatency>8</IterationLatency>
+<IterationLatency>9</IterationLatency>
 </Loop2>
 <Loop3>
 <TripCount>undef</TripCount>
 <Latency>undef</Latency>
-<IterationLatency>8</IterationLatency>
+<IterationLatency>9</IterationLatency>
 </Loop3>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
@@ -54,8 +54,8 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>2</BRAM_18K>
-<FF>2726</FF>
-<LUT>4876</LUT>
+<FF>3414</FF>
+<LUT>6193</LUT>
 <DSP48E>0</DSP48E>
 </Resources>
 <AvailableResources>
@@ -70,7 +70,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_AWVALID</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -83,7 +83,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_AWREADY</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -96,7 +96,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_AWADDR</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -109,7 +109,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_WVALID</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -122,7 +122,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_WREADY</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -135,7 +135,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_WDATA</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -148,7 +148,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_WSTRB</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -161,7 +161,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_ARVALID</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -174,7 +174,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_ARREADY</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -187,7 +187,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_ARADDR</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -200,7 +200,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_RVALID</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -213,7 +213,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_RREADY</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -226,7 +226,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_RDATA</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -239,7 +239,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_RRESP</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -252,7 +252,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_BVALID</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -265,7 +265,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_BREADY</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
@@ -278,7 +278,7 @@
 <RtlPorts>
 <name>s_axi_AXILiteS_BRESP</name>
 <Object>AXILiteS</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>

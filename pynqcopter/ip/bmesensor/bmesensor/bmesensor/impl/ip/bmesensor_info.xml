@@ -45,6 +45,22 @@
       <arg name="pressure_xlsb" addressQualifier="0" id="38" port="S_AXI_AXILITES" size="0x4" offset="0x140" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
       <arg name="pressure_xlsb" addressQualifier="0" id="39" port="S_AXI_AXILITES" size="0x4" offset="0x148" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
       <arg name="stat_reg_val6_state" addressQualifier="0" id="40" port="S_AXI_AXILITES" size="0x4" offset="0x150" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="ctrl_reg_val2" addressQualifier="0" id="41" port="S_AXI_AXILITES" size="0x4" offset="0x158" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="ctrl2RegState" addressQualifier="0" id="42" port="S_AXI_AXILITES" size="0x4" offset="0x160" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="ctrl_reg_check" addressQualifier="0" id="43" port="S_AXI_AXILITES" size="0x4" offset="0x168" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="zeroBytes" addressQualifier="0" id="44" port="S_AXI_AXILITES" size="0x4" offset="0x170" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="interrStatus3State" addressQualifier="0" id="45" port="S_AXI_AXILITES" size="0x4" offset="0x178" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="interrStatus5State" addressQualifier="0" id="46" port="S_AXI_AXILITES" size="0x4" offset="0x180" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="tx_fifo_1" addressQualifier="0" id="47" port="S_AXI_AXILITES" size="0x4" offset="0x188" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="tx_fifo_2" addressQualifier="0" id="48" port="S_AXI_AXILITES" size="0x4" offset="0x190" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="interrStatus" addressQualifier="0" id="49" port="S_AXI_AXILITES" size="0x4" offset="0x198" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="stat_reg_val" addressQualifier="0" id="50" port="S_AXI_AXILITES" size="0x4" offset="0x1A0" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="statRegState" addressQualifier="0" id="51" port="S_AXI_AXILITES" size="0x4" offset="0x1A8" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="clearInterrStatus" addressQualifier="0" id="52" port="S_AXI_AXILITES" size="0x4" offset="0x1B0" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="clearInterrStatusCheck" addressQualifier="0" id="53" port="S_AXI_AXILITES" size="0x4" offset="0x1B8" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="error1" addressQualifier="0" id="54" port="S_AXI_AXILITES" size="0x4" offset="0x1C0" hostOffset="0x0" hostSize="0x4" type="int"/>
+      <arg name="tx_fifo_3" addressQualifier="0" id="55" port="S_AXI_AXILITES" size="0x4" offset="0x1C8" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+      <arg name="interrStatus3" addressQualifier="0" id="56" port="S_AXI_AXILITES" size="0x4" offset="0x1D0" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
       <compileWorkGroupSize x="1" y="1" z="1"/>
     </kernel>
   </core>

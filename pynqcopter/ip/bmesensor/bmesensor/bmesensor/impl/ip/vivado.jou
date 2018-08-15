@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Tue Aug 14 14:54:25 2018
-# Process ID: 8506
+# Start of session at: Wed Aug 15 12:17:02 2018
+# Process ID: 18754
 # Current directory: /home/iavendano/pynq-copter/pynqcopter/ip/bmesensor/bmesensor/bmesensor/impl/ip
 # Command line: vivado -notrace -mode batch -source run_ippack.tcl
 # Log file: /home/iavendano/pynq-copter/pynqcopter/ip/bmesensor/bmesensor/bmesensor/impl/ip/vivado.log

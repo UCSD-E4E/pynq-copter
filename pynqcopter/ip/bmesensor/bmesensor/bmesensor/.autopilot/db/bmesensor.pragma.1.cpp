@@ -33215,7 +33215,7 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 static uint32_t empty_pirq_val;
 static uint32_t full_pirq_val;
 static uint32_t ctrl_reg_val1;
-static uint32_t ctrl_reg_val2;
+
 static uint32_t stat_reg_val1;
 static uint32_t tx_fifo_val;
 static uint32_t stat_reg_val2;
@@ -33225,16 +33225,17 @@ static uint32_t stat_reg_val5;
 static uint32_t rx_fifo_val;
 
 
-void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t&ctrl_reg_outValue1, volatile uint32_t& clearedInterrStatus1, volatile uint32_t& rxFifoDepth1, int& resetAxiEnabled,int& ctrl2RegState_enabled, int& byteCountZero, int& clearedInterruptStatus2, volatile uint32_t& interrStatus2, int& disableTxBitDirection, int& pressByteCountEnabled, int& byteTracker, int& interrStatus3StateEnabled,int& checkInterrReg, volatile int& ctrl_reg_val3, volatile uint32_t& lastByteRead, volatile uint32_t& rx_fifo, volatile uint32_t& clearLatchedInterr, int& releaseBus, int& receivedSuccess, volatile uint32_t& pressure_msb, volatile uint32_t& pressure_lsb, volatile uint32_t& pressure_xlsb, uint32_t stat_reg_val6_state)
+void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t&ctrl_reg_outValue1, volatile uint32_t& clearedInterrStatus1, volatile uint32_t& rxFifoDepth1, int& resetAxiEnabled,int& ctrl2RegState_enabled, int& byteCountZero, int& clearedInterruptStatus2, volatile uint32_t& interrStatus2, int& disableTxBitDirection, int& pressByteCountEnabled, int& byteTracker, int& interrStatus3StateEnabled,int& checkInterrReg, volatile int& ctrl_reg_val3, volatile uint32_t& lastByteRead, volatile uint32_t& rx_fifo, volatile uint32_t& clearLatchedInterr, int& releaseBus, int& receivedSuccess, volatile uint32_t& pressure_msb, volatile uint32_t& pressure_lsb, volatile uint32_t& pressure_xlsb, uint32_t& stat_reg_val6_state, uint32_t& ctrl_reg_val2, uint32_t& ctrl2RegState, uint32_t& ctrl_reg_check, uint32_t& zeroBytes, uint32_t& interrStatus3State, uint32_t& interrStatus5State, uint32_t& tx_fifo_1 , uint32_t& tx_fifo_2, uint32_t& interrStatus, uint32_t& stat_reg_val, uint32_t& statRegState, uint32_t& clearInterrStatus, uint32_t& clearInterrStatusCheck, int& error1, uint32_t& tx_fifo_3, uint32_t& interrStatus3)
 {_ssdm_SpecArrayDimSize(iic,4096);
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
 _ssdm_op_SpecInterface(iic, "m_axi", 0, 0, "", 0, 0, "", "", "", 16, 16, 16, 16, "", "");
 
+_ssdm_op_SpecInterface(stat_reg_outValue1, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(empty_pirq_outValue, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(full_pirq_outValue, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(ctrl_reg_outValue1, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(stat_reg_outValue1, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+
 
 _ssdm_op_SpecInterface(clearedInterrStatus1, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(rxFifoDepth1, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
@@ -33242,6 +33243,7 @@ _ssdm_op_SpecInterface(resetAxiEnabled, "s_axilite", 0, 0, "", 0, 0, "", "", "",
 _ssdm_op_SpecInterface(ctrl2RegState_enabled, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(byteCountZero, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(clearedInterruptStatus2, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+
 _ssdm_op_SpecInterface(interrStatus2, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(disableTxBitDirection, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(pressByteCountEnabled, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
@@ -33258,6 +33260,25 @@ _ssdm_op_SpecInterface(pressure_msb, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0,
 _ssdm_op_SpecInterface(pressure_lsb, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(pressure_xlsb, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(stat_reg_val6_state, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(ctrl_reg_val2, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(ctrl2RegState, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(ctrl_reg_check, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(zeroBytes, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(interrStatus3State, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(interrStatus5State, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+
+
+_ssdm_op_SpecInterface(tx_fifo_1, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(tx_fifo_2, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(interrStatus, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(stat_reg_val, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(statRegState, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(clearInterrStatus, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(clearInterrStatusCheck, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(error1, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(tx_fifo_3, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(interrStatus3, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+
 
 
 
@@ -33316,11 +33337,16 @@ _ssdm_op_SpecInterface(stat_reg_val6_state, "s_axilite", 0, 0, "", 0, 0, "", "",
  }
 
  iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
+
+ tx_fifo_1 = iic[(0x40001000/4)+(0x108/4)];
+
  iic[(0x40001000/4)+(0x108/4)] = 0x2F7;
 
+ tx_fifo_2 = iic[(0x40001000/4)+(0x108/4)];
 
- uint32_t interrStatus = iic[(0x40001000/4)+(0x020/4)];
- iic[(0x40001000/4)+(0x020/4)] = (interrStatus & 11);
+
+ interrStatus = iic[(0x40001000/4)+(0x020/4)];
+ iic[(0x40001000/4)+(0x020/4)] = 0;
  clearedInterrStatus1 = iic[(0x40001000/4)+(0x020/4)];
 
 
@@ -33329,14 +33355,15 @@ _ssdm_op_SpecInterface(stat_reg_val6_state, "s_axilite", 0, 0, "", 0, 0, "", "",
 
 
 
- uint32_t ctrl_reg_val2 = iic[(0x40001000/4)+(0x100/4)];
+ ctrl_reg_val2 = iic[(0x40001000/4)+(0x100/4)];
  uint32_t ctrl_reg_val2_copy = ctrl_reg_val2;
- uint32_t ctrl2RegState = ctrl_reg_val2_copy & 32;
+ ctrl2RegState = ctrl_reg_val2_copy & 32;
  if(ctrl2RegState == 0)
  {
   ctrl2RegState_enabled = 101;
 
   iic[(0x40001000/4)+(0x108/4)] = 0xED;
+  tx_fifo_3 = iic[(0x40001000/4)+(0x108/4)];
 
 
 
@@ -33350,18 +33377,20 @@ _ssdm_op_SpecInterface(stat_reg_val6_state, "s_axilite", 0, 0, "", 0, 0, "", "",
 
 
   iic[(0x40001000/4)+(0x100/4)] = ctrl_reg_val2_copy;
+  ctrl_reg_check = iic[(0x40001000/4)+(0x100/4)];
 
-  uint32_t stat_reg_val = iic[(0x40001000/4)+(0x104/4)];
+  stat_reg_val = iic[(0x40001000/4)+(0x104/4)];
   uint32_t stat_reg_val_copy = stat_reg_val;
-  uint32_t statRegState = stat_reg_val_copy & 4;
+  statRegState = stat_reg_val_copy & 4;
   while(statRegState == 0)
   {
    clearedInterruptStatus2 = 103;
    stat_reg_val_copy = iic[(0x40001000/4)+(0x104/4)];
   }
   interrStatus2 = iic[(0x40001000/4)+(0x020/4)];
-  uint32_t clearInterrStatus = interrStatus2 & 16;
+  clearInterrStatus = interrStatus2 & 16;
   iic[(0x40001000/4)+(0x020/4)] = clearInterrStatus;
+  clearInterrStatusCheck = iic[(0x40001000/4)+(0x020/4)];
  }
  else
  {
@@ -33371,6 +33400,7 @@ _ssdm_op_SpecInterface(stat_reg_val6_state, "s_axilite", 0, 0, "", 0, 0, "", "",
 
   if(pressByteCount == 0)
   {
+   zeroBytes = 105;
    ctrl_reg_val2_copy = ctrl_reg_val2_copy | 16;
   }
   iic[(0x40001000/4)+(0x100/4)] = ctrl_reg_val2_copy;
@@ -33381,7 +33411,7 @@ _ssdm_op_SpecInterface(stat_reg_val6_state, "s_axilite", 0, 0, "", 0, 0, "", "",
  }
  while(pressByteCount > 0)
  {
-  pressByteCountEnabled = 105;
+  pressByteCountEnabled = 106;
 
   int interruptStatusMask;
   if(pressByteCount == 1)
@@ -33397,17 +33427,18 @@ _ssdm_op_SpecInterface(stat_reg_val6_state, "s_axilite", 0, 0, "", 0, 0, "", "",
 
   while(true)
   {
-   checkInterrReg = 106;
-   uint32_t interrStatus3 = iic[(0x40001000/4)+(0x020/4)];
-   uint32_t interrStatus3State = interrStatus3 & 8;
+   checkInterrReg = 107;
+   interrStatus3 = iic[(0x40001000/4)+(0x020/4)];
+   interrStatus3State = interrStatus3 & 8;
    if(interrStatus3State)
    {
     interrStatus3StateEnabled = 1;
     break;
    }
-   if(interrStatus3 & interruptStatusMask)
+   if(interrStatus3 && interruptStatusMask)
    {
     printf("Error");
+    error1 = 108;
    }
   }
   ctrl_reg_val3 = iic[(0x40001000/4)+(0x100/4)];
@@ -33451,7 +33482,7 @@ _ssdm_op_SpecInterface(stat_reg_val6_state, "s_axilite", 0, 0, "", 0, 0, "", "",
   releaseBus = 107;
 
   uint32_t interrStatus5 = iic[(0x40001000/4)+(0x020/4)];
-  uint32_t interrStatus5State = interrStatus5 & 16;
+  interrStatus5State = interrStatus5 & 16;
   if(interrStatus5State)
   {
    break;

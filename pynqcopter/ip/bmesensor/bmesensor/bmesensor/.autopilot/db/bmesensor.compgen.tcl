@@ -333,12 +333,140 @@ pressure_xlsb_o {
 	offset_end 335
 }
 stat_reg_val6_state { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 336
+	offset_end 343
+}
+ctrl_reg_val2 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 344
+	offset_end 351
+}
+ctrl2RegState { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 352
+	offset_end 359
+}
+ctrl_reg_check { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 360
+	offset_end 367
+}
+zeroBytes { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 336
-	offset_end 343
+	offset 368
+	offset_end 375
+}
+interrStatus3State { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 376
+	offset_end 383
+}
+interrStatus5State { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 384
+	offset_end 391
+}
+tx_fifo_1 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 392
+	offset_end 399
+}
+tx_fifo_2 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 400
+	offset_end 407
+}
+interrStatus { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 408
+	offset_end 415
+}
+stat_reg_val { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 416
+	offset_end 423
+}
+statRegState { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 424
+	offset_end 431
+}
+clearInterrStatus { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 432
+	offset_end 439
+}
+clearInterrStatusCheck { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 440
+	offset_end 447
+}
+error1 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 448
+	offset_end 455
+}
+tx_fifo_3 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 456
+	offset_end 463
+}
+interrStatus3 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 464
+	offset_end 471
 }
 }
 

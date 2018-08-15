@@ -42,7 +42,23 @@
   <xd:arg xd:name="pressure_lsb" xd:originalName="pressure_lsb" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x138" xd:statusOffset="0x13C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:arg xd:name="pressure_xlsb" xd:originalName="pressure_xlsb" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x140" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="pressure_xlsb" xd:originalName="pressure_xlsb" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x148" xd:statusOffset="0x14C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
-  <xd:arg xd:name="stat_reg_val6_state" xd:originalName="stat_reg_val6_state" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x150" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="stat_reg_val6_state" xd:originalName="stat_reg_val6_state" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x150" xd:statusOffset="0x154" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="ctrl_reg_val2" xd:originalName="ctrl_reg_val2" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x158" xd:statusOffset="0x15C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="ctrl2RegState" xd:originalName="ctrl2RegState" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x160" xd:statusOffset="0x164" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="ctrl_reg_check" xd:originalName="ctrl_reg_check" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x168" xd:statusOffset="0x16C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="zeroBytes" xd:originalName="zeroBytes" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x170" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="interrStatus3State" xd:originalName="interrStatus3State" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x178" xd:statusOffset="0x17C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="interrStatus5State" xd:originalName="interrStatus5State" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x180" xd:statusOffset="0x184" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="tx_fifo_1" xd:originalName="tx_fifo_1" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x188" xd:statusOffset="0x18C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="tx_fifo_2" xd:originalName="tx_fifo_2" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x190" xd:statusOffset="0x194" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="interrStatus" xd:originalName="interrStatus" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x198" xd:statusOffset="0x19C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="stat_reg_val" xd:originalName="stat_reg_val" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x1A0" xd:statusOffset="0x1A4" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="statRegState" xd:originalName="statRegState" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x1A8" xd:statusOffset="0x1AC" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="clearInterrStatus" xd:originalName="clearInterrStatus" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x1B0" xd:statusOffset="0x1B4" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="clearInterrStatusCheck" xd:originalName="clearInterrStatusCheck" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x1B8" xd:statusOffset="0x1BC" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="error1" xd:originalName="error1" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x1C0" xd:statusOffset="0x1C4" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="tx_fifo_3" xd:originalName="tx_fifo_3" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x1C8" xd:statusOffset="0x1CC" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="interrStatus3" xd:originalName="interrStatus3" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x1D0" xd:statusOffset="0x1D4" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
-  <xd:resourceEstimates xd:LUT="4876" xd:FF="2726" xd:BRAM="2" xd:DSP="0"/>
+  <xd:resourceEstimates xd:LUT="6193" xd:FF="3414" xd:BRAM="2" xd:DSP="0"/>
 </xd:acceleratorMap>

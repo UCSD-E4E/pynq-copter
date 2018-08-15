@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'bmesensor'" level="0">
-<item name = "Date">Tue Aug 14 14:54:21 2018
+<item name = "Date">Wed Aug 15 12:16:55 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">bmesensor</item>
@@ -34,9 +34,9 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- Loop 1">?, ?, ?, -, -, 3, no</column>
-<column name=" + Loop 1.1">?, ?, 8, -, -, ?, no</column>
-<column name="- Loop 2">?, ?, 8, -, -, ?, no</column>
-<column name="- Loop 3">?, ?, 8, -, -, ?, no</column>
+<column name=" + Loop 1.1">?, ?, 9, -, -, ?, no</column>
+<column name="- Loop 2">?, ?, 9, -, -, ?, no</column>
+<column name="- Loop 3">?, ?, 9, -, -, ?, no</column>
 </table>
 </item>
 </section>
@@ -49,21 +49,21 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 257</column>
+<column name="Expression">-, -, 0, 307</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">2, -, 2106, 3244</column>
+<column name="Instance">2, -, 2714, 4268</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 1375</column>
-<column name="Register">-, -, 620, -</column>
+<column name="Multiplexer">-, -, -, 1618</column>
+<column name="Register">-, -, 700, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">~0, 0, 2, 9</specialColumn>
+<specialColumn name="Utilization (%)">~0, 0, 3, 11</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="bmesensor_AXILiteS_s_axi_U">bmesensor_AXILiteS_s_axi, 0, 0, 1594, 2664</column>
+<column name="bmesensor_AXILiteS_s_axi_U">bmesensor_AXILiteS_s_axi, 0, 0, 2202, 3688</column>
 <column name="bmesensor_iic_m_axi_U">bmesensor_iic_m_axi, 2, 0, 512, 580</column>
 </table>
 </item>
@@ -81,41 +81,45 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="phitmp_fu_971_p2">+, 0, 0, 39, 32, 1</column>
-<column name="pressByteCount_1_fu_926_p2">+, 0, 0, 10, 2, 2</column>
-<column name="ap_block_state117_io">and, 0, 0, 8, 1, 1</column>
-<column name="ap_block_state141">and, 0, 0, 8, 1, 1</column>
-<column name="ap_block_state158_io">and, 0, 0, 8, 1, 1</column>
-<column name="ap_block_state166_io">and, 0, 0, 8, 1, 1</column>
-<column name="ap_block_state172">and, 0, 0, 8, 1, 1</column>
-<column name="ap_block_state214_io">and, 0, 0, 8, 1, 1</column>
-<column name="ap_block_state228">and, 0, 0, 8, 1, 1</column>
+<column name="phitmp_fu_1227_p2">+, 0, 0, 39, 32, 1</column>
+<column name="pressByteCount_1_fu_1154_p2">+, 0, 0, 10, 2, 2</column>
+<column name="ap_block_state197_io">and, 0, 0, 8, 1, 1</column>
+<column name="ap_block_state205_io">and, 0, 0, 8, 1, 1</column>
+<column name="ap_block_state211">and, 0, 0, 8, 1, 1</column>
+<column name="ap_block_state254_io">and, 0, 0, 8, 1, 1</column>
+<column name="ap_block_state268">and, 0, 0, 8, 1, 1</column>
 <column name="ap_block_state65_io">and, 0, 0, 8, 1, 1</column>
 <column name="ap_block_state72">and, 0, 0, 8, 1, 1</column>
-<column name="tmp_10_fu_905_p2">icmp, 0, 0, 8, 2, 2</column>
-<column name="tmp_12_fu_965_p2">icmp, 0, 0, 18, 32, 10</column>
-<column name="tmp_13_fu_977_p2">icmp, 0, 0, 18, 32, 1</column>
-<column name="tmp_8_fu_871_p2">icmp, 0, 0, 8, 2, 1</column>
-<column name="tmp_9_fu_877_p2">icmp, 0, 0, 8, 2, 1</column>
-<column name="tmp_fu_807_p2">icmp, 0, 0, 18, 32, 1</column>
-<column name="tmp_s_fu_892_p2">icmp, 0, 0, 9, 2, 3</column>
-<column name="ap_block_state118_io">or, 0, 0, 8, 1, 1</column>
-<column name="tmp_4_fu_898_p2">or, 0, 0, 39, 32, 5</column>
+<column name="tmp_11_fu_1108_p2">icmp, 0, 0, 9, 4, 1</column>
+<column name="tmp_12_fu_1197_p2">icmp, 0, 0, 11, 5, 1</column>
+<column name="tmp_13_fu_1114_p2">icmp, 0, 0, 18, 32, 1</column>
+<column name="tmp_14_fu_1120_p2">icmp, 0, 0, 9, 2, 3</column>
+<column name="tmp_17_fu_1133_p2">icmp, 0, 0, 8, 2, 2</column>
+<column name="tmp_18_fu_1215_p2">icmp, 0, 0, 9, 3, 1</column>
+<column name="tmp_19_fu_1221_p2">icmp, 0, 0, 18, 32, 10</column>
+<column name="tmp_22_fu_1233_p2">icmp, 0, 0, 18, 32, 1</column>
+<column name="tmp_2_fu_1026_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="tmp_4_fu_1081_p2">icmp, 0, 0, 8, 2, 1</column>
+<column name="tmp_fu_997_p2">icmp, 0, 0, 18, 32, 1</column>
+<column name="tmp_s_fu_1075_p2">icmp, 0, 0, 8, 2, 1</column>
+<column name="ap_block_state133_io">or, 0, 0, 8, 1, 1</column>
+<column name="ap_block_state134_io">or, 0, 0, 8, 1, 1</column>
+<column name="tmp_15_fu_1126_p2">or, 0, 0, 39, 32, 5</column>
 <column name="byteTracker">select, 0, 0, 2, 1, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">1017, 238, 1, 238</column>
+<column name="ap_NS_fsm">1261, 279, 1, 279</column>
 <column name="ap_sig_ioackin_iic_ARREADY">9, 2, 1, 2</column>
 <column name="ap_sig_ioackin_iic_AWREADY">9, 2, 1, 2</column>
 <column name="ap_sig_ioackin_iic_WREADY">9, 2, 1, 2</column>
 <column name="clearLatchedInterr_o">9, 2, 32, 64</column>
-<column name="counter_reg_733">9, 2, 32, 64</column>
+<column name="counter_reg_897">9, 2, 32, 64</column>
 <column name="ctrl_reg_val3_o">9, 2, 32, 64</column>
-<column name="iic_ARADDR">44, 9, 32, 288</column>
+<column name="iic_ARADDR">47, 10, 32, 320</column>
 <column name="iic_AWADDR">38, 7, 32, 224</column>
-<column name="iic_WDATA">105, 22, 32, 704</column>
+<column name="iic_WDATA">101, 21, 32, 672</column>
 <column name="iic_blk_n_AR">9, 2, 1, 2</column>
 <column name="iic_blk_n_AW">9, 2, 1, 2</column>
 <column name="iic_blk_n_B">9, 2, 1, 2</column>
@@ -123,7 +127,7 @@
 <column name="iic_blk_n_W">9, 2, 1, 2</column>
 <column name="interrStatus2_o">9, 2, 32, 64</column>
 <column name="lastByteRead_o">9, 2, 32, 64</column>
-<column name="pressByteCount_reg_721">9, 2, 2, 4</column>
+<column name="pressByteCount_reg_885">9, 2, 2, 4</column>
 <column name="pressure_lsb_o">9, 2, 32, 64</column>
 <column name="pressure_msb_o">9, 2, 32, 64</column>
 <column name="pressure_xlsb_o">9, 2, 32, 64</column>
@@ -133,7 +137,8 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">237, 0, 237, 0</column>
+<column name="ap_CS_fsm">278, 0, 278, 0</column>
+<column name="ap_reg_ioackin_clearInterrStatus_dummy_ack">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_clearedInterrStatus1_dummy_ack">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_ctrl2RegState_enabled_dummy_ack">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_ctrl_reg_outValue1_dummy_ack">1, 0, 1, 0</column>
@@ -143,33 +148,41 @@
 <column name="ap_reg_ioackin_iic_ARREADY">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_iic_AWREADY">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_iic_WREADY">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_interrStatus_dummy_ack">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_resetAxiEnabled_dummy_ack">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_stat_reg_outValue1_dummy_ack">1, 0, 1, 0</column>
-<column name="clearLatchedInterr_r_reg_1147">32, 0, 32, 0</column>
-<column name="counter_reg_733">32, 0, 32, 0</column>
-<column name="ctrl_reg_val2_copy_1_reg_1066">3, 0, 3, 0</column>
-<column name="iic_addr_2_read_reg_1021">32, 0, 32, 0</column>
-<column name="iic_addr_5_read_reg_1123">32, 0, 32, 0</column>
-<column name="lastByteRead_read_reg_1118">32, 0, 32, 0</column>
-<column name="pressByteCount_1_reg_1132">2, 0, 2, 0</column>
-<column name="pressByteCount_reg_721">2, 0, 2, 0</column>
-<column name="reg_760">32, 0, 32, 0</column>
-<column name="reg_767">32, 0, 32, 0</column>
-<column name="reg_773">32, 0, 32, 0</column>
-<column name="tmp_10_reg_1128">1, 0, 1, 0</column>
-<column name="tmp_11_reg_1071">1, 0, 1, 0</column>
-<column name="tmp_15_reg_1075">1, 0, 1, 0</column>
-<column name="tmp_20_reg_1155">1, 0, 1, 0</column>
-<column name="tmp_22_reg_1137">1, 0, 1, 0</column>
-<column name="tmp_23_reg_1142">2, 0, 2, 0</column>
-<column name="tmp_2_reg_1056">1, 0, 1, 0</column>
-<column name="tmp_3_reg_1061">2, 0, 2, 0</column>
-<column name="tmp_5_fu_182">32, 0, 32, 0</column>
-<column name="tmp_6_fu_178">32, 0, 32, 0</column>
-<column name="tmp_7_fu_174">32, 0, 32, 0</column>
-<column name="tmp_9_reg_1107">1, 0, 1, 0</column>
-<column name="tmp_reg_1043">1, 0, 1, 0</column>
-<column name="tmp_s_reg_1114">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_tx_fifo_1_dummy_ack">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_tx_fifo_2_dummy_ack">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_tx_fifo_3_dummy_ack">1, 0, 1, 0</column>
+<column name="clearLatchedInterr_r_reg_1407">32, 0, 32, 0</column>
+<column name="counter_reg_897">32, 0, 32, 0</column>
+<column name="ctrl_reg_val2_copy_1_reg_1308">3, 0, 3, 0</column>
+<column name="iic_addr_5_read_reg_1383">32, 0, 32, 0</column>
+<column name="lastByteRead_read_reg_1378">32, 0, 32, 0</column>
+<column name="pressByteCount_1_reg_1392">2, 0, 2, 0</column>
+<column name="pressByteCount_reg_885">2, 0, 2, 0</column>
+<column name="reg_932">32, 0, 32, 0</column>
+<column name="reg_939">32, 0, 32, 0</column>
+<column name="reg_947">32, 0, 32, 0</column>
+<column name="reg_953">32, 0, 32, 0</column>
+<column name="reg_960">32, 0, 32, 0</column>
+<column name="tmp_14_reg_1374">1, 0, 1, 0</column>
+<column name="tmp_17_reg_1388">1, 0, 1, 0</column>
+<column name="tmp_21_reg_1313">1, 0, 1, 0</column>
+<column name="tmp_23_reg_1322">1, 0, 1, 0</column>
+<column name="tmp_24_reg_1327">1, 0, 1, 0</column>
+<column name="tmp_26_reg_1412">1, 0, 1, 0</column>
+<column name="tmp_27_reg_1363">1, 0, 1, 0</column>
+<column name="tmp_28_reg_1420">1, 0, 1, 0</column>
+<column name="tmp_29_reg_1424">1, 0, 1, 0</column>
+<column name="tmp_2_reg_1318">1, 0, 1, 0</column>
+<column name="tmp_30_reg_1397">1, 0, 1, 0</column>
+<column name="tmp_31_reg_1402">2, 0, 2, 0</column>
+<column name="tmp_4_reg_1359">1, 0, 1, 0</column>
+<column name="tmp_7_fu_226">32, 0, 32, 0</column>
+<column name="tmp_8_fu_222">32, 0, 32, 0</column>
+<column name="tmp_9_fu_218">32, 0, 32, 0</column>
+<column name="tmp_reg_1295">1, 0, 1, 0</column>
 </table>
 </item>
 </section>
@@ -179,23 +192,23 @@
 <section name = "Interface" level="0">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
-<column name="s_axi_AXILiteS_AWVALID">in, 1, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_AWREADY">out, 1, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_AWADDR">in, 9, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_WVALID">in, 1, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_WREADY">out, 1, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_WDATA">in, 32, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_WSTRB">in, 4, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_ARVALID">in, 1, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_ARREADY">out, 1, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_ARADDR">in, 9, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_RVALID">out, 1, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_RREADY">in, 1, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_RDATA">out, 32, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_RRESP">out, 2, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_BVALID">out, 1, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_BREADY">in, 1, s_axi, AXILiteS, scalar</column>
-<column name="s_axi_AXILiteS_BRESP">out, 2, s_axi, AXILiteS, scalar</column>
+<column name="s_axi_AXILiteS_AWVALID">in, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_AWREADY">out, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_AWADDR">in, 9, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_WVALID">in, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_WREADY">out, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_WDATA">in, 32, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_WSTRB">in, 4, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_ARVALID">in, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_ARREADY">out, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_ARADDR">in, 9, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_RVALID">out, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_RREADY">in, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_RDATA">out, 32, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_RRESP">out, 2, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_BVALID">out, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_BREADY">in, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_BRESP">out, 2, s_axi, AXILiteS, pointer</column>
 <column name="ap_clk">in, 1, ap_ctrl_hs, bmesensor, return value</column>
 <column name="ap_rst_n">in, 1, ap_ctrl_hs, bmesensor, return value</column>
 <column name="interrupt">out, 1, ap_ctrl_hs, bmesensor, return value</column>
@@ -253,7 +266,7 @@
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
 <column name="'iic_addr'">getelementptr, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, -</column>
-<column name="'iic_load_req', bmesensor.cpp:90">readreq, 3.50, 3.50, -, -, -, m_axi, request, &apos;iic&apos;, -, -, -, -, -</column>
+<column name="'iic_load_req', bmesensor.cpp:111">readreq, 3.50, 3.50, -, -, -, m_axi, request, &apos;iic&apos;, -, -, -, -, -</column>
 </table>
 </item>
 </section>

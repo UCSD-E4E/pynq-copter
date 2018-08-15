@@ -1,5 +1,5 @@
 set C_TypeInfoList {{ 
-"bmesensor" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"stat_reg_outValue1": [[], {"reference": "0"}] }, {"empty_pirq_outValue": [[], {"reference": "0"}] }, {"full_pirq_outValue": [[], {"reference": "0"}] }, {"ctrl_reg_outValue1": [[], {"reference": "0"}] }, {"clearedInterrStatus1": [[], {"reference": "0"}] }, {"rxFifoDepth1": [[], {"reference": "0"}] }, {"resetAxiEnabled": [[], {"reference":  {"scalar": "int"}}] }, {"ctrl2RegState_enabled": [[], {"reference":  {"scalar": "int"}}] }, {"byteCountZero": [[], {"reference":  {"scalar": "int"}}] }, {"clearedInterruptStatus2": [[], {"reference":  {"scalar": "int"}}] }, {"interrStatus2": [[], {"reference": "0"}] }, {"disableTxBitDirection": [[], {"reference":  {"scalar": "int"}}] }, {"pressByteCountEnabled": [[], {"reference":  {"scalar": "int"}}] }, {"byteTracker": [[], {"reference":  {"scalar": "int"}}] }, {"interrStatus3StateEnabled": [[], {"reference":  {"scalar": "int"}}] }, {"checkInterrReg": [[], {"reference":  {"scalar": "int"}}] }, {"ctrl_reg_val3": [[], {"reference":  {"scalar": "int"}}] }, {"lastByteRead": [[], {"reference": "0"}] }, {"rx_fifo": [[], {"reference": "0"}] }, {"clearLatchedInterr": [[], {"reference": "0"}] }, {"releaseBus": [[], {"reference":  {"scalar": "int"}}] }, {"receivedSuccess": [[], {"reference":  {"scalar": "int"}}] }, {"pressure_msb": [[], {"reference": "0"}] }, {"pressure_lsb": [[], {"reference": "0"}] }, {"pressure_xlsb": [[], {"reference": "0"}] }, {"stat_reg_val6_state": [[],"1"] }],[],""], 
+"bmesensor" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"stat_reg_outValue1": [[], {"reference": "0"}] }, {"empty_pirq_outValue": [[], {"reference": "0"}] }, {"full_pirq_outValue": [[], {"reference": "0"}] }, {"ctrl_reg_outValue1": [[], {"reference": "0"}] }, {"clearedInterrStatus1": [[], {"reference": "0"}] }, {"rxFifoDepth1": [[], {"reference": "0"}] }, {"resetAxiEnabled": [[], {"reference":  {"scalar": "int"}}] }, {"ctrl2RegState_enabled": [[], {"reference":  {"scalar": "int"}}] }, {"byteCountZero": [[], {"reference":  {"scalar": "int"}}] }, {"clearedInterruptStatus2": [[], {"reference":  {"scalar": "int"}}] }, {"interrStatus2": [[], {"reference": "0"}] }, {"disableTxBitDirection": [[], {"reference":  {"scalar": "int"}}] }, {"pressByteCountEnabled": [[], {"reference":  {"scalar": "int"}}] }, {"byteTracker": [[], {"reference":  {"scalar": "int"}}] }, {"interrStatus3StateEnabled": [[], {"reference":  {"scalar": "int"}}] }, {"checkInterrReg": [[], {"reference":  {"scalar": "int"}}] }, {"ctrl_reg_val3": [[], {"reference":  {"scalar": "int"}}] }, {"lastByteRead": [[], {"reference": "0"}] }, {"rx_fifo": [[], {"reference": "0"}] }, {"clearLatchedInterr": [[], {"reference": "0"}] }, {"releaseBus": [[], {"reference":  {"scalar": "int"}}] }, {"receivedSuccess": [[], {"reference":  {"scalar": "int"}}] }, {"pressure_msb": [[], {"reference": "0"}] }, {"pressure_lsb": [[], {"reference": "0"}] }, {"pressure_xlsb": [[], {"reference": "0"}] }, {"stat_reg_val6_state": [[], {"reference": "1"}] }, {"ctrl_reg_val2": [[], {"reference": "1"}] }, {"ctrl2RegState": [[], {"reference": "1"}] }, {"ctrl_reg_check": [[], {"reference": "1"}] }, {"zeroBytes": [[], {"reference": "1"}] }, {"interrStatus3State": [[], {"reference": "1"}] }, {"interrStatus5State": [[], {"reference": "1"}] }, {"tx_fifo_1": [[], {"reference": "1"}] }, {"tx_fifo_2": [[], {"reference": "1"}] }, {"interrStatus": [[], {"reference": "1"}] }, {"stat_reg_val": [[], {"reference": "1"}] }, {"statRegState": [[], {"reference": "1"}] }, {"clearInterrStatus": [[], {"reference": "1"}] }, {"clearInterrStatusCheck": [[], {"reference": "1"}] }, {"error1": [[], {"reference":  {"scalar": "int"}}] }, {"tx_fifo_3": [[], {"reference": "1"}] }, {"interrStatus3": [[], {"reference": "1"}] }],[],""], 
 "0": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}], 
 "1": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}]
 }}
@@ -41,7 +41,23 @@ set C_modelArgList {
 	{ pressure_msb int 32 regular {axi_slave 2}  }
 	{ pressure_lsb int 32 regular {axi_slave 2}  }
 	{ pressure_xlsb int 32 regular {axi_slave 2}  }
-	{ stat_reg_val6_state int 32 unused {axi_slave 0}  }
+	{ stat_reg_val6_state int 32 regular {axi_slave 1}  }
+	{ ctrl_reg_val2 int 32 regular {axi_slave 1}  }
+	{ ctrl2RegState int 32 regular {axi_slave 1}  }
+	{ ctrl_reg_check int 32 regular {axi_slave 1}  }
+	{ zeroBytes int 32 unused {axi_slave 0}  }
+	{ interrStatus3State int 32 regular {axi_slave 1}  }
+	{ interrStatus5State int 32 regular {axi_slave 1}  }
+	{ tx_fifo_1 int 32 regular {axi_slave 1}  }
+	{ tx_fifo_2 int 32 regular {axi_slave 1}  }
+	{ interrStatus int 32 regular {axi_slave 1}  }
+	{ stat_reg_val int 32 regular {axi_slave 1}  }
+	{ statRegState int 32 regular {axi_slave 1}  }
+	{ clearInterrStatus int 32 regular {axi_slave 1}  }
+	{ clearInterrStatusCheck int 32 regular {axi_slave 1}  }
+	{ error1 int 32 regular {axi_slave 1}  }
+	{ tx_fifo_3 int 32 regular {axi_slave 1}  }
+	{ interrStatus3 int 32 regular {axi_slave 1}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "iic", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "iic","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 4095,"step" : 1}]}]}]} , 
@@ -70,7 +86,23 @@ set C_modelArgMapList {[
  	{ "Name" : "pressure_msb", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "pressure_msb","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":288, "out":296}, "offset_end" : {"in":295, "out":303}} , 
  	{ "Name" : "pressure_lsb", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "pressure_lsb","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":304, "out":312}, "offset_end" : {"in":311, "out":319}} , 
  	{ "Name" : "pressure_xlsb", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "pressure_xlsb","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":320, "out":328}, "offset_end" : {"in":327, "out":335}} , 
- 	{ "Name" : "stat_reg_val6_state", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "stat_reg_val6_state","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":336}, "offset_end" : {"in":343}} ]}
+ 	{ "Name" : "stat_reg_val6_state", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "stat_reg_val6_state","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":336}, "offset_end" : {"out":343}} , 
+ 	{ "Name" : "ctrl_reg_val2", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "ctrl_reg_val2","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":344}, "offset_end" : {"out":351}} , 
+ 	{ "Name" : "ctrl2RegState", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "ctrl2RegState","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":352}, "offset_end" : {"out":359}} , 
+ 	{ "Name" : "ctrl_reg_check", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "ctrl_reg_check","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":360}, "offset_end" : {"out":367}} , 
+ 	{ "Name" : "zeroBytes", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "zeroBytes","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":368}, "offset_end" : {"in":375}} , 
+ 	{ "Name" : "interrStatus3State", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "interrStatus3State","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":376}, "offset_end" : {"out":383}} , 
+ 	{ "Name" : "interrStatus5State", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "interrStatus5State","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":384}, "offset_end" : {"out":391}} , 
+ 	{ "Name" : "tx_fifo_1", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "tx_fifo_1","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":392}, "offset_end" : {"out":399}} , 
+ 	{ "Name" : "tx_fifo_2", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "tx_fifo_2","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":400}, "offset_end" : {"out":407}} , 
+ 	{ "Name" : "interrStatus", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "interrStatus","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":408}, "offset_end" : {"out":415}} , 
+ 	{ "Name" : "stat_reg_val", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "stat_reg_val","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":416}, "offset_end" : {"out":423}} , 
+ 	{ "Name" : "statRegState", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "statRegState","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":424}, "offset_end" : {"out":431}} , 
+ 	{ "Name" : "clearInterrStatus", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "clearInterrStatus","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":432}, "offset_end" : {"out":439}} , 
+ 	{ "Name" : "clearInterrStatusCheck", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "clearInterrStatusCheck","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":440}, "offset_end" : {"out":447}} , 
+ 	{ "Name" : "error1", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "error1","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":448}, "offset_end" : {"out":455}} , 
+ 	{ "Name" : "tx_fifo_3", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "tx_fifo_3","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":456}, "offset_end" : {"out":463}} , 
+ 	{ "Name" : "interrStatus3", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "interrStatus3","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":464}, "offset_end" : {"out":471}} ]}
 # RTL Port declarations: 
 set portNum 65
 set portList { 
@@ -141,14 +173,14 @@ set portList {
 	{ interrupt sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_AXILiteS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWADDR" },"address":[{"name":"bmesensor","role":"start","value":"0","valid_bit":"0"},{"name":"bmesensor","role":"continue","value":"0","valid_bit":"4"},{"name":"bmesensor","role":"auto_start","value":"0","valid_bit":"7"},{"name":"stat_reg_outValue1","role":"data","value":"16"},{"name":"empty_pirq_outValue","role":"data","value":"32"},{"name":"full_pirq_outValue","role":"data","value":"48"},{"name":"ctrl_reg_outValue1","role":"data","value":"64"},{"name":"clearedInterrStatus1","role":"data","value":"80"},{"name":"rxFifoDepth1","role":"data","value":"96"},{"name":"byteCountZero","role":"data","value":"128"},{"name":"clearedInterruptStatus2","role":"data","value":"136"},{"name":"interrStatus2","role":"data","value":"144"},{"name":"ctrl_reg_val3","role":"data","value":"200"},{"name":"lastByteRead","role":"data","value":"216"},{"name":"rx_fifo","role":"data","value":"232"},{"name":"clearLatchedInterr","role":"data","value":"248"},{"name":"receivedSuccess","role":"data","value":"272"},{"name":"pressure_msb","role":"data","value":"288"},{"name":"pressure_lsb","role":"data","value":"304"},{"name":"pressure_xlsb","role":"data","value":"320"},{"name":"stat_reg_val6_state","role":"data","value":"336"}] },
+	{ "name": "s_axi_AXILiteS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWADDR" },"address":[{"name":"bmesensor","role":"start","value":"0","valid_bit":"0"},{"name":"bmesensor","role":"continue","value":"0","valid_bit":"4"},{"name":"bmesensor","role":"auto_start","value":"0","valid_bit":"7"},{"name":"stat_reg_outValue1","role":"data","value":"16"},{"name":"empty_pirq_outValue","role":"data","value":"32"},{"name":"full_pirq_outValue","role":"data","value":"48"},{"name":"ctrl_reg_outValue1","role":"data","value":"64"},{"name":"clearedInterrStatus1","role":"data","value":"80"},{"name":"rxFifoDepth1","role":"data","value":"96"},{"name":"byteCountZero","role":"data","value":"128"},{"name":"clearedInterruptStatus2","role":"data","value":"136"},{"name":"interrStatus2","role":"data","value":"144"},{"name":"ctrl_reg_val3","role":"data","value":"200"},{"name":"lastByteRead","role":"data","value":"216"},{"name":"rx_fifo","role":"data","value":"232"},{"name":"clearLatchedInterr","role":"data","value":"248"},{"name":"receivedSuccess","role":"data","value":"272"},{"name":"pressure_msb","role":"data","value":"288"},{"name":"pressure_lsb","role":"data","value":"304"},{"name":"pressure_xlsb","role":"data","value":"320"},{"name":"zeroBytes","role":"data","value":"368"}] },
 	{ "name": "s_axi_AXILiteS_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWVALID" } },
 	{ "name": "s_axi_AXILiteS_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWREADY" } },
 	{ "name": "s_axi_AXILiteS_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WVALID" } },
 	{ "name": "s_axi_AXILiteS_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WREADY" } },
 	{ "name": "s_axi_AXILiteS_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WDATA" } },
 	{ "name": "s_axi_AXILiteS_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WSTRB" } },
-	{ "name": "s_axi_AXILiteS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARADDR" },"address":[{"name":"bmesensor","role":"start","value":"0","valid_bit":"0"},{"name":"bmesensor","role":"done","value":"0","valid_bit":"1"},{"name":"bmesensor","role":"idle","value":"0","valid_bit":"2"},{"name":"bmesensor","role":"ready","value":"0","valid_bit":"3"},{"name":"bmesensor","role":"auto_start","value":"0","valid_bit":"7"},{"name":"stat_reg_outValue1","role":"data","value":"24"}, {"name":"stat_reg_outValue1","role":"valid","value":"28","valid_bit":"0"},{"name":"empty_pirq_outValue","role":"data","value":"40"}, {"name":"empty_pirq_outValue","role":"valid","value":"44","valid_bit":"0"},{"name":"full_pirq_outValue","role":"data","value":"56"}, {"name":"full_pirq_outValue","role":"valid","value":"60","valid_bit":"0"},{"name":"ctrl_reg_outValue1","role":"data","value":"72"}, {"name":"ctrl_reg_outValue1","role":"valid","value":"76","valid_bit":"0"},{"name":"clearedInterrStatus1","role":"data","value":"88"}, {"name":"clearedInterrStatus1","role":"valid","value":"92","valid_bit":"0"},{"name":"rxFifoDepth1","role":"data","value":"104"}, {"name":"rxFifoDepth1","role":"valid","value":"108","valid_bit":"0"},{"name":"resetAxiEnabled","role":"data","value":"112"}, {"name":"resetAxiEnabled","role":"valid","value":"116","valid_bit":"0"},{"name":"ctrl2RegState_enabled","role":"data","value":"120"}, {"name":"ctrl2RegState_enabled","role":"valid","value":"124","valid_bit":"0"},{"name":"interrStatus2","role":"data","value":"152"}, {"name":"interrStatus2","role":"valid","value":"156","valid_bit":"0"},{"name":"disableTxBitDirection","role":"data","value":"160"}, {"name":"disableTxBitDirection","role":"valid","value":"164","valid_bit":"0"},{"name":"pressByteCountEnabled","role":"data","value":"168"}, {"name":"pressByteCountEnabled","role":"valid","value":"172","valid_bit":"0"},{"name":"byteTracker","role":"data","value":"176"}, {"name":"byteTracker","role":"valid","value":"180","valid_bit":"0"},{"name":"interrStatus3StateEnabled","role":"data","value":"184"}, {"name":"interrStatus3StateEnabled","role":"valid","value":"188","valid_bit":"0"},{"name":"checkInterrReg","role":"data","value":"192"}, {"name":"checkInterrReg","role":"valid","value":"196","valid_bit":"0"},{"name":"ctrl_reg_val3","role":"data","value":"208"}, {"name":"ctrl_reg_val3","role":"valid","value":"212","valid_bit":"0"},{"name":"lastByteRead","role":"data","value":"224"}, {"name":"lastByteRead","role":"valid","value":"228","valid_bit":"0"},{"name":"rx_fifo","role":"data","value":"240"}, {"name":"rx_fifo","role":"valid","value":"244","valid_bit":"0"},{"name":"clearLatchedInterr","role":"data","value":"256"}, {"name":"clearLatchedInterr","role":"valid","value":"260","valid_bit":"0"},{"name":"releaseBus","role":"data","value":"264"}, {"name":"releaseBus","role":"valid","value":"268","valid_bit":"0"},{"name":"receivedSuccess","role":"data","value":"280"}, {"name":"receivedSuccess","role":"valid","value":"284","valid_bit":"0"},{"name":"pressure_msb","role":"data","value":"296"}, {"name":"pressure_msb","role":"valid","value":"300","valid_bit":"0"},{"name":"pressure_lsb","role":"data","value":"312"}, {"name":"pressure_lsb","role":"valid","value":"316","valid_bit":"0"},{"name":"pressure_xlsb","role":"data","value":"328"}, {"name":"pressure_xlsb","role":"valid","value":"332","valid_bit":"0"}] },
+	{ "name": "s_axi_AXILiteS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARADDR" },"address":[{"name":"bmesensor","role":"start","value":"0","valid_bit":"0"},{"name":"bmesensor","role":"done","value":"0","valid_bit":"1"},{"name":"bmesensor","role":"idle","value":"0","valid_bit":"2"},{"name":"bmesensor","role":"ready","value":"0","valid_bit":"3"},{"name":"bmesensor","role":"auto_start","value":"0","valid_bit":"7"},{"name":"stat_reg_outValue1","role":"data","value":"24"}, {"name":"stat_reg_outValue1","role":"valid","value":"28","valid_bit":"0"},{"name":"empty_pirq_outValue","role":"data","value":"40"}, {"name":"empty_pirq_outValue","role":"valid","value":"44","valid_bit":"0"},{"name":"full_pirq_outValue","role":"data","value":"56"}, {"name":"full_pirq_outValue","role":"valid","value":"60","valid_bit":"0"},{"name":"ctrl_reg_outValue1","role":"data","value":"72"}, {"name":"ctrl_reg_outValue1","role":"valid","value":"76","valid_bit":"0"},{"name":"clearedInterrStatus1","role":"data","value":"88"}, {"name":"clearedInterrStatus1","role":"valid","value":"92","valid_bit":"0"},{"name":"rxFifoDepth1","role":"data","value":"104"}, {"name":"rxFifoDepth1","role":"valid","value":"108","valid_bit":"0"},{"name":"resetAxiEnabled","role":"data","value":"112"}, {"name":"resetAxiEnabled","role":"valid","value":"116","valid_bit":"0"},{"name":"ctrl2RegState_enabled","role":"data","value":"120"}, {"name":"ctrl2RegState_enabled","role":"valid","value":"124","valid_bit":"0"},{"name":"interrStatus2","role":"data","value":"152"}, {"name":"interrStatus2","role":"valid","value":"156","valid_bit":"0"},{"name":"disableTxBitDirection","role":"data","value":"160"}, {"name":"disableTxBitDirection","role":"valid","value":"164","valid_bit":"0"},{"name":"pressByteCountEnabled","role":"data","value":"168"}, {"name":"pressByteCountEnabled","role":"valid","value":"172","valid_bit":"0"},{"name":"byteTracker","role":"data","value":"176"}, {"name":"byteTracker","role":"valid","value":"180","valid_bit":"0"},{"name":"interrStatus3StateEnabled","role":"data","value":"184"}, {"name":"interrStatus3StateEnabled","role":"valid","value":"188","valid_bit":"0"},{"name":"checkInterrReg","role":"data","value":"192"}, {"name":"checkInterrReg","role":"valid","value":"196","valid_bit":"0"},{"name":"ctrl_reg_val3","role":"data","value":"208"}, {"name":"ctrl_reg_val3","role":"valid","value":"212","valid_bit":"0"},{"name":"lastByteRead","role":"data","value":"224"}, {"name":"lastByteRead","role":"valid","value":"228","valid_bit":"0"},{"name":"rx_fifo","role":"data","value":"240"}, {"name":"rx_fifo","role":"valid","value":"244","valid_bit":"0"},{"name":"clearLatchedInterr","role":"data","value":"256"}, {"name":"clearLatchedInterr","role":"valid","value":"260","valid_bit":"0"},{"name":"releaseBus","role":"data","value":"264"}, {"name":"releaseBus","role":"valid","value":"268","valid_bit":"0"},{"name":"receivedSuccess","role":"data","value":"280"}, {"name":"receivedSuccess","role":"valid","value":"284","valid_bit":"0"},{"name":"pressure_msb","role":"data","value":"296"}, {"name":"pressure_msb","role":"valid","value":"300","valid_bit":"0"},{"name":"pressure_lsb","role":"data","value":"312"}, {"name":"pressure_lsb","role":"valid","value":"316","valid_bit":"0"},{"name":"pressure_xlsb","role":"data","value":"328"}, {"name":"pressure_xlsb","role":"valid","value":"332","valid_bit":"0"},{"name":"stat_reg_val6_state","role":"data","value":"336"}, {"name":"stat_reg_val6_state","role":"valid","value":"340","valid_bit":"0"},{"name":"ctrl_reg_val2","role":"data","value":"344"}, {"name":"ctrl_reg_val2","role":"valid","value":"348","valid_bit":"0"},{"name":"ctrl2RegState","role":"data","value":"352"}, {"name":"ctrl2RegState","role":"valid","value":"356","valid_bit":"0"},{"name":"ctrl_reg_check","role":"data","value":"360"}, {"name":"ctrl_reg_check","role":"valid","value":"364","valid_bit":"0"},{"name":"interrStatus3State","role":"data","value":"376"}, {"name":"interrStatus3State","role":"valid","value":"380","valid_bit":"0"},{"name":"interrStatus5State","role":"data","value":"384"}, {"name":"interrStatus5State","role":"valid","value":"388","valid_bit":"0"},{"name":"tx_fifo_1","role":"data","value":"392"}, {"name":"tx_fifo_1","role":"valid","value":"396","valid_bit":"0"},{"name":"tx_fifo_2","role":"data","value":"400"}, {"name":"tx_fifo_2","role":"valid","value":"404","valid_bit":"0"},{"name":"interrStatus","role":"data","value":"408"}, {"name":"interrStatus","role":"valid","value":"412","valid_bit":"0"},{"name":"stat_reg_val","role":"data","value":"416"}, {"name":"stat_reg_val","role":"valid","value":"420","valid_bit":"0"},{"name":"statRegState","role":"data","value":"424"}, {"name":"statRegState","role":"valid","value":"428","valid_bit":"0"},{"name":"clearInterrStatus","role":"data","value":"432"}, {"name":"clearInterrStatus","role":"valid","value":"436","valid_bit":"0"},{"name":"clearInterrStatusCheck","role":"data","value":"440"}, {"name":"clearInterrStatusCheck","role":"valid","value":"444","valid_bit":"0"},{"name":"error1","role":"data","value":"448"}, {"name":"error1","role":"valid","value":"452","valid_bit":"0"},{"name":"tx_fifo_3","role":"data","value":"456"}, {"name":"tx_fifo_3","role":"valid","value":"460","valid_bit":"0"},{"name":"interrStatus3","role":"data","value":"464"}, {"name":"interrStatus3","role":"valid","value":"468","valid_bit":"0"}] },
 	{ "name": "s_axi_AXILiteS_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARVALID" } },
 	{ "name": "s_axi_AXILiteS_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARREADY" } },
 	{ "name": "s_axi_AXILiteS_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "RVALID" } },
@@ -249,40 +281,72 @@ set RtlHierarchyInfo {[
 			{"Name" : "pressure_msb", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "pressure_lsb", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "pressure_xlsb", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "stat_reg_val6_state", "Type" : "None", "Direction" : "I"}]},
+			{"Name" : "stat_reg_val6_state", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "ctrl_reg_val2", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "ctrl2RegState", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "ctrl_reg_check", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "zeroBytes", "Type" : "None", "Direction" : "I"},
+			{"Name" : "interrStatus3State", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "interrStatus5State", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "tx_fifo_1", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "tx_fifo_2", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "interrStatus", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "stat_reg_val", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "statRegState", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "clearInterrStatus", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "clearInterrStatusCheck", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "error1", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "tx_fifo_3", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "interrStatus3", "Type" : "Vld", "Direction" : "O"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.bmesensor_AXILiteS_s_axi_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.bmesensor_iic_m_axi_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	bmesensor {
-		iic {Type IO LastRead 193 FirstWrite 9}
+		iic {Type IO LastRead 233 FirstWrite 9}
 		stat_reg_outValue1 {Type IO LastRead 7 FirstWrite 39}
 		empty_pirq_outValue {Type IO LastRead 7 FirstWrite 9}
 		full_pirq_outValue {Type IO LastRead 7 FirstWrite 23}
 		ctrl_reg_outValue1 {Type IO LastRead 7 FirstWrite 39}
-		clearedInterrStatus1 {Type IO LastRead 7 FirstWrite 102}
-		rxFifoDepth1 {Type IO LastRead 7 FirstWrite 116}
+		clearedInterrStatus1 {Type IO LastRead 7 FirstWrite 117}
+		rxFifoDepth1 {Type IO LastRead 7 FirstWrite 132}
 		resetAxiEnabled {Type O LastRead -1 FirstWrite 65}
-		ctrl2RegState_enabled {Type O LastRead -1 FirstWrite 117}
+		ctrl2RegState_enabled {Type O LastRead -1 FirstWrite 133}
 		byteCountZero {Type I LastRead -1 FirstWrite -1}
 		clearedInterruptStatus2 {Type I LastRead -1 FirstWrite -1}
-		interrStatus2 {Type IO LastRead 134 FirstWrite 133}
-		disableTxBitDirection {Type O LastRead -1 FirstWrite 118}
-		pressByteCountEnabled {Type O LastRead -1 FirstWrite 141}
-		byteTracker {Type O LastRead -1 FirstWrite 141}
-		interrStatus3StateEnabled {Type O LastRead -1 FirstWrite 157}
-		checkInterrReg {Type O LastRead -1 FirstWrite 149}
-		ctrl_reg_val3 {Type IO LastRead 163 FirstWrite 157}
-		lastByteRead {Type IO LastRead 164 FirstWrite 163}
-		rx_fifo {Type IO LastRead 182 FirstWrite 179}
-		clearLatchedInterr {Type IO LastRead 191 FirstWrite 190}
-		releaseBus {Type O LastRead -1 FirstWrite 149}
-		receivedSuccess {Type IO LastRead 172 FirstWrite 171}
-		pressure_msb {Type IO LastRead 7 FirstWrite 172}
-		pressure_lsb {Type IO LastRead 7 FirstWrite 172}
-		pressure_xlsb {Type IO LastRead 7 FirstWrite 172}
-		stat_reg_val6_state {Type I LastRead -1 FirstWrite -1}}}
+		interrStatus2 {Type IO LastRead 164 FirstWrite 163}
+		disableTxBitDirection {Type O LastRead -1 FirstWrite 133}
+		pressByteCountEnabled {Type O LastRead -1 FirstWrite 180}
+		byteTracker {Type O LastRead -1 FirstWrite 180}
+		interrStatus3StateEnabled {Type O LastRead -1 FirstWrite 197}
+		checkInterrReg {Type O LastRead -1 FirstWrite 189}
+		ctrl_reg_val3 {Type IO LastRead 203 FirstWrite 197}
+		lastByteRead {Type IO LastRead 204 FirstWrite 203}
+		rx_fifo {Type IO LastRead 222 FirstWrite 219}
+		clearLatchedInterr {Type IO LastRead 231 FirstWrite 230}
+		releaseBus {Type O LastRead -1 FirstWrite 189}
+		receivedSuccess {Type IO LastRead 213 FirstWrite 212}
+		pressure_msb {Type IO LastRead 7 FirstWrite 213}
+		pressure_lsb {Type IO LastRead 7 FirstWrite 213}
+		pressure_xlsb {Type IO LastRead 7 FirstWrite 213}
+		stat_reg_val6_state {Type O LastRead -1 FirstWrite 212}
+		ctrl_reg_val2 {Type O LastRead -1 FirstWrite 132}
+		ctrl2RegState {Type O LastRead -1 FirstWrite 132}
+		ctrl_reg_check {Type O LastRead -1 FirstWrite 163}
+		zeroBytes {Type I LastRead -1 FirstWrite -1}
+		interrStatus3State {Type O LastRead -1 FirstWrite 189}
+		interrStatus5State {Type O LastRead -1 FirstWrite 189}
+		tx_fifo_1 {Type O LastRead -1 FirstWrite 87}
+		tx_fifo_2 {Type O LastRead -1 FirstWrite 103}
+		interrStatus {Type O LastRead -1 FirstWrite 103}
+		stat_reg_val {Type O LastRead -1 FirstWrite 163}
+		statRegState {Type O LastRead -1 FirstWrite 163}
+		clearInterrStatus {Type O LastRead -1 FirstWrite 165}
+		clearInterrStatusCheck {Type O LastRead -1 FirstWrite 179}
+		error1 {Type O LastRead -1 FirstWrite 189}
+		tx_fifo_3 {Type O LastRead -1 FirstWrite 147}
+		interrStatus3 {Type O LastRead -1 FirstWrite 189}}}
 
 set hasDtUnsupportedChannel 0
 

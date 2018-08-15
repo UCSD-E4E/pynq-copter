@@ -41,7 +41,7 @@
 static uint32_t empty_pirq_val; //return 0
 static uint32_t full_pirq_val; //return 16 
 static uint32_t ctrl_reg_val1;
-static uint32_t ctrl_reg_val2;
+//static uint32_t ctrl_reg_val2;
 static uint32_t stat_reg_val1;
 static uint32_t tx_fifo_val;
 static uint32_t stat_reg_val2;
@@ -51,16 +51,17 @@ static uint32_t stat_reg_val5;
 static uint32_t rx_fifo_val;
 
 
-void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t&ctrl_reg_outValue1, volatile uint32_t& clearedInterrStatus1, volatile uint32_t& rxFifoDepth1, int& resetAxiEnabled,int& ctrl2RegState_enabled, int& byteCountZero, int& clearedInterruptStatus2, volatile uint32_t& interrStatus2, int& disableTxBitDirection, int& pressByteCountEnabled, int& byteTracker, int& interrStatus3StateEnabled,int& checkInterrReg, volatile int& ctrl_reg_val3, volatile uint32_t& lastByteRead, volatile uint32_t& rx_fifo, volatile uint32_t& clearLatchedInterr, int& releaseBus, int& receivedSuccess, volatile uint32_t& pressure_msb, volatile uint32_t& pressure_lsb, volatile uint32_t& pressure_xlsb, uint32_t stat_reg_val6_state)
+void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t&ctrl_reg_outValue1, volatile uint32_t& clearedInterrStatus1, volatile uint32_t& rxFifoDepth1, int& resetAxiEnabled,int& ctrl2RegState_enabled, int& byteCountZero, int& clearedInterruptStatus2, volatile uint32_t& interrStatus2, int& disableTxBitDirection, int& pressByteCountEnabled, int& byteTracker, int& interrStatus3StateEnabled,int& checkInterrReg, volatile int& ctrl_reg_val3, volatile uint32_t& lastByteRead, volatile uint32_t& rx_fifo, volatile uint32_t& clearLatchedInterr, int& releaseBus, int& receivedSuccess, volatile uint32_t& pressure_msb, volatile uint32_t& pressure_lsb, volatile uint32_t& pressure_xlsb, uint32_t& stat_reg_val6_state, uint32_t& ctrl_reg_val2, uint32_t& ctrl2RegState, uint32_t& ctrl_reg_check, uint32_t& zeroBytes, uint32_t& interrStatus3State, uint32_t& interrStatus5State, uint32_t& tx_fifo_1 , uint32_t& tx_fifo_2, uint32_t& interrStatus, uint32_t& stat_reg_val, uint32_t& statRegState, uint32_t& clearInterrStatus, uint32_t& clearInterrStatusCheck, int& error1, uint32_t& tx_fifo_3, uint32_t& interrStatus3)
 {
     #pragma HLS INTERFACE s_axilite port=return
 	
     #pragma HLS INTERFACE m_axi port=iic
-
+	
+	#pragma HLS INTERFACE s_axilite port=stat_reg_outValue1
     #pragma HLS INTERFACE s_axilite port=empty_pirq_outValue
     #pragma HLS INTERFACE s_axilite port=full_pirq_outValue
     #pragma HLS INTERFACE s_axilite port=ctrl_reg_outValue1
-    #pragma HLS INTERFACE s_axilite port=stat_reg_outValue1
+    
 
     #pragma HLS INTERFACE s_axilite port=clearedInterrStatus1
 	#pragma HLS INTERFACE s_axilite port=rxFifoDepth1
@@ -68,6 +69,7 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 	#pragma HLS INTERFACE s_axilite port=ctrl2RegState_enabled
 	#pragma HLS INTERFACE s_axilite port=byteCountZero
 	#pragma HLS INTERFACE s_axilite port=clearedInterruptStatus2
+
 	#pragma HLS INTERFACE s_axilite port=interrStatus2
 	#pragma HLS INTERFACE s_axilite port=disableTxBitDirection
 	#pragma HLS INTERFACE s_axilite port=pressByteCountEnabled
@@ -84,6 +86,25 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 	#pragma HLS INTERFACE s_axilite port=pressure_lsb
 	#pragma HLS INTERFACE s_axilite port=pressure_xlsb
 	#pragma HLS INTERFACE s_axilite port=stat_reg_val6_state
+    #pragma HLS INTERFACE s_axilite port=ctrl_reg_val2
+	#pragma HLS INTERFACE s_axilite port=ctrl2RegState
+    #pragma HLS INTERFACE s_axilite port=ctrl_reg_check
+	#pragma HLS INTERFACE s_axilite port=zeroBytes
+	#pragma HLS INTERFACE s_axilite port=interrStatus3State
+	#pragma HLS INTERFACE s_axilite port=interrStatus5State
+
+
+    #pragma HLS INTERFACE s_axilite port=tx_fifo_1
+    #pragma HLS INTERFACE s_axilite port=tx_fifo_2
+	#pragma HLS INTERFACE s_axilite port=interrStatus
+	#pragma HLS INTERFACE s_axilite port=stat_reg_val
+	#pragma HLS INTERFACE s_axilite port=statRegState
+	#pragma HLS INTERFACE s_axilite port=clearInterrStatus
+	#pragma HLS INTERFACE s_axilite port=clearInterrStatusCheck
+	#pragma HLS INTERFACE s_axilite port=error1
+	#pragma HLS INTERFACE s_axilite port=tx_fifo_3
+	#pragma HLS INTERFACE s_axilite port=interrStatus3
+
 
 	///////////////INITIALIZING I2C CORE TO READ AND WRITE TO SENSOR/////////////////
 	
@@ -142,12 +163,17 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 	}
 	//send axi device address and pressure MSB register address
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
+	//read tx_fifo to ensure addresses were properly written
+	tx_fifo_1 = iic[IIC_INDEX+IIC_TX_FIFO_OFF];
+
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x2F7;
+	//read tx_fifo to ensure addresses were properly written
+	tx_fifo_2 = iic[IIC_INDEX+IIC_TX_FIFO_OFF];
 
 	//clear interrupt status register
-	uint32_t interrStatus = iic[IIC_INDEX+IIC_INTERR_REG_OFF];
-	iic[IIC_INDEX+IIC_INTERR_REG_OFF] = (interrStatus & 11);
-	clearedInterrStatus1 = iic[IIC_INDEX+IIC_INTERR_REG_OFF]; //return PRAGMA
+	interrStatus = iic[IIC_INDEX+IIC_INTERR_REG_OFF]; //BEFORE CLEARING; RETURNS 208
+	iic[IIC_INDEX+IIC_INTERR_REG_OFF] = 0;
+	clearedInterrStatus1 = iic[IIC_INDEX+IIC_INTERR_REG_OFF]; //AFTER CLEARING; RETURNS 212
 
 	//set receive fifo occupancy depth for 1 byte (zero based) through PIRQ register
 	iic[IIC_INDEX+IIC_RX_FIFO_PIRQ_OFF] = 0;
@@ -155,15 +181,16 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 
 	//check to see if "Master is on the Bus" already. If Repeated bit is not set send Start 
 	//bit by setting MSMS bit, else Send Address
-	uint32_t ctrl_reg_val2 = iic[IIC_INDEX+IIC_CONTROL_REG_OFF];
+	ctrl_reg_val2 = iic[IIC_INDEX+IIC_CONTROL_REG_OFF]; //RETURNS "9"
 	uint32_t ctrl_reg_val2_copy = ctrl_reg_val2;
-	uint32_t ctrl2RegState = ctrl_reg_val2_copy & 32;
+	ctrl2RegState = ctrl_reg_val2_copy & 32;
 	if(ctrl2RegState == 0)
 	{
 		ctrl2RegState_enabled = 101; //return PRAGMA
 		//7 bit slave address, read operation, and set state to indicate address has been set
 		iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xED;
-
+		tx_fifo_3 = iic[IIC_INDEX+IIC_TX_FIFO_OFF]; //check 0xED was properly written
+		
 		//MSMS gets set after putting data in FIFO. Start the master receive operation by setting 
 		//CR bits MSMS to master, if buffer is only one byte, then it should not be acknowledged to 
 		//indicate the end of data
@@ -171,23 +198,25 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 		if(pressByteCount==0)
 		{
 			byteCountZero = 102; //return PRAGMA
-			ctrl_reg_val2_copy = ctrl_reg_val2_copy | 16;
+			ctrl_reg_val2_copy = ctrl_reg_val2_copy | 16; //returns "21"
 		}
 		//write out the control register to start receiving data and call function to receive each byte
 		//into the buffer
 		iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = ctrl_reg_val2_copy;
+		ctrl_reg_check = iic[IIC_INDEX+IIC_CONTROL_REG_OFF]; //RETURNS 5
 		//clear the latched interrupt status for the bus not busy bit which must be done while the bus 			is busy
-		uint32_t stat_reg_val = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
+		stat_reg_val = iic[IIC_INDEX+IIC_STATUS_REG_OFF]; //keep track of stat reg BEFORE clear
 		uint32_t stat_reg_val_copy = stat_reg_val;
-		uint32_t statRegState = stat_reg_val_copy & 4;
-		while(statRegState == 0)
+		statRegState = stat_reg_val_copy & 4; 
+		while(statRegState == 0) //will most likely not enter loop
 		{
 			clearedInterruptStatus2 = 103; //return PRAGMA
 			stat_reg_val_copy = iic[IIC_INDEX+IIC_STATUS_REG_OFF]; 
 		}
-		interrStatus2 = iic[IIC_INDEX+IIC_INTERR_REG_OFF]; //return PRAGMA
-		uint32_t clearInterrStatus = interrStatus2 & 16;
+		interrStatus2 = iic[IIC_INDEX+IIC_INTERR_REG_OFF]; //BEFORE CLEARING, RETURNS "212" OR "220"
+		clearInterrStatus = interrStatus2 & 16;
 		iic[IIC_INDEX+IIC_INTERR_REG_OFF] = clearInterrStatus;
+		clearInterrStatusCheck = iic[IIC_INDEX+IIC_INTERR_REG_OFF];//RETURNS "204"
 	}
 	else
 	{
@@ -197,6 +226,7 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 
 		if(pressByteCount == 0)
 		{
+			zeroBytes = 105; 
 			ctrl_reg_val2_copy = ctrl_reg_val2_copy | 16;
 		}
 		iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = ctrl_reg_val2_copy;
@@ -207,7 +237,7 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 	}
 	while(pressByteCount > 0)
 	{
-		pressByteCountEnabled = 105; 
+		pressByteCountEnabled = 106; 
 		//set up mask to use for checking errors because when receiving one byte or last byte of multibyte message an error naturally occurs when no ack is done to tell slave last byte	
 		int interruptStatusMask;
 		if(pressByteCount == 1)
@@ -223,17 +253,18 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 		//wait for previous transmit and 1st receive to complete by checking interrupt status register 			of IPIF
 		while(true)
 		{
-			checkInterrReg = 106;
-			uint32_t interrStatus3 = iic[IIC_INDEX+IIC_INTERR_REG_OFF]; 
-			uint32_t interrStatus3State = interrStatus3 & 8;
+			checkInterrReg = 107;
+			interrStatus3 = iic[IIC_INDEX+IIC_INTERR_REG_OFF]; 
+			interrStatus3State = interrStatus3 & 8;
 			if(interrStatus3State) // TRUE if interrStatus3State =! interrStatus3 & 8
 			{	
 				interrStatus3StateEnabled = 1; 
 				break;
 			}
-			if(interrStatus3 & interruptStatusMask)
+			if(interrStatus3 && interruptStatusMask)
 			{
 				printf("Error");
+				error1 = 108;
 			}
 		}
 		ctrl_reg_val3 = iic[IIC_INDEX+IIC_CONTROL_REG_OFF];
@@ -277,7 +308,7 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 		releaseBus = 107;
 		
 		uint32_t interrStatus5 = iic[IIC_INDEX+IIC_INTERR_REG_OFF];
-		uint32_t interrStatus5State = interrStatus5 & 16;
+		interrStatus5State = interrStatus5 & 16; //returns 16
 		if(interrStatus5State)
 		{
 			break;
