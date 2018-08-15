@@ -1,0 +1,109 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Aug 15 12:10:06 2018
+# Process ID: 15977
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/bmeSensor
+# Command line: vivado bmeSensor/bmeSensor.xpr
+# Log file: /home/iavendano/pynq-copter/pynqcopter/bmeSensor/vivado.log
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/bmeSensor/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project bmeSensor/bmeSensor.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iavendano/pynq-copter/pynqcopter/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'UCSD:hlsip:bmesensor:1.0'. The one found in IP location '/home/iavendano/pynq-copter/pynqcopter/ip/bmesensor/bmesensor/bmesensor/impl/ip' will take precedence over the same IP in location /home/iavendano/pynq-copter/pynqcopter/ip/bmesensor2/bmesensor2/bmesensor/impl/ip
+open_project: Time (s): cpu = 00:00:37 ; elapsed = 00:00:18 . Memory (MB): peak = 6237.254 ; gain = 96.527 ; free physical = 111658 ; free virtual = 495855
+update_compile_order -fileset sources_1
+open_bd_design {/home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor/bmeSensor.srcs/sources_1/bd/bmeSensor/bmeSensor.bd}
+Adding cell -- xilinx.com:ip:axi_iic:2.0 - axi_iic_0
+Adding cell -- UCSD:hlsip:bmesensor:1.0 - bmesensor_0
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_mmu:2.1 - s01_mmu
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <bmeSensor> from BD file </home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor/bmeSensor.srcs/sources_1/bd/bmeSensor/bmeSensor.bd>
+open_bd_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:09 . Memory (MB): peak = 6325.363 ; gain = 47.223 ; free physical = 111676 ; free virtual = 495880
+delete_bd_objs [get_bd_intf_nets bmesensor_0_m_axi_iic] [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_cells bmesensor_0]
+startgroup
+create_bd_cell -type ip -vlnv UCSD:hlsip:bmesensor2:1.0 bmesensor2_0
+endgroup
+set_property location {2 620 186} [get_bd_cells bmesensor2_0]
+set_property location {2 617 139} [get_bd_cells bmesensor2_0]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins bmesensor2_0/s_axi_AXILiteS]
+connect_bd_intf_net [get_bd_intf_pins bmesensor2_0/m_axi_iic] -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/S01_AXI]
+connect_bd_net [get_bd_pins bmesensor2_0/ap_clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins bmesensor2_0/ap_rst_n] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+save_bd_design
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor/bmeSensor.srcs/sources_1/bd/bmeSensor/bmeSensor.bd> 
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor/bmeSensor.srcs/sources_1/bd/bmeSensor/ui/bd_de4afcf4.ui> 
+assign_bd_address [get_bd_addr_segs {bmesensor2_0/s_axi_AXILiteS/Reg }]
+</bmesensor2_0/s_axi_AXILiteS/Reg> is being mapped into </processing_system7_0/Data> at <0x43C00000 [ 64K ]>
+set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_bmesensor2_0_Reg}]
+set_property offset 0x40000000 [get_bd_addr_segs {processing_system7_0/Data/SEG_bmesensor2_0_Reg}]
+assign_bd_address [get_bd_addr_segs {axi_iic_0/S_AXI/Reg }]
+</axi_iic_0/S_AXI/Reg> is being mapped into </bmesensor2_0/Data_m_axi_iic> at <0x40001000 [ 4K ]>
+INFO: [BD 41-1051] The usage <register> of peripheral </axi_iic_0/S_AXI/Reg> does not match the usage <memory> of master </bmesensor2_0/Data_m_axi_iic> and will be excluded using sparse connectivity from its address space. Use the include_bd_addr_seg command to override this precaution and make this peripheral visible within this masters address space.
+Excluding </axi_iic_0/S_AXI/Reg> from </bmesensor2_0/Data_m_axi_iic>
+include_bd_addr_seg [get_bd_addr_segs -excluded bmesensor2_0/Data_m_axi_iic/SEG_axi_iic_0_Reg]
+Including </axi_iic_0/S_AXI/Reg> into </bmesensor2_0/Data_m_axi_iic>
+save_bd_design
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor/bmeSensor.srcs/sources_1/bd/bmeSensor/bmeSensor.bd> 
+validate_bd_design
+validate_bd_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 6435.855 ; gain = 2.000 ; free physical = 111488 ; free virtual = 495679
+undo
+INFO: [Common 17-17] undo 'validate_bd_design'
+undo
+INFO: [Common 17-17] undo 'include_bd_addr_seg [get_bd_addr_segs -excluded bmesensor2_0/Data_m_axi_iic/SEG_axi_iic_0_Reg]'
+Excluding </axi_iic_0/S_AXI/Reg> from </bmesensor2_0/Data_m_axi_iic>
+undo
+INFO: [Common 17-17] undo 'assign_bd_address [get_bd_addr_segs {axi_iic_0/S_AXI/Reg }]'
+ERROR: [BD 41-1418] Could not find 
+ERROR: [Common 17-39] 'undo' failed due to earlier errors.
+undo
+INFO: [Common 17-17] undo 'set_property offset 0x40000000 [get_bd_addr_segs {processing_system7_0/Data/SEG_bmesensor2_0_Reg}]'
+undo
+INFO: [Common 17-17] undo 'set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_bmesensor2_0_Reg}]'
+undo
+INFO: [Common 17-17] undo 'assign_bd_address [get_bd_addr_segs {bmesensor2_0/s_axi_AXILiteS/Reg }]'
+undo
+INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins bmesensor2_0/ap_rst_n] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]'
+undo
+INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins bmesensor2_0/ap_clk] [get_bd_pins processing_system7_0/FCLK_CLK0]'
+undo
+INFO: [Common 17-17] undo 'connect_bd_intf_net [get_bd_intf_pins bmesensor2_0/m_axi_iic] -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/S01_AXI]'
+undo
+INFO: [Common 17-17] undo 'connect_bd_intf_net -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins bmesensor2_0/s_axi_AXILiteS]'
+undo
+INFO: [Common 17-17] undo 'set_property location {2 617 139} [get_bd_cells bmesensor2_0]'
+undo
+INFO: [Common 17-17] undo 'set_property location {2 620 186} [get_bd_cells bmesensor2_0]'
+undo
+INFO: [Common 17-17] undo 'endgroup'
+INFO: [Common 17-17] undo 'create_bd_cell -type ip -vlnv UCSD:hlsip:bmesensor2:1.0 bmesensor2_0'
+INFO: [Common 17-17] undo 'startgroup'
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_intf_nets bmesensor_0_m_axi_iic] [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_cells bmesensor_0]'
+set_property location {2 651 141} [get_bd_cells bmesensor_0]
+save_bd_design
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor/bmeSensor.srcs/sources_1/bd/bmeSensor/bmeSensor.bd> 
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor/bmeSensor.srcs/sources_1/bd/bmeSensor/ui/bd_de4afcf4.ui> 
+validate_bd_design
+WARNING: [BD 41-927] Following properties on pin /bmesensor_0/ap_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=bmeSensor_processing_system7_0_0_FCLK_CLK0 
+write_bd_tcl -force -hier_blks [get_bd_cells /] /home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor.tcl
+INFO: [BD 5-148] Tcl file written out </home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor.tcl>.
+
+save_bd_design
+Wrote  : </home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor/bmeSensor.srcs/sources_1/bd/bmeSensor/bmeSensor.bd> 
+write_bd_tcl -force -hier_blks [get_bd_cells /] /home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor.tcl
+INFO: [BD 5-148] Tcl file written out </home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor.tcl>.
+
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 15 12:15:33 2018...

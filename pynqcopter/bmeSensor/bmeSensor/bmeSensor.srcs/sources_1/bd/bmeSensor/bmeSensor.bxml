@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="bmeSensor" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1534283779"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1534283779"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1534283779"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1534283779"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1534360738"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1534360738"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1534360738"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1534360738"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/bmeSensor_axi_iic_0_0/bmeSensor_axi_iic_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_iic_0"/>

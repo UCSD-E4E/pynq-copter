@@ -101,7 +101,39 @@ module bmesensor_AXILiteS_s_axi
     output wire [31:0]                   pressure_xlsb_i,
     input  wire [31:0]                   pressure_xlsb_o,
     input  wire                          pressure_xlsb_o_ap_vld,
-    output wire [31:0]                   stat_reg_val6_state
+    input  wire [31:0]                   stat_reg_val6_state,
+    input  wire                          stat_reg_val6_state_ap_vld,
+    input  wire [31:0]                   ctrl_reg_val2,
+    input  wire                          ctrl_reg_val2_ap_vld,
+    input  wire [31:0]                   ctrl2RegState,
+    input  wire                          ctrl2RegState_ap_vld,
+    input  wire [31:0]                   ctrl_reg_check,
+    input  wire                          ctrl_reg_check_ap_vld,
+    output wire [31:0]                   zeroBytes,
+    input  wire [31:0]                   interrStatus3State,
+    input  wire                          interrStatus3State_ap_vld,
+    input  wire [31:0]                   interrStatus5State,
+    input  wire                          interrStatus5State_ap_vld,
+    input  wire [31:0]                   tx_fifo_1,
+    input  wire                          tx_fifo_1_ap_vld,
+    input  wire [31:0]                   tx_fifo_2,
+    input  wire                          tx_fifo_2_ap_vld,
+    input  wire [31:0]                   interrStatus,
+    input  wire                          interrStatus_ap_vld,
+    input  wire [31:0]                   stat_reg_val,
+    input  wire                          stat_reg_val_ap_vld,
+    input  wire [31:0]                   statRegState,
+    input  wire                          statRegState_ap_vld,
+    input  wire [31:0]                   clearInterrStatus,
+    input  wire                          clearInterrStatus_ap_vld,
+    input  wire [31:0]                   clearInterrStatusCheck,
+    input  wire                          clearInterrStatusCheck_ap_vld,
+    input  wire [31:0]                   error1,
+    input  wire                          error1_ap_vld,
+    input  wire [31:0]                   tx_fifo_3,
+    input  wire                          tx_fifo_3_ap_vld,
+    input  wire [31:0]                   interrStatus3,
+    input  wire                          interrStatus3_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x000 : Control signals
@@ -289,8 +321,88 @@ module bmesensor_AXILiteS_s_axi
 //         bit 0  - pressure_xlsb_o_ap_vld (Read/COR)
 //         others - reserved
 // 0x150 : Data signal of stat_reg_val6_state
-//         bit 31~0 - stat_reg_val6_state[31:0] (Read/Write)
-// 0x154 : reserved
+//         bit 31~0 - stat_reg_val6_state[31:0] (Read)
+// 0x154 : Control signal of stat_reg_val6_state
+//         bit 0  - stat_reg_val6_state_ap_vld (Read/COR)
+//         others - reserved
+// 0x158 : Data signal of ctrl_reg_val2
+//         bit 31~0 - ctrl_reg_val2[31:0] (Read)
+// 0x15c : Control signal of ctrl_reg_val2
+//         bit 0  - ctrl_reg_val2_ap_vld (Read/COR)
+//         others - reserved
+// 0x160 : Data signal of ctrl2RegState
+//         bit 31~0 - ctrl2RegState[31:0] (Read)
+// 0x164 : Control signal of ctrl2RegState
+//         bit 0  - ctrl2RegState_ap_vld (Read/COR)
+//         others - reserved
+// 0x168 : Data signal of ctrl_reg_check
+//         bit 31~0 - ctrl_reg_check[31:0] (Read)
+// 0x16c : Control signal of ctrl_reg_check
+//         bit 0  - ctrl_reg_check_ap_vld (Read/COR)
+//         others - reserved
+// 0x170 : Data signal of zeroBytes
+//         bit 31~0 - zeroBytes[31:0] (Read/Write)
+// 0x174 : reserved
+// 0x178 : Data signal of interrStatus3State
+//         bit 31~0 - interrStatus3State[31:0] (Read)
+// 0x17c : Control signal of interrStatus3State
+//         bit 0  - interrStatus3State_ap_vld (Read/COR)
+//         others - reserved
+// 0x180 : Data signal of interrStatus5State
+//         bit 31~0 - interrStatus5State[31:0] (Read)
+// 0x184 : Control signal of interrStatus5State
+//         bit 0  - interrStatus5State_ap_vld (Read/COR)
+//         others - reserved
+// 0x188 : Data signal of tx_fifo_1
+//         bit 31~0 - tx_fifo_1[31:0] (Read)
+// 0x18c : Control signal of tx_fifo_1
+//         bit 0  - tx_fifo_1_ap_vld (Read/COR)
+//         others - reserved
+// 0x190 : Data signal of tx_fifo_2
+//         bit 31~0 - tx_fifo_2[31:0] (Read)
+// 0x194 : Control signal of tx_fifo_2
+//         bit 0  - tx_fifo_2_ap_vld (Read/COR)
+//         others - reserved
+// 0x198 : Data signal of interrStatus
+//         bit 31~0 - interrStatus[31:0] (Read)
+// 0x19c : Control signal of interrStatus
+//         bit 0  - interrStatus_ap_vld (Read/COR)
+//         others - reserved
+// 0x1a0 : Data signal of stat_reg_val
+//         bit 31~0 - stat_reg_val[31:0] (Read)
+// 0x1a4 : Control signal of stat_reg_val
+//         bit 0  - stat_reg_val_ap_vld (Read/COR)
+//         others - reserved
+// 0x1a8 : Data signal of statRegState
+//         bit 31~0 - statRegState[31:0] (Read)
+// 0x1ac : Control signal of statRegState
+//         bit 0  - statRegState_ap_vld (Read/COR)
+//         others - reserved
+// 0x1b0 : Data signal of clearInterrStatus
+//         bit 31~0 - clearInterrStatus[31:0] (Read)
+// 0x1b4 : Control signal of clearInterrStatus
+//         bit 0  - clearInterrStatus_ap_vld (Read/COR)
+//         others - reserved
+// 0x1b8 : Data signal of clearInterrStatusCheck
+//         bit 31~0 - clearInterrStatusCheck[31:0] (Read)
+// 0x1bc : Control signal of clearInterrStatusCheck
+//         bit 0  - clearInterrStatusCheck_ap_vld (Read/COR)
+//         others - reserved
+// 0x1c0 : Data signal of error1
+//         bit 31~0 - error1[31:0] (Read)
+// 0x1c4 : Control signal of error1
+//         bit 0  - error1_ap_vld (Read/COR)
+//         others - reserved
+// 0x1c8 : Data signal of tx_fifo_3
+//         bit 31~0 - tx_fifo_3[31:0] (Read)
+// 0x1cc : Control signal of tx_fifo_3
+//         bit 0  - tx_fifo_3_ap_vld (Read/COR)
+//         others - reserved
+// 0x1d0 : Data signal of interrStatus3
+//         bit 31~0 - interrStatus3[31:0] (Read)
+// 0x1d4 : Control signal of interrStatus3
+//         bit 0  - interrStatus3_ap_vld (Read/COR)
+//         others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
@@ -381,6 +493,38 @@ localparam
     ADDR_PRESSURE_XLSB_O_CTRL             = 9'h14c,
     ADDR_STAT_REG_VAL6_STATE_DATA_0       = 9'h150,
     ADDR_STAT_REG_VAL6_STATE_CTRL         = 9'h154,
+    ADDR_CTRL_REG_VAL2_DATA_0             = 9'h158,
+    ADDR_CTRL_REG_VAL2_CTRL               = 9'h15c,
+    ADDR_CTRL2REGSTATE_DATA_0             = 9'h160,
+    ADDR_CTRL2REGSTATE_CTRL               = 9'h164,
+    ADDR_CTRL_REG_CHECK_DATA_0            = 9'h168,
+    ADDR_CTRL_REG_CHECK_CTRL              = 9'h16c,
+    ADDR_ZEROBYTES_DATA_0                 = 9'h170,
+    ADDR_ZEROBYTES_CTRL                   = 9'h174,
+    ADDR_INTERRSTATUS3STATE_DATA_0        = 9'h178,
+    ADDR_INTERRSTATUS3STATE_CTRL          = 9'h17c,
+    ADDR_INTERRSTATUS5STATE_DATA_0        = 9'h180,
+    ADDR_INTERRSTATUS5STATE_CTRL          = 9'h184,
+    ADDR_TX_FIFO_1_DATA_0                 = 9'h188,
+    ADDR_TX_FIFO_1_CTRL                   = 9'h18c,
+    ADDR_TX_FIFO_2_DATA_0                 = 9'h190,
+    ADDR_TX_FIFO_2_CTRL                   = 9'h194,
+    ADDR_INTERRSTATUS_DATA_0              = 9'h198,
+    ADDR_INTERRSTATUS_CTRL                = 9'h19c,
+    ADDR_STAT_REG_VAL_DATA_0              = 9'h1a0,
+    ADDR_STAT_REG_VAL_CTRL                = 9'h1a4,
+    ADDR_STATREGSTATE_DATA_0              = 9'h1a8,
+    ADDR_STATREGSTATE_CTRL                = 9'h1ac,
+    ADDR_CLEARINTERRSTATUS_DATA_0         = 9'h1b0,
+    ADDR_CLEARINTERRSTATUS_CTRL           = 9'h1b4,
+    ADDR_CLEARINTERRSTATUSCHECK_DATA_0    = 9'h1b8,
+    ADDR_CLEARINTERRSTATUSCHECK_CTRL      = 9'h1bc,
+    ADDR_ERROR1_DATA_0                    = 9'h1c0,
+    ADDR_ERROR1_CTRL                      = 9'h1c4,
+    ADDR_TX_FIFO_3_DATA_0                 = 9'h1c8,
+    ADDR_TX_FIFO_3_CTRL                   = 9'h1cc,
+    ADDR_INTERRSTATUS3_DATA_0             = 9'h1d0,
+    ADDR_INTERRSTATUS3_CTRL               = 9'h1d4,
     WRIDLE                                = 2'd0,
     WRDATA                                = 2'd1,
     WRRESP                                = 2'd2,
@@ -475,6 +619,38 @@ localparam
     reg  [31:0]                   int_pressure_xlsb_o = 'b0;
     reg                           int_pressure_xlsb_o_ap_vld;
     reg  [31:0]                   int_stat_reg_val6_state = 'b0;
+    reg                           int_stat_reg_val6_state_ap_vld;
+    reg  [31:0]                   int_ctrl_reg_val2 = 'b0;
+    reg                           int_ctrl_reg_val2_ap_vld;
+    reg  [31:0]                   int_ctrl2RegState = 'b0;
+    reg                           int_ctrl2RegState_ap_vld;
+    reg  [31:0]                   int_ctrl_reg_check = 'b0;
+    reg                           int_ctrl_reg_check_ap_vld;
+    reg  [31:0]                   int_zeroBytes = 'b0;
+    reg  [31:0]                   int_interrStatus3State = 'b0;
+    reg                           int_interrStatus3State_ap_vld;
+    reg  [31:0]                   int_interrStatus5State = 'b0;
+    reg                           int_interrStatus5State_ap_vld;
+    reg  [31:0]                   int_tx_fifo_1 = 'b0;
+    reg                           int_tx_fifo_1_ap_vld;
+    reg  [31:0]                   int_tx_fifo_2 = 'b0;
+    reg                           int_tx_fifo_2_ap_vld;
+    reg  [31:0]                   int_interrStatus = 'b0;
+    reg                           int_interrStatus_ap_vld;
+    reg  [31:0]                   int_stat_reg_val = 'b0;
+    reg                           int_stat_reg_val_ap_vld;
+    reg  [31:0]                   int_statRegState = 'b0;
+    reg                           int_statRegState_ap_vld;
+    reg  [31:0]                   int_clearInterrStatus = 'b0;
+    reg                           int_clearInterrStatus_ap_vld;
+    reg  [31:0]                   int_clearInterrStatusCheck = 'b0;
+    reg                           int_clearInterrStatusCheck_ap_vld;
+    reg  [31:0]                   int_error1 = 'b0;
+    reg                           int_error1_ap_vld;
+    reg  [31:0]                   int_tx_fifo_3 = 'b0;
+    reg                           int_tx_fifo_3_ap_vld;
+    reg  [31:0]                   int_interrStatus3 = 'b0;
+    reg                           int_interrStatus3_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -774,6 +950,102 @@ always @(posedge ACLK) begin
                 ADDR_STAT_REG_VAL6_STATE_DATA_0: begin
                     rdata <= int_stat_reg_val6_state[31:0];
                 end
+                ADDR_STAT_REG_VAL6_STATE_CTRL: begin
+                    rdata[0] <= int_stat_reg_val6_state_ap_vld;
+                end
+                ADDR_CTRL_REG_VAL2_DATA_0: begin
+                    rdata <= int_ctrl_reg_val2[31:0];
+                end
+                ADDR_CTRL_REG_VAL2_CTRL: begin
+                    rdata[0] <= int_ctrl_reg_val2_ap_vld;
+                end
+                ADDR_CTRL2REGSTATE_DATA_0: begin
+                    rdata <= int_ctrl2RegState[31:0];
+                end
+                ADDR_CTRL2REGSTATE_CTRL: begin
+                    rdata[0] <= int_ctrl2RegState_ap_vld;
+                end
+                ADDR_CTRL_REG_CHECK_DATA_0: begin
+                    rdata <= int_ctrl_reg_check[31:0];
+                end
+                ADDR_CTRL_REG_CHECK_CTRL: begin
+                    rdata[0] <= int_ctrl_reg_check_ap_vld;
+                end
+                ADDR_ZEROBYTES_DATA_0: begin
+                    rdata <= int_zeroBytes[31:0];
+                end
+                ADDR_INTERRSTATUS3STATE_DATA_0: begin
+                    rdata <= int_interrStatus3State[31:0];
+                end
+                ADDR_INTERRSTATUS3STATE_CTRL: begin
+                    rdata[0] <= int_interrStatus3State_ap_vld;
+                end
+                ADDR_INTERRSTATUS5STATE_DATA_0: begin
+                    rdata <= int_interrStatus5State[31:0];
+                end
+                ADDR_INTERRSTATUS5STATE_CTRL: begin
+                    rdata[0] <= int_interrStatus5State_ap_vld;
+                end
+                ADDR_TX_FIFO_1_DATA_0: begin
+                    rdata <= int_tx_fifo_1[31:0];
+                end
+                ADDR_TX_FIFO_1_CTRL: begin
+                    rdata[0] <= int_tx_fifo_1_ap_vld;
+                end
+                ADDR_TX_FIFO_2_DATA_0: begin
+                    rdata <= int_tx_fifo_2[31:0];
+                end
+                ADDR_TX_FIFO_2_CTRL: begin
+                    rdata[0] <= int_tx_fifo_2_ap_vld;
+                end
+                ADDR_INTERRSTATUS_DATA_0: begin
+                    rdata <= int_interrStatus[31:0];
+                end
+                ADDR_INTERRSTATUS_CTRL: begin
+                    rdata[0] <= int_interrStatus_ap_vld;
+                end
+                ADDR_STAT_REG_VAL_DATA_0: begin
+                    rdata <= int_stat_reg_val[31:0];
+                end
+                ADDR_STAT_REG_VAL_CTRL: begin
+                    rdata[0] <= int_stat_reg_val_ap_vld;
+                end
+                ADDR_STATREGSTATE_DATA_0: begin
+                    rdata <= int_statRegState[31:0];
+                end
+                ADDR_STATREGSTATE_CTRL: begin
+                    rdata[0] <= int_statRegState_ap_vld;
+                end
+                ADDR_CLEARINTERRSTATUS_DATA_0: begin
+                    rdata <= int_clearInterrStatus[31:0];
+                end
+                ADDR_CLEARINTERRSTATUS_CTRL: begin
+                    rdata[0] <= int_clearInterrStatus_ap_vld;
+                end
+                ADDR_CLEARINTERRSTATUSCHECK_DATA_0: begin
+                    rdata <= int_clearInterrStatusCheck[31:0];
+                end
+                ADDR_CLEARINTERRSTATUSCHECK_CTRL: begin
+                    rdata[0] <= int_clearInterrStatusCheck_ap_vld;
+                end
+                ADDR_ERROR1_DATA_0: begin
+                    rdata <= int_error1[31:0];
+                end
+                ADDR_ERROR1_CTRL: begin
+                    rdata[0] <= int_error1_ap_vld;
+                end
+                ADDR_TX_FIFO_3_DATA_0: begin
+                    rdata <= int_tx_fifo_3[31:0];
+                end
+                ADDR_TX_FIFO_3_CTRL: begin
+                    rdata[0] <= int_tx_fifo_3_ap_vld;
+                end
+                ADDR_INTERRSTATUS3_DATA_0: begin
+                    rdata <= int_interrStatus3[31:0];
+                end
+                ADDR_INTERRSTATUS3_CTRL: begin
+                    rdata[0] <= int_interrStatus3_ap_vld;
+                end
             endcase
         end
     end
@@ -800,7 +1072,7 @@ assign receivedSuccess_i       = int_receivedSuccess_i;
 assign pressure_msb_i          = int_pressure_msb_i;
 assign pressure_lsb_i          = int_pressure_lsb_i;
 assign pressure_xlsb_i         = int_pressure_xlsb_i;
-assign stat_reg_val6_state     = int_stat_reg_val6_state;
+assign zeroBytes               = int_zeroBytes;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -1573,13 +1845,365 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_stat_reg_val6_state[31:0]
+// int_stat_reg_val6_state
 always @(posedge ACLK) begin
     if (ARESET)
-        int_stat_reg_val6_state[31:0] <= 0;
+        int_stat_reg_val6_state <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_STAT_REG_VAL6_STATE_DATA_0)
-            int_stat_reg_val6_state[31:0] <= (WDATA[31:0] & wmask) | (int_stat_reg_val6_state[31:0] & ~wmask);
+        if (stat_reg_val6_state_ap_vld)
+            int_stat_reg_val6_state <= stat_reg_val6_state;
+    end
+end
+
+// int_stat_reg_val6_state_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_stat_reg_val6_state_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (stat_reg_val6_state_ap_vld)
+            int_stat_reg_val6_state_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_STAT_REG_VAL6_STATE_CTRL)
+            int_stat_reg_val6_state_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_ctrl_reg_val2
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_ctrl_reg_val2 <= 0;
+    else if (ACLK_EN) begin
+        if (ctrl_reg_val2_ap_vld)
+            int_ctrl_reg_val2 <= ctrl_reg_val2;
+    end
+end
+
+// int_ctrl_reg_val2_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_ctrl_reg_val2_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (ctrl_reg_val2_ap_vld)
+            int_ctrl_reg_val2_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_CTRL_REG_VAL2_CTRL)
+            int_ctrl_reg_val2_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_ctrl2RegState
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_ctrl2RegState <= 0;
+    else if (ACLK_EN) begin
+        if (ctrl2RegState_ap_vld)
+            int_ctrl2RegState <= ctrl2RegState;
+    end
+end
+
+// int_ctrl2RegState_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_ctrl2RegState_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (ctrl2RegState_ap_vld)
+            int_ctrl2RegState_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_CTRL2REGSTATE_CTRL)
+            int_ctrl2RegState_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_ctrl_reg_check
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_ctrl_reg_check <= 0;
+    else if (ACLK_EN) begin
+        if (ctrl_reg_check_ap_vld)
+            int_ctrl_reg_check <= ctrl_reg_check;
+    end
+end
+
+// int_ctrl_reg_check_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_ctrl_reg_check_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (ctrl_reg_check_ap_vld)
+            int_ctrl_reg_check_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_CTRL_REG_CHECK_CTRL)
+            int_ctrl_reg_check_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_zeroBytes[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_zeroBytes[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_ZEROBYTES_DATA_0)
+            int_zeroBytes[31:0] <= (WDATA[31:0] & wmask) | (int_zeroBytes[31:0] & ~wmask);
+    end
+end
+
+// int_interrStatus3State
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_interrStatus3State <= 0;
+    else if (ACLK_EN) begin
+        if (interrStatus3State_ap_vld)
+            int_interrStatus3State <= interrStatus3State;
+    end
+end
+
+// int_interrStatus3State_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_interrStatus3State_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (interrStatus3State_ap_vld)
+            int_interrStatus3State_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_INTERRSTATUS3STATE_CTRL)
+            int_interrStatus3State_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_interrStatus5State
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_interrStatus5State <= 0;
+    else if (ACLK_EN) begin
+        if (interrStatus5State_ap_vld)
+            int_interrStatus5State <= interrStatus5State;
+    end
+end
+
+// int_interrStatus5State_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_interrStatus5State_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (interrStatus5State_ap_vld)
+            int_interrStatus5State_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_INTERRSTATUS5STATE_CTRL)
+            int_interrStatus5State_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_tx_fifo_1
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_tx_fifo_1 <= 0;
+    else if (ACLK_EN) begin
+        if (tx_fifo_1_ap_vld)
+            int_tx_fifo_1 <= tx_fifo_1;
+    end
+end
+
+// int_tx_fifo_1_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_tx_fifo_1_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (tx_fifo_1_ap_vld)
+            int_tx_fifo_1_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TX_FIFO_1_CTRL)
+            int_tx_fifo_1_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_tx_fifo_2
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_tx_fifo_2 <= 0;
+    else if (ACLK_EN) begin
+        if (tx_fifo_2_ap_vld)
+            int_tx_fifo_2 <= tx_fifo_2;
+    end
+end
+
+// int_tx_fifo_2_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_tx_fifo_2_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (tx_fifo_2_ap_vld)
+            int_tx_fifo_2_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TX_FIFO_2_CTRL)
+            int_tx_fifo_2_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_interrStatus
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_interrStatus <= 0;
+    else if (ACLK_EN) begin
+        if (interrStatus_ap_vld)
+            int_interrStatus <= interrStatus;
+    end
+end
+
+// int_interrStatus_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_interrStatus_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (interrStatus_ap_vld)
+            int_interrStatus_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_INTERRSTATUS_CTRL)
+            int_interrStatus_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_stat_reg_val
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_stat_reg_val <= 0;
+    else if (ACLK_EN) begin
+        if (stat_reg_val_ap_vld)
+            int_stat_reg_val <= stat_reg_val;
+    end
+end
+
+// int_stat_reg_val_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_stat_reg_val_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (stat_reg_val_ap_vld)
+            int_stat_reg_val_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_STAT_REG_VAL_CTRL)
+            int_stat_reg_val_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_statRegState
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_statRegState <= 0;
+    else if (ACLK_EN) begin
+        if (statRegState_ap_vld)
+            int_statRegState <= statRegState;
+    end
+end
+
+// int_statRegState_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_statRegState_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (statRegState_ap_vld)
+            int_statRegState_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_STATREGSTATE_CTRL)
+            int_statRegState_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_clearInterrStatus
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_clearInterrStatus <= 0;
+    else if (ACLK_EN) begin
+        if (clearInterrStatus_ap_vld)
+            int_clearInterrStatus <= clearInterrStatus;
+    end
+end
+
+// int_clearInterrStatus_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_clearInterrStatus_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (clearInterrStatus_ap_vld)
+            int_clearInterrStatus_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_CLEARINTERRSTATUS_CTRL)
+            int_clearInterrStatus_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_clearInterrStatusCheck
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_clearInterrStatusCheck <= 0;
+    else if (ACLK_EN) begin
+        if (clearInterrStatusCheck_ap_vld)
+            int_clearInterrStatusCheck <= clearInterrStatusCheck;
+    end
+end
+
+// int_clearInterrStatusCheck_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_clearInterrStatusCheck_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (clearInterrStatusCheck_ap_vld)
+            int_clearInterrStatusCheck_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_CLEARINTERRSTATUSCHECK_CTRL)
+            int_clearInterrStatusCheck_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_error1
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_error1 <= 0;
+    else if (ACLK_EN) begin
+        if (error1_ap_vld)
+            int_error1 <= error1;
+    end
+end
+
+// int_error1_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_error1_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (error1_ap_vld)
+            int_error1_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_ERROR1_CTRL)
+            int_error1_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_tx_fifo_3
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_tx_fifo_3 <= 0;
+    else if (ACLK_EN) begin
+        if (tx_fifo_3_ap_vld)
+            int_tx_fifo_3 <= tx_fifo_3;
+    end
+end
+
+// int_tx_fifo_3_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_tx_fifo_3_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (tx_fifo_3_ap_vld)
+            int_tx_fifo_3_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TX_FIFO_3_CTRL)
+            int_tx_fifo_3_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_interrStatus3
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_interrStatus3 <= 0;
+    else if (ACLK_EN) begin
+        if (interrStatus3_ap_vld)
+            int_interrStatus3 <= interrStatus3;
+    end
+end
+
+// int_interrStatus3_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_interrStatus3_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (interrStatus3_ap_vld)
+            int_interrStatus3_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_INTERRSTATUS3_CTRL)
+            int_interrStatus3_ap_vld <= 1'b0; // clear on read
     end
 end
 
