@@ -1,8 +1,10 @@
 ###############################################################################
+# Author: Brennan Cain
+# Email: Brennan@BrennanCain.com
+# Last Modified: 15 August 2018
+#
 # Copyright (c) 2018, The Regents of the University of California All
 # rights reserved.
-#
-# Author: Brennan Cain
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -44,10 +46,12 @@ class Mixer(HlsCore):
 		and the ARM PS.
 
 	"""
-	__IO_REG_OFF = 0x10
 	__IO_REG_LEN = 0x100
-	motors=[0x0,0x0,0x0,0x0,0x0,0x0]
 
+	regs = {
+		"control": 0x0,
+		"input_base": 0x10
+	}
 	def __init__(self, description):
 		super().__init__(description)
 		self.__hls_reg = MMIO(self.mmio.base_addr,
@@ -56,7 +60,14 @@ class Mixer(HlsCore):
 	bindto = ['UCSD:hlsip:mixer:1.0']
 
 	def run(self):
+		self.__hls_reg.write(regs["control"],0x81)
 		return 0
 
-	def pub(roll,pitch,yaw,thrust):
-		
+	def stop(self):
+		self.__hls_reg.write(regs["control"],0x0)
+		return 0
+
+	def pub(roll,pitch,thrust,yaw):
+		self.__hls_reg.write(regs["input_base"],(roll<<16)+pitch)
+		self.__hls_reg.write(regs["input_base"]+0x4,(thrust<<16)+yaw)
+		return 0

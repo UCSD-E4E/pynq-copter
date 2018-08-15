@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName mixer.cpp_pre.cpp.tb.cpp

@@ -1,6 +1,7 @@
 //##############################################################################
 // Author: Brennan Cain
-// Created: July 18, 2018
+// Email: Brennan@BrennanCain.com
+// Last Modified: 15 August 2018
 //
 // Copyright (c) 2018, The Regents of the University of California All
 // rights reserved.
