@@ -62,7 +62,7 @@
  */
 typedef ap_ufixed<sizeof(unsigned int)*8+sizeof(F_t)*8,sizeof(unsigned int)*8> bigBigF_t;
 
-void normalizer(unsigned int regs_in[CHANNELS],unsigned int min_high, unsigned int max_high, F_t m[4096]) {
+void normalizer(unsigned int regs_in[6],unsigned int min_high, unsigned int max_high, F_t m[4096]) {
 #pragma HLS INTERFACE s_axilite port=return bundle=in
 #pragma HLS INTERFACE s_axilite port=regs_in bundle=in
 #pragma HLS INTERFACE s_axilite port=min_high bundle=in
@@ -73,16 +73,16 @@ void normalizer(unsigned int regs_in[CHANNELS],unsigned int min_high, unsigned i
 
 #pragma HLS PIPELINE
 
-	static unsigned int last[CHANNELS] = {0,0,0,0,0,0};
+	static unsigned int last[6] = {0,0,0,0,0,0};
 
 	int changed=0;
-	for(int i =0; i < CHANNELS; ++i) {
+	for(int i =0; i < 6; ++i) {
 		if(regs_in[i]!=last[i]) {
 			changed=i;
 			last[i]=regs_in[i];
 		}
 	}
-	if(changed<4) {
+	if(changed<5) {
 		m[changed]= F_t(bigBigF_t(regs_in[changed]-min_high)/bigBigF_t(max_high-min_high));
 	}
 }

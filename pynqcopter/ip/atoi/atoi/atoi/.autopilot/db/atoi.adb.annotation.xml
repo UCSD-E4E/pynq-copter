@@ -1,3 +1,0 @@
-<annotationInfo>
-<item  id="12" filename="atoi.cpp" linenumber="50" name="val_assign_5" contextFuncName="atoi" moduleName="atoi" rtlName="out_V" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/brennan/Documents/pynq-copter/pynqcopter/ip/atoi"></item>
-</annotationInfo>

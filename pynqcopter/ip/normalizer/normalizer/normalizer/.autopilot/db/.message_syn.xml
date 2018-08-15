@@ -3,18 +3,18 @@
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;normalizer.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;main.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:01:00 ; elapsed = 00:00:38 . Memory (MB): peak = 359.941 ; gain = 13.375 ; free physical = 2536 ; free virtual = 11613" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:01 ; elapsed = 00:00:40 . Memory (MB): peak = 359.941 ; gain = 13.375 ; free physical = 2538 ; free virtual = 11612" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:52 ; elapsed = 00:00:29 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 1772 ; free virtual = 11741" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:54 ; elapsed = 00:00:30 . Memory (MB): peak = 359.938 ; gain = 13.375 ; free physical = 1741 ; free virtual = 11714" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:02 ; elapsed = 00:00:41 . Memory (MB): peak = 360.375 ; gain = 13.809 ; free physical = 2516 ; free virtual = 11594" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:55 ; elapsed = 00:00:31 . Memory (MB): peak = 360.371 ; gain = 13.809 ; free physical = 1731 ; free virtual = 11703" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:02 ; elapsed = 00:00:41 . Memory (MB): peak = 488.242 ; gain = 141.676 ; free physical = 2506 ; free virtual = 11587" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:55 ; elapsed = 00:00:31 . Memory (MB): peak = 488.238 ; gain = 141.676 ; free physical = 1721 ; free virtual = 11697" tag=""/>
 	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="817" content="Unrolling all loops for pipelining in function &apos;normalizer&apos; (normalizer.cpp:65)." tag=""/>
 	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1&apos; (normalizer.cpp:79) in function &apos;normalizer&apos; completely." tag=""/>
 	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="696" content="Partitioning array &apos;last&apos; automatically." tag=""/>
 	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;regs_in&apos; (normalizer.cpp:65) in dimension 1 completely." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:03 ; elapsed = 00:00:42 . Memory (MB): peak = 488.242 ; gain = 141.676 ; free physical = 2477 ; free virtual = 11561" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:04 ; elapsed = 00:00:43 . Memory (MB): peak = 488.242 ; gain = 141.676 ; free physical = 2473 ; free virtual = 11557" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:55 ; elapsed = 00:00:32 . Memory (MB): peak = 488.238 ; gain = 141.676 ; free physical = 1720 ; free virtual = 11698" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:56 ; elapsed = 00:00:32 . Memory (MB): peak = 488.238 ; gain = 141.676 ; free physical = 1717 ; free virtual = 11695" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;normalizer&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
@@ -30,13 +30,13 @@ Please consider increasing the initiation interval of the pipeline." tag=""/>
 	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="135" content="The critical path consists of the following:
 	&apos;udiv&apos; operation (&apos;tmp_5&apos;, normalizer.cpp:86) (5.24 ns)" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 42.7 seconds; current allocated memory: 85.972 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 32.42 seconds; current allocated memory: 86.034 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.26 seconds; current allocated memory: 86.599 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.22 seconds; current allocated memory: 86.676 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;normalizer&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
@@ -62,9 +62,9 @@ Please consider increasing the initiation interval of the pipeline." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;normalizer_mux_83bkb&apos;: 1 instance(s)." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;normalizer_udiv_6cud&apos;: 1 instance(s)." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;normalizer&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.35 seconds; current allocated memory: 89.002 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.21 seconds; current allocated memory: 89.104 MB." tag=""/>
 	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;normalizer_udiv_6cud_div&apos;" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:05 ; elapsed = 00:00:45 . Memory (MB): peak = 488.242 ; gain = 141.676 ; free physical = 2466 ; free virtual = 11549" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:57 ; elapsed = 00:00:34 . Memory (MB): peak = 488.238 ; gain = 141.676 ; free physical = 1711 ; free virtual = 11686" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for normalizer." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for normalizer." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for normalizer." tag=""/>

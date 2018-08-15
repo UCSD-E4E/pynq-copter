@@ -1610,11 +1610,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Aug 14 19:41:54 UTC 2018</spirit:value>
+            <spirit:value>Tue Aug 14 21:54:39 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:80baca39</spirit:value>
+            <spirit:value>7:13e2d3e4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1629,11 +1629,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Aug 14 19:41:54 UTC 2018</spirit:value>
+            <spirit:value>Tue Aug 14 21:54:39 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:80baca39</spirit:value>
+            <spirit:value>7:13e2d3e4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1648,11 +1648,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Aug 14 19:41:54 UTC 2018</spirit:value>
+            <spirit:value>Tue Aug 14 21:54:39 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:99f3e054</spirit:value>
+            <spirit:value>7:14739a05</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1667,11 +1667,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Aug 14 19:41:54 UTC 2018</spirit:value>
+            <spirit:value>Tue Aug 14 21:54:39 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:99f3e054</spirit:value>
+            <spirit:value>7:14739a05</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1685,11 +1685,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Aug 14 19:45:07 UTC 2018</spirit:value>
+            <spirit:value>Tue Aug 14 21:58:05 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:80baca39</spirit:value>
+            <spirit:value>7:13e2d3e4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2905,23 +2905,23 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/63b4/hdl/verilog/normalizer_m_V_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v</spirit:name>
+        <spirit:name>../../ipshared/63b4/hdl/verilog/normalizer_udiv_6cud.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/27a9/hdl/verilog/normalizer_mux_83bkb.v</spirit:name>
+        <spirit:name>../../ipshared/63b4/hdl/verilog/normalizer_mux_83bkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/27a9/hdl/verilog/normalizer.v</spirit:name>
+        <spirit:name>../../ipshared/63b4/hdl/verilog/normalizer.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/27a9/hdl/verilog/normalizer_in_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/63b4/hdl/verilog/normalizer_in_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -2936,27 +2936,27 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/27a9/hdl/verilog/normalizer_m_V_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/63b4/hdl/verilog/normalizer_m_V_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/27a9/hdl/verilog/normalizer_udiv_6cud.v</spirit:name>
+        <spirit:name>../../ipshared/63b4/hdl/verilog/normalizer_udiv_6cud.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/27a9/hdl/verilog/normalizer_mux_83bkb.v</spirit:name>
+        <spirit:name>../../ipshared/63b4/hdl/verilog/normalizer_mux_83bkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/27a9/hdl/verilog/normalizer.v</spirit:name>
+        <spirit:name>../../ipshared/63b4/hdl/verilog/normalizer.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/27a9/hdl/verilog/normalizer_in_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/63b4/hdl/verilog/normalizer_in_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -3185,7 +3185,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>Normalizer</xilinx:displayName>
-      <xilinx:coreRevision>1808141236</xilinx:coreRevision>
+      <xilinx:coreRevision>1808141445</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
@@ -3236,7 +3236,7 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9b0def40"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="fb30e1b8"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="1684fd4d"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="90645ee7"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="0af5663e"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="537ab5cb"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="3b41b4ea"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="73280a32"/>

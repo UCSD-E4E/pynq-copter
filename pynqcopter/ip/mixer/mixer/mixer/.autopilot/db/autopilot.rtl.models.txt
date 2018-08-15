@@ -1,7 +1,7 @@
 mixer_mul_53ns_49bkb
 mixer_sub_101ns_1cud
-mixer_mul_mul_16sdEe
-mixer_mul_mul_16neOg
+mixer_mul_mul_16ndEe
+mixer_mul_mul_16seOg
 mixer_AXILiteS_s_axi
 mixer_m_V_m_axi
 mixer

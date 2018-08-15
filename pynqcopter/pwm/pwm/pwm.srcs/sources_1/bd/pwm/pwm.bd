@@ -817,13 +817,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>pwm_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hlsip" spirit:name="pwm" spirit:vendor="UCSD" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">pwm_pwm_0_2</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>ps7_0_axi_periph</spirit:instanceName>
         <spirit:componentRef spirit:library="BlockDiagram/pwm_imp" spirit:name="ps7_0_axi_periph" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         <spirit:configurableElementValues>
@@ -927,11 +920,11 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>mixer_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hlsip" spirit:name="mixer" spirit:vendor="UCSD" spirit:version="1.0"/>
+        <spirit:instanceName>normalizer_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hlsip" spirit:name="normalizer" spirit:vendor="UCSD" spirit:version="1.0"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">pwm_mixer_0_1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_M_AXI_M_V_TARGET_ADDR">0x4000F030</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">pwm_normalizer_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_M_AXI_M_V_TARGET_ADDR">0x4000e010</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -943,11 +936,18 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>normalizer_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hlsip" spirit:name="normalizer" spirit:vendor="UCSD" spirit:version="1.0"/>
+        <spirit:instanceName>mixer_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hlsip" spirit:name="mixer" spirit:vendor="UCSD" spirit:version="1.0"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">pwm_normalizer_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_M_AXI_M_V_TARGET_ADDR">0x4000e010</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">pwm_mixer_0_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_M_AXI_M_V_TARGET_ADDR">0x4000F030</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>pwm_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hlsip" spirit:name="pwm" spirit:vendor="UCSD" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">pwm_pwm_0_2</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -1104,13 +1104,10 @@
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="M_AXI_GP0_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="rst_ps7_0_100M" spirit:portRef="slowest_sync_clk"/>
         <spirit:internalPortReference spirit:componentRef="synchronizer_0" spirit:portRef="CLK"/>
-        <spirit:internalPortReference spirit:componentRef="pwm_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="S_AXI_HP0_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="S_AXI_HP1_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="S_AXI_HP2_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="clk"/>
-        <spirit:internalPortReference spirit:componentRef="mixer_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="rc_receiver_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="ACLK"/>
@@ -1121,14 +1118,14 @@
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S03_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M03_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="normalizer_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="rc_receiver_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="mixer_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="pwm_0" spirit:portRef="ap_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_ps7_0_100M_peripheral_aresetn</spirit:name>
         <spirit:internalPortReference spirit:componentRef="rst_ps7_0_100M" spirit:portRef="peripheral_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="pwm_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="resetn"/>
-        <spirit:internalPortReference spirit:componentRef="mixer_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="rc_receiver_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M01_ARESETN"/>
@@ -1138,6 +1135,9 @@
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S03_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M03_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="normalizer_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="rc_receiver_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="mixer_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="pwm_0" spirit:portRef="ap_rst_n"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_ps7_0_100M_interconnect_aresetn</spirit:name>
@@ -3454,14 +3454,14 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>UCSD</spirit:vendor>
-    <spirit:library>Addressing/mixer_0</spirit:library>
-    <spirit:name>mixer</spirit:name>
+    <spirit:library>Addressing/normalizer_0</spirit:library>
+    <spirit:name>normalizer</spirit:name>
     <spirit:version>1.0</spirit:version>
     <spirit:busInterfaces>
       <spirit:busInterface>
-        <spirit:name>s_axi_AXILiteS</spirit:name>
+        <spirit:name>s_axi_in</spirit:name>
         <spirit:slave>
-          <spirit:memoryMapRef spirit:memoryMapRef="s_axi_AXILiteS"/>
+          <spirit:memoryMapRef spirit:memoryMapRef="s_axi_in"/>
         </spirit:slave>
         <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
@@ -3482,15 +3482,27 @@
         <spirit:width>32</spirit:width>
         <spirit:segments>
           <spirit:segment>
-            <spirit:name>SEG_pwm_0_Reg</spirit:name>
-            <spirit:displayName>/pwm_0/s_axi_ctrl/Reg</spirit:displayName>
-            <spirit:addressOffset>0x4000F000</spirit:addressOffset>
+            <spirit:name>SEG_mixer_0_Reg</spirit:name>
+            <spirit:displayName>/mixer_0/s_axi_AXILiteS/Reg</spirit:displayName>
+            <spirit:addressOffset>0x4000E000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
           <spirit:segment bd:isExcluded="true">
             <spirit:name>SEG_normalizer_0_Reg</spirit:name>
             <spirit:displayName>/normalizer_0/s_axi_in/Reg</spirit:displayName>
             <spirit:addressOffset>0x4000D000</spirit:addressOffset>
+            <spirit:range>4K</spirit:range>
+          </spirit:segment>
+          <spirit:segment bd:isExcluded="true">
+            <spirit:name>SEG_pwm_0_Reg</spirit:name>
+            <spirit:displayName>/pwm_0/s_axi_ctrl/Reg</spirit:displayName>
+            <spirit:addressOffset>0x4000F000</spirit:addressOffset>
+            <spirit:range>4K</spirit:range>
+          </spirit:segment>
+          <spirit:segment bd:isExcluded="true">
+            <spirit:name>SEG_rc_receiver_0_Reg</spirit:name>
+            <spirit:displayName>/rc_receiver_0/s_axi_in/Reg</spirit:displayName>
+            <spirit:addressOffset>0x4000C000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
         </spirit:segments>
@@ -3558,14 +3570,14 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>UCSD</spirit:vendor>
-    <spirit:library>Addressing/normalizer_0</spirit:library>
-    <spirit:name>normalizer</spirit:name>
+    <spirit:library>Addressing/mixer_0</spirit:library>
+    <spirit:name>mixer</spirit:name>
     <spirit:version>1.0</spirit:version>
     <spirit:busInterfaces>
       <spirit:busInterface>
-        <spirit:name>s_axi_in</spirit:name>
+        <spirit:name>s_axi_AXILiteS</spirit:name>
         <spirit:slave>
-          <spirit:memoryMapRef spirit:memoryMapRef="s_axi_in"/>
+          <spirit:memoryMapRef spirit:memoryMapRef="s_axi_AXILiteS"/>
         </spirit:slave>
         <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
@@ -3586,27 +3598,15 @@
         <spirit:width>32</spirit:width>
         <spirit:segments>
           <spirit:segment>
-            <spirit:name>SEG_mixer_0_Reg</spirit:name>
-            <spirit:displayName>/mixer_0/s_axi_AXILiteS/Reg</spirit:displayName>
-            <spirit:addressOffset>0x4000E000</spirit:addressOffset>
-            <spirit:range>4K</spirit:range>
-          </spirit:segment>
-          <spirit:segment bd:isExcluded="true">
-            <spirit:name>SEG_normalizer_0_Reg</spirit:name>
-            <spirit:displayName>/normalizer_0/s_axi_in/Reg</spirit:displayName>
-            <spirit:addressOffset>0x4000D000</spirit:addressOffset>
-            <spirit:range>4K</spirit:range>
-          </spirit:segment>
-          <spirit:segment bd:isExcluded="true">
             <spirit:name>SEG_pwm_0_Reg</spirit:name>
             <spirit:displayName>/pwm_0/s_axi_ctrl/Reg</spirit:displayName>
             <spirit:addressOffset>0x4000F000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
           <spirit:segment bd:isExcluded="true">
-            <spirit:name>SEG_rc_receiver_0_Reg</spirit:name>
-            <spirit:displayName>/rc_receiver_0/s_axi_in/Reg</spirit:displayName>
-            <spirit:addressOffset>0x4000C000</spirit:addressOffset>
+            <spirit:name>SEG_normalizer_0_Reg</spirit:name>
+            <spirit:displayName>/normalizer_0/s_axi_in/Reg</spirit:displayName>
+            <spirit:addressOffset>0x4000D000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
         </spirit:segments>

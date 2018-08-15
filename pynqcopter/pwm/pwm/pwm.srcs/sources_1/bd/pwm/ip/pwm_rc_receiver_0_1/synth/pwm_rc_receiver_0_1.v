@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:rc_receiver:1.0
-// IP Revision: 1808141015
+// IP Revision: 1808141449
 
 (* X_CORE_INFO = "rc_receiver,Vivado 2017.4" *)
 (* CHECK_LICENSE_TYPE = "pwm_rc_receiver_0_1,rc_receiver,{}" *)

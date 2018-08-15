@@ -19,8 +19,8 @@
     "ClockName": "ap_clk",
     "ClockPeriod": "4",
     "IsCombLogic": "0",
-    "II": "6",
-    "Latency": "31",
+    "II": "7",
+    "Latency": "32",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -44,8 +44,8 @@
       "impl\/vhdl\/mixer_AXILiteS_s_axi.vhd",
       "impl\/vhdl\/mixer_m_V_m_axi.vhd",
       "impl\/vhdl\/mixer_mul_53ns_49bkb.vhd",
-      "impl\/vhdl\/mixer_mul_mul_16neOg.vhd",
-      "impl\/vhdl\/mixer_mul_mul_16sdEe.vhd",
+      "impl\/vhdl\/mixer_mul_mul_16ndEe.vhd",
+      "impl\/vhdl\/mixer_mul_mul_16seOg.vhd",
       "impl\/vhdl\/mixer_sub_101ns_1cud.vhd",
       "impl\/vhdl\/mixer.vhd"
     ],
@@ -53,8 +53,8 @@
       "impl\/verilog\/mixer_AXILiteS_s_axi.v",
       "impl\/verilog\/mixer_m_V_m_axi.v",
       "impl\/verilog\/mixer_mul_53ns_49bkb.v",
-      "impl\/verilog\/mixer_mul_mul_16neOg.v",
-      "impl\/verilog\/mixer_mul_mul_16sdEe.v",
+      "impl\/verilog\/mixer_mul_mul_16ndEe.v",
+      "impl\/verilog\/mixer_mul_mul_16seOg.v",
       "impl\/verilog\/mixer_sub_101ns_1cud.v",
       "impl\/verilog\/mixer.v"
     ],
@@ -435,7 +435,7 @@
           ]
         }
       ],
-      "memories": "regs_in_V {base_address 16 range 8}",
+      "memories": "regs_in_V {base_address 16 range 16}",
       "ctype": {
         "AWVALID": {"Type": "bool"},
         "AWREADY": {"Type": "bool"},
@@ -781,11 +781,11 @@
     "Hierarchy": {"ModuleName": "mixer"},
     "Metrics": {"mixer": {
         "Latency": {
-          "LatencyBest": "31",
-          "LatencyAvg": "31",
-          "LatencyWorst": "31",
-          "PipelineII": "6",
-          "PipelineDepth": "32",
+          "LatencyBest": "32",
+          "LatencyAvg": "32",
+          "LatencyWorst": "32",
+          "PipelineII": "7",
+          "PipelineDepth": "33",
           "PipelineType": "function"
         },
         "Timing": {
@@ -796,14 +796,14 @@
         "Area": {
           "BRAM_18K": "4",
           "DSP48E": "56",
-          "FF": "9542",
-          "LUT": "5069"
+          "FF": "9622",
+          "LUT": "5065"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-14 10:09:56 PDT",
+    "Time": "2018-08-14 15:47:37 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

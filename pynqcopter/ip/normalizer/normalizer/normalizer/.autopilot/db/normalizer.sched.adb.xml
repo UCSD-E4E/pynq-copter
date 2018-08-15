@@ -1180,15 +1180,15 @@
 </operation>
 
 <operation id="126" st_id="7" stage="1" lat="1">
-<core>NULL</core>
+<core>Cmp</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="44">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="89" bw="1" op_0_bw="1" op_1_bw="3" op_2_bw="32">
+<Node id="89" bw="1" op_0_bw="3" op_1_bw="3">
 <![CDATA[
-._crit_edge.5:1  %tmp = call i1 @_ssdm_op_BitSelect.i1.i3.i32(i3 %changed_1_5, i32 2)
+._crit_edge.5:1  %tmp = icmp ult i3 %changed_1_5, -3
 
 ]]></Node>
 <StgValue><ssdm name="tmp"/></StgValue>
@@ -1203,7 +1203,7 @@
 
 <Node id="90" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-._crit_edge.5:2  br i1 %tmp, label %._crit_edge40, label %branch0
+._crit_edge.5:2  br i1 %tmp, label %branch0, label %._crit_edge40
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -1213,13 +1213,13 @@
 <core>MuxnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <Node id="93" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="3">
 <![CDATA[
-branch0:1  %regs_in_load_1_phi = call i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32 %regs_in_0_read, i32 %regs_in_1_read, i32 %regs_in_2_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i3 %changed_1_5)
+branch0:1  %regs_in_load_1_phi = call i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32 %regs_in_0_read, i32 %regs_in_1_read, i32 %regs_in_2_read, i32 %regs_in_3_read, i32 %regs_in_4_read, i32 %regs_in_4_read, i32 %regs_in_4_read, i32 %regs_in_4_read, i3 %changed_1_5)
 
 ]]></Node>
 <StgValue><ssdm name="regs_in_load_1_phi"/></StgValue>
@@ -1232,7 +1232,7 @@ branch0:1  %regs_in_load_1_phi = call i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32 %reg
 <core>AddSub</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1248,7 +1248,7 @@ branch0:2  %p_Val2_s = sub i32 %regs_in_load_1_phi, %min_high_read
 <core>AddSub</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1267,7 +1267,7 @@ branch0:3  %p_Val2_1 = sub i32 %max_high_read, %min_high_read
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1283,7 +1283,7 @@ branch0:4  %tmp_7 = call i48 @_ssdm_op_BitConcatenate.i48.i32.i16(i32 %p_Val2_1,
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1299,7 +1299,7 @@ branch0:5  %tmp_9 = call i63 @_ssdm_op_BitConcatenate.i63.i32.i31(i32 %p_Val2_s,
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1315,7 +1315,7 @@ branch0:6  %tmp_cast = zext i48 %tmp_7 to i63
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1334,7 +1334,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1353,7 +1353,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1372,7 +1372,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1391,7 +1391,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1410,7 +1410,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1429,7 +1429,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1448,7 +1448,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1467,7 +1467,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1486,7 +1486,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1505,7 +1505,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1524,7 +1524,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1543,7 +1543,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1562,7 +1562,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1581,7 +1581,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1600,7 +1600,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1619,7 +1619,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1638,7 +1638,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1657,7 +1657,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1676,7 +1676,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1695,7 +1695,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1714,7 +1714,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1733,7 +1733,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1752,7 +1752,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1771,7 +1771,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1790,7 +1790,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1809,7 +1809,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1828,7 +1828,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1847,7 +1847,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1866,7 +1866,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1885,7 +1885,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1904,7 +1904,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1923,7 +1923,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1942,7 +1942,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1961,7 +1961,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1980,7 +1980,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -1999,7 +1999,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2018,7 +2018,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2037,7 +2037,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2056,7 +2056,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2075,7 +2075,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2094,7 +2094,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2113,7 +2113,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2132,7 +2132,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2151,7 +2151,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2170,7 +2170,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2189,7 +2189,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2208,7 +2208,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2227,7 +2227,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2246,7 +2246,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2265,7 +2265,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2284,7 +2284,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2303,7 +2303,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2322,7 +2322,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2341,7 +2341,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2360,7 +2360,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2379,7 +2379,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2398,7 +2398,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2417,7 +2417,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2436,7 +2436,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2455,7 +2455,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2474,7 +2474,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2493,7 +2493,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2512,7 +2512,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2531,7 +2531,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2550,7 +2550,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2569,7 +2569,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2585,7 +2585,7 @@ branch0:0  %tmp_3 = zext i3 %changed_1_5 to i64
 <core>DivnS</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2601,7 +2601,7 @@ branch0:7  %tmp_5 = udiv i63 %tmp_9, %tmp_cast
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2617,7 +2617,7 @@ branch0:9  %m_V_addr = getelementptr i16* %m_V, i64 %tmp_3
 <core>m_axi</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2636,7 +2636,7 @@ branch0:10  %m_V_addr_req = call i1 @_ssdm_op_WriteReq.m_axi.i16P(i16* %m_V_addr
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2652,7 +2652,7 @@ branch0:8  %tmp_1 = trunc i63 %tmp_5 to i16
 <core>m_axi</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2671,7 +2671,7 @@ branch0:11  call void @_ssdm_op_Write.m_axi.i16P(i16* %m_V_addr, i16 %tmp_1, i2 
 <core>m_axi</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2690,7 +2690,7 @@ branch0:12  %m_V_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %m_V_ad
 <core>m_axi</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2709,7 +2709,7 @@ branch0:12  %m_V_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %m_V_ad
 <core>m_axi</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -2728,7 +2728,7 @@ branch0:12  %m_V_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %m_V_ad
 <core>m_axi</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -3003,7 +3003,7 @@ branch0:12  %m_V_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %m_V_ad
 <core>m_axi</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -3019,7 +3019,7 @@ branch0:12  %m_V_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %m_V_ad
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="45">
-<or_exp><and_exp><literal name="tmp" val="0"/>
+<or_exp><and_exp><literal name="tmp" val="1"/>
 </and_exp></or_exp>
 </condition>
 

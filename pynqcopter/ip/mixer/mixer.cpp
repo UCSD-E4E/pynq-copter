@@ -52,17 +52,17 @@
  *
  * | # | roll | pitch          | yaw |
  * |---|------|----------------|-----|
- * | 0 | .5   | -0.57735026919 | -1  |
+ * | 0 | .5   | 0.57735026919 | -1  |
  * | 1 | 1    | 0              | 1   |
- * | 2 | .5   | 0.57735026919  | -1  |
- * | 3 | -.5  | -0.57735026919 | 1   |
+ * | 2 | .5   | -0.57735026919  | -1  |
+ * | 3 | -.5  | 0.57735026919 | 1   |
  * | 4 | -1   | 0              | -1  |
- * | 5 | -.5  | 0.57735026919  | 1   |
+ * | 5 | -.5  | -0.57735026919  | 1   |
  *
  */
 
 
-void mixer(F_t regs_in[4],F_t m[4096]) {
+void mixer(F_t regs_in[5],F_t m[4096]) {
 #pragma HLS INTERFACE s_axilite port=return
 #pragma HLS INTERFACE s_axilite port=regs_in
 #pragma HLS INTERFACE m_axi port=m offset=off
@@ -77,6 +77,7 @@ void mixer(F_t regs_in[4],F_t m[4096]) {
 	for(int i=0; i < 6; i++) {
 	#pragma HLS unroll
 		scaled_power = t_c+(r_c*MIX_C[i][0]+p_c*MIX_C[i][1]+y_c*MIX_C[i][2])/bigF_t(3.0);
-		m[i]=F_t(clip(scaled_power,bigF_t(0),bigF_t(.99)));
+		m[i]=clip(scaled_power,bigF_t(0),bigF_t(.99));
 	}
+	m[6]=regs_in[4];
 }

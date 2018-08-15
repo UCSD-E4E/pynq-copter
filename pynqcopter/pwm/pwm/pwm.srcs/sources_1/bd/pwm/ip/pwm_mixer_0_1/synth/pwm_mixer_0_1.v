@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:mixer:1.0
-// IP Revision: 1808141009
+// IP Revision: 1808141547
 
 (* X_CORE_INFO = "mixer,Vivado 2017.4" *)
 (* CHECK_LICENSE_TYPE = "pwm_mixer_0_1,mixer,{}" *)

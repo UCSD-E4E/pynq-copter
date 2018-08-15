@@ -35263,7 +35263,7 @@ void normalizer(unsigned int regs_in[6],unsigned int min_high, unsigned int max_
    last[i]=regs_in[i];
   }
  }
- if(changed<4) {
+ if(changed<5) {
   m[changed]= F_t(bigBigF_t(regs_in[changed]-min_high)/bigBigF_t(max_high-min_high));
  }
 }

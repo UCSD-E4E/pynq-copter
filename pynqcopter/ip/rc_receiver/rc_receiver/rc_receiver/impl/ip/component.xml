@@ -2625,8 +2625,8 @@ ng minimum {} maximum {}} value 0}}}}</spirit:value>
       </xilinx:taxonomies>
       <xilinx:displayName>Rc_receiver</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808141015</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-14T17:16:02Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808141449</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-14T21:49:30Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>

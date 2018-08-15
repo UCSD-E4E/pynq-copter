@@ -1,0 +1,49 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="normalizer" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="in"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="normalizer" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="regs_in"/>
+<option name="bundle" value="in"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="normalizer" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="min_high"/>
+<option name="bundle" value="in"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="normalizer" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="max_high"/>
+<option name="bundle" value="in"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="normalizer" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="regs_in"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="normalizer" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="m"/>
+<option name="offset" value="off"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="normalizer" label="">
+<pragma name="PIPELINE"/>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

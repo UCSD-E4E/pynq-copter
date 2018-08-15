@@ -103,12 +103,12 @@ define void @normalizer(i32* %regs_in_0, i32* %regs_in_1, i32* %regs_in_2, i32* 
 
 ._crit_edge.5:                                    ; preds = %6, %._crit_edge.4
   %changed_1_5 = phi i3 [ -3, %6 ], [ %changed_1_4, %._crit_edge.4 ]
-  %tmp = call i1 @_ssdm_op_BitSelect.i1.i3.i32(i3 %changed_1_5, i32 2)
-  br i1 %tmp, label %._crit_edge40, label %branch0
+  %tmp = icmp ult i3 %changed_1_5, -3
+  br i1 %tmp, label %branch0, label %._crit_edge40
 
 branch0:                                          ; preds = %._crit_edge.5
   %tmp_3 = zext i3 %changed_1_5 to i64
-  %regs_in_load_1_phi = call i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32 %regs_in_0_read, i32 %regs_in_1_read, i32 %regs_in_2_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i3 %changed_1_5)
+  %regs_in_load_1_phi = call i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32 %regs_in_0_read, i32 %regs_in_1_read, i32 %regs_in_2_read, i32 %regs_in_3_read, i32 %regs_in_4_read, i32 %regs_in_4_read, i32 %regs_in_4_read, i32 %regs_in_4_read, i3 %changed_1_5)
   %p_Val2_s = sub i32 %regs_in_load_1_phi, %min_high_read
   %p_Val2_1 = sub i32 %max_high_read, %min_high_read
   %tmp_7 = call i48 @_ssdm_op_BitConcatenate.i48.i32.i16(i32 %p_Val2_1, i16 0)
@@ -122,7 +122,7 @@ branch0:                                          ; preds = %._crit_edge.5
   %m_V_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %m_V_addr)
   br label %._crit_edge40
 
-._crit_edge40:                                    ; preds = %._crit_edge.5, %branch0
+._crit_edge40:                                    ; preds = %branch0, %._crit_edge.5
   ret void
 }
 
@@ -214,31 +214,22 @@ case7:                                            ; preds = %entry
   br label %case0
 }
 
-define weak i1 @_ssdm_op_BitSelect.i1.i3.i32(i3, i32) nounwind readnone {
-entry:
-  %empty = trunc i32 %1 to i3
-  %empty_2 = shl i3 1, %empty
-  %empty_3 = and i3 %0, %empty_2
-  %empty_4 = icmp ne i3 %empty_3, 0
-  ret i1 %empty_4
-}
-
 define weak i63 @_ssdm_op_BitConcatenate.i63.i32.i31(i32, i31) nounwind readnone {
 entry:
   %empty = zext i32 %0 to i63
-  %empty_5 = zext i31 %1 to i63
-  %empty_6 = shl i63 %empty, 31
-  %empty_7 = or i63 %empty_6, %empty_5
-  ret i63 %empty_7
+  %empty_2 = zext i31 %1 to i63
+  %empty_3 = shl i63 %empty, 31
+  %empty_4 = or i63 %empty_3, %empty_2
+  ret i63 %empty_4
 }
 
 define weak i48 @_ssdm_op_BitConcatenate.i48.i32.i16(i32, i16) nounwind readnone {
 entry:
   %empty = zext i32 %0 to i48
-  %empty_8 = zext i16 %1 to i48
-  %empty_9 = shl i48 %empty, 16
-  %empty_10 = or i48 %empty_9, %empty_8
-  ret i48 %empty_10
+  %empty_5 = zext i16 %1 to i48
+  %empty_6 = shl i48 %empty, 16
+  %empty_7 = or i48 %empty_6, %empty_5
+  ret i48 %empty_7
 }
 
 !opencl.kernels = !{!0, !7, !13, !13, !13, !15, !21, !24, !24, !15, !15, !15, !25, !25, !28, !30, !30, !15, !32, !32, !24, !15, !15}

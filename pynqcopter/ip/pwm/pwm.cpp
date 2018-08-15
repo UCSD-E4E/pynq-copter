@@ -1,6 +1,8 @@
 //##############################################################################
 // Author: Brennan Cain
-// Created: July 18, 2018
+// Email: Brennan@BrennanCain.com
+// Last Modified: 15 August 2018
+//
 //
 // Copyright (c) 2018, The Regents of the University of California All
 // rights reserved.
@@ -52,6 +54,8 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[CHANNELS] , O_t& out) {
 
 	static N_t in_p[CHANNELS]; //saves input for integrity
 	static O_t out_p=0x3F; //prepares output
+	static bool stop;
+	stop= (m[6]*3>1);
 
 	for(char u =0; u <CHANNELS; u++) { //save inputs
 		in_p[u]=duty_range*m[u]+min_duty;
@@ -64,6 +68,6 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[CHANNELS] , O_t& out) {
 
 	acc=(acc<period) ? N_t(acc+1) : N_t(0); //inc acc if > per else reset
 
-	out=out_p;
+	out=stop ? O_t(0) : out_p;
 
 }

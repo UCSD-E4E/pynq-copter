@@ -35265,16 +35265,16 @@ typedef ap_fixed<16 +3,4> bigF_t;
 
 
 const bigF_t MIX_C[6][3] = {
- {.5,-0.57735026919,-1},
+ {.5,0.57735026919,-1},
  {1,0,1},
- {.5,.57735026919,-1},
- {-.5,-.57735026919,1},
+ {.5,-.57735026919,-1},
+ {-.5,.57735026919,1},
  {-1,0,-1},
- {-.5,.57735026919,1}
+ {-.5,-.57735026919,1}
 };
 #41 "mixer.cpp" 2
 #65 "mixer.cpp"
-void mixer(F_t regs_in[4],F_t m[4096]) {_ssdm_SpecArrayDimSize(regs_in,4);_ssdm_SpecArrayDimSize(m,4096);
+void mixer(F_t regs_in[5],F_t m[4096]) {_ssdm_SpecArrayDimSize(regs_in,5);_ssdm_SpecArrayDimSize(m,4096);
 #pragma HLS INTERFACE s_axilite port=return
 #pragma HLS INTERFACE s_axilite port=regs_in
 #pragma HLS INTERFACE m_axi port=m offset=off
@@ -35289,8 +35289,9 @@ void mixer(F_t regs_in[4],F_t m[4096]) {_ssdm_SpecArrayDimSize(regs_in,4);_ssdm_
  for(int i=0; i < 6; i++) {
 #pragma HLS unroll
  scaled_power = t_c+(r_c*MIX_C[i][0]+p_c*MIX_C[i][1]+y_c*MIX_C[i][2])/bigF_t(3.0);
-  m[i]=F_t((scaled_power<bigF_t(0)?bigF_t(0):(scaled_power>bigF_t(.99)?bigF_t(.99):scaled_power)));
+  m[i]=(scaled_power<bigF_t(0)?bigF_t(0):(scaled_power>bigF_t(.99)?bigF_t(.99):scaled_power));
  }
+ m[6]=regs_in[4];
 }
 
 class ssdm_global_array_mixerpp0cppaplinecpp {

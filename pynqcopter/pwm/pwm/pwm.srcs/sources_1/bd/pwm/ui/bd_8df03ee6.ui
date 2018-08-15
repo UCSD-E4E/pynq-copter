@@ -17,10 +17,10 @@ preplace inst xlconstant_0 -pg 1 -lvl 2 -y 1260 -defaultsOSRD
 preplace inst xlslice_2 -pg 1 -lvl 4 -y 710 -defaultsOSRD
 preplace inst xlconcat_0 -pg 1 -lvl 2 -y 1030 -defaultsOSRD
 preplace inst wire_distributor_0 -pg 1 -lvl 4 -y 1040 -defaultsOSRD
+preplace inst pwm_0 -pg 1 -lvl 3 -y 640 -defaultsOSRD
 preplace inst normalizer_0 -pg 1 -lvl 3 -y 220 -defaultsOSRD
 preplace inst system_ila_0 -pg 1 -lvl 4 -y 440 -defaultsOSRD
 preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y 320 -defaultsOSRD
-preplace inst pwm_0 -pg 1 -lvl 3 -y 640 -defaultsOSRD
 preplace inst rc_receiver_0 -pg 1 -lvl 3 -y 490 -defaultsOSRD
 preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -y 400 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -y 150 -defaultsOSRD

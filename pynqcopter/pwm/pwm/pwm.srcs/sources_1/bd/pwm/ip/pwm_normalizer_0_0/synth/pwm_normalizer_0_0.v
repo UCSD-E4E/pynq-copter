@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:normalizer:1.0
-// IP Revision: 1808141236
+// IP Revision: 1808141445
 
 (* X_CORE_INFO = "normalizer,Vivado 2017.4" *)
 (* CHECK_LICENSE_TYPE = "pwm_normalizer_0_0,normalizer,{}" *)

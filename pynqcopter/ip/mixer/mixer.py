@@ -1,24 +1,26 @@
 ###############################################################################
 # Copyright (c) 2018, The Regents of the University of California All
 # rights reserved.
-# 
+#
+# Author: Brennan Cain
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
-# 
+#
 #	 * Redistributions of source code must retain the above copyright
 #	   notice, this list of conditions and the following disclaimer.
-# 
+#
 #	 * Redistributions in binary form must reproduce the above
 #	   copyright notice, this list of conditions and the following
 #	   disclaimer in the documentation and/or other materials provided
 #	   with the distribution.
-# 
+#
 #	 * Neither the name of The Regents of the University of California
 #	   nor the names of its contributors may be used to endorse or
 #	   promote products derived from this software without specific
 #	   prior written permission.
-# 
+#
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 # "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
 # LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -48,20 +50,13 @@ class Mixer(HlsCore):
 
 	def __init__(self, description):
 		super().__init__(description)
-		self.__hls_reg = MMIO(self.mmio.base_addr + self.__IO_REG_OFF,
+		self.__hls_reg = MMIO(self.mmio.base_addr,
 							  self.__IO_REG_LEN)
 
 	bindto = ['UCSD:hlsip:mixer:1.0']
 
-	def launch(self):
-		return 0
-	
-	def land(self):
-		return 0
-	
 	def run(self):
 		return 0
-	
+
 	def pub(roll,pitch,yaw,thrust):
 		
-

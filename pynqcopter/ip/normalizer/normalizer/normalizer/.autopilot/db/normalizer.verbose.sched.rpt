@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'normalizer'
 ================================================================
-* Date:           Tue Aug 14 12:36:50 2018
+* Date:           Tue Aug 14 14:45:40 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        normalizer
@@ -241,7 +241,7 @@ IsGatedGlobalClock: 0
  <State 1> : 3.47ns
 ST_1 : Operation 82 [1/1] (1.00ns)   --->   "%regs_in_1_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_1)" [normalizer.cpp:80]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
 ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%last_1_load = load i32* @last_1, align 4" [normalizer.cpp:80]
-ST_1 : Operation 84 [1/1] (2.47ns)   --->   "%tmp_2_1 = icmp eq i32 %regs_in_1_read, %last_1_load" [normalizer.cpp:80]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 84 [1/1] (2.47ns)   --->   "%tmp_2_1 = icmp eq i32 %regs_in_1_read, %last_1_load" [normalizer.cpp:80]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 85 [1/1] (0.00ns)   --->   "store i32 %regs_in_1_read, i32* @last_1, align 4" [normalizer.cpp:82]
 
  <State 2> : 3.47ns
@@ -249,7 +249,7 @@ ST_2 : Operation 86 [1/1] (1.76ns)   --->   "br i1 %tmp_2_1, label %._crit_edge.
 ST_2 : Operation 87 [1/1] (1.76ns)   --->   "br label %._crit_edge.1" [normalizer.cpp:83]
 ST_2 : Operation 88 [1/1] (1.00ns)   --->   "%regs_in_2_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_2)" [normalizer.cpp:80]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
 ST_2 : Operation 89 [1/1] (0.00ns)   --->   "%last_2_load = load i32* @last_2, align 8" [normalizer.cpp:80]
-ST_2 : Operation 90 [1/1] (2.47ns)   --->   "%tmp_2_2 = icmp eq i32 %regs_in_2_read, %last_2_load" [normalizer.cpp:80]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 90 [1/1] (2.47ns)   --->   "%tmp_2_2 = icmp eq i32 %regs_in_2_read, %last_2_load" [normalizer.cpp:80]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_2 : Operation 91 [1/1] (0.00ns)   --->   "store i32 %regs_in_2_read, i32* @last_2, align 8" [normalizer.cpp:82]
 
  <State 3> : 3.47ns
@@ -259,7 +259,7 @@ ST_3 : Operation 94 [1/1] (1.76ns)   --->   "br i1 %tmp_2_2, label %._crit_edge.
 ST_3 : Operation 95 [1/1] (1.76ns)   --->   "br label %._crit_edge.2" [normalizer.cpp:83]
 ST_3 : Operation 96 [1/1] (1.00ns)   --->   "%regs_in_3_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_3)" [normalizer.cpp:80]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
 ST_3 : Operation 97 [1/1] (0.00ns)   --->   "%last_3_load = load i32* @last_3, align 4" [normalizer.cpp:80]
-ST_3 : Operation 98 [1/1] (2.47ns)   --->   "%tmp_2_3 = icmp eq i32 %regs_in_3_read, %last_3_load" [normalizer.cpp:80]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 98 [1/1] (2.47ns)   --->   "%tmp_2_3 = icmp eq i32 %regs_in_3_read, %last_3_load" [normalizer.cpp:80]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_3 : Operation 99 [1/1] (0.00ns)   --->   "store i32 %regs_in_3_read, i32* @last_3, align 4" [normalizer.cpp:82]
 
  <State 4> : 3.47ns
@@ -268,7 +268,7 @@ ST_4 : Operation 101 [1/1] (1.76ns)   --->   "br i1 %tmp_2_3, label %._crit_edge
 ST_4 : Operation 102 [1/1] (1.76ns)   --->   "br label %._crit_edge.3" [normalizer.cpp:83]
 ST_4 : Operation 103 [1/1] (1.00ns)   --->   "%regs_in_4_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_4)" [normalizer.cpp:80]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
 ST_4 : Operation 104 [1/1] (0.00ns)   --->   "%last_4_load = load i32* @last_4, align 16" [normalizer.cpp:80]
-ST_4 : Operation 105 [1/1] (2.47ns)   --->   "%tmp_2_4 = icmp eq i32 %regs_in_4_read, %last_4_load" [normalizer.cpp:80]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 105 [1/1] (2.47ns)   --->   "%tmp_2_4 = icmp eq i32 %regs_in_4_read, %last_4_load" [normalizer.cpp:80]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_4 : Operation 106 [1/1] (0.00ns)   --->   "store i32 %regs_in_4_read, i32* @last_4, align 16" [normalizer.cpp:82]
 
  <State 5> : 3.47ns
@@ -278,7 +278,7 @@ ST_5 : Operation 109 [1/1] (1.76ns)   --->   "br i1 %tmp_2_4, label %._crit_edge
 ST_5 : Operation 110 [1/1] (1.76ns)   --->   "br label %._crit_edge.4" [normalizer.cpp:83]
 ST_5 : Operation 111 [1/1] (1.00ns)   --->   "%regs_in_5_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_5)" [normalizer.cpp:80]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
 ST_5 : Operation 112 [1/1] (0.00ns)   --->   "%last_5_load = load i32* @last_5, align 4" [normalizer.cpp:80]
-ST_5 : Operation 113 [1/1] (2.47ns)   --->   "%tmp_2_5 = icmp eq i32 %regs_in_5_read, %last_5_load" [normalizer.cpp:80]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 113 [1/1] (2.47ns)   --->   "%tmp_2_5 = icmp eq i32 %regs_in_5_read, %last_5_load" [normalizer.cpp:80]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_5 : Operation 114 [1/1] (0.00ns)   --->   "store i32 %regs_in_5_read, i32* @last_5, align 4" [normalizer.cpp:82]
 
  <State 6> : 1.77ns
@@ -291,13 +291,13 @@ ST_7 : Operation 118 [1/1] (1.00ns)   --->   "%max_high_read = call i32 @_ssdm_o
 ST_7 : Operation 119 [1/1] (1.00ns)   --->   "%min_high_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %min_high)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
 ST_7 : Operation 120 [1/1] (1.00ns)   --->   "%regs_in_0_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_0)" [normalizer.cpp:80]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
 ST_7 : Operation 121 [1/1] (0.00ns)   --->   "%last_0_load = load i32* @last_0, align 16" [normalizer.cpp:80]
-ST_7 : Operation 122 [1/1] (2.47ns)   --->   "%tmp_2 = icmp eq i32 %regs_in_0_read, %last_0_load" [normalizer.cpp:80]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 122 [1/1] (2.47ns)   --->   "%tmp_2 = icmp eq i32 %regs_in_0_read, %last_0_load" [normalizer.cpp:80]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_7 : Operation 123 [1/1] (0.00ns)   --->   "br i1 %tmp_2, label %._crit_edge.0, label %1" [normalizer.cpp:80]
 ST_7 : Operation 124 [1/1] (0.00ns)   --->   "store i32 %regs_in_0_read, i32* @last_0, align 16" [normalizer.cpp:82]
 ST_7 : Operation 125 [1/1] (0.00ns)   --->   "%changed_1_5 = phi i3 [ -3, %6 ], [ %changed_1_4, %._crit_edge.4 ]" [normalizer.cpp:80]
-ST_7 : Operation 126 [1/1] (0.00ns)   --->   "%tmp = call i1 @_ssdm_op_BitSelect.i1.i3.i32(i3 %changed_1_5, i32 2)" [normalizer.cpp:85]
-ST_7 : Operation 127 [1/1] (0.00ns)   --->   "br i1 %tmp, label %._crit_edge40, label %branch0" [normalizer.cpp:85]
-ST_7 : Operation 128 [1/1] (2.47ns)   --->   "%regs_in_load_1_phi = call i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32 %regs_in_0_read, i32 %regs_in_1_read, i32 %regs_in_2_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i3 %changed_1_5)" [normalizer.cpp:86]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 126 [1/1] (1.13ns)   --->   "%tmp = icmp ult i3 %changed_1_5, -3" [normalizer.cpp:85]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 127 [1/1] (0.00ns)   --->   "br i1 %tmp, label %branch0, label %._crit_edge40" [normalizer.cpp:85]
+ST_7 : Operation 128 [1/1] (2.47ns)   --->   "%regs_in_load_1_phi = call i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32 %regs_in_0_read, i32 %regs_in_1_read, i32 %regs_in_2_read, i32 %regs_in_3_read, i32 %regs_in_4_read, i32 %regs_in_4_read, i32 %regs_in_4_read, i32 %regs_in_4_read, i3 %changed_1_5)" [normalizer.cpp:86]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
 
  <State 8> : 2.55ns
 ST_8 : Operation 129 [1/1] (2.55ns)   --->   "%p_Val2_s = sub i32 %regs_in_load_1_phi, %min_high_read" [normalizer.cpp:86]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>

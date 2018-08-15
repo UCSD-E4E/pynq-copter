@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="atoi" xd:componentRef="atoi" xd:initiationInterval="2" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
-  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
-  <xd:arg xd:name="in[]" xd:originalName="in" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x10" xd:arraySize="6" xd:dataWidth="1"/>
-  <xd:arg xd:name="out" xd:originalName="out" xd:direction="out" xd:interfaceRef="out_V" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="6" xd:firstOut="1"/>
-  <xd:latencyEstimates xd:best-case="1" xd:worst-case="1" xd:average-case="1"/>
-  <xd:resourceEstimates xd:LUT="125" xd:FF="118" xd:BRAM="2" xd:DSP="0"/>
-</xd:acceleratorMap>

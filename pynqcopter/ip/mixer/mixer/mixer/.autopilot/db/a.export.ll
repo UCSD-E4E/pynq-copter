@@ -12,15 +12,15 @@ target triple = "x86_64-unknown-linux-gnu"
 @p_str2 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
 @p_str = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1
 
-define void @mixer([4 x i16]* %regs_in_V, i16* %m_V) {
+define void @mixer([5 x i16]* %regs_in_V, i16* %m_V) {
 _ifconv:
-  call void (...)* @_ssdm_op_SpecBitsMap([4 x i16]* %regs_in_V), !map !93
+  call void (...)* @_ssdm_op_SpecBitsMap([5 x i16]* %regs_in_V), !map !93
   call void (...)* @_ssdm_op_SpecBitsMap(i16* %m_V), !map !99
-  %regs_in_V_addr = getelementptr [4 x i16]* %regs_in_V, i64 0, i64 0
+  %regs_in_V_addr = getelementptr [5 x i16]* %regs_in_V, i64 0, i64 0
   call void (...)* @_ssdm_op_SpecTopModule([6 x i8]* @mixer_str) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
-  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([4 x i16]* %regs_in_V, [1 x i8]* @p_str5, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str5, i32 -1, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5)
-  call void (...)* @_ssdm_op_SpecInterface([4 x i16]* %regs_in_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
+  %empty = call i32 (...)* @_ssdm_op_SpecMemCore([5 x i16]* %regs_in_V, [1 x i8]* @p_str5, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str5, i32 -1, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5, [1 x i8]* @p_str5)
+  call void (...)* @_ssdm_op_SpecInterface([5 x i16]* %regs_in_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i16* %m_V, [6 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str2, [4 x i8]* @p_str4, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2)
   call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
   %regs_in_V_load = load i16* %regs_in_V_addr, align 2
@@ -34,7 +34,7 @@ _ifconv:
   %p_Val2_s = call i17 @_ssdm_op_BitConcatenate.i17.i16.i1(i16 %tmp_7, i1 false)
   %p_Val2_cast = zext i17 %p_Val2_s to i18
   %r_c_V = add i18 -32768, %p_Val2_cast
-  %regs_in_V_addr_1 = getelementptr [4 x i16]* %regs_in_V, i64 0, i64 1
+  %regs_in_V_addr_1 = getelementptr [5 x i16]* %regs_in_V, i64 0, i64 1
   %regs_in_V_load_1 = load i16* %regs_in_V_addr_1, align 2
   %tmp_8 = call i1 @_ssdm_op_BitSelect.i1.i16.i32(i16 %regs_in_V_load_1, i32 15)
   %tmp_9 = icmp sgt i16 %regs_in_V_load_1, 32440
@@ -46,7 +46,7 @@ _ifconv:
   %p_Val2_2 = call i17 @_ssdm_op_BitConcatenate.i17.i16.i1(i16 %tmp_22, i1 false)
   %p_Val2_2_cast = zext i17 %p_Val2_2 to i18
   %p_c_V = add i18 -32768, %p_Val2_2_cast
-  %regs_in_V_addr_2 = getelementptr [4 x i16]* %regs_in_V, i64 0, i64 3
+  %regs_in_V_addr_2 = getelementptr [5 x i16]* %regs_in_V, i64 0, i64 3
   %regs_in_V_load_2 = load i16* %regs_in_V_addr_2, align 2
   %tmp_23 = call i1 @_ssdm_op_BitSelect.i1.i16.i32(i16 %regs_in_V_load_2, i32 15)
   %tmp_6 = icmp sgt i16 %regs_in_V_load_2, 32440
@@ -58,7 +58,7 @@ _ifconv:
   %p_Val2_4 = call i17 @_ssdm_op_BitConcatenate.i17.i16.i1(i16 %tmp_41, i1 false)
   %p_Val2_4_cast = zext i17 %p_Val2_4 to i18
   %y_c_V = add i18 -32768, %p_Val2_4_cast
-  %regs_in_V_addr_3 = getelementptr [4 x i16]* %regs_in_V, i64 0, i64 2
+  %regs_in_V_addr_3 = getelementptr [5 x i16]* %regs_in_V, i64 0, i64 2
   %regs_in_V_load_3 = load i16* %regs_in_V_addr_3, align 2
   %tmp_42 = call i1 @_ssdm_op_BitSelect.i1.i16.i32(i16 %regs_in_V_load_3, i32 15)
   %tmp_5 = icmp sgt i16 %regs_in_V_load_3, 32440
@@ -69,7 +69,7 @@ _ifconv:
   %p_Val2_7 = call i32 @_ssdm_op_BitConcatenate.i32.i18.i14(i18 %r_c_V, i14 0)
   %p_Val2_7_cast = sext i32 %p_Val2_7 to i33
   %tmp_47 = sext i18 %p_c_V to i33
-  %tmp_11_cast = mul i33 -18919, %tmp_47
+  %tmp_11_cast = mul i33 18918, %tmp_47
   %p_shl = call i33 @_ssdm_op_BitConcatenate.i33.i18.i15(i18 %y_c_V, i15 0)
   %p_shl_cast = sext i33 %p_shl to i34
   %tmp_12 = sub i33 0, %p_shl
@@ -102,7 +102,7 @@ _ifconv:
   %phitmp_cast = select i1 %tmp_62, i16 0, i16 32440
   %tmp_51 = or i1 %tmp_62, %tmp_26
   %p_Val2_3 = select i1 %tmp_51, i16 %phitmp_cast, i16 %tmp_15
-  %m_V_req = call i1 @_ssdm_op_WriteReq.m_axi.i16P(i16* %m_V, i32 6)
+  %m_V_req = call i1 @_ssdm_op_WriteReq.m_axi.i16P(i16* %m_V, i32 7)
   call void @_ssdm_op_Write.m_axi.i16P(i16* %m_V, i16 %p_Val2_3, i2 -1)
   %tmp_18 = call i33 @_ssdm_op_BitConcatenate.i33.i18.i15(i18 %r_c_V, i15 0)
   %tmp_18_cast = sext i33 %tmp_18 to i34
@@ -120,8 +120,8 @@ _ifconv:
   %neg_ti2 = sub i51 0, %tmp_69
   %tmp_20 = select i1 %tmp_64, i51 %neg_ti2, i51 %tmp_68
   %tmp_21_1 = sext i51 %tmp_20 to i55
-  %tmp_248_1_cast = zext i55 %tmp_21_1 to i56
-  %p_Val2_14_1 = add i56 %tmp_21_cast, %tmp_248_1_cast
+  %tmp_2410_1_cast = zext i55 %tmp_21_1 to i56
+  %p_Val2_14_1 = add i56 %tmp_21_cast, %tmp_2410_1_cast
   %scaled_power_V_1 = call i19 @_ssdm_op_PartSelect.i19.i56.i32.i32(i56 %p_Val2_14_1, i32 15, i32 33)
   %tmp_70 = call i1 @_ssdm_op_BitSelect.i1.i56.i32(i56 %p_Val2_14_1, i32 33)
   %tmp_27_1 = icmp sgt i19 %scaled_power_V_1, 32440
@@ -130,7 +130,7 @@ _ifconv:
   %tmp_52 = or i1 %tmp_70, %tmp_27_1
   %p_Val2_15_1 = select i1 %tmp_52, i16 %phitmp_1_cast, i16 %tmp_24
   call void @_ssdm_op_Write.m_axi.i16P(i16* %m_V, i16 %p_Val2_15_1, i2 -1)
-  %tmp_27_cast = mul i33 18918, %tmp_47
+  %tmp_27_cast = mul i33 -18919, %tmp_47
   %tmp_28 = add i33 %p_Val2_7_cast, %tmp_27_cast
   %tmp_28_cast = sext i33 %tmp_28 to i34
   %p_Val2_11_4 = sub i34 %tmp_28_cast, %p_shl_cast
@@ -147,8 +147,8 @@ _ifconv:
   %neg_ti3 = sub i51 0, %tmp_77
   %tmp_29 = select i1 %tmp_72, i51 %neg_ti3, i51 %tmp_76
   %tmp_21_2 = sext i51 %tmp_29 to i55
-  %tmp_248_2_cast = zext i55 %tmp_21_2 to i56
-  %p_Val2_14_2 = add i56 %tmp_21_cast, %tmp_248_2_cast
+  %tmp_2410_2_cast = zext i55 %tmp_21_2 to i56
+  %p_Val2_14_2 = add i56 %tmp_21_cast, %tmp_2410_2_cast
   %scaled_power_V_2 = call i19 @_ssdm_op_PartSelect.i19.i56.i32.i32(i56 %p_Val2_14_2, i32 15, i32 33)
   %tmp_78 = call i1 @_ssdm_op_BitSelect.i1.i56.i32(i56 %p_Val2_14_2, i32 33)
   %tmp_27_2 = icmp sgt i19 %scaled_power_V_2, 32440
@@ -173,8 +173,8 @@ _ifconv:
   %neg_ti4 = sub i51 0, %tmp_83
   %tmp_32 = select i1 %tmp_80, i51 %neg_ti4, i51 %tmp_82
   %tmp_21_3 = sext i51 %tmp_32 to i55
-  %tmp_248_3_cast = zext i55 %tmp_21_3 to i56
-  %p_Val2_14_3 = add i56 %tmp_21_cast, %tmp_248_3_cast
+  %tmp_2410_3_cast = zext i55 %tmp_21_3 to i56
+  %p_Val2_14_3 = add i56 %tmp_21_cast, %tmp_2410_3_cast
   %scaled_power_V_3 = call i19 @_ssdm_op_PartSelect.i19.i56.i32.i32(i56 %p_Val2_14_3, i32 15, i32 33)
   %tmp_94 = call i1 @_ssdm_op_BitSelect.i1.i56.i32(i56 %p_Val2_14_3, i32 33)
   %tmp_27_3 = icmp sgt i19 %scaled_power_V_3, 32440
@@ -197,8 +197,8 @@ _ifconv:
   %neg_ti9 = sub i51 0, %tmp_87
   %tmp_34 = select i1 %tmp_95, i51 %neg_ti9, i51 %tmp_86
   %tmp_21_4 = sext i51 %tmp_34 to i55
-  %tmp_248_4_cast = zext i55 %tmp_21_4 to i56
-  %p_Val2_14_4 = add i56 %tmp_21_cast, %tmp_248_4_cast
+  %tmp_2410_4_cast = zext i55 %tmp_21_4 to i56
+  %p_Val2_14_4 = add i56 %tmp_21_cast, %tmp_2410_4_cast
   %scaled_power_V_4 = call i19 @_ssdm_op_PartSelect.i19.i56.i32.i32(i56 %p_Val2_14_4, i32 15, i32 33)
   %tmp_98 = call i1 @_ssdm_op_BitSelect.i1.i56.i32(i56 %p_Val2_14_4, i32 33)
   %tmp_27_4 = icmp sgt i19 %scaled_power_V_4, 32440
@@ -223,8 +223,8 @@ _ifconv:
   %neg_ti = sub i51 0, %tmp_91
   %tmp_37 = select i1 %tmp_99, i51 %neg_ti, i51 %tmp_90
   %tmp_21_5 = sext i51 %tmp_37 to i55
-  %tmp_248_5_cast = zext i55 %tmp_21_5 to i56
-  %p_Val2_14_5 = add i56 %tmp_21_cast, %tmp_248_5_cast
+  %tmp_2410_5_cast = zext i55 %tmp_21_5 to i56
+  %p_Val2_14_5 = add i56 %tmp_21_cast, %tmp_2410_5_cast
   %scaled_power_V_5 = call i19 @_ssdm_op_PartSelect.i19.i56.i32.i32(i56 %p_Val2_14_5, i32 15, i32 33)
   %tmp_102 = call i1 @_ssdm_op_BitSelect.i1.i56.i32(i56 %p_Val2_14_5, i32 33)
   %tmp_27_5 = icmp sgt i19 %scaled_power_V_5, 32440
@@ -233,6 +233,9 @@ _ifconv:
   %tmp_57 = or i1 %tmp_102, %tmp_27_5
   %p_Val2_15_5 = select i1 %tmp_57, i16 %phitmp_5_cast, i16 %tmp_38
   call void @_ssdm_op_Write.m_axi.i16P(i16* %m_V, i16 %p_Val2_15_5, i2 -1)
+  %regs_in_V_addr_4 = getelementptr [5 x i16]* %regs_in_V, i64 0, i64 4
+  %regs_in_V_load_4 = load i16* %regs_in_V_addr_4, align 2
+  call void @_ssdm_op_Write.m_axi.i16P(i16* %m_V, i16 %regs_in_V_load_4, i2 -1)
   %m_V_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %m_V)
   ret void
 }
@@ -431,7 +434,7 @@ declare void @_GLOBAL__I_a11() nounwind section ".text.startup"
 
 declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 
-!opencl.kernels = !{!0, !7, !13, !13, !15, !17, !23, !23, !25, !25, !25, !17, !13, !27, !29, !29, !17, !15, !15, !17, !17, !23, !30, !30, !17, !17, !17, !17, !32, !34, !34, !17, !35, !35, !17, !17, !32, !34, !34, !17, !17, !17, !23, !17, !17, !17, !17, !17, !17, !17, !17, !7, !7, !37, !39, !39, !39, !41, !45, !45, !17, !48, !50, !50, !17, !51, !51, !17, !17, !53, !48, !17, !17, !17, !17, !17, !55, !56, !56, !59, !17, !61, !61, !17, !62, !17, !17, !65, !65, !67, !67, !69, !17, !17, !17, !71, !61, !61, !73, !17, !17, !17, !75, !75, !77, !77, !79, !17, !17, !17, !17, !17, !17, !81, !17, !17, !17, !55, !83, !83, !84, !50, !50, !37, !83, !83, !84, !50, !50, !15, !56, !56, !59, !81, !17, !17, !17, !83, !83, !84, !45, !45, !17, !50, !50, !15, !17, !56, !56, !59, !17, !61, !61, !17, !62, !17, !17, !17, !65, !65, !67, !67, !69, !17, !17, !17, !71, !61, !61, !73, !17, !17, !17, !75, !75, !77, !77, !79, !17, !17, !17, !17, !17, !17, !81, !17, !17, !17, !17, !17}
+!opencl.kernels = !{!0, !7, !7, !13, !15, !21, !23, !23, !25, !25, !25, !15, !7, !27, !29, !29, !15, !13, !13, !15, !15, !23, !30, !30, !15, !15, !15, !15, !32, !34, !34, !15, !35, !35, !15, !15, !32, !34, !34, !15, !15, !15, !23, !15, !15, !15, !15, !15, !15, !15, !15, !21, !21, !37, !39, !39, !39, !41, !45, !45, !15, !48, !50, !50, !15, !51, !51, !15, !15, !53, !48, !15, !15, !15, !15, !15, !55, !56, !56, !59, !15, !61, !61, !15, !62, !15, !15, !65, !65, !67, !67, !69, !15, !15, !15, !71, !61, !61, !73, !15, !15, !15, !75, !75, !77, !77, !79, !15, !15, !15, !15, !15, !15, !81, !15, !15, !15, !55, !83, !83, !84, !50, !50, !37, !83, !83, !84, !50, !50, !13, !56, !56, !59, !81, !15, !15, !15, !83, !83, !84, !45, !45, !15, !50, !50, !13, !15, !56, !56, !59, !15, !61, !61, !15, !62, !15, !15, !15, !65, !65, !67, !67, !69, !15, !15, !15, !71, !61, !61, !73, !15, !15, !15, !75, !75, !77, !77, !79, !15, !15, !15, !15, !15, !15, !81, !15, !15, !15, !15, !15}
 !hls.encrypted.func = !{}
 !llvm.map.gv = !{!86}
 
@@ -445,20 +448,20 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}
 !8 = metadata !{metadata !"kernel_arg_addr_space", i32 0}
 !9 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none"}
-!10 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_fixed<16, 1, (enum ap_q_mode)5, (enum ap_o_mode)3, 0> &"}
+!10 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_fixed<19, 4, (enum ap_q_mode)5, (enum ap_o_mode)3, 0> &"}
 !11 = metadata !{metadata !"kernel_arg_type_qual", metadata !""}
 !12 = metadata !{metadata !"kernel_arg_name", metadata !"op"}
 !13 = metadata !{null, metadata !8, metadata !9, metadata !14, metadata !11, metadata !12, metadata !6}
-!14 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_fixed<19, 4, (enum ap_q_mode)5, (enum ap_o_mode)3, 0> &"}
-!15 = metadata !{null, metadata !8, metadata !9, metadata !16, metadata !11, metadata !12, metadata !6}
-!16 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_fixed_base<19, 4, true, (enum ap_q_mode)5, (enum ap_o_mode)3, 0> &"}
-!17 = metadata !{null, metadata !18, metadata !19, metadata !20, metadata !21, metadata !22, metadata !6}
-!18 = metadata !{metadata !"kernel_arg_addr_space"}
-!19 = metadata !{metadata !"kernel_arg_access_qual"}
-!20 = metadata !{metadata !"kernel_arg_type"}
-!21 = metadata !{metadata !"kernel_arg_type_qual"}
-!22 = metadata !{metadata !"kernel_arg_name"}
-!23 = metadata !{null, metadata !8, metadata !9, metadata !16, metadata !11, metadata !24, metadata !6}
+!14 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_fixed_base<19, 4, true, (enum ap_q_mode)5, (enum ap_o_mode)3, 0> &"}
+!15 = metadata !{null, metadata !16, metadata !17, metadata !18, metadata !19, metadata !20, metadata !6}
+!16 = metadata !{metadata !"kernel_arg_addr_space"}
+!17 = metadata !{metadata !"kernel_arg_access_qual"}
+!18 = metadata !{metadata !"kernel_arg_type"}
+!19 = metadata !{metadata !"kernel_arg_type_qual"}
+!20 = metadata !{metadata !"kernel_arg_name"}
+!21 = metadata !{null, metadata !8, metadata !9, metadata !22, metadata !11, metadata !12, metadata !6}
+!22 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_fixed<16, 1, (enum ap_q_mode)5, (enum ap_o_mode)3, 0> &"}
+!23 = metadata !{null, metadata !8, metadata !9, metadata !14, metadata !11, metadata !24, metadata !6}
 !24 = metadata !{metadata !"kernel_arg_name", metadata !"op2"}
 !25 = metadata !{null, metadata !8, metadata !9, metadata !26, metadata !11, metadata !12, metadata !6}
 !26 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_fixed_base<57, 27, true, (enum ap_q_mode)5, (enum ap_o_mode)3, 0> &"}
@@ -533,7 +536,7 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !95 = metadata !{metadata !96}
 !96 = metadata !{metadata !"regs_in.V", metadata !97, metadata !"int16", i32 0, i32 15}
 !97 = metadata !{metadata !98}
-!98 = metadata !{i32 0, i32 3, i32 1}
+!98 = metadata !{i32 0, i32 4, i32 1}
 !99 = metadata !{metadata !100}
 !100 = metadata !{i32 0, i32 15, metadata !101}
 !101 = metadata !{metadata !102}

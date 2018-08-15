@@ -966,15 +966,15 @@
         },
         "Area": {
           "BRAM_18K": "2",
-          "FF": "10218",
-          "LUT": "8337",
+          "FF": "10314",
+          "LUT": "8378",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-14 12:36:52 PDT",
+    "Time": "2018-08-14 14:45:42 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

@@ -1,5 +1,5 @@
 set C_TypeInfoList {{ 
-"mixer" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"regs_in": [[], {"array": ["0", [4]]}] }, {"m": [[], {"array": ["0", [4096]]}] }],[],""], 
+"mixer" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"regs_in": [[], {"array": ["0", [5]]}] }, {"m": [[], {"array": ["0", [4096]]}] }],[],""], 
 "0": [ "F_t", {"typedef": [[[],"1"],""]}], 
 "1": [ "ap_fixed<16, 1, 5, 3, 0>", {"hls_type": {"ap_fixed": [[[[], {"scalar": { "int": 16}}],[[], {"scalar": { "int": 1}}],[[], {"scalar": { "2": 5}}],[[], {"scalar": { "3": 3}}],[[], {"scalar": { "int": 0}}]],""]}}], 
 "3": [ "sc_o_mode", {"enum": [[],[],[{"SC_SAT":  {"scalar": "__integer__"}},{"SC_SAT_ZERO":  {"scalar": "__integer__"}},{"SC_SAT_SYM":  {"scalar": "__integer__"}},{"SC_WRAP":  {"scalar": "__integer__"}},{"SC_WRAP_SM":  {"scalar": "__integer__"}}],""]}], 
@@ -21,7 +21,7 @@ set C_modelArgList {
 	{ m_V int 16 regular {axi_master 1}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "regs_in_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_memory","bitwidth" : 16, "direction" : "READONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "regs_in.V","cData": "int16","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 3,"step" : 1}]}]}], "offset" : {"in":16}, "offset_end" : {"in":23}} , 
+	{ "Name" : "regs_in_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_memory","bitwidth" : 16, "direction" : "READONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "regs_in.V","cData": "int16","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 4,"step" : 1}]}]}], "offset" : {"in":16}, "offset_end" : {"in":31}} , 
  	{ "Name" : "m_V", "interface" : "axi_master", "bitwidth" : 16, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "m.V","cData": "int16","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 4095,"step" : 1}]}]}]} ]}
 # RTL Port declarations: 
 set portNum 65
@@ -189,20 +189,20 @@ set RtlHierarchyInfo {[
 	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mixer_sub_101ns_1cud_U10", "Parent" : "0"},
 	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mixer_sub_101ns_1cud_U11", "Parent" : "0"},
 	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mixer_sub_101ns_1cud_U12", "Parent" : "0"},
-	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mixer_mul_mul_16sdEe_U13", "Parent" : "0"},
-	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mixer_mul_mul_16neOg_U14", "Parent" : "0"}]}
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mixer_mul_mul_16ndEe_U13", "Parent" : "0"},
+	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mixer_mul_mul_16seOg_U14", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	mixer {
-		regs_in_V {Type I LastRead 3 FirstWrite -1}
-		m_V {Type O LastRead 27 FirstWrite 21}}}
+		regs_in_V {Type I LastRead 4 FirstWrite -1}
+		m_V {Type O LastRead 28 FirstWrite 21}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "31", "Max" : "31"}
-	, {"Name" : "Interval", "Min" : "6", "Max" : "6"}
+	{"Name" : "Latency", "Min" : "32", "Max" : "32"}
+	, {"Name" : "Interval", "Min" : "7", "Max" : "7"}
 ]}
 
 set PipelineEnableSignalInfo {[

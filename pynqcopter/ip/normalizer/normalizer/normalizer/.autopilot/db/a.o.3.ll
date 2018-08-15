@@ -81,7 +81,7 @@ define void @normalizer(i32* %regs_in_0, i32* %regs_in_1, i32* %regs_in_2, i32* 
 
 ._crit_edge.2:                                    ; preds = %3, %._crit_edge.1
   %changed_1_2 = phi i2 [ -2, %3 ], [ %changed_1_1_cast, %._crit_edge.1 ] ; [#uses=1 type=i2]
-  %regs_in_3_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_3), !dbg !838 ; [#uses=7 type=i32] [debug line = 80:3]
+  %regs_in_3_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_3), !dbg !838 ; [#uses=3 type=i32] [debug line = 80:3]
   %last_3_load = load i32* @last_3, align 4, !dbg !838 ; [#uses=1 type=i32] [debug line = 80:3]
   %tmp_2_3 = icmp eq i32 %regs_in_3_read, %last_3_load, !dbg !838 ; [#uses=1 type=i1] [debug line = 80:3]
   br i1 %tmp_2_3, label %._crit_edge.3, label %4, !dbg !838 ; [debug line = 80:3]
@@ -93,7 +93,7 @@ define void @normalizer(i32* %regs_in_0, i32* %regs_in_1, i32* %regs_in_2, i32* 
 ._crit_edge.3:                                    ; preds = %4, %._crit_edge.2
   %changed_1_3 = phi i2 [ -1, %4 ], [ %changed_1_2, %._crit_edge.2 ] ; [#uses=1 type=i2]
   %changed_1_3_cast = zext i2 %changed_1_3 to i3, !dbg !838 ; [#uses=1 type=i3] [debug line = 80:3]
-  %regs_in_4_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_4), !dbg !838 ; [#uses=2 type=i32] [debug line = 80:3]
+  %regs_in_4_read = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %regs_in_4), !dbg !838 ; [#uses=6 type=i32] [debug line = 80:3]
   %last_4_load = load i32* @last_4, align 16, !dbg !838 ; [#uses=1 type=i32] [debug line = 80:3]
   %tmp_2_4 = icmp eq i32 %regs_in_4_read, %last_4_load, !dbg !838 ; [#uses=1 type=i1] [debug line = 80:3]
   br i1 %tmp_2_4, label %._crit_edge.4, label %5, !dbg !838 ; [debug line = 80:3]
@@ -115,12 +115,12 @@ define void @normalizer(i32* %regs_in_0, i32* %regs_in_1, i32* %regs_in_2, i32* 
 
 ._crit_edge.5:                                    ; preds = %6, %._crit_edge.4
   %changed_1_5 = phi i3 [ -3, %6 ], [ %changed_1_4, %._crit_edge.4 ] ; [#uses=3 type=i3]
-  %tmp = call i1 @_ssdm_op_BitSelect.i1.i3.i32(i3 %changed_1_5, i32 2), !dbg !844 ; [#uses=1 type=i1] [debug line = 85:2]
-  br i1 %tmp, label %._crit_edge40, label %branch0, !dbg !844 ; [debug line = 85:2]
+  %tmp = icmp ult i3 %changed_1_5, -3, !dbg !844  ; [#uses=1 type=i1] [debug line = 85:2]
+  br i1 %tmp, label %branch0, label %._crit_edge40, !dbg !844 ; [debug line = 85:2]
 
 branch0:                                          ; preds = %._crit_edge.5
   %tmp_3 = zext i3 %changed_1_5 to i64, !dbg !845 ; [#uses=1 type=i64] [debug line = 86:3]
-  %regs_in_load_1_phi = call i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32 %regs_in_0_read, i32 %regs_in_1_read, i32 %regs_in_2_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i32 %regs_in_3_read, i3 %changed_1_5), !dbg !847 ; [#uses=1 type=i32] [debug line = 86:19]
+  %regs_in_load_1_phi = call i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32 %regs_in_0_read, i32 %regs_in_1_read, i32 %regs_in_2_read, i32 %regs_in_3_read, i32 %regs_in_4_read, i32 %regs_in_4_read, i32 %regs_in_4_read, i32 %regs_in_4_read, i3 %changed_1_5), !dbg !847 ; [#uses=1 type=i32] [debug line = 86:19]
   %p_Val2_s = sub i32 %regs_in_load_1_phi, %min_high_read, !dbg !847 ; [#uses=1 type=i32] [debug line = 86:19]
   call void @llvm.dbg.value(metadata !{i32 %p_Val2_s}, i64 0, metadata !848), !dbg !2604 ; [debug line = 496:64@86:19] [debug variable = v]
   call void @llvm.dbg.value(metadata !{i32 %p_Val2_s}, i64 0, metadata !2605), !dbg !2607 ; [debug line = 496:64@496:76@86:19] [debug variable = v]
@@ -251,33 +251,23 @@ case7:                                            ; preds = %entry
 }
 
 ; [#uses=1]
-define weak i1 @_ssdm_op_BitSelect.i1.i3.i32(i3, i32) nounwind readnone {
-entry:
-  %empty = trunc i32 %1 to i3                     ; [#uses=1 type=i3]
-  %empty_2 = shl i3 1, %empty                     ; [#uses=1 type=i3]
-  %empty_3 = and i3 %0, %empty_2                  ; [#uses=1 type=i3]
-  %empty_4 = icmp ne i3 %empty_3, 0               ; [#uses=1 type=i1]
-  ret i1 %empty_4
-}
-
-; [#uses=1]
 define weak i63 @_ssdm_op_BitConcatenate.i63.i32.i31(i32, i31) nounwind readnone {
 entry:
   %empty = zext i32 %0 to i63                     ; [#uses=1 type=i63]
-  %empty_5 = zext i31 %1 to i63                   ; [#uses=1 type=i63]
-  %empty_6 = shl i63 %empty, 31                   ; [#uses=1 type=i63]
-  %empty_7 = or i63 %empty_6, %empty_5            ; [#uses=1 type=i63]
-  ret i63 %empty_7
+  %empty_2 = zext i31 %1 to i63                   ; [#uses=1 type=i63]
+  %empty_3 = shl i63 %empty, 31                   ; [#uses=1 type=i63]
+  %empty_4 = or i63 %empty_3, %empty_2            ; [#uses=1 type=i63]
+  ret i63 %empty_4
 }
 
 ; [#uses=1]
 define weak i48 @_ssdm_op_BitConcatenate.i48.i32.i16(i32, i16) nounwind readnone {
 entry:
   %empty = zext i32 %0 to i48                     ; [#uses=1 type=i48]
-  %empty_8 = zext i16 %1 to i48                   ; [#uses=1 type=i48]
-  %empty_9 = shl i48 %empty, 16                   ; [#uses=1 type=i48]
-  %empty_10 = or i48 %empty_9, %empty_8           ; [#uses=1 type=i48]
-  ret i48 %empty_10
+  %empty_5 = zext i16 %1 to i48                   ; [#uses=1 type=i48]
+  %empty_6 = shl i48 %empty, 16                   ; [#uses=1 type=i48]
+  %empty_7 = or i48 %empty_6, %empty_5            ; [#uses=1 type=i48]
+  ret i48 %empty_7
 }
 
 !opencl.kernels = !{!0, !7, !13, !13, !13, !15, !21, !24, !24, !15, !15, !15, !25, !25, !28, !30, !30, !15, !32, !32, !24, !15, !15}

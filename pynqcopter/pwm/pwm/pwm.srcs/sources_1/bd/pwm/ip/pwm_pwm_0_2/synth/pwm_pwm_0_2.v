@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:pwm:1.0
-// IP Revision: 1808091006
+// IP Revision: 1808141508
 
 (* X_CORE_INFO = "pwm,Vivado 2017.4" *)
 (* CHECK_LICENSE_TYPE = "pwm_pwm_0_2,pwm,{}" *)

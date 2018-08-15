@@ -35425,7 +35425,7 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
    last[i]=regs_in[i];
   }
  }
- if(changed<4) {
+ if(changed<5) {
   m[changed]= F_t(bigBigF_t(regs_in[changed]-min_high)/bigBigF_t(max_high-min_high));
  }
 }
