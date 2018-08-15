@@ -1,0 +1,268 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="iic"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="stat_reg_outValue1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="empty_pirq_outValue"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="full_pirq_outValue"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="ctrl_reg_outValue1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="clearedInterrStatus1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="rxFifoDepth1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="resetAxiEnabled"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="ctrl2RegState_enabled"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="byteCountZero"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="clearedInterruptStatus2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="interrStatus2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="disableTxBitDirection"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="pressByteCountEnabled"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="byteTracker"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="interrStatus3StateEnabled"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="checkInterrReg"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="ctrl_reg_val3"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="lastByteRead"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="rx_fifo_Outvalue"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="clearLatchedInterr"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="releaseBus"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="receivedSuccess"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="pressure_msb"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="pressure_lsb"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="pressure_xlsb"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="stat_reg_val6_state"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="ctrl_reg_val2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="ctrl2RegState"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="ctrl_reg_check"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="zeroBytes"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="interrStatus3State"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="interrStatus5State"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="tx_fifo_1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="tx_fifo_2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="interrStatus"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="stat_reg_val"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="statRegState"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="clearInterrStatus"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="clearInterrStatusCheck"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="error1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="tx_fifo_3"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bmesensor2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="interrStatus3"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

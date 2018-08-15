@@ -1,0 +1,122 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source /data/opt/Xilinx/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/data/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Wed Aug 15 12:20:15 PDT 2018
+INFO: [HLS 200-10] On os Linux Mint 18 Sarah
+INFO: [HLS 200-10] In directory '/home/iavendano/pynq-copter/pynqcopter/ip/bmesensor2'
+INFO: [HLS 200-10] Opening project '/home/iavendano/pynq-copter/pynqcopter/ip/bmesensor2/bmesensor2'.
+INFO: [HLS 200-10] Adding test bench file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'bmesensor2.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'bmesensor2.cpp' to the project
+INFO: [HLS 200-10] Opening solution '/home/iavendano/pynq-copter/pynqcopter/ip/bmesensor2/bmesensor2/bmesensor2'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+make[2]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/bmesensor2/bmesensor2/bmesensor2/csim/build'
+make[2]: 'csim.exe' is up to date.
+make[2]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/bmesensor2/bmesensor2/bmesensor2/csim/build'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-10] Analyzing design file 'bmesensor2.cpp' ...
+INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
+WARNING: [HLS 200-40] Cannot find source file bmesensor.cpp; skipping it.
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:48 ; elapsed = 00:00:56 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 111402 ; free virtual = 495619
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:50 ; elapsed = 00:00:59 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 111353 ; free virtual = 495569
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:51 ; elapsed = 00:01:00 . Memory (MB): peak = 360.152 ; gain = 13.594 ; free physical = 111359 ; free virtual = 495576
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:51 ; elapsed = 00:01:00 . Memory (MB): peak = 360.152 ; gain = 13.594 ; free physical = 111391 ; free virtual = 495608
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:53 ; elapsed = 00:01:02 . Memory (MB): peak = 488.082 ; gain = 141.523 ; free physical = 111344 ; free virtual = 495560
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:54 ; elapsed = 00:01:03 . Memory (MB): peak = 488.082 ; gain = 141.523 ; free physical = 111364 ; free virtual = 495581
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bmesensor2' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bmesensor2'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 63.88 seconds; current allocated memory: 85.232 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.23 seconds; current allocated memory: 87.072 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bmesensor2'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/iic' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/stat_reg_outValue1' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/empty_pirq_outValue' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/full_pirq_outValue' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/ctrl_reg_outValue1' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/clearedInterrStatus1' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/rxFifoDepth1' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/resetAxiEnabled' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/ctrl2RegState_enabled' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/byteCountZero' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/clearedInterruptStatus2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/interrStatus2' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/disableTxBitDirection' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/pressByteCountEnabled' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/byteTracker' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/interrStatus3StateEnabled' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/checkInterrReg' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/ctrl_reg_val3' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/lastByteRead' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/rx_fifo_Outvalue' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/clearLatchedInterr' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/releaseBus' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/receivedSuccess' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/pressure_msb' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/pressure_lsb' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/pressure_xlsb' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/stat_reg_val6_state' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/ctrl_reg_val2' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/ctrl2RegState' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/ctrl_reg_check' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/zeroBytes' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/interrStatus3State' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/interrStatus5State' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/tx_fifo_1' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/tx_fifo_2' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/interrStatus' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/stat_reg_val' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/statRegState' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/clearInterrStatus' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/clearInterrStatusCheck' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/error1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/tx_fifo_3' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor2/interrStatus3' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bmesensor2' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Global scalar 'rx_fifo' will not be exposed as RTL port.
+INFO: [RTGEN 206-100] Bundling port 'return', 'stat_reg_outValue1', 'empty_pirq_outValue', 'full_pirq_outValue', 'ctrl_reg_outValue1', 'clearedInterrStatus1', 'rxFifoDepth1', 'resetAxiEnabled', 'ctrl2RegState_enabled', 'byteCountZero', 'clearedInterruptStatus2', 'interrStatus2', 'disableTxBitDirection', 'pressByteCountEnabled', 'byteTracker', 'interrStatus3StateEnabled', 'checkInterrReg', 'ctrl_reg_val3', 'lastByteRead', 'rx_fifo_Outvalue', 'clearLatchedInterr', 'releaseBus', 'receivedSuccess', 'pressure_msb', 'pressure_lsb', 'pressure_xlsb', 'stat_reg_val6_state', 'ctrl_reg_val2', 'ctrl2RegState', 'ctrl_reg_check', 'zeroBytes', 'interrStatus3State', 'interrStatus5State', 'tx_fifo_1', 'tx_fifo_2', 'interrStatus', 'stat_reg_val', 'statRegState', 'clearInterrStatus', 'clearInterrStatusCheck', 'error1', 'tx_fifo_3' and 'interrStatus3' to AXI-Lite port AXILiteS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bmesensor2'.
+INFO: [HLS 200-111]  Elapsed time: 0.82 seconds; current allocated memory: 91.514 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:58 ; elapsed = 00:01:08 . Memory (MB): peak = 488.082 ; gain = 141.523 ; free physical = 111346 ; free virtual = 495562
+INFO: [SYSC 207-301] Generating SystemC RTL for bmesensor2.
+INFO: [VHDL 208-304] Generating VHDL RTL for bmesensor2.
+INFO: [VLOG 209-307] Generating Verilog RTL for bmesensor2.
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 15 12:21:47 2018...
+INFO: [HLS 200-112] Total elapsed time: 135.49 seconds; peak allocated memory: 91.514 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Wed Aug 15 12:22:30 2018...
