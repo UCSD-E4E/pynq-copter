@@ -1,5 +1,0 @@
-normalizer_mux_83bkb
-normalizer_udiv_6cud
-normalizer_in_s_axi
-normalizer_m_V_m_axi
-normalizer
