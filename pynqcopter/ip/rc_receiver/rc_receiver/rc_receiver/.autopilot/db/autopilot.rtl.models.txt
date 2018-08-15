@@ -1,3 +1,0 @@
-rc_receiver_in_s_axi
-rc_receiver_norm_out_m_axi
-rc_receiver

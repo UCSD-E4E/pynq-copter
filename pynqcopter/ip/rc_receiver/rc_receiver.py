@@ -1,24 +1,24 @@
 ###############################################################################
 # Copyright (c) 2018, The Regents of the University of California All
 # rights reserved.
-# 
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
-# 
+#
 #     * Redistributions of source code must retain the above copyright
 #       notice, this list of conditions and the following disclaimer.
-# 
+#
 #     * Redistributions in binary form must reproduce the above
 #       copyright notice, this list of conditions and the following
 #       disclaimer in the documentation and/or other materials provided
 #       with the distribution.
-# 
+#
 #     * Neither the name of The Regents of the University of California
 #       nor the names of its contributors may be used to endorse or
 #       promote products derived from this software without specific
 #       prior written permission.
-# 
+#
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 # "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
 # LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -36,47 +36,18 @@ from ..HlsCore import HlsCore
 from pynq import MMIO
 
 class RCController(HlsCore):
-
-    __IO_REG_OFF = 0x200
     __IO_REG_LEN = 0x100
 
     def __init__(self, description):
         super().__init__(description)
-        self.__hls_reg = MMIO(self.mmio.base_addr + self.__IO_REG_OFF,
-                              self.__IO_REG_LEN)
+        self.__hls_reg = MMIO(self.mmio.base_addr,self.__IO_REG_LEN)
 
     bindto = ['UCSD:hlsip:rc_controller:1.0']
 
-    def launch(self):
-        """ Start and detatch computation on the io HLS core
-            
-            Returns
-            -------
-            Nothing
-            
-        """
-
-        self._launch()
-        return
-    
-    def land(self):
-        """ Re-Connect and Terminate Computation on the io HLS core
-            
-            Returns
-            -------
-            The 4-bit value representing the value of the buttons.
-            
-        """
-        self._land()
-        return self.__hls_reg.read(0)
-    
     def run(self):
-        """ Launch computation on the io HLS core
-            
-            Returns
-            -------
-            The 4-bit value representing the value of the buttons.
-            
-        """
-        self._run()
-        return self.__hls_reg.read(0)
+        self.__hls_reg.write(0x0,0x81)
+        return 0
+
+    def stop(self):
+        self.__hls_reg.write(0x0,0x0)
+        return 0

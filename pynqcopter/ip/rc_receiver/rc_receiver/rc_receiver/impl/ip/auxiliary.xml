@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="rc_receiver" xd:componentRef="rc_receiver" xd:initiationInterval="1" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
-  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_in" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
-  <xd:arg xd:name="norm_out[]" xd:originalName="norm_out" xd:direction="inout" xd:interfaceRef="m_axi_norm_out" xd:busTypeRef="aximm" xd:arraySize="4096" xd:dataWidth="32" xd:bufferDirection="out"/>
-  <xd:arg xd:name="channels" xd:originalName="channels" xd:direction="in" xd:interfaceRef="channels_V" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="6"/>
-  <xd:latencyEstimates xd:best-case="8" xd:worst-case="8" xd:average-case="8"/>
-  <xd:resourceEstimates xd:LUT="1955" xd:FF="960" xd:BRAM="2" xd:DSP="0"/>
-</xd:acceleratorMap>
