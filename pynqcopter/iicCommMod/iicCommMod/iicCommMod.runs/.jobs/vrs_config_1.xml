@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="iicCommMod_processing_system7_0_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicCommMod/iicCommMod/iicCommMod.runs/iicCommMod_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="iicCommMod_axi_iic_0_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicCommMod/iicCommMod/iicCommMod.runs/iicCommMod_axi_iic_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="iicCommMod_xbar_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicCommMod/iicCommMod/iicCommMod.runs/iicCommMod_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="iicCommMod_auto_pc_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicCommMod/iicCommMod/iicCommMod.runs/iicCommMod_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="iicCommMod_auto_pc_1_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicCommMod/iicCommMod/iicCommMod.runs/iicCommMod_auto_pc_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="iicCommMod_rst_ps7_0_100M_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicCommMod/iicCommMod/iicCommMod.runs/iicCommMod_rst_ps7_0_100M_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="iicCommMod_iiccommmod_0_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicCommMod/iicCommMod/iicCommMod.runs/iicCommMod_iiccommmod_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicCommMod/iicCommMod/iicCommMod.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="iicCommMod_processing_system7_0_0_synth_1"/>
+		<Parent Id="iicCommMod_axi_iic_0_0_synth_1"/>
+		<Parent Id="iicCommMod_xbar_0_synth_1"/>
+		<Parent Id="iicCommMod_auto_pc_0_synth_1"/>
+		<Parent Id="iicCommMod_auto_pc_1_synth_1"/>
+		<Parent Id="iicCommMod_rst_ps7_0_100M_0_synth_1"/>
+		<Parent Id="iicCommMod_iiccommmod_0_0_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicCommMod/iicCommMod/iicCommMod.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="synth_1"/>
+		<Parent Id="iicCommMod_processing_system7_0_0_synth_1"/>
+		<Parent Id="iicCommMod_axi_iic_0_0_synth_1"/>
+		<Parent Id="iicCommMod_xbar_0_synth_1"/>
+		<Parent Id="iicCommMod_auto_pc_0_synth_1"/>
+		<Parent Id="iicCommMod_auto_pc_1_synth_1"/>
+		<Parent Id="iicCommMod_rst_ps7_0_100M_0_synth_1"/>
+		<Parent Id="iicCommMod_iiccommmod_0_0_synth_1"/>
+	</Run>
+</Runs>
+
