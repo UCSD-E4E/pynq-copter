@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Aug  9 10:08:52 2018
+# Process ID: 14482
+# Current directory: /home/brennan/Documents/pynq-copter/pynqcopter/pwm
+# Command line: vivado -mode batch -source ..//build.tcl -tclargs pwm single xc7z020clg400-1
+# Log file: /home/brennan/Documents/pynq-copter/pynqcopter/pwm/vivado.log
+# Journal file: /home/brennan/Documents/pynq-copter/pynqcopter/pwm/vivado.jou
+#-----------------------------------------------------------
+source ..//build.tcl
