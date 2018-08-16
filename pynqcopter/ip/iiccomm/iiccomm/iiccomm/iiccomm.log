@@ -14,14 +14,14 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'iiccomm.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:29 ; elapsed = 00:00:40 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 120252 ; free virtual = 500862
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:31 ; elapsed = 00:00:42 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 120152 ; free virtual = 500762
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:18 ; elapsed = 00:00:27 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 119073 ; free virtual = 503629
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:19 ; elapsed = 00:00:29 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 119071 ; free virtual = 503627
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:32 ; elapsed = 00:00:43 . Memory (MB): peak = 360.145 ; gain = 13.582 ; free physical = 120131 ; free virtual = 500741
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:21 ; elapsed = 00:00:30 . Memory (MB): peak = 360.141 ; gain = 13.582 ; free physical = 119057 ; free virtual = 503613
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:32 ; elapsed = 00:00:43 . Memory (MB): peak = 360.145 ; gain = 13.582 ; free physical = 120124 ; free virtual = 500733
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:33 ; elapsed = 00:00:44 . Memory (MB): peak = 488.148 ; gain = 141.586 ; free physical = 120055 ; free virtual = 500665
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:34 ; elapsed = 00:00:45 . Memory (MB): peak = 488.148 ; gain = 141.586 ; free physical = 120034 ; free virtual = 500644
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:21 ; elapsed = 00:00:31 . Memory (MB): peak = 360.141 ; gain = 13.582 ; free physical = 119045 ; free virtual = 503601
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:21 ; elapsed = 00:00:31 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 119041 ; free virtual = 503596
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:22 ; elapsed = 00:00:32 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 118984 ; free virtual = 503540
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'iiccomm' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -29,13 +29,13 @@ INFO: [HLS 200-42] -- Implementing module 'iiccomm'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 44.89 seconds; current allocated memory: 77.470 MB.
+INFO: [HLS 200-111]  Elapsed time: 32.1 seconds; current allocated memory: 74.699 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 77.968 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 75.306 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'iiccomm'
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -43,19 +43,20 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/iic' to 'm_axi'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/stat_reg_outValue1' to 's_axilite & ap_ovld'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/empty_pirq_outValue' to 's_axilite & ap_ovld'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/full_pirq_outValue' to 's_axilite & ap_ovld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/stat_reg_outValue2' to 's_axilite & ap_ovld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/stat_reg_outValue3' to 's_axilite & ap_ovld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/stat_reg_outValue4' to 's_axilite & ap_ovld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/tx_fifo_outValue' to 's_axilite & ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/stat_reg_outValue2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/stat_reg_outValue3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/stat_reg_outValue4' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/tx_fifo_outValue' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/rx_fifo_outValue' to 's_axilite & ap_ovld'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm/ctrl_reg_outValue' to 's_axilite & ap_ovld'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'iiccomm' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Global scalar 'rx_fifo_val' will not be exposed as RTL port.
 INFO: [RTGEN 206-100] Bundling port 'return', 'stat_reg_outValue1', 'empty_pirq_outValue', 'full_pirq_outValue', 'stat_reg_outValue2', 'stat_reg_outValue3', 'stat_reg_outValue4', 'tx_fifo_outValue', 'rx_fifo_outValue' and 'ctrl_reg_outValue' to AXI-Lite port AXILiteS.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'iiccomm'.
-INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 79.468 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:35 ; elapsed = 00:00:46 . Memory (MB): peak = 488.148 ; gain = 141.586 ; free physical = 120039 ; free virtual = 500648
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 76.983 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:23 ; elapsed = 00:00:33 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 118952 ; free virtual = 503509
 INFO: [SYSC 207-301] Generating SystemC RTL for iiccomm.
 INFO: [VHDL 208-304] Generating VHDL RTL for iiccomm.
 INFO: [VLOG 209-307] Generating Verilog RTL for iiccomm.
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-INFO: [HLS 200-112] Total elapsed time: 95.87 seconds; peak allocated memory: 79.468 MB.
+INFO: [HLS 200-112] Total elapsed time: 64.86 seconds; peak allocated memory: 76.983 MB.

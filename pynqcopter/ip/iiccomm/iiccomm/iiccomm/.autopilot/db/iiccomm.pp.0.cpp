@@ -33186,7 +33186,7 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 };
 # 40 "./iiccomm.hpp" 2
-# 53 "./iiccomm.hpp"
+# 52 "./iiccomm.hpp"
 void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t& stat_reg_outValue2, volatile uint32_t& stat_reg_outValue3, volatile uint32_t& stat_reg_outValue4, volatile uint32_t& tx_fifo_outValue, volatile uint32_t& rx_fifo_outValue, volatile uint32_t&ctrl_reg_outValue);
 # 36 "iiccomm.cpp" 2
 
@@ -33202,7 +33202,7 @@ static uint32_t tx_fifo_val;
 static uint32_t stat_reg_val2;
 static uint32_t stat_reg_val3;
 static uint32_t stat_reg_val4;
-static uint32_t rx_fifo_val;
+uint32_t rx_fifo_val;
 
 
 
@@ -33233,7 +33233,7 @@ void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1,
  full_pirq_outValue = full_pirq_val;
 
 
-
+ iic[(0x40001000/4)+(0x100/4)] = 0x02;
 
 
  iic[(0x40001000/4)+(0x100/4)] = 1;
@@ -33246,33 +33246,48 @@ void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1,
 
 
 
+ iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
+ iic[(0x40001000/4)+(0x108/4)] = 0xE0;
+ iic[(0x40001000/4)+(0x108/4)] = 0xB6;
+
 
  iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
-
- tx_fifo_val = iic[(0x40001000/4)+(0x108/4)];
- tx_fifo_outValue = tx_fifo_val;
-
-
-   stat_reg_val2 = iic[(0x40001000/4)+(0x104/4)];
-    stat_reg_outValue2=stat_reg_val2;
+ iic[(0x40001000/4)+(0x108/4)] = 0xF2;
+ iic[(0x40001000/4)+(0x108/4)] = 0x00;
 
 
- iic[(0x40001000/4)+(0x108/4)] = 0xD0;
+ iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
+ iic[(0x40001000/4)+(0x108/4)] = 0xF4;
+ iic[(0x40001000/4)+(0x108/4)] = 0x17;
 
 
-   stat_reg_val3 = iic[(0x40001000/4)+(0x104/4)];
-    stat_reg_outValue3=stat_reg_val3;
+ iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
+ iic[(0x40001000/4)+(0x108/4)] = 0xF5;
+ iic[(0x40001000/4)+(0x108/4)] = 0x24;
+
+
+
+
+ iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
+# 125 "iiccomm.cpp"
+ iic[(0x40001000/4)+(0x108/4)] = 0xF7;
+
+
+
+
 
 
  iic[(0x40001000/4)+(0x108/4)] = 0x1ED;
 
 
+ iic[(0x40001000/4)+(0x108/4)] = 0x203;
 
- stat_reg_val4 = iic[(0x40001000/4)+(0x104/4)];
-    stat_reg_outValue4=stat_reg_val4;
+
+
 
 
  rx_fifo_val = iic[(0x40001000/4)+(0x10C/4)];
     rx_fifo_outValue=rx_fifo_val;
+
 
 }

@@ -46,7 +46,7 @@ static uint32_t tx_fifo_val;
 static uint32_t stat_reg_val2;
 static uint32_t stat_reg_val3;
 static uint32_t stat_reg_val4;
-static uint32_t rx_fifo_val;
+uint32_t rx_fifo_val;
 
 
 
@@ -77,7 +77,7 @@ void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1,
 	full_pirq_outValue = full_pirq_val;
 
 	//RESET TX FIFO IN CR REG
-	//iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x02;
+	iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 0x02;
 
 	//ENABLE AXI I2C, REMOVE RESET FOR TX, DISABLE GEN. CALL IN CR REG
 	iic[IIC_INDEX+IIC_CONTROL_REG_OFF] = 1;
@@ -88,35 +88,58 @@ void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1,
     stat_reg_val1 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
     stat_reg_outValue1=stat_reg_val1;
 
+//////////////////BME280 SET UP////////////////
+	//WRITE TO RESET REGISTER ON BAROMETER SENSOR
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xE0;
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xB6; 
+
+	//SKIP HUMIDITY MEASUREMENTS 
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF2;
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x00; 
+
+	//ENABLE PRESSURE MEASUREMENT, SKIP TEMPERATURE
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF4; 
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x17; 
+
+	//CONFIGURE REGISTER SETTINGS: time sampling, time constant IIR Filter
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF5; 
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x24;
+
 //BEGIN READING AND WRITING TO SENSOR
 	
 	//WRITE SENSOR ADDRESS TO TX_FIFO WRITE ACCESS
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
 
-	tx_fifo_val = iic[IIC_INDEX+IIC_TX_FIFO_OFF];
-	tx_fifo_outValue = tx_fifo_val;
+	//tx_fifo_val = iic[IIC_INDEX+IIC_TX_FIFO_OFF];
+	//tx_fifo_outValue = tx_fifo_val;
 
 	//read status register again
-  	stat_reg_val2 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
-    stat_reg_outValue2=stat_reg_val2;
+  	//stat_reg_val2 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
+    //stat_reg_outValue2=stat_reg_val2;
 
-	//WRITE CHIP ID REGISTER ADDRESS TO TX FIFO 
-	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xD0;
+	//WRITE PRESSURE REGISTER ADDRESS TO TX FIFO 
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF7;
 	
 	//read status register again
-  	stat_reg_val3 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
-    stat_reg_outValue3=stat_reg_val3;
+  	//stat_reg_val3 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
+    //stat_reg_outValue3=stat_reg_val3;
 
 	//WRITE SENSOR ADDRESS TO TX_FIFO READ ACCESS
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1ED;
-
+	
+	//SET STOP BIT AND NUMBER OF BYTES TO READ
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x203;
 
 	//READ RX_FIFO 
-	stat_reg_val4 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
-    stat_reg_outValue4=stat_reg_val4;
-	//if(stat_reg_val_new == 0x88)
-	//{
+	//stat_reg_val4 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
+    //stat_reg_outValue4=stat_reg_val4;
+
 	rx_fifo_val = iic[IIC_INDEX+IIC_RX_FIFO_OFF];
-    rx_fifo_outValue=rx_fifo_val;				
-	//}
+    rx_fifo_outValue=rx_fifo_val;
+				
+	
 }

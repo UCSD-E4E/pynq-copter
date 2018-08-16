@@ -49,7 +49,6 @@
 #define IIC_TX_FIFO_OFF (0x108/4)
 #define IIC_RX_FIFO_OFF (0x10C/4)
 
-
 void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t& stat_reg_outValue2, volatile uint32_t& stat_reg_outValue3, volatile uint32_t& stat_reg_outValue4, volatile uint32_t& tx_fifo_outValue, volatile uint32_t& rx_fifo_outValue, volatile uint32_t&ctrl_reg_outValue);
 
 #endif
