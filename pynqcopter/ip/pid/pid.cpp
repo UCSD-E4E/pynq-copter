@@ -35,13 +35,13 @@
 #include "ap_fixed.h"
 typedef ap_fixed<16, 9> fixed;
 
-void pid (float targetThrust, float targetRoll, float targetPitch, float targetYaw,
-		float measuredThrust, float measuredRoll, float measuredPitch, float measuredYaw,
-		float dt,
-		float KpThrust, float KpRoll, float KpPitch, float KpYaw,
-		float KiThrust, float KiRoll, float KiPitch, float KiYaw,
-		float KdThrust, float KdRoll, float KdPitch, float KdYaw,
-		float& responseThrust, float& responseRoll, float& responsePitch, float& responseYaw) {
+void pid (fixed targetThrust, fixed targetRoll, fixed targetPitch, fixed targetYaw,
+		fixed measuredThrust, fixed measuredRoll, fixed measuredPitch, fixed measuredYaw,
+		fixed dt,
+		fixed KpThrust, fixed KpRoll, fixed KpPitch, fixed KpYaw,
+		fixed KiThrust, fixed KiRoll, fixed KiPitch, fixed KiYaw,
+		fixed KdThrust, fixed KdRoll, fixed KdPitch, fixed KdYaw,
+		fixed& responseThrust, fixed& responseRoll, fixed& responsePitch, fixed& responseYaw) {
 
 	//SETUP PRAGMAS
 	#pragma HLS INTERFACE s_axilite port=return bundle=CTRL
@@ -71,40 +71,17 @@ void pid (float targetThrust, float targetRoll, float targetPitch, float targetY
 	#pragma HLS INTERFACE s_axilite port=responsePitch bundle=CTRL
 	#pragma HLS INTERFACE s_axilite port=responseYaw bundle=CTRL
 
-	//CAST INPUT FLOATS TO AP_FIXED; NOT NECESSARY AFTER INTEGRATION W/ SENSOR IP CORE
-	fixed f_targetThrust = targetThrust;
-	fixed f_targetRoll = targetRoll;
-	fixed f_targetPitch = targetPitch;
-	fixed f_targetYaw = targetYaw;
-	fixed f_measuredThrust = measuredThrust;
-	fixed f_measuredRoll = measuredRoll;
-	fixed f_measuredPitch = measuredPitch;
-	fixed f_measuredYaw = measuredYaw;
-	fixed f_dt = dt;
-	fixed f_KpThrust = KpThrust;
-	fixed f_KpRoll = KpRoll;
-	fixed f_KpPitch = KpPitch;
-	fixed f_KpYaw = KpYaw;
-	fixed f_KiThrust = KiThrust;
-	fixed f_KiRoll = KiRoll;
-	fixed f_KiPitch = KiPitch;
-	fixed f_KiYaw = KiYaw;
-	fixed f_KdThrust = KdThrust;
-	fixed f_KdRoll = KdRoll;
-	fixed f_KdPitch = KdPitch;
-	fixed f_KdYaw = KdYaw;
-
 	//CALCULATE THRUST VALUES
 	static fixed integralThrust = 0;
 	static fixed previous_errorThrust = 0;
 	#pragma HLS RESET variable=integralThrust
 	#pragma HLS RESET variable=previous_errorThrust
 
-	fixed current_errorThrust = f_targetThrust - f_measuredThrust;
-	integralThrust = integralThrust + (current_errorThrust * f_dt);
-	fixed derivativeThrust = (current_errorThrust - previous_errorThrust) / f_dt;
+	fixed current_errorThrust = targetThrust - measuredThrust;
+	integralThrust = integralThrust + (current_errorThrust * dt);
+	fixed derivativeThrust = (current_errorThrust - previous_errorThrust) / dt;
 
-	fixed f_responseThrust = (f_KpThrust * current_errorThrust) + (f_KiThrust * integralThrust) + (f_KdThrust * derivativeThrust);
+	fixed f_responseThrust = (KpThrust * current_errorThrust) + (KiThrust * integralThrust) + (KdThrust * derivativeThrust);
 	responseThrust = f_responseThrust.to_float();
 	previous_errorThrust = current_errorThrust;
 
@@ -114,11 +91,11 @@ void pid (float targetThrust, float targetRoll, float targetPitch, float targetY
 	#pragma HLS RESET variable=integralRoll
 	#pragma HLS RESET variable=previous_errorRoll
 
-	fixed current_errorRoll = f_targetRoll - f_measuredRoll;
-	integralRoll = integralRoll + (current_errorRoll * f_dt);
-	fixed derivativeRoll = (current_errorRoll - previous_errorRoll) / f_dt;
+	fixed current_errorRoll = targetRoll - measuredRoll;
+	integralRoll = integralRoll + (current_errorRoll * dt);
+	fixed derivativeRoll = (current_errorRoll - previous_errorRoll) / dt;
 
-	fixed f_responseRoll = (f_KpRoll * current_errorRoll) + (f_KiRoll * integralRoll) + (f_KdRoll * derivativeRoll);
+	fixed f_responseRoll = (KpRoll * current_errorRoll) + (KiRoll * integralRoll) + (KdRoll * derivativeRoll);
 	responseRoll = f_responseRoll.to_float();
 	previous_errorRoll = current_errorRoll;
 
@@ -128,11 +105,11 @@ void pid (float targetThrust, float targetRoll, float targetPitch, float targetY
 	#pragma HLS RESET variable=integralPitch
 	#pragma HLS RESET variable=previous_errorPitch
 
-	fixed current_errorPitch = f_targetPitch - f_measuredPitch;
-	integralPitch = integralPitch + (current_errorPitch * f_dt);
-	fixed derivativePitch = (current_errorPitch - previous_errorPitch) / f_dt;
+	fixed current_errorPitch = targetPitch - measuredPitch;
+	integralPitch = integralPitch + (current_errorPitch * dt);
+	fixed derivativePitch = (current_errorPitch - previous_errorPitch) / dt;
 
-	fixed f_responsePitch = (f_KpPitch * current_errorPitch) + (f_KiPitch * integralPitch) + (f_KdPitch * derivativePitch);
+	fixed f_responsePitch = (KpPitch * current_errorPitch) + (KiPitch * integralPitch) + (KdPitch * derivativePitch);
 	responsePitch = f_responsePitch.to_float();
 	previous_errorPitch = current_errorPitch;
 
@@ -142,11 +119,11 @@ void pid (float targetThrust, float targetRoll, float targetPitch, float targetY
 	#pragma HLS RESET variable=integralYaw
 	#pragma HLS RESET variable=previous_errorYaw
 
-	fixed current_errorYaw = f_targetYaw - f_measuredYaw;
-	integralYaw = integralYaw + (current_errorYaw * f_dt);
-	fixed derivativeYaw = (current_errorYaw - previous_errorYaw) / f_dt;
+	fixed current_errorYaw = targetYaw - measuredYaw;
+	integralYaw = integralYaw + (current_errorYaw * dt);
+	fixed derivativeYaw = (current_errorYaw - previous_errorYaw) / dt;
 
-	fixed f_responseYaw = (f_KpYaw * current_errorYaw) + (f_KiYaw * integralYaw) + (f_KdYaw * derivativeYaw);
+	fixed f_responseYaw = (KpYaw * current_errorYaw) + (KiYaw * integralYaw) + (KdYaw * derivativeYaw);
 	responseYaw = f_responseYaw.to_float();
 	previous_errorYaw = current_errorYaw;
 }
