@@ -1,0 +1,25 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <config>
+        <schedule model="iiccommmod"/>
+    </config>
+    <ExportDesign askAgain="true" evaluate="false" rtl="verilog" formatName="ip_catalog">
+        <Format formatName="ip_catalog" description="HLS Core: Iiccommmod Function" vendor="UCSD" library="hlsip" ipname="" version="1.0" driver_input_dir="" display_name="Iiccommmod" taxonomy=""/>
+    </ExportDesign>
+    <name>
+        <value string="iiccommmod"/>
+    </name>
+    <project>
+        <value string="iiccommmod"/>
+    </project>
+    <targetInfo>
+        <TargetInfo value="xc7z020:clg400:-1"/>
+    </targetInfo>
+    <libraryList>
+        <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
+        <library value="xilinx/zynq/zynq_fpv6" name="DefaultPlatform"/>
+    </libraryList>
+    <clockList>
+        <clock default="false" name="default" period="4"/>
+    </clockList>
+</AutoPilot:solution>
+

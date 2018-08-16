@@ -1,0 +1,4 @@
+<annotationInfo>
+<item  id="6" filename="iiccommmod.cpp" linenumber="138" name="tmp_3" contextFuncName="readData" moduleName="readData" rtlName="iiccommmod_mul_32bkb_U1" latency="6" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/iiccommmod"></item>
+<item  id="54" filename="iiccommmod.cpp" linenumber="112" name="" contextFuncName="iiccommmod" moduleName="iiccommmod" rtlName="grp_readData_fu_188" latency="1" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/iiccommmod"></item>
+</annotationInfo>
