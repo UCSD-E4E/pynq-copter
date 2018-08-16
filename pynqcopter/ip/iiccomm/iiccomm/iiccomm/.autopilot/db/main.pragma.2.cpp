@@ -33349,6 +33349,22 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 # 40 "./iiccomm.hpp" 2
 # 52 "./iiccomm.hpp"
 void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t& stat_reg_outValue2, volatile uint32_t& stat_reg_outValue3, volatile uint32_t& stat_reg_outValue4, volatile uint32_t& tx_fifo_outValue, volatile uint32_t& rx_fifo_outValue, volatile uint32_t&ctrl_reg_outValue);
+
+
+template <unsigned long long MILLISECONDS, unsigned long long F_OVERLAY_HZ = 50000000ULL>
+void delay_until_ms(){
+
+_ssdm_InlineSelf(0, "");
+_ssdm_op_SpecProtocol(0, "");
+ volatile char dummy;
+    ap_uint<64> ctr;
+    ap_uint<64> cyc = (F_OVERLAY_HZ * MILLISECONDS / 1000);
+    for (ctr = 0; ctr < cyc; ++ctr){
+        dummy = dummy;
+    }
+    return;
+
+}
 # 36 "main.cpp" 2
 
 

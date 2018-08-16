@@ -97,94 +97,100 @@ end;
 architecture behav of iiccomm is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "iiccomm,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=68,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=1284,HLS_SYN_LUT=2040}";
+    "iiccomm,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg400-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=1000000073,HLS_SYN_TPT=none,HLS_SYN_MEM=2,HLS_SYN_DSP=0,HLS_SYN_FF=1379,HLS_SYN_LUT=2201}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
-    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000001";
-    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000010";
-    constant ap_ST_fsm_state3 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000100";
-    constant ap_ST_fsm_state4 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000000000001000";
-    constant ap_ST_fsm_state5 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000000000010000";
-    constant ap_ST_fsm_state6 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000000000100000";
-    constant ap_ST_fsm_state7 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000000001000000";
-    constant ap_ST_fsm_state8 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000000010000000";
-    constant ap_ST_fsm_state9 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000000100000000";
-    constant ap_ST_fsm_state10 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000001000000000";
-    constant ap_ST_fsm_state11 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000010000000000";
-    constant ap_ST_fsm_state12 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000100000000000";
-    constant ap_ST_fsm_state13 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000001000000000000";
-    constant ap_ST_fsm_state14 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000010000000000000";
-    constant ap_ST_fsm_state15 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000100000000000000";
-    constant ap_ST_fsm_state16 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000001000000000000000";
-    constant ap_ST_fsm_state17 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000010000000000000000";
-    constant ap_ST_fsm_state18 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000100000000000000000";
-    constant ap_ST_fsm_state19 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000001000000000000000000";
-    constant ap_ST_fsm_state20 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000010000000000000000000";
-    constant ap_ST_fsm_state21 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000100000000000000000000";
-    constant ap_ST_fsm_state22 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000001000000000000000000000";
-    constant ap_ST_fsm_state23 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000010000000000000000000000";
-    constant ap_ST_fsm_state24 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000100000000000000000000000";
-    constant ap_ST_fsm_state25 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000001000000000000000000000000";
-    constant ap_ST_fsm_state26 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000010000000000000000000000000";
-    constant ap_ST_fsm_state27 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000100000000000000000000000000";
-    constant ap_ST_fsm_state28 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000001000000000000000000000000000";
-    constant ap_ST_fsm_state29 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000010000000000000000000000000000";
-    constant ap_ST_fsm_state30 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000100000000000000000000000000000";
-    constant ap_ST_fsm_state31 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000001000000000000000000000000000000";
-    constant ap_ST_fsm_state32 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000010000000000000000000000000000000";
-    constant ap_ST_fsm_state33 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000100000000000000000000000000000000";
-    constant ap_ST_fsm_state34 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000001000000000000000000000000000000000";
-    constant ap_ST_fsm_state35 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000010000000000000000000000000000000000";
-    constant ap_ST_fsm_state36 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000100000000000000000000000000000000000";
-    constant ap_ST_fsm_state37 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000001000000000000000000000000000000000000";
-    constant ap_ST_fsm_state38 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000010000000000000000000000000000000000000";
-    constant ap_ST_fsm_state39 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000100000000000000000000000000000000000000";
-    constant ap_ST_fsm_state40 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000001000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state41 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000010000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state42 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000100000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state43 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000001000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state44 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000010000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state45 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000100000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state46 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000001000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state47 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000010000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state48 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000100000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state49 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000001000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state50 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000010000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state51 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000100000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state52 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000001000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state53 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000010000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state54 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000100000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state55 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000001000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state56 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000010000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state57 : STD_LOGIC_VECTOR (68 downto 0) := "000000000000100000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state58 : STD_LOGIC_VECTOR (68 downto 0) := "000000000001000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state59 : STD_LOGIC_VECTOR (68 downto 0) := "000000000010000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state60 : STD_LOGIC_VECTOR (68 downto 0) := "000000000100000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state61 : STD_LOGIC_VECTOR (68 downto 0) := "000000001000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state62 : STD_LOGIC_VECTOR (68 downto 0) := "000000010000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state63 : STD_LOGIC_VECTOR (68 downto 0) := "000000100000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state64 : STD_LOGIC_VECTOR (68 downto 0) := "000001000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state65 : STD_LOGIC_VECTOR (68 downto 0) := "000010000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state66 : STD_LOGIC_VECTOR (68 downto 0) := "000100000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state67 : STD_LOGIC_VECTOR (68 downto 0) := "001000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state68 : STD_LOGIC_VECTOR (68 downto 0) := "010000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_ST_fsm_state69 : STD_LOGIC_VECTOR (68 downto 0) := "100000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000001";
+    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000010";
+    constant ap_ST_fsm_state3 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000100";
+    constant ap_ST_fsm_state4 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000001000";
+    constant ap_ST_fsm_state5 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000010000";
+    constant ap_ST_fsm_state6 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000100000";
+    constant ap_ST_fsm_state7 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000001000000";
+    constant ap_ST_fsm_state8 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000010000000";
+    constant ap_ST_fsm_state9 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000100000000";
+    constant ap_ST_fsm_state10 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000001000000000";
+    constant ap_ST_fsm_state11 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000010000000000";
+    constant ap_ST_fsm_state12 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000100000000000";
+    constant ap_ST_fsm_state13 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000001000000000000";
+    constant ap_ST_fsm_state14 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000010000000000000";
+    constant ap_ST_fsm_state15 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000100000000000000";
+    constant ap_ST_fsm_state16 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000001000000000000000";
+    constant ap_ST_fsm_state17 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000010000000000000000";
+    constant ap_ST_fsm_state18 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000100000000000000000";
+    constant ap_ST_fsm_state19 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000001000000000000000000";
+    constant ap_ST_fsm_state20 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000010000000000000000000";
+    constant ap_ST_fsm_state21 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000100000000000000000000";
+    constant ap_ST_fsm_state22 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000001000000000000000000000";
+    constant ap_ST_fsm_state23 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000010000000000000000000000";
+    constant ap_ST_fsm_state24 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000100000000000000000000000";
+    constant ap_ST_fsm_state25 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000001000000000000000000000000";
+    constant ap_ST_fsm_state26 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000010000000000000000000000000";
+    constant ap_ST_fsm_state27 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000100000000000000000000000000";
+    constant ap_ST_fsm_state28 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000001000000000000000000000000000";
+    constant ap_ST_fsm_state29 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000010000000000000000000000000000";
+    constant ap_ST_fsm_state30 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000100000000000000000000000000000";
+    constant ap_ST_fsm_state31 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000001000000000000000000000000000000";
+    constant ap_ST_fsm_state32 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000010000000000000000000000000000000";
+    constant ap_ST_fsm_state33 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000100000000000000000000000000000000";
+    constant ap_ST_fsm_state34 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000001000000000000000000000000000000000";
+    constant ap_ST_fsm_state35 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000010000000000000000000000000000000000";
+    constant ap_ST_fsm_state36 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000100000000000000000000000000000000000";
+    constant ap_ST_fsm_state37 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000001000000000000000000000000000000000000";
+    constant ap_ST_fsm_state38 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000010000000000000000000000000000000000000";
+    constant ap_ST_fsm_state39 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000100000000000000000000000000000000000000";
+    constant ap_ST_fsm_state40 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000001000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state41 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000010000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state42 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000100000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state43 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000001000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state44 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000010000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state45 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000100000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state46 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000001000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state47 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000010000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state48 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000100000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state49 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000001000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state50 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000010000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state51 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000100000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state52 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000001000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state53 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000010000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state54 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000100000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state55 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000001000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state56 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000010000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state57 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000100000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state58 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000001000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state59 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000010000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state60 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000100000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state61 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000001000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state62 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000010000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state63 : STD_LOGIC_VECTOR (73 downto 0) := "00000000000100000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state64 : STD_LOGIC_VECTOR (73 downto 0) := "00000000001000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state65 : STD_LOGIC_VECTOR (73 downto 0) := "00000000010000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state66 : STD_LOGIC_VECTOR (73 downto 0) := "00000000100000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state67 : STD_LOGIC_VECTOR (73 downto 0) := "00000001000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state68 : STD_LOGIC_VECTOR (73 downto 0) := "00000010000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state69 : STD_LOGIC_VECTOR (73 downto 0) := "00000100000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state70 : STD_LOGIC_VECTOR (73 downto 0) := "00001000000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state71 : STD_LOGIC_VECTOR (73 downto 0) := "00010000000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state72 : STD_LOGIC_VECTOR (73 downto 0) := "00100000000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state73 : STD_LOGIC_VECTOR (73 downto 0) := "01000000000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_ST_fsm_state74 : STD_LOGIC_VECTOR (73 downto 0) := "10000000000000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_boolean_1 : BOOLEAN := true;
     constant ap_const_lv32_7 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000111";
     constant ap_const_lv32_8 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001000";
-    constant ap_const_lv32_9 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001001";
+    constant ap_const_lv32_D : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001101";
     constant ap_const_lv32_E : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001110";
-    constant ap_const_lv32_F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001111";
+    constant ap_const_lv32_15 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000010101";
     constant ap_const_lv32_16 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000010110";
+    constant ap_const_lv32_1B : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000011011";
     constant ap_const_lv32_17 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000010111";
     constant ap_const_lv32_1C : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000011100";
-    constant ap_const_lv32_18 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000011000";
     constant ap_const_lv32_1D : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000011101";
+    constant ap_const_lv32_24 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000100100";
     constant ap_const_lv32_1E : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000011110";
     constant ap_const_lv32_25 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000100101";
-    constant ap_const_lv32_1F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000011111";
     constant ap_const_lv32_26 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000100110";
+    constant ap_const_lv32_2B : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000101011";
     constant ap_const_lv32_27 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000100111";
     constant ap_const_lv32_2C : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000101100";
     constant ap_const_lv32_28 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000101000";
@@ -193,7 +199,6 @@ architecture behav of iiccomm is
     constant ap_const_lv32_2E : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000101110";
     constant ap_const_lv32_2A : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000101010";
     constant ap_const_lv32_2F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000101111";
-    constant ap_const_lv32_2B : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000101011";
     constant ap_const_lv32_30 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000110000";
     constant ap_const_lv32_31 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000110001";
     constant ap_const_lv32_32 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000110010";
@@ -202,26 +207,33 @@ architecture behav of iiccomm is
     constant ap_const_lv32_35 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000110101";
     constant ap_const_lv32_36 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000110110";
     constant ap_const_lv32_37 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000110111";
+    constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
     constant ap_const_lv32_38 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111000";
+    constant ap_const_lv32_3D : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111101";
     constant ap_const_lv32_39 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111001";
+    constant ap_const_lv32_3E : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111110";
     constant ap_const_lv32_3A : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111010";
+    constant ap_const_lv32_3F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111111";
     constant ap_const_lv32_3B : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111011";
-    constant ap_const_lv32_3C : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111100";
-    constant ap_const_lv32_43 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001000011";
+    constant ap_const_lv32_40 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001000000";
+    constant ap_const_lv32_41 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001000001";
+    constant ap_const_lv32_48 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001000";
     constant C_S_AXI_DATA_WIDTH : INTEGER range 63 downto 0 := 20;
     constant C_M_AXI_DATA_WIDTH : INTEGER range 63 downto 0 := 20;
+    constant ap_const_boolean_0 : BOOLEAN := false;
+    constant ap_const_lv29_0 : STD_LOGIC_VECTOR (28 downto 0) := "00000000000000000000000000000";
+    constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv64_10000448 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000010000000000000000010001001000";
     constant ap_const_lv64_10000440 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000010000000000000000010001000000";
     constant ap_const_lv64_10000441 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000010000000000000000010001000001";
     constant ap_const_lv64_10000442 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000010000000000000000010001000010";
     constant ap_const_lv64_10000443 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000010000000000000000010001000011";
     constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
-    constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
     constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
+    constant ap_const_lv32_F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001111";
     constant ap_const_lv4_F : STD_LOGIC_VECTOR (3 downto 0) := "1111";
-    constant ap_const_boolean_0 : BOOLEAN := false;
     constant ap_const_lv32_2 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000010";
     constant ap_const_lv32_1EC : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000111101100";
     constant ap_const_lv32_E0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000011100000";
@@ -229,17 +241,18 @@ architecture behav of iiccomm is
     constant ap_const_lv32_F2 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000011110010";
     constant ap_const_lv32_F4 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000011110100";
     constant ap_const_lv32_F5 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000011110101";
-    constant ap_const_lv32_24 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000100100";
     constant ap_const_lv32_F7 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000011110111";
     constant ap_const_lv32_1ED : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000111101101";
     constant ap_const_lv32_203 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000001000000011";
-    constant ap_const_lv32_44 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001000100";
+    constant ap_const_lv32_49 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001001001";
+    constant ap_const_lv29_1DCD6500 : STD_LOGIC_VECTOR (28 downto 0) := "11101110011010110010100000000";
+    constant ap_const_lv29_1 : STD_LOGIC_VECTOR (28 downto 0) := "00000000000000000000000000001";
 
     signal ap_rst_n_inv : STD_LOGIC;
     signal ap_start : STD_LOGIC;
     signal ap_done : STD_LOGIC;
     signal ap_idle : STD_LOGIC;
-    signal ap_CS_fsm : STD_LOGIC_VECTOR (68 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000001";
+    signal ap_CS_fsm : STD_LOGIC_VECTOR (73 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000001";
     attribute fsm_encoding : string;
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
@@ -264,34 +277,36 @@ architecture behav of iiccomm is
     signal ap_CS_fsm_state8 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state8 : signal is "none";
     signal iic_blk_n_AW : STD_LOGIC;
+    signal iic_blk_n_W : STD_LOGIC;
     signal ap_CS_fsm_state9 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state9 : signal is "none";
-    signal iic_blk_n_W : STD_LOGIC;
-    signal ap_CS_fsm_state10 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state10 : signal is "none";
     signal iic_blk_n_B : STD_LOGIC;
+    signal ap_CS_fsm_state14 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state14 : signal is "none";
     signal ap_CS_fsm_state15 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state15 : signal is "none";
-    signal ap_CS_fsm_state16 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state16 : signal is "none";
+    signal ap_CS_fsm_state22 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state22 : signal is "none";
     signal ap_CS_fsm_state23 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state23 : signal is "none";
+    signal ap_CS_fsm_state28 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state28 : signal is "none";
     signal ap_CS_fsm_state24 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state24 : signal is "none";
     signal ap_CS_fsm_state29 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state29 : signal is "none";
-    signal ap_CS_fsm_state25 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state25 : signal is "none";
     signal ap_CS_fsm_state30 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state30 : signal is "none";
+    signal ap_CS_fsm_state37 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state37 : signal is "none";
     signal ap_CS_fsm_state31 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state31 : signal is "none";
     signal ap_CS_fsm_state38 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state38 : signal is "none";
-    signal ap_CS_fsm_state32 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state32 : signal is "none";
     signal ap_CS_fsm_state39 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state39 : signal is "none";
+    signal ap_CS_fsm_state44 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state44 : signal is "none";
     signal ap_CS_fsm_state40 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state40 : signal is "none";
     signal ap_CS_fsm_state45 : STD_LOGIC;
@@ -308,8 +323,6 @@ architecture behav of iiccomm is
     attribute fsm_encoding of ap_CS_fsm_state43 : signal is "none";
     signal ap_CS_fsm_state48 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state48 : signal is "none";
-    signal ap_CS_fsm_state44 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state44 : signal is "none";
     signal ap_CS_fsm_state49 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state49 : signal is "none";
     signal ap_CS_fsm_state50 : STD_LOGIC;
@@ -326,18 +339,28 @@ architecture behav of iiccomm is
     attribute fsm_encoding of ap_CS_fsm_state55 : signal is "none";
     signal ap_CS_fsm_state56 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state56 : signal is "none";
+    signal tmp_fu_856_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_CS_fsm_state57 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state57 : signal is "none";
+    signal ap_CS_fsm_state62 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state62 : signal is "none";
     signal ap_CS_fsm_state58 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state58 : signal is "none";
+    signal ap_CS_fsm_state63 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state63 : signal is "none";
     signal ap_CS_fsm_state59 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state59 : signal is "none";
+    signal ap_CS_fsm_state64 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state64 : signal is "none";
     signal ap_CS_fsm_state60 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state60 : signal is "none";
-    signal ap_CS_fsm_state61 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state61 : signal is "none";
-    signal ap_CS_fsm_state68 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state68 : signal is "none";
+    signal ap_CS_fsm_state65 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state65 : signal is "none";
+    signal ap_CS_fsm_state66 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state66 : signal is "none";
+    signal tmp_2_fu_876_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal ap_CS_fsm_state73 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state73 : signal is "none";
     signal iic_AWVALID : STD_LOGIC;
     signal iic_AWREADY : STD_LOGIC;
     signal iic_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
@@ -359,42 +382,48 @@ architecture behav of iiccomm is
     signal iic_BRESP : STD_LOGIC_VECTOR (1 downto 0);
     signal iic_BID : STD_LOGIC_VECTOR (0 downto 0);
     signal iic_BUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal reg_378 : STD_LOGIC_VECTOR (31 downto 0);
-    signal ap_sig_ioackin_iic_AWREADY : STD_LOGIC;
-    signal iic_addr_reg_425 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_sig_ioackin_iic_ARREADY : STD_LOGIC;
-    signal iic_addr_1_reg_432 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_1_read_reg_446 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_2_read_reg_451 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_3_reg_456 : STD_LOGIC_VECTOR (31 downto 0);
-    signal iic_addr_4_read_reg_479 : STD_LOGIC_VECTOR (31 downto 0);
+    signal ap_sig_ioackin_iic_WREADY : STD_LOGIC;
+    signal ap_sig_ioackin_iic_AWREADY : STD_LOGIC;
+    signal ap_block_state40_io : BOOLEAN;
+    signal ap_block_state44_io : BOOLEAN;
+    signal ap_block_state48_io : BOOLEAN;
+    signal ap_block_state58_io : BOOLEAN;
+    signal ap_block_state41_io : BOOLEAN;
+    signal ap_block_state45_io : BOOLEAN;
+    signal ap_block_state49_io : BOOLEAN;
+    signal ap_block_state59_io : BOOLEAN;
+    signal ap_block_state42_io : BOOLEAN;
+    signal ap_block_state46_io : BOOLEAN;
+    signal ap_block_state43_io : BOOLEAN;
+    signal ap_block_state47_io : BOOLEAN;
+    signal iic_addr_1_read_reg_908 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_addr34_read_reg_913 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_addr_13_read_reg_928 : STD_LOGIC_VECTOR (31 downto 0);
+    signal iic_addr_15_read_reg_933 : STD_LOGIC_VECTOR (31 downto 0);
+    signal ctr_V_fu_862_p2 : STD_LOGIC_VECTOR (28 downto 0);
+    signal ap_block_state56_io : BOOLEAN;
+    signal ctr_V_1_fu_882_p2 : STD_LOGIC_VECTOR (28 downto 0);
+    signal ap_block_state66_io : BOOLEAN;
+    signal iic_addr_65_read_reg_959 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_014_0_i4_reg_668 : STD_LOGIC_VECTOR (28 downto 0);
+    signal p_014_0_i_reg_679 : STD_LOGIC_VECTOR (28 downto 0);
+    signal grp_fu_714_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_fu_756_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_fu_778_p2 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_reg_ioackin_iic_ARREADY : STD_LOGIC := '0';
     signal ap_reg_ioackin_iic_AWREADY : STD_LOGIC := '0';
     signal ap_reg_ioackin_iic_WREADY : STD_LOGIC := '0';
-    signal ap_sig_ioackin_iic_WREADY : STD_LOGIC;
-    signal ap_block_state24_io : BOOLEAN;
-    signal ap_block_state40_io : BOOLEAN;
-    signal ap_block_state45_io : BOOLEAN;
-    signal ap_block_state41_io : BOOLEAN;
-    signal ap_block_state46_io : BOOLEAN;
-    signal ap_block_state42_io : BOOLEAN;
-    signal ap_block_state47_io : BOOLEAN;
-    signal ap_block_state43_io : BOOLEAN;
-    signal ap_block_state48_io : BOOLEAN;
-    signal ap_block_state44_io : BOOLEAN;
-    signal ap_block_state49_io : BOOLEAN;
-    signal ap_block_state50_io : BOOLEAN;
-    signal ap_block_state51_io : BOOLEAN;
-    signal ap_block_state52_io : BOOLEAN;
-    signal ap_block_state53_io : BOOLEAN;
-    signal ap_block_state54_io : BOOLEAN;
+    signal ap_block_state23_io : BOOLEAN;
+    signal ap_block_state39_io : BOOLEAN;
+    signal ap_block_state57_io : BOOLEAN;
     signal ap_reg_ioackin_empty_pirq_outValue_dummy_ack : STD_LOGIC := '0';
     signal ap_reg_ioackin_full_pirq_outValue_dummy_ack : STD_LOGIC := '0';
     signal ap_reg_ioackin_ctrl_reg_outValue_dummy_ack : STD_LOGIC := '0';
     signal ap_reg_ioackin_stat_reg_outValue1_dummy_ack : STD_LOGIC := '0';
-    signal ap_CS_fsm_state69 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state69 : signal is "none";
-    signal ap_NS_fsm : STD_LOGIC_VECTOR (68 downto 0);
+    signal ap_CS_fsm_state74 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state74 : signal is "none";
+    signal ap_NS_fsm : STD_LOGIC_VECTOR (73 downto 0);
 
     component iiccomm_AXILiteS_s_axi IS
     generic (
@@ -598,23 +627,23 @@ begin
         ap_ready => ap_ready,
         ap_done => ap_done,
         ap_idle => ap_idle,
-        stat_reg_outValue1_o => iic_addr_2_read_reg_451,
+        stat_reg_outValue1_o => iic_addr_15_read_reg_933,
         stat_reg_outValue1_o_ap_vld => stat_reg_outValue1_o_ap_vld,
         stat_reg_outValue1_i => stat_reg_outValue1_i,
-        empty_pirq_outValue_o => reg_378,
+        empty_pirq_outValue_o => iic_addr_1_read_reg_908,
         empty_pirq_outValue_o_ap_vld => empty_pirq_outValue_o_ap_vld,
         empty_pirq_outValue_i => empty_pirq_outValue_i,
-        full_pirq_outValue_o => reg_378,
+        full_pirq_outValue_o => iic_addr34_read_reg_913,
         full_pirq_outValue_o_ap_vld => full_pirq_outValue_o_ap_vld,
         full_pirq_outValue_i => full_pirq_outValue_i,
         stat_reg_outValue2 => stat_reg_outValue2,
         stat_reg_outValue3 => stat_reg_outValue3,
         stat_reg_outValue4 => stat_reg_outValue4,
         tx_fifo_outValue => tx_fifo_outValue,
-        rx_fifo_outValue_o => iic_addr_4_read_reg_479,
+        rx_fifo_outValue_o => iic_addr_65_read_reg_959,
         rx_fifo_outValue_o_ap_vld => rx_fifo_outValue_o_ap_vld,
         rx_fifo_outValue_i => rx_fifo_outValue_i,
-        ctrl_reg_outValue_o => iic_addr_1_read_reg_446,
+        ctrl_reg_outValue_o => iic_addr_13_read_reg_928,
         ctrl_reg_outValue_o_ap_vld => ctrl_reg_outValue_o_ap_vld,
         ctrl_reg_outValue_i => ctrl_reg_outValue_i);
 
@@ -756,8 +785,8 @@ begin
             if (ap_rst_n_inv = '1') then
                 ap_reg_ioackin_ctrl_reg_outValue_dummy_ack <= ap_const_logic_0;
             else
-                if ((ap_const_logic_1 = ap_CS_fsm_state40)) then
-                    if ((ap_const_boolean_0 = ap_block_state40_io)) then 
+                if ((ap_const_logic_1 = ap_CS_fsm_state39)) then
+                    if ((ap_const_boolean_0 = ap_block_state39_io)) then 
                         ap_reg_ioackin_ctrl_reg_outValue_dummy_ack <= ap_const_logic_0;
                     elsif ((ap_const_logic_1 = ap_const_logic_1)) then 
                         ap_reg_ioackin_ctrl_reg_outValue_dummy_ack <= ap_const_logic_1;
@@ -774,7 +803,7 @@ begin
             if (ap_rst_n_inv = '1') then
                 ap_reg_ioackin_empty_pirq_outValue_dummy_ack <= ap_const_logic_0;
             else
-                if ((ap_const_logic_1 = ap_CS_fsm_state10)) then
+                if ((ap_const_logic_1 = ap_CS_fsm_state9)) then
                     if ((ap_sig_ioackin_iic_WREADY = ap_const_logic_1)) then 
                         ap_reg_ioackin_empty_pirq_outValue_dummy_ack <= ap_const_logic_0;
                     elsif ((ap_const_logic_1 = ap_const_logic_1)) then 
@@ -792,8 +821,8 @@ begin
             if (ap_rst_n_inv = '1') then
                 ap_reg_ioackin_full_pirq_outValue_dummy_ack <= ap_const_logic_0;
             else
-                if ((ap_const_logic_1 = ap_CS_fsm_state24)) then
-                    if ((ap_const_boolean_0 = ap_block_state24_io)) then 
+                if ((ap_const_logic_1 = ap_CS_fsm_state23)) then
+                    if ((ap_const_boolean_0 = ap_block_state23_io)) then 
                         ap_reg_ioackin_full_pirq_outValue_dummy_ack <= ap_const_logic_0;
                     elsif ((ap_const_logic_1 = ap_const_logic_1)) then 
                         ap_reg_ioackin_full_pirq_outValue_dummy_ack <= ap_const_logic_1;
@@ -810,9 +839,9 @@ begin
             if (ap_rst_n_inv = '1') then
                 ap_reg_ioackin_iic_ARREADY <= ap_const_logic_0;
             else
-                if (((not(((ap_start = ap_const_logic_0) or (ap_sig_ioackin_iic_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1)) or ((ap_sig_ioackin_iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state61)) or ((ap_sig_ioackin_iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state32)) or ((ap_sig_ioackin_iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state31)) or ((ap_sig_ioackin_iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+                if (((not(((ap_start = ap_const_logic_0) or (ap_sig_ioackin_iic_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1)) or ((ap_const_boolean_0 = ap_block_state66_io) and (tmp_2_fu_876_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state66)) or ((ap_sig_ioackin_iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state31)) or ((ap_sig_ioackin_iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state30)) or ((ap_sig_ioackin_iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state15)))) then 
                     ap_reg_ioackin_iic_ARREADY <= ap_const_logic_0;
-                elsif ((((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1) and (iic_ARREADY = ap_const_logic_1)) or ((iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state61)) or ((iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state32)) or ((iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state31)) or ((iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+                elsif ((((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1) and (iic_ARREADY = ap_const_logic_1)) or ((tmp_2_fu_876_p2 = ap_const_lv1_1) and (iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state66)) or ((iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state31)) or ((iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state30)) or ((iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state15)))) then 
                     ap_reg_ioackin_iic_ARREADY <= ap_const_logic_1;
                 end if; 
             end if;
@@ -826,9 +855,9 @@ begin
             if (ap_rst_n_inv = '1') then
                 ap_reg_ioackin_iic_AWREADY <= ap_const_logic_0;
             else
-                if (((not(((ap_const_boolean_1 = ap_block_state54_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state54)) or (not(((ap_const_boolean_1 = ap_block_state53_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state53)) or (not(((ap_const_boolean_1 = ap_block_state52_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state52)) or (not(((ap_const_boolean_1 = ap_block_state51_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state51)) or (not(((ap_const_boolean_1 = ap_block_state50_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state50)) or (not(((ap_const_boolean_1 = ap_block_state49_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((ap_const_boolean_0 = ap_block_state44_io) and (ap_const_logic_1 = ap_CS_fsm_state44)) or (not(((ap_const_boolean_1 = ap_block_state48_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((ap_const_boolean_0 = ap_block_state43_io) and (ap_const_logic_1 = ap_CS_fsm_state43)) or (not(((ap_const_boolean_1 = ap_block_state47_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((ap_const_boolean_0 = ap_block_state42_io) and (ap_const_logic_1 = ap_CS_fsm_state42)) or (not(((ap_const_boolean_1 = ap_block_state46_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((ap_const_boolean_0 = ap_block_state41_io) and (ap_const_logic_1 = ap_CS_fsm_state41)) or (not(((ap_const_boolean_1 = ap_block_state45_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((ap_const_boolean_0 = ap_block_state40_io) and (ap_const_logic_1 = ap_CS_fsm_state40)) or (not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state39)) or ((ap_const_boolean_0 = ap_block_state24_io) and (ap_const_logic_1 = ap_CS_fsm_state24)) or (not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state23)) or ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state9)))) then 
+                if ((((ap_const_boolean_0 = ap_block_state59_io) and (ap_const_logic_1 = ap_CS_fsm_state59)) or ((ap_const_boolean_0 = ap_block_state58_io) and (ap_const_logic_1 = ap_CS_fsm_state58)) or ((ap_const_logic_1 = ap_CS_fsm_state57) and (ap_const_boolean_0 = ap_block_state57_io)) or ((ap_const_boolean_0 = ap_block_state56_io) and (tmp_fu_856_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state56)) or (not(((ap_const_boolean_1 = ap_block_state49_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state49)) or (not(((ap_const_boolean_1 = ap_block_state48_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((ap_const_boolean_0 = ap_block_state43_io) and (ap_const_logic_1 = ap_CS_fsm_state43)) or (not(((ap_const_boolean_1 = ap_block_state47_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((ap_const_boolean_0 = ap_block_state42_io) and (ap_const_logic_1 = ap_CS_fsm_state42)) or (not(((ap_const_boolean_1 = ap_block_state46_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((ap_const_boolean_0 = ap_block_state41_io) and (ap_const_logic_1 = ap_CS_fsm_state41)) or (not(((ap_const_boolean_1 = ap_block_state45_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((ap_const_boolean_0 = ap_block_state40_io) and (ap_const_logic_1 = ap_CS_fsm_state40)) or (not(((ap_const_boolean_1 = ap_block_state44_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state44)) or ((ap_const_boolean_0 = ap_block_state39_io) and (ap_const_logic_1 = ap_CS_fsm_state39)) or (not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state38)) or ((ap_const_boolean_0 = ap_block_state23_io) and (ap_const_logic_1 = ap_CS_fsm_state23)) or (not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state22)) or (not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state8)))) then 
                     ap_reg_ioackin_iic_AWREADY <= ap_const_logic_0;
-                elsif ((((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state54)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state53)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state52)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state51)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state50)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state44)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state43)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state42)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state41)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state40)) or ((iic_RVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state39)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state24)) or ((iic_RVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state23)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state9)))) then 
+                elsif ((((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state59)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state58)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state57)) or ((tmp_fu_856_p2 = ap_const_lv1_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state56)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state43)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state42)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state41)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state40)) or ((iic_BVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state44)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state39)) or ((iic_RVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state38)) or ((iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state23)) or ((iic_RVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state22)) or ((iic_RVALID = ap_const_logic_1) and (iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state8)))) then 
                     ap_reg_ioackin_iic_AWREADY <= ap_const_logic_1;
                 end if; 
             end if;
@@ -842,9 +871,9 @@ begin
             if (ap_rst_n_inv = '1') then
                 ap_reg_ioackin_iic_WREADY <= ap_const_logic_0;
             else
-                if (((not(((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state55)) or (not(((ap_const_boolean_1 = ap_block_state54_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state54)) or (not(((ap_const_boolean_1 = ap_block_state53_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state53)) or (not(((ap_const_boolean_1 = ap_block_state52_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state52)) or (not(((ap_const_boolean_1 = ap_block_state51_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state51)) or (not(((ap_const_boolean_1 = ap_block_state50_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state50)) or (not(((ap_const_boolean_1 = ap_block_state49_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((ap_const_boolean_0 = ap_block_state44_io) and (ap_const_logic_1 = ap_CS_fsm_state44)) or (not(((ap_const_boolean_1 = ap_block_state48_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((ap_const_boolean_0 = ap_block_state43_io) and (ap_const_logic_1 = ap_CS_fsm_state43)) or (not(((ap_const_boolean_1 = ap_block_state47_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((ap_const_boolean_0 = ap_block_state42_io) and (ap_const_logic_1 = ap_CS_fsm_state42)) or (not(((ap_const_boolean_1 = ap_block_state46_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((ap_const_boolean_0 = ap_block_state41_io) and (ap_const_logic_1 = ap_CS_fsm_state41)) or (not(((ap_const_boolean_1 = ap_block_state45_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((ap_const_boolean_0 = ap_block_state40_io) and (ap_const_logic_1 = ap_CS_fsm_state40)) or ((ap_sig_ioackin_iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state25)) or ((ap_const_boolean_0 = ap_block_state24_io) and (ap_const_logic_1 = ap_CS_fsm_state24)) or ((ap_sig_ioackin_iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state10)))) then 
+                if ((((ap_sig_ioackin_iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state60)) or ((ap_const_boolean_0 = ap_block_state59_io) and (ap_const_logic_1 = ap_CS_fsm_state59)) or ((ap_const_boolean_0 = ap_block_state58_io) and (ap_const_logic_1 = ap_CS_fsm_state58)) or ((ap_const_logic_1 = ap_CS_fsm_state57) and (ap_const_boolean_0 = ap_block_state57_io)) or (not(((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state50)) or (not(((ap_const_boolean_1 = ap_block_state49_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state49)) or (not(((ap_const_boolean_1 = ap_block_state48_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((ap_const_boolean_0 = ap_block_state43_io) and (ap_const_logic_1 = ap_CS_fsm_state43)) or (not(((ap_const_boolean_1 = ap_block_state47_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((ap_const_boolean_0 = ap_block_state42_io) and (ap_const_logic_1 = ap_CS_fsm_state42)) or (not(((ap_const_boolean_1 = ap_block_state46_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((ap_const_boolean_0 = ap_block_state41_io) and (ap_const_logic_1 = ap_CS_fsm_state41)) or (not(((ap_const_boolean_1 = ap_block_state45_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((ap_const_boolean_0 = ap_block_state40_io) and (ap_const_logic_1 = ap_CS_fsm_state40)) or (not(((ap_const_boolean_1 = ap_block_state44_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state44)) or ((ap_const_boolean_0 = ap_block_state39_io) and (ap_const_logic_1 = ap_CS_fsm_state39)) or ((ap_sig_ioackin_iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state24)) or ((ap_const_boolean_0 = ap_block_state23_io) and (ap_const_logic_1 = ap_CS_fsm_state23)) or ((ap_sig_ioackin_iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state9)))) then 
                     ap_reg_ioackin_iic_WREADY <= ap_const_logic_0;
-                elsif ((((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state55)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state54)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state53)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state52)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state51)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state50)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state44)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state43)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state42)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state41)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state40)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state25)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state24)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state10)))) then 
+                elsif ((((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state60)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state59)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state58)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state57)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state50)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state43)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state42)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state41)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state40)) or ((iic_BVALID = ap_const_logic_1) and (iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state44)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state39)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state24)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state23)) or ((iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state9)))) then 
                     ap_reg_ioackin_iic_WREADY <= ap_const_logic_1;
                 end if; 
             end if;
@@ -858,8 +887,8 @@ begin
             if (ap_rst_n_inv = '1') then
                 ap_reg_ioackin_stat_reg_outValue1_dummy_ack <= ap_const_logic_0;
             else
-                if ((ap_const_logic_1 = ap_CS_fsm_state40)) then
-                    if ((ap_const_boolean_0 = ap_block_state40_io)) then 
+                if ((ap_const_logic_1 = ap_CS_fsm_state39)) then
+                    if ((ap_const_boolean_0 = ap_block_state39_io)) then 
                         ap_reg_ioackin_stat_reg_outValue1_dummy_ack <= ap_const_logic_0;
                     elsif ((ap_const_logic_1 = ap_const_logic_1)) then 
                         ap_reg_ioackin_stat_reg_outValue1_dummy_ack <= ap_const_logic_1;
@@ -869,40 +898,70 @@ begin
         end if;
     end process;
 
+
+    p_014_0_i4_reg_668_assign_proc : process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if (((ap_const_boolean_0 = ap_block_state56_io) and (tmp_fu_856_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state56))) then 
+                p_014_0_i4_reg_668 <= ctr_V_fu_862_p2;
+            elsif (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state55))) then 
+                p_014_0_i4_reg_668 <= ap_const_lv29_0;
+            end if; 
+        end if;
+    end process;
+
+    p_014_0_i_reg_679_assign_proc : process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if (((ap_const_boolean_0 = ap_block_state66_io) and (tmp_2_fu_876_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state66))) then 
+                p_014_0_i_reg_679 <= ctr_V_1_fu_882_p2;
+            elsif (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state65))) then 
+                p_014_0_i_reg_679 <= ap_const_lv29_0;
+            end if; 
+        end if;
+    end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state38))) then
-                iic_addr_1_read_reg_446 <= iic_RDATA;
+            if ((not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state22))) then
+                iic_addr34_read_reg_913 <= iic_RDATA;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if ((not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state39))) then
-                iic_addr_2_read_reg_451 <= iic_RDATA;
+            if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state37))) then
+                iic_addr_13_read_reg_928 <= iic_RDATA;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state68))) then
-                iic_addr_4_read_reg_479 <= iic_RDATA;
+            if ((not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state38))) then
+                iic_addr_15_read_reg_933 <= iic_RDATA;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state23)) or ((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state8)))) then
-                reg_378 <= iic_RDATA;
+            if ((not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state8))) then
+                iic_addr_1_read_reg_908 <= iic_RDATA;
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state73))) then
+                iic_addr_65_read_reg_959 <= iic_RDATA;
             end if;
         end if;
     end process;
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state8, ap_CS_fsm_state9, ap_CS_fsm_state10, ap_CS_fsm_state15, ap_CS_fsm_state16, ap_CS_fsm_state23, ap_CS_fsm_state24, ap_CS_fsm_state29, ap_CS_fsm_state25, ap_CS_fsm_state30, ap_CS_fsm_state31, ap_CS_fsm_state38, ap_CS_fsm_state32, ap_CS_fsm_state39, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state44, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state51, ap_CS_fsm_state52, ap_CS_fsm_state53, ap_CS_fsm_state54, ap_CS_fsm_state55, ap_CS_fsm_state56, ap_CS_fsm_state57, ap_CS_fsm_state58, ap_CS_fsm_state59, ap_CS_fsm_state60, ap_CS_fsm_state61, ap_CS_fsm_state68, iic_RVALID, iic_BVALID, ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_ARREADY, ap_sig_ioackin_iic_WREADY, ap_block_state24_io, ap_block_state40_io, ap_block_state45_io, ap_block_state41_io, ap_block_state46_io, ap_block_state42_io, ap_block_state47_io, ap_block_state43_io, ap_block_state48_io, ap_block_state44_io, ap_block_state49_io, ap_block_state50_io, ap_block_state51_io, ap_block_state52_io, ap_block_state53_io, ap_block_state54_io)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state8, ap_CS_fsm_state9, ap_CS_fsm_state14, ap_CS_fsm_state15, ap_CS_fsm_state22, ap_CS_fsm_state23, ap_CS_fsm_state28, ap_CS_fsm_state24, ap_CS_fsm_state29, ap_CS_fsm_state30, ap_CS_fsm_state37, ap_CS_fsm_state31, ap_CS_fsm_state38, ap_CS_fsm_state39, ap_CS_fsm_state44, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state51, ap_CS_fsm_state52, ap_CS_fsm_state53, ap_CS_fsm_state54, ap_CS_fsm_state55, ap_CS_fsm_state56, tmp_fu_856_p2, ap_CS_fsm_state57, ap_CS_fsm_state62, ap_CS_fsm_state58, ap_CS_fsm_state63, ap_CS_fsm_state59, ap_CS_fsm_state64, ap_CS_fsm_state60, ap_CS_fsm_state65, ap_CS_fsm_state66, tmp_2_fu_876_p2, ap_CS_fsm_state73, iic_RVALID, iic_BVALID, ap_sig_ioackin_iic_ARREADY, ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY, ap_block_state40_io, ap_block_state44_io, ap_block_state48_io, ap_block_state58_io, ap_block_state41_io, ap_block_state45_io, ap_block_state49_io, ap_block_state59_io, ap_block_state42_io, ap_block_state46_io, ap_block_state43_io, ap_block_state47_io, ap_block_state56_io, ap_block_state66_io, ap_block_state23_io, ap_block_state39_io, ap_block_state57_io)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -924,23 +983,19 @@ begin
             when ap_ST_fsm_state7 => 
                 ap_NS_fsm <= ap_ST_fsm_state8;
             when ap_ST_fsm_state8 => 
-                if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state8))) then
+                if ((not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state8))) then
                     ap_NS_fsm <= ap_ST_fsm_state9;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state8;
                 end if;
             when ap_ST_fsm_state9 => 
-                if (((ap_sig_ioackin_iic_AWREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state9))) then
+                if (((ap_sig_ioackin_iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state9))) then
                     ap_NS_fsm <= ap_ST_fsm_state10;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state9;
                 end if;
             when ap_ST_fsm_state10 => 
-                if (((ap_sig_ioackin_iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state10))) then
-                    ap_NS_fsm <= ap_ST_fsm_state11;
-                else
-                    ap_NS_fsm <= ap_ST_fsm_state10;
-                end if;
+                ap_NS_fsm <= ap_ST_fsm_state11;
             when ap_ST_fsm_state11 => 
                 ap_NS_fsm <= ap_ST_fsm_state12;
             when ap_ST_fsm_state12 => 
@@ -948,19 +1003,19 @@ begin
             when ap_ST_fsm_state13 => 
                 ap_NS_fsm <= ap_ST_fsm_state14;
             when ap_ST_fsm_state14 => 
-                ap_NS_fsm <= ap_ST_fsm_state15;
+                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state14))) then
+                    ap_NS_fsm <= ap_ST_fsm_state15;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state14;
+                end if;
             when ap_ST_fsm_state15 => 
-                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state15))) then
+                if (((ap_sig_ioackin_iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state15))) then
                     ap_NS_fsm <= ap_ST_fsm_state16;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state15;
                 end if;
             when ap_ST_fsm_state16 => 
-                if (((ap_sig_ioackin_iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state16))) then
-                    ap_NS_fsm <= ap_ST_fsm_state17;
-                else
-                    ap_NS_fsm <= ap_ST_fsm_state16;
-                end if;
+                ap_NS_fsm <= ap_ST_fsm_state17;
             when ap_ST_fsm_state17 => 
                 ap_NS_fsm <= ap_ST_fsm_state18;
             when ap_ST_fsm_state18 => 
@@ -972,31 +1027,35 @@ begin
             when ap_ST_fsm_state21 => 
                 ap_NS_fsm <= ap_ST_fsm_state22;
             when ap_ST_fsm_state22 => 
-                ap_NS_fsm <= ap_ST_fsm_state23;
+                if ((not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state22))) then
+                    ap_NS_fsm <= ap_ST_fsm_state23;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state22;
+                end if;
             when ap_ST_fsm_state23 => 
-                if ((not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state23))) then
+                if (((ap_const_boolean_0 = ap_block_state23_io) and (ap_const_logic_1 = ap_CS_fsm_state23))) then
                     ap_NS_fsm <= ap_ST_fsm_state24;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state23;
                 end if;
             when ap_ST_fsm_state24 => 
-                if (((ap_const_boolean_0 = ap_block_state24_io) and (ap_const_logic_1 = ap_CS_fsm_state24))) then
+                if (((ap_sig_ioackin_iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state24))) then
                     ap_NS_fsm <= ap_ST_fsm_state25;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state24;
                 end if;
             when ap_ST_fsm_state25 => 
-                if (((ap_sig_ioackin_iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state25))) then
-                    ap_NS_fsm <= ap_ST_fsm_state26;
-                else
-                    ap_NS_fsm <= ap_ST_fsm_state25;
-                end if;
+                ap_NS_fsm <= ap_ST_fsm_state26;
             when ap_ST_fsm_state26 => 
                 ap_NS_fsm <= ap_ST_fsm_state27;
             when ap_ST_fsm_state27 => 
                 ap_NS_fsm <= ap_ST_fsm_state28;
             when ap_ST_fsm_state28 => 
-                ap_NS_fsm <= ap_ST_fsm_state29;
+                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state28))) then
+                    ap_NS_fsm <= ap_ST_fsm_state29;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state28;
+                end if;
             when ap_ST_fsm_state29 => 
                 if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state29))) then
                     ap_NS_fsm <= ap_ST_fsm_state30;
@@ -1004,7 +1063,7 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state29;
                 end if;
             when ap_ST_fsm_state30 => 
-                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state30))) then
+                if (((ap_sig_ioackin_iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state30))) then
                     ap_NS_fsm <= ap_ST_fsm_state31;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state30;
@@ -1016,11 +1075,7 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state31;
                 end if;
             when ap_ST_fsm_state32 => 
-                if (((ap_sig_ioackin_iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state32))) then
-                    ap_NS_fsm <= ap_ST_fsm_state33;
-                else
-                    ap_NS_fsm <= ap_ST_fsm_state32;
-                end if;
+                ap_NS_fsm <= ap_ST_fsm_state33;
             when ap_ST_fsm_state33 => 
                 ap_NS_fsm <= ap_ST_fsm_state34;
             when ap_ST_fsm_state34 => 
@@ -1030,15 +1085,19 @@ begin
             when ap_ST_fsm_state36 => 
                 ap_NS_fsm <= ap_ST_fsm_state37;
             when ap_ST_fsm_state37 => 
-                ap_NS_fsm <= ap_ST_fsm_state38;
+                if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state37))) then
+                    ap_NS_fsm <= ap_ST_fsm_state38;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state37;
+                end if;
             when ap_ST_fsm_state38 => 
-                if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state38))) then
+                if ((not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state38))) then
                     ap_NS_fsm <= ap_ST_fsm_state39;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state38;
                 end if;
             when ap_ST_fsm_state39 => 
-                if ((not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state39))) then
+                if (((ap_const_boolean_0 = ap_block_state39_io) and (ap_const_logic_1 = ap_CS_fsm_state39))) then
                     ap_NS_fsm <= ap_ST_fsm_state40;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state39;
@@ -1068,7 +1127,7 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state43;
                 end if;
             when ap_ST_fsm_state44 => 
-                if (((ap_const_boolean_0 = ap_block_state44_io) and (ap_const_logic_1 = ap_CS_fsm_state44))) then
+                if ((not(((ap_const_boolean_1 = ap_block_state44_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state44))) then
                     ap_NS_fsm <= ap_ST_fsm_state45;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state44;
@@ -1104,112 +1163,142 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state49;
                 end if;
             when ap_ST_fsm_state50 => 
-                if ((not(((ap_const_boolean_1 = ap_block_state50_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state50))) then
+                if ((not(((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state50))) then
                     ap_NS_fsm <= ap_ST_fsm_state51;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state50;
                 end if;
             when ap_ST_fsm_state51 => 
-                if ((not(((ap_const_boolean_1 = ap_block_state51_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state51))) then
+                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state51))) then
                     ap_NS_fsm <= ap_ST_fsm_state52;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state51;
                 end if;
             when ap_ST_fsm_state52 => 
-                if ((not(((ap_const_boolean_1 = ap_block_state52_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state52))) then
+                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state52))) then
                     ap_NS_fsm <= ap_ST_fsm_state53;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state52;
                 end if;
             when ap_ST_fsm_state53 => 
-                if ((not(((ap_const_boolean_1 = ap_block_state53_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state53))) then
+                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state53))) then
                     ap_NS_fsm <= ap_ST_fsm_state54;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state53;
                 end if;
             when ap_ST_fsm_state54 => 
-                if ((not(((ap_const_boolean_1 = ap_block_state54_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state54))) then
+                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state54))) then
                     ap_NS_fsm <= ap_ST_fsm_state55;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state54;
                 end if;
             when ap_ST_fsm_state55 => 
-                if ((not(((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state55))) then
+                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state55))) then
                     ap_NS_fsm <= ap_ST_fsm_state56;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state55;
                 end if;
             when ap_ST_fsm_state56 => 
-                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state56))) then
+                if (((ap_const_boolean_0 = ap_block_state56_io) and (tmp_fu_856_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state56))) then
+                    ap_NS_fsm <= ap_ST_fsm_state56;
+                elsif (((ap_const_boolean_0 = ap_block_state56_io) and (tmp_fu_856_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state56))) then
                     ap_NS_fsm <= ap_ST_fsm_state57;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state56;
                 end if;
             when ap_ST_fsm_state57 => 
-                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state57))) then
+                if (((ap_const_logic_1 = ap_CS_fsm_state57) and (ap_const_boolean_0 = ap_block_state57_io))) then
                     ap_NS_fsm <= ap_ST_fsm_state58;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state57;
                 end if;
             when ap_ST_fsm_state58 => 
-                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state58))) then
+                if (((ap_const_boolean_0 = ap_block_state58_io) and (ap_const_logic_1 = ap_CS_fsm_state58))) then
                     ap_NS_fsm <= ap_ST_fsm_state59;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state58;
                 end if;
             when ap_ST_fsm_state59 => 
-                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state59))) then
+                if (((ap_const_boolean_0 = ap_block_state59_io) and (ap_const_logic_1 = ap_CS_fsm_state59))) then
                     ap_NS_fsm <= ap_ST_fsm_state60;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state59;
                 end if;
             when ap_ST_fsm_state60 => 
-                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state60))) then
+                if (((ap_sig_ioackin_iic_WREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state60))) then
                     ap_NS_fsm <= ap_ST_fsm_state61;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state60;
                 end if;
             when ap_ST_fsm_state61 => 
-                if (((ap_sig_ioackin_iic_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state61))) then
-                    ap_NS_fsm <= ap_ST_fsm_state62;
-                else
-                    ap_NS_fsm <= ap_ST_fsm_state61;
-                end if;
+                ap_NS_fsm <= ap_ST_fsm_state62;
             when ap_ST_fsm_state62 => 
-                ap_NS_fsm <= ap_ST_fsm_state63;
+                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state62))) then
+                    ap_NS_fsm <= ap_ST_fsm_state63;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state62;
+                end if;
             when ap_ST_fsm_state63 => 
-                ap_NS_fsm <= ap_ST_fsm_state64;
+                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state63))) then
+                    ap_NS_fsm <= ap_ST_fsm_state64;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state63;
+                end if;
             when ap_ST_fsm_state64 => 
-                ap_NS_fsm <= ap_ST_fsm_state65;
+                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state64))) then
+                    ap_NS_fsm <= ap_ST_fsm_state65;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state64;
+                end if;
             when ap_ST_fsm_state65 => 
-                ap_NS_fsm <= ap_ST_fsm_state66;
+                if (((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state65))) then
+                    ap_NS_fsm <= ap_ST_fsm_state66;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state65;
+                end if;
             when ap_ST_fsm_state66 => 
-                ap_NS_fsm <= ap_ST_fsm_state67;
+                if (((ap_const_boolean_0 = ap_block_state66_io) and (tmp_2_fu_876_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state66))) then
+                    ap_NS_fsm <= ap_ST_fsm_state66;
+                elsif (((ap_const_boolean_0 = ap_block_state66_io) and (tmp_2_fu_876_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state66))) then
+                    ap_NS_fsm <= ap_ST_fsm_state67;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state66;
+                end if;
             when ap_ST_fsm_state67 => 
                 ap_NS_fsm <= ap_ST_fsm_state68;
             when ap_ST_fsm_state68 => 
-                if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state68))) then
-                    ap_NS_fsm <= ap_ST_fsm_state69;
-                else
-                    ap_NS_fsm <= ap_ST_fsm_state68;
-                end if;
+                ap_NS_fsm <= ap_ST_fsm_state69;
             when ap_ST_fsm_state69 => 
+                ap_NS_fsm <= ap_ST_fsm_state70;
+            when ap_ST_fsm_state70 => 
+                ap_NS_fsm <= ap_ST_fsm_state71;
+            when ap_ST_fsm_state71 => 
+                ap_NS_fsm <= ap_ST_fsm_state72;
+            when ap_ST_fsm_state72 => 
+                ap_NS_fsm <= ap_ST_fsm_state73;
+            when ap_ST_fsm_state73 => 
+                if (((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state73))) then
+                    ap_NS_fsm <= ap_ST_fsm_state74;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state73;
+                end if;
+            when ap_ST_fsm_state74 => 
                 ap_NS_fsm <= ap_ST_fsm_state1;
             when others =>  
-                ap_NS_fsm <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+                ap_NS_fsm <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end case;
     end process;
     ap_CS_fsm_state1 <= ap_CS_fsm(0);
-    ap_CS_fsm_state10 <= ap_CS_fsm(9);
+    ap_CS_fsm_state14 <= ap_CS_fsm(13);
     ap_CS_fsm_state15 <= ap_CS_fsm(14);
-    ap_CS_fsm_state16 <= ap_CS_fsm(15);
+    ap_CS_fsm_state22 <= ap_CS_fsm(21);
     ap_CS_fsm_state23 <= ap_CS_fsm(22);
     ap_CS_fsm_state24 <= ap_CS_fsm(23);
-    ap_CS_fsm_state25 <= ap_CS_fsm(24);
+    ap_CS_fsm_state28 <= ap_CS_fsm(27);
     ap_CS_fsm_state29 <= ap_CS_fsm(28);
     ap_CS_fsm_state30 <= ap_CS_fsm(29);
     ap_CS_fsm_state31 <= ap_CS_fsm(30);
-    ap_CS_fsm_state32 <= ap_CS_fsm(31);
+    ap_CS_fsm_state37 <= ap_CS_fsm(36);
     ap_CS_fsm_state38 <= ap_CS_fsm(37);
     ap_CS_fsm_state39 <= ap_CS_fsm(38);
     ap_CS_fsm_state40 <= ap_CS_fsm(39);
@@ -1233,111 +1322,121 @@ begin
     ap_CS_fsm_state58 <= ap_CS_fsm(57);
     ap_CS_fsm_state59 <= ap_CS_fsm(58);
     ap_CS_fsm_state60 <= ap_CS_fsm(59);
-    ap_CS_fsm_state61 <= ap_CS_fsm(60);
-    ap_CS_fsm_state68 <= ap_CS_fsm(67);
-    ap_CS_fsm_state69 <= ap_CS_fsm(68);
+    ap_CS_fsm_state62 <= ap_CS_fsm(61);
+    ap_CS_fsm_state63 <= ap_CS_fsm(62);
+    ap_CS_fsm_state64 <= ap_CS_fsm(63);
+    ap_CS_fsm_state65 <= ap_CS_fsm(64);
+    ap_CS_fsm_state66 <= ap_CS_fsm(65);
+    ap_CS_fsm_state73 <= ap_CS_fsm(72);
+    ap_CS_fsm_state74 <= ap_CS_fsm(73);
     ap_CS_fsm_state8 <= ap_CS_fsm(7);
     ap_CS_fsm_state9 <= ap_CS_fsm(8);
 
-    ap_block_state24_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state23_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state24_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state23_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state40_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state39_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state40_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state39_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state41_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state40_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state41_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state40_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state42_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state41_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state42_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state41_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state43_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state42_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state43_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state42_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state44_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state43_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state44_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state43_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state45_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state44_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state45_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state44_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state46_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state45_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state46_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state45_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state47_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state46_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state47_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state46_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state48_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state47_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state48_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state47_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state49_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state48_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state49_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state48_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state50_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state49_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state50_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state49_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state51_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state56_io_assign_proc : process(tmp_fu_856_p2, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state51_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state56_io <= ((tmp_fu_856_p2 = ap_const_lv1_1) and (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state52_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state57_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state52_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state57_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state53_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state58_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state53_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state58_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_block_state54_io_assign_proc : process(ap_sig_ioackin_iic_AWREADY, ap_sig_ioackin_iic_WREADY)
+    ap_block_state59_io_assign_proc : process(ap_sig_ioackin_iic_WREADY, ap_sig_ioackin_iic_AWREADY)
     begin
-                ap_block_state54_io <= ((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_AWREADY = ap_const_logic_0));
+                ap_block_state59_io <= ((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (ap_sig_ioackin_iic_WREADY = ap_const_logic_0));
     end process;
 
 
-    ap_done_assign_proc : process(ap_CS_fsm_state69)
+    ap_block_state66_io_assign_proc : process(tmp_2_fu_876_p2, ap_sig_ioackin_iic_ARREADY)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state69)) then 
+                ap_block_state66_io <= ((tmp_2_fu_876_p2 = ap_const_lv1_1) and (ap_sig_ioackin_iic_ARREADY = ap_const_logic_0));
+    end process;
+
+
+    ap_done_assign_proc : process(ap_CS_fsm_state74)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state74)) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_const_logic_0;
@@ -1355,9 +1454,9 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(ap_CS_fsm_state69)
+    ap_ready_assign_proc : process(ap_CS_fsm_state74)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state69)) then 
+        if ((ap_const_logic_1 = ap_CS_fsm_state74)) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
@@ -1400,10 +1499,12 @@ begin
         end if; 
     end process;
 
+    ctr_V_1_fu_882_p2 <= std_logic_vector(unsigned(p_014_0_i_reg_679) + unsigned(ap_const_lv29_1));
+    ctr_V_fu_862_p2 <= std_logic_vector(unsigned(p_014_0_i4_reg_668) + unsigned(ap_const_lv29_1));
 
-    ctrl_reg_outValue_o_ap_vld_assign_proc : process(ap_CS_fsm_state40, ap_reg_ioackin_ctrl_reg_outValue_dummy_ack)
+    ctrl_reg_outValue_o_ap_vld_assign_proc : process(ap_CS_fsm_state39, ap_reg_ioackin_ctrl_reg_outValue_dummy_ack)
     begin
-        if (((ap_reg_ioackin_ctrl_reg_outValue_dummy_ack = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state40))) then 
+        if (((ap_reg_ioackin_ctrl_reg_outValue_dummy_ack = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state39))) then 
             ctrl_reg_outValue_o_ap_vld <= ap_const_logic_1;
         else 
             ctrl_reg_outValue_o_ap_vld <= ap_const_logic_0;
@@ -1411,9 +1512,9 @@ begin
     end process;
 
 
-    empty_pirq_outValue_o_ap_vld_assign_proc : process(ap_CS_fsm_state10, ap_reg_ioackin_empty_pirq_outValue_dummy_ack)
+    empty_pirq_outValue_o_ap_vld_assign_proc : process(ap_CS_fsm_state9, ap_reg_ioackin_empty_pirq_outValue_dummy_ack)
     begin
-        if (((ap_reg_ioackin_empty_pirq_outValue_dummy_ack = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state10))) then 
+        if (((ap_reg_ioackin_empty_pirq_outValue_dummy_ack = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state9))) then 
             empty_pirq_outValue_o_ap_vld <= ap_const_logic_1;
         else 
             empty_pirq_outValue_o_ap_vld <= ap_const_logic_0;
@@ -1421,41 +1522,38 @@ begin
     end process;
 
 
-    full_pirq_outValue_o_ap_vld_assign_proc : process(ap_CS_fsm_state24, ap_reg_ioackin_full_pirq_outValue_dummy_ack)
+    full_pirq_outValue_o_ap_vld_assign_proc : process(ap_CS_fsm_state23, ap_reg_ioackin_full_pirq_outValue_dummy_ack)
     begin
-        if (((ap_reg_ioackin_full_pirq_outValue_dummy_ack = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state24))) then 
+        if (((ap_reg_ioackin_full_pirq_outValue_dummy_ack = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state23))) then 
             full_pirq_outValue_o_ap_vld <= ap_const_logic_1;
         else 
             full_pirq_outValue_o_ap_vld <= ap_const_logic_0;
         end if; 
     end process;
 
+    grp_fu_714_p2 <= ap_const_lv64_10000440(32 - 1 downto 0);
+    grp_fu_756_p2 <= ap_const_lv64_10000442(32 - 1 downto 0);
+    grp_fu_778_p2 <= ap_const_lv64_10000442(32 - 1 downto 0);
 
-    iic_ARADDR_assign_proc : process(ap_start, ap_CS_fsm_state1, ap_CS_fsm_state16, ap_CS_fsm_state31, ap_CS_fsm_state32, ap_CS_fsm_state61, iic_addr_reg_425, ap_reg_ioackin_iic_ARREADY)
+    iic_ARADDR_assign_proc : process(ap_start, ap_CS_fsm_state1, ap_CS_fsm_state15, ap_CS_fsm_state30, ap_CS_fsm_state31, ap_CS_fsm_state66, tmp_2_fu_876_p2, ap_reg_ioackin_iic_ARREADY)
     begin
-        if ((ap_reg_ioackin_iic_ARREADY = ap_const_logic_0)) then
-            if ((ap_const_logic_1 = ap_CS_fsm_state61)) then 
-                iic_ARADDR <= ap_const_lv64_10000443(32 - 1 downto 0);
-            elsif ((ap_const_logic_1 = ap_CS_fsm_state32)) then 
-                iic_ARADDR <= ap_const_lv64_10000441(32 - 1 downto 0);
-            elsif ((ap_const_logic_1 = ap_CS_fsm_state31)) then 
-                iic_ARADDR <= ap_const_lv64_10000440(32 - 1 downto 0);
-            elsif ((ap_const_logic_1 = ap_CS_fsm_state16)) then 
-                iic_ARADDR <= iic_addr_reg_425;
-            elsif (((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-                iic_ARADDR <= ap_const_lv64_10000448(32 - 1 downto 0);
-            else 
-                iic_ARADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-            end if;
+        if (((tmp_2_fu_876_p2 = ap_const_lv1_1) and (ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state66))) then 
+            iic_ARADDR <= ap_const_lv64_10000443(32 - 1 downto 0);
+        elsif (((ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state31))) then 
+            iic_ARADDR <= ap_const_lv64_10000441(32 - 1 downto 0);
+        elsif (((ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state30))) then 
+            iic_ARADDR <= ap_const_lv64_10000440(32 - 1 downto 0);
+        elsif ((((ap_start = ap_const_logic_1) and (ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state1)) or ((ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state15)))) then 
+            iic_ARADDR <= ap_const_lv64_10000448(32 - 1 downto 0);
         else 
             iic_ARADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    iic_ARVALID_assign_proc : process(ap_start, ap_CS_fsm_state1, ap_CS_fsm_state16, ap_CS_fsm_state31, ap_CS_fsm_state32, ap_CS_fsm_state61, ap_reg_ioackin_iic_ARREADY)
+    iic_ARVALID_assign_proc : process(ap_start, ap_CS_fsm_state1, ap_CS_fsm_state15, ap_CS_fsm_state30, ap_CS_fsm_state31, ap_CS_fsm_state66, tmp_2_fu_876_p2, ap_reg_ioackin_iic_ARREADY)
     begin
-        if ((((ap_start = ap_const_logic_1) and (ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state1)) or ((ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state61)) or ((ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state32)) or ((ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state31)) or ((ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state16)))) then 
+        if ((((ap_start = ap_const_logic_1) and (ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state1)) or ((tmp_2_fu_876_p2 = ap_const_lv1_1) and (ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state66)) or ((ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state31)) or ((ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state30)) or ((ap_reg_ioackin_iic_ARREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state15)))) then 
             iic_ARVALID <= ap_const_logic_1;
         else 
             iic_ARVALID <= ap_const_logic_0;
@@ -1463,17 +1561,19 @@ begin
     end process;
 
 
-    iic_AWADDR_assign_proc : process(ap_CS_fsm_state9, ap_CS_fsm_state23, ap_CS_fsm_state24, ap_CS_fsm_state39, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state44, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state51, ap_CS_fsm_state52, ap_CS_fsm_state53, ap_CS_fsm_state54, iic_RVALID, iic_BVALID, iic_addr_1_reg_432, iic_addr_3_reg_456, ap_reg_ioackin_iic_AWREADY)
+    iic_AWADDR_assign_proc : process(ap_CS_fsm_state8, ap_CS_fsm_state22, ap_CS_fsm_state23, ap_CS_fsm_state38, ap_CS_fsm_state39, ap_CS_fsm_state44, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state49, ap_CS_fsm_state56, tmp_fu_856_p2, ap_CS_fsm_state57, ap_CS_fsm_state58, ap_CS_fsm_state59, iic_RVALID, iic_BVALID, grp_fu_714_p2, grp_fu_756_p2, grp_fu_778_p2, ap_reg_ioackin_iic_AWREADY)
     begin
-        if ((((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state54)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state53)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state52)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state51)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state50)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state44)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state43)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state42)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state41)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state40)))) then 
-            iic_AWADDR <= iic_addr_3_reg_456;
-        elsif (((iic_RVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state39))) then 
+        if ((((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state59)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state58)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state43)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state42)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state41)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state40)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state44)))) then 
+            iic_AWADDR <= grp_fu_778_p2;
+        elsif ((((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state57)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state39)))) then 
+            iic_AWADDR <= grp_fu_756_p2;
+        elsif ((((tmp_fu_856_p2 = ap_const_lv1_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state56)) or ((iic_RVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state38)))) then 
             iic_AWADDR <= ap_const_lv64_10000442(32 - 1 downto 0);
-        elsif (((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state24))) then 
-            iic_AWADDR <= iic_addr_1_reg_432;
-        elsif (((iic_RVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state23))) then 
+        elsif (((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state23))) then 
+            iic_AWADDR <= grp_fu_714_p2;
+        elsif (((iic_RVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state22))) then 
             iic_AWADDR <= ap_const_lv64_10000440(32 - 1 downto 0);
-        elsif (((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state9))) then 
+        elsif (((iic_RVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state8))) then 
             iic_AWADDR <= ap_const_lv64_10000448(32 - 1 downto 0);
         else 
             iic_AWADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -1481,9 +1581,9 @@ begin
     end process;
 
 
-    iic_AWVALID_assign_proc : process(ap_CS_fsm_state9, ap_CS_fsm_state23, ap_CS_fsm_state24, ap_CS_fsm_state39, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state44, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state51, ap_CS_fsm_state52, ap_CS_fsm_state53, ap_CS_fsm_state54, iic_RVALID, iic_BVALID, ap_reg_ioackin_iic_AWREADY)
+    iic_AWVALID_assign_proc : process(ap_CS_fsm_state8, ap_CS_fsm_state22, ap_CS_fsm_state23, ap_CS_fsm_state38, ap_CS_fsm_state39, ap_CS_fsm_state44, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state49, ap_CS_fsm_state56, tmp_fu_856_p2, ap_CS_fsm_state57, ap_CS_fsm_state58, ap_CS_fsm_state59, iic_RVALID, iic_BVALID, ap_reg_ioackin_iic_AWREADY)
     begin
-        if ((((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state54)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state53)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state52)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state51)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state50)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state44)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state43)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state42)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state41)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state40)) or ((iic_RVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state39)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state24)) or ((iic_RVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state23)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state9)))) then 
+        if ((((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state59)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state58)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state57)) or ((tmp_fu_856_p2 = ap_const_lv1_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state56)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state43)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state42)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state41)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state40)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state44)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state39)) or ((iic_RVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state38)) or ((ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state23)) or ((iic_RVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state22)) or ((iic_RVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_AWREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state8)))) then 
             iic_AWVALID <= ap_const_logic_1;
         else 
             iic_AWVALID <= ap_const_logic_0;
@@ -1491,9 +1591,9 @@ begin
     end process;
 
 
-    iic_BREADY_assign_proc : process(ap_CS_fsm_state15, ap_CS_fsm_state29, ap_CS_fsm_state30, ap_CS_fsm_state45, ap_CS_fsm_state46, ap_CS_fsm_state47, ap_CS_fsm_state48, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state51, ap_CS_fsm_state52, ap_CS_fsm_state53, ap_CS_fsm_state54, ap_CS_fsm_state55, ap_CS_fsm_state56, ap_CS_fsm_state57, ap_CS_fsm_state58, ap_CS_fsm_state59, ap_CS_fsm_state60, iic_BVALID, ap_sig_ioackin_iic_WREADY, ap_block_state45_io, ap_block_state46_io, ap_block_state47_io, ap_block_state48_io, ap_block_state49_io, ap_block_state50_io, ap_block_state51_io, ap_block_state52_io, ap_block_state53_io, ap_block_state54_io)
+    iic_BREADY_assign_proc : process(ap_CS_fsm_state14, ap_CS_fsm_state28, ap_CS_fsm_state29, ap_CS_fsm_state44, ap_CS_fsm_state45, ap_CS_fsm_state46, ap_CS_fsm_state47, ap_CS_fsm_state48, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state51, ap_CS_fsm_state52, ap_CS_fsm_state53, ap_CS_fsm_state54, ap_CS_fsm_state55, ap_CS_fsm_state62, ap_CS_fsm_state63, ap_CS_fsm_state64, ap_CS_fsm_state65, iic_BVALID, ap_sig_ioackin_iic_WREADY, ap_block_state44_io, ap_block_state48_io, ap_block_state45_io, ap_block_state49_io, ap_block_state46_io, ap_block_state47_io)
     begin
-        if ((((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state60)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state59)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state58)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state57)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state56)) or (not(((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state55)) or (not(((ap_const_boolean_1 = ap_block_state54_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state54)) or (not(((ap_const_boolean_1 = ap_block_state53_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state53)) or (not(((ap_const_boolean_1 = ap_block_state52_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state52)) or (not(((ap_const_boolean_1 = ap_block_state51_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state51)) or (not(((ap_const_boolean_1 = ap_block_state50_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state50)) or (not(((ap_const_boolean_1 = ap_block_state49_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state49)) or (not(((ap_const_boolean_1 = ap_block_state48_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state48)) or (not(((ap_const_boolean_1 = ap_block_state47_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state47)) or (not(((ap_const_boolean_1 = ap_block_state46_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state46)) or (not(((ap_const_boolean_1 = ap_block_state45_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state30)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state29)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state15)))) then 
+        if ((((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state65)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state64)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state63)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state62)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state55)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state54)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state53)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state52)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state51)) or (not(((ap_sig_ioackin_iic_WREADY = ap_const_logic_0) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state50)) or (not(((ap_const_boolean_1 = ap_block_state49_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state49)) or (not(((ap_const_boolean_1 = ap_block_state48_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state48)) or (not(((ap_const_boolean_1 = ap_block_state47_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state47)) or (not(((ap_const_boolean_1 = ap_block_state46_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state46)) or (not(((ap_const_boolean_1 = ap_block_state45_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state45)) or (not(((ap_const_boolean_1 = ap_block_state44_io) or (iic_BVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state44)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state29)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state28)) or ((iic_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state14)))) then 
             iic_BREADY <= ap_const_logic_1;
         else 
             iic_BREADY <= ap_const_logic_0;
@@ -1501,9 +1601,9 @@ begin
     end process;
 
 
-    iic_RREADY_assign_proc : process(ap_CS_fsm_state8, ap_CS_fsm_state23, ap_CS_fsm_state38, ap_CS_fsm_state39, ap_CS_fsm_state68, iic_RVALID, ap_sig_ioackin_iic_AWREADY)
+    iic_RREADY_assign_proc : process(ap_CS_fsm_state8, ap_CS_fsm_state22, ap_CS_fsm_state37, ap_CS_fsm_state38, ap_CS_fsm_state73, iic_RVALID, ap_sig_ioackin_iic_AWREADY)
     begin
-        if ((((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state68)) or (not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state39)) or ((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state38)) or (not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state23)) or ((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state8)))) then 
+        if ((((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state73)) or (not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state38)) or ((iic_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state37)) or (not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state22)) or (not(((ap_sig_ioackin_iic_AWREADY = ap_const_logic_0) or (iic_RVALID = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state8)))) then 
             iic_RREADY <= ap_const_logic_1;
         else 
             iic_RREADY <= ap_const_logic_0;
@@ -1511,37 +1611,37 @@ begin
     end process;
 
 
-    iic_WDATA_assign_proc : process(ap_CS_fsm_state10, ap_CS_fsm_state24, ap_CS_fsm_state25, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state44, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state51, ap_CS_fsm_state52, ap_CS_fsm_state53, ap_CS_fsm_state54, ap_CS_fsm_state55, iic_BVALID, ap_reg_ioackin_iic_WREADY)
+    iic_WDATA_assign_proc : process(ap_CS_fsm_state9, ap_CS_fsm_state23, ap_CS_fsm_state24, ap_CS_fsm_state39, ap_CS_fsm_state44, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state57, ap_CS_fsm_state58, ap_CS_fsm_state59, ap_CS_fsm_state60, iic_BVALID, ap_reg_ioackin_iic_WREADY)
     begin
-        if (((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state55))) then 
+        if (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state60))) then 
             iic_WDATA <= ap_const_lv32_203;
-        elsif (((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state54))) then 
+        elsif (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state59))) then 
             iic_WDATA <= ap_const_lv32_1ED;
-        elsif (((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state53))) then 
+        elsif (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state58))) then 
             iic_WDATA <= ap_const_lv32_F7;
-        elsif (((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state51))) then 
-            iic_WDATA <= ap_const_lv32_24;
         elsif (((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state50))) then 
+            iic_WDATA <= ap_const_lv32_24;
+        elsif (((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state49))) then 
             iic_WDATA <= ap_const_lv32_F5;
-        elsif (((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state48))) then 
-            iic_WDATA <= ap_const_lv32_17;
         elsif (((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state47))) then 
+            iic_WDATA <= ap_const_lv32_17;
+        elsif (((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state46))) then 
             iic_WDATA <= ap_const_lv32_F4;
-        elsif (((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state45))) then 
+        elsif (((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state44))) then 
             iic_WDATA <= ap_const_lv32_0;
-        elsif (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state44))) then 
+        elsif (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state43))) then 
             iic_WDATA <= ap_const_lv32_F2;
-        elsif (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state42))) then 
-            iic_WDATA <= ap_const_lv32_B6;
         elsif (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state41))) then 
+            iic_WDATA <= ap_const_lv32_B6;
+        elsif (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state40))) then 
             iic_WDATA <= ap_const_lv32_E0;
-        elsif ((((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state52)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state43)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state40)))) then 
+        elsif ((((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state57)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state42)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state39)))) then 
             iic_WDATA <= ap_const_lv32_1EC;
-        elsif (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state25))) then 
-            iic_WDATA <= ap_const_lv32_1;
         elsif (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state24))) then 
+            iic_WDATA <= ap_const_lv32_1;
+        elsif (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state23))) then 
             iic_WDATA <= ap_const_lv32_2;
-        elsif (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state10))) then 
+        elsif (((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state9))) then 
             iic_WDATA <= ap_const_lv32_F;
         else 
             iic_WDATA <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -1549,22 +1649,19 @@ begin
     end process;
 
 
-    iic_WVALID_assign_proc : process(ap_CS_fsm_state10, ap_CS_fsm_state24, ap_CS_fsm_state25, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state44, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state51, ap_CS_fsm_state52, ap_CS_fsm_state53, ap_CS_fsm_state54, ap_CS_fsm_state55, iic_BVALID, ap_reg_ioackin_iic_WREADY)
+    iic_WVALID_assign_proc : process(ap_CS_fsm_state9, ap_CS_fsm_state23, ap_CS_fsm_state24, ap_CS_fsm_state39, ap_CS_fsm_state44, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state57, ap_CS_fsm_state58, ap_CS_fsm_state59, ap_CS_fsm_state60, iic_BVALID, ap_reg_ioackin_iic_WREADY)
     begin
-        if ((((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state55)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state54)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state53)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state52)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state51)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state50)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state44)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state43)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state42)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state41)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state40)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state25)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state24)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state10)))) then 
+        if ((((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state60)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state59)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state58)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state57)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state50)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state49)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state48)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state43)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state47)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state42)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state46)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state41)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state45)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state40)) or ((iic_BVALID = ap_const_logic_1) and (ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state44)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state39)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state24)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state23)) or ((ap_reg_ioackin_iic_WREADY = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state9)))) then 
             iic_WVALID <= ap_const_logic_1;
         else 
             iic_WVALID <= ap_const_logic_0;
         end if; 
     end process;
 
-    iic_addr_1_reg_432 <= ap_const_lv64_10000440(32 - 1 downto 0);
-    iic_addr_3_reg_456 <= ap_const_lv64_10000442(32 - 1 downto 0);
-    iic_addr_reg_425 <= ap_const_lv64_10000448(32 - 1 downto 0);
 
-    iic_blk_n_AR_assign_proc : process(ap_start, ap_CS_fsm_state1, m_axi_iic_ARREADY, ap_CS_fsm_state16, ap_CS_fsm_state31, ap_CS_fsm_state32, ap_CS_fsm_state61)
+    iic_blk_n_AR_assign_proc : process(ap_start, ap_CS_fsm_state1, m_axi_iic_ARREADY, ap_CS_fsm_state15, ap_CS_fsm_state30, ap_CS_fsm_state31, ap_CS_fsm_state66, tmp_2_fu_876_p2)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state61) or (ap_const_logic_1 = ap_CS_fsm_state32) or (ap_const_logic_1 = ap_CS_fsm_state31) or (ap_const_logic_1 = ap_CS_fsm_state16) or ((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1)))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state31) or (ap_const_logic_1 = ap_CS_fsm_state30) or (ap_const_logic_1 = ap_CS_fsm_state15) or ((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1)) or ((tmp_2_fu_876_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state66)))) then 
             iic_blk_n_AR <= m_axi_iic_ARREADY;
         else 
             iic_blk_n_AR <= ap_const_logic_1;
@@ -1572,9 +1669,9 @@ begin
     end process;
 
 
-    iic_blk_n_AW_assign_proc : process(m_axi_iic_AWREADY, ap_CS_fsm_state9, ap_CS_fsm_state23, ap_CS_fsm_state24, ap_CS_fsm_state39, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state44, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state51, ap_CS_fsm_state52, ap_CS_fsm_state53, ap_CS_fsm_state54)
+    iic_blk_n_AW_assign_proc : process(m_axi_iic_AWREADY, ap_CS_fsm_state8, ap_CS_fsm_state22, ap_CS_fsm_state23, ap_CS_fsm_state38, ap_CS_fsm_state39, ap_CS_fsm_state44, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state49, ap_CS_fsm_state56, tmp_fu_856_p2, ap_CS_fsm_state57, ap_CS_fsm_state58, ap_CS_fsm_state59)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state54) or (ap_const_logic_1 = ap_CS_fsm_state53) or (ap_const_logic_1 = ap_CS_fsm_state52) or (ap_const_logic_1 = ap_CS_fsm_state51) or (ap_const_logic_1 = ap_CS_fsm_state50) or (ap_const_logic_1 = ap_CS_fsm_state49) or (ap_const_logic_1 = ap_CS_fsm_state44) or (ap_const_logic_1 = ap_CS_fsm_state48) or (ap_const_logic_1 = ap_CS_fsm_state43) or (ap_const_logic_1 = ap_CS_fsm_state47) or (ap_const_logic_1 = ap_CS_fsm_state42) or (ap_const_logic_1 = ap_CS_fsm_state46) or (ap_const_logic_1 = ap_CS_fsm_state41) or (ap_const_logic_1 = ap_CS_fsm_state45) or (ap_const_logic_1 = ap_CS_fsm_state40) or (ap_const_logic_1 = ap_CS_fsm_state39) or (ap_const_logic_1 = ap_CS_fsm_state24) or (ap_const_logic_1 = ap_CS_fsm_state23) or (ap_const_logic_1 = ap_CS_fsm_state9))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state59) or (ap_const_logic_1 = ap_CS_fsm_state58) or (ap_const_logic_1 = ap_CS_fsm_state57) or (ap_const_logic_1 = ap_CS_fsm_state49) or (ap_const_logic_1 = ap_CS_fsm_state48) or (ap_const_logic_1 = ap_CS_fsm_state43) or (ap_const_logic_1 = ap_CS_fsm_state47) or (ap_const_logic_1 = ap_CS_fsm_state42) or (ap_const_logic_1 = ap_CS_fsm_state46) or (ap_const_logic_1 = ap_CS_fsm_state41) or (ap_const_logic_1 = ap_CS_fsm_state45) or (ap_const_logic_1 = ap_CS_fsm_state40) or (ap_const_logic_1 = ap_CS_fsm_state44) or (ap_const_logic_1 = ap_CS_fsm_state39) or (ap_const_logic_1 = ap_CS_fsm_state38) or (ap_const_logic_1 = ap_CS_fsm_state23) or (ap_const_logic_1 = ap_CS_fsm_state22) or (ap_const_logic_1 = ap_CS_fsm_state8) or ((tmp_fu_856_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state56)))) then 
             iic_blk_n_AW <= m_axi_iic_AWREADY;
         else 
             iic_blk_n_AW <= ap_const_logic_1;
@@ -1582,9 +1679,9 @@ begin
     end process;
 
 
-    iic_blk_n_B_assign_proc : process(m_axi_iic_BVALID, ap_CS_fsm_state15, ap_CS_fsm_state29, ap_CS_fsm_state30, ap_CS_fsm_state45, ap_CS_fsm_state46, ap_CS_fsm_state47, ap_CS_fsm_state48, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state51, ap_CS_fsm_state52, ap_CS_fsm_state53, ap_CS_fsm_state54, ap_CS_fsm_state55, ap_CS_fsm_state56, ap_CS_fsm_state57, ap_CS_fsm_state58, ap_CS_fsm_state59, ap_CS_fsm_state60)
+    iic_blk_n_B_assign_proc : process(m_axi_iic_BVALID, ap_CS_fsm_state14, ap_CS_fsm_state28, ap_CS_fsm_state29, ap_CS_fsm_state44, ap_CS_fsm_state45, ap_CS_fsm_state46, ap_CS_fsm_state47, ap_CS_fsm_state48, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state51, ap_CS_fsm_state52, ap_CS_fsm_state53, ap_CS_fsm_state54, ap_CS_fsm_state55, ap_CS_fsm_state62, ap_CS_fsm_state63, ap_CS_fsm_state64, ap_CS_fsm_state65)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state60) or (ap_const_logic_1 = ap_CS_fsm_state59) or (ap_const_logic_1 = ap_CS_fsm_state58) or (ap_const_logic_1 = ap_CS_fsm_state57) or (ap_const_logic_1 = ap_CS_fsm_state56) or (ap_const_logic_1 = ap_CS_fsm_state55) or (ap_const_logic_1 = ap_CS_fsm_state54) or (ap_const_logic_1 = ap_CS_fsm_state53) or (ap_const_logic_1 = ap_CS_fsm_state52) or (ap_const_logic_1 = ap_CS_fsm_state51) or (ap_const_logic_1 = ap_CS_fsm_state50) or (ap_const_logic_1 = ap_CS_fsm_state49) or (ap_const_logic_1 = ap_CS_fsm_state48) or (ap_const_logic_1 = ap_CS_fsm_state47) or (ap_const_logic_1 = ap_CS_fsm_state46) or (ap_const_logic_1 = ap_CS_fsm_state45) or (ap_const_logic_1 = ap_CS_fsm_state30) or (ap_const_logic_1 = ap_CS_fsm_state29) or (ap_const_logic_1 = ap_CS_fsm_state15))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state65) or (ap_const_logic_1 = ap_CS_fsm_state64) or (ap_const_logic_1 = ap_CS_fsm_state63) or (ap_const_logic_1 = ap_CS_fsm_state62) or (ap_const_logic_1 = ap_CS_fsm_state55) or (ap_const_logic_1 = ap_CS_fsm_state54) or (ap_const_logic_1 = ap_CS_fsm_state53) or (ap_const_logic_1 = ap_CS_fsm_state52) or (ap_const_logic_1 = ap_CS_fsm_state51) or (ap_const_logic_1 = ap_CS_fsm_state50) or (ap_const_logic_1 = ap_CS_fsm_state49) or (ap_const_logic_1 = ap_CS_fsm_state48) or (ap_const_logic_1 = ap_CS_fsm_state47) or (ap_const_logic_1 = ap_CS_fsm_state46) or (ap_const_logic_1 = ap_CS_fsm_state45) or (ap_const_logic_1 = ap_CS_fsm_state44) or (ap_const_logic_1 = ap_CS_fsm_state29) or (ap_const_logic_1 = ap_CS_fsm_state28) or (ap_const_logic_1 = ap_CS_fsm_state14))) then 
             iic_blk_n_B <= m_axi_iic_BVALID;
         else 
             iic_blk_n_B <= ap_const_logic_1;
@@ -1592,9 +1689,9 @@ begin
     end process;
 
 
-    iic_blk_n_R_assign_proc : process(m_axi_iic_RVALID, ap_CS_fsm_state8, ap_CS_fsm_state23, ap_CS_fsm_state38, ap_CS_fsm_state39, ap_CS_fsm_state68)
+    iic_blk_n_R_assign_proc : process(m_axi_iic_RVALID, ap_CS_fsm_state8, ap_CS_fsm_state22, ap_CS_fsm_state37, ap_CS_fsm_state38, ap_CS_fsm_state73)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state68) or (ap_const_logic_1 = ap_CS_fsm_state39) or (ap_const_logic_1 = ap_CS_fsm_state38) or (ap_const_logic_1 = ap_CS_fsm_state23) or (ap_const_logic_1 = ap_CS_fsm_state8))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state73) or (ap_const_logic_1 = ap_CS_fsm_state38) or (ap_const_logic_1 = ap_CS_fsm_state37) or (ap_const_logic_1 = ap_CS_fsm_state22) or (ap_const_logic_1 = ap_CS_fsm_state8))) then 
             iic_blk_n_R <= m_axi_iic_RVALID;
         else 
             iic_blk_n_R <= ap_const_logic_1;
@@ -1602,9 +1699,9 @@ begin
     end process;
 
 
-    iic_blk_n_W_assign_proc : process(m_axi_iic_WREADY, ap_CS_fsm_state10, ap_CS_fsm_state24, ap_CS_fsm_state25, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state44, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state51, ap_CS_fsm_state52, ap_CS_fsm_state53, ap_CS_fsm_state54, ap_CS_fsm_state55)
+    iic_blk_n_W_assign_proc : process(m_axi_iic_WREADY, ap_CS_fsm_state9, ap_CS_fsm_state23, ap_CS_fsm_state24, ap_CS_fsm_state39, ap_CS_fsm_state44, ap_CS_fsm_state40, ap_CS_fsm_state45, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state42, ap_CS_fsm_state47, ap_CS_fsm_state43, ap_CS_fsm_state48, ap_CS_fsm_state49, ap_CS_fsm_state50, ap_CS_fsm_state57, ap_CS_fsm_state58, ap_CS_fsm_state59, ap_CS_fsm_state60)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state55) or (ap_const_logic_1 = ap_CS_fsm_state54) or (ap_const_logic_1 = ap_CS_fsm_state53) or (ap_const_logic_1 = ap_CS_fsm_state52) or (ap_const_logic_1 = ap_CS_fsm_state51) or (ap_const_logic_1 = ap_CS_fsm_state50) or (ap_const_logic_1 = ap_CS_fsm_state49) or (ap_const_logic_1 = ap_CS_fsm_state44) or (ap_const_logic_1 = ap_CS_fsm_state48) or (ap_const_logic_1 = ap_CS_fsm_state43) or (ap_const_logic_1 = ap_CS_fsm_state47) or (ap_const_logic_1 = ap_CS_fsm_state42) or (ap_const_logic_1 = ap_CS_fsm_state46) or (ap_const_logic_1 = ap_CS_fsm_state41) or (ap_const_logic_1 = ap_CS_fsm_state45) or (ap_const_logic_1 = ap_CS_fsm_state40) or (ap_const_logic_1 = ap_CS_fsm_state25) or (ap_const_logic_1 = ap_CS_fsm_state24) or (ap_const_logic_1 = ap_CS_fsm_state10))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state60) or (ap_const_logic_1 = ap_CS_fsm_state59) or (ap_const_logic_1 = ap_CS_fsm_state58) or (ap_const_logic_1 = ap_CS_fsm_state57) or (ap_const_logic_1 = ap_CS_fsm_state50) or (ap_const_logic_1 = ap_CS_fsm_state49) or (ap_const_logic_1 = ap_CS_fsm_state48) or (ap_const_logic_1 = ap_CS_fsm_state43) or (ap_const_logic_1 = ap_CS_fsm_state47) or (ap_const_logic_1 = ap_CS_fsm_state42) or (ap_const_logic_1 = ap_CS_fsm_state46) or (ap_const_logic_1 = ap_CS_fsm_state41) or (ap_const_logic_1 = ap_CS_fsm_state45) or (ap_const_logic_1 = ap_CS_fsm_state40) or (ap_const_logic_1 = ap_CS_fsm_state44) or (ap_const_logic_1 = ap_CS_fsm_state39) or (ap_const_logic_1 = ap_CS_fsm_state24) or (ap_const_logic_1 = ap_CS_fsm_state23) or (ap_const_logic_1 = ap_CS_fsm_state9))) then 
             iic_blk_n_W <= m_axi_iic_WREADY;
         else 
             iic_blk_n_W <= ap_const_logic_1;
@@ -1612,9 +1709,9 @@ begin
     end process;
 
 
-    rx_fifo_outValue_o_ap_vld_assign_proc : process(ap_CS_fsm_state69)
+    rx_fifo_outValue_o_ap_vld_assign_proc : process(ap_CS_fsm_state74)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state69)) then 
+        if ((ap_const_logic_1 = ap_CS_fsm_state74)) then 
             rx_fifo_outValue_o_ap_vld <= ap_const_logic_1;
         else 
             rx_fifo_outValue_o_ap_vld <= ap_const_logic_0;
@@ -1622,13 +1719,15 @@ begin
     end process;
 
 
-    stat_reg_outValue1_o_ap_vld_assign_proc : process(ap_CS_fsm_state40, ap_reg_ioackin_stat_reg_outValue1_dummy_ack)
+    stat_reg_outValue1_o_ap_vld_assign_proc : process(ap_CS_fsm_state39, ap_reg_ioackin_stat_reg_outValue1_dummy_ack)
     begin
-        if (((ap_reg_ioackin_stat_reg_outValue1_dummy_ack = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state40))) then 
+        if (((ap_reg_ioackin_stat_reg_outValue1_dummy_ack = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state39))) then 
             stat_reg_outValue1_o_ap_vld <= ap_const_logic_1;
         else 
             stat_reg_outValue1_o_ap_vld <= ap_const_logic_0;
         end if; 
     end process;
 
+    tmp_2_fu_876_p2 <= "1" when (p_014_0_i_reg_679 = ap_const_lv29_1DCD6500) else "0";
+    tmp_fu_856_p2 <= "1" when (p_014_0_i4_reg_668 = ap_const_lv29_1DCD6500) else "0";
 end behav;

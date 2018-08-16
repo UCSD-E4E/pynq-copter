@@ -53,4 +53,21 @@ void iiccommmod(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValu
 
 void readData(uint32_t *iic2);
 
+//delay function in milliseconds
+template <unsigned long long MILLISECONDS, unsigned long long F_OVERLAY_HZ = 50000000ULL>
+void delay_until_ms(){
+#define MSEC_PER_SEC 1000
+#pragma HLS INLINE
+#pragma HLS PROTOCOL floating
+    volatile char dummy;
+    ap_uint<64> ctr;
+    ap_uint<64> cyc = (F_OVERLAY_HZ * MILLISECONDS / MSEC_PER_SEC);
+    for (ctr = 0; ctr < cyc; ++ctr){
+        dummy = dummy;
+    }
+    return;
+#undef MSEC_PER_SEC
+}
+
+
 #endif

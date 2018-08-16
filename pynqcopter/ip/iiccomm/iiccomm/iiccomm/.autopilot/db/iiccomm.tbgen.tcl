@@ -1,8 +1,6 @@
 set C_TypeInfoList {{ 
-"iiccomm" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"stat_reg_outValue1": [[], {"reference": "0"}] }, {"empty_pirq_outValue": [[], {"reference": "0"}] }, {"full_pirq_outValue": [[], {"reference": "0"}] }, {"stat_reg_outValue2": [[], {"reference": "0"}] }, {"stat_reg_outValue3": [[], {"reference": "0"}] }, {"stat_reg_outValue4": [[], {"reference": "0"}] }, {"tx_fifo_outValue": [[], {"reference": "0"}] }, {"rx_fifo_outValue": [[], {"reference": "0"}] }, {"ctrl_reg_outValue": [[], {"reference": "0"}] }],["1"],""],
- "1": [ "rx_fifo_val", [[],"2"],""], 
-"0": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}], 
-"2": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}]
+"iiccomm" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"stat_reg_outValue1": [[], {"reference": "0"}] }, {"empty_pirq_outValue": [[], {"reference": "0"}] }, {"full_pirq_outValue": [[], {"reference": "0"}] }, {"stat_reg_outValue2": [[], {"reference": "0"}] }, {"stat_reg_outValue3": [[], {"reference": "0"}] }, {"stat_reg_outValue4": [[], {"reference": "0"}] }, {"tx_fifo_outValue": [[], {"reference": "0"}] }, {"rx_fifo_outValue": [[], {"reference": "0"}] }, {"ctrl_reg_outValue": [[], {"reference": "0"}] }],[],""], 
+"0": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}]
 }}
 set moduleName iiccomm
 set isCombinational 0
@@ -199,31 +197,29 @@ set RtlHierarchyInfo {[
 			{"Name" : "stat_reg_outValue4", "Type" : "None", "Direction" : "I"},
 			{"Name" : "tx_fifo_outValue", "Type" : "None", "Direction" : "I"},
 			{"Name" : "rx_fifo_outValue", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "ctrl_reg_outValue", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "rx_fifo_val", "Type" : "Vld", "Direction" : "O"}]},
+			{"Name" : "ctrl_reg_outValue", "Type" : "OVld", "Direction" : "IO"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm_AXILiteS_s_axi_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm_iic_m_axi_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	iiccomm {
-		iic {Type IO LastRead 67 FirstWrite 9}
-		stat_reg_outValue1 {Type IO LastRead 7 FirstWrite 39}
-		empty_pirq_outValue {Type IO LastRead 7 FirstWrite 9}
-		full_pirq_outValue {Type IO LastRead 7 FirstWrite 23}
+		iic {Type IO LastRead 72 FirstWrite 8}
+		stat_reg_outValue1 {Type IO LastRead 7 FirstWrite 38}
+		empty_pirq_outValue {Type IO LastRead 7 FirstWrite 8}
+		full_pirq_outValue {Type IO LastRead 7 FirstWrite 22}
 		stat_reg_outValue2 {Type I LastRead 7 FirstWrite -1}
 		stat_reg_outValue3 {Type I LastRead 7 FirstWrite -1}
 		stat_reg_outValue4 {Type I LastRead 7 FirstWrite -1}
 		tx_fifo_outValue {Type I LastRead 7 FirstWrite -1}
-		rx_fifo_outValue {Type IO LastRead 7 FirstWrite 68}
-		ctrl_reg_outValue {Type IO LastRead 7 FirstWrite 39}
-		rx_fifo_val {Type O LastRead -1 FirstWrite -1}}}
+		rx_fifo_outValue {Type IO LastRead 7 FirstWrite 73}
+		ctrl_reg_outValue {Type IO LastRead 7 FirstWrite 38}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "68", "Max" : "68"}
-	, {"Name" : "Interval", "Min" : "69", "Max" : "69"}
+	{"Name" : "Latency", "Min" : "1000000073", "Max" : "1000000073"}
+	, {"Name" : "Interval", "Min" : "1000000074", "Max" : "1000000074"}
 ]}
 
 set PipelineEnableSignalInfo {[

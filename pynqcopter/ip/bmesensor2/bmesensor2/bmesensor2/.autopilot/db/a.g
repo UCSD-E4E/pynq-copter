@@ -1,4 +1,0 @@
-#!/bin/sh
-lli=${LLVMINTERP-lli}
-exec $lli \
-    /home/iavendano/pynq-copter/pynqcopter/ip/bmesensor2/bmesensor2/bmesensor2/.autopilot/db/a.g.bc ${1+"$@"}

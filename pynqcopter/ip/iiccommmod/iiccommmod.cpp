@@ -109,8 +109,12 @@ void iiccommmod(uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t& empt
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF5; 
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x24;
 
+	delay_until_ms<10000>();
+
 	readData(iic);
 
+	delay_until_ms<10000>();
+	
 	rx_fifo_val = iic[IIC_INDEX+IIC_RX_FIFO_OFF];
     rx_fifo_outValue=rx_fifo_val;
 				
@@ -144,3 +148,5 @@ void readData(uint32_t *iic2) //pass by reference
 	///////rx_fifo_val = iic2[IIC_INDEX+IIC_RX_FIFO_OFF];
     //////rx_fifo_outValue=rx_fifo_val;
 }
+
+

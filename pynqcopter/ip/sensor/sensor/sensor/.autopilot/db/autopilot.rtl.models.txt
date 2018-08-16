@@ -1,3 +1,0 @@
-sensor_CTRL_s_axi
-sensor_iicData_m_axi
-sensor

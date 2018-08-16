@@ -3,21 +3,6 @@ set moduleName "iiccomm"
 set moduleIsExternC "0"
 set rawDecl ""
 set globalVariable ""
-set PortName10 "rx_fifo_val"
-set BitWidth10 "32"
-set ArrayOpt10 ""
-set Const10 "0"
-set Volatile10 "0"
-set Pointer10 "0"
-set Reference10 "0"
-set Initializer10 ""
-set External10 0
-set Dims10 [list 0]
-set Interface10 "wire"
-set NameSpace10 [list ]
-set DataType10 "unsigned int"
-set Port10 [list $PortName10 $Interface10 $DataType10 $Pointer10 $Dims10 $Const10 $Volatile10 $ArrayOpt10 $Initializer10 $External10 $NameSpace10]
-lappend globalVariable $Port10
 set PortList ""
 set PortName0 "iic"
 set BitWidth0 "64"

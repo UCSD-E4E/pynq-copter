@@ -33188,6 +33188,22 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 #pragma line 40 "./iiccomm.hpp" 2
 #pragma line 52 "./iiccomm.hpp"
 void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t& stat_reg_outValue2, volatile uint32_t& stat_reg_outValue3, volatile uint32_t& stat_reg_outValue4, volatile uint32_t& tx_fifo_outValue, volatile uint32_t& rx_fifo_outValue, volatile uint32_t&ctrl_reg_outValue);
+#pragma empty_line
+#pragma empty_line
+template <unsigned long long MILLISECONDS, unsigned long long F_OVERLAY_HZ = 50000000ULL>
+void delay_until_ms(){
+#pragma empty_line
+#pragma HLS INLINE
+#pragma HLS PROTOCOL floating
+ volatile char dummy;
+    ap_uint<64> ctr;
+    ap_uint<64> cyc = (F_OVERLAY_HZ * MILLISECONDS / 1000);
+    for (ctr = 0; ctr < cyc; ++ctr){
+        dummy = dummy;
+    }
+    return;
+#pragma empty_line
+}
 #pragma line 36 "iiccomm.cpp" 2
 #pragma empty_line
 #pragma empty_line
@@ -33202,7 +33218,7 @@ static uint32_t tx_fifo_val;
 static uint32_t stat_reg_val2;
 static uint32_t stat_reg_val3;
 static uint32_t stat_reg_val4;
-uint32_t rx_fifo_val;
+static uint32_t rx_fifo_val;
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -33265,11 +33281,13 @@ void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1,
  iic[(0x40001000/4)+(0x108/4)] = 0xF5;
  iic[(0x40001000/4)+(0x108/4)] = 0x24;
 #pragma empty_line
+ delay_until_ms<10000>();
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
  iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
-#pragma line 125 "iiccomm.cpp"
+#pragma line 127 "iiccomm.cpp"
  iic[(0x40001000/4)+(0x108/4)] = 0xF7;
 #pragma empty_line
 #pragma empty_line
@@ -33286,8 +33304,9 @@ void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1,
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
+ delay_until_ms<10000>();
+#pragma empty_line
  rx_fifo_val = iic[(0x40001000/4)+(0x10C/4)];
     rx_fifo_outValue=rx_fifo_val;
-#pragma empty_line
 #pragma empty_line
 }

@@ -126,7 +126,7 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 
 	//READ STATUS REGISTER
     stat_reg_val1 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
-    stat_reg_outValue1=stat_reg_val1;
+    stat_reg_outValue1=stat_reg_val1; //REGISTER 0x018
 
 	//////////////////BME280 SET UP////////////////
 	//WRITE TO RESET REGISTER ON BAROMETER SENSOR

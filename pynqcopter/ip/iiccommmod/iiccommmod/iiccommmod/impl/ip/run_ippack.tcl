@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "iiccommmod"
 set Version     "1.0"
 set DisplayName "Iiccommmod"
-set Revision    "1808160037"
+set Revision    "1808161128"
 set Description "HLS Core: Iiccommmod Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -1919,7 +1919,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_ver match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 60 II x}
+set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 1000000059 II x}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]

@@ -182,7 +182,7 @@ set RtlHierarchyInfo {[
 		"ClockEnable" : "0",
 		"VariableLatency" : "1",
 		"WaitState" : [
-			{"State" : "ap_ST_fsm_state32", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_readData_fu_188"}],
+			{"State" : "ap_ST_fsm_state31", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_readData_fu_256"}],
 		"Port" : [
 			{"Name" : "iic", "Type" : "MAXI", "Direction" : "IO",
 				"BlockSignal" : [
@@ -192,7 +192,7 @@ set RtlHierarchyInfo {[
 					{"Name" : "iic_blk_n_W", "Type" : "RtlSignal"},
 					{"Name" : "iic_blk_n_B", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_readData_fu_188", "Port" : "iic2"}]},
+					{"ID" : "3", "SubInstance" : "grp_readData_fu_256", "Port" : "iic2"}]},
 			{"Name" : "stat_reg_outValue1", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "empty_pirq_outValue", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "full_pirq_outValue", "Type" : "Vld", "Direction" : "O"},
@@ -204,7 +204,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "ctrl_reg_outValue", "Type" : "Vld", "Direction" : "O"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccommmod_AXILiteS_s_axi_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccommmod_iic_m_axi_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_readData_fu_188", "Parent" : "0", "Child" : ["4"],
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_readData_fu_256", "Parent" : "0", "Child" : ["4"],
 		"CDFG" : "readData",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"FunctionPipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -220,29 +220,29 @@ set RtlHierarchyInfo {[
 					{"Name" : "iic2_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "iic2_blk_n_W", "Type" : "RtlSignal"},
 					{"Name" : "iic2_blk_n_B", "Type" : "RtlSignal"}]}]},
-	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_readData_fu_188.iiccommmod_mul_32bkb_U1", "Parent" : "3"}]}
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_readData_fu_256.iiccommmod_mul_32bkb_U1", "Parent" : "3"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	iiccommmod {
-		iic {Type IO LastRead 39 FirstWrite 9}
-		stat_reg_outValue1 {Type O LastRead -1 FirstWrite 24}
-		empty_pirq_outValue {Type O LastRead -1 FirstWrite 9}
-		full_pirq_outValue {Type O LastRead -1 FirstWrite 9}
+		iic {Type IO LastRead 38 FirstWrite 8}
+		stat_reg_outValue1 {Type O LastRead -1 FirstWrite 23}
+		empty_pirq_outValue {Type O LastRead -1 FirstWrite 8}
+		full_pirq_outValue {Type O LastRead -1 FirstWrite 8}
 		stat_reg_outValue2 {Type I LastRead -1 FirstWrite -1}
 		stat_reg_outValue3 {Type I LastRead -1 FirstWrite -1}
 		stat_reg_outValue4 {Type I LastRead -1 FirstWrite -1}
 		tx_fifo_outValue {Type I LastRead -1 FirstWrite -1}
-		rx_fifo_outValue {Type O LastRead -1 FirstWrite 40}
-		ctrl_reg_outValue {Type O LastRead -1 FirstWrite 9}}
+		rx_fifo_outValue {Type O LastRead -1 FirstWrite 39}
+		ctrl_reg_outValue {Type O LastRead -1 FirstWrite 8}}
 	readData {
 		iic2 {Type IO LastRead 16 FirstWrite 15}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "60", "Max" : "60"}
-	, {"Name" : "Interval", "Min" : "61", "Max" : "61"}
+	{"Name" : "Latency", "Min" : "1000000059", "Max" : "1000000059"}
+	, {"Name" : "Interval", "Min" : "1000000060", "Max" : "1000000060"}
 ]}
 
 set PipelineEnableSignalInfo {[

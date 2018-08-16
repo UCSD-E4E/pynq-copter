@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="iiccomm" xd:componentRef="iiccomm" xd:initiationInterval="69" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="iiccomm" xd:componentRef="iiccomm" xd:initiationInterval="1000000074" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
   <xd:arg xd:name="iic[]" xd:originalName="iic" xd:direction="inout" xd:interfaceRef="m_axi_iic" xd:busTypeRef="aximm" xd:arraySize="4096" xd:dataWidth="32" xd:bufferDirection="inout"/>
   <xd:arg xd:name="stat_reg_outValue1" xd:originalName="stat_reg_outValue1" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
@@ -16,6 +16,6 @@
   <xd:arg xd:name="rx_fifo_outValue" xd:originalName="rx_fifo_outValue" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x68" xd:statusOffset="0x6C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:arg xd:name="ctrl_reg_outValue" xd:originalName="ctrl_reg_outValue" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x70" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="ctrl_reg_outValue" xd:originalName="ctrl_reg_outValue" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x78" xd:statusOffset="0x7C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
-  <xd:latencyEstimates xd:best-case="68" xd:worst-case="68" xd:average-case="68"/>
-  <xd:resourceEstimates xd:LUT="2040" xd:FF="1284" xd:BRAM="2" xd:DSP="0"/>
+  <xd:latencyEstimates xd:best-case="1000000073" xd:worst-case="1000000073" xd:average-case="1000000073"/>
+  <xd:resourceEstimates xd:LUT="2201" xd:FF="1379" xd:BRAM="2" xd:DSP="0"/>
 </xd:acceleratorMap>
