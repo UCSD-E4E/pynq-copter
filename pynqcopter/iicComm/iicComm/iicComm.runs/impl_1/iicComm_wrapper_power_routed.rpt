@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Wed Aug 15 17:16:59 2018
+| Date             : Wed Aug 15 21:53:45 2018
 | Host             : fabricant running 64-bit Linux Mint 18 Sarah
 | Command          : report_power -file iicComm_wrapper_power_routed.rpt -pb iicComm_wrapper_power_summary_routed.pb -rpx iicComm_wrapper_power_routed.rpx
 | Design           : iicComm_wrapper
@@ -52,15 +52,15 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.011 |        4 |       --- |             --- |
-| Slice Logic             |     0.006 |     6681 |       --- |             --- |
-|   LUT as Logic          |     0.005 |     2421 |     53200 |            4.55 |
-|   Register              |    <0.001 |     3148 |    106400 |            2.96 |
+| Clocks                  |     0.010 |        4 |       --- |             --- |
+| Slice Logic             |     0.005 |     6451 |       --- |             --- |
+|   LUT as Logic          |     0.005 |     2301 |     53200 |            4.33 |
+|   Register              |    <0.001 |     2961 |    106400 |            2.78 |
 |   CARRY4                |    <0.001 |       97 |     13300 |            0.73 |
-|   F7/F8 Muxes           |    <0.001 |        6 |     53200 |            0.01 |
-|   LUT as Shift Register |    <0.001 |      136 |     17400 |            0.78 |
+|   F7/F8 Muxes           |    <0.001 |       66 |     53200 |            0.12 |
+|   LUT as Shift Register |    <0.001 |      133 |     17400 |            0.76 |
 |   Others                |     0.000 |      297 |       --- |             --- |
-| Signals                 |     0.007 |     5031 |       --- |             --- |
+| Signals                 |     0.007 |     4666 |       --- |             --- |
 | Block RAM               |     0.006 |        1 |       140 |            0.71 |
 | I/O                     |     0.000 |        6 |       125 |            4.80 |
 | PS7                     |     1.270 |        1 |       --- |             --- |
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.042 |       0.029 |      0.013 |
+| Vccint    |       1.000 |     0.042 |       0.028 |      0.013 |
 | Vccaux    |       1.800 |     0.014 |       0.000 |      0.014 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -182,16 +182,16 @@ Table of Contents
 |             X_SOFT_RESET                         |    <0.001 |
 |     iiccomm_0                                    |     0.016 |
 |       inst                                       |     0.016 |
-|         iiccomm_AXILiteS_s_axi_U                 |     0.004 |
-|         iiccomm_iic_m_axi_U                      |     0.011 |
-|           bus_read                               |     0.006 |
+|         iiccomm_AXILiteS_s_axi_U                 |     0.003 |
+|         iiccomm_iic_m_axi_U                      |     0.012 |
+|           bus_read                               |     0.007 |
 |             buff_rdata                           |     0.004 |
 |             fifo_rctl                            |    <0.001 |
 |             fifo_rreq                            |    <0.001 |
 |             rs_rdata                             |    <0.001 |
 |             rs_rreq                              |    <0.001 |
-|           bus_write                              |     0.005 |
-|             buff_wdata                           |     0.003 |
+|           bus_write                              |     0.006 |
+|             buff_wdata                           |     0.004 |
 |             bus_equal_gen.fifo_burst             |    <0.001 |
 |             fifo_resp                            |    <0.001 |
 |             fifo_resp_to_user                    |    <0.001 |
@@ -200,7 +200,7 @@ Table of Contents
 |           wreq_throttl                           |    <0.001 |
 |     processing_system7_0                         |     1.271 |
 |       inst                                       |     1.271 |
-|     ps7_0_axi_periph                             |     0.011 |
+|     ps7_0_axi_periph                             |     0.010 |
 |       s00_couplers                               |     0.004 |
 |         auto_pc                                  |     0.004 |
 |           inst                                   |     0.004 |
@@ -260,7 +260,7 @@ Table of Contents
 |       xbar                                       |     0.002 |
 |         inst                                     |     0.002 |
 |           gen_sasd.crossbar_sasd_0               |     0.002 |
-|             addr_arbiter_inst                    |     0.002 |
+|             addr_arbiter_inst                    |     0.001 |
 |             gen_decerr.decerr_slave_inst         |    <0.001 |
 |             reg_slice_r                          |    <0.001 |
 |             splitter_ar                          |    <0.001 |
