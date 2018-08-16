@@ -33,5 +33,11 @@
 # DAMAGE.
 ###############################################################################
 from .HlsCore import HlsCore
+<<<<<<< HEAD
 from . import sensor_confirm
 
+=======
+from . import ctrlloop
+from . import mixer
+from . import pwm
+>>>>>>> bsc
