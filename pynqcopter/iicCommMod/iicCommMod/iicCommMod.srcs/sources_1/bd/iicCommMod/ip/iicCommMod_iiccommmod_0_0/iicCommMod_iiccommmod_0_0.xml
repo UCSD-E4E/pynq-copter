@@ -1823,11 +1823,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Aug 16 17:05:02 UTC 2018</spirit:value>
+            <spirit:value>Thu Aug 16 18:29:38 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:39c1b2c3</spirit:value>
+            <spirit:value>7:336b533a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1842,11 +1842,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Aug 16 17:05:02 UTC 2018</spirit:value>
+            <spirit:value>Thu Aug 16 18:29:38 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:39c1b2c3</spirit:value>
+            <spirit:value>7:336b533a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1861,11 +1861,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Aug 16 17:05:02 UTC 2018</spirit:value>
+            <spirit:value>Thu Aug 16 18:29:38 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:0e98f688</spirit:value>
+            <spirit:value>7:4a7400cc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1880,11 +1880,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Aug 16 17:05:02 UTC 2018</spirit:value>
+            <spirit:value>Thu Aug 16 18:29:38 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:0e98f688</spirit:value>
+            <spirit:value>7:4a7400cc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1898,11 +1898,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Aug 16 17:08:58 UTC 2018</spirit:value>
+            <spirit:value>Thu Aug 16 18:33:37 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:39c1b2c3</spirit:value>
+            <spirit:value>7:336b533a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3118,23 +3118,23 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/2e79/hdl/verilog/iiccommmod_mul_32bkb.v</spirit:name>
+        <spirit:name>../../ipshared/9872/hdl/verilog/iiccommmod_mul_32bkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/2e79/hdl/verilog/readData.v</spirit:name>
+        <spirit:name>../../ipshared/9872/hdl/verilog/readData.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/2e79/hdl/verilog/iiccommmod.v</spirit:name>
+        <spirit:name>../../ipshared/9872/hdl/verilog/iiccommmod.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/2e79/hdl/verilog/iiccommmod_AXILiteS_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/9872/hdl/verilog/iiccommmod_AXILiteS_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/2e79/hdl/verilog/iiccommmod_iic_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/9872/hdl/verilog/iiccommmod_iic_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -3149,27 +3149,27 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/2e79/hdl/verilog/iiccommmod_mul_32bkb.v</spirit:name>
+        <spirit:name>../../ipshared/9872/hdl/verilog/iiccommmod_mul_32bkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/2e79/hdl/verilog/readData.v</spirit:name>
+        <spirit:name>../../ipshared/9872/hdl/verilog/readData.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/2e79/hdl/verilog/iiccommmod.v</spirit:name>
+        <spirit:name>../../ipshared/9872/hdl/verilog/iiccommmod.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/2e79/hdl/verilog/iiccommmod_AXILiteS_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/9872/hdl/verilog/iiccommmod_AXILiteS_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/2e79/hdl/verilog/iiccommmod_iic_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/9872/hdl/verilog/iiccommmod_iic_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -3374,7 +3374,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="18">60</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="18">1000000059</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3398,7 +3398,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>Iiccommmod</xilinx:displayName>
-      <xilinx:coreRevision>1808161004</xilinx:coreRevision>
+      <xilinx:coreRevision>1808161128</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
@@ -3451,10 +3451,10 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="974ec83d"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="e48f3472"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="653d6b1a"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="23e7c173"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="0d643e1a"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="819ce980"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="c26d28df"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="2492888e"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="4b9e05e5"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>
