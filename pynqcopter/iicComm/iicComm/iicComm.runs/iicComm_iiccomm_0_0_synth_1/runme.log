@@ -14,12 +14,12 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 21998 
+INFO: Helper process launched with PID 2559 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1257.332 ; gain = 82.992 ; free physical = 114641 ; free virtual = 499779
+Starting RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1255.328 ; gain = 80.992 ; free physical = 53740 ; free virtual = 439116
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'iicComm_iiccomm_0_0' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ip/iicComm_iiccomm_0_0/synth/iicComm_iiccomm_0_0.v:56]
-INFO: [Synth 8-638] synthesizing module 'iiccomm' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm.v:12]
+INFO: [Synth 8-638] synthesizing module 'iiccomm' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm.v:12]
 	Parameter ap_ST_fsm_state1 bound to: 74'b00000000000000000000000000000000000000000000000000000000000000000000000001 
 	Parameter ap_ST_fsm_state2 bound to: 74'b00000000000000000000000000000000000000000000000000000000000000000000000010 
 	Parameter ap_ST_fsm_state3 bound to: 74'b00000000000000000000000000000000000000000000000000000000000000000000000100 
@@ -114,8 +114,8 @@ INFO: [Synth 8-638] synthesizing module 'iiccomm' [/home/iavendano/pynq-copter/p
 	Parameter C_S_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
 	Parameter C_M_AXI_IIC_WSTRB_WIDTH bound to: 4 - type: integer 
 	Parameter C_M_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm.v:246]
-INFO: [Synth 8-638] synthesizing module 'iiccomm_AXILiteS_s_axi' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_AXILiteS_s_axi.v:9]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm.v:246]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_AXILiteS_s_axi' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_AXILiteS_s_axi.v:9]
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter ADDR_AP_CTRL bound to: 7'b0000000 
@@ -158,9 +158,9 @@ INFO: [Synth 8-638] synthesizing module 'iiccomm_AXILiteS_s_axi' [/home/iavendan
 	Parameter RDDATA bound to: 2'b01 
 	Parameter RDRESET bound to: 2'b10 
 	Parameter ADDR_BITS bound to: 7 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_AXILiteS_s_axi.v:307]
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_AXILiteS_s_axi' (1#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_AXILiteS_s_axi.v:9]
-INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:10]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_AXILiteS_s_axi.v:307]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_AXILiteS_s_axi' (1#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_AXILiteS_s_axi.v:9]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:10]
 	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
 	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
@@ -180,12 +180,12 @@ INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi' [/home/iavendano/pyn
 	Parameter USER_DW bound to: 32 - type: integer 
 	Parameter USER_AW bound to: 32 - type: integer 
 	Parameter USER_MAXREQS bound to: 5 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_throttl' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:689]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_throttl' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:689]
 	Parameter USED_FIX bound to: 0 - type: integer 
 	Parameter FIX_VALUE bound to: 4 - type: integer 
 	Parameter threshold bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_throttl' (2#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:689]
-INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_write' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:1536]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_throttl' (2#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:689]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_write' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:1536]
 	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -210,41 +210,41 @@ INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_write' [/home/iavenda
 	Parameter NUM_WRITE_WIDTH bound to: 4 - type: integer 
 	Parameter TARGET_ADDR bound to: 0 - type: integer 
 	Parameter BOUNDARY_BEATS bound to: 10'b1111111111 
-INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_fifo' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:399]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_fifo' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:399]
 	Parameter DATA_BITS bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_fifo' (3#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:399]
-INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_reg_slice' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:295]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_fifo' (3#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:399]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_reg_slice' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:295]
 	Parameter N bound to: 64 - type: integer 
 	Parameter ZERO bound to: 2'b10 
 	Parameter ONE bound to: 2'b11 
 	Parameter TWO bound to: 2'b01 
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_reg_slice' (4#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:295]
-INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_fifo__parameterized0' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:399]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_reg_slice' (4#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:295]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_fifo__parameterized0' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:399]
 	Parameter DATA_BITS bound to: 64 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_fifo__parameterized0' (4#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:399]
-INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_buffer' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:508]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_fifo__parameterized0' (4#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:399]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_buffer' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:508]
 	Parameter MEM_STYLE bound to: block - type: string 
 	Parameter DATA_WIDTH bound to: 36 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_buffer' (5#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:508]
-INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_fifo__parameterized1' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:399]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_buffer' (5#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:508]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_fifo__parameterized1' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:399]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 15 - type: integer 
 	Parameter DEPTH_BITS bound to: 4 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_fifo__parameterized1' (5#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:399]
-INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_fifo__parameterized2' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:399]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_fifo__parameterized1' (5#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:399]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_fifo__parameterized2' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:399]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_fifo__parameterized2' (5#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:399]
-WARNING: [Synth 8-6014] Unused sequential element sect_end_buf_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:1903]
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_write' (6#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:1536]
-INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_read' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:741]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_fifo__parameterized2' (5#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:399]
+WARNING: [Synth 8-6014] Unused sequential element sect_end_buf_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:1903]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_write' (6#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:1536]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_read' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:741]
 	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -268,22 +268,22 @@ INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_read' [/home/iavendan
 	Parameter NUM_READ_WIDTH bound to: 4 - type: integer 
 	Parameter TARGET_ADDR bound to: 0 - type: integer 
 	Parameter BOUNDARY_BEATS bound to: 10'b1111111111 
-INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_buffer__parameterized0' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:508]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_buffer__parameterized0' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:508]
 	Parameter MEM_STYLE bound to: block - type: string 
 	Parameter DATA_WIDTH bound to: 35 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_buffer__parameterized0' (6#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:508]
-INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_reg_slice__parameterized0' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:295]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_buffer__parameterized0' (6#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:508]
+INFO: [Synth 8-638] synthesizing module 'iiccomm_iic_m_axi_reg_slice__parameterized0' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:295]
 	Parameter N bound to: 34 - type: integer 
 	Parameter ZERO bound to: 2'b10 
 	Parameter ONE bound to: 2'b11 
 	Parameter TWO bound to: 2'b01 
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_reg_slice__parameterized0' (6#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:295]
-WARNING: [Synth 8-6014] Unused sequential element sect_end_buf_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:1088]
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_read' (7#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:741]
-INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi' (8#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:10]
-INFO: [Synth 8-256] done synthesizing module 'iiccomm' (9#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm.v:12]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_reg_slice__parameterized0' (6#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:295]
+WARNING: [Synth 8-6014] Unused sequential element sect_end_buf_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:1088]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi_read' (7#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:741]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm_iic_m_axi' (8#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:10]
+INFO: [Synth 8-256] done synthesizing module 'iiccomm' (9#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm.v:12]
 INFO: [Synth 8-256] done synthesizing module 'iicComm_iiccomm_0_0' (10#1) [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ip/iicComm_iiccomm_0_0/synth/iicComm_iiccomm_0_0.v:56]
 WARNING: [Synth 8-3331] design iiccomm_iic_m_axi_read has unconnected port RID[0]
 WARNING: [Synth 8-3331] design iiccomm_iic_m_axi_read has unconnected port RUSER[0]
@@ -325,7 +325,7 @@ WARNING: [Synth 8-3331] design iiccomm_iic_m_axi has unconnected port I_ARBURST[
 WARNING: [Synth 8-3331] design iiccomm_iic_m_axi has unconnected port I_ARLOCK[1]
 WARNING: [Synth 8-3331] design iiccomm_iic_m_axi has unconnected port I_ARLOCK[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1310.863 ; gain = 136.523 ; free physical = 114699 ; free virtual = 499838
+Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1308.859 ; gain = 134.523 ; free physical = 53586 ; free virtual = 438963
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -335,7 +335,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1310.863 ; gain = 136.523 ; free physical = 114665 ; free virtual = 499804
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1308.859 ; gain = 134.523 ; free physical = 53584 ; free virtual = 438961
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -351,76 +351,73 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1708.047 ; gain = 0.000 ; free physical = 114820 ; free virtual = 499964
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1706.035 ; gain = 0.000 ; free physical = 52897 ; free virtual = 438276
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:57 . Memory (MB): peak = 1708.047 ; gain = 533.707 ; free physical = 115162 ; free virtual = 500306
+Finished Constraint Validation : Time (s): cpu = 00:00:51 ; elapsed = 00:01:35 . Memory (MB): peak = 1706.035 ; gain = 531.699 ; free physical = 52989 ; free virtual = 438371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:57 . Memory (MB): peak = 1708.047 ; gain = 533.707 ; free physical = 115162 ; free virtual = 500306
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:51 ; elapsed = 00:01:35 . Memory (MB): peak = 1706.035 ; gain = 531.699 ; free physical = 52989 ; free virtual = 438371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_iiccomm_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:57 . Memory (MB): peak = 1708.047 ; gain = 533.707 ; free physical = 115164 ; free virtual = 500308
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:01:35 . Memory (MB): peak = 1706.035 ; gain = 531.699 ; free physical = 52991 ; free virtual = 438373
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'iiccomm_AXILiteS_s_axi'
 INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element throttl_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:723]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:591]
-WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:589]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:487]
-WARNING: [Synth 8-6014] Unused sequential element pout_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:485]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[5] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[6] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[7] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[8] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[9] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[10] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[11] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[12] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[13] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[14] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:500]
-WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:1976]
-WARNING: [Synth 8-6014] Unused sequential element bus_equal_gen.len_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:2119]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:591]
-WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:589]
-WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:1161]
-INFO: [Synth 8-4471] merging register 'ap_reg_ioackin_stat_reg_outValue1_dummy_ack_reg' into 'ap_reg_ioackin_ctrl_reg_outValue_dummy_ack_reg' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm.v:640]
-WARNING: [Synth 8-6014] Unused sequential element ap_reg_ioackin_stat_reg_outValue1_dummy_ack_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm.v:640]
+WARNING: [Synth 8-6014] Unused sequential element throttl_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:723]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:591]
+WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:589]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:487]
+WARNING: [Synth 8-6014] Unused sequential element pout_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:485]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[5] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[6] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[7] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[8] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[9] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[10] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[11] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[12] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[13] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[14] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:500]
+WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:1976]
+WARNING: [Synth 8-6014] Unused sequential element bus_equal_gen.len_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:2119]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:591]
+WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:589]
+WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:1161]
+INFO: [Synth 8-4471] merging register 'ap_reg_ioackin_stat_reg_outValue1_dummy_ack_reg' into 'ap_reg_ioackin_ctrl_reg_outValue_dummy_ack_reg' [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm.v:636]
+WARNING: [Synth 8-6014] Unused sequential element ap_reg_ioackin_stat_reg_outValue1_dummy_ack_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm.v:636]
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
-INFO: [Synth 8-5545] ROM "tmp_fu_856_p2" won't be mapped to RAM because address size (29) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "tmp_2_fu_876_p2" won't be mapped to RAM because address size (29) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element p_014_0_i4_reg_668_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm.v:654]
-WARNING: [Synth 8-6014] Unused sequential element p_014_0_i_reg_679_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm.v:662]
-INFO: [Synth 8-5545] ROM "tmp_fu_856_p2" won't be mapped to RAM because address size (29) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "tmp_2_fu_876_p2" won't be mapped to RAM because address size (29) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tmp_fu_841_p2" won't be mapped to RAM because address size (29) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element p_014_0_i_reg_664_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm.v:650]
+INFO: [Synth 8-5545] ROM "tmp_fu_841_p2" won't be mapped to RAM because address size (29) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "iic_ARADDR" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -475,7 +472,7 @@ INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because addres
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'iiccomm_AXILiteS_s_axi'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:59 . Memory (MB): peak = 1708.047 ; gain = 533.707 ; free physical = 115154 ; free virtual = 500298
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:53 ; elapsed = 00:01:38 . Memory (MB): peak = 1706.035 ; gain = 531.699 ; free physical = 52934 ; free virtual = 438316
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -519,7 +516,7 @@ Detailed RTL Component Info :
 	               8K Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input     74 Bit        Muxes := 1     
-	   3 Input     67 Bit        Muxes := 1     
+	   2 Input     67 Bit        Muxes := 1     
 	   2 Input     66 Bit        Muxes := 1     
 	   2 Input     65 Bit        Muxes := 1     
 	   2 Input     64 Bit        Muxes := 3     
@@ -576,7 +573,7 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit        Muxes := 27    
 	   5 Input      2 Bit        Muxes := 9     
 	   5 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 69    
+	   2 Input      1 Bit        Muxes := 68    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -764,7 +761,7 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 6     
 +---Muxes : 
 	   2 Input     74 Bit        Muxes := 1     
-	   3 Input     67 Bit        Muxes := 1     
+	   2 Input     67 Bit        Muxes := 1     
 	   2 Input     66 Bit        Muxes := 1     
 	   2 Input     65 Bit        Muxes := 1     
 	   2 Input     64 Bit        Muxes := 1     
@@ -808,7 +805,7 @@ Detailed RTL Component Info :
 	  15 Input     10 Bit        Muxes := 1     
 	   2 Input      9 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 8     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -824,19 +821,17 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element bus_read/fifo_rctl/q_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:437]
-WARNING: [Synth 8-6014] Unused sequential element wreq_throttl/throttl_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:723]
-WARNING: [Synth 8-6014] Unused sequential element bus_write/buff_wdata/usedw_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:589]
-WARNING: [Synth 8-6014] Unused sequential element bus_write/fifo_resp/pout_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:485]
-WARNING: [Synth 8-6014] Unused sequential element bus_write/could_multi_bursts.loop_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:1976]
-WARNING: [Synth 8-6014] Unused sequential element bus_write/bus_equal_gen.len_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:2119]
-WARNING: [Synth 8-6014] Unused sequential element bus_read/buff_rdata/usedw_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:589]
-WARNING: [Synth 8-6014] Unused sequential element bus_read/fifo_rctl/pout_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:485]
-WARNING: [Synth 8-6014] Unused sequential element bus_read/could_multi_bursts.loop_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm_iic_m_axi.v:1161]
-INFO: [Synth 8-5545] ROM "tmp_2_fu_876_p2" won't be mapped to RAM because address size (29) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "tmp_fu_856_p2" won't be mapped to RAM because address size (29) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element p_014_0_i_reg_679_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm.v:662]
-WARNING: [Synth 8-6014] Unused sequential element p_014_0_i4_reg_668_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/e6a9/hdl/verilog/iiccomm.v:654]
+WARNING: [Synth 8-6014] Unused sequential element bus_read/fifo_rctl/q_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:437]
+WARNING: [Synth 8-6014] Unused sequential element wreq_throttl/throttl_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:723]
+WARNING: [Synth 8-6014] Unused sequential element bus_write/buff_wdata/usedw_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:589]
+WARNING: [Synth 8-6014] Unused sequential element bus_write/fifo_resp/pout_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:485]
+WARNING: [Synth 8-6014] Unused sequential element bus_write/could_multi_bursts.loop_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:1976]
+WARNING: [Synth 8-6014] Unused sequential element bus_write/bus_equal_gen.len_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:2119]
+WARNING: [Synth 8-6014] Unused sequential element bus_read/buff_rdata/usedw_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:589]
+WARNING: [Synth 8-6014] Unused sequential element bus_read/fifo_rctl/pout_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:485]
+WARNING: [Synth 8-6014] Unused sequential element bus_read/could_multi_bursts.loop_cnt_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm_iic_m_axi.v:1161]
+INFO: [Synth 8-5545] ROM "tmp_fu_841_p2" won't be mapped to RAM because address size (29) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element p_014_0_i_reg_664_reg was removed.  [/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ipshared/a56e/hdl/verilog/iiccomm.v:650]
 WARNING: [Synth 8-3331] design iiccomm_iic_m_axi has unconnected port BID[0]
 WARNING: [Synth 8-3331] design iiccomm_iic_m_axi has unconnected port BUSER[0]
 WARNING: [Synth 8-3331] design iiccomm_iic_m_axi has unconnected port RID[0]
@@ -1056,7 +1051,7 @@ WARNING: [Synth 8-3332] Sequential element (iiccomm_iic_m_axi_U/bus_read/start_a
 WARNING: [Synth 8-3332] Sequential element (iiccomm_iic_m_axi_U/bus_read/start_addr_buf_reg[31]) is unused and will be removed from module iiccomm.
 WARNING: [Synth 8-3332] Sequential element (iiccomm_iic_m_axi_U/bus_read/sect_addr_buf_reg[11]) is unused and will be removed from module iiccomm.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:01:04 . Memory (MB): peak = 1708.047 ; gain = 533.707 ; free physical = 115652 ; free virtual = 500796
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:05 ; elapsed = 00:01:51 . Memory (MB): peak = 1706.035 ; gain = 531.699 ; free physical = 52812 ; free virtual = 438194
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1084,13 +1079,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:01:16 . Memory (MB): peak = 1708.047 ; gain = 533.707 ; free physical = 115969 ; free virtual = 501116
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:18 ; elapsed = 00:02:11 . Memory (MB): peak = 1706.035 ; gain = 531.699 ; free physical = 52394 ; free virtual = 437776
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:01:20 . Memory (MB): peak = 1733.344 ; gain = 559.004 ; free physical = 115851 ; free virtual = 500998
+Finished Timing Optimization : Time (s): cpu = 00:01:23 ; elapsed = 00:02:16 . Memory (MB): peak = 1710.723 ; gain = 536.387 ; free physical = 52779 ; free virtual = 438162
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1123,7 +1118,7 @@ WARNING: [Synth 8-3332] Sequential element (iiccomm_iic_m_axi_U/bus_read/could_m
 INFO: [Synth 8-4480] The timing for the instance inst/iiccomm_iic_m_axi_U/bus_write/buff_wdata/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance inst/iiccomm_iic_m_axi_U/bus_read/buff_rdata/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:01:21 . Memory (MB): peak = 1741.352 ; gain = 567.012 ; free physical = 115825 ; free virtual = 500972
+Finished Technology Mapping : Time (s): cpu = 00:01:25 ; elapsed = 00:02:18 . Memory (MB): peak = 1726.738 ; gain = 552.402 ; free physical = 52740 ; free virtual = 438123
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1147,7 +1142,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:01:21 . Memory (MB): peak = 1741.352 ; gain = 567.012 ; free physical = 115837 ; free virtual = 500984
+Finished IO Insertion : Time (s): cpu = 00:01:26 ; elapsed = 00:02:19 . Memory (MB): peak = 1726.738 ; gain = 552.402 ; free physical = 52775 ; free virtual = 438158
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1160,7 +1155,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:01:21 . Memory (MB): peak = 1741.352 ; gain = 567.012 ; free physical = 115837 ; free virtual = 500984
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:26 ; elapsed = 00:02:19 . Memory (MB): peak = 1726.738 ; gain = 552.402 ; free physical = 52781 ; free virtual = 438164
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1172,25 +1167,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:01:21 . Memory (MB): peak = 1741.352 ; gain = 567.012 ; free physical = 115836 ; free virtual = 500983
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:26 ; elapsed = 00:02:19 . Memory (MB): peak = 1726.738 ; gain = 552.402 ; free physical = 52776 ; free virtual = 438159
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:01:22 . Memory (MB): peak = 1741.352 ; gain = 567.012 ; free physical = 115836 ; free virtual = 500983
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:26 ; elapsed = 00:02:19 . Memory (MB): peak = 1726.738 ; gain = 552.402 ; free physical = 52776 ; free virtual = 438159
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:01:22 . Memory (MB): peak = 1741.352 ; gain = 567.012 ; free physical = 115836 ; free virtual = 500983
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:26 ; elapsed = 00:02:19 . Memory (MB): peak = 1726.738 ; gain = 552.402 ; free physical = 52769 ; free virtual = 438153
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:01:22 . Memory (MB): peak = 1741.352 ; gain = 567.012 ; free physical = 115836 ; free virtual = 500983
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:26 ; elapsed = 00:02:19 . Memory (MB): peak = 1726.738 ; gain = 552.402 ; free physical = 52769 ; free virtual = 438153
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1233,50 +1228,52 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |CARRY4   |    72|
-|2     |LUT1     |    14|
-|3     |LUT2     |   167|
-|4     |LUT3     |   461|
-|5     |LUT4     |   134|
-|6     |LUT5     |   261|
-|7     |LUT6     |   300|
-|8     |RAMB18E1 |     2|
-|9     |SRL16E   |    24|
-|10    |FDRE     |  1476|
-|11    |FDSE     |     6|
+|1     |CARRY4   |    64|
+|2     |LUT1     |    15|
+|3     |LUT2     |   164|
+|4     |LUT3     |   450|
+|5     |LUT4     |   131|
+|6     |LUT5     |   155|
+|7     |LUT6     |   292|
+|8     |MUXF7    |    58|
+|9     |MUXF8    |    29|
+|10    |RAMB18E1 |     2|
+|11    |SRL16E   |    24|
+|12    |FDRE     |  1447|
+|13    |FDSE     |     6|
 +------+---------+------+
 
 Report Instance Areas: 
 +------+-----------------------------------+--------------------------------------------+------+
 |      |Instance                           |Module                                      |Cells |
 +------+-----------------------------------+--------------------------------------------+------+
-|1     |top                                |                                            |  2917|
-|2     |  inst                             |iiccomm                                     |  2917|
-|3     |    iiccomm_AXILiteS_s_axi_U       |iiccomm_AXILiteS_s_axi                      |  1094|
-|4     |    iiccomm_iic_m_axi_U            |iiccomm_iic_m_axi                           |  1488|
-|5     |      bus_read                     |iiccomm_iic_m_axi_read                      |   726|
-|6     |        buff_rdata                 |iiccomm_iic_m_axi_buffer__parameterized0    |   174|
-|7     |        fifo_rctl                  |iiccomm_iic_m_axi_fifo__parameterized1_0    |    55|
-|8     |        fifo_rreq                  |iiccomm_iic_m_axi_fifo__parameterized0_1    |    36|
-|9     |        rs_rdata                   |iiccomm_iic_m_axi_reg_slice__parameterized0 |   122|
-|10    |        rs_rreq                    |iiccomm_iic_m_axi_reg_slice_2               |    36|
-|11    |      bus_write                    |iiccomm_iic_m_axi_write                     |   739|
+|1     |top                                |                                            |  2837|
+|2     |  inst                             |iiccomm                                     |  2837|
+|3     |    iiccomm_AXILiteS_s_axi_U       |iiccomm_AXILiteS_s_axi                      |  1074|
+|4     |    iiccomm_iic_m_axi_U            |iiccomm_iic_m_axi                           |  1482|
+|5     |      bus_read                     |iiccomm_iic_m_axi_read                      |   712|
+|6     |        buff_rdata                 |iiccomm_iic_m_axi_buffer__parameterized0    |   173|
+|7     |        fifo_rctl                  |iiccomm_iic_m_axi_fifo__parameterized1_0    |    65|
+|8     |        fifo_rreq                  |iiccomm_iic_m_axi_fifo__parameterized0_1    |    42|
+|9     |        rs_rdata                   |iiccomm_iic_m_axi_reg_slice__parameterized0 |   116|
+|10    |        rs_rreq                    |iiccomm_iic_m_axi_reg_slice_2               |    30|
+|11    |      bus_write                    |iiccomm_iic_m_axi_write                     |   747|
 |12    |        buff_wdata                 |iiccomm_iic_m_axi_buffer                    |   172|
-|13    |        \bus_equal_gen.fifo_burst  |iiccomm_iic_m_axi_fifo                      |    60|
+|13    |        \bus_equal_gen.fifo_burst  |iiccomm_iic_m_axi_fifo                      |    78|
 |14    |        fifo_resp                  |iiccomm_iic_m_axi_fifo__parameterized1      |    26|
-|15    |        fifo_resp_to_user          |iiccomm_iic_m_axi_fifo__parameterized2      |    74|
-|16    |        fifo_wreq                  |iiccomm_iic_m_axi_fifo__parameterized0      |    52|
-|17    |        rs_wreq                    |iiccomm_iic_m_axi_reg_slice                 |    38|
+|15    |        fifo_resp_to_user          |iiccomm_iic_m_axi_fifo__parameterized2      |    79|
+|16    |        fifo_wreq                  |iiccomm_iic_m_axi_fifo__parameterized0      |    39|
+|17    |        rs_wreq                    |iiccomm_iic_m_axi_reg_slice                 |    46|
 |18    |      wreq_throttl                 |iiccomm_iic_m_axi_throttl                   |    19|
 +------+-----------------------------------+--------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:01:22 . Memory (MB): peak = 1741.352 ; gain = 567.012 ; free physical = 115836 ; free virtual = 500983
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:26 ; elapsed = 00:02:19 . Memory (MB): peak = 1726.738 ; gain = 552.402 ; free physical = 52769 ; free virtual = 438153
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 155 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:46 . Memory (MB): peak = 1741.352 ; gain = 169.828 ; free physical = 115893 ; free virtual = 501040
-Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:01:22 . Memory (MB): peak = 1741.359 ; gain = 567.012 ; free physical = 115893 ; free virtual = 501040
+Synthesis finished with 0 errors, 0 critical warnings and 153 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:08 ; elapsed = 00:01:20 . Memory (MB): peak = 1726.738 ; gain = 155.227 ; free physical = 52820 ; free virtual = 438204
+Synthesis Optimization Complete : Time (s): cpu = 00:01:26 ; elapsed = 00:02:20 . Memory (MB): peak = 1726.746 ; gain = 552.402 ; free physical = 52819 ; free virtual = 438204
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 74 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 153 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -1284,13 +1281,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-221 Infos, 196 Warnings, 0 Critical Warnings and 0 Errors encountered.
+218 Infos, 194 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:52 ; elapsed = 00:01:24 . Memory (MB): peak = 1773.367 ; gain = 612.406 ; free physical = 115927 ; free virtual = 501074
+synth_design: Time (s): cpu = 00:01:30 ; elapsed = 00:02:22 . Memory (MB): peak = 1758.754 ; gain = 597.797 ; free physical = 52905 ; free virtual = 438290
 INFO: [Common 17-1381] The checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_iiccomm_0_0_synth_1/iicComm_iiccomm_0_0.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ip/iicComm_iiccomm_0_0/iicComm_iiccomm_0_0.xci
 INFO: [Coretcl 2-1174] Renamed 17 cell refs.
 INFO: [Common 17-1381] The checkpoint '/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_iiccomm_0_0_synth_1/iicComm_iiccomm_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file iicComm_iiccomm_0_0_utilization_synth.rpt -pb iicComm_iiccomm_0_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.15 . Memory (MB): peak = 1797.379 ; gain = 0.000 ; free physical = 115851 ; free virtual = 501001
-INFO: [Common 17-206] Exiting Vivado at Thu Aug 16 11:33:27 2018...
+report_utilization: Time (s): cpu = 00:00:00.20 ; elapsed = 00:00:00.34 . Memory (MB): peak = 1782.766 ; gain = 0.000 ; free physical = 53443 ; free virtual = 438831
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 16 15:18:46 2018...

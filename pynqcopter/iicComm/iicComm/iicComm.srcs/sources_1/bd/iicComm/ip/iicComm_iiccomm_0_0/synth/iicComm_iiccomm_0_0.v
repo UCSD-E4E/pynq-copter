@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:iiccomm:1.0
-// IP Revision: 1808161128
+// IP Revision: 1808161513
 
 (* X_CORE_INFO = "iiccomm,Vivado 2017.4" *)
 (* CHECK_LICENSE_TYPE = "iicComm_iiccomm_0_0,iiccomm,{}" *)
