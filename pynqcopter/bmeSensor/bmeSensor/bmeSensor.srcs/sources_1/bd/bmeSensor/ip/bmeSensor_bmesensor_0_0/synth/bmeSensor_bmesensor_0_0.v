@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:bmesensor:1.0
-// IP Revision: 1808151217
+// IP Revision: 1808161502
 
 (* X_CORE_INFO = "bmesensor,Vivado 2017.4" *)
 (* CHECK_LICENSE_TYPE = "bmeSensor_bmesensor_0_0,bmesensor,{}" *)

@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Wed Aug 15 12:22:50 2018
+-- Date        : Thu Aug 16 15:11:54 2018
 -- Host        : fabricant running 64-bit Linux Mint 18 Sarah
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor/bmeSensor.srcs/sources_1/bd/bmeSensor/ip/bmeSensor_auto_pc_0/bmeSensor_auto_pc_0_sim_netlist.vhdl

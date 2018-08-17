@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:bmesensor:1.0
-// IP Revision: 1808151217
+// IP Revision: 1808161502
 
 `timescale 1ns/1ps
 

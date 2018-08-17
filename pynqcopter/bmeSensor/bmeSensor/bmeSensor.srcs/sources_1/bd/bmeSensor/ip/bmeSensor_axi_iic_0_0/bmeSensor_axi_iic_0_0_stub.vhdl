@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Wed Aug 15 12:24:39 2018
+-- Date        : Thu Aug 16 15:07:10 2018
 -- Host        : fabricant running 64-bit Linux Mint 18 Sarah
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/iavendano/pynq-copter/pynqcopter/bmeSensor/bmeSensor/bmeSensor.srcs/sources_1/bd/bmeSensor/ip/bmeSensor_axi_iic_0_0/bmeSensor_axi_iic_0_0_stub.vhdl
