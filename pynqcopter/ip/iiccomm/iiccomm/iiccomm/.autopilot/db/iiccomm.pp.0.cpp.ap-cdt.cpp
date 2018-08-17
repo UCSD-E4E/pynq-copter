@@ -33324,7 +33324,7 @@ void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1,
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
- delay_until_ms<10000>();
+#pragma empty_line
 #pragma empty_line
  rx_fifo_val = iic[(0x40001000/4)+(0x10C/4)];
     rx_fifo_outValue=rx_fifo_val;

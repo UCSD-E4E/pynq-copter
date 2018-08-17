@@ -24,7 +24,6 @@ define void @iiccomm(i32* %iic, i32* %stat_reg_outValue1, i32* %empty_pirq_outVa
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %rx_fifo_outValue) nounwind, !map !71
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %ctrl_reg_outValue) nounwind, !map !75
   %dummy = alloca i8, align 1
-  %dummy_2 = alloca i8, align 1
   call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @iiccomm_str) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32* %iic, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
@@ -156,24 +155,24 @@ define void @iiccomm(i32* %iic, i32* %stat_reg_outValue1, i32* %empty_pirq_outVa
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_50, i32 36, i4 -1)
   %iic_addr_51 = getelementptr i32* %iic, i64 268436546
   %iic_addr_3_resp25 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_51)
-  %rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([45 x i8]* @delay_until_ms_MD_10) nounwind
+  %rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([45 x i8]* @delay_until_ms_MD_10) nounwind
   call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind
   br label %1
 
 ; <label>:1                                       ; preds = %2, %0
-  %p_014_0_i4 = phi i29 [ 0, %0 ], [ %ctr_V, %2 ]
-  %tmp = icmp eq i29 %p_014_0_i4, -36870912
+  %p_014_0_i = phi i29 [ 0, %0 ], [ %ctr_V, %2 ]
+  %tmp = icmp eq i29 %p_014_0_i, -36870912
   %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 500000000, i64 500000000, i64 500000000) nounwind
-  %ctr_V = add i29 %p_014_0_i4, 1
-  br i1 %tmp, label %"delay_until_ms<10000ull, 50000000ull>.exit5", label %2
+  %ctr_V = add i29 %p_014_0_i, 1
+  br i1 %tmp, label %"delay_until_ms<10000ull, 50000000ull>.exit", label %2
 
 ; <label>:2                                       ; preds = %1
   %dummy_1 = load volatile i8* %dummy, align 1
   store volatile i8 %dummy_1, i8* %dummy, align 1
   br label %1
 
-"delay_until_ms<10000ull, 50000000ull>.exit5":    ; preds = %1
-  %rend2 = call i32 (...)* @_ssdm_op_SpecRegionEnd([45 x i8]* @delay_until_ms_MD_10, i32 %rbegin1) nounwind
+"delay_until_ms<10000ull, 50000000ull>.exit":     ; preds = %1
+  %rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([45 x i8]* @delay_until_ms_MD_10, i32 %rbegin) nounwind
   %iic_addr_52 = getelementptr i32* %iic, i64 268436546
   %iic_addr_3_req26 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_52, i32 1)
   %iic_addr_53 = getelementptr i32* %iic, i64 268436546
@@ -198,24 +197,6 @@ define void @iiccomm(i32* %iic, i32* %stat_reg_outValue1, i32* %empty_pirq_outVa
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_62, i32 515, i4 -1)
   %iic_addr_63 = getelementptr i32* %iic, i64 268436546
   %iic_addr_3_resp33 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_63)
-  %rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([45 x i8]* @delay_until_ms_MD_10) nounwind
-  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind
-  br label %3
-
-; <label>:3                                       ; preds = %4, %"delay_until_ms<10000ull, 50000000ull>.exit5"
-  %p_014_0_i = phi i29 [ 0, %"delay_until_ms<10000ull, 50000000ull>.exit5" ], [ %ctr_V_1, %4 ]
-  %tmp_2 = icmp eq i29 %p_014_0_i, -36870912
-  %empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 500000000, i64 500000000, i64 500000000) nounwind
-  %ctr_V_1 = add i29 %p_014_0_i, 1
-  br i1 %tmp_2, label %"delay_until_ms<10000ull, 50000000ull>.exit", label %4
-
-; <label>:4                                       ; preds = %3
-  %dummy_3 = load volatile i8* %dummy_2, align 1
-  store volatile i8 %dummy_3, i8* %dummy_2, align 1
-  br label %3
-
-"delay_until_ms<10000ull, 50000000ull>.exit":     ; preds = %3
-  %rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([45 x i8]* @delay_until_ms_MD_10, i32 %rbegin) nounwind
   %iic_addr_64 = getelementptr i32* %iic, i64 268436547
   %iic_load_4_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_64, i32 1)
   %iic_addr_65 = getelementptr i32* %iic, i64 268436547

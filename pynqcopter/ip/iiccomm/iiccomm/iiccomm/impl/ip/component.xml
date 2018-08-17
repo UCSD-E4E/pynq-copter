@@ -1483,7 +1483,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>0f8d59c5</spirit:value>
+            <spirit:value>2f2fa179</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1499,7 +1499,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>26d6c756</spirit:value>
+            <spirit:value>2d33e1d6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1515,7 +1515,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>0c5b2642</spirit:value>
+            <spirit:value>d61c4a23</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1531,7 +1531,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c84336a4</spirit:value>
+            <spirit:value>11f8b641</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2859,7 +2859,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       <spirit:file>
         <spirit:name>hdl/vhdl/iiccomm.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_e150704f</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_8b318172</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -3081,7 +3081,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="18">1000000073</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="18">500000073</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -3098,18 +3098,18 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </xilinx:taxonomies>
       <xilinx:displayName>Iiccomm</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808161128</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-16T18:28:25Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808161513</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-16T22:13:48Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="974ec83d"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="e48f3472"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="8a845e24"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="de70578f"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="400ad55b"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="819ce980"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="c26d28df"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="271b9120"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="93ec72d6"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

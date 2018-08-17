@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "1000000073",
+    "Latency": "500000073",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -1211,10 +1211,10 @@
     "Hierarchy": {"ModuleName": "iiccomm"},
     "Metrics": {"iiccomm": {
         "Latency": {
-          "LatencyBest": "1000000073",
-          "LatencyAvg": "1000000073",
-          "LatencyWorst": "1000000073",
-          "PipelineII": "1000000074",
+          "LatencyBest": "500000073",
+          "LatencyAvg": "500000073",
+          "LatencyWorst": "500000073",
+          "PipelineII": "500000074",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1223,33 +1223,24 @@
           "Uncertainty": "0.50",
           "Estimate": "3.50"
         },
-        "Loops": [
-          {
+        "Loops": [{
             "Name": "Loop 1",
             "TripCount": "500000000",
             "Latency": "500000000",
             "PipelineII": "",
             "PipelineDepth": "1"
-          },
-          {
-            "Name": "Loop 2",
-            "TripCount": "500000000",
-            "Latency": "500000000",
-            "PipelineII": "",
-            "PipelineDepth": "1"
-          }
-        ],
+          }],
         "Area": {
           "BRAM_18K": "2",
-          "FF": "1379",
-          "LUT": "2201",
+          "FF": "1350",
+          "LUT": "2130",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-16 11:28:14 PDT",
+    "Time": "2018-08-16 15:13:24 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

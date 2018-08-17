@@ -33324,7 +33324,7 @@ _ssdm_op_SpecInterface(ctrl_reg_outValue, "s_axilite", 0, 0, "", 0, 0, "", "", "
 
 
 
- delay_until_ms<10000>();
+
 
  rx_fifo_val = iic[(0x40001000/4)+(0x10C/4)];
     rx_fifo_outValue=rx_fifo_val;

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'iiccomm'" level="0">
-<item name = "Date">Thu Aug 16 11:28:12 2018
+<item name = "Date">Thu Aug 16 15:13:23 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">iiccomm</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1000000073, 1000000073, 1000000073, 1000000073, none</column>
+<column name="">500000073, 500000073, 500000073, 500000073, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -36,7 +36,6 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- Loop 1">500000000, 500000000, 1, -, -, 500000000, no</column>
-<column name="- Loop 2">500000000, 500000000, 1, -, -, 500000000, no</column>
 </table>
 </item>
 </section>

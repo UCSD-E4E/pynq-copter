@@ -140,7 +140,7 @@ void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1,
 	//stat_reg_val4 = iic[IIC_INDEX+IIC_STATUS_REG_OFF];
     //stat_reg_outValue4=stat_reg_val4;
 
-	delay_until_ms<10000>();
+	//delay_until_ms<10000>();
 
 	rx_fifo_val = iic[IIC_INDEX+IIC_RX_FIFO_OFF];
     rx_fifo_outValue=rx_fifo_val;

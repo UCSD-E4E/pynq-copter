@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'iiccomm'" level="0">
-<item name = "Date">Thu Aug 16 11:28:12 2018
+<item name = "Date">Thu Aug 16 15:13:23 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">iiccomm</item>
@@ -22,7 +22,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1000000073, 1000000073, 1000000073, 1000000073, none</column>
+<column name="">500000073, 500000073, 500000073, 500000073, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -34,7 +34,6 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- Loop 1">500000000, 500000000, 1, -, -, 500000000, no</column>
-<column name="- Loop 2">500000000, 500000000, 1, -, -, 500000000, no</column>
 </table>
 </item>
 </section>
@@ -47,12 +46,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 132</column>
+<column name="Expression">-, -, 0, 70</column>
 <column name="FIFO">-, -, -, -</column>
 <column name="Instance">2, -, 1080, 1516</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 553</column>
-<column name="Register">-, -, 299, -</column>
+<column name="Multiplexer">-, -, -, 544</column>
+<column name="Register">-, -, 270, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
 <specialColumn name="Utilization (%)">~0, 0, 1, 4</specialColumn>
 </table>
@@ -79,12 +78,9 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="ctr_V_1_fu_882_p2">+, 0, 0, 36, 29, 1</column>
-<column name="ctr_V_fu_862_p2">+, 0, 0, 36, 29, 1</column>
+<column name="ctr_V_fu_847_p2">+, 0, 0, 36, 29, 1</column>
 <column name="ap_block_state56_io">and, 0, 0, 8, 1, 1</column>
-<column name="ap_block_state66_io">and, 0, 0, 8, 1, 1</column>
-<column name="tmp_2_fu_876_p2">icmp, 0, 0, 18, 29, 27</column>
-<column name="tmp_fu_856_p2">icmp, 0, 0, 18, 29, 27</column>
+<column name="tmp_fu_841_p2">icmp, 0, 0, 18, 29, 27</column>
 <column name="ap_block_state23_io">or, 0, 0, 8, 1, 1</column>
 </table>
 </item>
@@ -102,8 +98,7 @@
 <column name="iic_blk_n_B">9, 2, 1, 2</column>
 <column name="iic_blk_n_R">9, 2, 1, 2</column>
 <column name="iic_blk_n_W">9, 2, 1, 2</column>
-<column name="p_014_0_i4_reg_668">9, 2, 29, 58</column>
-<column name="p_014_0_i_reg_679">9, 2, 29, 58</column>
+<column name="p_014_0_i_reg_664">9, 2, 29, 58</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -116,13 +111,12 @@
 <column name="ap_reg_ioackin_iic_AWREADY">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_iic_WREADY">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_stat_reg_outValue1_dummy_ack">1, 0, 1, 0</column>
-<column name="iic_addr34_read_reg_913">32, 0, 32, 0</column>
-<column name="iic_addr_13_read_reg_928">32, 0, 32, 0</column>
-<column name="iic_addr_15_read_reg_933">32, 0, 32, 0</column>
-<column name="iic_addr_1_read_reg_908">32, 0, 32, 0</column>
-<column name="iic_addr_65_read_reg_959">32, 0, 32, 0</column>
-<column name="p_014_0_i4_reg_668">29, 0, 29, 0</column>
-<column name="p_014_0_i_reg_679">29, 0, 29, 0</column>
+<column name="iic_addr34_read_reg_872">32, 0, 32, 0</column>
+<column name="iic_addr_13_read_reg_887">32, 0, 32, 0</column>
+<column name="iic_addr_15_read_reg_892">32, 0, 32, 0</column>
+<column name="iic_addr_1_read_reg_867">32, 0, 32, 0</column>
+<column name="iic_addr_65_read_reg_910">32, 0, 32, 0</column>
+<column name="p_014_0_i_reg_664">29, 0, 29, 0</column>
 </table>
 </item>
 </section>

@@ -5,12 +5,12 @@ target triple = "x86_64-unknown-linux-gnu"
 @llvm_global_ctors_1 = appending global [0 x void ()*] zeroinitializer ; [#uses=0 type=[0 x void ()*]*]
 @llvm_global_ctors_0 = appending global [0 x i32] zeroinitializer ; [#uses=0 type=[0 x i32]*]
 @iiccomm_str = internal unnamed_addr constant [8 x i8] c"iiccomm\00" ; [#uses=1 type=[8 x i8]*]
-@delay_until_ms_MD_10 = internal unnamed_addr constant [45 x i8] c"delay_until_ms<10000ull, 50000000ull>.region\00" ; [#uses=4 type=[45 x i8]*]
+@delay_until_ms_MD_10 = internal unnamed_addr constant [45 x i8] c"delay_until_ms<10000ull, 50000000ull>.region\00" ; [#uses=2 type=[45 x i8]*]
 @p_str2 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1 ; [#uses=1 type=[6 x i8]*]
-@p_str1 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=68 type=[1 x i8]*]
+@p_str1 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=67 type=[1 x i8]*]
 @p_str = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1 ; [#uses=10 type=[10 x i8]*]
 
-; [#uses=16]
+; [#uses=13]
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
 ; [#uses=0]
@@ -26,7 +26,6 @@ define void @iiccomm(i32* %iic, i32* %stat_reg_outValue1, i32* %empty_pirq_outVa
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %rx_fifo_outValue) nounwind, !map !71
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %ctrl_reg_outValue) nounwind, !map !75
   %dummy = alloca i8, align 1                     ; [#uses=2 type=i8*]
-  %dummy_2 = alloca i8, align 1                   ; [#uses=2 type=i8*]
   call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @iiccomm_str) nounwind
   call void @llvm.dbg.value(metadata !{i32* %iic}, i64 0, metadata !79), !dbg !94 ; [debug line = 53:32] [debug variable = iic]
   call void @llvm.dbg.value(metadata !{i32* %stat_reg_outValue1}, i64 0, metadata !95), !dbg !96 ; [debug line = 53:62] [debug variable = stat_reg_outValue1]
@@ -168,16 +167,16 @@ define void @iiccomm(i32* %iic, i32* %stat_reg_outValue1, i32* %empty_pirq_outVa
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_50, i32 36, i4 -1), !dbg !143 ; [debug line = 110:2]
   %iic_addr_51 = getelementptr i32* %iic, i64 268436546 ; [#uses=1 type=i32*]
   %iic_addr_3_resp25 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_51), !dbg !143 ; [#uses=0 type=i1] [debug line = 110:2]
-  %rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([45 x i8]* @delay_until_ms_MD_10) nounwind ; [#uses=1 type=i32]
+  %rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([45 x i8]* @delay_until_ms_MD_10) nounwind ; [#uses=1 type=i32]
   call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind, !dbg !144 ; [debug line = 59:1@112:2]
   br label %1, !dbg !155                          ; [debug line = 63:10@112:2]
 
 ; <label>:1                                       ; preds = %2, %0
-  %p_014_0_i4 = phi i29 [ 0, %0 ], [ %ctr_V, %2 ] ; [#uses=2 type=i29]
-  %tmp = icmp eq i29 %p_014_0_i4, -36870912, !dbg !157 ; [#uses=1 type=i1] [debug line = 2042:5@63:19@112:2]
+  %p_014_0_i = phi i29 [ 0, %0 ], [ %ctr_V, %2 ]  ; [#uses=2 type=i29]
+  %tmp = icmp eq i29 %p_014_0_i, -36870912, !dbg !157 ; [#uses=1 type=i1] [debug line = 2042:5@63:19@112:2]
   %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 500000000, i64 500000000, i64 500000000) nounwind ; [#uses=0 type=i32]
-  %ctr_V = add i29 %p_014_0_i4, 1, !dbg !1002     ; [#uses=1 type=i29] [debug line = 1879:145@1896:5@63:30@112:2]
-  br i1 %tmp, label %"delay_until_ms<10000ull, 50000000ull>.exit5", label %2, !dbg !1001 ; [debug line = 63:19@112:2]
+  %ctr_V = add i29 %p_014_0_i, 1, !dbg !1002      ; [#uses=1 type=i29] [debug line = 1879:145@1896:5@63:30@112:2]
+  br i1 %tmp, label %"delay_until_ms<10000ull, 50000000ull>.exit", label %2, !dbg !1001 ; [debug line = 63:19@112:2]
 
 ; <label>:2                                       ; preds = %1
   call void @llvm.dbg.value(metadata !{i8* %dummy}, i64 0, metadata !1009) nounwind, !dbg !1011 ; [debug line = 64:9@112:2] [debug variable = dummy]
@@ -187,8 +186,8 @@ define void @iiccomm(i32* %iic, i32* %stat_reg_outValue1, i32* %empty_pirq_outVa
   call void @llvm.dbg.value(metadata !{i29 %ctr_V}, i64 0, metadata !1013) nounwind, !dbg !1002 ; [debug line = 1879:145@1896:5@63:30@112:2] [debug variable = ctr.V]
   br label %1, !dbg !1008                         ; [debug line = 63:30@112:2]
 
-"delay_until_ms<10000ull, 50000000ull>.exit5":    ; preds = %1
-  %rend2 = call i32 (...)* @_ssdm_op_SpecRegionEnd([45 x i8]* @delay_until_ms_MD_10, i32 %rbegin1) nounwind ; [#uses=0 type=i32]
+"delay_until_ms<10000ull, 50000000ull>.exit":     ; preds = %1
+  %rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([45 x i8]* @delay_until_ms_MD_10, i32 %rbegin) nounwind ; [#uses=0 type=i32]
   %iic_addr_52 = getelementptr i32* %iic, i64 268436546 ; [#uses=1 type=i32*]
   %iic_addr_3_req26 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_52, i32 1), !dbg !1109 ; [#uses=0 type=i1] [debug line = 117:2]
   %iic_addr_53 = getelementptr i32* %iic, i64 268436546 ; [#uses=1 type=i32*]
@@ -213,33 +212,12 @@ define void @iiccomm(i32* %iic, i32* %stat_reg_outValue1, i32* %empty_pirq_outVa
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_62, i32 515, i4 -1), !dbg !1112 ; [debug line = 137:2]
   %iic_addr_63 = getelementptr i32* %iic, i64 268436546 ; [#uses=1 type=i32*]
   %iic_addr_3_resp33 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_63), !dbg !1112 ; [#uses=0 type=i1] [debug line = 137:2]
-  %rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([45 x i8]* @delay_until_ms_MD_10) nounwind ; [#uses=1 type=i32]
-  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind, !dbg !1113 ; [debug line = 59:1@143:2]
-  br label %3, !dbg !1115                         ; [debug line = 63:10@143:2]
-
-; <label>:3                                       ; preds = %4, %"delay_until_ms<10000ull, 50000000ull>.exit5"
-  %p_014_0_i = phi i29 [ 0, %"delay_until_ms<10000ull, 50000000ull>.exit5" ], [ %ctr_V_1, %4 ] ; [#uses=2 type=i29]
-  %tmp_2 = icmp eq i29 %p_014_0_i, -36870912, !dbg !1116 ; [#uses=1 type=i1] [debug line = 2042:5@63:19@143:2]
-  %empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 500000000, i64 500000000, i64 500000000) nounwind ; [#uses=0 type=i32]
-  %ctr_V_1 = add i29 %p_014_0_i, 1, !dbg !1118    ; [#uses=1 type=i29] [debug line = 1879:145@1896:5@63:30@143:2]
-  br i1 %tmp_2, label %"delay_until_ms<10000ull, 50000000ull>.exit", label %4, !dbg !1117 ; [debug line = 63:19@143:2]
-
-; <label>:4                                       ; preds = %3
-  call void @llvm.dbg.value(metadata !{i8* %dummy_2}, i64 0, metadata !1121) nounwind, !dbg !1122 ; [debug line = 64:9@143:2] [debug variable = dummy]
-  %dummy_3 = load volatile i8* %dummy_2, align 1, !dbg !1122 ; [#uses=1 type=i8] [debug line = 64:9@143:2]
-  call void @llvm.dbg.value(metadata !{i8 %dummy_3}, i64 0, metadata !1121) nounwind, !dbg !1122 ; [debug line = 64:9@143:2] [debug variable = dummy]
-  store volatile i8 %dummy_3, i8* %dummy_2, align 1, !dbg !1122 ; [debug line = 64:9@143:2]
-  call void @llvm.dbg.value(metadata !{i29 %ctr_V_1}, i64 0, metadata !1123) nounwind, !dbg !1118 ; [debug line = 1879:145@1896:5@63:30@143:2] [debug variable = ctr.V]
-  br label %3, !dbg !1120                         ; [debug line = 63:30@143:2]
-
-"delay_until_ms<10000ull, 50000000ull>.exit":     ; preds = %3
-  %rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([45 x i8]* @delay_until_ms_MD_10, i32 %rbegin) nounwind ; [#uses=0 type=i32]
   %iic_addr_64 = getelementptr i32* %iic, i64 268436547 ; [#uses=1 type=i32*]
-  %iic_load_4_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_64, i32 1), !dbg !1124 ; [#uses=0 type=i1] [debug line = 145:2]
+  %iic_load_4_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_64, i32 1), !dbg !1113 ; [#uses=0 type=i1] [debug line = 145:2]
   %iic_addr_65 = getelementptr i32* %iic, i64 268436547 ; [#uses=1 type=i32*]
-  %iic_addr_65_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr_65), !dbg !1124 ; [#uses=1 type=i32] [debug line = 145:2]
-  call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %rx_fifo_outValue, i32 %iic_addr_65_read), !dbg !1125 ; [debug line = 146:5]
-  ret void, !dbg !1126                            ; [debug line = 148:1]
+  %iic_addr_65_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr_65), !dbg !1113 ; [#uses=1 type=i32] [debug line = 145:2]
+  call void @_ssdm_op_Write.s_axilite.volatile.i32P(i32* %rx_fifo_outValue, i32 %iic_addr_65_read), !dbg !1114 ; [debug line = 146:5]
+  ret void, !dbg !1115                            ; [debug line = 148:1]
 }
 
 ; [#uses=19]
@@ -273,25 +251,25 @@ entry:
   ret void
 }
 
-; [#uses=2]
+; [#uses=1]
 define weak i32 @_ssdm_op_SpecRegionEnd(...) {
 entry:
   ret i32 0
 }
 
-; [#uses=2]
+; [#uses=1]
 define weak i32 @_ssdm_op_SpecRegionBegin(...) {
 entry:
   ret i32 0
 }
 
-; [#uses=2]
+; [#uses=1]
 define weak void @_ssdm_op_SpecProtocol(...) nounwind {
 entry:
   ret void
 }
 
-; [#uses=2]
+; [#uses=1]
 define weak i32 @_ssdm_op_SpecLoopTripCount(...) {
 entry:
   ret i32 0
@@ -1446,17 +1424,6 @@ entry:
 !1110 = metadata !{i32 127, i32 2, metadata !111, null}
 !1111 = metadata !{i32 134, i32 2, metadata !111, null}
 !1112 = metadata !{i32 137, i32 2, metadata !111, null}
-!1113 = metadata !{i32 59, i32 1, metadata !145, metadata !1114}
-!1114 = metadata !{i32 143, i32 2, metadata !111, null}
-!1115 = metadata !{i32 63, i32 10, metadata !156, metadata !1114}
-!1116 = metadata !{i32 2042, i32 5, metadata !158, metadata !1117}
-!1117 = metadata !{i32 63, i32 19, metadata !156, metadata !1114}
-!1118 = metadata !{i32 1879, i32 145, metadata !1003, metadata !1119}
-!1119 = metadata !{i32 1896, i32 5, metadata !1006, metadata !1120}
-!1120 = metadata !{i32 63, i32 30, metadata !156, metadata !1114}
-!1121 = metadata !{i32 786688, metadata !145, metadata !"dummy", metadata !147, i32 60, metadata !1010, i32 0, metadata !1114} ; [ DW_TAG_auto_variable ]
-!1122 = metadata !{i32 64, i32 9, metadata !1012, metadata !1114}
-!1123 = metadata !{i32 790529, metadata !1014, metadata !"ctr.V", null, i32 61, metadata !1103, i32 0, metadata !1119} ; [ DW_TAG_auto_variable_field ]
-!1124 = metadata !{i32 145, i32 2, metadata !111, null}
-!1125 = metadata !{i32 146, i32 5, metadata !111, null}
-!1126 = metadata !{i32 148, i32 1, metadata !111, null}
+!1113 = metadata !{i32 145, i32 2, metadata !111, null}
+!1114 = metadata !{i32 146, i32 5, metadata !111, null}
+!1115 = metadata !{i32 148, i32 1, metadata !111, null}
