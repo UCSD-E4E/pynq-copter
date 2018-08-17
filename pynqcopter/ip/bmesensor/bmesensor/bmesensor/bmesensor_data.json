@@ -2683,7 +2683,7 @@
       "statusOffset": "116",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "65"
+      "firstOutLatency": "64"
     },
     "ctrl2RegState_enabled": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2692,7 +2692,7 @@
       "statusOffset": "124",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "133"
+      "firstOutLatency": "131"
     },
     "byteCountZero": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2733,7 +2733,7 @@
       "statusOffset": "164",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "133"
+      "firstOutLatency": "131"
     },
     "pressByteCountEnabled": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2742,7 +2742,7 @@
       "statusOffset": "172",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "180"
+      "firstOutLatency": "178"
     },
     "byteTracker": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2751,7 +2751,7 @@
       "statusOffset": "180",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "180"
+      "firstOutLatency": "178"
     },
     "interrStatus3StateEnabled": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2760,7 +2760,7 @@
       "statusOffset": "188",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "197"
+      "firstOutLatency": "195"
     },
     "checkInterrReg": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2769,7 +2769,7 @@
       "statusOffset": "196",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "189"
+      "firstOutLatency": "187"
     },
     "ctrl_reg_val3_i": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2842,7 +2842,7 @@
       "statusOffset": "268",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "189"
+      "firstOutLatency": "187"
     },
     "receivedSuccess_i": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2915,7 +2915,7 @@
       "statusOffset": "340",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "212"
+      "firstOutLatency": "210"
     },
     "ctrl_reg_val2": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2924,7 +2924,7 @@
       "statusOffset": "348",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "132"
+      "firstOutLatency": "130"
     },
     "ctrl2RegState": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2933,7 +2933,7 @@
       "statusOffset": "356",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "132"
+      "firstOutLatency": "130"
     },
     "ctrl_reg_check": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2942,7 +2942,7 @@
       "statusOffset": "364",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "163"
+      "firstOutLatency": "161"
     },
     "zeroBytes": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2959,7 +2959,7 @@
       "statusOffset": "380",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "189"
+      "firstOutLatency": "187"
     },
     "interrStatus5State": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2968,7 +2968,7 @@
       "statusOffset": "388",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "189"
+      "firstOutLatency": "187"
     },
     "tx_fifo_1": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2977,7 +2977,7 @@
       "statusOffset": "396",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "87"
+      "firstOutLatency": "85"
     },
     "tx_fifo_2": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2986,7 +2986,7 @@
       "statusOffset": "404",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "103"
+      "firstOutLatency": "101"
     },
     "interrStatus": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -2995,7 +2995,7 @@
       "statusOffset": "412",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "103"
+      "firstOutLatency": "101"
     },
     "stat_reg_val": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -3004,7 +3004,7 @@
       "statusOffset": "420",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "163"
+      "firstOutLatency": "161"
     },
     "statRegState": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -3013,7 +3013,7 @@
       "statusOffset": "428",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "163"
+      "firstOutLatency": "161"
     },
     "clearInterrStatus": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -3022,7 +3022,7 @@
       "statusOffset": "436",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "165"
+      "firstOutLatency": "163"
     },
     "clearInterrStatusCheck": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -3031,7 +3031,7 @@
       "statusOffset": "444",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "179"
+      "firstOutLatency": "177"
     },
     "error1": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -3040,7 +3040,7 @@
       "statusOffset": "452",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "189"
+      "firstOutLatency": "187"
     },
     "tx_fifo_3": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -3049,7 +3049,7 @@
       "statusOffset": "460",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "147"
+      "firstOutLatency": "145"
     },
     "interrStatus3": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -3058,7 +3058,7 @@
       "statusOffset": "468",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "189"
+      "firstOutLatency": "187"
     },
     "ap_ctrl": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -3089,12 +3089,19 @@
         "Loops": [
           {
             "Name": "Loop 1",
+            "TripCount": "500000000",
+            "Latency": "500000000",
+            "PipelineII": "",
+            "PipelineDepth": "1"
+          },
+          {
+            "Name": "Loop 2",
             "TripCount": "3",
             "Latency": "",
             "PipelineII": "",
             "PipelineDepth": "",
             "Loops": [{
-                "Name": "Loop 1.1",
+                "Name": "Loop 2.1",
                 "TripCount": "",
                 "Latency": "",
                 "PipelineII": "",
@@ -3102,14 +3109,21 @@
               }]
           },
           {
-            "Name": "Loop 2",
+            "Name": "Loop 3",
             "TripCount": "",
             "Latency": "",
             "PipelineII": "",
             "PipelineDepth": "9"
           },
           {
-            "Name": "Loop 3",
+            "Name": "Loop 4",
+            "TripCount": "500000000",
+            "Latency": "500000000",
+            "PipelineII": "",
+            "PipelineDepth": "1"
+          },
+          {
+            "Name": "Loop 5",
             "TripCount": "",
             "Latency": "",
             "PipelineII": "",
@@ -3118,15 +3132,15 @@
         ],
         "Area": {
           "BRAM_18K": "2",
-          "FF": "3414",
-          "LUT": "6193",
+          "FF": "3764",
+          "LUT": "6337",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-15 12:16:59 PDT",
+    "Time": "2018-08-16 15:01:59 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

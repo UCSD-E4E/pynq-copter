@@ -33186,6 +33186,21 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 #pragma empty_line
 };
 #pragma line 40 "./bmesensor.hpp" 2
+#pragma line 54 "./bmesensor.hpp"
+template <unsigned long long MILLISECONDS, unsigned long long F_OVERLAY_HZ = 50000000ULL>
+void delay_until_ms(){
+#pragma empty_line
+#pragma HLS INLINE
+#pragma HLS PROTOCOL floating
+ volatile char dummy;
+    ap_uint<64> ctr;
+    ap_uint<64> cyc = (F_OVERLAY_HZ * MILLISECONDS / 1000);
+    for (ctr = 0; ctr < cyc; ++ctr){
+        dummy = dummy;
+    }
+    return;
+#pragma empty_line
+}
 #pragma line 36 "main.cpp" 2
 #pragma empty_line
 #pragma empty_line

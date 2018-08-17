@@ -33206,6 +33206,21 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 #pragma empty_line
 };
 #pragma line 40 "./bmesensor.hpp" 2
+#pragma line 54 "./bmesensor.hpp"
+template <unsigned long long MILLISECONDS, unsigned long long F_OVERLAY_HZ = 50000000ULL>
+void delay_until_ms(){
+#pragma empty_line
+#pragma HLS INLINE
+#pragma HLS PROTOCOL floating
+ volatile char dummy;
+    ap_uint<64> ctr;
+    ap_uint<64> cyc = (F_OVERLAY_HZ * MILLISECONDS / 1000);
+    for (ctr = 0; ctr < cyc; ++ctr){
+        dummy = dummy;
+    }
+    return;
+#pragma empty_line
+}
 #pragma line 36 "bmesensor.cpp" 2
 #pragma empty_line
 #pragma empty_line
@@ -33323,6 +33338,8 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
  iic[(0x40001000/4)+(0x108/4)] = 0xF5;
  iic[(0x40001000/4)+(0x108/4)] = 0x24;
 #pragma empty_line
+ delay_until_ms<10000>();
+#pragma empty_line
 #pragma empty_line
  int pressByteCount = 3;
  uint32_t receivedData[3];
@@ -33435,7 +33452,7 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
     interrStatus3StateEnabled = 1;
     break;
    }
-   if(interrStatus3 && interruptStatusMask)
+   if(interrStatus3 & interruptStatusMask)
    {
     printf("Error");
     error1 = 108;
@@ -33477,6 +33494,7 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 #pragma empty_line
   pressByteCount -= 1;
  }
+#pragma empty_line
  while(true)
  {
   releaseBus = 107;
@@ -33488,6 +33506,8 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
    break;
   }
  }
+#pragma empty_line
+ delay_until_ms<10000>();
 #pragma empty_line
 #pragma empty_line
  uint32_t ctrl_reg_val4 = iic[(0x40001000/4)+(0x100/4)];

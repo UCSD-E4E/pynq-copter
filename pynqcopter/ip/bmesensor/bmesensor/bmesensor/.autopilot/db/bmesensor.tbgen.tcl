@@ -304,49 +304,49 @@ set RtlHierarchyInfo {[
 
 set ArgLastReadFirstWriteLatency {
 	bmesensor {
-		iic {Type IO LastRead 233 FirstWrite 9}
-		stat_reg_outValue1 {Type IO LastRead 7 FirstWrite 39}
-		empty_pirq_outValue {Type IO LastRead 7 FirstWrite 9}
-		full_pirq_outValue {Type IO LastRead 7 FirstWrite 23}
-		ctrl_reg_outValue1 {Type IO LastRead 7 FirstWrite 39}
-		clearedInterrStatus1 {Type IO LastRead 7 FirstWrite 117}
-		rxFifoDepth1 {Type IO LastRead 7 FirstWrite 132}
-		resetAxiEnabled {Type O LastRead -1 FirstWrite 65}
-		ctrl2RegState_enabled {Type O LastRead -1 FirstWrite 133}
+		iic {Type IO LastRead 231 FirstWrite 8}
+		stat_reg_outValue1 {Type IO LastRead 7 FirstWrite 38}
+		empty_pirq_outValue {Type IO LastRead 7 FirstWrite 8}
+		full_pirq_outValue {Type IO LastRead 7 FirstWrite 22}
+		ctrl_reg_outValue1 {Type IO LastRead 7 FirstWrite 38}
+		clearedInterrStatus1 {Type IO LastRead 7 FirstWrite 115}
+		rxFifoDepth1 {Type IO LastRead 7 FirstWrite 130}
+		resetAxiEnabled {Type O LastRead -1 FirstWrite 64}
+		ctrl2RegState_enabled {Type O LastRead -1 FirstWrite 131}
 		byteCountZero {Type I LastRead -1 FirstWrite -1}
 		clearedInterruptStatus2 {Type I LastRead -1 FirstWrite -1}
-		interrStatus2 {Type IO LastRead 164 FirstWrite 163}
-		disableTxBitDirection {Type O LastRead -1 FirstWrite 133}
-		pressByteCountEnabled {Type O LastRead -1 FirstWrite 180}
-		byteTracker {Type O LastRead -1 FirstWrite 180}
-		interrStatus3StateEnabled {Type O LastRead -1 FirstWrite 197}
-		checkInterrReg {Type O LastRead -1 FirstWrite 189}
-		ctrl_reg_val3 {Type IO LastRead 203 FirstWrite 197}
-		lastByteRead {Type IO LastRead 204 FirstWrite 203}
-		rx_fifo {Type IO LastRead 222 FirstWrite 219}
-		clearLatchedInterr {Type IO LastRead 231 FirstWrite 230}
-		releaseBus {Type O LastRead -1 FirstWrite 189}
-		receivedSuccess {Type IO LastRead 213 FirstWrite 212}
-		pressure_msb {Type IO LastRead 7 FirstWrite 213}
-		pressure_lsb {Type IO LastRead 7 FirstWrite 213}
-		pressure_xlsb {Type IO LastRead 7 FirstWrite 213}
-		stat_reg_val6_state {Type O LastRead -1 FirstWrite 212}
-		ctrl_reg_val2 {Type O LastRead -1 FirstWrite 132}
-		ctrl2RegState {Type O LastRead -1 FirstWrite 132}
-		ctrl_reg_check {Type O LastRead -1 FirstWrite 163}
+		interrStatus2 {Type IO LastRead 162 FirstWrite 161}
+		disableTxBitDirection {Type O LastRead -1 FirstWrite 131}
+		pressByteCountEnabled {Type O LastRead -1 FirstWrite 178}
+		byteTracker {Type O LastRead -1 FirstWrite 178}
+		interrStatus3StateEnabled {Type O LastRead -1 FirstWrite 195}
+		checkInterrReg {Type O LastRead -1 FirstWrite 187}
+		ctrl_reg_val3 {Type IO LastRead 201 FirstWrite 195}
+		lastByteRead {Type IO LastRead 202 FirstWrite 201}
+		rx_fifo {Type IO LastRead 220 FirstWrite 217}
+		clearLatchedInterr {Type IO LastRead 229 FirstWrite 228}
+		releaseBus {Type O LastRead -1 FirstWrite 187}
+		receivedSuccess {Type IO LastRead 211 FirstWrite 210}
+		pressure_msb {Type IO LastRead 7 FirstWrite 211}
+		pressure_lsb {Type IO LastRead 7 FirstWrite 211}
+		pressure_xlsb {Type IO LastRead 7 FirstWrite 211}
+		stat_reg_val6_state {Type O LastRead -1 FirstWrite 210}
+		ctrl_reg_val2 {Type O LastRead -1 FirstWrite 130}
+		ctrl2RegState {Type O LastRead -1 FirstWrite 130}
+		ctrl_reg_check {Type O LastRead -1 FirstWrite 161}
 		zeroBytes {Type I LastRead -1 FirstWrite -1}
-		interrStatus3State {Type O LastRead -1 FirstWrite 189}
-		interrStatus5State {Type O LastRead -1 FirstWrite 189}
-		tx_fifo_1 {Type O LastRead -1 FirstWrite 87}
-		tx_fifo_2 {Type O LastRead -1 FirstWrite 103}
-		interrStatus {Type O LastRead -1 FirstWrite 103}
-		stat_reg_val {Type O LastRead -1 FirstWrite 163}
-		statRegState {Type O LastRead -1 FirstWrite 163}
-		clearInterrStatus {Type O LastRead -1 FirstWrite 165}
-		clearInterrStatusCheck {Type O LastRead -1 FirstWrite 179}
-		error1 {Type O LastRead -1 FirstWrite 189}
-		tx_fifo_3 {Type O LastRead -1 FirstWrite 147}
-		interrStatus3 {Type O LastRead -1 FirstWrite 189}}}
+		interrStatus3State {Type O LastRead -1 FirstWrite 187}
+		interrStatus5State {Type O LastRead -1 FirstWrite 187}
+		tx_fifo_1 {Type O LastRead -1 FirstWrite 85}
+		tx_fifo_2 {Type O LastRead -1 FirstWrite 101}
+		interrStatus {Type O LastRead -1 FirstWrite 101}
+		stat_reg_val {Type O LastRead -1 FirstWrite 161}
+		statRegState {Type O LastRead -1 FirstWrite 161}
+		clearInterrStatus {Type O LastRead -1 FirstWrite 163}
+		clearInterrStatusCheck {Type O LastRead -1 FirstWrite 177}
+		error1 {Type O LastRead -1 FirstWrite 187}
+		tx_fifo_3 {Type O LastRead -1 FirstWrite 145}
+		interrStatus3 {Type O LastRead -1 FirstWrite 187}}}
 
 set hasDtUnsupportedChannel 0
 

@@ -21,7 +21,7 @@
 // 
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 // "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+// LIMITED TO, THE IMPLIED WARRANTIES OfF MERCHANTABILITY AND FITNESS FOR
 // A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL REGENTS OF THE
 // UNIVERSITY OF CALIFORNIA BE LIABLE FOR ANY DIRECT, INDIRECT,
 // INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
@@ -149,6 +149,8 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF5; 
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x24;
 
+	delay_until_ms<10000>();
+
 	///////////////////////MULTIBYTE READINGS///////////////////////
 	int pressByteCount = 3; //PRESSURE BYTE COUNT
 	uint32_t receivedData[3]; 
@@ -261,7 +263,7 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 				interrStatus3StateEnabled = 1; 
 				break;
 			}
-			if(interrStatus3 && interruptStatusMask)
+			if(interrStatus3 & interruptStatusMask)
 			{
 				printf("Error");
 				error1 = 108;
@@ -303,6 +305,7 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 		
 		pressByteCount -= 1;
 	}
+
 	while(true)
 	{
 		releaseBus = 107;
@@ -314,6 +317,8 @@ void bmesensor(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue
 			break;
 		}
 	}
+
+	delay_until_ms<10000>();
 	//////////////RECEIVE IS COMPLETE///////////////
 
 	uint32_t ctrl_reg_val4 = iic[IIC_INDEX+IIC_CONTROL_REG_OFF];

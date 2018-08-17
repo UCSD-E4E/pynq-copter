@@ -33206,6 +33206,21 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 };
 #40 "./bmesensor.hpp" 2
+#54 "./bmesensor.hpp"
+template <unsigned long long MILLISECONDS, unsigned long long F_OVERLAY_HZ = 50000000ULL>
+void delay_until_ms(){
+
+_ssdm_InlineSelf(0, "");
+_ssdm_op_SpecProtocol(0, "");
+ volatile char dummy;
+    ap_uint<64> ctr;
+    ap_uint<64> cyc = (F_OVERLAY_HZ * MILLISECONDS / 1000);
+    for (ctr = 0; ctr < cyc; ++ctr){
+        dummy = dummy;
+    }
+    return;
+
+}
 #36 "bmesensor.cpp" 2
 
 
@@ -33323,6 +33338,8 @@ _ssdm_op_SpecInterface(interrStatus3, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0
  iic[(0x40001000/4)+(0x108/4)] = 0xF5;
  iic[(0x40001000/4)+(0x108/4)] = 0x24;
 
+ delay_until_ms<10000>();
+
 
  int pressByteCount = 3;
  uint32_t receivedData[3];
@@ -33435,7 +33452,7 @@ _ssdm_op_SpecInterface(interrStatus3, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0
     interrStatus3StateEnabled = 1;
     break;
    }
-   if(interrStatus3 && interruptStatusMask)
+   if(interrStatus3 & interruptStatusMask)
    {
     printf("Error");
     error1 = 108;
@@ -33477,6 +33494,7 @@ _ssdm_op_SpecInterface(interrStatus3, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0
 
   pressByteCount -= 1;
  }
+
  while(true)
  {
   releaseBus = 107;
@@ -33488,6 +33506,8 @@ _ssdm_op_SpecInterface(interrStatus3, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0
    break;
   }
  }
+
+ delay_until_ms<10000>();
 
 
  uint32_t ctrl_reg_val4 = iic[(0x40001000/4)+(0x100/4)];

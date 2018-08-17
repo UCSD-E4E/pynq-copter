@@ -14,16 +14,18 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'bmesensor.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:50 ; elapsed = 00:00:51 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 113435 ; free virtual = 497630
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:53 ; elapsed = 00:00:53 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 113381 ; free virtual = 497576
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:58 ; elapsed = 00:00:52 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 56334 ; free virtual = 441594
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:02:00 ; elapsed = 00:00:54 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 56466 ; free virtual = 441725
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:54 ; elapsed = 00:00:55 . Memory (MB): peak = 360.156 ; gain = 13.594 ; free physical = 113356 ; free virtual = 497552
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10000ull, 50000000ull>' into 'bmesensor' (bmesensor.cpp:321).
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10000ull, 50000000ull>' into 'bmesensor' (bmesensor.cpp:152).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:02:01 ; elapsed = 00:00:56 . Memory (MB): peak = 360.227 ; gain = 13.664 ; free physical = 56410 ; free virtual = 441669
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:54 ; elapsed = 00:00:55 . Memory (MB): peak = 360.156 ; gain = 13.594 ; free physical = 113337 ; free virtual = 497532
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (bmesensor.cpp:189:3) to (bmesensor.cpp:220:2) in function 'bmesensor'... converting 3 basic blocks.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:55 ; elapsed = 00:00:56 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 113322 ; free virtual = 497518
-WARNING: [XFORM 203-562] Loop 'Loop-3' (bmesensor.cpp:335) in function 'bmesensor' has unknown bound because it has multiple exiting blocks.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:56 ; elapsed = 00:00:58 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 113348 ; free virtual = 497544
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:02:02 ; elapsed = 00:00:56 . Memory (MB): peak = 360.227 ; gain = 13.664 ; free physical = 56400 ; free virtual = 441659
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (bmesensor.cpp:191:3) to (bmesensor.cpp:222:2) in function 'bmesensor'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:02:03 ; elapsed = 00:00:58 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 56284 ; free virtual = 441544
+WARNING: [XFORM 203-562] Loop 'Loop-5' (bmesensor.cpp:340) in function 'bmesensor' has unknown bound because it has multiple exiting blocks.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:02:05 ; elapsed = 00:00:59 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 56386 ; free virtual = 441646
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'bmesensor' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -31,13 +33,13 @@ INFO: [HLS 200-42] -- Implementing module 'bmesensor'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 58.83 seconds; current allocated memory: 89.609 MB.
+INFO: [HLS 200-111]  Elapsed time: 60.06 seconds; current allocated memory: 93.475 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.31 seconds; current allocated memory: 91.639 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.34 seconds; current allocated memory: 96.067 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'bmesensor'
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -87,10 +89,10 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'bmesensor/interrStatus3' t
 INFO: [RTGEN 206-500] Setting interface mode on function 'bmesensor' to 's_axilite & ap_ctrl_hs'.
 INFO: [RTGEN 206-100] Bundling port 'return', 'stat_reg_outValue1', 'empty_pirq_outValue', 'full_pirq_outValue', 'ctrl_reg_outValue1', 'clearedInterrStatus1', 'rxFifoDepth1', 'resetAxiEnabled', 'ctrl2RegState_enabled', 'byteCountZero', 'clearedInterruptStatus2', 'interrStatus2', 'disableTxBitDirection', 'pressByteCountEnabled', 'byteTracker', 'interrStatus3StateEnabled', 'checkInterrReg', 'ctrl_reg_val3', 'lastByteRead', 'rx_fifo', 'clearLatchedInterr', 'releaseBus', 'receivedSuccess', 'pressure_msb', 'pressure_lsb', 'pressure_xlsb', 'stat_reg_val6_state', 'ctrl_reg_val2', 'ctrl2RegState', 'ctrl_reg_check', 'zeroBytes', 'interrStatus3State', 'interrStatus5State', 'tx_fifo_1', 'tx_fifo_2', 'interrStatus', 'stat_reg_val', 'statRegState', 'clearInterrStatus', 'clearInterrStatusCheck', 'error1', 'tx_fifo_3' and 'interrStatus3' to AXI-Lite port AXILiteS.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'bmesensor'.
-INFO: [HLS 200-111]  Elapsed time: 0.84 seconds; current allocated memory: 96.401 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:01 ; elapsed = 00:01:03 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 113239 ; free virtual = 497435
+INFO: [HLS 200-111]  Elapsed time: 0.67 seconds; current allocated memory: 101.061 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:08 ; elapsed = 00:01:03 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 56730 ; free virtual = 441987
 INFO: [SYSC 207-301] Generating SystemC RTL for bmesensor.
 INFO: [VHDL 208-304] Generating VHDL RTL for bmesensor.
 INFO: [VLOG 209-307] Generating Verilog RTL for bmesensor.
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-INFO: [HLS 200-112] Total elapsed time: 123.65 seconds; peak allocated memory: 96.401 MB.
+INFO: [HLS 200-112] Total elapsed time: 133.54 seconds; peak allocated memory: 101.061 MB.

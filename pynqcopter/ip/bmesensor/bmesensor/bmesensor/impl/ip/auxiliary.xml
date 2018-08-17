@@ -60,5 +60,5 @@
   <xd:arg xd:name="tx_fifo_3" xd:originalName="tx_fifo_3" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x1C8" xd:statusOffset="0x1CC" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:arg xd:name="interrStatus3" xd:originalName="interrStatus3" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x1D0" xd:statusOffset="0x1D4" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
-  <xd:resourceEstimates xd:LUT="6193" xd:FF="3414" xd:BRAM="2" xd:DSP="0"/>
+  <xd:resourceEstimates xd:LUT="6337" xd:FF="3764" xd:BRAM="2" xd:DSP="0"/>
 </xd:acceleratorMap>
