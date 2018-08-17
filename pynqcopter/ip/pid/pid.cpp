@@ -69,7 +69,6 @@ void pid (F16_t rcCmdIn[5],
 
 	#pragma HLS PIPELINE
 
-	//CALCULATE THRUST VALUES
 	static F32_t integral[4] = {0,0,0,0};
 	static F32_t prev_error[4] = {0,0,0,0};
 	#pragma HLS RESET variable=integral
