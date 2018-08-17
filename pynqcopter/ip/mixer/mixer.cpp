@@ -63,22 +63,22 @@
  */
 
 
-void mixer(F_t regs_in[5],F_t m[4096]) {
+void mixer(F16_t regs_in[5],F16_t m[4096]) {
 #pragma HLS INTERFACE s_axilite port=return
 #pragma HLS INTERFACE s_axilite port=regs_in
 #pragma HLS INTERFACE m_axi port=m offset=off
 #pragma HLS PIPELINE
 	//clip all inputs to min and max range for safety
-	bigF_t r_c = clip(regs_in[0],F_t(0),F_t(.99))*2-1;
-	bigF_t p_c = clip(regs_in[1],F_t(0),F_t(.99))*2-1;
-	bigF_t y_c = clip(regs_in[3],F_t(0),F_t(.99))*2-1;
-	bigF_t t_c = clip(regs_in[2],F_t(0),F_t(.99));
-	bigF_t scaled_power;
+	F19_t r_c = clip(regs_in[0],F16_t(0),F16_t(.99))*2-1;
+	F19_t p_c = clip(regs_in[1],F16_t(0),F16_t(.99))*2-1;
+	F19_t y_c = clip(regs_in[3],F16_t(0),F16_t(.99))*2-1;
+	F19_t t_c = clip(regs_in[2],F16_t(0),F16_t(.99));
+	F19_t scaled_power;
 
-	for(int i=0; i < 6; i++) {
+	for(char i=0; i < 6; i++) {
 	#pragma HLS unroll
-		scaled_power = t_c+(r_c*MIX_C[i][0]+p_c*MIX_C[i][1]+y_c*MIX_C[i][2])/bigF_t(3.0);
-		m[i]=clip(scaled_power,bigF_t(0),bigF_t(.99));
+		scaled_power = t_c+(r_c*MIX_C[i][0]+p_c*MIX_C[i][1]+y_c*MIX_C[i][2])/F19_t(3.0);
+		m[i]=clip(scaled_power,F19_t(0),F19_t(.99));
 	}
 	m[6]=regs_in[4];
 }

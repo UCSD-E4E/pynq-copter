@@ -61,9 +61,8 @@
  * | 5 | -.5  | 0.57735026919  | 1   |
  *
  */
-typedef ap_ufixed<sizeof(unsigned int)*8+sizeof(F_t)*8,sizeof(unsigned int)*8> bigBigF_t;
 
-void normalizer(unsigned int regs_in[6],unsigned int min_high, unsigned int max_high, F_t m[4096]) {
+void normalizer(uint32_t regs_in[6],uint32_t min_high, uint32_t max_high, F16_t m[4096]) {
 #pragma HLS INTERFACE s_axilite port=return bundle=in
 #pragma HLS INTERFACE s_axilite port=regs_in bundle=in
 #pragma HLS INTERFACE s_axilite port=min_high bundle=in
@@ -84,6 +83,6 @@ void normalizer(unsigned int regs_in[6],unsigned int min_high, unsigned int max_
 		}
 	}
 	if(changed<5) {
-		m[changed]= F_t(bigBigF_t(regs_in[changed]-min_high)/bigBigF_t(max_high-min_high));
+		m[changed]= F16_t(F64_t(regs_in[changed]-min_high)/F64_t(max_high-min_high));
 	}
 }

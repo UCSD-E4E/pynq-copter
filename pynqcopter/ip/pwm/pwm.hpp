@@ -37,19 +37,8 @@
 // DAMAGE.
 //##############################################################################
 
-//#ifndef __PYNQCOPTER_PWM_HPP
-//#define __PYNQCOPTER_PWM_HPP
+#include "../common/pynqCopterIp.hpp"
 
-#include "ap_int.h"
-
-#define RESOLUTION 16
-#define CHANNELS 6
-
-
-typedef ap_fixed<RESOLUTION,1> F_t;
-typedef ap_uint<RESOLUTION> N_t;
-typedef ap_uint<CHANNELS> O_t;
-
-void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[CHANNELS] , O_t& out);
+void pwm(uint16_t min_duty,uint16_t max_duty, uint16_t period,F16_t m[MOTOR_COUNT] , uint6_t& out);
 
 //#endif

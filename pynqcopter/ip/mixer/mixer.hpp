@@ -38,15 +38,9 @@
 //##############################################################################
 
 
-#include "ap_int.h"
-#include "ap_fixed.h"
-#include "../pwm/pwm.hpp"
+#include "../common/pynqCopterIp.hpp"
 
-#define clip(in,low,high) (in<low?low:(in>high?high:in))
-typedef ap_fixed<RESOLUTION+3,4> bigF_t;
-
-
-const bigF_t MIX_C[6][3] = {
+const F19_t MIX_C[6][3] = {
 	{.5,0.57735026919,-1},
 	{1,0,1},
 	{.5,-.57735026919,-1},
@@ -54,3 +48,5 @@ const bigF_t MIX_C[6][3] = {
 	{-1,0,-1},
 	{-.5,-.57735026919,1}
 };
+
+void mixer(F16_t regs_in[4],F16_t m[4096]); //rpyt

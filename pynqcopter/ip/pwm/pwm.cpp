@@ -42,7 +42,7 @@
 
 #define duty_range (max_duty-min_duty)
 
-void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[CHANNELS] , O_t& out) {
+void pwm(uint16_t  min_duty, uint16_t max_duty, uint16_t period,F16_t m[MOTOR_COUNT] , uint6_t& out) {
 #pragma HLS INTERFACE s_axilite port=min_duty bundle=ctrl
 #pragma HLS INTERFACE s_axilite port=max_duty bundle=ctrl
 #pragma HLS INTERFACE s_axilite port=period bundle=ctrl
@@ -50,24 +50,24 @@ void pwm(N_t min_duty,N_t max_duty, N_t period,F_t m[CHANNELS] , O_t& out) {
 #pragma HLS INTERFACE ap_none port=out
 #pragma HLS INTERFACE s_axilite port=return bundle=ctrl
 #pragma HLS PIPELINE
-	static N_t acc=0;
+	static uint16_t acc=0;
 
-	static N_t in_p[CHANNELS]; //saves input for integrity
-	static O_t out_p=0x3F; //prepares output
+	static uint16_t in_p[MOTOR_COUNT]; //saves input for integrity
+	static uint6_t out_p=0x3F; //prepares output
 	static bool stop;
 	stop= (m[6]*3>1);
 
-	for(char u =0; u <CHANNELS; u++) { //save inputs
+	for(char u =0; u <MOTOR_COUNT; u++) { //save inputs
 		in_p[u]=duty_range*m[u]+min_duty;
 	}
 
 
-	for(int u =0; u <CHANNELS; u++) { //for each channel, do pwm logic
-		out_p[u]=((acc<min_duty) | (acc<in_p[u] & out_p[u] )) & (acc<max_duty);
+	for(char u =0; u <MOTOR_COUNT; u++) { //for each channel, do pwm logic
+		out_p[u]=((acc<min_duty) | ((acc<in_p[u]) & out_p[u] )) & (acc<max_duty);
 	}
 
-	acc=(acc<period) ? N_t(acc+1) : N_t(0); //inc acc if > per else reset
+	acc=(acc<period) ? uint16_t(acc+1) : uint16_t(0); //inc acc if > per else reset
 
-	out=stop ? O_t(0) : out_p;
+	out=stop ? uint6_t(0) : out_p;
 
 }

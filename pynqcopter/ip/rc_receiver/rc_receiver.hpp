@@ -37,15 +37,4 @@
 // DAMAGE.
 //##############################################################################
 
-#ifndef __RC_RECEIVER_HPP
-#define __RC_RECEIVER_HPP
-
-
-#include "ap_int.h"
-#include "../mixer/mixer.hpp"
-
-
-typedef ap_uint<6> C_t;
-typedef ap_uint<32> tick_t;
-typedef ap_uint<64> concatTick_t;
-#endif
+#include "../common/pynqCopterIp.hpp"

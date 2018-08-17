@@ -46,7 +46,7 @@ int main() {
 	char delim = '\t';
 	std::ofstream myfile;
 	myfile.open("out.csv");
-    F_t regs[6] = { 0x0,0x0,0x0,0x0,0x0,0x0 };
+    F16_t regs[6] = { 0x0,0x0,0x0,0x0,0x0,0x0 };
     ap_uint<6> out;
 
     for(long int i =0; i < 65000; i+=10000)

@@ -39,9 +39,9 @@
 #include "rc_receiver.hpp"
 
 void rc_receiver(
-			unsigned int norm_out[4096],
+			uint32_t norm_out[4096],
 			//inputs from ap_none
-			C_t channels){
+			uint6_t channels){
 
 	// HLS PRAGMAS
 	#pragma HLS INTERFACE s_axilite port=return bundle=in
@@ -54,15 +54,15 @@ void rc_receiver(
 
 
 	// static variables
-	static C_t last_on = 0;
-	static unsigned int acc=0;
+	static uint6_t last_on = 0;
+	static uint32_t acc=0;
 
 	char write_to = 0;
 	bool should_write;
 	should_write = false;
-	unsigned int write_val=0;
+	uint32_t write_val=0;
 
-	for(int i =0; i < CHANNELS; i++) {
+	for(int i =0; i < RC_CHANNELS; i++) {
 		//if was high now low reset and output
 		if(channels[i]) { //if high
 			++acc;

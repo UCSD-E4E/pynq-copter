@@ -43,7 +43,6 @@
 using namespace std;
 
 #include "mixer.hpp"
-void mixer(F_t regs_in[4],F_t m[4096]); //rpyt
 
 int main() {
 //	char delim = '\t';

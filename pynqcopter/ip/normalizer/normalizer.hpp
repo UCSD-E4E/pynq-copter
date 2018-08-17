@@ -38,6 +38,4 @@
 //##############################################################################
 
 
-#include "ap_int.h"
-#include "ap_fixed.h"
-#include "../pwm/pwm.hpp"
+#include "../common/pynqCopterIp.hpp"
