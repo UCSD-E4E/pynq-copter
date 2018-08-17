@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Aug 17 14:08:07 2018
+# Process ID: 32039
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/bmeMultibyte/bmeMultibyte/bmeMultibyte.runs/bmeMultibyte_auto_pc_1_synth_1
+# Command line: vivado -log bmeMultibyte_auto_pc_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bmeMultibyte_auto_pc_1.tcl
+# Log file: /home/iavendano/pynq-copter/pynqcopter/bmeMultibyte/bmeMultibyte/bmeMultibyte.runs/bmeMultibyte_auto_pc_1_synth_1/bmeMultibyte_auto_pc_1.vds
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/bmeMultibyte/bmeMultibyte/bmeMultibyte.runs/bmeMultibyte_auto_pc_1_synth_1/vivado.jou
+#-----------------------------------------------------------
+source bmeMultibyte_auto_pc_1.tcl -notrace
