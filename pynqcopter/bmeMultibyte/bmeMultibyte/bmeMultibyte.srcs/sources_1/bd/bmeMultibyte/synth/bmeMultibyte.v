@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Fri Aug 17 14:07:25 2018
+//Date        : Sat Aug 18 13:16:25 2018
 //Host        : fabricant running 64-bit Linux Mint 18 Sarah
 //Command     : generate_target bmeMultibyte.bd
 //Design      : bmeMultibyte
@@ -279,10 +279,10 @@ module bmeMultibyte
         .m_axi_CTRL_WREADY(multibyte_0_m_axi_CTRL_WREADY),
         .m_axi_CTRL_WSTRB(multibyte_0_m_axi_CTRL_WSTRB),
         .m_axi_CTRL_WVALID(multibyte_0_m_axi_CTRL_WVALID),
-        .s_axi_CTRL_ARADDR(ps7_0_axi_periph_M00_AXI_ARADDR[5:0]),
+        .s_axi_CTRL_ARADDR(ps7_0_axi_periph_M00_AXI_ARADDR[7:0]),
         .s_axi_CTRL_ARREADY(ps7_0_axi_periph_M00_AXI_ARREADY),
         .s_axi_CTRL_ARVALID(ps7_0_axi_periph_M00_AXI_ARVALID),
-        .s_axi_CTRL_AWADDR(ps7_0_axi_periph_M00_AXI_AWADDR[5:0]),
+        .s_axi_CTRL_AWADDR(ps7_0_axi_periph_M00_AXI_AWADDR[7:0]),
         .s_axi_CTRL_AWREADY(ps7_0_axi_periph_M00_AXI_AWREADY),
         .s_axi_CTRL_AWVALID(ps7_0_axi_periph_M00_AXI_AWVALID),
         .s_axi_CTRL_BREADY(ps7_0_axi_periph_M00_AXI_BREADY),
