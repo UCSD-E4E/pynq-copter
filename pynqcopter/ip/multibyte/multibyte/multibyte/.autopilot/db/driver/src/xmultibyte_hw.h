@@ -39,19 +39,155 @@
 // 0x24 : Control signal of pressure_xlsb
 //        bit 0  - pressure_xlsb_ap_vld (Read/COR)
 //        others - reserved
+// 0x28 : Data signal of temperature_msb
+//        bit 31~0 - temperature_msb[31:0] (Read)
+// 0x2c : Control signal of temperature_msb
+//        bit 0  - temperature_msb_ap_vld (Read/COR)
+//        others - reserved
+// 0x30 : Data signal of temperature_lsb
+//        bit 31~0 - temperature_lsb[31:0] (Read)
+// 0x34 : Control signal of temperature_lsb
+//        bit 0  - temperature_lsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x38 : Data signal of temperature_xlsb
+//        bit 31~0 - temperature_xlsb[31:0] (Read)
+// 0x3c : Control signal of temperature_xlsb
+//        bit 0  - temperature_xlsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x40 : Data signal of stateSetUp
+//        bit 31~0 - stateSetUp[31:0] (Read)
+// 0x44 : Control signal of stateSetUp
+//        bit 0  - stateSetUp_ap_vld (Read/COR)
+//        others - reserved
+// 0x48 : Data signal of state
+//        bit 31~0 - state[31:0] (Read)
+// 0x4c : Control signal of state
+//        bit 0  - state_ap_vld (Read/COR)
+//        others - reserved
+// 0x50 : Data signal of stateDataReads
+//        bit 31~0 - stateDataReads[31:0] (Read)
+// 0x54 : Control signal of stateDataReads
+//        bit 0  - stateDataReads_ap_vld (Read/COR)
+//        others - reserved
+// 0x58 : Data signal of dig_T1
+//        bit 15~0 - dig_T1[15:0] (Read/Write)
+//        others   - reserved
+// 0x5c : reserved
+// 0x60 : Data signal of dig_T2
+//        bit 15~0 - dig_T2[15:0] (Read/Write)
+//        others   - reserved
+// 0x64 : reserved
+// 0x68 : Data signal of dig_T3
+//        bit 15~0 - dig_T3[15:0] (Read/Write)
+//        others   - reserved
+// 0x6c : reserved
+// 0x70 : Data signal of dig_P1
+//        bit 15~0 - dig_P1[15:0] (Read/Write)
+//        others   - reserved
+// 0x74 : reserved
+// 0x78 : Data signal of dig_P2
+//        bit 15~0 - dig_P2[15:0] (Read/Write)
+//        others   - reserved
+// 0x7c : reserved
+// 0x80 : Data signal of dig_P3
+//        bit 15~0 - dig_P3[15:0] (Read/Write)
+//        others   - reserved
+// 0x84 : reserved
+// 0x88 : Data signal of dig_P4
+//        bit 15~0 - dig_P4[15:0] (Read/Write)
+//        others   - reserved
+// 0x8c : reserved
+// 0x90 : Data signal of dig_P5
+//        bit 15~0 - dig_P5[15:0] (Read/Write)
+//        others   - reserved
+// 0x94 : reserved
+// 0x98 : Data signal of dig_P6
+//        bit 15~0 - dig_P6[15:0] (Read/Write)
+//        others   - reserved
+// 0x9c : reserved
+// 0xa0 : Data signal of dig_P7
+//        bit 15~0 - dig_P7[15:0] (Read/Write)
+//        others   - reserved
+// 0xa4 : reserved
+// 0xa8 : Data signal of dig_P8
+//        bit 15~0 - dig_P8[15:0] (Read/Write)
+//        others   - reserved
+// 0xac : reserved
+// 0xb0 : Data signal of dig_P9
+//        bit 15~0 - dig_P9[15:0] (Read/Write)
+//        others   - reserved
+// 0xb4 : reserved
+// 0xb8 : Data signal of pressureRaw
+//        bit 31~0 - pressureRaw[31:0] (Read)
+// 0xbc : Control signal of pressureRaw
+//        bit 0  - pressureRaw_ap_vld (Read/COR)
+//        others - reserved
+// 0xc0 : Data signal of temperatureRaw
+//        bit 31~0 - temperatureRaw[31:0] (Read)
+// 0xc4 : Control signal of temperatureRaw
+//        bit 0  - temperatureRaw_ap_vld (Read/COR)
+//        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
-#define XMULTIBYTE_CTRL_ADDR_AP_CTRL            0x00
-#define XMULTIBYTE_CTRL_ADDR_GIE                0x04
-#define XMULTIBYTE_CTRL_ADDR_IER                0x08
-#define XMULTIBYTE_CTRL_ADDR_ISR                0x0c
-#define XMULTIBYTE_CTRL_ADDR_PRESSURE_MSB_DATA  0x10
-#define XMULTIBYTE_CTRL_BITS_PRESSURE_MSB_DATA  32
-#define XMULTIBYTE_CTRL_ADDR_PRESSURE_MSB_CTRL  0x14
-#define XMULTIBYTE_CTRL_ADDR_PRESSURE_LSB_DATA  0x18
-#define XMULTIBYTE_CTRL_BITS_PRESSURE_LSB_DATA  32
-#define XMULTIBYTE_CTRL_ADDR_PRESSURE_LSB_CTRL  0x1c
-#define XMULTIBYTE_CTRL_ADDR_PRESSURE_XLSB_DATA 0x20
-#define XMULTIBYTE_CTRL_BITS_PRESSURE_XLSB_DATA 32
-#define XMULTIBYTE_CTRL_ADDR_PRESSURE_XLSB_CTRL 0x24
+#define XMULTIBYTE_CTRL_ADDR_AP_CTRL               0x00
+#define XMULTIBYTE_CTRL_ADDR_GIE                   0x04
+#define XMULTIBYTE_CTRL_ADDR_IER                   0x08
+#define XMULTIBYTE_CTRL_ADDR_ISR                   0x0c
+#define XMULTIBYTE_CTRL_ADDR_PRESSURE_MSB_DATA     0x10
+#define XMULTIBYTE_CTRL_BITS_PRESSURE_MSB_DATA     32
+#define XMULTIBYTE_CTRL_ADDR_PRESSURE_MSB_CTRL     0x14
+#define XMULTIBYTE_CTRL_ADDR_PRESSURE_LSB_DATA     0x18
+#define XMULTIBYTE_CTRL_BITS_PRESSURE_LSB_DATA     32
+#define XMULTIBYTE_CTRL_ADDR_PRESSURE_LSB_CTRL     0x1c
+#define XMULTIBYTE_CTRL_ADDR_PRESSURE_XLSB_DATA    0x20
+#define XMULTIBYTE_CTRL_BITS_PRESSURE_XLSB_DATA    32
+#define XMULTIBYTE_CTRL_ADDR_PRESSURE_XLSB_CTRL    0x24
+#define XMULTIBYTE_CTRL_ADDR_TEMPERATURE_MSB_DATA  0x28
+#define XMULTIBYTE_CTRL_BITS_TEMPERATURE_MSB_DATA  32
+#define XMULTIBYTE_CTRL_ADDR_TEMPERATURE_MSB_CTRL  0x2c
+#define XMULTIBYTE_CTRL_ADDR_TEMPERATURE_LSB_DATA  0x30
+#define XMULTIBYTE_CTRL_BITS_TEMPERATURE_LSB_DATA  32
+#define XMULTIBYTE_CTRL_ADDR_TEMPERATURE_LSB_CTRL  0x34
+#define XMULTIBYTE_CTRL_ADDR_TEMPERATURE_XLSB_DATA 0x38
+#define XMULTIBYTE_CTRL_BITS_TEMPERATURE_XLSB_DATA 32
+#define XMULTIBYTE_CTRL_ADDR_TEMPERATURE_XLSB_CTRL 0x3c
+#define XMULTIBYTE_CTRL_ADDR_STATESETUP_DATA       0x40
+#define XMULTIBYTE_CTRL_BITS_STATESETUP_DATA       32
+#define XMULTIBYTE_CTRL_ADDR_STATESETUP_CTRL       0x44
+#define XMULTIBYTE_CTRL_ADDR_STATE_DATA            0x48
+#define XMULTIBYTE_CTRL_BITS_STATE_DATA            32
+#define XMULTIBYTE_CTRL_ADDR_STATE_CTRL            0x4c
+#define XMULTIBYTE_CTRL_ADDR_STATEDATAREADS_DATA   0x50
+#define XMULTIBYTE_CTRL_BITS_STATEDATAREADS_DATA   32
+#define XMULTIBYTE_CTRL_ADDR_STATEDATAREADS_CTRL   0x54
+#define XMULTIBYTE_CTRL_ADDR_DIG_T1_DATA           0x58
+#define XMULTIBYTE_CTRL_BITS_DIG_T1_DATA           16
+#define XMULTIBYTE_CTRL_ADDR_DIG_T2_DATA           0x60
+#define XMULTIBYTE_CTRL_BITS_DIG_T2_DATA           16
+#define XMULTIBYTE_CTRL_ADDR_DIG_T3_DATA           0x68
+#define XMULTIBYTE_CTRL_BITS_DIG_T3_DATA           16
+#define XMULTIBYTE_CTRL_ADDR_DIG_P1_DATA           0x70
+#define XMULTIBYTE_CTRL_BITS_DIG_P1_DATA           16
+#define XMULTIBYTE_CTRL_ADDR_DIG_P2_DATA           0x78
+#define XMULTIBYTE_CTRL_BITS_DIG_P2_DATA           16
+#define XMULTIBYTE_CTRL_ADDR_DIG_P3_DATA           0x80
+#define XMULTIBYTE_CTRL_BITS_DIG_P3_DATA           16
+#define XMULTIBYTE_CTRL_ADDR_DIG_P4_DATA           0x88
+#define XMULTIBYTE_CTRL_BITS_DIG_P4_DATA           16
+#define XMULTIBYTE_CTRL_ADDR_DIG_P5_DATA           0x90
+#define XMULTIBYTE_CTRL_BITS_DIG_P5_DATA           16
+#define XMULTIBYTE_CTRL_ADDR_DIG_P6_DATA           0x98
+#define XMULTIBYTE_CTRL_BITS_DIG_P6_DATA           16
+#define XMULTIBYTE_CTRL_ADDR_DIG_P7_DATA           0xa0
+#define XMULTIBYTE_CTRL_BITS_DIG_P7_DATA           16
+#define XMULTIBYTE_CTRL_ADDR_DIG_P8_DATA           0xa8
+#define XMULTIBYTE_CTRL_BITS_DIG_P8_DATA           16
+#define XMULTIBYTE_CTRL_ADDR_DIG_P9_DATA           0xb0
+#define XMULTIBYTE_CTRL_BITS_DIG_P9_DATA           16
+#define XMULTIBYTE_CTRL_ADDR_PRESSURERAW_DATA      0xb8
+#define XMULTIBYTE_CTRL_BITS_PRESSURERAW_DATA      32
+#define XMULTIBYTE_CTRL_ADDR_PRESSURERAW_CTRL      0xbc
+#define XMULTIBYTE_CTRL_ADDR_TEMPERATURERAW_DATA   0xc0
+#define XMULTIBYTE_CTRL_BITS_TEMPERATURERAW_DATA   32
+#define XMULTIBYTE_CTRL_ADDR_TEMPERATURERAW_CTRL   0xc4
 

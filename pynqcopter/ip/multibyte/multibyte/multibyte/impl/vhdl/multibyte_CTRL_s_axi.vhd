@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity multibyte_CTRL_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 6;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 8;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     -- axi4 lite slave signals
@@ -46,7 +46,35 @@ port (
     pressure_lsb          :in   STD_LOGIC_VECTOR(31 downto 0);
     pressure_lsb_ap_vld   :in   STD_LOGIC;
     pressure_xlsb         :in   STD_LOGIC_VECTOR(31 downto 0);
-    pressure_xlsb_ap_vld  :in   STD_LOGIC
+    pressure_xlsb_ap_vld  :in   STD_LOGIC;
+    temperature_msb       :in   STD_LOGIC_VECTOR(31 downto 0);
+    temperature_msb_ap_vld :in   STD_LOGIC;
+    temperature_lsb       :in   STD_LOGIC_VECTOR(31 downto 0);
+    temperature_lsb_ap_vld :in   STD_LOGIC;
+    temperature_xlsb      :in   STD_LOGIC_VECTOR(31 downto 0);
+    temperature_xlsb_ap_vld :in   STD_LOGIC;
+    stateSetUp            :in   STD_LOGIC_VECTOR(31 downto 0);
+    stateSetUp_ap_vld     :in   STD_LOGIC;
+    state                 :in   STD_LOGIC_VECTOR(31 downto 0);
+    state_ap_vld          :in   STD_LOGIC;
+    stateDataReads        :in   STD_LOGIC_VECTOR(31 downto 0);
+    stateDataReads_ap_vld :in   STD_LOGIC;
+    dig_T1                :out  STD_LOGIC_VECTOR(15 downto 0);
+    dig_T2                :out  STD_LOGIC_VECTOR(15 downto 0);
+    dig_T3                :out  STD_LOGIC_VECTOR(15 downto 0);
+    dig_P1                :out  STD_LOGIC_VECTOR(15 downto 0);
+    dig_P2                :out  STD_LOGIC_VECTOR(15 downto 0);
+    dig_P3                :out  STD_LOGIC_VECTOR(15 downto 0);
+    dig_P4                :out  STD_LOGIC_VECTOR(15 downto 0);
+    dig_P5                :out  STD_LOGIC_VECTOR(15 downto 0);
+    dig_P6                :out  STD_LOGIC_VECTOR(15 downto 0);
+    dig_P7                :out  STD_LOGIC_VECTOR(15 downto 0);
+    dig_P8                :out  STD_LOGIC_VECTOR(15 downto 0);
+    dig_P9                :out  STD_LOGIC_VECTOR(15 downto 0);
+    pressureRaw           :in   STD_LOGIC_VECTOR(31 downto 0);
+    pressureRaw_ap_vld    :in   STD_LOGIC;
+    temperatureRaw        :in   STD_LOGIC_VECTOR(31 downto 0);
+    temperatureRaw_ap_vld :in   STD_LOGIC
 );
 end entity multibyte_CTRL_s_axi;
 
@@ -84,6 +112,94 @@ end entity multibyte_CTRL_s_axi;
 -- 0x24 : Control signal of pressure_xlsb
 --        bit 0  - pressure_xlsb_ap_vld (Read/COR)
 --        others - reserved
+-- 0x28 : Data signal of temperature_msb
+--        bit 31~0 - temperature_msb[31:0] (Read)
+-- 0x2c : Control signal of temperature_msb
+--        bit 0  - temperature_msb_ap_vld (Read/COR)
+--        others - reserved
+-- 0x30 : Data signal of temperature_lsb
+--        bit 31~0 - temperature_lsb[31:0] (Read)
+-- 0x34 : Control signal of temperature_lsb
+--        bit 0  - temperature_lsb_ap_vld (Read/COR)
+--        others - reserved
+-- 0x38 : Data signal of temperature_xlsb
+--        bit 31~0 - temperature_xlsb[31:0] (Read)
+-- 0x3c : Control signal of temperature_xlsb
+--        bit 0  - temperature_xlsb_ap_vld (Read/COR)
+--        others - reserved
+-- 0x40 : Data signal of stateSetUp
+--        bit 31~0 - stateSetUp[31:0] (Read)
+-- 0x44 : Control signal of stateSetUp
+--        bit 0  - stateSetUp_ap_vld (Read/COR)
+--        others - reserved
+-- 0x48 : Data signal of state
+--        bit 31~0 - state[31:0] (Read)
+-- 0x4c : Control signal of state
+--        bit 0  - state_ap_vld (Read/COR)
+--        others - reserved
+-- 0x50 : Data signal of stateDataReads
+--        bit 31~0 - stateDataReads[31:0] (Read)
+-- 0x54 : Control signal of stateDataReads
+--        bit 0  - stateDataReads_ap_vld (Read/COR)
+--        others - reserved
+-- 0x58 : Data signal of dig_T1
+--        bit 15~0 - dig_T1[15:0] (Read/Write)
+--        others   - reserved
+-- 0x5c : reserved
+-- 0x60 : Data signal of dig_T2
+--        bit 15~0 - dig_T2[15:0] (Read/Write)
+--        others   - reserved
+-- 0x64 : reserved
+-- 0x68 : Data signal of dig_T3
+--        bit 15~0 - dig_T3[15:0] (Read/Write)
+--        others   - reserved
+-- 0x6c : reserved
+-- 0x70 : Data signal of dig_P1
+--        bit 15~0 - dig_P1[15:0] (Read/Write)
+--        others   - reserved
+-- 0x74 : reserved
+-- 0x78 : Data signal of dig_P2
+--        bit 15~0 - dig_P2[15:0] (Read/Write)
+--        others   - reserved
+-- 0x7c : reserved
+-- 0x80 : Data signal of dig_P3
+--        bit 15~0 - dig_P3[15:0] (Read/Write)
+--        others   - reserved
+-- 0x84 : reserved
+-- 0x88 : Data signal of dig_P4
+--        bit 15~0 - dig_P4[15:0] (Read/Write)
+--        others   - reserved
+-- 0x8c : reserved
+-- 0x90 : Data signal of dig_P5
+--        bit 15~0 - dig_P5[15:0] (Read/Write)
+--        others   - reserved
+-- 0x94 : reserved
+-- 0x98 : Data signal of dig_P6
+--        bit 15~0 - dig_P6[15:0] (Read/Write)
+--        others   - reserved
+-- 0x9c : reserved
+-- 0xa0 : Data signal of dig_P7
+--        bit 15~0 - dig_P7[15:0] (Read/Write)
+--        others   - reserved
+-- 0xa4 : reserved
+-- 0xa8 : Data signal of dig_P8
+--        bit 15~0 - dig_P8[15:0] (Read/Write)
+--        others   - reserved
+-- 0xac : reserved
+-- 0xb0 : Data signal of dig_P9
+--        bit 15~0 - dig_P9[15:0] (Read/Write)
+--        others   - reserved
+-- 0xb4 : reserved
+-- 0xb8 : Data signal of pressureRaw
+--        bit 31~0 - pressureRaw[31:0] (Read)
+-- 0xbc : Control signal of pressureRaw
+--        bit 0  - pressureRaw_ap_vld (Read/COR)
+--        others - reserved
+-- 0xc0 : Data signal of temperatureRaw
+--        bit 31~0 - temperatureRaw[31:0] (Read)
+-- 0xc4 : Control signal of temperatureRaw
+--        bit 0  - temperatureRaw_ap_vld (Read/COR)
+--        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of multibyte_CTRL_s_axi is
@@ -91,17 +207,57 @@ architecture behave of multibyte_CTRL_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_AP_CTRL              : INTEGER := 16#00#;
-    constant ADDR_GIE                  : INTEGER := 16#04#;
-    constant ADDR_IER                  : INTEGER := 16#08#;
-    constant ADDR_ISR                  : INTEGER := 16#0c#;
-    constant ADDR_PRESSURE_MSB_DATA_0  : INTEGER := 16#10#;
-    constant ADDR_PRESSURE_MSB_CTRL    : INTEGER := 16#14#;
-    constant ADDR_PRESSURE_LSB_DATA_0  : INTEGER := 16#18#;
-    constant ADDR_PRESSURE_LSB_CTRL    : INTEGER := 16#1c#;
-    constant ADDR_PRESSURE_XLSB_DATA_0 : INTEGER := 16#20#;
-    constant ADDR_PRESSURE_XLSB_CTRL   : INTEGER := 16#24#;
-    constant ADDR_BITS         : INTEGER := 6;
+    constant ADDR_AP_CTRL                 : INTEGER := 16#00#;
+    constant ADDR_GIE                     : INTEGER := 16#04#;
+    constant ADDR_IER                     : INTEGER := 16#08#;
+    constant ADDR_ISR                     : INTEGER := 16#0c#;
+    constant ADDR_PRESSURE_MSB_DATA_0     : INTEGER := 16#10#;
+    constant ADDR_PRESSURE_MSB_CTRL       : INTEGER := 16#14#;
+    constant ADDR_PRESSURE_LSB_DATA_0     : INTEGER := 16#18#;
+    constant ADDR_PRESSURE_LSB_CTRL       : INTEGER := 16#1c#;
+    constant ADDR_PRESSURE_XLSB_DATA_0    : INTEGER := 16#20#;
+    constant ADDR_PRESSURE_XLSB_CTRL      : INTEGER := 16#24#;
+    constant ADDR_TEMPERATURE_MSB_DATA_0  : INTEGER := 16#28#;
+    constant ADDR_TEMPERATURE_MSB_CTRL    : INTEGER := 16#2c#;
+    constant ADDR_TEMPERATURE_LSB_DATA_0  : INTEGER := 16#30#;
+    constant ADDR_TEMPERATURE_LSB_CTRL    : INTEGER := 16#34#;
+    constant ADDR_TEMPERATURE_XLSB_DATA_0 : INTEGER := 16#38#;
+    constant ADDR_TEMPERATURE_XLSB_CTRL   : INTEGER := 16#3c#;
+    constant ADDR_STATESETUP_DATA_0       : INTEGER := 16#40#;
+    constant ADDR_STATESETUP_CTRL         : INTEGER := 16#44#;
+    constant ADDR_STATE_DATA_0            : INTEGER := 16#48#;
+    constant ADDR_STATE_CTRL              : INTEGER := 16#4c#;
+    constant ADDR_STATEDATAREADS_DATA_0   : INTEGER := 16#50#;
+    constant ADDR_STATEDATAREADS_CTRL     : INTEGER := 16#54#;
+    constant ADDR_DIG_T1_DATA_0           : INTEGER := 16#58#;
+    constant ADDR_DIG_T1_CTRL             : INTEGER := 16#5c#;
+    constant ADDR_DIG_T2_DATA_0           : INTEGER := 16#60#;
+    constant ADDR_DIG_T2_CTRL             : INTEGER := 16#64#;
+    constant ADDR_DIG_T3_DATA_0           : INTEGER := 16#68#;
+    constant ADDR_DIG_T3_CTRL             : INTEGER := 16#6c#;
+    constant ADDR_DIG_P1_DATA_0           : INTEGER := 16#70#;
+    constant ADDR_DIG_P1_CTRL             : INTEGER := 16#74#;
+    constant ADDR_DIG_P2_DATA_0           : INTEGER := 16#78#;
+    constant ADDR_DIG_P2_CTRL             : INTEGER := 16#7c#;
+    constant ADDR_DIG_P3_DATA_0           : INTEGER := 16#80#;
+    constant ADDR_DIG_P3_CTRL             : INTEGER := 16#84#;
+    constant ADDR_DIG_P4_DATA_0           : INTEGER := 16#88#;
+    constant ADDR_DIG_P4_CTRL             : INTEGER := 16#8c#;
+    constant ADDR_DIG_P5_DATA_0           : INTEGER := 16#90#;
+    constant ADDR_DIG_P5_CTRL             : INTEGER := 16#94#;
+    constant ADDR_DIG_P6_DATA_0           : INTEGER := 16#98#;
+    constant ADDR_DIG_P6_CTRL             : INTEGER := 16#9c#;
+    constant ADDR_DIG_P7_DATA_0           : INTEGER := 16#a0#;
+    constant ADDR_DIG_P7_CTRL             : INTEGER := 16#a4#;
+    constant ADDR_DIG_P8_DATA_0           : INTEGER := 16#a8#;
+    constant ADDR_DIG_P8_CTRL             : INTEGER := 16#ac#;
+    constant ADDR_DIG_P9_DATA_0           : INTEGER := 16#b0#;
+    constant ADDR_DIG_P9_CTRL             : INTEGER := 16#b4#;
+    constant ADDR_PRESSURERAW_DATA_0      : INTEGER := 16#b8#;
+    constant ADDR_PRESSURERAW_CTRL        : INTEGER := 16#bc#;
+    constant ADDR_TEMPERATURERAW_DATA_0   : INTEGER := 16#c0#;
+    constant ADDR_TEMPERATURERAW_CTRL     : INTEGER := 16#c4#;
+    constant ADDR_BITS         : INTEGER := 8;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(31 downto 0);
@@ -129,6 +285,34 @@ architecture behave of multibyte_CTRL_s_axi is
     signal int_pressure_lsb_ap_vld : STD_LOGIC;
     signal int_pressure_xlsb   : UNSIGNED(31 downto 0) := (others => '0');
     signal int_pressure_xlsb_ap_vld : STD_LOGIC;
+    signal int_temperature_msb : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_temperature_msb_ap_vld : STD_LOGIC;
+    signal int_temperature_lsb : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_temperature_lsb_ap_vld : STD_LOGIC;
+    signal int_temperature_xlsb : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_temperature_xlsb_ap_vld : STD_LOGIC;
+    signal int_stateSetUp      : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_stateSetUp_ap_vld : STD_LOGIC;
+    signal int_state           : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_state_ap_vld    : STD_LOGIC;
+    signal int_stateDataReads  : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_stateDataReads_ap_vld : STD_LOGIC;
+    signal int_dig_T1          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_dig_T2          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_dig_T3          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_dig_P1          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_dig_P2          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_dig_P3          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_dig_P4          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_dig_P5          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_dig_P6          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_dig_P7          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_dig_P8          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_dig_P9          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_pressureRaw     : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_pressureRaw_ap_vld : STD_LOGIC;
+    signal int_temperatureRaw  : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_temperatureRaw_ap_vld : STD_LOGIC;
 
 
 begin
@@ -262,6 +446,62 @@ begin
                         rdata_data <= RESIZE(int_pressure_xlsb(31 downto 0), 32);
                     when ADDR_PRESSURE_XLSB_CTRL =>
                         rdata_data <= (0 => int_pressure_xlsb_ap_vld, others => '0');
+                    when ADDR_TEMPERATURE_MSB_DATA_0 =>
+                        rdata_data <= RESIZE(int_temperature_msb(31 downto 0), 32);
+                    when ADDR_TEMPERATURE_MSB_CTRL =>
+                        rdata_data <= (0 => int_temperature_msb_ap_vld, others => '0');
+                    when ADDR_TEMPERATURE_LSB_DATA_0 =>
+                        rdata_data <= RESIZE(int_temperature_lsb(31 downto 0), 32);
+                    when ADDR_TEMPERATURE_LSB_CTRL =>
+                        rdata_data <= (0 => int_temperature_lsb_ap_vld, others => '0');
+                    when ADDR_TEMPERATURE_XLSB_DATA_0 =>
+                        rdata_data <= RESIZE(int_temperature_xlsb(31 downto 0), 32);
+                    when ADDR_TEMPERATURE_XLSB_CTRL =>
+                        rdata_data <= (0 => int_temperature_xlsb_ap_vld, others => '0');
+                    when ADDR_STATESETUP_DATA_0 =>
+                        rdata_data <= RESIZE(int_stateSetUp(31 downto 0), 32);
+                    when ADDR_STATESETUP_CTRL =>
+                        rdata_data <= (0 => int_stateSetUp_ap_vld, others => '0');
+                    when ADDR_STATE_DATA_0 =>
+                        rdata_data <= RESIZE(int_state(31 downto 0), 32);
+                    when ADDR_STATE_CTRL =>
+                        rdata_data <= (0 => int_state_ap_vld, others => '0');
+                    when ADDR_STATEDATAREADS_DATA_0 =>
+                        rdata_data <= RESIZE(int_stateDataReads(31 downto 0), 32);
+                    when ADDR_STATEDATAREADS_CTRL =>
+                        rdata_data <= (0 => int_stateDataReads_ap_vld, others => '0');
+                    when ADDR_DIG_T1_DATA_0 =>
+                        rdata_data <= RESIZE(int_dig_T1(15 downto 0), 32);
+                    when ADDR_DIG_T2_DATA_0 =>
+                        rdata_data <= RESIZE(int_dig_T2(15 downto 0), 32);
+                    when ADDR_DIG_T3_DATA_0 =>
+                        rdata_data <= RESIZE(int_dig_T3(15 downto 0), 32);
+                    when ADDR_DIG_P1_DATA_0 =>
+                        rdata_data <= RESIZE(int_dig_P1(15 downto 0), 32);
+                    when ADDR_DIG_P2_DATA_0 =>
+                        rdata_data <= RESIZE(int_dig_P2(15 downto 0), 32);
+                    when ADDR_DIG_P3_DATA_0 =>
+                        rdata_data <= RESIZE(int_dig_P3(15 downto 0), 32);
+                    when ADDR_DIG_P4_DATA_0 =>
+                        rdata_data <= RESIZE(int_dig_P4(15 downto 0), 32);
+                    when ADDR_DIG_P5_DATA_0 =>
+                        rdata_data <= RESIZE(int_dig_P5(15 downto 0), 32);
+                    when ADDR_DIG_P6_DATA_0 =>
+                        rdata_data <= RESIZE(int_dig_P6(15 downto 0), 32);
+                    when ADDR_DIG_P7_DATA_0 =>
+                        rdata_data <= RESIZE(int_dig_P7(15 downto 0), 32);
+                    when ADDR_DIG_P8_DATA_0 =>
+                        rdata_data <= RESIZE(int_dig_P8(15 downto 0), 32);
+                    when ADDR_DIG_P9_DATA_0 =>
+                        rdata_data <= RESIZE(int_dig_P9(15 downto 0), 32);
+                    when ADDR_PRESSURERAW_DATA_0 =>
+                        rdata_data <= RESIZE(int_pressureRaw(31 downto 0), 32);
+                    when ADDR_PRESSURERAW_CTRL =>
+                        rdata_data <= (0 => int_pressureRaw_ap_vld, others => '0');
+                    when ADDR_TEMPERATURERAW_DATA_0 =>
+                        rdata_data <= RESIZE(int_temperatureRaw(31 downto 0), 32);
+                    when ADDR_TEMPERATURERAW_CTRL =>
+                        rdata_data <= (0 => int_temperatureRaw_ap_vld, others => '0');
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -273,6 +513,18 @@ begin
 -- ----------------------- Register logic ----------------
     interrupt            <= int_gie and (int_isr(0) or int_isr(1));
     ap_start             <= int_ap_start;
+    dig_T1               <= STD_LOGIC_VECTOR(int_dig_T1);
+    dig_T2               <= STD_LOGIC_VECTOR(int_dig_T2);
+    dig_T3               <= STD_LOGIC_VECTOR(int_dig_T3);
+    dig_P1               <= STD_LOGIC_VECTOR(int_dig_P1);
+    dig_P2               <= STD_LOGIC_VECTOR(int_dig_P2);
+    dig_P3               <= STD_LOGIC_VECTOR(int_dig_P3);
+    dig_P4               <= STD_LOGIC_VECTOR(int_dig_P4);
+    dig_P5               <= STD_LOGIC_VECTOR(int_dig_P5);
+    dig_P6               <= STD_LOGIC_VECTOR(int_dig_P6);
+    dig_P7               <= STD_LOGIC_VECTOR(int_dig_P7);
+    dig_P8               <= STD_LOGIC_VECTOR(int_dig_P8);
+    dig_P9               <= STD_LOGIC_VECTOR(int_dig_P9);
 
     process (ACLK)
     begin
@@ -478,6 +730,362 @@ begin
                     int_pressure_xlsb_ap_vld <= '1';
                 elsif (ar_hs = '1' and raddr = ADDR_PRESSURE_XLSB_CTRL) then
                     int_pressure_xlsb_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temperature_msb <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (temperature_msb_ap_vld = '1') then
+                    int_temperature_msb <= UNSIGNED(temperature_msb); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temperature_msb_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (temperature_msb_ap_vld = '1') then
+                    int_temperature_msb_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TEMPERATURE_MSB_CTRL) then
+                    int_temperature_msb_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temperature_lsb <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (temperature_lsb_ap_vld = '1') then
+                    int_temperature_lsb <= UNSIGNED(temperature_lsb); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temperature_lsb_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (temperature_lsb_ap_vld = '1') then
+                    int_temperature_lsb_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TEMPERATURE_LSB_CTRL) then
+                    int_temperature_lsb_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temperature_xlsb <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (temperature_xlsb_ap_vld = '1') then
+                    int_temperature_xlsb <= UNSIGNED(temperature_xlsb); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temperature_xlsb_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (temperature_xlsb_ap_vld = '1') then
+                    int_temperature_xlsb_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TEMPERATURE_XLSB_CTRL) then
+                    int_temperature_xlsb_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_stateSetUp <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (stateSetUp_ap_vld = '1') then
+                    int_stateSetUp <= UNSIGNED(stateSetUp); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_stateSetUp_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (stateSetUp_ap_vld = '1') then
+                    int_stateSetUp_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_STATESETUP_CTRL) then
+                    int_stateSetUp_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_state <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (state_ap_vld = '1') then
+                    int_state <= UNSIGNED(state); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_state_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (state_ap_vld = '1') then
+                    int_state_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_STATE_CTRL) then
+                    int_state_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_stateDataReads <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (stateDataReads_ap_vld = '1') then
+                    int_stateDataReads <= UNSIGNED(stateDataReads); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_stateDataReads_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (stateDataReads_ap_vld = '1') then
+                    int_stateDataReads_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_STATEDATAREADS_CTRL) then
+                    int_stateDataReads_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DIG_T1_DATA_0) then
+                    int_dig_T1(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_T1(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DIG_T2_DATA_0) then
+                    int_dig_T2(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_T2(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DIG_T3_DATA_0) then
+                    int_dig_T3(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_T3(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DIG_P1_DATA_0) then
+                    int_dig_P1(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P1(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DIG_P2_DATA_0) then
+                    int_dig_P2(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P2(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DIG_P3_DATA_0) then
+                    int_dig_P3(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P3(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DIG_P4_DATA_0) then
+                    int_dig_P4(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P4(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DIG_P5_DATA_0) then
+                    int_dig_P5(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P5(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DIG_P6_DATA_0) then
+                    int_dig_P6(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P6(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DIG_P7_DATA_0) then
+                    int_dig_P7(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P7(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DIG_P8_DATA_0) then
+                    int_dig_P8(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P8(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_DIG_P9_DATA_0) then
+                    int_dig_P9(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P9(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_pressureRaw <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (pressureRaw_ap_vld = '1') then
+                    int_pressureRaw <= UNSIGNED(pressureRaw); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_pressureRaw_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (pressureRaw_ap_vld = '1') then
+                    int_pressureRaw_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_PRESSURERAW_CTRL) then
+                    int_pressureRaw_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temperatureRaw <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (temperatureRaw_ap_vld = '1') then
+                    int_temperatureRaw <= UNSIGNED(temperatureRaw); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temperatureRaw_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (temperatureRaw_ap_vld = '1') then
+                    int_temperatureRaw_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TEMPERATURERAW_CTRL) then
+                    int_temperatureRaw_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;

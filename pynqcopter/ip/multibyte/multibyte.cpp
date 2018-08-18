@@ -69,24 +69,58 @@ void delay_until_ms(){
 }
 
 //sensor/pid ip core
-void multibyte(volatile int iic[4096], uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb) {
+void multibyte(volatile int iic[4096], 
+	uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb,
+	uint32_t& temperature_msb, uint32_t& temperature_lsb, uint32_t& temperature_xlsb,  
+	int& stateSetUp,  int& state, int& stateDataReads,
+	uint16_t dig_T1, uint16_t dig_T2, uint16_t dig_T3, 
+	uint16_t dig_P1, uint16_t dig_P2, uint16_t dig_P3, 
+	uint16_t dig_P4, uint16_t dig_P5, uint16_t dig_P6,
+	uint16_t dig_P7, uint16_t dig_P8, uint16_t dig_P9, 
+	uint32_t& pressureRaw, uint32_t& temperatureRaw ) 
+{
 
 	//SETUP PRAGMAS
 	#pragma HLS INTERFACE s_axilite port=return bundle=CTRL /*use ap_ctrl_none for autorestart*/
 	#pragma HLS INTERFACE m_axi port=iic bundle=CTRL
+
 	#pragma HLS INTERFACE s_axilite port=pressure_msb bundle=CTRL
 	#pragma HLS INTERFACE s_axilite port=pressure_lsb bundle=CTRL
 	#pragma HLS INTERFACE s_axilite port=pressure_xlsb bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=temperature_msb bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=temperature_lsb bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=temperature_xlsb bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=stateSetUp bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=state bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=stateDataReads bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=dig_T1 bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=dig_T2 bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=dig_T3 bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=dig_P1 bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=dig_P2 bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=dig_P3 bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=dig_P4 bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=dig_P5 bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=dig_P6 bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=dig_P7 bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=dig_P8 bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=dig_P9 bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=pressureRaw bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=temperatureRaw bundle=CTRL
 
 	//initialize variables
-	bool calibrationSuccess = true;
-	int sensorData[3] = {};
+	bool setupSuccess = true;
+	uint16_t trimmingData[24] = {};
+	int sensorData[6] = {};
+	stateSetUp = 0;
 
 	//only undergo setup on first run
 	static bool firstSample = true;
 	#pragma HLS RESET variable=firstSample
-	if (firstSample == true) {
-		//IIC CORE INITIALIZATION AND SETUP
+	if (firstSample == true) 
+	{
+//IIC CORE INITIALIZATION AND SETUP
+		stateSetUp = 100;
 		//set rx fifo depth to max
 		iic[IIC_INDEX + RX_FIFO_PIRQ] = 0xF;
 
@@ -96,7 +130,7 @@ void multibyte(volatile int iic[4096], uint32_t& pressure_msb, uint32_t& pressur
 		//enable the AXI IIC, remove the TX_FIFO reset, disable the general call
 		iic[IIC_INDEX + CONTROL_REG] = 0x1;
 
-		//9DOF SENSOR CALIBRATION
+		//BME280 SENSOR CALIBRATION
 		//1. get chip id
 		iic[IIC_INDEX + TX_FIFO] = 0x1EC; //change to BME280 address
 		iic[IIC_INDEX + TX_FIFO] = 0xD0;
@@ -104,7 +138,6 @@ void multibyte(volatile int iic[4096], uint32_t& pressure_msb, uint32_t& pressur
 		delay_until_ms<50>();
 		iic[IIC_INDEX + RX_FIFO];
 
-		//2. SWITCH TO NORMAL MODE
 		//WRITE TO RESET REGISTER ON BAROMETER SENSOR
 		iic[IIC_INDEX+TX_FIFO] = 0x1EC;
 		iic[IIC_INDEX+TX_FIFO] = 0xE0;
@@ -121,20 +154,21 @@ void multibyte(volatile int iic[4096], uint32_t& pressure_msb, uint32_t& pressur
 		iic[IIC_INDEX+TX_FIFO] = 0x1EC;
 		iic[IIC_INDEX+TX_FIFO] = 0xF4; 
 		iic[IIC_INDEX+TX_FIFO] = 0x17; 
-		delay_until_ms<50>();
+		delay_until_ms<10>();
 	
 	//CONFIGURE REGISTER SETTINGS: time sampling, time constant IIR Filter
 		iic[IIC_INDEX+TX_FIFO] = 0x1EC;
 		iic[IIC_INDEX+TX_FIFO] = 0xF5; 
 		iic[IIC_INDEX+TX_FIFO] = 0x24;
-		delay_until_ms<50>();
+
 
 		//4. want to: keep checking if the system is back up by checking to see if the chip ID can be read
 		//   actually: waiting one second for restart to complete, and clearing fifo again
 		delay_until_ms<1750>();
 		iic[IIC_INDEX + TX_FIFO] = 0x1ED;
-		if (iic[IIC_INDEX + RX_FIFO] != 96) { //CHIP ID DECIMAL CONVERSION of 0x60
-			calibrationSuccess = 13; 
+		if (iic[IIC_INDEX + RX_FIFO] != 96) 
+		{ //CHIP ID DECIMAL CONVERSION of 0x60
+			setupSuccess = 13; 
 		}
 		delay_until_ms<50>();
 
@@ -144,34 +178,83 @@ void multibyte(volatile int iic[4096], uint32_t& pressure_msb, uint32_t& pressur
 
 	//how to ensure sensor was properly calibrated?
 	//if the sensor was properly calibrated, return appropriate data; otherwise, return 0's
-	if (calibrationSuccess) {
+	if (setupSuccess) 
+	{
 		//SEND DEVICE, DATA ADDRESS, REPEATED ADDRESS, adnd AMOUNT OF DATA TO RECEIVE
 		iic[IIC_INDEX + TX_FIFO] = 0x1EC;
-		iic[IIC_INDEX + TX_FIFO] = 0xF7;
+		iic[IIC_INDEX + TX_FIFO] = 0x88;
 		iic[IIC_INDEX + TX_FIFO] = 0x1ED;
-		iic[IIC_INDEX + TX_FIFO] = 0x203;
-		delay_until_ms<10>(); //sample rate
-
+		iic[IIC_INDEX + TX_FIFO] = 0x224; //read 24 bytes
+		//delay_until_ms<10>(); //sample rate
+		
+		state = 10;
 		//READ RECIEVED DATA
-		for (int index = 0; index < 3; index++) {
+		for (int index = 0; index < 24; index++) 
+		{
+			trimmingData[index] = iic[IIC_INDEX + RX_FIFO];
+		}
+	} 
+	else 
+	{
+		//delay_until_ms<10>(); //sample rate 
+		state = 1;  //check if it enters "else" first time around
+		//READ RECIEVED DATA
+		for (int index = 0; index < 24; index++) 
+		{
+			trimmingData[index] = 0;
+		}
+	}
+
+	dig_T1 = trimmingData[1] << 8 | trimmingData[0];
+	dig_T2 = trimmingData[3] << 8 | trimmingData[2];
+	dig_T3 = trimmingData[5] << 8 | trimmingData[4];
+	dig_P1 = trimmingData[7] << 8 | trimmingData[6];
+	dig_P2 = trimmingData[9] << 8 | trimmingData[8];
+	dig_P3 = trimmingData[11] << 8 | trimmingData[10];
+	dig_P4 = trimmingData[13] << 8 | trimmingData[12];
+	dig_P5 = trimmingData[15] << 8 | trimmingData[14];
+	dig_P6 = trimmingData[17] << 8 | trimmingData[16];
+	dig_P7 = trimmingData[19] << 8 | trimmingData[18];
+	dig_P8 = trimmingData[21] << 8 | trimmingData[20];
+	dig_P9 = trimmingData[23] << 8 | trimmingData[22];
+	
+	delay_until_ms<10>();
+
+	if(state == 10)
+	{
+		//SEND DEVICE, DATA ADDRESS, REPEATED ADDRESS, and AMOUNT OF DATA TO RECEIVE
+		iic[IIC_INDEX + TX_FIFO] = 0x1EC;
+		iic[IIC_INDEX + TX_FIFO] = 0xF7; //pressure msb to temperature xlsb
+		iic[IIC_INDEX + TX_FIFO] = 0x1ED;
+		iic[IIC_INDEX + TX_FIFO] = 0x206; //read 6 bytes
+		delay_until_ms<10>(); //sample rate
+		
+		stateDataReads = 10;
+		//READ RECIEVED DATA
+		for (int index = 0; index < 6; index++) 
+		{
 			sensorData[index] = iic[IIC_INDEX + RX_FIFO];
 		}
-	} else {
-		delay_until_ms<10>(); //sample rate
-
+	} 
+	else 
+	{
+		delay_until_ms<10>(); //sample rate 
+		stateDataReads = 1;  //check if it enters "else" first time around
 		//READ RECIEVED DATA
-		for (int index = 0; index < 3; index++) {
+		for (int index = 0; index < 6; index++) 
+		{
 			sensorData[index] = 0;
 		}
 	}
 
-	//format raw values to euler angles
-	//int16_t x, y, z;
-	//uint32_t pressure_msb, pressure_lsb, pressure_xlsb;
+	pressure_msb = sensorData[0];
+	pressure_lsb = sensorData[1];
+	pressure_xlsb = sensorData[2];
+	temperature_msb = sensorData[3];	
+	temperature_lsb = sensorData[4];
+	temperature_xlsb = sensorData[5];
 
-	pressure_msb = (uint32_t)sensorData[0];
-	pressure_lsb = (uint32_t)sensorData[1];
-	pressure_xlsb = (uint32_t)sensorData[2];
-
+	pressureRaw = ((sensorData[0] << 12) | (sensorData[1] << 4) | (sensorData[2] >> 4));
+	temperatureRaw = ((sensorData[3] << 12) | (sensorData[4] << 4) | (sensorData[5] >> 4));
 
 }

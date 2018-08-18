@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "multibyte"
 set Version     "1.0"
 set DisplayName "Multibyte"
-set Revision    "1808171405"
+set Revision    "1808181314"
 set Description "HLS Core: Multibyte Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -86,9 +86,9 @@ set Interfaces {
         mode "slave"
         port_prefix "s_axi_CTRL"
         param_prefix "C_S_AXI_CTRL"
-        addr_bits "6"
-        port_width "AWADDR 6 WDATA 32 WSTRB 4 ARADDR 6 RDATA 32"
-        registers {{0x00 CTRL       RW   0x0 "Control signals" {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 24 RESERVED_2 R 0 "Reserved.  0s on read." }}} {0x04 GIER       RW   0x0 "Global Interrupt Enable Register" {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }} } {0x08 IP_IER     RW   0x0 "IP Interrupt Enable Register" {{ 0 1 CHAN0_INT_EN RW 0 "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled." } { 1 1 CHAN1_INT_EN RW 0 "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled." } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x0c IP_ISR     RW   0x0 "IP Interrupt Status Register" {{ 0 1 CHAN0_INT_ST RTOW 0 "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup" } { 1 1 CHAN1_INT_ST RTOW 0 "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup" } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x10 pressure_msb R 0x0 "Data signal of pressure_msb" {{0 32 pressure_msb R 0 "Bit 31 to 0 Data signal of pressure_msb"}}} {0x14 pressure_msb_ctrl R 0x0 "Control signal of pressure_msb" {{0 1 pressure_msb_ap_vld R 0 "Control signal pressure_msb_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x18 pressure_lsb R 0x0 "Data signal of pressure_lsb" {{0 32 pressure_lsb R 0 "Bit 31 to 0 Data signal of pressure_lsb"}}} {0x1c pressure_lsb_ctrl R 0x0 "Control signal of pressure_lsb" {{0 1 pressure_lsb_ap_vld R 0 "Control signal pressure_lsb_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x20 pressure_xlsb R 0x0 "Data signal of pressure_xlsb" {{0 32 pressure_xlsb R 0 "Bit 31 to 0 Data signal of pressure_xlsb"}}} {0x24 pressure_xlsb_ctrl R 0x0 "Control signal of pressure_xlsb" {{0 1 pressure_xlsb_ap_vld R 0 "Control signal pressure_xlsb_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}}}
+        addr_bits "8"
+        port_width "AWADDR 8 WDATA 32 WSTRB 4 ARADDR 8 RDATA 32"
+        registers {{0x00 CTRL       RW   0x0 "Control signals" {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 24 RESERVED_2 R 0 "Reserved.  0s on read." }}} {0x04 GIER       RW   0x0 "Global Interrupt Enable Register" {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }} } {0x08 IP_IER     RW   0x0 "IP Interrupt Enable Register" {{ 0 1 CHAN0_INT_EN RW 0 "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled." } { 1 1 CHAN1_INT_EN RW 0 "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled." } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x0c IP_ISR     RW   0x0 "IP Interrupt Status Register" {{ 0 1 CHAN0_INT_ST RTOW 0 "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup" } { 1 1 CHAN1_INT_ST RTOW 0 "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup" } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x10 pressure_msb R 0x0 "Data signal of pressure_msb" {{0 32 pressure_msb R 0 "Bit 31 to 0 Data signal of pressure_msb"}}} {0x14 pressure_msb_ctrl R 0x0 "Control signal of pressure_msb" {{0 1 pressure_msb_ap_vld R 0 "Control signal pressure_msb_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x18 pressure_lsb R 0x0 "Data signal of pressure_lsb" {{0 32 pressure_lsb R 0 "Bit 31 to 0 Data signal of pressure_lsb"}}} {0x1c pressure_lsb_ctrl R 0x0 "Control signal of pressure_lsb" {{0 1 pressure_lsb_ap_vld R 0 "Control signal pressure_lsb_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x20 pressure_xlsb R 0x0 "Data signal of pressure_xlsb" {{0 32 pressure_xlsb R 0 "Bit 31 to 0 Data signal of pressure_xlsb"}}} {0x24 pressure_xlsb_ctrl R 0x0 "Control signal of pressure_xlsb" {{0 1 pressure_xlsb_ap_vld R 0 "Control signal pressure_xlsb_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x28 temperature_msb R 0x0 "Data signal of temperature_msb" {{0 32 temperature_msb R 0 "Bit 31 to 0 Data signal of temperature_msb"}}} {0x2c temperature_msb_ctrl R 0x0 "Control signal of temperature_msb" {{0 1 temperature_msb_ap_vld R 0 "Control signal temperature_msb_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x30 temperature_lsb R 0x0 "Data signal of temperature_lsb" {{0 32 temperature_lsb R 0 "Bit 31 to 0 Data signal of temperature_lsb"}}} {0x34 temperature_lsb_ctrl R 0x0 "Control signal of temperature_lsb" {{0 1 temperature_lsb_ap_vld R 0 "Control signal temperature_lsb_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x38 temperature_xlsb R 0x0 "Data signal of temperature_xlsb" {{0 32 temperature_xlsb R 0 "Bit 31 to 0 Data signal of temperature_xlsb"}}} {0x3c temperature_xlsb_ctrl R 0x0 "Control signal of temperature_xlsb" {{0 1 temperature_xlsb_ap_vld R 0 "Control signal temperature_xlsb_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x40 stateSetUp R 0x0 "Data signal of stateSetUp" {{0 32 stateSetUp R 0 "Bit 31 to 0 Data signal of stateSetUp"}}} {0x44 stateSetUp_ctrl R 0x0 "Control signal of stateSetUp" {{0 1 stateSetUp_ap_vld R 0 "Control signal stateSetUp_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x48 state R 0x0 "Data signal of state" {{0 32 state R 0 "Bit 31 to 0 Data signal of state"}}} {0x4c state_ctrl R 0x0 "Control signal of state" {{0 1 state_ap_vld R 0 "Control signal state_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x50 stateDataReads R 0x0 "Data signal of stateDataReads" {{0 32 stateDataReads R 0 "Bit 31 to 0 Data signal of stateDataReads"}}} {0x54 stateDataReads_ctrl R 0x0 "Control signal of stateDataReads" {{0 1 stateDataReads_ap_vld R 0 "Control signal stateDataReads_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x58 dig_T1 W 0x0 "Data signal of dig_T1" {{0 16 dig_T1 W 0 "Bit 15 to 0 Data signal of dig_T1"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0x60 dig_T2 W 0x0 "Data signal of dig_T2" {{0 16 dig_T2 W 0 "Bit 15 to 0 Data signal of dig_T2"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0x68 dig_T3 W 0x0 "Data signal of dig_T3" {{0 16 dig_T3 W 0 "Bit 15 to 0 Data signal of dig_T3"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0x70 dig_P1 W 0x0 "Data signal of dig_P1" {{0 16 dig_P1 W 0 "Bit 15 to 0 Data signal of dig_P1"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0x78 dig_P2 W 0x0 "Data signal of dig_P2" {{0 16 dig_P2 W 0 "Bit 15 to 0 Data signal of dig_P2"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0x80 dig_P3 W 0x0 "Data signal of dig_P3" {{0 16 dig_P3 W 0 "Bit 15 to 0 Data signal of dig_P3"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0x88 dig_P4 W 0x0 "Data signal of dig_P4" {{0 16 dig_P4 W 0 "Bit 15 to 0 Data signal of dig_P4"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0x90 dig_P5 W 0x0 "Data signal of dig_P5" {{0 16 dig_P5 W 0 "Bit 15 to 0 Data signal of dig_P5"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0x98 dig_P6 W 0x0 "Data signal of dig_P6" {{0 16 dig_P6 W 0 "Bit 15 to 0 Data signal of dig_P6"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0xa0 dig_P7 W 0x0 "Data signal of dig_P7" {{0 16 dig_P7 W 0 "Bit 15 to 0 Data signal of dig_P7"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0xa8 dig_P8 W 0x0 "Data signal of dig_P8" {{0 16 dig_P8 W 0 "Bit 15 to 0 Data signal of dig_P8"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0xb0 dig_P9 W 0x0 "Data signal of dig_P9" {{0 16 dig_P9 W 0 "Bit 15 to 0 Data signal of dig_P9"} {16 16 RESERVED R 0 "Reserved.  0s on read."}}} {0xb8 pressureRaw R 0x0 "Data signal of pressureRaw" {{0 32 pressureRaw R 0 "Bit 31 to 0 Data signal of pressureRaw"}}} {0xbc pressureRaw_ctrl R 0x0 "Control signal of pressureRaw" {{0 1 pressureRaw_ap_vld R 0 "Control signal pressureRaw_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0xc0 temperatureRaw R 0x0 "Data signal of temperatureRaw" {{0 32 temperatureRaw R 0 "Bit 31 to 0 Data signal of temperatureRaw"}}} {0xc4 temperatureRaw_ctrl R 0x0 "Control signal of temperatureRaw" {{0 1 temperatureRaw_ap_vld R 0 "Control signal temperatureRaw_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}}}
         memories ""
         ctype {
             AWVALID {
@@ -153,8 +153,8 @@ set Interfaces {
             }
             AWADDR {
                 Type "integer unsigned"
-                Width "6"
-                Bits "6"
+                Width "8"
+                Bits "8"
             }
             WDATA {
                 Type "integer unsigned"
@@ -168,8 +168,8 @@ set Interfaces {
             }
             ARADDR {
                 Type "integer unsigned"
-                Width "6"
-                Bits "6"
+                Width "8"
+                Bits "8"
             }
             RDATA {
                 Type "integer unsigned"
@@ -1919,7 +1919,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_ver match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 1000042 II x}
+set user_parameters_list {clk_period 4 machine 64 combinational 0 latency 2000279 II x}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]

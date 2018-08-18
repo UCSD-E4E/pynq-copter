@@ -33227,24 +33227,58 @@ _ssdm_op_SpecProtocol(0, "");
 }
 
 
-void multibyte(volatile int iic[4096], uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb) {_ssdm_SpecArrayDimSize(iic,4096);
+void multibyte(volatile int iic[4096],
+ uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb,
+ uint32_t& temperature_msb, uint32_t& temperature_lsb, uint32_t& temperature_xlsb,
+ int& stateSetUp, int& state, int& stateDataReads,
+ uint16_t dig_T1, uint16_t dig_T2, uint16_t dig_T3,
+ uint16_t dig_P1, uint16_t dig_P2, uint16_t dig_P3,
+ uint16_t dig_P4, uint16_t dig_P5, uint16_t dig_P6,
+ uint16_t dig_P7, uint16_t dig_P8, uint16_t dig_P9,
+ uint32_t& pressureRaw, uint32_t& temperatureRaw )
+{_ssdm_SpecArrayDimSize(iic,4096);
 
 
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(iic, "m_axi", 0, 0, "", 0, 0, "CTRL", "", "", 16, 16, 16, 16, "", "");
+
 _ssdm_op_SpecInterface(pressure_msb, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(pressure_lsb, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(pressure_xlsb, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(temperature_msb, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(temperature_lsb, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(temperature_xlsb, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(stateSetUp, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(state, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(stateDataReads, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(dig_T1, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(dig_T2, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(dig_T3, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(dig_P1, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(dig_P2, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(dig_P3, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(dig_P4, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(dig_P5, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(dig_P6, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(dig_P7, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(dig_P8, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(dig_P9, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(pressureRaw, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(temperatureRaw, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
 
 
- bool calibrationSuccess = true;
- int sensorData[3] = {};
+ bool setupSuccess = true;
+ uint16_t trimmingData[24] = {};
+ int sensorData[6] = {};
+ stateSetUp = 0;
 
 
  static bool firstSample = true;
 _ssdm_op_SpecReset( firstSample, 1,  "");
- if (firstSample == true) {
+ if (firstSample == true)
+ {
 
+  stateSetUp = 100;
 
   iic[(0x40001000/4) + (0x120/4)] = 0xF;
 
@@ -33263,7 +33297,6 @@ _ssdm_op_SpecReset( firstSample, 1,  "");
   iic[(0x40001000/4) + (0x10C/4)];
 
 
-
   iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
   iic[(0x40001000/4)+(0x108/4)] = 0xE0;
   iic[(0x40001000/4)+(0x108/4)] = 0xB6;
@@ -33279,20 +33312,21 @@ _ssdm_op_SpecReset( firstSample, 1,  "");
   iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
   iic[(0x40001000/4)+(0x108/4)] = 0xF4;
   iic[(0x40001000/4)+(0x108/4)] = 0x17;
-  delay_until_ms<50>();
+  delay_until_ms<10>();
 
 
   iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
   iic[(0x40001000/4)+(0x108/4)] = 0xF5;
   iic[(0x40001000/4)+(0x108/4)] = 0x24;
-  delay_until_ms<50>();
+
 
 
 
   delay_until_ms<1750>();
   iic[(0x40001000/4) + (0x108/4)] = 0x1ED;
-  if (iic[(0x40001000/4) + (0x10C/4)] != 96) {
-   calibrationSuccess = 13;
+  if (iic[(0x40001000/4) + (0x10C/4)] != 96)
+  {
+   setupSuccess = 13;
   }
   delay_until_ms<50>();
 
@@ -33302,34 +33336,83 @@ _ssdm_op_SpecReset( firstSample, 1,  "");
 
 
 
- if (calibrationSuccess) {
+ if (setupSuccess)
+ {
+
+  iic[(0x40001000/4) + (0x108/4)] = 0x1EC;
+  iic[(0x40001000/4) + (0x108/4)] = 0x88;
+  iic[(0x40001000/4) + (0x108/4)] = 0x1ED;
+  iic[(0x40001000/4) + (0x108/4)] = 0x224;
+
+
+  state = 10;
+
+  for (int index = 0; index < 24; index++)
+  {
+   trimmingData[index] = iic[(0x40001000/4) + (0x10C/4)];
+  }
+ }
+ else
+ {
+
+  state = 1;
+
+  for (int index = 0; index < 24; index++)
+  {
+   trimmingData[index] = 0;
+  }
+ }
+
+ dig_T1 = trimmingData[1] << 8 | trimmingData[0];
+ dig_T2 = trimmingData[3] << 8 | trimmingData[2];
+ dig_T3 = trimmingData[5] << 8 | trimmingData[4];
+ dig_P1 = trimmingData[7] << 8 | trimmingData[6];
+ dig_P2 = trimmingData[9] << 8 | trimmingData[8];
+ dig_P3 = trimmingData[11] << 8 | trimmingData[10];
+ dig_P4 = trimmingData[13] << 8 | trimmingData[12];
+ dig_P5 = trimmingData[15] << 8 | trimmingData[14];
+ dig_P6 = trimmingData[17] << 8 | trimmingData[16];
+ dig_P7 = trimmingData[19] << 8 | trimmingData[18];
+ dig_P8 = trimmingData[21] << 8 | trimmingData[20];
+ dig_P9 = trimmingData[23] << 8 | trimmingData[22];
+
+ delay_until_ms<10>();
+
+ if(state == 10)
+ {
 
   iic[(0x40001000/4) + (0x108/4)] = 0x1EC;
   iic[(0x40001000/4) + (0x108/4)] = 0xF7;
   iic[(0x40001000/4) + (0x108/4)] = 0x1ED;
-  iic[(0x40001000/4) + (0x108/4)] = 0x203;
+  iic[(0x40001000/4) + (0x108/4)] = 0x206;
   delay_until_ms<10>();
 
+  stateDataReads = 10;
 
-  for (int index = 0; index < 3; index++) {
+  for (int index = 0; index < 6; index++)
+  {
    sensorData[index] = iic[(0x40001000/4) + (0x10C/4)];
   }
- } else {
+ }
+ else
+ {
   delay_until_ms<10>();
+  stateDataReads = 1;
 
-
-  for (int index = 0; index < 3; index++) {
+  for (int index = 0; index < 6; index++)
+  {
    sensorData[index] = 0;
   }
  }
 
+ pressure_msb = sensorData[0];
+ pressure_lsb = sensorData[1];
+ pressure_xlsb = sensorData[2];
+ temperature_msb = sensorData[3];
+ temperature_lsb = sensorData[4];
+ temperature_xlsb = sensorData[5];
 
-
-
-
- pressure_msb = (uint32_t)sensorData[0];
- pressure_lsb = (uint32_t)sensorData[1];
- pressure_xlsb = (uint32_t)sensorData[2];
-
+ pressureRaw = ((sensorData[0] << 12) | (sensorData[1] << 4) | (sensorData[2] >> 4));
+ temperatureRaw = ((sensorData[3] << 12) | (sensorData[4] << 4) | (sensorData[5] >> 4));
 
 }

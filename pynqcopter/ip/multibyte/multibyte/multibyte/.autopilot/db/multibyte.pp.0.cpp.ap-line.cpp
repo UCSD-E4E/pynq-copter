@@ -33207,24 +33207,58 @@ void delay_until_ms(){
 }
 #pragma empty_line
 #pragma empty_line
-void multibyte(volatile int iic[4096], uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb) {
+void multibyte(volatile int iic[4096],
+ uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb,
+ uint32_t& temperature_msb, uint32_t& temperature_lsb, uint32_t& temperature_xlsb,
+ int& stateSetUp, int& state, int& stateDataReads,
+ uint16_t dig_T1, uint16_t dig_T2, uint16_t dig_T3,
+ uint16_t dig_P1, uint16_t dig_P2, uint16_t dig_P3,
+ uint16_t dig_P4, uint16_t dig_P5, uint16_t dig_P6,
+ uint16_t dig_P7, uint16_t dig_P8, uint16_t dig_P9,
+ uint32_t& pressureRaw, uint32_t& temperatureRaw )
+{
 #pragma empty_line
 #pragma empty_line
 #pragma HLS INTERFACE s_axilite port=return bundle=CTRL
 #pragma HLS INTERFACE m_axi port=iic bundle=CTRL
+#pragma empty_line
 #pragma HLS INTERFACE s_axilite port=pressure_msb bundle=CTRL
 #pragma HLS INTERFACE s_axilite port=pressure_lsb bundle=CTRL
 #pragma HLS INTERFACE s_axilite port=pressure_xlsb bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=temperature_msb bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=temperature_lsb bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=temperature_xlsb bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=stateSetUp bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=state bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=stateDataReads bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=dig_T1 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=dig_T2 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=dig_T3 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=dig_P1 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=dig_P2 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=dig_P3 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=dig_P4 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=dig_P5 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=dig_P6 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=dig_P7 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=dig_P8 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=dig_P9 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=pressureRaw bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=temperatureRaw bundle=CTRL
 #pragma empty_line
 #pragma empty_line
- bool calibrationSuccess = true;
- int sensorData[3] = {};
+ bool setupSuccess = true;
+ uint16_t trimmingData[24] = {};
+ int sensorData[6] = {};
+ stateSetUp = 0;
 #pragma empty_line
 #pragma empty_line
  static bool firstSample = true;
 #pragma HLS RESET variable=firstSample
- if (firstSample == true) {
+ if (firstSample == true)
+ {
 #pragma empty_line
+  stateSetUp = 100;
 #pragma empty_line
   iic[(0x40001000/4) + (0x120/4)] = 0xF;
 #pragma empty_line
@@ -33243,7 +33277,6 @@ void multibyte(volatile int iic[4096], uint32_t& pressure_msb, uint32_t& pressur
   iic[(0x40001000/4) + (0x10C/4)];
 #pragma empty_line
 #pragma empty_line
-#pragma empty_line
   iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
   iic[(0x40001000/4)+(0x108/4)] = 0xE0;
   iic[(0x40001000/4)+(0x108/4)] = 0xB6;
@@ -33259,20 +33292,21 @@ void multibyte(volatile int iic[4096], uint32_t& pressure_msb, uint32_t& pressur
   iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
   iic[(0x40001000/4)+(0x108/4)] = 0xF4;
   iic[(0x40001000/4)+(0x108/4)] = 0x17;
-  delay_until_ms<50>();
+  delay_until_ms<10>();
 #pragma empty_line
 #pragma empty_line
   iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
   iic[(0x40001000/4)+(0x108/4)] = 0xF5;
   iic[(0x40001000/4)+(0x108/4)] = 0x24;
-  delay_until_ms<50>();
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
   delay_until_ms<1750>();
   iic[(0x40001000/4) + (0x108/4)] = 0x1ED;
-  if (iic[(0x40001000/4) + (0x10C/4)] != 96) {
-   calibrationSuccess = 13;
+  if (iic[(0x40001000/4) + (0x10C/4)] != 96)
+  {
+   setupSuccess = 13;
   }
   delay_until_ms<50>();
 #pragma empty_line
@@ -33282,34 +33316,83 @@ void multibyte(volatile int iic[4096], uint32_t& pressure_msb, uint32_t& pressur
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
- if (calibrationSuccess) {
+ if (setupSuccess)
+ {
+#pragma empty_line
+  iic[(0x40001000/4) + (0x108/4)] = 0x1EC;
+  iic[(0x40001000/4) + (0x108/4)] = 0x88;
+  iic[(0x40001000/4) + (0x108/4)] = 0x1ED;
+  iic[(0x40001000/4) + (0x108/4)] = 0x224;
+#pragma empty_line
+#pragma empty_line
+  state = 10;
+#pragma empty_line
+  for (int index = 0; index < 24; index++)
+  {
+   trimmingData[index] = iic[(0x40001000/4) + (0x10C/4)];
+  }
+ }
+ else
+ {
+#pragma empty_line
+  state = 1;
+#pragma empty_line
+  for (int index = 0; index < 24; index++)
+  {
+   trimmingData[index] = 0;
+  }
+ }
+#pragma empty_line
+ dig_T1 = trimmingData[1] << 8 | trimmingData[0];
+ dig_T2 = trimmingData[3] << 8 | trimmingData[2];
+ dig_T3 = trimmingData[5] << 8 | trimmingData[4];
+ dig_P1 = trimmingData[7] << 8 | trimmingData[6];
+ dig_P2 = trimmingData[9] << 8 | trimmingData[8];
+ dig_P3 = trimmingData[11] << 8 | trimmingData[10];
+ dig_P4 = trimmingData[13] << 8 | trimmingData[12];
+ dig_P5 = trimmingData[15] << 8 | trimmingData[14];
+ dig_P6 = trimmingData[17] << 8 | trimmingData[16];
+ dig_P7 = trimmingData[19] << 8 | trimmingData[18];
+ dig_P8 = trimmingData[21] << 8 | trimmingData[20];
+ dig_P9 = trimmingData[23] << 8 | trimmingData[22];
+#pragma empty_line
+ delay_until_ms<10>();
+#pragma empty_line
+ if(state == 10)
+ {
 #pragma empty_line
   iic[(0x40001000/4) + (0x108/4)] = 0x1EC;
   iic[(0x40001000/4) + (0x108/4)] = 0xF7;
   iic[(0x40001000/4) + (0x108/4)] = 0x1ED;
-  iic[(0x40001000/4) + (0x108/4)] = 0x203;
+  iic[(0x40001000/4) + (0x108/4)] = 0x206;
   delay_until_ms<10>();
 #pragma empty_line
+  stateDataReads = 10;
 #pragma empty_line
-  for (int index = 0; index < 3; index++) {
+  for (int index = 0; index < 6; index++)
+  {
    sensorData[index] = iic[(0x40001000/4) + (0x10C/4)];
   }
- } else {
+ }
+ else
+ {
   delay_until_ms<10>();
+  stateDataReads = 1;
 #pragma empty_line
-#pragma empty_line
-  for (int index = 0; index < 3; index++) {
+  for (int index = 0; index < 6; index++)
+  {
    sensorData[index] = 0;
   }
  }
 #pragma empty_line
+ pressure_msb = sensorData[0];
+ pressure_lsb = sensorData[1];
+ pressure_xlsb = sensorData[2];
+ temperature_msb = sensorData[3];
+ temperature_lsb = sensorData[4];
+ temperature_xlsb = sensorData[5];
 #pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
- pressure_msb = (uint32_t)sensorData[0];
- pressure_lsb = (uint32_t)sensorData[1];
- pressure_xlsb = (uint32_t)sensorData[2];
-#pragma empty_line
+ pressureRaw = ((sensorData[0] << 12) | (sensorData[1] << 4) | (sensorData[2] >> 4));
+ temperatureRaw = ((sensorData[3] << 12) | (sensorData[4] << 4) | (sensorData[5] >> 4));
 #pragma empty_line
 }

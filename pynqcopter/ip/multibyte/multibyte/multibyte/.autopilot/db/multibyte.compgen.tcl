@@ -1,87 +1,84 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 1
-set name multibyte_mux_42_bkb
-set corename simcore_mux
-set op mux
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set din0_width 32
-set din0_signed 0
-set din1_width 32
-set din1_signed 0
-set din2_width 32
-set din2_signed 0
-set din3_width 32
-set din3_signed 0
-set din4_width 2
-set din4_signed 0
-set dout_width 32
+# Memory (RAM/ROM)  definition:
+set ID 1
+set MemName multibyte_sensorDbkb
+set CoreName ap_simcore_mem
+set PortList { 2 2 }
+set DataWd 32
+set AddrRange 6
+set AddrWd 3
+set impl_style block
+set TrueReset 0
+set HasInitializer 0
+set IsROM 0
+set ROMData {}
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.322
+set ClkPeriod 4
+set RegisteredInput 0
 if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mux] == "ap_gen_simcore_mux"} {
-eval "ap_gen_simcore_mux { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
     reset_level 1 \
     sync_rst true \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    din0_width ${din0_width} \
-    din0_signed ${din0_signed} \
-    din1_width ${din1_width} \
-    din1_signed ${din1_signed} \
-    din2_width ${din2_width} \
-    din2_signed ${din2_signed} \
-    din3_width ${din3_width} \
-    din3_signed ${din3_signed} \
-    din4_width ${din4_width} \
-    din4_signed ${din4_signed} \
-    dout_width ${dout_width} \
-}"
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 2 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    style ${impl_style} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
 } else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mux, check your AutoPilot builtin lib"
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
 }
 }
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
+  ::AP::rtl_comp_handler $MemName
 }
 
 
-set op mux
-set corename MuxnS
+set CoreName RAM
 if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_pipemux] == "::AESL_LIB_VIRTEX::xil_gen_pipemux"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_pipemux { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RAM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_RAM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
     reset_level 1 \
     sync_rst true \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    din0_width ${din0_width} \
-    din0_signed ${din0_signed} \
-    din1_width ${din1_width} \
-    din1_signed ${din1_signed} \
-    din2_width ${din2_width} \
-    din2_signed ${din2_signed} \
-    din3_width ${din3_width} \
-    din3_signed ${din3_signed} \
-    din4_width ${din4_width} \
-    din4_signed ${din4_signed} \
-    dout_width ${dout_width} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your platform lib"
-}
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 2 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    style ${impl_style} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_RAM, check your platform lib"
+  }
 }
 
 
@@ -121,6 +118,166 @@ pressure_xlsb {
 	offset 32
 	offset_end 39
 }
+temperature_msb { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 40
+	offset_end 47
+}
+temperature_lsb { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 48
+	offset_end 55
+}
+temperature_xlsb { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 56
+	offset_end 63
+}
+stateSetUp { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 64
+	offset_end 71
+}
+state { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 72
+	offset_end 79
+}
+stateDataReads { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 80
+	offset_end 87
+}
+dig_T1 { 
+	dir I
+	width 16
+	depth 1
+	mode ap_none
+	offset 88
+	offset_end 95
+}
+dig_T2 { 
+	dir I
+	width 16
+	depth 1
+	mode ap_none
+	offset 96
+	offset_end 103
+}
+dig_T3 { 
+	dir I
+	width 16
+	depth 1
+	mode ap_none
+	offset 104
+	offset_end 111
+}
+dig_P1 { 
+	dir I
+	width 16
+	depth 1
+	mode ap_none
+	offset 112
+	offset_end 119
+}
+dig_P2 { 
+	dir I
+	width 16
+	depth 1
+	mode ap_none
+	offset 120
+	offset_end 127
+}
+dig_P3 { 
+	dir I
+	width 16
+	depth 1
+	mode ap_none
+	offset 128
+	offset_end 135
+}
+dig_P4 { 
+	dir I
+	width 16
+	depth 1
+	mode ap_none
+	offset 136
+	offset_end 143
+}
+dig_P5 { 
+	dir I
+	width 16
+	depth 1
+	mode ap_none
+	offset 144
+	offset_end 151
+}
+dig_P6 { 
+	dir I
+	width 16
+	depth 1
+	mode ap_none
+	offset 152
+	offset_end 159
+}
+dig_P7 { 
+	dir I
+	width 16
+	depth 1
+	mode ap_none
+	offset 160
+	offset_end 167
+}
+dig_P8 { 
+	dir I
+	width 16
+	depth 1
+	mode ap_none
+	offset 168
+	offset_end 175
+}
+dig_P9 { 
+	dir I
+	width 16
+	depth 1
+	mode ap_none
+	offset 176
+	offset_end 183
+}
+pressureRaw { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 184
+	offset_end 191
+}
+temperatureRaw { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 192
+	offset_end 199
+}
 }
 
 
@@ -128,7 +285,7 @@ pressure_xlsb {
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 5 \
+			id 2 \
 			corename multibyte_CTRL_axilite \
 			name multibyte_CTRL_s_axi \
 			ports {$port_CTRL} \
@@ -147,7 +304,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 6 \
+    id 3 \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 

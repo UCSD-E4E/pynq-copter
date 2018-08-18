@@ -8,7 +8,7 @@
 `timescale 1ns/1ps
 module multibyte_CTRL_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 6,
+    C_S_AXI_ADDR_WIDTH = 8,
     C_S_AXI_DATA_WIDTH = 32
 )(
     // axi4 lite slave signals
@@ -43,7 +43,35 @@ module multibyte_CTRL_s_axi
     input  wire [31:0]                   pressure_lsb,
     input  wire                          pressure_lsb_ap_vld,
     input  wire [31:0]                   pressure_xlsb,
-    input  wire                          pressure_xlsb_ap_vld
+    input  wire                          pressure_xlsb_ap_vld,
+    input  wire [31:0]                   temperature_msb,
+    input  wire                          temperature_msb_ap_vld,
+    input  wire [31:0]                   temperature_lsb,
+    input  wire                          temperature_lsb_ap_vld,
+    input  wire [31:0]                   temperature_xlsb,
+    input  wire                          temperature_xlsb_ap_vld,
+    input  wire [31:0]                   stateSetUp,
+    input  wire                          stateSetUp_ap_vld,
+    input  wire [31:0]                   state,
+    input  wire                          state_ap_vld,
+    input  wire [31:0]                   stateDataReads,
+    input  wire                          stateDataReads_ap_vld,
+    output wire [15:0]                   dig_T1,
+    output wire [15:0]                   dig_T2,
+    output wire [15:0]                   dig_T3,
+    output wire [15:0]                   dig_P1,
+    output wire [15:0]                   dig_P2,
+    output wire [15:0]                   dig_P3,
+    output wire [15:0]                   dig_P4,
+    output wire [15:0]                   dig_P5,
+    output wire [15:0]                   dig_P6,
+    output wire [15:0]                   dig_P7,
+    output wire [15:0]                   dig_P8,
+    output wire [15:0]                   dig_P9,
+    input  wire [31:0]                   pressureRaw,
+    input  wire                          pressureRaw_ap_vld,
+    input  wire [31:0]                   temperatureRaw,
+    input  wire                          temperatureRaw_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -79,28 +107,156 @@ module multibyte_CTRL_s_axi
 // 0x24 : Control signal of pressure_xlsb
 //        bit 0  - pressure_xlsb_ap_vld (Read/COR)
 //        others - reserved
+// 0x28 : Data signal of temperature_msb
+//        bit 31~0 - temperature_msb[31:0] (Read)
+// 0x2c : Control signal of temperature_msb
+//        bit 0  - temperature_msb_ap_vld (Read/COR)
+//        others - reserved
+// 0x30 : Data signal of temperature_lsb
+//        bit 31~0 - temperature_lsb[31:0] (Read)
+// 0x34 : Control signal of temperature_lsb
+//        bit 0  - temperature_lsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x38 : Data signal of temperature_xlsb
+//        bit 31~0 - temperature_xlsb[31:0] (Read)
+// 0x3c : Control signal of temperature_xlsb
+//        bit 0  - temperature_xlsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x40 : Data signal of stateSetUp
+//        bit 31~0 - stateSetUp[31:0] (Read)
+// 0x44 : Control signal of stateSetUp
+//        bit 0  - stateSetUp_ap_vld (Read/COR)
+//        others - reserved
+// 0x48 : Data signal of state
+//        bit 31~0 - state[31:0] (Read)
+// 0x4c : Control signal of state
+//        bit 0  - state_ap_vld (Read/COR)
+//        others - reserved
+// 0x50 : Data signal of stateDataReads
+//        bit 31~0 - stateDataReads[31:0] (Read)
+// 0x54 : Control signal of stateDataReads
+//        bit 0  - stateDataReads_ap_vld (Read/COR)
+//        others - reserved
+// 0x58 : Data signal of dig_T1
+//        bit 15~0 - dig_T1[15:0] (Read/Write)
+//        others   - reserved
+// 0x5c : reserved
+// 0x60 : Data signal of dig_T2
+//        bit 15~0 - dig_T2[15:0] (Read/Write)
+//        others   - reserved
+// 0x64 : reserved
+// 0x68 : Data signal of dig_T3
+//        bit 15~0 - dig_T3[15:0] (Read/Write)
+//        others   - reserved
+// 0x6c : reserved
+// 0x70 : Data signal of dig_P1
+//        bit 15~0 - dig_P1[15:0] (Read/Write)
+//        others   - reserved
+// 0x74 : reserved
+// 0x78 : Data signal of dig_P2
+//        bit 15~0 - dig_P2[15:0] (Read/Write)
+//        others   - reserved
+// 0x7c : reserved
+// 0x80 : Data signal of dig_P3
+//        bit 15~0 - dig_P3[15:0] (Read/Write)
+//        others   - reserved
+// 0x84 : reserved
+// 0x88 : Data signal of dig_P4
+//        bit 15~0 - dig_P4[15:0] (Read/Write)
+//        others   - reserved
+// 0x8c : reserved
+// 0x90 : Data signal of dig_P5
+//        bit 15~0 - dig_P5[15:0] (Read/Write)
+//        others   - reserved
+// 0x94 : reserved
+// 0x98 : Data signal of dig_P6
+//        bit 15~0 - dig_P6[15:0] (Read/Write)
+//        others   - reserved
+// 0x9c : reserved
+// 0xa0 : Data signal of dig_P7
+//        bit 15~0 - dig_P7[15:0] (Read/Write)
+//        others   - reserved
+// 0xa4 : reserved
+// 0xa8 : Data signal of dig_P8
+//        bit 15~0 - dig_P8[15:0] (Read/Write)
+//        others   - reserved
+// 0xac : reserved
+// 0xb0 : Data signal of dig_P9
+//        bit 15~0 - dig_P9[15:0] (Read/Write)
+//        others   - reserved
+// 0xb4 : reserved
+// 0xb8 : Data signal of pressureRaw
+//        bit 31~0 - pressureRaw[31:0] (Read)
+// 0xbc : Control signal of pressureRaw
+//        bit 0  - pressureRaw_ap_vld (Read/COR)
+//        others - reserved
+// 0xc0 : Data signal of temperatureRaw
+//        bit 31~0 - temperatureRaw[31:0] (Read)
+// 0xc4 : Control signal of temperatureRaw
+//        bit 0  - temperatureRaw_ap_vld (Read/COR)
+//        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL              = 6'h00,
-    ADDR_GIE                  = 6'h04,
-    ADDR_IER                  = 6'h08,
-    ADDR_ISR                  = 6'h0c,
-    ADDR_PRESSURE_MSB_DATA_0  = 6'h10,
-    ADDR_PRESSURE_MSB_CTRL    = 6'h14,
-    ADDR_PRESSURE_LSB_DATA_0  = 6'h18,
-    ADDR_PRESSURE_LSB_CTRL    = 6'h1c,
-    ADDR_PRESSURE_XLSB_DATA_0 = 6'h20,
-    ADDR_PRESSURE_XLSB_CTRL   = 6'h24,
-    WRIDLE                    = 2'd0,
-    WRDATA                    = 2'd1,
-    WRRESP                    = 2'd2,
-    WRRESET                   = 2'd3,
-    RDIDLE                    = 2'd0,
-    RDDATA                    = 2'd1,
-    RDRESET                   = 2'd2,
-    ADDR_BITS         = 6;
+    ADDR_AP_CTRL                 = 8'h00,
+    ADDR_GIE                     = 8'h04,
+    ADDR_IER                     = 8'h08,
+    ADDR_ISR                     = 8'h0c,
+    ADDR_PRESSURE_MSB_DATA_0     = 8'h10,
+    ADDR_PRESSURE_MSB_CTRL       = 8'h14,
+    ADDR_PRESSURE_LSB_DATA_0     = 8'h18,
+    ADDR_PRESSURE_LSB_CTRL       = 8'h1c,
+    ADDR_PRESSURE_XLSB_DATA_0    = 8'h20,
+    ADDR_PRESSURE_XLSB_CTRL      = 8'h24,
+    ADDR_TEMPERATURE_MSB_DATA_0  = 8'h28,
+    ADDR_TEMPERATURE_MSB_CTRL    = 8'h2c,
+    ADDR_TEMPERATURE_LSB_DATA_0  = 8'h30,
+    ADDR_TEMPERATURE_LSB_CTRL    = 8'h34,
+    ADDR_TEMPERATURE_XLSB_DATA_0 = 8'h38,
+    ADDR_TEMPERATURE_XLSB_CTRL   = 8'h3c,
+    ADDR_STATESETUP_DATA_0       = 8'h40,
+    ADDR_STATESETUP_CTRL         = 8'h44,
+    ADDR_STATE_DATA_0            = 8'h48,
+    ADDR_STATE_CTRL              = 8'h4c,
+    ADDR_STATEDATAREADS_DATA_0   = 8'h50,
+    ADDR_STATEDATAREADS_CTRL     = 8'h54,
+    ADDR_DIG_T1_DATA_0           = 8'h58,
+    ADDR_DIG_T1_CTRL             = 8'h5c,
+    ADDR_DIG_T2_DATA_0           = 8'h60,
+    ADDR_DIG_T2_CTRL             = 8'h64,
+    ADDR_DIG_T3_DATA_0           = 8'h68,
+    ADDR_DIG_T3_CTRL             = 8'h6c,
+    ADDR_DIG_P1_DATA_0           = 8'h70,
+    ADDR_DIG_P1_CTRL             = 8'h74,
+    ADDR_DIG_P2_DATA_0           = 8'h78,
+    ADDR_DIG_P2_CTRL             = 8'h7c,
+    ADDR_DIG_P3_DATA_0           = 8'h80,
+    ADDR_DIG_P3_CTRL             = 8'h84,
+    ADDR_DIG_P4_DATA_0           = 8'h88,
+    ADDR_DIG_P4_CTRL             = 8'h8c,
+    ADDR_DIG_P5_DATA_0           = 8'h90,
+    ADDR_DIG_P5_CTRL             = 8'h94,
+    ADDR_DIG_P6_DATA_0           = 8'h98,
+    ADDR_DIG_P6_CTRL             = 8'h9c,
+    ADDR_DIG_P7_DATA_0           = 8'ha0,
+    ADDR_DIG_P7_CTRL             = 8'ha4,
+    ADDR_DIG_P8_DATA_0           = 8'ha8,
+    ADDR_DIG_P8_CTRL             = 8'hac,
+    ADDR_DIG_P9_DATA_0           = 8'hb0,
+    ADDR_DIG_P9_CTRL             = 8'hb4,
+    ADDR_PRESSURERAW_DATA_0      = 8'hb8,
+    ADDR_PRESSURERAW_CTRL        = 8'hbc,
+    ADDR_TEMPERATURERAW_DATA_0   = 8'hc0,
+    ADDR_TEMPERATURERAW_CTRL     = 8'hc4,
+    WRIDLE                       = 2'd0,
+    WRDATA                       = 2'd1,
+    WRRESP                       = 2'd2,
+    WRRESET                      = 2'd3,
+    RDIDLE                       = 2'd0,
+    RDDATA                       = 2'd1,
+    RDRESET                      = 2'd2,
+    ADDR_BITS         = 8;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -129,6 +285,34 @@ localparam
     reg                           int_pressure_lsb_ap_vld;
     reg  [31:0]                   int_pressure_xlsb = 'b0;
     reg                           int_pressure_xlsb_ap_vld;
+    reg  [31:0]                   int_temperature_msb = 'b0;
+    reg                           int_temperature_msb_ap_vld;
+    reg  [31:0]                   int_temperature_lsb = 'b0;
+    reg                           int_temperature_lsb_ap_vld;
+    reg  [31:0]                   int_temperature_xlsb = 'b0;
+    reg                           int_temperature_xlsb_ap_vld;
+    reg  [31:0]                   int_stateSetUp = 'b0;
+    reg                           int_stateSetUp_ap_vld;
+    reg  [31:0]                   int_state = 'b0;
+    reg                           int_state_ap_vld;
+    reg  [31:0]                   int_stateDataReads = 'b0;
+    reg                           int_stateDataReads_ap_vld;
+    reg  [15:0]                   int_dig_T1 = 'b0;
+    reg  [15:0]                   int_dig_T2 = 'b0;
+    reg  [15:0]                   int_dig_T3 = 'b0;
+    reg  [15:0]                   int_dig_P1 = 'b0;
+    reg  [15:0]                   int_dig_P2 = 'b0;
+    reg  [15:0]                   int_dig_P3 = 'b0;
+    reg  [15:0]                   int_dig_P4 = 'b0;
+    reg  [15:0]                   int_dig_P5 = 'b0;
+    reg  [15:0]                   int_dig_P6 = 'b0;
+    reg  [15:0]                   int_dig_P7 = 'b0;
+    reg  [15:0]                   int_dig_P8 = 'b0;
+    reg  [15:0]                   int_dig_P9 = 'b0;
+    reg  [31:0]                   int_pressureRaw = 'b0;
+    reg                           int_pressureRaw_ap_vld;
+    reg  [31:0]                   int_temperatureRaw = 'b0;
+    reg                           int_temperatureRaw_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -254,6 +438,90 @@ always @(posedge ACLK) begin
                 ADDR_PRESSURE_XLSB_CTRL: begin
                     rdata[0] <= int_pressure_xlsb_ap_vld;
                 end
+                ADDR_TEMPERATURE_MSB_DATA_0: begin
+                    rdata <= int_temperature_msb[31:0];
+                end
+                ADDR_TEMPERATURE_MSB_CTRL: begin
+                    rdata[0] <= int_temperature_msb_ap_vld;
+                end
+                ADDR_TEMPERATURE_LSB_DATA_0: begin
+                    rdata <= int_temperature_lsb[31:0];
+                end
+                ADDR_TEMPERATURE_LSB_CTRL: begin
+                    rdata[0] <= int_temperature_lsb_ap_vld;
+                end
+                ADDR_TEMPERATURE_XLSB_DATA_0: begin
+                    rdata <= int_temperature_xlsb[31:0];
+                end
+                ADDR_TEMPERATURE_XLSB_CTRL: begin
+                    rdata[0] <= int_temperature_xlsb_ap_vld;
+                end
+                ADDR_STATESETUP_DATA_0: begin
+                    rdata <= int_stateSetUp[31:0];
+                end
+                ADDR_STATESETUP_CTRL: begin
+                    rdata[0] <= int_stateSetUp_ap_vld;
+                end
+                ADDR_STATE_DATA_0: begin
+                    rdata <= int_state[31:0];
+                end
+                ADDR_STATE_CTRL: begin
+                    rdata[0] <= int_state_ap_vld;
+                end
+                ADDR_STATEDATAREADS_DATA_0: begin
+                    rdata <= int_stateDataReads[31:0];
+                end
+                ADDR_STATEDATAREADS_CTRL: begin
+                    rdata[0] <= int_stateDataReads_ap_vld;
+                end
+                ADDR_DIG_T1_DATA_0: begin
+                    rdata <= int_dig_T1[15:0];
+                end
+                ADDR_DIG_T2_DATA_0: begin
+                    rdata <= int_dig_T2[15:0];
+                end
+                ADDR_DIG_T3_DATA_0: begin
+                    rdata <= int_dig_T3[15:0];
+                end
+                ADDR_DIG_P1_DATA_0: begin
+                    rdata <= int_dig_P1[15:0];
+                end
+                ADDR_DIG_P2_DATA_0: begin
+                    rdata <= int_dig_P2[15:0];
+                end
+                ADDR_DIG_P3_DATA_0: begin
+                    rdata <= int_dig_P3[15:0];
+                end
+                ADDR_DIG_P4_DATA_0: begin
+                    rdata <= int_dig_P4[15:0];
+                end
+                ADDR_DIG_P5_DATA_0: begin
+                    rdata <= int_dig_P5[15:0];
+                end
+                ADDR_DIG_P6_DATA_0: begin
+                    rdata <= int_dig_P6[15:0];
+                end
+                ADDR_DIG_P7_DATA_0: begin
+                    rdata <= int_dig_P7[15:0];
+                end
+                ADDR_DIG_P8_DATA_0: begin
+                    rdata <= int_dig_P8[15:0];
+                end
+                ADDR_DIG_P9_DATA_0: begin
+                    rdata <= int_dig_P9[15:0];
+                end
+                ADDR_PRESSURERAW_DATA_0: begin
+                    rdata <= int_pressureRaw[31:0];
+                end
+                ADDR_PRESSURERAW_CTRL: begin
+                    rdata[0] <= int_pressureRaw_ap_vld;
+                end
+                ADDR_TEMPERATURERAW_DATA_0: begin
+                    rdata <= int_temperatureRaw[31:0];
+                end
+                ADDR_TEMPERATURERAW_CTRL: begin
+                    rdata[0] <= int_temperatureRaw_ap_vld;
+                end
             endcase
         end
     end
@@ -263,6 +531,18 @@ end
 //------------------------Register logic-----------------
 assign interrupt = int_gie & (|int_isr);
 assign ap_start  = int_ap_start;
+assign dig_T1    = int_dig_T1;
+assign dig_T2    = int_dig_T2;
+assign dig_T3    = int_dig_T3;
+assign dig_P1    = int_dig_P1;
+assign dig_P2    = int_dig_P2;
+assign dig_P3    = int_dig_P3;
+assign dig_P4    = int_dig_P4;
+assign dig_P5    = int_dig_P5;
+assign dig_P6    = int_dig_P6;
+assign dig_P7    = int_dig_P7;
+assign dig_P8    = int_dig_P8;
+assign dig_P9    = int_dig_P9;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -422,6 +702,302 @@ always @(posedge ACLK) begin
             int_pressure_xlsb_ap_vld <= 1'b1;
         else if (ar_hs && raddr == ADDR_PRESSURE_XLSB_CTRL)
             int_pressure_xlsb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_temperature_msb
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temperature_msb <= 0;
+    else if (ACLK_EN) begin
+        if (temperature_msb_ap_vld)
+            int_temperature_msb <= temperature_msb;
+    end
+end
+
+// int_temperature_msb_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temperature_msb_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (temperature_msb_ap_vld)
+            int_temperature_msb_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TEMPERATURE_MSB_CTRL)
+            int_temperature_msb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_temperature_lsb
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temperature_lsb <= 0;
+    else if (ACLK_EN) begin
+        if (temperature_lsb_ap_vld)
+            int_temperature_lsb <= temperature_lsb;
+    end
+end
+
+// int_temperature_lsb_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temperature_lsb_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (temperature_lsb_ap_vld)
+            int_temperature_lsb_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TEMPERATURE_LSB_CTRL)
+            int_temperature_lsb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_temperature_xlsb
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temperature_xlsb <= 0;
+    else if (ACLK_EN) begin
+        if (temperature_xlsb_ap_vld)
+            int_temperature_xlsb <= temperature_xlsb;
+    end
+end
+
+// int_temperature_xlsb_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temperature_xlsb_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (temperature_xlsb_ap_vld)
+            int_temperature_xlsb_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TEMPERATURE_XLSB_CTRL)
+            int_temperature_xlsb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_stateSetUp
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_stateSetUp <= 0;
+    else if (ACLK_EN) begin
+        if (stateSetUp_ap_vld)
+            int_stateSetUp <= stateSetUp;
+    end
+end
+
+// int_stateSetUp_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_stateSetUp_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (stateSetUp_ap_vld)
+            int_stateSetUp_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_STATESETUP_CTRL)
+            int_stateSetUp_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_state
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_state <= 0;
+    else if (ACLK_EN) begin
+        if (state_ap_vld)
+            int_state <= state;
+    end
+end
+
+// int_state_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_state_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (state_ap_vld)
+            int_state_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_STATE_CTRL)
+            int_state_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_stateDataReads
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_stateDataReads <= 0;
+    else if (ACLK_EN) begin
+        if (stateDataReads_ap_vld)
+            int_stateDataReads <= stateDataReads;
+    end
+end
+
+// int_stateDataReads_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_stateDataReads_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (stateDataReads_ap_vld)
+            int_stateDataReads_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_STATEDATAREADS_CTRL)
+            int_stateDataReads_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_dig_T1[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_dig_T1[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_DIG_T1_DATA_0)
+            int_dig_T1[15:0] <= (WDATA[31:0] & wmask) | (int_dig_T1[15:0] & ~wmask);
+    end
+end
+
+// int_dig_T2[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_dig_T2[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_DIG_T2_DATA_0)
+            int_dig_T2[15:0] <= (WDATA[31:0] & wmask) | (int_dig_T2[15:0] & ~wmask);
+    end
+end
+
+// int_dig_T3[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_dig_T3[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_DIG_T3_DATA_0)
+            int_dig_T3[15:0] <= (WDATA[31:0] & wmask) | (int_dig_T3[15:0] & ~wmask);
+    end
+end
+
+// int_dig_P1[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_dig_P1[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_DIG_P1_DATA_0)
+            int_dig_P1[15:0] <= (WDATA[31:0] & wmask) | (int_dig_P1[15:0] & ~wmask);
+    end
+end
+
+// int_dig_P2[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_dig_P2[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_DIG_P2_DATA_0)
+            int_dig_P2[15:0] <= (WDATA[31:0] & wmask) | (int_dig_P2[15:0] & ~wmask);
+    end
+end
+
+// int_dig_P3[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_dig_P3[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_DIG_P3_DATA_0)
+            int_dig_P3[15:0] <= (WDATA[31:0] & wmask) | (int_dig_P3[15:0] & ~wmask);
+    end
+end
+
+// int_dig_P4[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_dig_P4[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_DIG_P4_DATA_0)
+            int_dig_P4[15:0] <= (WDATA[31:0] & wmask) | (int_dig_P4[15:0] & ~wmask);
+    end
+end
+
+// int_dig_P5[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_dig_P5[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_DIG_P5_DATA_0)
+            int_dig_P5[15:0] <= (WDATA[31:0] & wmask) | (int_dig_P5[15:0] & ~wmask);
+    end
+end
+
+// int_dig_P6[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_dig_P6[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_DIG_P6_DATA_0)
+            int_dig_P6[15:0] <= (WDATA[31:0] & wmask) | (int_dig_P6[15:0] & ~wmask);
+    end
+end
+
+// int_dig_P7[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_dig_P7[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_DIG_P7_DATA_0)
+            int_dig_P7[15:0] <= (WDATA[31:0] & wmask) | (int_dig_P7[15:0] & ~wmask);
+    end
+end
+
+// int_dig_P8[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_dig_P8[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_DIG_P8_DATA_0)
+            int_dig_P8[15:0] <= (WDATA[31:0] & wmask) | (int_dig_P8[15:0] & ~wmask);
+    end
+end
+
+// int_dig_P9[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_dig_P9[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_DIG_P9_DATA_0)
+            int_dig_P9[15:0] <= (WDATA[31:0] & wmask) | (int_dig_P9[15:0] & ~wmask);
+    end
+end
+
+// int_pressureRaw
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_pressureRaw <= 0;
+    else if (ACLK_EN) begin
+        if (pressureRaw_ap_vld)
+            int_pressureRaw <= pressureRaw;
+    end
+end
+
+// int_pressureRaw_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_pressureRaw_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (pressureRaw_ap_vld)
+            int_pressureRaw_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_PRESSURERAW_CTRL)
+            int_pressureRaw_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_temperatureRaw
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temperatureRaw <= 0;
+    else if (ACLK_EN) begin
+        if (temperatureRaw_ap_vld)
+            int_temperatureRaw <= temperatureRaw;
+    end
+end
+
+// int_temperatureRaw_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temperatureRaw_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (temperatureRaw_ap_vld)
+            int_temperatureRaw_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TEMPERATURERAW_CTRL)
+            int_temperatureRaw_ap_vld <= 1'b0; // clear on read
     end
 end
 

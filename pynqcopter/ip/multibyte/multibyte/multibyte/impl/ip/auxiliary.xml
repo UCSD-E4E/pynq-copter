@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="multibyte" xd:componentRef="multibyte" xd:initiationInterval="206000106" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="multibyte" xd:componentRef="multibyte" xd:initiationInterval="198000342" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
   <xd:arg xd:name="iic[]" xd:originalName="iic" xd:direction="inout" xd:interfaceRef="m_axi_CTRL" xd:busTypeRef="aximm" xd:arraySize="4096" xd:dataWidth="32" xd:bufferDirection="inout"/>
   <xd:arg xd:name="pressure_msb" xd:originalName="pressure_msb" xd:direction="out" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x10" xd:statusOffset="0x14" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:arg xd:name="pressure_lsb" xd:originalName="pressure_lsb" xd:direction="out" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x18" xd:statusOffset="0x1C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:arg xd:name="pressure_xlsb" xd:originalName="pressure_xlsb" xd:direction="out" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x20" xd:statusOffset="0x24" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
-  <xd:latencyEstimates xd:best-case="1000042" xd:worst-case="206000105" xd:average-case="103500074"/>
-  <xd:resourceEstimates xd:LUT="2251" xd:FF="1264" xd:BRAM="2" xd:DSP="0"/>
+  <xd:arg xd:name="temperature_msb" xd:originalName="temperature_msb" xd:direction="out" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x28" xd:statusOffset="0x2C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="temperature_lsb" xd:originalName="temperature_lsb" xd:direction="out" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x30" xd:statusOffset="0x34" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="temperature_xlsb" xd:originalName="temperature_xlsb" xd:direction="out" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x38" xd:statusOffset="0x3C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="stateSetUp" xd:originalName="stateSetUp" xd:direction="out" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x40" xd:statusOffset="0x44" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="state" xd:originalName="state" xd:direction="out" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x48" xd:statusOffset="0x4C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="stateDataReads" xd:originalName="stateDataReads" xd:direction="out" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x50" xd:statusOffset="0x54" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="dig_T1" xd:originalName="dig_T1" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x58" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="dig_T2" xd:originalName="dig_T2" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x60" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="dig_T3" xd:originalName="dig_T3" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x68" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="dig_P1" xd:originalName="dig_P1" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x70" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="dig_P2" xd:originalName="dig_P2" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x78" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="dig_P3" xd:originalName="dig_P3" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x80" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="dig_P4" xd:originalName="dig_P4" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x88" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="dig_P5" xd:originalName="dig_P5" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x90" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="dig_P6" xd:originalName="dig_P6" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x98" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="dig_P7" xd:originalName="dig_P7" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0xA0" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="dig_P8" xd:originalName="dig_P8" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0xA8" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="dig_P9" xd:originalName="dig_P9" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0xB0" xd:handshakeRef="ap_none" xd:dataWidth="16"/>
+  <xd:arg xd:name="pressureRaw" xd:originalName="pressureRaw" xd:direction="out" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0xB8" xd:statusOffset="0xBC" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="temperatureRaw" xd:originalName="temperatureRaw" xd:direction="out" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0xC0" xd:statusOffset="0xC4" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="2000279" xd:worst-case="198000341" xd:average-case="100000310"/>
+  <xd:resourceEstimates xd:LUT="3268" xd:FF="1834" xd:BRAM="4" xd:DSP="0"/>
 </xd:acceleratorMap>
