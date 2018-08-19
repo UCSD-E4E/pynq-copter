@@ -1,0 +1,58 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'multibyte2'" level="0">
+<item name = "Date">Sat Aug 18 17:29:25 2018
+</item>
+<item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
+<item name = "Project">multibyte2</item>
+<item name = "Solution">multibyte2</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">4.00, 3.50, 0.50</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">2000113, 199000403, 2000113, 199000403, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- memset_trimmingData">23, 23, 1, -, -, 24, no</column>
+<column name="- memset_sensorData">5, 5, 1, -, -, 6, no</column>
+<column name="- Loop 3">5000000, 5000000, 1, -, -, 5000000, no</column>
+<column name="- Loop 4">5000000, 5000000, 1, -, -, 5000000, no</column>
+<column name="- Loop 5">5000000, 5000000, 1, -, -, 5000000, no</column>
+<column name="- Loop 6">1000000, 1000000, 1, -, -, 1000000, no</column>
+<column name="- Loop 7">175000000, 175000000, 1, -, -, 175000000, no</column>
+<column name="- Loop 8">1000000, 1000000, 1, -, -, 1000000, no</column>
+<column name="- Loop 9">216, 216, 9, -, -, 24, no</column>
+<column name="- Loop 10">5000000, 5000000, 1, -, -, 5000000, no</column>
+<column name="- Loop 11">1000000, 1000000, 1, -, -, 1000000, no</column>
+<column name="- Loop 12">54, 54, 9, -, -, 6, no</column>
+<column name="- Loop 13">1000000, 1000000, 1, -, -, 1000000, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>
