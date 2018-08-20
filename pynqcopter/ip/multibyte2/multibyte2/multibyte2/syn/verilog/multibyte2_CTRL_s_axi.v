@@ -57,34 +57,30 @@ module multibyte2_CTRL_s_axi
     input  wire                          stateDataReads_ap_vld,
     input  wire [31:0]                   trimmingSuccess,
     input  wire                          trimmingSuccess_ap_vld,
-    input  wire [15:0]                   dig_T1,
+    input  wire [31:0]                   dig_T1,
     input  wire                          dig_T1_ap_vld,
-    input  wire [15:0]                   dig_T2,
-    input  wire                          dig_T2_ap_vld,
-    input  wire [15:0]                   dig_T3,
-    input  wire                          dig_T3_ap_vld,
-    input  wire [15:0]                   dig_P1,
-    input  wire                          dig_P1_ap_vld,
-    input  wire [15:0]                   dig_P2,
-    input  wire                          dig_P2_ap_vld,
-    input  wire [15:0]                   dig_P3,
-    input  wire                          dig_P3_ap_vld,
-    input  wire [15:0]                   dig_P4,
-    input  wire                          dig_P4_ap_vld,
-    input  wire [15:0]                   dig_P5,
-    input  wire                          dig_P5_ap_vld,
-    input  wire [15:0]                   dig_P6,
-    input  wire                          dig_P6_ap_vld,
-    input  wire [15:0]                   dig_P7,
-    input  wire                          dig_P7_ap_vld,
-    input  wire [15:0]                   dig_P8,
-    input  wire                          dig_P8_ap_vld,
-    input  wire [15:0]                   dig_P9,
+    input  wire [31:0]                   dig_P9,
     input  wire                          dig_P9_ap_vld,
     input  wire [31:0]                   pressureRaw,
     input  wire                          pressureRaw_ap_vld,
     input  wire [31:0]                   temperatureRaw,
-    input  wire                          temperatureRaw_ap_vld
+    input  wire                          temperatureRaw_ap_vld,
+    input  wire [31:0]                   trimVal1,
+    input  wire                          trimVal1_ap_vld,
+    input  wire [31:0]                   trimVal2,
+    input  wire                          trimVal2_ap_vld,
+    input  wire [31:0]                   trimVal3,
+    input  wire                          trimVal3_ap_vld,
+    input  wire [31:0]                   trimVal4,
+    input  wire                          trimVal4_ap_vld,
+    input  wire [31:0]                   trimVal5,
+    input  wire                          trimVal5_ap_vld,
+    input  wire [31:0]                   trimVal6,
+    input  wire                          trimVal6_ap_vld,
+    input  wire [31:0]                   trimVal23,
+    input  wire                          trimVal23_ap_vld,
+    input  wire [31:0]                   trimVal24,
+    input  wire                          trimVal24_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -154,86 +150,64 @@ module multibyte2_CTRL_s_axi
 //        bit 0  - trimmingSuccess_ap_vld (Read/COR)
 //        others - reserved
 // 0x60 : Data signal of dig_T1
-//        bit 15~0 - dig_T1[15:0] (Read)
-//        others   - reserved
+//        bit 31~0 - dig_T1[31:0] (Read)
 // 0x64 : Control signal of dig_T1
 //        bit 0  - dig_T1_ap_vld (Read/COR)
 //        others - reserved
-// 0x68 : Data signal of dig_T2
-//        bit 15~0 - dig_T2[15:0] (Read)
-//        others   - reserved
-// 0x6c : Control signal of dig_T2
-//        bit 0  - dig_T2_ap_vld (Read/COR)
-//        others - reserved
-// 0x70 : Data signal of dig_T3
-//        bit 15~0 - dig_T3[15:0] (Read)
-//        others   - reserved
-// 0x74 : Control signal of dig_T3
-//        bit 0  - dig_T3_ap_vld (Read/COR)
-//        others - reserved
-// 0x78 : Data signal of dig_P1
-//        bit 15~0 - dig_P1[15:0] (Read)
-//        others   - reserved
-// 0x7c : Control signal of dig_P1
-//        bit 0  - dig_P1_ap_vld (Read/COR)
-//        others - reserved
-// 0x80 : Data signal of dig_P2
-//        bit 15~0 - dig_P2[15:0] (Read)
-//        others   - reserved
-// 0x84 : Control signal of dig_P2
-//        bit 0  - dig_P2_ap_vld (Read/COR)
-//        others - reserved
-// 0x88 : Data signal of dig_P3
-//        bit 15~0 - dig_P3[15:0] (Read)
-//        others   - reserved
-// 0x8c : Control signal of dig_P3
-//        bit 0  - dig_P3_ap_vld (Read/COR)
-//        others - reserved
-// 0x90 : Data signal of dig_P4
-//        bit 15~0 - dig_P4[15:0] (Read)
-//        others   - reserved
-// 0x94 : Control signal of dig_P4
-//        bit 0  - dig_P4_ap_vld (Read/COR)
-//        others - reserved
-// 0x98 : Data signal of dig_P5
-//        bit 15~0 - dig_P5[15:0] (Read)
-//        others   - reserved
-// 0x9c : Control signal of dig_P5
-//        bit 0  - dig_P5_ap_vld (Read/COR)
-//        others - reserved
-// 0xa0 : Data signal of dig_P6
-//        bit 15~0 - dig_P6[15:0] (Read)
-//        others   - reserved
-// 0xa4 : Control signal of dig_P6
-//        bit 0  - dig_P6_ap_vld (Read/COR)
-//        others - reserved
-// 0xa8 : Data signal of dig_P7
-//        bit 15~0 - dig_P7[15:0] (Read)
-//        others   - reserved
-// 0xac : Control signal of dig_P7
-//        bit 0  - dig_P7_ap_vld (Read/COR)
-//        others - reserved
-// 0xb0 : Data signal of dig_P8
-//        bit 15~0 - dig_P8[15:0] (Read)
-//        others   - reserved
-// 0xb4 : Control signal of dig_P8
-//        bit 0  - dig_P8_ap_vld (Read/COR)
-//        others - reserved
-// 0xb8 : Data signal of dig_P9
-//        bit 15~0 - dig_P9[15:0] (Read)
-//        others   - reserved
-// 0xbc : Control signal of dig_P9
+// 0x68 : Data signal of dig_P9
+//        bit 31~0 - dig_P9[31:0] (Read)
+// 0x6c : Control signal of dig_P9
 //        bit 0  - dig_P9_ap_vld (Read/COR)
 //        others - reserved
-// 0xc0 : Data signal of pressureRaw
+// 0x70 : Data signal of pressureRaw
 //        bit 31~0 - pressureRaw[31:0] (Read)
-// 0xc4 : Control signal of pressureRaw
+// 0x74 : Control signal of pressureRaw
 //        bit 0  - pressureRaw_ap_vld (Read/COR)
 //        others - reserved
-// 0xc8 : Data signal of temperatureRaw
+// 0x78 : Data signal of temperatureRaw
 //        bit 31~0 - temperatureRaw[31:0] (Read)
-// 0xcc : Control signal of temperatureRaw
+// 0x7c : Control signal of temperatureRaw
 //        bit 0  - temperatureRaw_ap_vld (Read/COR)
+//        others - reserved
+// 0x80 : Data signal of trimVal1
+//        bit 31~0 - trimVal1[31:0] (Read)
+// 0x84 : Control signal of trimVal1
+//        bit 0  - trimVal1_ap_vld (Read/COR)
+//        others - reserved
+// 0x88 : Data signal of trimVal2
+//        bit 31~0 - trimVal2[31:0] (Read)
+// 0x8c : Control signal of trimVal2
+//        bit 0  - trimVal2_ap_vld (Read/COR)
+//        others - reserved
+// 0x90 : Data signal of trimVal3
+//        bit 31~0 - trimVal3[31:0] (Read)
+// 0x94 : Control signal of trimVal3
+//        bit 0  - trimVal3_ap_vld (Read/COR)
+//        others - reserved
+// 0x98 : Data signal of trimVal4
+//        bit 31~0 - trimVal4[31:0] (Read)
+// 0x9c : Control signal of trimVal4
+//        bit 0  - trimVal4_ap_vld (Read/COR)
+//        others - reserved
+// 0xa0 : Data signal of trimVal5
+//        bit 31~0 - trimVal5[31:0] (Read)
+// 0xa4 : Control signal of trimVal5
+//        bit 0  - trimVal5_ap_vld (Read/COR)
+//        others - reserved
+// 0xa8 : Data signal of trimVal6
+//        bit 31~0 - trimVal6[31:0] (Read)
+// 0xac : Control signal of trimVal6
+//        bit 0  - trimVal6_ap_vld (Read/COR)
+//        others - reserved
+// 0xb0 : Data signal of trimVal23
+//        bit 31~0 - trimVal23[31:0] (Read)
+// 0xb4 : Control signal of trimVal23
+//        bit 0  - trimVal23_ap_vld (Read/COR)
+//        others - reserved
+// 0xb8 : Data signal of trimVal24
+//        bit 31~0 - trimVal24[31:0] (Read)
+// 0xbc : Control signal of trimVal24
+//        bit 0  - trimVal24_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -265,32 +239,28 @@ localparam
     ADDR_TRIMMINGSUCCESS_CTRL    = 8'h5c,
     ADDR_DIG_T1_DATA_0           = 8'h60,
     ADDR_DIG_T1_CTRL             = 8'h64,
-    ADDR_DIG_T2_DATA_0           = 8'h68,
-    ADDR_DIG_T2_CTRL             = 8'h6c,
-    ADDR_DIG_T3_DATA_0           = 8'h70,
-    ADDR_DIG_T3_CTRL             = 8'h74,
-    ADDR_DIG_P1_DATA_0           = 8'h78,
-    ADDR_DIG_P1_CTRL             = 8'h7c,
-    ADDR_DIG_P2_DATA_0           = 8'h80,
-    ADDR_DIG_P2_CTRL             = 8'h84,
-    ADDR_DIG_P3_DATA_0           = 8'h88,
-    ADDR_DIG_P3_CTRL             = 8'h8c,
-    ADDR_DIG_P4_DATA_0           = 8'h90,
-    ADDR_DIG_P4_CTRL             = 8'h94,
-    ADDR_DIG_P5_DATA_0           = 8'h98,
-    ADDR_DIG_P5_CTRL             = 8'h9c,
-    ADDR_DIG_P6_DATA_0           = 8'ha0,
-    ADDR_DIG_P6_CTRL             = 8'ha4,
-    ADDR_DIG_P7_DATA_0           = 8'ha8,
-    ADDR_DIG_P7_CTRL             = 8'hac,
-    ADDR_DIG_P8_DATA_0           = 8'hb0,
-    ADDR_DIG_P8_CTRL             = 8'hb4,
-    ADDR_DIG_P9_DATA_0           = 8'hb8,
-    ADDR_DIG_P9_CTRL             = 8'hbc,
-    ADDR_PRESSURERAW_DATA_0      = 8'hc0,
-    ADDR_PRESSURERAW_CTRL        = 8'hc4,
-    ADDR_TEMPERATURERAW_DATA_0   = 8'hc8,
-    ADDR_TEMPERATURERAW_CTRL     = 8'hcc,
+    ADDR_DIG_P9_DATA_0           = 8'h68,
+    ADDR_DIG_P9_CTRL             = 8'h6c,
+    ADDR_PRESSURERAW_DATA_0      = 8'h70,
+    ADDR_PRESSURERAW_CTRL        = 8'h74,
+    ADDR_TEMPERATURERAW_DATA_0   = 8'h78,
+    ADDR_TEMPERATURERAW_CTRL     = 8'h7c,
+    ADDR_TRIMVAL1_DATA_0         = 8'h80,
+    ADDR_TRIMVAL1_CTRL           = 8'h84,
+    ADDR_TRIMVAL2_DATA_0         = 8'h88,
+    ADDR_TRIMVAL2_CTRL           = 8'h8c,
+    ADDR_TRIMVAL3_DATA_0         = 8'h90,
+    ADDR_TRIMVAL3_CTRL           = 8'h94,
+    ADDR_TRIMVAL4_DATA_0         = 8'h98,
+    ADDR_TRIMVAL4_CTRL           = 8'h9c,
+    ADDR_TRIMVAL5_DATA_0         = 8'ha0,
+    ADDR_TRIMVAL5_CTRL           = 8'ha4,
+    ADDR_TRIMVAL6_DATA_0         = 8'ha8,
+    ADDR_TRIMVAL6_CTRL           = 8'hac,
+    ADDR_TRIMVAL23_DATA_0        = 8'hb0,
+    ADDR_TRIMVAL23_CTRL          = 8'hb4,
+    ADDR_TRIMVAL24_DATA_0        = 8'hb8,
+    ADDR_TRIMVAL24_CTRL          = 8'hbc,
     WRIDLE                       = 2'd0,
     WRDATA                       = 2'd1,
     WRRESP                       = 2'd2,
@@ -340,34 +310,30 @@ localparam
     reg                           int_stateDataReads_ap_vld;
     reg  [31:0]                   int_trimmingSuccess = 'b0;
     reg                           int_trimmingSuccess_ap_vld;
-    reg  [15:0]                   int_dig_T1 = 'b0;
+    reg  [31:0]                   int_dig_T1 = 'b0;
     reg                           int_dig_T1_ap_vld;
-    reg  [15:0]                   int_dig_T2 = 'b0;
-    reg                           int_dig_T2_ap_vld;
-    reg  [15:0]                   int_dig_T3 = 'b0;
-    reg                           int_dig_T3_ap_vld;
-    reg  [15:0]                   int_dig_P1 = 'b0;
-    reg                           int_dig_P1_ap_vld;
-    reg  [15:0]                   int_dig_P2 = 'b0;
-    reg                           int_dig_P2_ap_vld;
-    reg  [15:0]                   int_dig_P3 = 'b0;
-    reg                           int_dig_P3_ap_vld;
-    reg  [15:0]                   int_dig_P4 = 'b0;
-    reg                           int_dig_P4_ap_vld;
-    reg  [15:0]                   int_dig_P5 = 'b0;
-    reg                           int_dig_P5_ap_vld;
-    reg  [15:0]                   int_dig_P6 = 'b0;
-    reg                           int_dig_P6_ap_vld;
-    reg  [15:0]                   int_dig_P7 = 'b0;
-    reg                           int_dig_P7_ap_vld;
-    reg  [15:0]                   int_dig_P8 = 'b0;
-    reg                           int_dig_P8_ap_vld;
-    reg  [15:0]                   int_dig_P9 = 'b0;
+    reg  [31:0]                   int_dig_P9 = 'b0;
     reg                           int_dig_P9_ap_vld;
     reg  [31:0]                   int_pressureRaw = 'b0;
     reg                           int_pressureRaw_ap_vld;
     reg  [31:0]                   int_temperatureRaw = 'b0;
     reg                           int_temperatureRaw_ap_vld;
+    reg  [31:0]                   int_trimVal1 = 'b0;
+    reg                           int_trimVal1_ap_vld;
+    reg  [31:0]                   int_trimVal2 = 'b0;
+    reg                           int_trimVal2_ap_vld;
+    reg  [31:0]                   int_trimVal3 = 'b0;
+    reg                           int_trimVal3_ap_vld;
+    reg  [31:0]                   int_trimVal4 = 'b0;
+    reg                           int_trimVal4_ap_vld;
+    reg  [31:0]                   int_trimVal5 = 'b0;
+    reg                           int_trimVal5_ap_vld;
+    reg  [31:0]                   int_trimVal6 = 'b0;
+    reg                           int_trimVal6_ap_vld;
+    reg  [31:0]                   int_trimVal23 = 'b0;
+    reg                           int_trimVal23_ap_vld;
+    reg  [31:0]                   int_trimVal24 = 'b0;
+    reg                           int_trimVal24_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -533,73 +499,13 @@ always @(posedge ACLK) begin
                     rdata[0] <= int_trimmingSuccess_ap_vld;
                 end
                 ADDR_DIG_T1_DATA_0: begin
-                    rdata <= int_dig_T1[15:0];
+                    rdata <= int_dig_T1[31:0];
                 end
                 ADDR_DIG_T1_CTRL: begin
                     rdata[0] <= int_dig_T1_ap_vld;
                 end
-                ADDR_DIG_T2_DATA_0: begin
-                    rdata <= int_dig_T2[15:0];
-                end
-                ADDR_DIG_T2_CTRL: begin
-                    rdata[0] <= int_dig_T2_ap_vld;
-                end
-                ADDR_DIG_T3_DATA_0: begin
-                    rdata <= int_dig_T3[15:0];
-                end
-                ADDR_DIG_T3_CTRL: begin
-                    rdata[0] <= int_dig_T3_ap_vld;
-                end
-                ADDR_DIG_P1_DATA_0: begin
-                    rdata <= int_dig_P1[15:0];
-                end
-                ADDR_DIG_P1_CTRL: begin
-                    rdata[0] <= int_dig_P1_ap_vld;
-                end
-                ADDR_DIG_P2_DATA_0: begin
-                    rdata <= int_dig_P2[15:0];
-                end
-                ADDR_DIG_P2_CTRL: begin
-                    rdata[0] <= int_dig_P2_ap_vld;
-                end
-                ADDR_DIG_P3_DATA_0: begin
-                    rdata <= int_dig_P3[15:0];
-                end
-                ADDR_DIG_P3_CTRL: begin
-                    rdata[0] <= int_dig_P3_ap_vld;
-                end
-                ADDR_DIG_P4_DATA_0: begin
-                    rdata <= int_dig_P4[15:0];
-                end
-                ADDR_DIG_P4_CTRL: begin
-                    rdata[0] <= int_dig_P4_ap_vld;
-                end
-                ADDR_DIG_P5_DATA_0: begin
-                    rdata <= int_dig_P5[15:0];
-                end
-                ADDR_DIG_P5_CTRL: begin
-                    rdata[0] <= int_dig_P5_ap_vld;
-                end
-                ADDR_DIG_P6_DATA_0: begin
-                    rdata <= int_dig_P6[15:0];
-                end
-                ADDR_DIG_P6_CTRL: begin
-                    rdata[0] <= int_dig_P6_ap_vld;
-                end
-                ADDR_DIG_P7_DATA_0: begin
-                    rdata <= int_dig_P7[15:0];
-                end
-                ADDR_DIG_P7_CTRL: begin
-                    rdata[0] <= int_dig_P7_ap_vld;
-                end
-                ADDR_DIG_P8_DATA_0: begin
-                    rdata <= int_dig_P8[15:0];
-                end
-                ADDR_DIG_P8_CTRL: begin
-                    rdata[0] <= int_dig_P8_ap_vld;
-                end
                 ADDR_DIG_P9_DATA_0: begin
-                    rdata <= int_dig_P9[15:0];
+                    rdata <= int_dig_P9[31:0];
                 end
                 ADDR_DIG_P9_CTRL: begin
                     rdata[0] <= int_dig_P9_ap_vld;
@@ -615,6 +521,54 @@ always @(posedge ACLK) begin
                 end
                 ADDR_TEMPERATURERAW_CTRL: begin
                     rdata[0] <= int_temperatureRaw_ap_vld;
+                end
+                ADDR_TRIMVAL1_DATA_0: begin
+                    rdata <= int_trimVal1[31:0];
+                end
+                ADDR_TRIMVAL1_CTRL: begin
+                    rdata[0] <= int_trimVal1_ap_vld;
+                end
+                ADDR_TRIMVAL2_DATA_0: begin
+                    rdata <= int_trimVal2[31:0];
+                end
+                ADDR_TRIMVAL2_CTRL: begin
+                    rdata[0] <= int_trimVal2_ap_vld;
+                end
+                ADDR_TRIMVAL3_DATA_0: begin
+                    rdata <= int_trimVal3[31:0];
+                end
+                ADDR_TRIMVAL3_CTRL: begin
+                    rdata[0] <= int_trimVal3_ap_vld;
+                end
+                ADDR_TRIMVAL4_DATA_0: begin
+                    rdata <= int_trimVal4[31:0];
+                end
+                ADDR_TRIMVAL4_CTRL: begin
+                    rdata[0] <= int_trimVal4_ap_vld;
+                end
+                ADDR_TRIMVAL5_DATA_0: begin
+                    rdata <= int_trimVal5[31:0];
+                end
+                ADDR_TRIMVAL5_CTRL: begin
+                    rdata[0] <= int_trimVal5_ap_vld;
+                end
+                ADDR_TRIMVAL6_DATA_0: begin
+                    rdata <= int_trimVal6[31:0];
+                end
+                ADDR_TRIMVAL6_CTRL: begin
+                    rdata[0] <= int_trimVal6_ap_vld;
+                end
+                ADDR_TRIMVAL23_DATA_0: begin
+                    rdata <= int_trimVal23[31:0];
+                end
+                ADDR_TRIMVAL23_CTRL: begin
+                    rdata[0] <= int_trimVal23_ap_vld;
+                end
+                ADDR_TRIMVAL24_DATA_0: begin
+                    rdata <= int_trimVal24[31:0];
+                end
+                ADDR_TRIMVAL24_CTRL: begin
+                    rdata[0] <= int_trimVal24_ap_vld;
                 end
             endcase
         end
@@ -952,226 +906,6 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_dig_T2
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_T2 <= 0;
-    else if (ACLK_EN) begin
-        if (dig_T2_ap_vld)
-            int_dig_T2 <= dig_T2;
-    end
-end
-
-// int_dig_T2_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_T2_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (dig_T2_ap_vld)
-            int_dig_T2_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_DIG_T2_CTRL)
-            int_dig_T2_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_dig_T3
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_T3 <= 0;
-    else if (ACLK_EN) begin
-        if (dig_T3_ap_vld)
-            int_dig_T3 <= dig_T3;
-    end
-end
-
-// int_dig_T3_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_T3_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (dig_T3_ap_vld)
-            int_dig_T3_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_DIG_T3_CTRL)
-            int_dig_T3_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_dig_P1
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P1 <= 0;
-    else if (ACLK_EN) begin
-        if (dig_P1_ap_vld)
-            int_dig_P1 <= dig_P1;
-    end
-end
-
-// int_dig_P1_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P1_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (dig_P1_ap_vld)
-            int_dig_P1_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_DIG_P1_CTRL)
-            int_dig_P1_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_dig_P2
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P2 <= 0;
-    else if (ACLK_EN) begin
-        if (dig_P2_ap_vld)
-            int_dig_P2 <= dig_P2;
-    end
-end
-
-// int_dig_P2_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P2_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (dig_P2_ap_vld)
-            int_dig_P2_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_DIG_P2_CTRL)
-            int_dig_P2_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_dig_P3
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P3 <= 0;
-    else if (ACLK_EN) begin
-        if (dig_P3_ap_vld)
-            int_dig_P3 <= dig_P3;
-    end
-end
-
-// int_dig_P3_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P3_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (dig_P3_ap_vld)
-            int_dig_P3_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_DIG_P3_CTRL)
-            int_dig_P3_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_dig_P4
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P4 <= 0;
-    else if (ACLK_EN) begin
-        if (dig_P4_ap_vld)
-            int_dig_P4 <= dig_P4;
-    end
-end
-
-// int_dig_P4_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P4_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (dig_P4_ap_vld)
-            int_dig_P4_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_DIG_P4_CTRL)
-            int_dig_P4_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_dig_P5
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P5 <= 0;
-    else if (ACLK_EN) begin
-        if (dig_P5_ap_vld)
-            int_dig_P5 <= dig_P5;
-    end
-end
-
-// int_dig_P5_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P5_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (dig_P5_ap_vld)
-            int_dig_P5_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_DIG_P5_CTRL)
-            int_dig_P5_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_dig_P6
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P6 <= 0;
-    else if (ACLK_EN) begin
-        if (dig_P6_ap_vld)
-            int_dig_P6 <= dig_P6;
-    end
-end
-
-// int_dig_P6_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P6_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (dig_P6_ap_vld)
-            int_dig_P6_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_DIG_P6_CTRL)
-            int_dig_P6_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_dig_P7
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P7 <= 0;
-    else if (ACLK_EN) begin
-        if (dig_P7_ap_vld)
-            int_dig_P7 <= dig_P7;
-    end
-end
-
-// int_dig_P7_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P7_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (dig_P7_ap_vld)
-            int_dig_P7_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_DIG_P7_CTRL)
-            int_dig_P7_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_dig_P8
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P8 <= 0;
-    else if (ACLK_EN) begin
-        if (dig_P8_ap_vld)
-            int_dig_P8 <= dig_P8;
-    end
-end
-
-// int_dig_P8_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P8_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (dig_P8_ap_vld)
-            int_dig_P8_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_DIG_P8_CTRL)
-            int_dig_P8_ap_vld <= 1'b0; // clear on read
-    end
-end
-
 // int_dig_P9
 always @(posedge ACLK) begin
     if (ARESET)
@@ -1235,6 +969,182 @@ always @(posedge ACLK) begin
             int_temperatureRaw_ap_vld <= 1'b1;
         else if (ar_hs && raddr == ADDR_TEMPERATURERAW_CTRL)
             int_temperatureRaw_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_trimVal1
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal1 <= 0;
+    else if (ACLK_EN) begin
+        if (trimVal1_ap_vld)
+            int_trimVal1 <= trimVal1;
+    end
+end
+
+// int_trimVal1_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal1_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (trimVal1_ap_vld)
+            int_trimVal1_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TRIMVAL1_CTRL)
+            int_trimVal1_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_trimVal2
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal2 <= 0;
+    else if (ACLK_EN) begin
+        if (trimVal2_ap_vld)
+            int_trimVal2 <= trimVal2;
+    end
+end
+
+// int_trimVal2_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal2_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (trimVal2_ap_vld)
+            int_trimVal2_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TRIMVAL2_CTRL)
+            int_trimVal2_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_trimVal3
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal3 <= 0;
+    else if (ACLK_EN) begin
+        if (trimVal3_ap_vld)
+            int_trimVal3 <= trimVal3;
+    end
+end
+
+// int_trimVal3_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal3_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (trimVal3_ap_vld)
+            int_trimVal3_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TRIMVAL3_CTRL)
+            int_trimVal3_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_trimVal4
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal4 <= 0;
+    else if (ACLK_EN) begin
+        if (trimVal4_ap_vld)
+            int_trimVal4 <= trimVal4;
+    end
+end
+
+// int_trimVal4_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal4_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (trimVal4_ap_vld)
+            int_trimVal4_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TRIMVAL4_CTRL)
+            int_trimVal4_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_trimVal5
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal5 <= 0;
+    else if (ACLK_EN) begin
+        if (trimVal5_ap_vld)
+            int_trimVal5 <= trimVal5;
+    end
+end
+
+// int_trimVal5_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal5_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (trimVal5_ap_vld)
+            int_trimVal5_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TRIMVAL5_CTRL)
+            int_trimVal5_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_trimVal6
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal6 <= 0;
+    else if (ACLK_EN) begin
+        if (trimVal6_ap_vld)
+            int_trimVal6 <= trimVal6;
+    end
+end
+
+// int_trimVal6_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal6_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (trimVal6_ap_vld)
+            int_trimVal6_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TRIMVAL6_CTRL)
+            int_trimVal6_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_trimVal23
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal23 <= 0;
+    else if (ACLK_EN) begin
+        if (trimVal23_ap_vld)
+            int_trimVal23 <= trimVal23;
+    end
+end
+
+// int_trimVal23_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal23_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (trimVal23_ap_vld)
+            int_trimVal23_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TRIMVAL23_CTRL)
+            int_trimVal23_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_trimVal24
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal24 <= 0;
+    else if (ACLK_EN) begin
+        if (trimVal24_ap_vld)
+            int_trimVal24 <= trimVal24;
+    end
+end
+
+// int_trimVal24_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_trimVal24_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (trimVal24_ap_vld)
+            int_trimVal24_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TRIMVAL24_CTRL)
+            int_trimVal24_ap_vld <= 1'b0; // clear on read
     end
 end
 

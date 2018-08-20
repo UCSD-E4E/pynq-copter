@@ -258,115 +258,99 @@ trimmingSuccess {
 }
 dig_T1 { 
 	dir O
-	width 16
+	width 32
 	depth 1
 	mode ap_vld
 	offset 96
 	offset_end 103
 }
-dig_T2 { 
+dig_P9 { 
 	dir O
-	width 16
+	width 32
 	depth 1
 	mode ap_vld
 	offset 104
 	offset_end 111
-}
-dig_T3 { 
-	dir O
-	width 16
-	depth 1
-	mode ap_vld
-	offset 112
-	offset_end 119
-}
-dig_P1 { 
-	dir O
-	width 16
-	depth 1
-	mode ap_vld
-	offset 120
-	offset_end 127
-}
-dig_P2 { 
-	dir O
-	width 16
-	depth 1
-	mode ap_vld
-	offset 128
-	offset_end 135
-}
-dig_P3 { 
-	dir O
-	width 16
-	depth 1
-	mode ap_vld
-	offset 136
-	offset_end 143
-}
-dig_P4 { 
-	dir O
-	width 16
-	depth 1
-	mode ap_vld
-	offset 144
-	offset_end 151
-}
-dig_P5 { 
-	dir O
-	width 16
-	depth 1
-	mode ap_vld
-	offset 152
-	offset_end 159
-}
-dig_P6 { 
-	dir O
-	width 16
-	depth 1
-	mode ap_vld
-	offset 160
-	offset_end 167
-}
-dig_P7 { 
-	dir O
-	width 16
-	depth 1
-	mode ap_vld
-	offset 168
-	offset_end 175
-}
-dig_P8 { 
-	dir O
-	width 16
-	depth 1
-	mode ap_vld
-	offset 176
-	offset_end 183
-}
-dig_P9 { 
-	dir O
-	width 16
-	depth 1
-	mode ap_vld
-	offset 184
-	offset_end 191
 }
 pressureRaw { 
 	dir O
 	width 32
 	depth 1
 	mode ap_vld
-	offset 192
-	offset_end 199
+	offset 112
+	offset_end 119
 }
 temperatureRaw { 
 	dir O
 	width 32
 	depth 1
 	mode ap_vld
-	offset 200
-	offset_end 207
+	offset 120
+	offset_end 127
+}
+trimVal1 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 128
+	offset_end 135
+}
+trimVal2 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 136
+	offset_end 143
+}
+trimVal3 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 144
+	offset_end 151
+}
+trimVal4 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 152
+	offset_end 159
+}
+trimVal5 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 160
+	offset_end 167
+}
+trimVal6 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 168
+	offset_end 175
+}
+trimVal23 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 176
+	offset_end 183
+}
+trimVal24 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 184
+	offset_end 191
 }
 }
 

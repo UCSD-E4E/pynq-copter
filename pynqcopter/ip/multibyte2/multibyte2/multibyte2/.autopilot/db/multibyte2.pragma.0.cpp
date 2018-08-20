@@ -33231,11 +33231,14 @@ void multibyte2(volatile int iic[4096],
  uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb,
  uint32_t& temperature_msb, uint32_t& temperature_lsb, uint32_t& temperature_xlsb,
  int& stateSetUp, int& state, int& stateDataReads, int& trimmingSuccess,
- uint16_t& dig_T1, uint16_t& dig_T2, uint16_t& dig_T3,
- uint16_t& dig_P1, uint16_t& dig_P2, uint16_t& dig_P3,
- uint16_t& dig_P4, uint16_t& dig_P5, uint16_t& dig_P6,
- uint16_t& dig_P7, uint16_t& dig_P8, uint16_t& dig_P9,
- uint32_t& pressureRaw, uint32_t& temperatureRaw )
+ uint32_t& dig_T1, uint32_t& dig_T2, uint32_t& dig_T3,
+ uint32_t& dig_P1, uint32_t& dig_P2, uint32_t& dig_P3,
+ uint32_t& dig_P4, uint32_t& dig_P5, uint32_t& dig_P6,
+ uint32_t& dig_P7, uint32_t& dig_P8, uint32_t& dig_P9,
+ uint32_t& pressureRaw, uint32_t& temperatureRaw,
+ uint32_t& trimVal1, uint32_t& trimVal2, uint32_t& trimVal3,
+ uint32_t& trimVal4, uint32_t& trimVal5, uint32_t& trimVal6,
+ uint32_t& trimVal23, uint32_t& trimVal24 )
 {_ssdm_SpecArrayDimSize(iic,4096);
 
 
@@ -33253,16 +33256,16 @@ void multibyte2(volatile int iic[4096],
 #pragma HLS INTERFACE s_axilite port=trimmingSuccess bundle=CTRL
 #pragma HLS INTERFACE s_axilite port=stateDataReads bundle=CTRL
 #pragma HLS INTERFACE s_axilite port=dig_T1 bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=dig_T2 bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=dig_T3 bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=dig_P1 bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=dig_P2 bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=dig_P3 bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=dig_P4 bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=dig_P5 bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=dig_P6 bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=dig_P7 bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=dig_P8 bundle=CTRL
+
+#pragma HLS INTERFACE s_axilite port=trimVal1 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=trimVal2 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=trimVal3 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=trimVal4 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=trimVal5 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=trimVal6 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=trimVal23 bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=trimVal24 bundle=CTRL
+
 #pragma HLS INTERFACE s_axilite port=dig_P9 bundle=CTRL
 #pragma HLS INTERFACE s_axilite port=pressureRaw bundle=CTRL
 #pragma HLS INTERFACE s_axilite port=temperatureRaw bundle=CTRL
@@ -33271,7 +33274,6 @@ void multibyte2(volatile int iic[4096],
  bool setupSuccess = true;
  uint16_t trimmingData[24] = {};
  int sensorData[6] = {};
- stateSetUp = 0;
 
 
  static bool firstSample = true;
@@ -33352,17 +33354,18 @@ void multibyte2(volatile int iic[4096],
   firstSample = false;
  }
 
+ trimVal1 = trimmingData[0];
+ trimVal2 = trimmingData[1];
+ trimVal3 = trimmingData[2];
+ trimVal4 = trimmingData[3];
+ trimVal5 = trimmingData[4];
+ trimVal6 = trimmingData[5];
+ trimVal23 = trimmingData[22];
+ trimVal24 = trimmingData[23];
+
+
  dig_T1 = trimmingData[1] << 8 | trimmingData[0];
- dig_T2 = trimmingData[3] << 8 | trimmingData[2];
- dig_T3 = trimmingData[5] << 8 | trimmingData[4];
- dig_P1 = trimmingData[7] << 8 | trimmingData[6];
- dig_P2 = trimmingData[9] << 8 | trimmingData[8];
- dig_P3 = trimmingData[11] << 8 | trimmingData[10];
- dig_P4 = trimmingData[13] << 8 | trimmingData[12];
- dig_P5 = trimmingData[15] << 8 | trimmingData[14];
- dig_P6 = trimmingData[17] << 8 | trimmingData[16];
- dig_P7 = trimmingData[19] << 8 | trimmingData[18];
- dig_P8 = trimmingData[21] << 8 | trimmingData[20];
+#220 "multibyte2.cpp"
  dig_P9 = trimmingData[23] << 8 | trimmingData[22];
 
  if(setupSuccess)

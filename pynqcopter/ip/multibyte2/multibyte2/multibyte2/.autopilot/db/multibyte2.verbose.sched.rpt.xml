@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'multibyte2'" level="0">
-<item name = "Date">Sat Aug 18 17:29:25 2018
+<item name = "Date">Sun Aug 19 18:49:05 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">multibyte2</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">2000113, 199000403, 2000113, 199000403, none</column>
+<column name="">2000105, 199000395, 2000105, 199000395, none</column>
 </table>
 </item>
 <item name = "Detail">
