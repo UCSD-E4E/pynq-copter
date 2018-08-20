@@ -51,7 +51,9 @@ module iiccomm2_AXILiteS_s_axi
     input  wire [31:0]                   pressure_lsb,
     input  wire                          pressure_lsb_ap_vld,
     input  wire [31:0]                   pressure_xlsb,
-    input  wire                          pressure_xlsb_ap_vld
+    input  wire                          pressure_xlsb_ap_vld,
+    input  wire [31:0]                   rx_fifo_outValue,
+    input  wire                          rx_fifo_outValue_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -107,6 +109,11 @@ module iiccomm2_AXILiteS_s_axi
 // 0x44 : Control signal of pressure_xlsb
 //        bit 0  - pressure_xlsb_ap_vld (Read/COR)
 //        others - reserved
+// 0x48 : Data signal of rx_fifo_outValue
+//        bit 31~0 - rx_fifo_outValue[31:0] (Read)
+// 0x4c : Control signal of rx_fifo_outValue
+//        bit 0  - rx_fifo_outValue_ap_vld (Read/COR)
+//        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
@@ -129,6 +136,8 @@ localparam
     ADDR_PRESSURE_LSB_CTRL          = 7'h3c,
     ADDR_PRESSURE_XLSB_DATA_0       = 7'h40,
     ADDR_PRESSURE_XLSB_CTRL         = 7'h44,
+    ADDR_RX_FIFO_OUTVALUE_DATA_0    = 7'h48,
+    ADDR_RX_FIFO_OUTVALUE_CTRL      = 7'h4c,
     WRIDLE                          = 2'd0,
     WRDATA                          = 2'd1,
     WRRESP                          = 2'd2,
@@ -173,6 +182,8 @@ localparam
     reg                           int_pressure_lsb_ap_vld;
     reg  [31:0]                   int_pressure_xlsb = 'b0;
     reg                           int_pressure_xlsb_ap_vld;
+    reg  [31:0]                   int_rx_fifo_outValue = 'b0;
+    reg                           int_rx_fifo_outValue_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -321,6 +332,12 @@ always @(posedge ACLK) begin
                 end
                 ADDR_PRESSURE_XLSB_CTRL: begin
                     rdata[0] <= int_pressure_xlsb_ap_vld;
+                end
+                ADDR_RX_FIFO_OUTVALUE_DATA_0: begin
+                    rdata <= int_rx_fifo_outValue[31:0];
+                end
+                ADDR_RX_FIFO_OUTVALUE_CTRL: begin
+                    rdata[0] <= int_rx_fifo_outValue_ap_vld;
                 end
             endcase
         end
@@ -578,6 +595,28 @@ always @(posedge ACLK) begin
             int_pressure_xlsb_ap_vld <= 1'b1;
         else if (ar_hs && raddr == ADDR_PRESSURE_XLSB_CTRL)
             int_pressure_xlsb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_rx_fifo_outValue
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_rx_fifo_outValue <= 0;
+    else if (ACLK_EN) begin
+        if (rx_fifo_outValue_ap_vld)
+            int_rx_fifo_outValue <= rx_fifo_outValue;
+    end
+end
+
+// int_rx_fifo_outValue_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_rx_fifo_outValue_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (rx_fifo_outValue_ap_vld)
+            int_rx_fifo_outValue_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_RX_FIFO_OUTVALUE_CTRL)
+            int_rx_fifo_outValue_ap_vld <= 1'b0; // clear on read
     end
 end
 
