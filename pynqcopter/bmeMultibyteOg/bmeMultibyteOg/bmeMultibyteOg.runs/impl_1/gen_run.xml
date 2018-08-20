@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1534726151">
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BG-DRC" Name="bmeMultibyteOg_wrapper.drc"/>
+  <File Type="BG-BGN" Name="bmeMultibyteOg_wrapper.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="bmeMultibyteOg_wrapper.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="bmeMultibyteOg_wrapper.ltx"/>
+  <File Type="BITSTR-MMI" Name="bmeMultibyteOg_wrapper.mmi"/>
+  <File Type="BITSTR-BMM" Name="bmeMultibyteOg_wrapper_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="bmeMultibyteOg_wrapper.nky"/>
+  <File Type="BITSTR-RBT" Name="bmeMultibyteOg_wrapper.rbt"/>
+  <File Type="BITSTR-MSK" Name="bmeMultibyteOg_wrapper.msk"/>
+  <File Type="BG-BIN" Name="bmeMultibyteOg_wrapper.bin"/>
+  <File Type="BG-BIT" Name="bmeMultibyteOg_wrapper.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="bmeMultibyteOg_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="bmeMultibyteOg_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="bmeMultibyteOg_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="bmeMultibyteOg_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="bmeMultibyteOg_wrapper_postroute_physopt.dcp"/>
+  <File Type="ROUTE-CLK" Name="bmeMultibyteOg_wrapper_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="bmeMultibyteOg_wrapper_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="bmeMultibyteOg_wrapper_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="bmeMultibyteOg_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="bmeMultibyteOg_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="bmeMultibyteOg_wrapper_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="bmeMultibyteOg_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="bmeMultibyteOg_wrapper_power_routed.rpx"/>
+  <File Type="PLACE-IO" Name="bmeMultibyteOg_wrapper_io_placed.rpt"/>
+  <File Type="RDI-RDI" Name="bmeMultibyteOg_wrapper.vdi"/>
+  <File Type="PWROPT-TIMING" Name="bmeMultibyteOg_wrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="bmeMultibyteOg_wrapper_utilization_placed.pb"/>
+  <File Type="PHYSOPT-TIMING" Name="bmeMultibyteOg_wrapper_timing_summary_physopted.rpt"/>
+  <File Type="PWROPT-DRC" Name="bmeMultibyteOg_wrapper_drc_pwropted.rpt"/>
+  <File Type="PLACE-UTIL" Name="bmeMultibyteOg_wrapper_utilization_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="bmeMultibyteOg_wrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="OPT-TIMING" Name="bmeMultibyteOg_wrapper_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="bmeMultibyteOg_wrapper.hwdef"/>
+  <File Type="PWROPT-DCP" Name="bmeMultibyteOg_wrapper_pwropt.dcp"/>
+  <File Type="REPORTS-TCL" Name="bmeMultibyteOg_wrapper_reports.tcl"/>
+  <File Type="OPT-DCP" Name="bmeMultibyteOg_wrapper_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="bmeMultibyteOg_wrapper_placed.dcp"/>
+  <File Type="PA-TCL" Name="bmeMultibyteOg_wrapper.tcl"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="bmeMultibyteOg_wrapper_methodology_drc_opted.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="bmeMultibyteOg_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="bmeMultibyteOg_wrapper_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="bmeMultibyteOg_wrapper_timing_summary_placed.rpt"/>
+  <File Type="INIT-TIMING" Name="bmeMultibyteOg_wrapper_timing_summary_init.rpt"/>
+  <File Type="OPT-DRC" Name="bmeMultibyteOg_wrapper_drc_opted.rpt"/>
+  <File Type="PLACE-CTRL" Name="bmeMultibyteOg_wrapper_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="bmeMultibyteOg_wrapper_incremental_reuse_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="bmeMultibyteOg_wrapper_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="bmeMultibyteOg_wrapper_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="bmeMultibyteOg_wrapper_drc_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="bmeMultibyteOg_wrapper_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="bmeMultibyteOg_wrapper_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="bmeMultibyteOg_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="bmeMultibyteOg_wrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="bmeMultibyteOg_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="bmeMultibyteOg_wrapper_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="bmeMultibyteOg_wrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="bmeMultibyteOg_wrapper_drc_routed.rpx"/>
+  <File Type="ROUTE-PWR" Name="bmeMultibyteOg_wrapper_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="bmeMultibyteOg_wrapper_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="bmeMultibyteOg_wrapper_power_summary_routed.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/bmeMultibyteOg/bmeMultibyteOg.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/bmeMultibyteOg/hdl/bmeMultibyteOg_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="bmeMultibyteOg_wrapper"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../design.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="bmeMultibyteOg_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bmeMultibyteOg_rst_ps7_0_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bmeMultibyteOg_axi_iic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bmeMultibyteOg_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bmeMultibyteOg_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bmeMultibyteOg_s01_mmu_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bmeMultibyteOg_multibyteOg_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bmeMultibyteOg_auto_pc_1"/>
+</GenRun>

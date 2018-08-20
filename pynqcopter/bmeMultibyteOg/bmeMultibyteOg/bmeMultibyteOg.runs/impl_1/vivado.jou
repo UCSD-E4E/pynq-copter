@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Aug 19 17:55:34 2018
+# Process ID: 19826
+# Current directory: /home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.runs/impl_1
+# Command line: vivado -log bmeMultibyteOg_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bmeMultibyteOg_wrapper.tcl -notrace
+# Log file: /home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.runs/impl_1/bmeMultibyteOg_wrapper.vdi
+# Journal file: /home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source bmeMultibyteOg_wrapper.tcl -notrace
