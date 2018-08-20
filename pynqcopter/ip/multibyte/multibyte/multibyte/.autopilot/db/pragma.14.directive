@@ -1,0 +1,178 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="delay_until_ms" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="delay_until_ms" label="">
+<pragma name="PROTOCOL">
+<option name="floating" positionalBoolean="mode" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="iic"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="pressure_msb"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="pressure_lsb"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="pressure_xlsb"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="temperature_msb"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="temperature_lsb"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="temperature_xlsb"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="stateSetUp"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="state"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="stateDataReads"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="dig_T1"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="trimVal1"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="trimVal2"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="trimVal3"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="trimVal4"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="trimVal5"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="trimVal6"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="trimVal23"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="trimVal24"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="dig_P9"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="pressureRaw"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="temperatureRaw"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="multibyte" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="firstSample"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

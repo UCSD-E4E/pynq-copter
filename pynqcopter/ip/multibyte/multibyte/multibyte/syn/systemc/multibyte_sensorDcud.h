@@ -5,8 +5,8 @@
 // 
 // ==============================================================
 
-#ifndef __multibyte_sensorDbkb_H__
-#define __multibyte_sensorDbkb_H__
+#ifndef __multibyte_sensorDcud_H__
+#define __multibyte_sensorDcud_H__
 
 
 #include <systemc>
@@ -19,7 +19,7 @@ using namespace sc_dt;
 #include <iostream>
 #include <fstream>
 
-struct multibyte_sensorDbkb_ram : public sc_core::sc_module {
+struct multibyte_sensorDcud_ram : public sc_core::sc_module {
 
   static const unsigned DataWidth = 32;
   static const unsigned AddressRange = 6;
@@ -45,7 +45,7 @@ sc_core::sc_in<bool> clk;
 sc_lv<DataWidth> ram[AddressRange];
 
 
-   SC_CTOR(multibyte_sensorDbkb_ram) {
+   SC_CTOR(multibyte_sensorDcud_ram) {
 
 
 SC_METHOD(prc_write_0);
@@ -108,7 +108,7 @@ void prc_write_1()
 }; //endmodule
 
 
-SC_MODULE(multibyte_sensorDbkb) {
+SC_MODULE(multibyte_sensorDcud) {
 
 
 static const unsigned DataWidth = 32;
@@ -129,11 +129,11 @@ sc_core::sc_in<sc_logic> reset;
 sc_core::sc_in<bool> clk;
 
 
-multibyte_sensorDbkb_ram* meminst;
+multibyte_sensorDcud_ram* meminst;
 
 
-SC_CTOR(multibyte_sensorDbkb) {
-meminst = new multibyte_sensorDbkb_ram("multibyte_sensorDbkb_ram");
+SC_CTOR(multibyte_sensorDcud) {
+meminst = new multibyte_sensorDcud_ram("multibyte_sensorDcud_ram");
 meminst->address0(address0);
 meminst->ce0(ce0);
 meminst->q0(q0);
@@ -149,7 +149,7 @@ meminst->d1(d1);
 meminst->reset(reset);
 meminst->clk(clk);
 }
-~multibyte_sensorDbkb() {
+~multibyte_sensorDcud() {
     delete meminst;
 }
 

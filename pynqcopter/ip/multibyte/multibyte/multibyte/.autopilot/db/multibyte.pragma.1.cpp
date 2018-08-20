@@ -33231,11 +33231,14 @@ void multibyte(volatile int iic[4096],
  uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb,
  uint32_t& temperature_msb, uint32_t& temperature_lsb, uint32_t& temperature_xlsb,
  int& stateSetUp, int& state, int& stateDataReads,
- uint16_t dig_T1, uint16_t dig_T2, uint16_t dig_T3,
- uint16_t dig_P1, uint16_t dig_P2, uint16_t dig_P3,
- uint16_t dig_P4, uint16_t dig_P5, uint16_t dig_P6,
- uint16_t dig_P7, uint16_t dig_P8, uint16_t dig_P9,
- uint32_t& pressureRaw, uint32_t& temperatureRaw )
+ uint32_t& dig_T1, uint32_t& dig_T2, uint32_t& dig_T3,
+ uint32_t& dig_P1, uint32_t& dig_P2, uint32_t& dig_P3,
+ uint32_t& dig_P4, uint32_t& dig_P5, uint32_t& dig_P6,
+ uint32_t& dig_P7, uint32_t& dig_P8, uint32_t& dig_P9,
+ uint32_t& pressureRaw, uint32_t& temperatureRaw,
+ uint32_t& trimVal1, uint32_t& trimVal2, uint32_t& trimVal3,
+ uint32_t& trimVal4, uint32_t& trimVal5, uint32_t& trimVal6,
+ uint32_t& trimVal23, uint32_t& trimVal24 )
 {_ssdm_SpecArrayDimSize(iic,4096);
 
 
@@ -33252,16 +33255,17 @@ _ssdm_op_SpecInterface(stateSetUp, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 
 _ssdm_op_SpecInterface(state, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(stateDataReads, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(dig_T1, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(dig_T2, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(dig_T3, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(dig_P1, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(dig_P2, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(dig_P3, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(dig_P4, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(dig_P5, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(dig_P6, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(dig_P7, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(dig_P8, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+
+_ssdm_op_SpecInterface(trimVal1, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(trimVal2, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(trimVal3, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(trimVal4, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(trimVal5, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(trimVal6, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(trimVal23, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(trimVal24, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
+
+
 _ssdm_op_SpecInterface(dig_P9, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(pressureRaw, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(temperatureRaw, "s_axilite", 0, 0, "", 0, 0, "CTRL", "", "", 0, 0, 0, 0, "", "");
@@ -33312,7 +33316,7 @@ _ssdm_op_SpecReset( firstSample, 1,  "");
   iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
   iic[(0x40001000/4)+(0x108/4)] = 0xF4;
   iic[(0x40001000/4)+(0x108/4)] = 0x17;
-  delay_until_ms<10>();
+  delay_until_ms<50>();
 
 
   iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
@@ -33343,7 +33347,7 @@ _ssdm_op_SpecReset( firstSample, 1,  "");
   iic[(0x40001000/4) + (0x108/4)] = 0x88;
   iic[(0x40001000/4) + (0x108/4)] = 0x1ED;
   iic[(0x40001000/4) + (0x108/4)] = 0x224;
-
+  delay_until_ms<10>();
 
   state = 10;
 
@@ -33354,7 +33358,7 @@ _ssdm_op_SpecReset( firstSample, 1,  "");
  }
  else
  {
-
+  delay_until_ms<10>();
   state = 1;
 
   for (int index = 0; index < 24; index++)
@@ -33363,18 +33367,18 @@ _ssdm_op_SpecReset( firstSample, 1,  "");
   }
  }
 
- dig_T1 = trimmingData[1] << 8 | trimmingData[0];
- dig_T2 = trimmingData[3] << 8 | trimmingData[2];
- dig_T3 = trimmingData[5] << 8 | trimmingData[4];
- dig_P1 = trimmingData[7] << 8 | trimmingData[6];
- dig_P2 = trimmingData[9] << 8 | trimmingData[8];
- dig_P3 = trimmingData[11] << 8 | trimmingData[10];
- dig_P4 = trimmingData[13] << 8 | trimmingData[12];
- dig_P5 = trimmingData[15] << 8 | trimmingData[14];
- dig_P6 = trimmingData[17] << 8 | trimmingData[16];
- dig_P7 = trimmingData[19] << 8 | trimmingData[18];
- dig_P8 = trimmingData[21] << 8 | trimmingData[20];
- dig_P9 = trimmingData[23] << 8 | trimmingData[22];
+ trimVal1 = trimmingData[0];
+ trimVal2 = trimmingData[1];
+ trimVal3 = trimmingData[2];
+ trimVal4 = trimmingData[3];
+ trimVal5 = trimmingData[4];
+ trimVal6 = trimmingData[5];
+ trimVal23 = trimmingData[22];
+ trimVal24 = trimmingData[23];
+
+ dig_T1 = ((trimmingData[1]) << 8 | (trimmingData[0]));
+#232 "multibyte.cpp"
+ dig_P9 = ((trimmingData[23]) << 8 | (trimmingData[22]));
 
  delay_until_ms<10>();
 

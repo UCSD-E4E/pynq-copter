@@ -6,7 +6,7 @@
 // ==============================================================
 
 `timescale 1 ns / 1 ps
-module multibyte_sensorDbkb_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1, q1,  clk);
+module multibyte_sensorDcud_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1, q1,  clk);
 
 parameter DWIDTH = 32;
 parameter AWIDTH = 3;
@@ -63,7 +63,7 @@ endmodule
 
 
 `timescale 1 ns / 1 ps
-module multibyte_sensorDbkb(
+module multibyte_sensorDcud(
     reset,
     clk,
     address0,
@@ -95,7 +95,7 @@ output[DataWidth - 1:0] q1;
 
 
 
-multibyte_sensorDbkb_ram multibyte_sensorDbkb_ram_U(
+multibyte_sensorDcud_ram multibyte_sensorDcud_ram_U(
     .clk( clk ),
     .addr0( address0 ),
     .ce0( ce0 ),

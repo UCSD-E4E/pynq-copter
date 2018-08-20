@@ -59,22 +59,30 @@ port (
     state_ap_vld          :in   STD_LOGIC;
     stateDataReads        :in   STD_LOGIC_VECTOR(31 downto 0);
     stateDataReads_ap_vld :in   STD_LOGIC;
-    dig_T1                :out  STD_LOGIC_VECTOR(15 downto 0);
-    dig_T2                :out  STD_LOGIC_VECTOR(15 downto 0);
-    dig_T3                :out  STD_LOGIC_VECTOR(15 downto 0);
-    dig_P1                :out  STD_LOGIC_VECTOR(15 downto 0);
-    dig_P2                :out  STD_LOGIC_VECTOR(15 downto 0);
-    dig_P3                :out  STD_LOGIC_VECTOR(15 downto 0);
-    dig_P4                :out  STD_LOGIC_VECTOR(15 downto 0);
-    dig_P5                :out  STD_LOGIC_VECTOR(15 downto 0);
-    dig_P6                :out  STD_LOGIC_VECTOR(15 downto 0);
-    dig_P7                :out  STD_LOGIC_VECTOR(15 downto 0);
-    dig_P8                :out  STD_LOGIC_VECTOR(15 downto 0);
-    dig_P9                :out  STD_LOGIC_VECTOR(15 downto 0);
+    dig_T1                :in   STD_LOGIC_VECTOR(31 downto 0);
+    dig_T1_ap_vld         :in   STD_LOGIC;
+    dig_P9                :in   STD_LOGIC_VECTOR(31 downto 0);
+    dig_P9_ap_vld         :in   STD_LOGIC;
     pressureRaw           :in   STD_LOGIC_VECTOR(31 downto 0);
     pressureRaw_ap_vld    :in   STD_LOGIC;
     temperatureRaw        :in   STD_LOGIC_VECTOR(31 downto 0);
-    temperatureRaw_ap_vld :in   STD_LOGIC
+    temperatureRaw_ap_vld :in   STD_LOGIC;
+    trimVal1              :in   STD_LOGIC_VECTOR(31 downto 0);
+    trimVal1_ap_vld       :in   STD_LOGIC;
+    trimVal2              :in   STD_LOGIC_VECTOR(31 downto 0);
+    trimVal2_ap_vld       :in   STD_LOGIC;
+    trimVal3              :in   STD_LOGIC_VECTOR(31 downto 0);
+    trimVal3_ap_vld       :in   STD_LOGIC;
+    trimVal4              :in   STD_LOGIC_VECTOR(31 downto 0);
+    trimVal4_ap_vld       :in   STD_LOGIC;
+    trimVal5              :in   STD_LOGIC_VECTOR(31 downto 0);
+    trimVal5_ap_vld       :in   STD_LOGIC;
+    trimVal6              :in   STD_LOGIC_VECTOR(31 downto 0);
+    trimVal6_ap_vld       :in   STD_LOGIC;
+    trimVal23             :in   STD_LOGIC_VECTOR(31 downto 0);
+    trimVal23_ap_vld      :in   STD_LOGIC;
+    trimVal24             :in   STD_LOGIC_VECTOR(31 downto 0);
+    trimVal24_ap_vld      :in   STD_LOGIC
 );
 end entity multibyte_CTRL_s_axi;
 
@@ -143,62 +151,64 @@ end entity multibyte_CTRL_s_axi;
 --        bit 0  - stateDataReads_ap_vld (Read/COR)
 --        others - reserved
 -- 0x58 : Data signal of dig_T1
---        bit 15~0 - dig_T1[15:0] (Read/Write)
---        others   - reserved
--- 0x5c : reserved
--- 0x60 : Data signal of dig_T2
---        bit 15~0 - dig_T2[15:0] (Read/Write)
---        others   - reserved
--- 0x64 : reserved
--- 0x68 : Data signal of dig_T3
---        bit 15~0 - dig_T3[15:0] (Read/Write)
---        others   - reserved
--- 0x6c : reserved
--- 0x70 : Data signal of dig_P1
---        bit 15~0 - dig_P1[15:0] (Read/Write)
---        others   - reserved
--- 0x74 : reserved
--- 0x78 : Data signal of dig_P2
---        bit 15~0 - dig_P2[15:0] (Read/Write)
---        others   - reserved
--- 0x7c : reserved
--- 0x80 : Data signal of dig_P3
---        bit 15~0 - dig_P3[15:0] (Read/Write)
---        others   - reserved
--- 0x84 : reserved
--- 0x88 : Data signal of dig_P4
---        bit 15~0 - dig_P4[15:0] (Read/Write)
---        others   - reserved
--- 0x8c : reserved
--- 0x90 : Data signal of dig_P5
---        bit 15~0 - dig_P5[15:0] (Read/Write)
---        others   - reserved
--- 0x94 : reserved
--- 0x98 : Data signal of dig_P6
---        bit 15~0 - dig_P6[15:0] (Read/Write)
---        others   - reserved
--- 0x9c : reserved
--- 0xa0 : Data signal of dig_P7
---        bit 15~0 - dig_P7[15:0] (Read/Write)
---        others   - reserved
--- 0xa4 : reserved
--- 0xa8 : Data signal of dig_P8
---        bit 15~0 - dig_P8[15:0] (Read/Write)
---        others   - reserved
--- 0xac : reserved
--- 0xb0 : Data signal of dig_P9
---        bit 15~0 - dig_P9[15:0] (Read/Write)
---        others   - reserved
--- 0xb4 : reserved
--- 0xb8 : Data signal of pressureRaw
+--        bit 31~0 - dig_T1[31:0] (Read)
+-- 0x5c : Control signal of dig_T1
+--        bit 0  - dig_T1_ap_vld (Read/COR)
+--        others - reserved
+-- 0x60 : Data signal of dig_P9
+--        bit 31~0 - dig_P9[31:0] (Read)
+-- 0x64 : Control signal of dig_P9
+--        bit 0  - dig_P9_ap_vld (Read/COR)
+--        others - reserved
+-- 0x68 : Data signal of pressureRaw
 --        bit 31~0 - pressureRaw[31:0] (Read)
--- 0xbc : Control signal of pressureRaw
+-- 0x6c : Control signal of pressureRaw
 --        bit 0  - pressureRaw_ap_vld (Read/COR)
 --        others - reserved
--- 0xc0 : Data signal of temperatureRaw
+-- 0x70 : Data signal of temperatureRaw
 --        bit 31~0 - temperatureRaw[31:0] (Read)
--- 0xc4 : Control signal of temperatureRaw
+-- 0x74 : Control signal of temperatureRaw
 --        bit 0  - temperatureRaw_ap_vld (Read/COR)
+--        others - reserved
+-- 0x78 : Data signal of trimVal1
+--        bit 31~0 - trimVal1[31:0] (Read)
+-- 0x7c : Control signal of trimVal1
+--        bit 0  - trimVal1_ap_vld (Read/COR)
+--        others - reserved
+-- 0x80 : Data signal of trimVal2
+--        bit 31~0 - trimVal2[31:0] (Read)
+-- 0x84 : Control signal of trimVal2
+--        bit 0  - trimVal2_ap_vld (Read/COR)
+--        others - reserved
+-- 0x88 : Data signal of trimVal3
+--        bit 31~0 - trimVal3[31:0] (Read)
+-- 0x8c : Control signal of trimVal3
+--        bit 0  - trimVal3_ap_vld (Read/COR)
+--        others - reserved
+-- 0x90 : Data signal of trimVal4
+--        bit 31~0 - trimVal4[31:0] (Read)
+-- 0x94 : Control signal of trimVal4
+--        bit 0  - trimVal4_ap_vld (Read/COR)
+--        others - reserved
+-- 0x98 : Data signal of trimVal5
+--        bit 31~0 - trimVal5[31:0] (Read)
+-- 0x9c : Control signal of trimVal5
+--        bit 0  - trimVal5_ap_vld (Read/COR)
+--        others - reserved
+-- 0xa0 : Data signal of trimVal6
+--        bit 31~0 - trimVal6[31:0] (Read)
+-- 0xa4 : Control signal of trimVal6
+--        bit 0  - trimVal6_ap_vld (Read/COR)
+--        others - reserved
+-- 0xa8 : Data signal of trimVal23
+--        bit 31~0 - trimVal23[31:0] (Read)
+-- 0xac : Control signal of trimVal23
+--        bit 0  - trimVal23_ap_vld (Read/COR)
+--        others - reserved
+-- 0xb0 : Data signal of trimVal24
+--        bit 31~0 - trimVal24[31:0] (Read)
+-- 0xb4 : Control signal of trimVal24
+--        bit 0  - trimVal24_ap_vld (Read/COR)
 --        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -231,32 +241,28 @@ architecture behave of multibyte_CTRL_s_axi is
     constant ADDR_STATEDATAREADS_CTRL     : INTEGER := 16#54#;
     constant ADDR_DIG_T1_DATA_0           : INTEGER := 16#58#;
     constant ADDR_DIG_T1_CTRL             : INTEGER := 16#5c#;
-    constant ADDR_DIG_T2_DATA_0           : INTEGER := 16#60#;
-    constant ADDR_DIG_T2_CTRL             : INTEGER := 16#64#;
-    constant ADDR_DIG_T3_DATA_0           : INTEGER := 16#68#;
-    constant ADDR_DIG_T3_CTRL             : INTEGER := 16#6c#;
-    constant ADDR_DIG_P1_DATA_0           : INTEGER := 16#70#;
-    constant ADDR_DIG_P1_CTRL             : INTEGER := 16#74#;
-    constant ADDR_DIG_P2_DATA_0           : INTEGER := 16#78#;
-    constant ADDR_DIG_P2_CTRL             : INTEGER := 16#7c#;
-    constant ADDR_DIG_P3_DATA_0           : INTEGER := 16#80#;
-    constant ADDR_DIG_P3_CTRL             : INTEGER := 16#84#;
-    constant ADDR_DIG_P4_DATA_0           : INTEGER := 16#88#;
-    constant ADDR_DIG_P4_CTRL             : INTEGER := 16#8c#;
-    constant ADDR_DIG_P5_DATA_0           : INTEGER := 16#90#;
-    constant ADDR_DIG_P5_CTRL             : INTEGER := 16#94#;
-    constant ADDR_DIG_P6_DATA_0           : INTEGER := 16#98#;
-    constant ADDR_DIG_P6_CTRL             : INTEGER := 16#9c#;
-    constant ADDR_DIG_P7_DATA_0           : INTEGER := 16#a0#;
-    constant ADDR_DIG_P7_CTRL             : INTEGER := 16#a4#;
-    constant ADDR_DIG_P8_DATA_0           : INTEGER := 16#a8#;
-    constant ADDR_DIG_P8_CTRL             : INTEGER := 16#ac#;
-    constant ADDR_DIG_P9_DATA_0           : INTEGER := 16#b0#;
-    constant ADDR_DIG_P9_CTRL             : INTEGER := 16#b4#;
-    constant ADDR_PRESSURERAW_DATA_0      : INTEGER := 16#b8#;
-    constant ADDR_PRESSURERAW_CTRL        : INTEGER := 16#bc#;
-    constant ADDR_TEMPERATURERAW_DATA_0   : INTEGER := 16#c0#;
-    constant ADDR_TEMPERATURERAW_CTRL     : INTEGER := 16#c4#;
+    constant ADDR_DIG_P9_DATA_0           : INTEGER := 16#60#;
+    constant ADDR_DIG_P9_CTRL             : INTEGER := 16#64#;
+    constant ADDR_PRESSURERAW_DATA_0      : INTEGER := 16#68#;
+    constant ADDR_PRESSURERAW_CTRL        : INTEGER := 16#6c#;
+    constant ADDR_TEMPERATURERAW_DATA_0   : INTEGER := 16#70#;
+    constant ADDR_TEMPERATURERAW_CTRL     : INTEGER := 16#74#;
+    constant ADDR_TRIMVAL1_DATA_0         : INTEGER := 16#78#;
+    constant ADDR_TRIMVAL1_CTRL           : INTEGER := 16#7c#;
+    constant ADDR_TRIMVAL2_DATA_0         : INTEGER := 16#80#;
+    constant ADDR_TRIMVAL2_CTRL           : INTEGER := 16#84#;
+    constant ADDR_TRIMVAL3_DATA_0         : INTEGER := 16#88#;
+    constant ADDR_TRIMVAL3_CTRL           : INTEGER := 16#8c#;
+    constant ADDR_TRIMVAL4_DATA_0         : INTEGER := 16#90#;
+    constant ADDR_TRIMVAL4_CTRL           : INTEGER := 16#94#;
+    constant ADDR_TRIMVAL5_DATA_0         : INTEGER := 16#98#;
+    constant ADDR_TRIMVAL5_CTRL           : INTEGER := 16#9c#;
+    constant ADDR_TRIMVAL6_DATA_0         : INTEGER := 16#a0#;
+    constant ADDR_TRIMVAL6_CTRL           : INTEGER := 16#a4#;
+    constant ADDR_TRIMVAL23_DATA_0        : INTEGER := 16#a8#;
+    constant ADDR_TRIMVAL23_CTRL          : INTEGER := 16#ac#;
+    constant ADDR_TRIMVAL24_DATA_0        : INTEGER := 16#b0#;
+    constant ADDR_TRIMVAL24_CTRL          : INTEGER := 16#b4#;
     constant ADDR_BITS         : INTEGER := 8;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -297,22 +303,30 @@ architecture behave of multibyte_CTRL_s_axi is
     signal int_state_ap_vld    : STD_LOGIC;
     signal int_stateDataReads  : UNSIGNED(31 downto 0) := (others => '0');
     signal int_stateDataReads_ap_vld : STD_LOGIC;
-    signal int_dig_T1          : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_dig_T2          : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_dig_T3          : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_dig_P1          : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_dig_P2          : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_dig_P3          : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_dig_P4          : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_dig_P5          : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_dig_P6          : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_dig_P7          : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_dig_P8          : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_dig_P9          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_dig_T1          : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_dig_T1_ap_vld   : STD_LOGIC;
+    signal int_dig_P9          : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_dig_P9_ap_vld   : STD_LOGIC;
     signal int_pressureRaw     : UNSIGNED(31 downto 0) := (others => '0');
     signal int_pressureRaw_ap_vld : STD_LOGIC;
     signal int_temperatureRaw  : UNSIGNED(31 downto 0) := (others => '0');
     signal int_temperatureRaw_ap_vld : STD_LOGIC;
+    signal int_trimVal1        : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_trimVal1_ap_vld : STD_LOGIC;
+    signal int_trimVal2        : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_trimVal2_ap_vld : STD_LOGIC;
+    signal int_trimVal3        : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_trimVal3_ap_vld : STD_LOGIC;
+    signal int_trimVal4        : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_trimVal4_ap_vld : STD_LOGIC;
+    signal int_trimVal5        : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_trimVal5_ap_vld : STD_LOGIC;
+    signal int_trimVal6        : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_trimVal6_ap_vld : STD_LOGIC;
+    signal int_trimVal23       : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_trimVal23_ap_vld : STD_LOGIC;
+    signal int_trimVal24       : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_trimVal24_ap_vld : STD_LOGIC;
 
 
 begin
@@ -471,29 +485,13 @@ begin
                     when ADDR_STATEDATAREADS_CTRL =>
                         rdata_data <= (0 => int_stateDataReads_ap_vld, others => '0');
                     when ADDR_DIG_T1_DATA_0 =>
-                        rdata_data <= RESIZE(int_dig_T1(15 downto 0), 32);
-                    when ADDR_DIG_T2_DATA_0 =>
-                        rdata_data <= RESIZE(int_dig_T2(15 downto 0), 32);
-                    when ADDR_DIG_T3_DATA_0 =>
-                        rdata_data <= RESIZE(int_dig_T3(15 downto 0), 32);
-                    when ADDR_DIG_P1_DATA_0 =>
-                        rdata_data <= RESIZE(int_dig_P1(15 downto 0), 32);
-                    when ADDR_DIG_P2_DATA_0 =>
-                        rdata_data <= RESIZE(int_dig_P2(15 downto 0), 32);
-                    when ADDR_DIG_P3_DATA_0 =>
-                        rdata_data <= RESIZE(int_dig_P3(15 downto 0), 32);
-                    when ADDR_DIG_P4_DATA_0 =>
-                        rdata_data <= RESIZE(int_dig_P4(15 downto 0), 32);
-                    when ADDR_DIG_P5_DATA_0 =>
-                        rdata_data <= RESIZE(int_dig_P5(15 downto 0), 32);
-                    when ADDR_DIG_P6_DATA_0 =>
-                        rdata_data <= RESIZE(int_dig_P6(15 downto 0), 32);
-                    when ADDR_DIG_P7_DATA_0 =>
-                        rdata_data <= RESIZE(int_dig_P7(15 downto 0), 32);
-                    when ADDR_DIG_P8_DATA_0 =>
-                        rdata_data <= RESIZE(int_dig_P8(15 downto 0), 32);
+                        rdata_data <= RESIZE(int_dig_T1(31 downto 0), 32);
+                    when ADDR_DIG_T1_CTRL =>
+                        rdata_data <= (0 => int_dig_T1_ap_vld, others => '0');
                     when ADDR_DIG_P9_DATA_0 =>
-                        rdata_data <= RESIZE(int_dig_P9(15 downto 0), 32);
+                        rdata_data <= RESIZE(int_dig_P9(31 downto 0), 32);
+                    when ADDR_DIG_P9_CTRL =>
+                        rdata_data <= (0 => int_dig_P9_ap_vld, others => '0');
                     when ADDR_PRESSURERAW_DATA_0 =>
                         rdata_data <= RESIZE(int_pressureRaw(31 downto 0), 32);
                     when ADDR_PRESSURERAW_CTRL =>
@@ -502,6 +500,38 @@ begin
                         rdata_data <= RESIZE(int_temperatureRaw(31 downto 0), 32);
                     when ADDR_TEMPERATURERAW_CTRL =>
                         rdata_data <= (0 => int_temperatureRaw_ap_vld, others => '0');
+                    when ADDR_TRIMVAL1_DATA_0 =>
+                        rdata_data <= RESIZE(int_trimVal1(31 downto 0), 32);
+                    when ADDR_TRIMVAL1_CTRL =>
+                        rdata_data <= (0 => int_trimVal1_ap_vld, others => '0');
+                    when ADDR_TRIMVAL2_DATA_0 =>
+                        rdata_data <= RESIZE(int_trimVal2(31 downto 0), 32);
+                    when ADDR_TRIMVAL2_CTRL =>
+                        rdata_data <= (0 => int_trimVal2_ap_vld, others => '0');
+                    when ADDR_TRIMVAL3_DATA_0 =>
+                        rdata_data <= RESIZE(int_trimVal3(31 downto 0), 32);
+                    when ADDR_TRIMVAL3_CTRL =>
+                        rdata_data <= (0 => int_trimVal3_ap_vld, others => '0');
+                    when ADDR_TRIMVAL4_DATA_0 =>
+                        rdata_data <= RESIZE(int_trimVal4(31 downto 0), 32);
+                    when ADDR_TRIMVAL4_CTRL =>
+                        rdata_data <= (0 => int_trimVal4_ap_vld, others => '0');
+                    when ADDR_TRIMVAL5_DATA_0 =>
+                        rdata_data <= RESIZE(int_trimVal5(31 downto 0), 32);
+                    when ADDR_TRIMVAL5_CTRL =>
+                        rdata_data <= (0 => int_trimVal5_ap_vld, others => '0');
+                    when ADDR_TRIMVAL6_DATA_0 =>
+                        rdata_data <= RESIZE(int_trimVal6(31 downto 0), 32);
+                    when ADDR_TRIMVAL6_CTRL =>
+                        rdata_data <= (0 => int_trimVal6_ap_vld, others => '0');
+                    when ADDR_TRIMVAL23_DATA_0 =>
+                        rdata_data <= RESIZE(int_trimVal23(31 downto 0), 32);
+                    when ADDR_TRIMVAL23_CTRL =>
+                        rdata_data <= (0 => int_trimVal23_ap_vld, others => '0');
+                    when ADDR_TRIMVAL24_DATA_0 =>
+                        rdata_data <= RESIZE(int_trimVal24(31 downto 0), 32);
+                    when ADDR_TRIMVAL24_CTRL =>
+                        rdata_data <= (0 => int_trimVal24_ap_vld, others => '0');
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -513,18 +543,6 @@ begin
 -- ----------------------- Register logic ----------------
     interrupt            <= int_gie and (int_isr(0) or int_isr(1));
     ap_start             <= int_ap_start;
-    dig_T1               <= STD_LOGIC_VECTOR(int_dig_T1);
-    dig_T2               <= STD_LOGIC_VECTOR(int_dig_T2);
-    dig_T3               <= STD_LOGIC_VECTOR(int_dig_T3);
-    dig_P1               <= STD_LOGIC_VECTOR(int_dig_P1);
-    dig_P2               <= STD_LOGIC_VECTOR(int_dig_P2);
-    dig_P3               <= STD_LOGIC_VECTOR(int_dig_P3);
-    dig_P4               <= STD_LOGIC_VECTOR(int_dig_P4);
-    dig_P5               <= STD_LOGIC_VECTOR(int_dig_P5);
-    dig_P6               <= STD_LOGIC_VECTOR(int_dig_P6);
-    dig_P7               <= STD_LOGIC_VECTOR(int_dig_P7);
-    dig_P8               <= STD_LOGIC_VECTOR(int_dig_P8);
-    dig_P9               <= STD_LOGIC_VECTOR(int_dig_P9);
 
     process (ACLK)
     begin
@@ -906,9 +924,11 @@ begin
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_DIG_T1_DATA_0) then
-                    int_dig_T1(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_T1(15 downto 0));
+            if (ARESET = '1') then
+                int_dig_T1 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (dig_T1_ap_vld = '1') then
+                    int_dig_T1 <= UNSIGNED(dig_T1); -- clear on read
                 end if;
             end if;
         end if;
@@ -917,9 +937,13 @@ begin
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_DIG_T2_DATA_0) then
-                    int_dig_T2(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_T2(15 downto 0));
+            if (ARESET = '1') then
+                int_dig_T1_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (dig_T1_ap_vld = '1') then
+                    int_dig_T1_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_DIG_T1_CTRL) then
+                    int_dig_T1_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;
@@ -928,9 +952,11 @@ begin
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_DIG_T3_DATA_0) then
-                    int_dig_T3(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_T3(15 downto 0));
+            if (ARESET = '1') then
+                int_dig_P9 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (dig_P9_ap_vld = '1') then
+                    int_dig_P9 <= UNSIGNED(dig_P9); -- clear on read
                 end if;
             end if;
         end if;
@@ -939,97 +965,13 @@ begin
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_DIG_P1_DATA_0) then
-                    int_dig_P1(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P1(15 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_DIG_P2_DATA_0) then
-                    int_dig_P2(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P2(15 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_DIG_P3_DATA_0) then
-                    int_dig_P3(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P3(15 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_DIG_P4_DATA_0) then
-                    int_dig_P4(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P4(15 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_DIG_P5_DATA_0) then
-                    int_dig_P5(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P5(15 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_DIG_P6_DATA_0) then
-                    int_dig_P6(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P6(15 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_DIG_P7_DATA_0) then
-                    int_dig_P7(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P7(15 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_DIG_P8_DATA_0) then
-                    int_dig_P8(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P8(15 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_DIG_P9_DATA_0) then
-                    int_dig_P9(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_dig_P9(15 downto 0));
+            if (ARESET = '1') then
+                int_dig_P9_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (dig_P9_ap_vld = '1') then
+                    int_dig_P9_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_DIG_P9_CTRL) then
+                    int_dig_P9_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;
@@ -1086,6 +1028,230 @@ begin
                     int_temperatureRaw_ap_vld <= '1';
                 elsif (ar_hs = '1' and raddr = ADDR_TEMPERATURERAW_CTRL) then
                     int_temperatureRaw_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal1 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (trimVal1_ap_vld = '1') then
+                    int_trimVal1 <= UNSIGNED(trimVal1); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal1_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (trimVal1_ap_vld = '1') then
+                    int_trimVal1_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TRIMVAL1_CTRL) then
+                    int_trimVal1_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal2 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (trimVal2_ap_vld = '1') then
+                    int_trimVal2 <= UNSIGNED(trimVal2); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal2_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (trimVal2_ap_vld = '1') then
+                    int_trimVal2_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TRIMVAL2_CTRL) then
+                    int_trimVal2_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal3 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (trimVal3_ap_vld = '1') then
+                    int_trimVal3 <= UNSIGNED(trimVal3); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal3_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (trimVal3_ap_vld = '1') then
+                    int_trimVal3_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TRIMVAL3_CTRL) then
+                    int_trimVal3_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal4 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (trimVal4_ap_vld = '1') then
+                    int_trimVal4 <= UNSIGNED(trimVal4); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal4_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (trimVal4_ap_vld = '1') then
+                    int_trimVal4_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TRIMVAL4_CTRL) then
+                    int_trimVal4_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal5 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (trimVal5_ap_vld = '1') then
+                    int_trimVal5 <= UNSIGNED(trimVal5); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal5_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (trimVal5_ap_vld = '1') then
+                    int_trimVal5_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TRIMVAL5_CTRL) then
+                    int_trimVal5_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal6 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (trimVal6_ap_vld = '1') then
+                    int_trimVal6 <= UNSIGNED(trimVal6); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal6_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (trimVal6_ap_vld = '1') then
+                    int_trimVal6_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TRIMVAL6_CTRL) then
+                    int_trimVal6_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal23 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (trimVal23_ap_vld = '1') then
+                    int_trimVal23 <= UNSIGNED(trimVal23); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal23_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (trimVal23_ap_vld = '1') then
+                    int_trimVal23_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TRIMVAL23_CTRL) then
+                    int_trimVal23_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal24 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (trimVal24_ap_vld = '1') then
+                    int_trimVal24 <= UNSIGNED(trimVal24); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_trimVal24_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (trimVal24_ap_vld = '1') then
+                    int_trimVal24_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TRIMVAL24_CTRL) then
+                    int_trimVal24_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;

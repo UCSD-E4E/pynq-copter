@@ -10,12 +10,12 @@ library ieee;
 use ieee.std_logic_1164.all; 
 use ieee.std_logic_unsigned.all;
 
-entity multibyte_sensorDbkb_ram is 
+entity multibyte_trimminbkb_ram is 
     generic(
             mem_type    : string := "block"; 
-            dwidth     : integer := 32; 
-            awidth     : integer := 3; 
-            mem_size    : integer := 6
+            dwidth     : integer := 16; 
+            awidth     : integer := 5; 
+            mem_size    : integer := 24
     ); 
     port (
           addr0     : in std_logic_vector(awidth-1 downto 0); 
@@ -33,7 +33,7 @@ entity multibyte_sensorDbkb_ram is
 end entity; 
 
 
-architecture rtl of multibyte_sensorDbkb_ram is 
+architecture rtl of multibyte_trimminbkb_ram is 
 
 signal addr0_tmp : std_logic_vector(awidth-1 downto 0); 
 signal addr1_tmp : std_logic_vector(awidth-1 downto 0); 
@@ -103,11 +103,11 @@ end rtl;
 Library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity multibyte_sensorDbkb is
+entity multibyte_trimminbkb is
     generic (
-        DataWidth : INTEGER := 32;
-        AddressRange : INTEGER := 6;
-        AddressWidth : INTEGER := 3);
+        DataWidth : INTEGER := 16;
+        AddressRange : INTEGER := 24;
+        AddressWidth : INTEGER := 5);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;
@@ -123,8 +123,8 @@ entity multibyte_sensorDbkb is
         q1 : OUT STD_LOGIC_VECTOR(DataWidth - 1 DOWNTO 0));
 end entity;
 
-architecture arch of multibyte_sensorDbkb is
-    component multibyte_sensorDbkb_ram is
+architecture arch of multibyte_trimminbkb is
+    component multibyte_trimminbkb_ram is
         port (
             clk : IN STD_LOGIC;
             addr0 : IN STD_LOGIC_VECTOR;
@@ -142,7 +142,7 @@ architecture arch of multibyte_sensorDbkb is
 
 
 begin
-    multibyte_sensorDbkb_ram_U :  component multibyte_sensorDbkb_ram
+    multibyte_trimminbkb_ram_U :  component multibyte_trimminbkb_ram
     port map (
         clk => clk,
         addr0 => address0,

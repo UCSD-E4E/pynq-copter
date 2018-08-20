@@ -102,9 +102,9 @@
 <RtlPorts>
 <name>dig_T1</name>
 <CType>
-<TypeName>unsigned short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -112,9 +112,9 @@
 <RtlPorts>
 <name>dig_T2</name>
 <CType>
-<TypeName>unsigned short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -122,9 +122,9 @@
 <RtlPorts>
 <name>dig_T3</name>
 <CType>
-<TypeName>unsigned short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -132,9 +132,9 @@
 <RtlPorts>
 <name>dig_P1</name>
 <CType>
-<TypeName>unsigned short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -142,9 +142,9 @@
 <RtlPorts>
 <name>dig_P2</name>
 <CType>
-<TypeName>unsigned short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -152,9 +152,9 @@
 <RtlPorts>
 <name>dig_P3</name>
 <CType>
-<TypeName>unsigned short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -162,9 +162,9 @@
 <RtlPorts>
 <name>dig_P4</name>
 <CType>
-<TypeName>unsigned short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -172,9 +172,9 @@
 <RtlPorts>
 <name>dig_P5</name>
 <CType>
-<TypeName>unsigned short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -182,9 +182,9 @@
 <RtlPorts>
 <name>dig_P6</name>
 <CType>
-<TypeName>unsigned short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -192,9 +192,9 @@
 <RtlPorts>
 <name>dig_P7</name>
 <CType>
-<TypeName>unsigned short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -202,9 +202,9 @@
 <RtlPorts>
 <name>dig_P8</name>
 <CType>
-<TypeName>unsigned short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -212,9 +212,9 @@
 <RtlPorts>
 <name>dig_P9</name>
 <CType>
-<TypeName>unsigned short</TypeName>
-<TypeWidth>16</TypeWidth>
-<PhysicalWidth>16</PhysicalWidth>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
 </CType>
 <CFractionWidth>0</CFractionWidth>
 <InvalidType>0</InvalidType>
@@ -231,6 +231,86 @@
 </RtlPorts>
 <RtlPorts>
 <name>temperatureRaw</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>trimVal1</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>trimVal2</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>trimVal3</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>trimVal4</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>trimVal5</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>trimVal6</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>trimVal23</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>trimVal24</name>
 <CType>
 <TypeName>unsigned int</TypeName>
 <TypeWidth>32</TypeWidth>
