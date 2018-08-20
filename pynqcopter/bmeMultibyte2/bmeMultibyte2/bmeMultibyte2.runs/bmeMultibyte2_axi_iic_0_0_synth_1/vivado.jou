@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat Aug 18 17:34:57 2018
-# Process ID: 24655
+# Start of session at: Sun Aug 19 18:51:00 2018
+# Process ID: 11132
 # Current directory: /home/iavendano/pynq-copter/pynqcopter/bmeMultibyte2/bmeMultibyte2/bmeMultibyte2.runs/bmeMultibyte2_axi_iic_0_0_synth_1
 # Command line: vivado -log bmeMultibyte2_axi_iic_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bmeMultibyte2_axi_iic_0_0.tcl
 # Log file: /home/iavendano/pynq-copter/pynqcopter/bmeMultibyte2/bmeMultibyte2/bmeMultibyte2.runs/bmeMultibyte2_axi_iic_0_0_synth_1/bmeMultibyte2_axi_iic_0_0.vds

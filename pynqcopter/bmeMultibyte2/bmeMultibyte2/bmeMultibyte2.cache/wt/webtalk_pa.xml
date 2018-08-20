@@ -3,9 +3,9 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sat Aug 18 20:54:30 2018">
+<application name="pa" timeStamp="Sun Aug 19 19:12:36 2018">
 <section name="Project Information" visible="false">
-<property name="ProjectID" value="20372dc99641495581eb591a162838d2" type="ProjectID"/>
+<property name="ProjectID" value="6ceabb25e1e14d2b8ace2fe8a145ad93" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
@@ -20,9 +20,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="FileSetPanel_FILE_SET_PANEL_TREE" value="3" type="GuiHandlerData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="117" type="GuiMode"/>
+<property name="GuiMode" value="120" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="110" type="TclMode"/>
+<property name="TclMode" value="113" type="TclMode"/>
 </item>
 </section>
 </application>

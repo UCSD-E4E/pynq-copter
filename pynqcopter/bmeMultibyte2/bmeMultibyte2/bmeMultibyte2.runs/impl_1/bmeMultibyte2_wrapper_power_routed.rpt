@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Sat Aug 18 17:42:45 2018
+| Date             : Sun Aug 19 19:00:45 2018
 | Host             : fabricant running 64-bit Linux Mint 18 Sarah
 | Command          : report_power -file bmeMultibyte2_wrapper_power_routed.rpt -pb bmeMultibyte2_wrapper_power_summary_routed.pb -rpx bmeMultibyte2_wrapper_power_routed.rpx
 | Design           : bmeMultibyte2_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.437        |
+| Total On-Chip Power (W)  | 1.436        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.303        |
+| Dynamic (W)              | 1.302        |
 | Device Static (W)        | 0.134        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 68.4         |
@@ -53,20 +53,20 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.013 |        4 |       --- |             --- |
-| Slice Logic              |     0.006 |     7573 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     2568 |     53200 |            4.83 |
-|   Register               |    <0.001 |     3769 |    106400 |            3.54 |
+| Slice Logic              |     0.006 |     7411 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     2549 |     53200 |            4.79 |
+|   Register               |    <0.001 |     3646 |    106400 |            3.43 |
 |   CARRY4                 |    <0.001 |      148 |     13300 |            1.11 |
 |   LUT as Distributed RAM |    <0.001 |       64 |     17400 |            0.37 |
-|   F7/F8 Muxes            |    <0.001 |       32 |     53200 |            0.06 |
+|   F7/F8 Muxes            |    <0.001 |       13 |     53200 |            0.02 |
 |   LUT as Shift Register  |    <0.001 |      131 |     17400 |            0.75 |
 |   Others                 |     0.000 |      300 |       --- |             --- |
-| Signals                  |     0.008 |     5931 |       --- |             --- |
+| Signals                  |     0.008 |     5789 |       --- |             --- |
 | Block RAM                |     0.006 |        1 |       140 |            0.71 |
 | I/O                      |     0.000 |        6 |       125 |            4.80 |
 | PS7                      |     1.270 |        1 |       --- |             --- |
 | Static Power             |     0.134 |          |           |                 |
-| Total                    |     1.437 |          |           |                 |
+| Total                    |     1.436 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.046 |       0.033 |      0.013 |
+| Vccint    |       1.000 |     0.045 |       0.032 |      0.013 |
 | Vccaux    |       1.800 |     0.014 |       0.000 |      0.014 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -152,10 +152,10 @@ Table of Contents
 +--------------------------------------------------+-----------+
 | Name                                             | Power (W) |
 +--------------------------------------------------+-----------+
-| bmeMultibyte2_wrapper                            |     1.303 |
+| bmeMultibyte2_wrapper                            |     1.302 |
 |   arduino_iic_scl_iobuf                          |     0.000 |
 |   arduino_iic_sda_iobuf                          |     0.000 |
-|   bmeMultibyte2_i                                |     1.303 |
+|   bmeMultibyte2_i                                |     1.302 |
 |     axi_iic_0                                    |     0.002 |
 |       U0                                         |     0.002 |
 |         X_IIC                                    |     0.002 |
@@ -181,9 +181,9 @@ Table of Contents
 |                 I_DECODER                        |    <0.001 |
 |             X_INTERRUPT_CONTROL                  |    <0.001 |
 |             X_SOFT_RESET                         |    <0.001 |
-|     multibyte2_0                                 |     0.020 |
-|       inst                                       |     0.020 |
-|         multibyte2_CTRL_m_axi_U                  |     0.012 |
+|     multibyte2_0                                 |     0.019 |
+|       inst                                       |     0.019 |
+|         multibyte2_CTRL_m_axi_U                  |     0.011 |
 |           bus_read                               |     0.006 |
 |             buff_rdata                           |     0.004 |
 |             fifo_rctl                            |    <0.001 |
@@ -191,7 +191,7 @@ Table of Contents
 |             rs_rdata                             |    <0.001 |
 |             rs_rreq                              |    <0.001 |
 |           bus_write                              |     0.005 |
-|             buff_wdata                           |     0.004 |
+|             buff_wdata                           |     0.003 |
 |             bus_equal_gen.fifo_burst             |    <0.001 |
 |             fifo_resp                            |    <0.001 |
 |             fifo_resp_to_user                    |    <0.001 |
@@ -199,8 +199,8 @@ Table of Contents
 |             rs_wreq                              |    <0.001 |
 |           wreq_throttl                           |    <0.001 |
 |         multibyte2_CTRL_s_axi_U                  |     0.003 |
-|         sensorData_U                             |     0.002 |
-|           multibyte2_sensorcud_ram_U             |     0.002 |
+|         sensorData_U                             |    <0.001 |
+|           multibyte2_sensorcud_ram_U             |    <0.001 |
 |             ram_reg_0_7_0_0                      |    <0.001 |
 |             ram_reg_0_7_10_10                    |    <0.001 |
 |             ram_reg_0_7_11_11                    |    <0.001 |
