@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Sun Aug 19 22:57:37 2018
+| Date             : Sun Aug 19 23:28:09 2018
 | Host             : fabricant running 64-bit Linux Mint 18 Sarah
 | Command          : report_power -file bmeMultibyteOg_wrapper_power_routed.rpt -pb bmeMultibyteOg_wrapper_power_summary_routed.pb -rpx bmeMultibyteOg_wrapper_power_routed.rpx
 | Design           : bmeMultibyteOg_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.430        |
+| Total On-Chip Power (W)  | 1.429        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 1.296        |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.010 |        4 |       --- |             --- |
-| Slice Logic             |     0.005 |     5738 |       --- |             --- |
-|   LUT as Logic          |     0.004 |     2057 |     53200 |            3.87 |
+| Slice Logic             |     0.005 |     5703 |       --- |             --- |
+|   LUT as Logic          |     0.004 |     2030 |     53200 |            3.82 |
 |   Register              |    <0.001 |     2691 |    106400 |            2.53 |
 |   CARRY4                |    <0.001 |      128 |     13300 |            0.96 |
 |   LUT as Shift Register |    <0.001 |      130 |     17400 |            0.75 |
 |   F7/F8 Muxes           |    <0.001 |        2 |     53200 |           <0.01 |
 |   Others                |     0.000 |      296 |       --- |             --- |
-| Signals                 |     0.006 |     4362 |       --- |             --- |
-| Block RAM               |     0.006 |        1 |       140 |            0.71 |
+| Signals                 |     0.006 |     4332 |       --- |             --- |
+| Block RAM               |     0.005 |        1 |       140 |            0.71 |
 | I/O                     |     0.000 |        6 |       125 |            4.80 |
 | PS7                     |     1.270 |        1 |       --- |             --- |
 | Static Power            |     0.134 |          |           |                 |
-| Total                   |     1.430 |          |           |                 |
+| Total                   |     1.429 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.039 |       0.026 |      0.013 |
+| Vccint    |       1.000 |     0.038 |       0.025 |      0.013 |
 | Vccaux    |       1.800 |     0.014 |       0.000 |      0.014 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -180,17 +180,17 @@ Table of Contents
 |                 I_DECODER                        |    <0.001 |
 |             X_INTERRUPT_CONTROL                  |    <0.001 |
 |             X_SOFT_RESET                         |    <0.001 |
-|     multibyteOg_0                                |     0.014 |
-|       inst                                       |     0.014 |
-|         multibyteOg_CTRL_m_axi_U                 |     0.011 |
+|     multibyteOg_0                                |     0.013 |
+|       inst                                       |     0.013 |
+|         multibyteOg_CTRL_m_axi_U                 |     0.010 |
 |           bus_read                               |     0.006 |
 |             buff_rdata                           |     0.004 |
 |             fifo_rctl                            |    <0.001 |
 |             fifo_rreq                            |    <0.001 |
 |             rs_rdata                             |    <0.001 |
 |             rs_rreq                              |    <0.001 |
-|           bus_write                              |     0.005 |
-|             buff_wdata                           |     0.003 |
+|           bus_write                              |     0.004 |
+|             buff_wdata                           |     0.002 |
 |             bus_equal_gen.fifo_burst             |    <0.001 |
 |             fifo_resp                            |    <0.001 |
 |             fifo_resp_to_user                    |    <0.001 |

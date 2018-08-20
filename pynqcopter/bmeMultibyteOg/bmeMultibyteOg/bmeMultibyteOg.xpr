@@ -6,7 +6,7 @@
 <Project Version="7" Minor="35" Path="/home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="2baa6ccd57ba47ba9ac95450874c0f78"/>
+    <Option Name="Id" Val="568ebf8ad0524e6fa2f923399c2a2427"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -62,29 +62,29 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="bmeMultibyteOg.bd" FileRelPathName="ip/bmeMultibyteOg_auto_pc_0/bmeMultibyteOg_auto_pc_0.xci">
-          <Proxy FileSetName="bmeMultibyteOg_auto_pc_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="bmeMultibyteOg.bd" FileRelPathName="ip/bmeMultibyteOg_auto_pc_1/bmeMultibyteOg_auto_pc_1.xci">
-          <Proxy FileSetName="bmeMultibyteOg_auto_pc_1"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="bmeMultibyteOg.bd" FileRelPathName="ip/bmeMultibyteOg_s01_mmu_0/bmeMultibyteOg_s01_mmu_0.xci">
           <Proxy FileSetName="bmeMultibyteOg_s01_mmu_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="bmeMultibyteOg.bd" FileRelPathName="ip/bmeMultibyteOg_xbar_0/bmeMultibyteOg_xbar_0.xci">
           <Proxy FileSetName="bmeMultibyteOg_xbar_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="bmeMultibyteOg.bd" FileRelPathName="ip/bmeMultibyteOg_auto_pc_1/bmeMultibyteOg_auto_pc_1.xci">
+          <Proxy FileSetName="bmeMultibyteOg_auto_pc_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="bmeMultibyteOg.bd" FileRelPathName="ip/bmeMultibyteOg_auto_pc_0/bmeMultibyteOg_auto_pc_0.xci">
+          <Proxy FileSetName="bmeMultibyteOg_auto_pc_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="bmeMultibyteOg.bd" FileRelPathName="ip/bmeMultibyteOg_rst_ps7_0_100M_0/bmeMultibyteOg_rst_ps7_0_100M_0.xci">
           <Proxy FileSetName="bmeMultibyteOg_rst_ps7_0_100M_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="bmeMultibyteOg.bd" FileRelPathName="ip/bmeMultibyteOg_processing_system7_0_0/bmeMultibyteOg_processing_system7_0_0.xci">
-          <Proxy FileSetName="bmeMultibyteOg_processing_system7_0_0"/>
+        <CompFileExtendedInfo CompFileName="bmeMultibyteOg.bd" FileRelPathName="ip/bmeMultibyteOg_axi_iic_0_0/bmeMultibyteOg_axi_iic_0_0.xci">
+          <Proxy FileSetName="bmeMultibyteOg_axi_iic_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="bmeMultibyteOg.bd" FileRelPathName="ip/bmeMultibyteOg_multibyteOg_0_0/bmeMultibyteOg_multibyteOg_0_0.xci">
           <Proxy FileSetName="bmeMultibyteOg_multibyteOg_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="bmeMultibyteOg.bd" FileRelPathName="ip/bmeMultibyteOg_axi_iic_0_0/bmeMultibyteOg_axi_iic_0_0.xci">
-          <Proxy FileSetName="bmeMultibyteOg_axi_iic_0_0"/>
+        <CompFileExtendedInfo CompFileName="bmeMultibyteOg.bd" FileRelPathName="ip/bmeMultibyteOg_processing_system7_0_0/bmeMultibyteOg_processing_system7_0_0.xci">
+          <Proxy FileSetName="bmeMultibyteOg_processing_system7_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/bmeMultibyteOg/hdl/bmeMultibyteOg_wrapper.v">
@@ -112,11 +112,8 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
-      <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="bmeMultibyteOg_wrapper"/>
-        <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
@@ -196,7 +193,9 @@
   <Runs Version="1" Minor="10">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -205,7 +204,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_s01_mmu_0_synth_1" Type="Ft3:Synth" SrcSet="bmeMultibyteOg_s01_mmu_0" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_s01_mmu_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeMultibyteOg_s01_mmu_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -214,7 +215,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="bmeMultibyteOg_xbar_0" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_xbar_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeMultibyteOg_xbar_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -223,7 +226,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_auto_pc_1_synth_1" Type="Ft3:Synth" SrcSet="bmeMultibyteOg_auto_pc_1" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_auto_pc_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeMultibyteOg_auto_pc_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -232,7 +237,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="bmeMultibyteOg_auto_pc_0" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_auto_pc_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeMultibyteOg_auto_pc_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -241,7 +248,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_rst_ps7_0_100M_0_synth_1" Type="Ft3:Synth" SrcSet="bmeMultibyteOg_rst_ps7_0_100M_0" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_rst_ps7_0_100M_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeMultibyteOg_rst_ps7_0_100M_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -250,7 +259,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_axi_iic_0_0_synth_1" Type="Ft3:Synth" SrcSet="bmeMultibyteOg_axi_iic_0_0" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_axi_iic_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeMultibyteOg_axi_iic_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -259,7 +270,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_multibyteOg_0_0_synth_1" Type="Ft3:Synth" SrcSet="bmeMultibyteOg_multibyteOg_0_0" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_multibyteOg_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeMultibyteOg_multibyteOg_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -268,7 +281,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="bmeMultibyteOg_processing_system7_0_0" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_processing_system7_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bmeMultibyteOg_processing_system7_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -277,7 +292,9 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -294,7 +311,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_s01_mmu_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_s01_mmu_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeMultibyteOg_s01_mmu_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -310,7 +329,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_xbar_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeMultibyteOg_xbar_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -326,7 +347,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_auto_pc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_auto_pc_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeMultibyteOg_auto_pc_1_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -342,7 +365,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_auto_pc_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeMultibyteOg_auto_pc_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -358,7 +383,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_rst_ps7_0_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_rst_ps7_0_100M_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeMultibyteOg_rst_ps7_0_100M_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -374,7 +401,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_axi_iic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_axi_iic_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeMultibyteOg_axi_iic_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -390,7 +419,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_multibyteOg_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_multibyteOg_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeMultibyteOg_multibyteOg_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -406,7 +437,9 @@
     </Run>
     <Run Id="bmeMultibyteOg_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="bmeMultibyteOg_processing_system7_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="bmeMultibyteOg_processing_system7_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

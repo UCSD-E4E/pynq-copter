@@ -874,7 +874,7 @@ always @ (*) begin
     end else if (((ap_reg_ioackin_CTRL_WREADY == 1'b0) & (1'b1 == ap_CS_fsm_state66))) begin
         CTRL_WDATA = 32'd247;
     end else if (((ap_reg_ioackin_CTRL_WREADY == 1'b0) & (1'b1 == ap_CS_fsm_state44))) begin
-        CTRL_WDATA = 32'd36;
+        CTRL_WDATA = 32'd160;
     end else if (((ap_reg_ioackin_CTRL_WREADY == 1'b0) & (1'b1 == ap_CS_fsm_state43))) begin
         CTRL_WDATA = 32'd245;
     end else if (((ap_reg_ioackin_CTRL_WREADY == 1'b0) & (1'b1 == ap_CS_fsm_state35))) begin
