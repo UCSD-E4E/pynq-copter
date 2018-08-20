@@ -3,9 +3,9 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sat Aug 18 14:31:12 2018">
+<application name="pa" timeStamp="Sun Aug 19 18:50:50 2018">
 <section name="Project Information" visible="false">
-<property name="ProjectID" value="cb12c0a6134741f09fb35ca9ad28c608" type="ProjectID"/>
+<property name="ProjectID" value="d84b3349c1634299b3f661726dfe7a1b" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
@@ -15,14 +15,6 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="DesignMode" value="RTL" type="DesignMode"/>
 <property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
-</item>
-<item name="Gui Handlers">
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="3" type="GuiHandlerData"/>
-</item>
-<item name="Other">
-<property name="GuiMode" value="115" type="GuiMode"/>
-<property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="108" type="TclMode"/>
 </item>
 </section>
 </application>

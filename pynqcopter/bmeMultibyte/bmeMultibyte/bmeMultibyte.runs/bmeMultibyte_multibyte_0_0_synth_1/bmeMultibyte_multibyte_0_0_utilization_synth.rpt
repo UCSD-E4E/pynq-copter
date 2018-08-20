@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Sat Aug 18 13:20:26 2018
+| Date         : Sun Aug 19 18:52:54 2018
 | Host         : fabricant running 64-bit Linux Mint 18 Sarah
 | Command      : report_utilization -file bmeMultibyte_multibyte_0_0_utilization_synth.rpt -pb bmeMultibyte_multibyte_0_0_utilization_synth.pb
 | Design       : bmeMultibyte_multibyte_0_0
@@ -30,16 +30,16 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 1278 |     0 |     53200 |  2.40 |
-|   LUT as Logic             | 1256 |     0 |     53200 |  2.36 |
+| Slice LUTs*                | 1210 |     0 |     53200 |  2.27 |
+|   LUT as Logic             | 1188 |     0 |     53200 |  2.23 |
 |   LUT as Memory            |   22 |     0 |     17400 |  0.13 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   22 |     0 |           |       |
-| Slice Registers            | 1772 |     0 |    106400 |  1.67 |
-|   Register as Flip Flop    | 1772 |     0 |    106400 |  1.67 |
+| Slice Registers            | 1913 |     0 |    106400 |  1.80 |
+|   Register as Flip Flop    | 1913 |     0 |    106400 |  1.80 |
 |   Register as Latch        |    0 |     0 |    106400 |  0.00 |
-| F7 Muxes                   |    0 |     0 |     26600 |  0.00 |
-| F8 Muxes                   |    0 |     0 |     13300 |  0.00 |
+| F7 Muxes                   |    2 |     0 |     26600 | <0.01 |
+| F8 Muxes                   |    1 |     0 |     13300 | <0.01 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 12    |          Yes |         Set |            - |
-| 1760  |          Yes |       Reset |            - |
+| 7     |          Yes |         Set |            - |
+| 1906  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -69,11 +69,11 @@ Table of Contents
 +-------------------+------+-------+-----------+-------+
 |     Site Type     | Used | Fixed | Available | Util% |
 +-------------------+------+-------+-----------+-------+
-| Block RAM Tile    |    2 |     0 |       140 |  1.43 |
+| Block RAM Tile    |  2.5 |     0 |       140 |  1.79 |
 |   RAMB36/FIFO*    |    1 |     0 |       140 |  0.71 |
 |     RAMB36E1 only |    1 |       |           |       |
-|   RAMB18          |    2 |     0 |       280 |  0.71 |
-|     RAMB18E1 only |    2 |       |           |       |
+|   RAMB18          |    3 |     0 |       280 |  1.07 |
+|     RAMB18E1 only |    3 |       |           |       |
 +-------------------+------+-------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
 
@@ -150,18 +150,20 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 1760 |        Flop & Latch |
-| LUT3     |  417 |                 LUT |
-| LUT6     |  404 |                 LUT |
-| LUT4     |  247 |                 LUT |
-| LUT2     |  186 |                 LUT |
-| LUT5     |  166 |                 LUT |
-| CARRY4   |  102 |          CarryLogic |
-| LUT1     |   23 |                 LUT |
+| FDRE     | 1906 |        Flop & Latch |
+| LUT6     |  443 |                 LUT |
+| LUT3     |  227 |                 LUT |
+| LUT2     |  199 |                 LUT |
+| LUT4     |  184 |                 LUT |
+| LUT5     |  172 |                 LUT |
+| CARRY4   |  108 |          CarryLogic |
+| LUT1     |   25 |                 LUT |
 | SRL16E   |   22 |  Distributed Memory |
-| FDSE     |   12 |        Flop & Latch |
-| RAMB18E1 |    2 |        Block Memory |
+| FDSE     |    7 |        Flop & Latch |
+| RAMB18E1 |    3 |        Block Memory |
+| MUXF7    |    2 |               MuxFx |
 | RAMB36E1 |    1 |        Block Memory |
+| MUXF8    |    1 |               MuxFx |
 +----------+------+---------------------+
 
 
