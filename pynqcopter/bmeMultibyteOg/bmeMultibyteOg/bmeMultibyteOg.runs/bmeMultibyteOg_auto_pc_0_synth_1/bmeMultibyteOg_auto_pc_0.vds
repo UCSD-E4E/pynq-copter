@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun Aug 19 17:49:13 2018
-# Process ID: 16956
+# Start of session at: Sun Aug 19 22:48:46 2018
+# Process ID: 29056
 # Current directory: /home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.runs/bmeMultibyteOg_auto_pc_0_synth_1
 # Command line: vivado -log bmeMultibyteOg_auto_pc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bmeMultibyteOg_auto_pc_0.tcl
 # Log file: /home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.runs/bmeMultibyteOg_auto_pc_0_synth_1/bmeMultibyteOg_auto_pc_0.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 17085 
+INFO: Helper process launched with PID 29148 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:28 . Memory (MB): peak = 1261.332 ; gain = 86.992 ; free physical = 54720 ; free virtual = 443751
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:26 . Memory (MB): peak = 1261.328 ; gain = 86.992 ; free physical = 59831 ; free virtual = 449133
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'bmeMultibyteOg_auto_pc_0' [/home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.srcs/sources_1/bd/bmeMultibyteOg/ip/bmeMultibyteOg_auto_pc_0/synth/bmeMultibyteOg_auto_pc_0.v:58]
 INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_15_axi_protocol_converter' [/home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.srcs/sources_1/bd/bmeMultibyteOg/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4811]
@@ -893,7 +893,7 @@ WARNING: [Synth 8-3331] design axi_protocol_converter_v2_1_15_b2s_wrap_cmd has u
 WARNING: [Synth 8-3331] design axi_protocol_converter_v2_1_15_b2s_wrap_cmd has unconnected port axlen[5]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:43 ; elapsed = 00:01:13 . Memory (MB): peak = 1383.863 ; gain = 209.523 ; free physical = 54028 ; free virtual = 443060
+Finished RTL Elaboration : Time (s): cpu = 00:00:40 ; elapsed = 00:01:06 . Memory (MB): peak = 1384.859 ; gain = 210.523 ; free physical = 59329 ; free virtual = 448633
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -903,7 +903,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:43 ; elapsed = 00:01:13 . Memory (MB): peak = 1383.863 ; gain = 209.523 ; free physical = 54027 ; free virtual = 443059
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:40 ; elapsed = 00:01:07 . Memory (MB): peak = 1384.859 ; gain = 210.523 ; free physical = 59399 ; free virtual = 448703
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -919,23 +919,23 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1695.641 ; gain = 0.000 ; free physical = 54148 ; free virtual = 443182
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1696.637 ; gain = 0.000 ; free physical = 59050 ; free virtual = 448355
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:06 ; elapsed = 00:02:04 . Memory (MB): peak = 1695.641 ; gain = 521.301 ; free physical = 54620 ; free virtual = 443655
+Finished Constraint Validation : Time (s): cpu = 00:01:01 ; elapsed = 00:01:53 . Memory (MB): peak = 1696.637 ; gain = 522.301 ; free physical = 59037 ; free virtual = 448342
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:06 ; elapsed = 00:02:04 . Memory (MB): peak = 1695.641 ; gain = 521.301 ; free physical = 54616 ; free virtual = 443651
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:01 ; elapsed = 00:01:53 . Memory (MB): peak = 1696.637 ; gain = 522.301 ; free physical = 59036 ; free virtual = 448340
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.runs/bmeMultibyteOg_auto_pc_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:06 ; elapsed = 00:02:04 . Memory (MB): peak = 1695.641 ; gain = 521.301 ; free physical = 54609 ; free virtual = 443644
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:01 ; elapsed = 00:01:53 . Memory (MB): peak = 1696.637 ; gain = 522.301 ; free physical = 59030 ; free virtual = 448334
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element memory_reg[3] was removed.  [/home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.srcs/sources_1/bd/bmeMultibyteOg/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2857]
 WARNING: [Synth 8-6014] Unused sequential element memory_reg[2] was removed.  [/home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.srcs/sources_1/bd/bmeMultibyteOg/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2857]
@@ -1011,7 +1011,7 @@ WARNING: [Synth 8-6014] Unused sequential element memory_reg[2] was removed.  [/
 WARNING: [Synth 8-6014] Unused sequential element memory_reg[1] was removed.  [/home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.srcs/sources_1/bd/bmeMultibyteOg/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2857]
 WARNING: [Synth 8-6014] Unused sequential element memory_reg[0] was removed.  [/home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.srcs/sources_1/bd/bmeMultibyteOg/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2857]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:06 ; elapsed = 00:02:05 . Memory (MB): peak = 1695.641 ; gain = 521.301 ; free physical = 54617 ; free virtual = 443653
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:01 ; elapsed = 00:01:54 . Memory (MB): peak = 1696.637 ; gain = 522.301 ; free physical = 59090 ; free virtual = 448395
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1257,7 +1257,7 @@ INFO: [Synth 8-3332] Sequential element (gen_axilite.gen_b2s_conv.axilite_b2s/SI
 INFO: [Synth 8-3332] Sequential element (gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_payload_i_reg[40]) is unused and will be removed from module axi_protocol_converter_v2_1_15_axi_protocol_converter.
 INFO: [Synth 8-3332] Sequential element (gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_payload_i_reg[37]) is unused and will be removed from module axi_protocol_converter_v2_1_15_axi_protocol_converter.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:02:07 . Memory (MB): peak = 1695.641 ; gain = 521.301 ; free physical = 54586 ; free virtual = 443621
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:03 ; elapsed = 00:01:56 . Memory (MB): peak = 1696.637 ; gain = 522.301 ; free physical = 58900 ; free virtual = 448205
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1269,13 +1269,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:17 ; elapsed = 00:02:21 . Memory (MB): peak = 1695.641 ; gain = 521.301 ; free physical = 54275 ; free virtual = 443310
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:11 ; elapsed = 00:02:08 . Memory (MB): peak = 1696.637 ; gain = 522.301 ; free physical = 59274 ; free virtual = 448580
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:19 ; elapsed = 00:02:23 . Memory (MB): peak = 1695.641 ; gain = 521.301 ; free physical = 54211 ; free virtual = 443246
+Finished Timing Optimization : Time (s): cpu = 00:01:12 ; elapsed = 00:02:10 . Memory (MB): peak = 1696.637 ; gain = 522.301 ; free physical = 59196 ; free virtual = 448502
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1289,7 +1289,7 @@ Start Technology Mapping
 INFO: [Synth 8-3332] Sequential element (gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/cmd_translator_0/incr_cmd_0/axlen_cnt_reg[8]) is unused and will be removed from module axi_protocol_converter_v2_1_15_axi_protocol_converter.
 INFO: [Synth 8-3332] Sequential element (gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/cmd_translator_0/incr_cmd_0/axlen_cnt_reg[8]) is unused and will be removed from module axi_protocol_converter_v2_1_15_axi_protocol_converter.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:19 ; elapsed = 00:02:23 . Memory (MB): peak = 1697.703 ; gain = 523.363 ; free physical = 54206 ; free virtual = 443241
+Finished Technology Mapping : Time (s): cpu = 00:01:13 ; elapsed = 00:02:10 . Memory (MB): peak = 1698.699 ; gain = 524.363 ; free physical = 59134 ; free virtual = 448441
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1330,7 +1330,7 @@ INFO: [Synth 8-4618] Found max_fanout attribute set to 20 on net \gen_axilite.ge
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:20 ; elapsed = 00:02:24 . Memory (MB): peak = 1697.703 ; gain = 523.363 ; free physical = 54201 ; free virtual = 443237
+Finished IO Insertion : Time (s): cpu = 00:01:14 ; elapsed = 00:02:11 . Memory (MB): peak = 1698.699 ; gain = 524.363 ; free physical = 59040 ; free virtual = 448346
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1343,7 +1343,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:20 ; elapsed = 00:02:24 . Memory (MB): peak = 1697.703 ; gain = 523.363 ; free physical = 54201 ; free virtual = 443237
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:14 ; elapsed = 00:02:11 . Memory (MB): peak = 1698.699 ; gain = 524.363 ; free physical = 59035 ; free virtual = 448341
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1355,25 +1355,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:20 ; elapsed = 00:02:24 . Memory (MB): peak = 1697.703 ; gain = 523.363 ; free physical = 54224 ; free virtual = 443260
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:14 ; elapsed = 00:02:11 . Memory (MB): peak = 1698.699 ; gain = 524.363 ; free physical = 59065 ; free virtual = 448371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:20 ; elapsed = 00:02:24 . Memory (MB): peak = 1697.703 ; gain = 523.363 ; free physical = 54224 ; free virtual = 443260
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:14 ; elapsed = 00:02:11 . Memory (MB): peak = 1698.699 ; gain = 524.363 ; free physical = 59065 ; free virtual = 448371
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:20 ; elapsed = 00:02:24 . Memory (MB): peak = 1697.703 ; gain = 523.363 ; free physical = 54225 ; free virtual = 443261
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:14 ; elapsed = 00:02:11 . Memory (MB): peak = 1698.699 ; gain = 524.363 ; free physical = 59054 ; free virtual = 448360
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:20 ; elapsed = 00:02:24 . Memory (MB): peak = 1697.703 ; gain = 523.363 ; free physical = 54225 ; free virtual = 443261
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:14 ; elapsed = 00:02:11 . Memory (MB): peak = 1698.699 ; gain = 524.363 ; free physical = 59051 ; free virtual = 448357
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1451,11 +1451,11 @@ Report Instance Areas:
 |24    |        bresp_fifo_0                       |axi_protocol_converter_v2_1_15_b2s_simple_fifo__parameterized0 |     7|
 +------+-------------------------------------------+---------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:20 ; elapsed = 00:02:24 . Memory (MB): peak = 1697.703 ; gain = 523.363 ; free physical = 54225 ; free virtual = 443261
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:14 ; elapsed = 00:02:11 . Memory (MB): peak = 1698.699 ; gain = 524.363 ; free physical = 59048 ; free virtual = 448354
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 145 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:07 ; elapsed = 00:01:44 . Memory (MB): peak = 1697.703 ; gain = 211.586 ; free physical = 54255 ; free virtual = 443291
-Synthesis Optimization Complete : Time (s): cpu = 00:01:20 ; elapsed = 00:02:24 . Memory (MB): peak = 1697.711 ; gain = 523.363 ; free physical = 54255 ; free virtual = 443291
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:02 ; elapsed = 00:01:35 . Memory (MB): peak = 1698.699 ; gain = 212.586 ; free physical = 59131 ; free virtual = 448438
+Synthesis Optimization Complete : Time (s): cpu = 00:01:14 ; elapsed = 00:02:12 . Memory (MB): peak = 1698.707 ; gain = 524.363 ; free physical = 59132 ; free virtual = 448438
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 18 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1467,11 +1467,11 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 137 Infos, 178 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:23 ; elapsed = 00:02:26 . Memory (MB): peak = 1729.719 ; gain = 568.758 ; free physical = 54215 ; free virtual = 443251
+synth_design: Time (s): cpu = 00:01:16 ; elapsed = 00:02:13 . Memory (MB): peak = 1730.715 ; gain = 569.758 ; free physical = 58973 ; free virtual = 448279
 INFO: [Common 17-1381] The checkpoint '/home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.runs/bmeMultibyteOg_auto_pc_0_synth_1/bmeMultibyteOg_auto_pc_0.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.srcs/sources_1/bd/bmeMultibyteOg/ip/bmeMultibyteOg_auto_pc_0/bmeMultibyteOg_auto_pc_0.xci
 INFO: [Coretcl 2-1174] Renamed 23 cell refs.
 INFO: [Common 17-1381] The checkpoint '/home/iavendano/pynq-copter/pynqcopter/bmeMultibyteOg/bmeMultibyteOg/bmeMultibyteOg.runs/bmeMultibyteOg_auto_pc_0_synth_1/bmeMultibyteOg_auto_pc_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file bmeMultibyteOg_auto_pc_0_utilization_synth.rpt -pb bmeMultibyteOg_auto_pc_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.22 . Memory (MB): peak = 1753.730 ; gain = 0.000 ; free physical = 54166 ; free virtual = 443204
-INFO: [Common 17-206] Exiting Vivado at Sun Aug 19 17:51:56 2018...
+report_utilization: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.15 . Memory (MB): peak = 1754.727 ; gain = 0.000 ; free physical = 58952 ; free virtual = 448263
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 19 22:51:16 2018...

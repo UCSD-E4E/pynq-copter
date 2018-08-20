@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:multibyteOg:1.0
-// IP Revision: 1808191747
+// IP Revision: 1808192247
 
 (* X_CORE_INFO = "multibyteOg,Vivado 2017.4" *)
 (* CHECK_LICENSE_TYPE = "bmeMultibyteOg_multibyteOg_0_0,multibyteOg,{}" *)
