@@ -33278,23 +33278,23 @@ _ssdm_op_SpecReset( firstSample, 1,  "");
 
   iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
   iic[(0x40001000/4)+(0x108/4)] = 0xF4;
-  iic[(0x40001000/4)+(0x108/4)] = 0x17;
+  iic[(0x40001000/4)+(0x108/4)] = 0x27;
   delay_until_ms<50>();
 
 
   iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
   iic[(0x40001000/4)+(0x108/4)] = 0xF5;
-  iic[(0x40001000/4)+(0x108/4)] = 0x24;
-  delay_until_ms<50>();
+  iic[(0x40001000/4)+(0x108/4)] = 0xA0;
 
 
 
-  delay_until_ms<1750>();
+
+  delay_until_ms<500>();
   iic[(0x40001000/4) + (0x108/4)] = 0x1ED;
   if (iic[(0x40001000/4) + (0x10C/4)] != 96) {
    calibrationSuccess = 13;
   }
-  delay_until_ms<50>();
+
 
 
   firstSample = false;
@@ -33308,14 +33308,14 @@ _ssdm_op_SpecReset( firstSample, 1,  "");
   iic[(0x40001000/4) + (0x108/4)] = 0xF7;
   iic[(0x40001000/4) + (0x108/4)] = 0x1ED;
   iic[(0x40001000/4) + (0x108/4)] = 0x203;
-  delay_until_ms<10>();
+
 
 
   for (int index = 0; index < 3; index++) {
    sensorData[index] = iic[(0x40001000/4) + (0x10C/4)];
   }
  } else {
-  delay_until_ms<10>();
+
 
 
   for (int index = 0; index < 3; index++) {

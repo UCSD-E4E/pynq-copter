@@ -6,7 +6,7 @@
 
 source /data/opt/Xilinx/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/data/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Sun Aug 19 17:46:48 PDT 2018
+INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Mon Aug 20 10:54:19 PDT 2018
 INFO: [HLS 200-10] On os Linux Mint 18 Sarah
 INFO: [HLS 200-10] In directory '/home/iavendano/pynq-copter/pynqcopter/ip/multibyteOg'
 INFO: [HLS 200-10] Opening project '/home/iavendano/pynq-copter/pynqcopter/ip/multibyteOg/multibyteOg'.
@@ -20,77 +20,10 @@ INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 make[2]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/multibyteOg/multibyteOg/multibyteOg/csim/build'
-make[2]: 'csim.exe' is up to date.
+   Compiling ../../../../multibyteOg.cpp in debug mode
+   Generating csim.exe
 make[2]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/multibyteOg/multibyteOg/multibyteOg/csim/build'
 awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'multibyteOg.cpp' ...
-INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
-INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:05 ; elapsed = 00:00:25 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 56294 ; free virtual = 445287
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:07 ; elapsed = 00:00:27 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 56306 ; free virtual = 445298
-INFO: [HLS 200-10] Starting code transformations ...
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyteOg' (multibyteOg.cpp:139).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyteOg' (multibyteOg.cpp:130).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyteOg' (multibyteOg.cpp:124).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyteOg' (multibyteOg.cpp:118).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyteOg' (multibyteOg.cpp:112).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyteOg' (multibyteOg.cpp:104).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<1750ull, 100000000ull>' into 'multibyteOg' (multibyteOg.cpp:134).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 100000000ull>' into 'multibyteOg' (multibyteOg.cpp:153).
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:08 ; elapsed = 00:00:28 . Memory (MB): peak = 360.215 ; gain = 13.652 ; free physical = 56297 ; free virtual = 445289
-INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:08 ; elapsed = 00:00:28 . Memory (MB): peak = 360.215 ; gain = 13.652 ; free physical = 56294 ; free virtual = 445286
-INFO: [XFORM 203-102] Automatically partitioning small array 'sensorData' (multibyteOg.cpp:83) completely based on array size.
-INFO: [XFORM 203-101] Partitioning array 'sensorData' (multibyteOg.cpp:83) in dimension 1 completely.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (multibyteOg.cpp:157:4) to (multibyteOg.cpp:156:34) in function 'multibyteOg'... converting 4 basic blocks.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:09 ; elapsed = 00:00:29 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 56270 ; free virtual = 445262
-WARNING: [XFORM 203-803] Cannot bundle argument 'iic' to m_axi port 'CTRL' since its offset mode is off.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:10 ; elapsed = 00:00:30 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 56249 ; free virtual = 445242
-INFO: [HLS 200-10] Starting hardware synthesis ...
-INFO: [HLS 200-10] Synthesizing 'multibyteOg' ...
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'multibyteOg'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 30.13 seconds; current allocated memory: 82.392 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 83.577 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'multibyteOg'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyteOg/CTRL' to 'm_axi'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyteOg/pressure_msb' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyteOg/pressure_lsb' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyteOg/pressure_xlsb' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'multibyteOg' to 's_axilite & ap_ctrl_hs'.
-WARNING: [RTGEN 206-101] Register 'firstSample' is power-on initialization.
-INFO: [RTGEN 206-100] Bundling port 'return', 'pressure_msb', 'pressure_lsb' and 'pressure_xlsb' to AXI-Lite port CTRL.
-INFO: [SYN 201-210] Renamed object name 'multibyteOg_mux_42_32_1_1' to 'multibyteOg_mux_4bkb' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'multibyteOg_mux_4bkb': 3 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'multibyteOg'.
-INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 85.996 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:12 ; elapsed = 00:00:32 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 56255 ; free virtual = 445248
-INFO: [SYSC 207-301] Generating SystemC RTL for multibyteOg.
-INFO: [VHDL 208-304] Generating VHDL RTL for multibyteOg.
-INFO: [VLOG 209-307] Generating Verilog RTL for multibyteOg.
-INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-
-****** Vivado v2017.4 (64-bit)
-  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
-  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
-
-source run_ippack.tcl -notrace
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Sun Aug 19 17:47:37 2018...
-INFO: [HLS 200-112] Total elapsed time: 82.21 seconds; peak allocated memory: 85.996 MB.
-INFO: [Common 17-206] Exiting vivado_hls at Sun Aug 19 17:48:10 2018...

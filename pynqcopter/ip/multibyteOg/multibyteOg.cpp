@@ -120,23 +120,23 @@ void multibyteOg(volatile int iic[4096], uint32_t& pressure_msb, uint32_t& press
 	//ENABLE PRESSURE MEASUREMENT, SKIP TEMPERATURE
 		iic[IIC_INDEX+TX_FIFO] = 0x1EC;
 		iic[IIC_INDEX+TX_FIFO] = 0xF4; 
-		iic[IIC_INDEX+TX_FIFO] = 0x17; 
+		iic[IIC_INDEX+TX_FIFO] = 0x27; //temp and press oversampling x1 
 		delay_until_ms<50>();
 	
 	//CONFIGURE REGISTER SETTINGS: time sampling, time constant IIR Filter
 		iic[IIC_INDEX+TX_FIFO] = 0x1EC;
 		iic[IIC_INDEX+TX_FIFO] = 0xF5; 
-		iic[IIC_INDEX+TX_FIFO] = 0x24;
-		delay_until_ms<50>();
+		iic[IIC_INDEX+TX_FIFO] = 0xA0;
+		//delay_until_ms<50>();
 
 		//4. want to: keep checking if the system is back up by checking to see if the chip ID can be read
 		//   actually: waiting one second for restart to complete, and clearing fifo again
-		delay_until_ms<1750>();
+		delay_until_ms<500>();
 		iic[IIC_INDEX + TX_FIFO] = 0x1ED;
 		if (iic[IIC_INDEX + RX_FIFO] != 96) { //CHIP ID DECIMAL CONVERSION of 0x60
 			calibrationSuccess = 13; 
 		}
-		delay_until_ms<50>();
+		//delay_until_ms<50>();
 
 		//initial setup completed
 		firstSample = false;
@@ -145,19 +145,19 @@ void multibyteOg(volatile int iic[4096], uint32_t& pressure_msb, uint32_t& press
 	//how to ensure sensor was properly calibrated?
 	//if the sensor was properly calibrated, return appropriate data; otherwise, return 0's
 	if (calibrationSuccess) {
-		//SEND DEVICE, DATA ADDRESS, REPEATED ADDRESS, adnd AMOUNT OF DATA TO RECEIVE
+		//SEND DEVICE, DATA ADDRESS, REPEATED ADDRESS, and AMOUNT OF DATA TO RECEIVE
 		iic[IIC_INDEX + TX_FIFO] = 0x1EC;
 		iic[IIC_INDEX + TX_FIFO] = 0xF7;
 		iic[IIC_INDEX + TX_FIFO] = 0x1ED;
 		iic[IIC_INDEX + TX_FIFO] = 0x203;
-		delay_until_ms<10>(); //sample rate
-
+		//delay_until_ms<10>(); //sample rate
+		
 		//READ RECIEVED DATA
 		for (int index = 0; index < 3; index++) {
 			sensorData[index] = iic[IIC_INDEX + RX_FIFO];
 		}
 	} else {
-		delay_until_ms<10>(); //sample rate
+		//delay_until_ms<10>(); //sample rate
 
 		//READ RECIEVED DATA
 		for (int index = 0; index < 3; index++) {

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'multibyteOg'" level="0">
-<item name = "Date">Sun Aug 19 17:47:18 2018
+<item name = "Date">Sun Aug 19 23:17:05 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">multibyteOg</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1000042, 206000105, 1000042, 206000105, none</column>
+<column name="">41, 70000102, 41, 70000102, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -40,11 +40,8 @@
 <column name="- Loop 3">5000000, 5000000, 1, -, -, 5000000, no</column>
 <column name="- Loop 4">5000000, 5000000, 1, -, -, 5000000, no</column>
 <column name="- Loop 5">5000000, 5000000, 1, -, -, 5000000, no</column>
-<column name="- Loop 6">5000000, 5000000, 1, -, -, 5000000, no</column>
-<column name="- Loop 7">175000000, 175000000, 1, -, -, 175000000, no</column>
-<column name="- Loop 8">5000000, 5000000, 1, -, -, 5000000, no</column>
-<column name="- Loop 9">1000000, 1000000, 1, -, -, 1000000, no</column>
-<column name="- Loop 10">27, 27, 9, -, -, 3, no</column>
+<column name="- Loop 6">50000000, 50000000, 1, -, -, 50000000, no</column>
+<column name="- Loop 7">27, 27, 9, -, -, 3, no</column>
 </table>
 </item>
 </section>

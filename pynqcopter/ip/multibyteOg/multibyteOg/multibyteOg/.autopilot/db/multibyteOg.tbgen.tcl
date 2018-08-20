@@ -190,17 +190,17 @@ set RtlHierarchyInfo {[
 
 set ArgLastReadFirstWriteLatency {
 	multibyteOg {
-		CTRL {Type IO LastRead 83 FirstWrite 2}
-		pressure_msb {Type O LastRead -1 FirstWrite 76}
-		pressure_lsb {Type O LastRead -1 FirstWrite 76}
-		pressure_xlsb {Type O LastRead -1 FirstWrite 76}
+		CTRL {Type IO LastRead 80 FirstWrite 2}
+		pressure_msb {Type O LastRead -1 FirstWrite 73}
+		pressure_lsb {Type O LastRead -1 FirstWrite 73}
+		pressure_xlsb {Type O LastRead -1 FirstWrite 73}
 		firstSample {Type IO LastRead -1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "1000042", "Max" : "206000105"}
-	, {"Name" : "Interval", "Min" : "1000043", "Max" : "206000106"}
+	{"Name" : "Latency", "Min" : "41", "Max" : "70000102"}
+	, {"Name" : "Interval", "Min" : "42", "Max" : "70000103"}
 ]}
 
 set PipelineEnableSignalInfo {[

@@ -7,13 +7,12 @@ target triple = "x86_64-unknown-linux-gnu"
 @llvm_global_ctors_1 = appending global [0 x void ()*] zeroinitializer ; [#uses=0 type=[0 x void ()*]*]
 @llvm_global_ctors_0 = appending global [0 x i32] zeroinitializer ; [#uses=0 type=[0 x i32]*]
 @firstSample = internal unnamed_addr global i1 true, align 1 ; [#uses=3 type=i1*]
-@delay_until_ms_MD_50 = internal unnamed_addr constant [43 x i8] c"delay_until_ms<50ull, 100000000ull>.region\00" ; [#uses=12 type=[43 x i8]*]
-@delay_until_ms_MD_17 = internal unnamed_addr constant [45 x i8] c"delay_until_ms<1750ull, 100000000ull>.region\00" ; [#uses=2 type=[45 x i8]*]
-@delay_until_ms_MD_10 = internal unnamed_addr constant [43 x i8] c"delay_until_ms<10ull, 100000000ull>.region\00" ; [#uses=2 type=[43 x i8]*]
+@delay_until_ms_MD_50_1 = internal unnamed_addr constant [44 x i8] c"delay_until_ms<500ull, 100000000ull>.region\00" ; [#uses=2 type=[44 x i8]*]
+@delay_until_ms_MD_50 = internal unnamed_addr constant [43 x i8] c"delay_until_ms<50ull, 100000000ull>.region\00" ; [#uses=8 type=[43 x i8]*]
 @DELAY_BETWEEN_SAMPLE = global i32 10, align 4    ; [#uses=0 type=i32*]
 @p_str3 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1 ; [#uses=1 type=[6 x i8]*]
 @p_str2 = private unnamed_addr constant [5 x i8] c"CTRL\00", align 1 ; [#uses=5 type=[5 x i8]*]
-@p_str1 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=34 type=[1 x i8]*]
+@p_str1 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=31 type=[1 x i8]*]
 @p_str = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1 ; [#uses=4 type=[10 x i8]*]
 
 ; [#uses=0]
@@ -25,14 +24,11 @@ define void @multibyteOg(i32* %CTRL, i32* %pressure_msb, i32* %pressure_lsb, i32
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %pressure_msb) nounwind, !map !48
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %pressure_lsb) nounwind, !map !52
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %pressure_xlsb) nounwind, !map !56
-  %dummy_14 = alloca i8, align 1                  ; [#uses=2 type=i8*]
-  %dummy_10 = alloca i8, align 1                  ; [#uses=2 type=i8*]
+  %dummy_8 = alloca i8, align 1                   ; [#uses=2 type=i8*]
   %dummy = alloca i8, align 1                     ; [#uses=2 type=i8*]
   %dummy_2 = alloca i8, align 1                   ; [#uses=2 type=i8*]
   %dummy_4 = alloca i8, align 1                   ; [#uses=2 type=i8*]
   %dummy_6 = alloca i8, align 1                   ; [#uses=2 type=i8*]
-  %dummy_8 = alloca i8, align 1                   ; [#uses=2 type=i8*]
-  %dummy_12 = alloca i8, align 1                  ; [#uses=2 type=i8*]
   call void (...)* @_ssdm_op_SpecTopModule([12 x i8]* @multibyteOg_str) nounwind
   call void @llvm.dbg.value(metadata !{i32* %CTRL}, i64 0, metadata !60), !dbg !76 ; [debug line = 72:31] [debug variable = iic]
   call void @llvm.dbg.value(metadata !{i32* %pressure_msb}, i64 0, metadata !77), !dbg !78 ; [debug line = 72:52] [debug variable = pressure_msb]
@@ -76,34 +72,34 @@ meminst:                                          ; preds = %meminst, %0
   %CTRL_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_2), !dbg !91 ; [#uses=0 type=i1] [debug line = 91:3]
   %CTRL_addr_3 = getelementptr i32* %CTRL, i64 268436544 ; [#uses=1 type=i32*]
   %CTRL_addr_1_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_3, i32 1), !dbg !93 ; [#uses=0 type=i1] [debug line = 94:3]
-  %CTRL_addr_4 = getelementptr i32* %CTRL, i64 268436544 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_4, i32 2, i4 -1), !dbg !93 ; [debug line = 94:3]
-  %CTRL_addr_5 = getelementptr i32* %CTRL, i64 268436544 ; [#uses=1 type=i32*]
-  %CTRL_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_5), !dbg !93 ; [#uses=0 type=i1] [debug line = 94:3]
   %CTRL_addr_6 = getelementptr i32* %CTRL, i64 268436544 ; [#uses=1 type=i32*]
-  %CTRL_addr_1_req2 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_6, i32 1), !dbg !94 ; [#uses=0 type=i1] [debug line = 97:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_6, i32 2, i4 -1), !dbg !93 ; [debug line = 94:3]
   %CTRL_addr_7 = getelementptr i32* %CTRL, i64 268436544 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_7, i32 1, i4 -1), !dbg !94 ; [debug line = 97:3]
+  %CTRL_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_7), !dbg !93 ; [#uses=0 type=i1] [debug line = 94:3]
   %CTRL_addr_8 = getelementptr i32* %CTRL, i64 268436544 ; [#uses=1 type=i32*]
-  %CTRL_addr_1_resp3 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_8), !dbg !94 ; [#uses=0 type=i1] [debug line = 97:3]
-  %CTRL_addr_9 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_9, i32 1), !dbg !95 ; [#uses=0 type=i1] [debug line = 101:3]
-  %CTRL_addr_10 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_10, i32 492, i4 -1), !dbg !95 ; [debug line = 101:3]
+  %CTRL_addr_1_req2 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_8, i32 1), !dbg !94 ; [#uses=0 type=i1] [debug line = 97:3]
+  %CTRL_addr_9 = getelementptr i32* %CTRL, i64 268436544 ; [#uses=1 type=i32*]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_9, i32 1, i4 -1), !dbg !94 ; [debug line = 97:3]
+  %CTRL_addr_10 = getelementptr i32* %CTRL, i64 268436544 ; [#uses=1 type=i32*]
+  %CTRL_addr_1_resp3 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_10), !dbg !94 ; [#uses=0 type=i1] [debug line = 97:3]
   %CTRL_addr_11 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_11), !dbg !95 ; [#uses=0 type=i1] [debug line = 101:3]
+  %CTRL_addr_2_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_11, i32 1), !dbg !95 ; [#uses=0 type=i1] [debug line = 101:3]
   %CTRL_addr_12 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req4 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_12, i32 1), !dbg !96 ; [#uses=0 type=i1] [debug line = 102:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_12, i32 492, i4 -1), !dbg !95 ; [debug line = 101:3]
   %CTRL_addr_13 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_13, i32 208, i4 -1), !dbg !96 ; [debug line = 102:3]
+  %CTRL_addr_2_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_13), !dbg !95 ; [#uses=0 type=i1] [debug line = 101:3]
   %CTRL_addr_14 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp5 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_14), !dbg !96 ; [#uses=0 type=i1] [debug line = 102:3]
+  %CTRL_addr_2_req4 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_14, i32 1), !dbg !96 ; [#uses=0 type=i1] [debug line = 102:3]
   %CTRL_addr_15 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req6 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_15, i32 1), !dbg !97 ; [#uses=0 type=i1] [debug line = 103:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_15, i32 208, i4 -1), !dbg !96 ; [debug line = 102:3]
   %CTRL_addr_16 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_16, i32 493, i4 -1), !dbg !97 ; [debug line = 103:3]
+  %CTRL_addr_2_resp5 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_16), !dbg !96 ; [#uses=0 type=i1] [debug line = 102:3]
   %CTRL_addr_17 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp7 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_17), !dbg !97 ; [#uses=0 type=i1] [debug line = 103:3]
+  %CTRL_addr_2_req6 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_17, i32 1), !dbg !97 ; [#uses=0 type=i1] [debug line = 103:3]
+  %CTRL_addr_18 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_18, i32 493, i4 -1), !dbg !97 ; [debug line = 103:3]
+  %CTRL_addr_19 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  %CTRL_addr_2_resp7 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_19), !dbg !97 ; [#uses=0 type=i1] [debug line = 103:3]
   %rbegin2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([43 x i8]* @delay_until_ms_MD_50) nounwind ; [#uses=1 type=i32]
   call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind, !dbg !98 ; [debug line = 60:1@104:3]
   br label %3, !dbg !108                          ; [debug line = 64:7@104:3]
@@ -113,7 +109,7 @@ meminst:                                          ; preds = %meminst, %0
   %tmp_3 = icmp eq i23 %p_014_0_i1, -3388608, !dbg !110 ; [#uses=1 type=i1] [debug line = 2042:5@64:16@104:3]
   %empty_3 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5000000, i64 5000000, i64 5000000) nounwind ; [#uses=0 type=i32]
   %ctr_V = add i23 %p_014_0_i1, 1, !dbg !954      ; [#uses=1 type=i23] [debug line = 1879:145@1896:5@64:27@104:3]
-  br i1 %tmp_3, label %"delay_until_ms<50ull, 100000000ull>.exit25", label %4, !dbg !953 ; [debug line = 64:16@104:3]
+  br i1 %tmp_3, label %"delay_until_ms<50ull, 100000000ull>.exit15", label %4, !dbg !953 ; [debug line = 64:16@104:3]
 
 ; <label>:4                                       ; preds = %3
   call void @llvm.dbg.value(metadata !{i8* %dummy}, i64 0, metadata !961) nounwind, !dbg !963 ; [debug line = 65:3@104:3] [debug variable = dummy]
@@ -123,36 +119,36 @@ meminst:                                          ; preds = %meminst, %0
   call void @llvm.dbg.value(metadata !{i23 %ctr_V}, i64 0, metadata !965) nounwind, !dbg !954 ; [debug line = 1879:145@1896:5@64:27@104:3] [debug variable = ctr.V]
   br label %3, !dbg !960                          ; [debug line = 64:27@104:3]
 
-"delay_until_ms<50ull, 100000000ull>.exit25":     ; preds = %3
-  %rend22 = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_50, i32 %rbegin2) nounwind ; [#uses=0 type=i32]
-  %CTRL_addr_18 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req8 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_18, i32 1), !dbg !1061 ; [#uses=0 type=i1] [debug line = 109:3]
-  %CTRL_addr_19 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_19, i32 492, i4 -1), !dbg !1061 ; [debug line = 109:3]
+"delay_until_ms<50ull, 100000000ull>.exit15":     ; preds = %3
+  %rend12 = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_50, i32 %rbegin2) nounwind ; [#uses=0 type=i32]
   %CTRL_addr_20 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp9 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_20), !dbg !1061 ; [#uses=0 type=i1] [debug line = 109:3]
+  %CTRL_addr_2_req8 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_20, i32 1), !dbg !1061 ; [#uses=0 type=i1] [debug line = 109:3]
   %CTRL_addr_21 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req10 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_21, i32 1), !dbg !1062 ; [#uses=0 type=i1] [debug line = 110:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_21, i32 492, i4 -1), !dbg !1061 ; [debug line = 109:3]
   %CTRL_addr_22 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_22, i32 224, i4 -1), !dbg !1062 ; [debug line = 110:3]
+  %CTRL_addr_2_resp9 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_22), !dbg !1061 ; [#uses=0 type=i1] [debug line = 109:3]
   %CTRL_addr_23 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp11 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_23), !dbg !1062 ; [#uses=0 type=i1] [debug line = 110:3]
+  %CTRL_addr_2_req10 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_23, i32 1), !dbg !1062 ; [#uses=0 type=i1] [debug line = 110:3]
   %CTRL_addr_24 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req12 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_24, i32 1), !dbg !1063 ; [#uses=0 type=i1] [debug line = 111:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_24, i32 224, i4 -1), !dbg !1062 ; [debug line = 110:3]
   %CTRL_addr_25 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_25, i32 182, i4 -1), !dbg !1063 ; [debug line = 111:3]
+  %CTRL_addr_2_resp11 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_25), !dbg !1062 ; [#uses=0 type=i1] [debug line = 110:3]
   %CTRL_addr_26 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp13 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_26), !dbg !1063 ; [#uses=0 type=i1] [debug line = 111:3]
-  %rbegin3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([43 x i8]* @delay_until_ms_MD_50) nounwind ; [#uses=1 type=i32]
+  %CTRL_addr_2_req12 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_26, i32 1), !dbg !1063 ; [#uses=0 type=i1] [debug line = 111:3]
+  %CTRL_addr_27 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_27, i32 182, i4 -1), !dbg !1063 ; [debug line = 111:3]
+  %CTRL_addr_28 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  %CTRL_addr_2_resp13 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_28), !dbg !1063 ; [#uses=0 type=i1] [debug line = 111:3]
+  %rbegin6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([43 x i8]* @delay_until_ms_MD_50) nounwind ; [#uses=1 type=i32]
   call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind, !dbg !1064 ; [debug line = 60:1@112:3]
   br label %5, !dbg !1066                         ; [debug line = 64:7@112:3]
 
-; <label>:5                                       ; preds = %6, %"delay_until_ms<50ull, 100000000ull>.exit25"
-  %p_014_0_i2 = phi i23 [ 0, %"delay_until_ms<50ull, 100000000ull>.exit25" ], [ %ctr_V_1, %6 ] ; [#uses=2 type=i23]
-  %tmp_5 = icmp eq i23 %p_014_0_i2, -3388608, !dbg !1067 ; [#uses=1 type=i1] [debug line = 2042:5@64:16@112:3]
+; <label>:5                                       ; preds = %6, %"delay_until_ms<50ull, 100000000ull>.exit15"
+  %p_014_0_i9 = phi i23 [ 0, %"delay_until_ms<50ull, 100000000ull>.exit15" ], [ %ctr_V_1, %6 ] ; [#uses=2 type=i23]
+  %tmp_5 = icmp eq i23 %p_014_0_i9, -3388608, !dbg !1067 ; [#uses=1 type=i1] [debug line = 2042:5@64:16@112:3]
   %empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5000000, i64 5000000, i64 5000000) nounwind ; [#uses=0 type=i32]
-  %ctr_V_1 = add i23 %p_014_0_i2, 1, !dbg !1069   ; [#uses=1 type=i23] [debug line = 1879:145@1896:5@64:27@112:3]
-  br i1 %tmp_5, label %"delay_until_ms<50ull, 100000000ull>.exit20", label %6, !dbg !1068 ; [debug line = 64:16@112:3]
+  %ctr_V_1 = add i23 %p_014_0_i9, 1, !dbg !1069   ; [#uses=1 type=i23] [debug line = 1879:145@1896:5@64:27@112:3]
+  br i1 %tmp_5, label %"delay_until_ms<50ull, 100000000ull>.exit10", label %6, !dbg !1068 ; [debug line = 64:16@112:3]
 
 ; <label>:6                                       ; preds = %5
   call void @llvm.dbg.value(metadata !{i8* %dummy_2}, i64 0, metadata !1072) nounwind, !dbg !1073 ; [debug line = 65:3@112:3] [debug variable = dummy]
@@ -162,36 +158,36 @@ meminst:                                          ; preds = %meminst, %0
   call void @llvm.dbg.value(metadata !{i23 %ctr_V_1}, i64 0, metadata !1074) nounwind, !dbg !1069 ; [debug line = 1879:145@1896:5@64:27@112:3] [debug variable = ctr.V]
   br label %5, !dbg !1071                         ; [debug line = 64:27@112:3]
 
-"delay_until_ms<50ull, 100000000ull>.exit20":     ; preds = %5
-  %rend17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_50, i32 %rbegin3) nounwind ; [#uses=0 type=i32]
-  %CTRL_addr_27 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req14 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_27, i32 1), !dbg !1075 ; [#uses=0 type=i1] [debug line = 115:3]
-  %CTRL_addr_28 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_28, i32 492, i4 -1), !dbg !1075 ; [debug line = 115:3]
+"delay_until_ms<50ull, 100000000ull>.exit10":     ; preds = %5
+  %rend7 = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_50, i32 %rbegin6) nounwind ; [#uses=0 type=i32]
   %CTRL_addr_29 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp15 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_29), !dbg !1075 ; [#uses=0 type=i1] [debug line = 115:3]
+  %CTRL_addr_2_req14 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_29, i32 1), !dbg !1075 ; [#uses=0 type=i1] [debug line = 115:3]
   %CTRL_addr_30 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req16 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_30, i32 1), !dbg !1076 ; [#uses=0 type=i1] [debug line = 116:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_30, i32 492, i4 -1), !dbg !1075 ; [debug line = 115:3]
   %CTRL_addr_31 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_31, i32 242, i4 -1), !dbg !1076 ; [debug line = 116:3]
+  %CTRL_addr_2_resp15 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_31), !dbg !1075 ; [#uses=0 type=i1] [debug line = 115:3]
   %CTRL_addr_32 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp17 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_32), !dbg !1076 ; [#uses=0 type=i1] [debug line = 116:3]
+  %CTRL_addr_2_req16 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_32, i32 1), !dbg !1076 ; [#uses=0 type=i1] [debug line = 116:3]
   %CTRL_addr_33 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req18 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_33, i32 1), !dbg !1077 ; [#uses=0 type=i1] [debug line = 117:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_33, i32 242, i4 -1), !dbg !1076 ; [debug line = 116:3]
   %CTRL_addr_34 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_34, i32 0, i4 -1), !dbg !1077 ; [debug line = 117:3]
+  %CTRL_addr_2_resp17 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_34), !dbg !1076 ; [#uses=0 type=i1] [debug line = 116:3]
   %CTRL_addr_35 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp19 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_35), !dbg !1077 ; [#uses=0 type=i1] [debug line = 117:3]
-  %rbegin4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([43 x i8]* @delay_until_ms_MD_50) nounwind ; [#uses=1 type=i32]
+  %CTRL_addr_2_req18 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_35, i32 1), !dbg !1077 ; [#uses=0 type=i1] [debug line = 117:3]
+  %CTRL_addr_36 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_36, i32 0, i4 -1), !dbg !1077 ; [debug line = 117:3]
+  %CTRL_addr_37 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  %CTRL_addr_2_resp19 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_37), !dbg !1077 ; [#uses=0 type=i1] [debug line = 117:3]
+  %rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([43 x i8]* @delay_until_ms_MD_50) nounwind ; [#uses=1 type=i32]
   call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind, !dbg !1078 ; [debug line = 60:1@118:3]
   br label %7, !dbg !1080                         ; [debug line = 64:7@118:3]
 
-; <label>:7                                       ; preds = %8, %"delay_until_ms<50ull, 100000000ull>.exit20"
-  %p_014_0_i3 = phi i23 [ 0, %"delay_until_ms<50ull, 100000000ull>.exit20" ], [ %ctr_V_2, %8 ] ; [#uses=2 type=i23]
-  %tmp_7 = icmp eq i23 %p_014_0_i3, -3388608, !dbg !1081 ; [#uses=1 type=i1] [debug line = 2042:5@64:16@118:3]
+; <label>:7                                       ; preds = %8, %"delay_until_ms<50ull, 100000000ull>.exit10"
+  %p_014_0_i4 = phi i23 [ 0, %"delay_until_ms<50ull, 100000000ull>.exit10" ], [ %ctr_V_2, %8 ] ; [#uses=2 type=i23]
+  %tmp_7 = icmp eq i23 %p_014_0_i4, -3388608, !dbg !1081 ; [#uses=1 type=i1] [debug line = 2042:5@64:16@118:3]
   %empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5000000, i64 5000000, i64 5000000) nounwind ; [#uses=0 type=i32]
-  %ctr_V_2 = add i23 %p_014_0_i3, 1, !dbg !1083   ; [#uses=1 type=i23] [debug line = 1879:145@1896:5@64:27@118:3]
-  br i1 %tmp_7, label %"delay_until_ms<50ull, 100000000ull>.exit15", label %8, !dbg !1082 ; [debug line = 64:16@118:3]
+  %ctr_V_2 = add i23 %p_014_0_i4, 1, !dbg !1083   ; [#uses=1 type=i23] [debug line = 1879:145@1896:5@64:27@118:3]
+  br i1 %tmp_7, label %"delay_until_ms<50ull, 100000000ull>.exit5", label %8, !dbg !1082 ; [debug line = 64:16@118:3]
 
 ; <label>:8                                       ; preds = %7
   call void @llvm.dbg.value(metadata !{i8* %dummy_4}, i64 0, metadata !1086) nounwind, !dbg !1087 ; [debug line = 65:3@118:3] [debug variable = dummy]
@@ -201,36 +197,36 @@ meminst:                                          ; preds = %meminst, %0
   call void @llvm.dbg.value(metadata !{i23 %ctr_V_2}, i64 0, metadata !1088) nounwind, !dbg !1083 ; [debug line = 1879:145@1896:5@64:27@118:3] [debug variable = ctr.V]
   br label %7, !dbg !1085                         ; [debug line = 64:27@118:3]
 
-"delay_until_ms<50ull, 100000000ull>.exit15":     ; preds = %7
-  %rend12 = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_50, i32 %rbegin4) nounwind ; [#uses=0 type=i32]
-  %CTRL_addr_36 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req20 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_36, i32 1), !dbg !1089 ; [#uses=0 type=i1] [debug line = 121:3]
-  %CTRL_addr_37 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_37, i32 492, i4 -1), !dbg !1089 ; [debug line = 121:3]
+"delay_until_ms<50ull, 100000000ull>.exit5":      ; preds = %7
+  %rend2 = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_50, i32 %rbegin1) nounwind ; [#uses=0 type=i32]
   %CTRL_addr_38 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp21 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_38), !dbg !1089 ; [#uses=0 type=i1] [debug line = 121:3]
+  %CTRL_addr_2_req20 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_38, i32 1), !dbg !1089 ; [#uses=0 type=i1] [debug line = 121:3]
   %CTRL_addr_39 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req22 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_39, i32 1), !dbg !1090 ; [#uses=0 type=i1] [debug line = 122:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_39, i32 492, i4 -1), !dbg !1089 ; [debug line = 121:3]
   %CTRL_addr_40 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_40, i32 244, i4 -1), !dbg !1090 ; [debug line = 122:3]
+  %CTRL_addr_2_resp21 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_40), !dbg !1089 ; [#uses=0 type=i1] [debug line = 121:3]
   %CTRL_addr_41 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp23 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_41), !dbg !1090 ; [#uses=0 type=i1] [debug line = 122:3]
+  %CTRL_addr_2_req22 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_41, i32 1), !dbg !1090 ; [#uses=0 type=i1] [debug line = 122:3]
   %CTRL_addr_42 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req24 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_42, i32 1), !dbg !1091 ; [#uses=0 type=i1] [debug line = 123:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_42, i32 244, i4 -1), !dbg !1090 ; [debug line = 122:3]
   %CTRL_addr_43 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_43, i32 23, i4 -1), !dbg !1091 ; [debug line = 123:3]
+  %CTRL_addr_2_resp23 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_43), !dbg !1090 ; [#uses=0 type=i1] [debug line = 122:3]
   %CTRL_addr_44 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp25 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_44), !dbg !1091 ; [#uses=0 type=i1] [debug line = 123:3]
-  %rbegin6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([43 x i8]* @delay_until_ms_MD_50) nounwind ; [#uses=1 type=i32]
+  %CTRL_addr_2_req24 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_44, i32 1), !dbg !1091 ; [#uses=0 type=i1] [debug line = 123:3]
+  %CTRL_addr_45 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_45, i32 23, i4 -1), !dbg !1091 ; [debug line = 123:3]
+  %CTRL_addr_46 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  %CTRL_addr_2_resp25 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_46), !dbg !1091 ; [#uses=0 type=i1] [debug line = 123:3]
+  %rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([43 x i8]* @delay_until_ms_MD_50) nounwind ; [#uses=1 type=i32]
   call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind, !dbg !1092 ; [debug line = 60:1@124:3]
   br label %9, !dbg !1094                         ; [debug line = 64:7@124:3]
 
-; <label>:9                                       ; preds = %10, %"delay_until_ms<50ull, 100000000ull>.exit15"
-  %p_014_0_i9 = phi i23 [ 0, %"delay_until_ms<50ull, 100000000ull>.exit15" ], [ %ctr_V_3, %10 ] ; [#uses=2 type=i23]
-  %tmp_9 = icmp eq i23 %p_014_0_i9, -3388608, !dbg !1095 ; [#uses=1 type=i1] [debug line = 2042:5@64:16@124:3]
+; <label>:9                                       ; preds = %10, %"delay_until_ms<50ull, 100000000ull>.exit5"
+  %p_014_0_i = phi i23 [ 0, %"delay_until_ms<50ull, 100000000ull>.exit5" ], [ %ctr_V_3, %10 ] ; [#uses=2 type=i23]
+  %tmp_9 = icmp eq i23 %p_014_0_i, -3388608, !dbg !1095 ; [#uses=1 type=i1] [debug line = 2042:5@64:16@124:3]
   %empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5000000, i64 5000000, i64 5000000) nounwind ; [#uses=0 type=i32]
-  %ctr_V_3 = add i23 %p_014_0_i9, 1, !dbg !1097   ; [#uses=1 type=i23] [debug line = 1879:145@1896:5@64:27@124:3]
-  br i1 %tmp_9, label %"delay_until_ms<50ull, 100000000ull>.exit10", label %10, !dbg !1096 ; [debug line = 64:16@124:3]
+  %ctr_V_3 = add i23 %p_014_0_i, 1, !dbg !1097    ; [#uses=1 type=i23] [debug line = 1879:145@1896:5@64:27@124:3]
+  br i1 %tmp_9, label %"delay_until_ms<50ull, 100000000ull>.exit", label %10, !dbg !1096 ; [debug line = 64:16@124:3]
 
 ; <label>:10                                      ; preds = %9
   call void @llvm.dbg.value(metadata !{i8* %dummy_6}, i64 0, metadata !1100) nounwind, !dbg !1101 ; [debug line = 65:3@124:3] [debug variable = dummy]
@@ -240,192 +236,117 @@ meminst:                                          ; preds = %meminst, %0
   call void @llvm.dbg.value(metadata !{i23 %ctr_V_3}, i64 0, metadata !1102) nounwind, !dbg !1097 ; [debug line = 1879:145@1896:5@64:27@124:3] [debug variable = ctr.V]
   br label %9, !dbg !1099                         ; [debug line = 64:27@124:3]
 
-"delay_until_ms<50ull, 100000000ull>.exit10":     ; preds = %9
-  %rend7 = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_50, i32 %rbegin6) nounwind ; [#uses=0 type=i32]
-  %CTRL_addr_45 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req26 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_45, i32 1), !dbg !1103 ; [#uses=0 type=i1] [debug line = 127:3]
-  %CTRL_addr_46 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_46, i32 492, i4 -1), !dbg !1103 ; [debug line = 127:3]
+"delay_until_ms<50ull, 100000000ull>.exit":       ; preds = %9
+  %rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_50, i32 %rbegin) nounwind ; [#uses=0 type=i32]
   %CTRL_addr_47 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp27 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_47), !dbg !1103 ; [#uses=0 type=i1] [debug line = 127:3]
+  %CTRL_addr_2_req26 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_47, i32 1), !dbg !1103 ; [#uses=0 type=i1] [debug line = 127:3]
   %CTRL_addr_48 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req28 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_48, i32 1), !dbg !1104 ; [#uses=0 type=i1] [debug line = 128:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_48, i32 492, i4 -1), !dbg !1103 ; [debug line = 127:3]
   %CTRL_addr_49 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_49, i32 245, i4 -1), !dbg !1104 ; [debug line = 128:3]
+  %CTRL_addr_2_resp27 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_49), !dbg !1103 ; [#uses=0 type=i1] [debug line = 127:3]
   %CTRL_addr_50 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp29 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_50), !dbg !1104 ; [#uses=0 type=i1] [debug line = 128:3]
+  %CTRL_addr_2_req28 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_50, i32 1), !dbg !1104 ; [#uses=0 type=i1] [debug line = 128:3]
   %CTRL_addr_51 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req30 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_51, i32 1), !dbg !1105 ; [#uses=0 type=i1] [debug line = 129:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_51, i32 245, i4 -1), !dbg !1104 ; [debug line = 128:3]
   %CTRL_addr_52 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_52, i32 36, i4 -1), !dbg !1105 ; [debug line = 129:3]
+  %CTRL_addr_2_resp29 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_52), !dbg !1104 ; [#uses=0 type=i1] [debug line = 128:3]
   %CTRL_addr_53 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp31 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_53), !dbg !1105 ; [#uses=0 type=i1] [debug line = 129:3]
-  %rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([43 x i8]* @delay_until_ms_MD_50) nounwind ; [#uses=1 type=i32]
-  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind, !dbg !1106 ; [debug line = 60:1@130:3]
-  br label %11, !dbg !1108                        ; [debug line = 64:7@130:3]
+  %CTRL_addr_2_req30 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_53, i32 1), !dbg !1105 ; [#uses=0 type=i1] [debug line = 129:3]
+  %CTRL_addr_54 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_54, i32 160, i4 -1), !dbg !1105 ; [debug line = 129:3]
+  %CTRL_addr_55 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  %CTRL_addr_2_resp31 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_55), !dbg !1105 ; [#uses=0 type=i1] [debug line = 129:3]
+  %rbegin3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([44 x i8]* @delay_until_ms_MD_50_1) nounwind ; [#uses=1 type=i32]
+  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind, !dbg !1106 ; [debug line = 60:1@134:3]
+  br label %11, !dbg !1112                        ; [debug line = 64:7@134:3]
 
-; <label>:11                                      ; preds = %12, %"delay_until_ms<50ull, 100000000ull>.exit10"
-  %p_014_0_i4 = phi i23 [ 0, %"delay_until_ms<50ull, 100000000ull>.exit10" ], [ %ctr_V_4, %12 ] ; [#uses=2 type=i23]
-  %tmp_s = icmp eq i23 %p_014_0_i4, -3388608, !dbg !1109 ; [#uses=1 type=i1] [debug line = 2042:5@64:16@130:3]
-  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5000000, i64 5000000, i64 5000000) nounwind ; [#uses=0 type=i32]
-  %ctr_V_4 = add i23 %p_014_0_i4, 1, !dbg !1111   ; [#uses=1 type=i23] [debug line = 1879:145@1896:5@64:27@130:3]
-  br i1 %tmp_s, label %"delay_until_ms<50ull, 100000000ull>.exit5", label %12, !dbg !1110 ; [debug line = 64:16@130:3]
+; <label>:11                                      ; preds = %12, %"delay_until_ms<50ull, 100000000ull>.exit"
+  %p_014_0_i2 = phi i26 [ 0, %"delay_until_ms<50ull, 100000000ull>.exit" ], [ %ctr_V_4, %12 ] ; [#uses=2 type=i26]
+  %tmp_s = icmp eq i26 %p_014_0_i2, -17108864, !dbg !1114 ; [#uses=1 type=i1] [debug line = 2042:5@64:16@134:3]
+  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 50000000, i64 50000000, i64 50000000) nounwind ; [#uses=0 type=i32]
+  %ctr_V_4 = add i26 %p_014_0_i2, 1, !dbg !1116   ; [#uses=1 type=i26] [debug line = 1879:145@1896:5@64:27@134:3]
+  br i1 %tmp_s, label %"delay_until_ms<500ull, 100000000ull>.exit", label %12, !dbg !1115 ; [debug line = 64:16@134:3]
 
 ; <label>:12                                      ; preds = %11
-  call void @llvm.dbg.value(metadata !{i8* %dummy_8}, i64 0, metadata !1114) nounwind, !dbg !1115 ; [debug line = 65:3@130:3] [debug variable = dummy]
-  %dummy_9 = load volatile i8* %dummy_8, align 1, !dbg !1115 ; [#uses=1 type=i8] [debug line = 65:3@130:3]
-  call void @llvm.dbg.value(metadata !{i8 %dummy_9}, i64 0, metadata !1114) nounwind, !dbg !1115 ; [debug line = 65:3@130:3] [debug variable = dummy]
-  store volatile i8 %dummy_9, i8* %dummy_8, align 1, !dbg !1115 ; [debug line = 65:3@130:3]
-  call void @llvm.dbg.value(metadata !{i23 %ctr_V_4}, i64 0, metadata !1116) nounwind, !dbg !1111 ; [debug line = 1879:145@1896:5@64:27@130:3] [debug variable = ctr.V]
-  br label %11, !dbg !1113                        ; [debug line = 64:27@130:3]
+  call void @llvm.dbg.value(metadata !{i8* %dummy_8}, i64 0, metadata !1119) nounwind, !dbg !1120 ; [debug line = 65:3@134:3] [debug variable = dummy]
+  %dummy_9 = load volatile i8* %dummy_8, align 1, !dbg !1120 ; [#uses=1 type=i8] [debug line = 65:3@134:3]
+  call void @llvm.dbg.value(metadata !{i8 %dummy_9}, i64 0, metadata !1119) nounwind, !dbg !1120 ; [debug line = 65:3@134:3] [debug variable = dummy]
+  store volatile i8 %dummy_9, i8* %dummy_8, align 1, !dbg !1120 ; [debug line = 65:3@134:3]
+  call void @llvm.dbg.value(metadata !{i26 %ctr_V_4}, i64 0, metadata !1122) nounwind, !dbg !1116 ; [debug line = 1879:145@1896:5@64:27@134:3] [debug variable = ctr.V]
+  br label %11, !dbg !1118                        ; [debug line = 64:27@134:3]
 
-"delay_until_ms<50ull, 100000000ull>.exit5":      ; preds = %11
-  %rend2 = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_50, i32 %rbegin1) nounwind ; [#uses=0 type=i32]
-  %rbegin5 = call i32 (...)* @_ssdm_op_SpecRegionBegin([45 x i8]* @delay_until_ms_MD_17) nounwind ; [#uses=1 type=i32]
-  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind, !dbg !1117 ; [debug line = 60:1@134:3]
-  br label %13, !dbg !1123                        ; [debug line = 64:7@134:3]
+"delay_until_ms<500ull, 100000000ull>.exit":      ; preds = %11
+  %rend17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([44 x i8]* @delay_until_ms_MD_50_1, i32 %rbegin3) nounwind ; [#uses=0 type=i32]
+  %CTRL_addr_56 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  %CTRL_addr_2_req32 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_56, i32 1), !dbg !1124 ; [#uses=0 type=i1] [debug line = 135:3]
+  %CTRL_addr_57 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_57, i32 493, i4 -1), !dbg !1124 ; [debug line = 135:3]
+  %CTRL_addr_58 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
+  %CTRL_addr_2_resp33 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_58), !dbg !1124 ; [#uses=0 type=i1] [debug line = 135:3]
+  %CTRL_addr_59 = getelementptr i32* %CTRL, i64 268436547 ; [#uses=1 type=i32*]
+  %p_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %CTRL_addr_59, i32 1), !dbg !1125 ; [#uses=0 type=i1] [debug line = 136:3]
+  %CTRL_addr_60 = getelementptr i32* %CTRL, i64 268436547 ; [#uses=1 type=i32*]
+  %empty_8 = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %CTRL_addr_60), !dbg !1125 ; [#uses=0 type=i32] [debug line = 136:3]
+  store i1 false, i1* @firstSample, align 1, !dbg !1126 ; [debug line = 142:3]
+  br label %._crit_edge, !dbg !1127               ; [debug line = 143:2]
 
-; <label>:13                                      ; preds = %14, %"delay_until_ms<50ull, 100000000ull>.exit5"
-  %p_014_0_i5 = phi i28 [ 0, %"delay_until_ms<50ull, 100000000ull>.exit5" ], [ %ctr_V_5, %14 ] ; [#uses=2 type=i28]
-  %tmp_2 = icmp eq i28 %p_014_0_i5, -93435456, !dbg !1125 ; [#uses=1 type=i1] [debug line = 2042:5@64:16@134:3]
-  %empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 175000000, i64 175000000, i64 175000000) nounwind ; [#uses=0 type=i32]
-  %ctr_V_5 = add i28 %p_014_0_i5, 1, !dbg !1127   ; [#uses=1 type=i28] [debug line = 1879:145@1896:5@64:27@134:3]
-  br i1 %tmp_2, label %"delay_until_ms<1750ull, 100000000ull>.exit", label %14, !dbg !1126 ; [debug line = 64:16@134:3]
+._crit_edge:                                      ; preds = %"delay_until_ms<500ull, 100000000ull>.exit", %1
+  %CTRL_addr_4 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=12 type=i32*]
+  %CTRL_addr_4_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_4, i32 1), !dbg !1128 ; [#uses=0 type=i1] [debug line = 149:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_4, i32 492, i4 -1), !dbg !1128 ; [debug line = 149:3]
+  %CTRL_addr_4_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_4), !dbg !1128 ; [#uses=0 type=i1] [debug line = 149:3]
+  %CTRL_addr_4_req34 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_4, i32 1), !dbg !1130 ; [#uses=0 type=i1] [debug line = 150:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_4, i32 247, i4 -1), !dbg !1130 ; [debug line = 150:3]
+  %CTRL_addr_4_resp35 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_4), !dbg !1130 ; [#uses=0 type=i1] [debug line = 150:3]
+  %CTRL_addr_4_req36 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_4, i32 1), !dbg !1131 ; [#uses=0 type=i1] [debug line = 151:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_4, i32 493, i4 -1), !dbg !1131 ; [debug line = 151:3]
+  %CTRL_addr_4_resp37 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_4), !dbg !1131 ; [#uses=0 type=i1] [debug line = 151:3]
+  %CTRL_addr_4_req38 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_4, i32 1), !dbg !1132 ; [#uses=0 type=i1] [debug line = 152:3]
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_4, i32 515, i4 -1), !dbg !1132 ; [debug line = 152:3]
+  %CTRL_addr_4_resp39 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_4), !dbg !1132 ; [#uses=0 type=i1] [debug line = 152:3]
+  %CTRL_addr_5 = getelementptr i32* %CTRL, i64 268436547 ; [#uses=2 type=i32*]
+  br label %13, !dbg !1133                        ; [debug line = 156:21]
+
+; <label>:13                                      ; preds = %_ifconv, %._crit_edge
+  %sensorData_2_2 = phi i32 [ %sensorData_2_1, %._crit_edge ], [ %sensorData_2_1_11, %_ifconv ] ; [#uses=3 type=i32]
+  %sensorData_1_2 = phi i32 [ %sensorData_1_1, %._crit_edge ], [ %sensorData_2_3, %_ifconv ] ; [#uses=3 type=i32]
+  %sensorData_2_4 = phi i32 [ %sensorData_0_1, %._crit_edge ], [ %sensorData_2_5, %_ifconv ] ; [#uses=2 type=i32]
+  %index = phi i2 [ 0, %._crit_edge ], [ %index_1, %_ifconv ] ; [#uses=4 type=i2]
+  %exitcond = icmp eq i2 %index, -1, !dbg !1133   ; [#uses=1 type=i1] [debug line = 156:21]
+  %empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3) nounwind ; [#uses=0 type=i32]
+  %index_1 = add i2 %index, 1, !dbg !1135         ; [#uses=1 type=i2] [debug line = 156:34]
+  br i1 %exitcond, label %14, label %_ifconv, !dbg !1133 ; [debug line = 156:21]
+
+_ifconv:                                          ; preds = %13
+  %sensorData_0_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %CTRL_addr_5, i32 1), !dbg !1136 ; [#uses=0 type=i1] [debug line = 157:4]
+  %sensorData_0 = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %CTRL_addr_5), !dbg !1136 ; [#uses=3 type=i32] [debug line = 157:4]
+  call void @llvm.dbg.value(metadata !{i32 %sensorData_0}, i64 0, metadata !1138), !dbg !1136 ; [debug line = 157:4] [debug variable = sensorData[0]]
+  call void @llvm.dbg.value(metadata !{i32 %sensorData_0}, i64 0, metadata !1143), !dbg !1136 ; [debug line = 157:4] [debug variable = sensorData[2]]
+  call void @llvm.dbg.value(metadata !{i32 %sensorData_0}, i64 0, metadata !1144), !dbg !1136 ; [debug line = 157:4] [debug variable = sensorData[1]]
+  %sel_tmp = icmp eq i2 %index, 1                 ; [#uses=2 type=i1]
+  %sensorData_2_10 = select i1 %sel_tmp, i32 %sensorData_2_2, i32 %sensorData_0 ; [#uses=1 type=i32]
+  call void @llvm.dbg.value(metadata !{i32 %sensorData_2_10}, i64 0, metadata !1143), !dbg !1136 ; [debug line = 157:4] [debug variable = sensorData[2]]
+  %sel_tmp2 = icmp eq i2 %index, 0                ; [#uses=3 type=i1]
+  %sensorData_2_1_11 = select i1 %sel_tmp2, i32 %sensorData_2_2, i32 %sensorData_2_10 ; [#uses=1 type=i32]
+  call void @llvm.dbg.value(metadata !{i32 %sensorData_2_1_11}, i64 0, metadata !1143), !dbg !1136 ; [debug line = 157:4] [debug variable = sensorData[2]]
+  %sensorData_2_2_12 = select i1 %sel_tmp, i32 %sensorData_0, i32 %sensorData_1_2 ; [#uses=1 type=i32]
+  call void @llvm.dbg.value(metadata !{i32 %sensorData_2_2_12}, i64 0, metadata !1143), !dbg !1136 ; [debug line = 157:4] [debug variable = sensorData[2]]
+  %sensorData_2_3 = select i1 %sel_tmp2, i32 %sensorData_1_2, i32 %sensorData_2_2_12 ; [#uses=1 type=i32]
+  call void @llvm.dbg.value(metadata !{i32 %sensorData_2_3}, i64 0, metadata !1143), !dbg !1136 ; [debug line = 157:4] [debug variable = sensorData[2]]
+  call void @llvm.dbg.value(metadata !{i32 %sensorData_2_4}, i64 0, metadata !1143), !dbg !1136 ; [debug line = 157:4] [debug variable = sensorData[2]]
+  %sensorData_2_5 = select i1 %sel_tmp2, i32 %sensorData_0, i32 %sensorData_2_4 ; [#uses=1 type=i32]
+  call void @llvm.dbg.value(metadata !{i32 %sensorData_2_5}, i64 0, metadata !1143), !dbg !1136 ; [debug line = 157:4] [debug variable = sensorData[2]]
+  call void @llvm.dbg.value(metadata !{i2 %index_1}, i64 0, metadata !1145), !dbg !1135 ; [debug line = 156:34] [debug variable = index]
+  br label %13, !dbg !1135                        ; [debug line = 156:34]
 
 ; <label>:14                                      ; preds = %13
-  call void @llvm.dbg.value(metadata !{i8* %dummy_10}, i64 0, metadata !1130) nounwind, !dbg !1131 ; [debug line = 65:3@134:3] [debug variable = dummy]
-  %dummy_11 = load volatile i8* %dummy_10, align 1, !dbg !1131 ; [#uses=1 type=i8] [debug line = 65:3@134:3]
-  call void @llvm.dbg.value(metadata !{i8 %dummy_11}, i64 0, metadata !1130) nounwind, !dbg !1131 ; [debug line = 65:3@134:3] [debug variable = dummy]
-  store volatile i8 %dummy_11, i8* %dummy_10, align 1, !dbg !1131 ; [debug line = 65:3@134:3]
-  call void @llvm.dbg.value(metadata !{i28 %ctr_V_5}, i64 0, metadata !1133) nounwind, !dbg !1127 ; [debug line = 1879:145@1896:5@64:27@134:3] [debug variable = ctr.V]
-  br label %13, !dbg !1129                        ; [debug line = 64:27@134:3]
-
-"delay_until_ms<1750ull, 100000000ull>.exit":     ; preds = %13
-  %rend27 = call i32 (...)* @_ssdm_op_SpecRegionEnd([45 x i8]* @delay_until_ms_MD_17, i32 %rbegin5) nounwind ; [#uses=0 type=i32]
-  %CTRL_addr_54 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_req32 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_54, i32 1), !dbg !1135 ; [#uses=0 type=i1] [debug line = 135:3]
-  %CTRL_addr_55 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_55, i32 493, i4 -1), !dbg !1135 ; [debug line = 135:3]
-  %CTRL_addr_56 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_2_resp33 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_56), !dbg !1135 ; [#uses=0 type=i1] [debug line = 135:3]
-  %CTRL_addr_57 = getelementptr i32* %CTRL, i64 268436547 ; [#uses=1 type=i32*]
-  %p_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %CTRL_addr_57, i32 1), !dbg !1136 ; [#uses=0 type=i1] [debug line = 136:3]
-  %CTRL_addr_58 = getelementptr i32* %CTRL, i64 268436547 ; [#uses=1 type=i32*]
-  %empty_9 = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %CTRL_addr_58), !dbg !1136 ; [#uses=0 type=i32] [debug line = 136:3]
-  %rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([43 x i8]* @delay_until_ms_MD_50) nounwind ; [#uses=1 type=i32]
-  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind, !dbg !1137 ; [debug line = 60:1@139:3]
-  br label %15, !dbg !1139                        ; [debug line = 64:7@139:3]
-
-; <label>:15                                      ; preds = %16, %"delay_until_ms<1750ull, 100000000ull>.exit"
-  %p_014_0_i = phi i23 [ 0, %"delay_until_ms<1750ull, 100000000ull>.exit" ], [ %ctr_V_6, %16 ] ; [#uses=2 type=i23]
-  %tmp_4 = icmp eq i23 %p_014_0_i, -3388608, !dbg !1140 ; [#uses=1 type=i1] [debug line = 2042:5@64:16@139:3]
-  %empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5000000, i64 5000000, i64 5000000) nounwind ; [#uses=0 type=i32]
-  %ctr_V_6 = add i23 %p_014_0_i, 1, !dbg !1142    ; [#uses=1 type=i23] [debug line = 1879:145@1896:5@64:27@139:3]
-  br i1 %tmp_4, label %"delay_until_ms<50ull, 100000000ull>.exit", label %16, !dbg !1141 ; [debug line = 64:16@139:3]
-
-; <label>:16                                      ; preds = %15
-  call void @llvm.dbg.value(metadata !{i8* %dummy_12}, i64 0, metadata !1145) nounwind, !dbg !1146 ; [debug line = 65:3@139:3] [debug variable = dummy]
-  %dummy_13 = load volatile i8* %dummy_12, align 1, !dbg !1146 ; [#uses=1 type=i8] [debug line = 65:3@139:3]
-  call void @llvm.dbg.value(metadata !{i8 %dummy_13}, i64 0, metadata !1145) nounwind, !dbg !1146 ; [debug line = 65:3@139:3] [debug variable = dummy]
-  store volatile i8 %dummy_13, i8* %dummy_12, align 1, !dbg !1146 ; [debug line = 65:3@139:3]
-  call void @llvm.dbg.value(metadata !{i23 %ctr_V_6}, i64 0, metadata !1147) nounwind, !dbg !1142 ; [debug line = 1879:145@1896:5@64:27@139:3] [debug variable = ctr.V]
-  br label %15, !dbg !1144                        ; [debug line = 64:27@139:3]
-
-"delay_until_ms<50ull, 100000000ull>.exit":       ; preds = %15
-  %rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_50, i32 %rbegin) nounwind ; [#uses=0 type=i32]
-  store i1 false, i1* @firstSample, align 1, !dbg !1148 ; [debug line = 142:3]
-  br label %._crit_edge, !dbg !1149               ; [debug line = 143:2]
-
-._crit_edge:                                      ; preds = %"delay_until_ms<50ull, 100000000ull>.exit", %1
-  %CTRL_addr_59 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_4_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_59, i32 1), !dbg !1150 ; [#uses=0 type=i1] [debug line = 149:3]
-  %CTRL_addr_60 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_60, i32 492, i4 -1), !dbg !1150 ; [debug line = 149:3]
-  %CTRL_addr_61 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_4_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_61), !dbg !1150 ; [#uses=0 type=i1] [debug line = 149:3]
-  %CTRL_addr_62 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_4_req34 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_62, i32 1), !dbg !1152 ; [#uses=0 type=i1] [debug line = 150:3]
-  %CTRL_addr_63 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_63, i32 247, i4 -1), !dbg !1152 ; [debug line = 150:3]
-  %CTRL_addr_64 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_4_resp35 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_64), !dbg !1152 ; [#uses=0 type=i1] [debug line = 150:3]
-  %CTRL_addr_65 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_4_req36 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_65, i32 1), !dbg !1153 ; [#uses=0 type=i1] [debug line = 151:3]
-  %CTRL_addr_66 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_66, i32 493, i4 -1), !dbg !1153 ; [debug line = 151:3]
-  %CTRL_addr_67 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_4_resp37 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_67), !dbg !1153 ; [#uses=0 type=i1] [debug line = 151:3]
-  %CTRL_addr_68 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_4_req38 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %CTRL_addr_68, i32 1), !dbg !1154 ; [#uses=0 type=i1] [debug line = 152:3]
-  %CTRL_addr_69 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %CTRL_addr_69, i32 515, i4 -1), !dbg !1154 ; [debug line = 152:3]
-  %CTRL_addr_70 = getelementptr i32* %CTRL, i64 268436546 ; [#uses=1 type=i32*]
-  %CTRL_addr_4_resp39 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %CTRL_addr_70), !dbg !1154 ; [#uses=0 type=i1] [debug line = 152:3]
-  %rbegin7 = call i32 (...)* @_ssdm_op_SpecRegionBegin([43 x i8]* @delay_until_ms_MD_10) nounwind ; [#uses=1 type=i32]
-  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind, !dbg !1155 ; [debug line = 60:1@153:3]
-  br label %17, !dbg !1161                        ; [debug line = 64:7@153:3]
-
-; <label>:17                                      ; preds = %18, %._crit_edge
-  %p_014_0_i6 = phi i20 [ 0, %._crit_edge ], [ %ctr_V_7, %18 ] ; [#uses=2 type=i20]
-  %tmp_6 = icmp eq i20 %p_014_0_i6, -48576, !dbg !1163 ; [#uses=1 type=i1] [debug line = 2042:5@64:16@153:3]
-  %empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1000000, i64 1000000, i64 1000000) nounwind ; [#uses=0 type=i32]
-  %ctr_V_7 = add i20 %p_014_0_i6, 1, !dbg !1165   ; [#uses=1 type=i20] [debug line = 1879:145@1896:5@64:27@153:3]
-  br i1 %tmp_6, label %"delay_until_ms<10ull, 100000000ull>.exit", label %18, !dbg !1164 ; [debug line = 64:16@153:3]
-
-; <label>:18                                      ; preds = %17
-  call void @llvm.dbg.value(metadata !{i8* %dummy_14}, i64 0, metadata !1168) nounwind, !dbg !1169 ; [debug line = 65:3@153:3] [debug variable = dummy]
-  %dummy_15 = load volatile i8* %dummy_14, align 1, !dbg !1169 ; [#uses=1 type=i8] [debug line = 65:3@153:3]
-  call void @llvm.dbg.value(metadata !{i8 %dummy_15}, i64 0, metadata !1168) nounwind, !dbg !1169 ; [debug line = 65:3@153:3] [debug variable = dummy]
-  store volatile i8 %dummy_15, i8* %dummy_14, align 1, !dbg !1169 ; [debug line = 65:3@153:3]
-  call void @llvm.dbg.value(metadata !{i20 %ctr_V_7}, i64 0, metadata !1171) nounwind, !dbg !1165 ; [debug line = 1879:145@1896:5@64:27@153:3] [debug variable = ctr.V]
-  br label %17, !dbg !1167                        ; [debug line = 64:27@153:3]
-
-"delay_until_ms<10ull, 100000000ull>.exit":       ; preds = %17
-  %rend31 = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_10, i32 %rbegin7) nounwind ; [#uses=0 type=i32]
-  br label %19, !dbg !1173                        ; [debug line = 156:21]
-
-; <label>:19                                      ; preds = %_ifconv, %"delay_until_ms<10ull, 100000000ull>.exit"
-  %sensorData_2_2 = phi i32 [ %sensorData_2_1, %"delay_until_ms<10ull, 100000000ull>.exit" ], [ %sensorData_2_1_14, %_ifconv ] ; [#uses=3 type=i32]
-  %sensorData_1_2 = phi i32 [ %sensorData_1_1, %"delay_until_ms<10ull, 100000000ull>.exit" ], [ %sensorData_2_3, %_ifconv ] ; [#uses=3 type=i32]
-  %sensorData_2_4 = phi i32 [ %sensorData_0_1, %"delay_until_ms<10ull, 100000000ull>.exit" ], [ %sensorData_2_5, %_ifconv ] ; [#uses=2 type=i32]
-  %index = phi i2 [ 0, %"delay_until_ms<10ull, 100000000ull>.exit" ], [ %index_1, %_ifconv ] ; [#uses=4 type=i2]
-  %exitcond = icmp eq i2 %index, -1, !dbg !1173   ; [#uses=1 type=i1] [debug line = 156:21]
-  %empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3) nounwind ; [#uses=0 type=i32]
-  %index_1 = add i2 %index, 1, !dbg !1175         ; [#uses=1 type=i2] [debug line = 156:34]
-  br i1 %exitcond, label %20, label %_ifconv, !dbg !1173 ; [debug line = 156:21]
-
-_ifconv:                                          ; preds = %19
-  %CTRL_addr_71 = getelementptr i32* %CTRL, i64 268436547 ; [#uses=1 type=i32*]
-  %sensorData_0_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %CTRL_addr_71, i32 1), !dbg !1176 ; [#uses=0 type=i1] [debug line = 157:4]
-  %CTRL_addr_72 = getelementptr i32* %CTRL, i64 268436547 ; [#uses=1 type=i32*]
-  %sensorData_0 = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %CTRL_addr_72), !dbg !1176 ; [#uses=3 type=i32] [debug line = 157:4]
-  call void @llvm.dbg.value(metadata !{i32 %sensorData_0}, i64 0, metadata !1178), !dbg !1176 ; [debug line = 157:4] [debug variable = sensorData[0]]
-  call void @llvm.dbg.value(metadata !{i32 %sensorData_0}, i64 0, metadata !1183), !dbg !1176 ; [debug line = 157:4] [debug variable = sensorData[2]]
-  call void @llvm.dbg.value(metadata !{i32 %sensorData_0}, i64 0, metadata !1184), !dbg !1176 ; [debug line = 157:4] [debug variable = sensorData[1]]
-  %sel_tmp = icmp eq i2 %index, 1                 ; [#uses=2 type=i1]
-  %sensorData_2_13 = select i1 %sel_tmp, i32 %sensorData_2_2, i32 %sensorData_0 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %sensorData_2_13}, i64 0, metadata !1183), !dbg !1176 ; [debug line = 157:4] [debug variable = sensorData[2]]
-  %sel_tmp2 = icmp eq i2 %index, 0                ; [#uses=3 type=i1]
-  %sensorData_2_1_14 = select i1 %sel_tmp2, i32 %sensorData_2_2, i32 %sensorData_2_13 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %sensorData_2_1_14}, i64 0, metadata !1183), !dbg !1176 ; [debug line = 157:4] [debug variable = sensorData[2]]
-  %sensorData_2_2_15 = select i1 %sel_tmp, i32 %sensorData_0, i32 %sensorData_1_2 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %sensorData_2_2_15}, i64 0, metadata !1183), !dbg !1176 ; [debug line = 157:4] [debug variable = sensorData[2]]
-  %sensorData_2_3 = select i1 %sel_tmp2, i32 %sensorData_1_2, i32 %sensorData_2_2_15 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %sensorData_2_3}, i64 0, metadata !1183), !dbg !1176 ; [debug line = 157:4] [debug variable = sensorData[2]]
-  call void @llvm.dbg.value(metadata !{i32 %sensorData_2_4}, i64 0, metadata !1183), !dbg !1176 ; [debug line = 157:4] [debug variable = sensorData[2]]
-  %sensorData_2_5 = select i1 %sel_tmp2, i32 %sensorData_0, i32 %sensorData_2_4 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %sensorData_2_5}, i64 0, metadata !1183), !dbg !1176 ; [debug line = 157:4] [debug variable = sensorData[2]]
-  call void @llvm.dbg.value(metadata !{i2 %index_1}, i64 0, metadata !1185), !dbg !1175 ; [debug line = 156:34] [debug variable = index]
-  br label %19, !dbg !1175                        ; [debug line = 156:34]
-
-; <label>:20                                      ; preds = %19
-  call void @_ssdm_op_Write.s_axilite.i32P(i32* %pressure_msb, i32 %sensorData_2_4), !dbg !1186 ; [debug line = 172:2]
-  call void @_ssdm_op_Write.s_axilite.i32P(i32* %pressure_lsb, i32 %sensorData_1_2), !dbg !1187 ; [debug line = 173:2]
-  call void @_ssdm_op_Write.s_axilite.i32P(i32* %pressure_xlsb, i32 %sensorData_2_2), !dbg !1188 ; [debug line = 174:2]
-  ret void, !dbg !1189                            ; [debug line = 177:1]
+  call void @_ssdm_op_Write.s_axilite.i32P(i32* %pressure_msb, i32 %sensorData_2_4), !dbg !1146 ; [debug line = 172:2]
+  call void @_ssdm_op_Write.s_axilite.i32P(i32* %pressure_lsb, i32 %sensorData_1_2), !dbg !1147 ; [debug line = 173:2]
+  call void @_ssdm_op_Write.s_axilite.i32P(i32* %pressure_xlsb, i32 %sensorData_2_2), !dbg !1148 ; [debug line = 174:2]
+  ret void, !dbg !1149                            ; [debug line = 177:1]
 }
 
-; [#uses=38]
+; [#uses=29]
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
 ; [#uses=23]
@@ -465,25 +386,25 @@ entry:
   ret void
 }
 
-; [#uses=8]
+; [#uses=5]
 define weak i32 @_ssdm_op_SpecRegionEnd(...) {
 entry:
   ret i32 0
 }
 
-; [#uses=8]
+; [#uses=5]
 define weak i32 @_ssdm_op_SpecRegionBegin(...) {
 entry:
   ret i32 0
 }
 
-; [#uses=8]
+; [#uses=5]
 define weak void @_ssdm_op_SpecProtocol(...) nounwind {
 entry:
   ret void
 }
 
-; [#uses=10]
+; [#uses=7]
 define weak i32 @_ssdm_op_SpecLoopTripCount(...) {
 entry:
   ret i32 0
@@ -543,7 +464,7 @@ case3:                                            ; preds = %entry
   br label %case0
 }
 
-!opencl.kernels = !{!0, !7, !7, !13, !13, !7, !19, !22, !24, !24, !7, !7, !26, !28, !28, !7, !7, !7, !7, !7}
+!opencl.kernels = !{!0, !7, !7, !13, !13, !7, !19, !22, !24, !24, !7, !7, !26, !28, !28, !7, !7, !7, !7}
 !hls.encrypted.func = !{}
 !llvm.map.gv = !{!30, !37}
 
@@ -646,7 +567,7 @@ case3:                                            ; preds = %entry
 !96 = metadata !{i32 102, i32 3, metadata !92, null}
 !97 = metadata !{i32 103, i32 3, metadata !92, null}
 !98 = metadata !{i32 60, i32 1, metadata !99, metadata !107}
-!99 = metadata !{i32 786443, metadata !100, i32 57, i32 22, metadata !62, i32 26} ; [ DW_TAG_lexical_block ]
+!99 = metadata !{i32 786443, metadata !100, i32 57, i32 22, metadata !62, i32 23} ; [ DW_TAG_lexical_block ]
 !100 = metadata !{i32 786478, i32 0, metadata !62, metadata !"delay_until_ms<50, 100000000>", metadata !"delay_until_ms<50, 100000000>", metadata !"_Z14delay_until_msILy50ELy100000000EEvv", metadata !62, i32 57, metadata !101, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, metadata !103, null, metadata !71, i32 57} ; [ DW_TAG_subprogram ]
 !101 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !102, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
 !102 = metadata !{null}
@@ -656,7 +577,7 @@ case3:                                            ; preds = %entry
 !106 = metadata !{i32 786480, null, metadata !"F_OVERLAY_HZ", metadata !105, i64 100000000, null, i32 0, i32 0} ; [ DW_TAG_template_value_parameter ]
 !107 = metadata !{i32 104, i32 3, metadata !92, null}
 !108 = metadata !{i32 64, i32 7, metadata !109, metadata !107}
-!109 = metadata !{i32 786443, metadata !99, i32 64, i32 2, metadata !62, i32 27} ; [ DW_TAG_lexical_block ]
+!109 = metadata !{i32 786443, metadata !99, i32 64, i32 2, metadata !62, i32 24} ; [ DW_TAG_lexical_block ]
 !110 = metadata !{i32 2042, i32 5, metadata !111, metadata !953}
 !111 = metadata !{i32 786443, metadata !112, i32 2041, i32 104, metadata !113, i32 16} ; [ DW_TAG_lexical_block ]
 !112 = metadata !{i32 786478, i32 0, null, metadata !"operator<<64, false>", metadata !"operator<<64, false>", metadata !"_ZNK11ap_int_baseILi64ELb0ELb1EEltILi64ELb0EEEbRKS_IXT_EXT0_EXleT_Li64EEE", metadata !113, i32 2041, metadata !114, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, metadata !147, metadata !854, metadata !71, i32 2041} ; [ DW_TAG_subprogram ]
@@ -1511,7 +1432,7 @@ case3:                                            ; preds = %entry
 !961 = metadata !{i32 786688, metadata !99, metadata !"dummy", metadata !62, i32 61, metadata !962, i32 0, metadata !107} ; [ DW_TAG_auto_variable ]
 !962 = metadata !{i32 786485, null, metadata !"", null, i32 0, i64 0, i64 0, i64 0, i32 0, metadata !216} ; [ DW_TAG_volatile_type ]
 !963 = metadata !{i32 65, i32 3, metadata !964, metadata !107}
-!964 = metadata !{i32 786443, metadata !109, i32 64, i32 33, metadata !62, i32 28} ; [ DW_TAG_lexical_block ]
+!964 = metadata !{i32 786443, metadata !109, i32 64, i32 33, metadata !62, i32 25} ; [ DW_TAG_lexical_block ]
 !965 = metadata !{i32 790529, metadata !966, metadata !"ctr.V", null, i32 62, metadata !1055, i32 0, metadata !957} ; [ DW_TAG_auto_variable_field ]
 !966 = metadata !{i32 786688, metadata !99, metadata !"ctr", metadata !62, i32 62, metadata !967, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
 !967 = metadata !{i32 786434, null, metadata !"ap_uint<64>", metadata !968, i32 183, i64 64, i64 64, i32 0, i32 0, null, metadata !969, i32 0, null, metadata !1054} ; [ DW_TAG_class_type ]
@@ -1653,87 +1574,47 @@ case3:                                            ; preds = %entry
 !1103 = metadata !{i32 127, i32 3, metadata !92, null}
 !1104 = metadata !{i32 128, i32 3, metadata !92, null}
 !1105 = metadata !{i32 129, i32 3, metadata !92, null}
-!1106 = metadata !{i32 60, i32 1, metadata !99, metadata !1107}
-!1107 = metadata !{i32 130, i32 3, metadata !92, null}
-!1108 = metadata !{i32 64, i32 7, metadata !109, metadata !1107}
-!1109 = metadata !{i32 2042, i32 5, metadata !111, metadata !1110}
-!1110 = metadata !{i32 64, i32 16, metadata !109, metadata !1107}
-!1111 = metadata !{i32 1879, i32 145, metadata !955, metadata !1112}
-!1112 = metadata !{i32 1896, i32 5, metadata !958, metadata !1113}
-!1113 = metadata !{i32 64, i32 27, metadata !109, metadata !1107}
-!1114 = metadata !{i32 786688, metadata !99, metadata !"dummy", metadata !62, i32 61, metadata !962, i32 0, metadata !1107} ; [ DW_TAG_auto_variable ]
-!1115 = metadata !{i32 65, i32 3, metadata !964, metadata !1107}
-!1116 = metadata !{i32 790529, metadata !966, metadata !"ctr.V", null, i32 62, metadata !1055, i32 0, metadata !1112} ; [ DW_TAG_auto_variable_field ]
-!1117 = metadata !{i32 60, i32 1, metadata !1118, metadata !1122}
-!1118 = metadata !{i32 786443, metadata !1119, i32 57, i32 22, metadata !62, i32 23} ; [ DW_TAG_lexical_block ]
-!1119 = metadata !{i32 786478, i32 0, metadata !62, metadata !"delay_until_ms<1750, 100000000>", metadata !"delay_until_ms<1750, 100000000>", metadata !"_Z14delay_until_msILy1750ELy100000000EEvv", metadata !62, i32 57, metadata !101, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, metadata !1120, null, metadata !71, i32 57} ; [ DW_TAG_subprogram ]
-!1120 = metadata !{metadata !1121, metadata !106}
-!1121 = metadata !{i32 786480, null, metadata !"MILLISECONDS", metadata !105, i64 1750, null, i32 0, i32 0} ; [ DW_TAG_template_value_parameter ]
-!1122 = metadata !{i32 134, i32 3, metadata !92, null}
-!1123 = metadata !{i32 64, i32 7, metadata !1124, metadata !1122}
-!1124 = metadata !{i32 786443, metadata !1118, i32 64, i32 2, metadata !62, i32 24} ; [ DW_TAG_lexical_block ]
-!1125 = metadata !{i32 2042, i32 5, metadata !111, metadata !1126}
-!1126 = metadata !{i32 64, i32 16, metadata !1124, metadata !1122}
-!1127 = metadata !{i32 1879, i32 145, metadata !955, metadata !1128}
-!1128 = metadata !{i32 1896, i32 5, metadata !958, metadata !1129}
-!1129 = metadata !{i32 64, i32 27, metadata !1124, metadata !1122}
-!1130 = metadata !{i32 786688, metadata !1118, metadata !"dummy", metadata !62, i32 61, metadata !962, i32 0, metadata !1122} ; [ DW_TAG_auto_variable ]
-!1131 = metadata !{i32 65, i32 3, metadata !1132, metadata !1122}
-!1132 = metadata !{i32 786443, metadata !1124, i32 64, i32 33, metadata !62, i32 25} ; [ DW_TAG_lexical_block ]
-!1133 = metadata !{i32 790529, metadata !1134, metadata !"ctr.V", null, i32 62, metadata !1055, i32 0, metadata !1128} ; [ DW_TAG_auto_variable_field ]
-!1134 = metadata !{i32 786688, metadata !1118, metadata !"ctr", metadata !62, i32 62, metadata !967, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!1135 = metadata !{i32 135, i32 3, metadata !92, null}
-!1136 = metadata !{i32 136, i32 3, metadata !92, null}
-!1137 = metadata !{i32 60, i32 1, metadata !99, metadata !1138}
-!1138 = metadata !{i32 139, i32 3, metadata !92, null}
-!1139 = metadata !{i32 64, i32 7, metadata !109, metadata !1138}
-!1140 = metadata !{i32 2042, i32 5, metadata !111, metadata !1141}
-!1141 = metadata !{i32 64, i32 16, metadata !109, metadata !1138}
-!1142 = metadata !{i32 1879, i32 145, metadata !955, metadata !1143}
-!1143 = metadata !{i32 1896, i32 5, metadata !958, metadata !1144}
-!1144 = metadata !{i32 64, i32 27, metadata !109, metadata !1138}
-!1145 = metadata !{i32 786688, metadata !99, metadata !"dummy", metadata !62, i32 61, metadata !962, i32 0, metadata !1138} ; [ DW_TAG_auto_variable ]
-!1146 = metadata !{i32 65, i32 3, metadata !964, metadata !1138}
-!1147 = metadata !{i32 790529, metadata !966, metadata !"ctr.V", null, i32 62, metadata !1055, i32 0, metadata !1143} ; [ DW_TAG_auto_variable_field ]
-!1148 = metadata !{i32 142, i32 3, metadata !92, null}
-!1149 = metadata !{i32 143, i32 2, metadata !92, null}
-!1150 = metadata !{i32 149, i32 3, metadata !1151, null}
-!1151 = metadata !{i32 786443, metadata !84, i32 147, i32 26, metadata !62, i32 3} ; [ DW_TAG_lexical_block ]
-!1152 = metadata !{i32 150, i32 3, metadata !1151, null}
-!1153 = metadata !{i32 151, i32 3, metadata !1151, null}
-!1154 = metadata !{i32 152, i32 3, metadata !1151, null}
-!1155 = metadata !{i32 60, i32 1, metadata !1156, metadata !1160}
-!1156 = metadata !{i32 786443, metadata !1157, i32 57, i32 22, metadata !62, i32 9} ; [ DW_TAG_lexical_block ]
-!1157 = metadata !{i32 786478, i32 0, metadata !62, metadata !"delay_until_ms<10, 100000000>", metadata !"delay_until_ms<10, 100000000>", metadata !"_Z14delay_until_msILy10ELy100000000EEvv", metadata !62, i32 57, metadata !101, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, metadata !1158, null, metadata !71, i32 57} ; [ DW_TAG_subprogram ]
-!1158 = metadata !{metadata !1159, metadata !106}
-!1159 = metadata !{i32 786480, null, metadata !"MILLISECONDS", metadata !105, i64 10, null, i32 0, i32 0} ; [ DW_TAG_template_value_parameter ]
-!1160 = metadata !{i32 153, i32 3, metadata !1151, null}
-!1161 = metadata !{i32 64, i32 7, metadata !1162, metadata !1160}
-!1162 = metadata !{i32 786443, metadata !1156, i32 64, i32 2, metadata !62, i32 10} ; [ DW_TAG_lexical_block ]
-!1163 = metadata !{i32 2042, i32 5, metadata !111, metadata !1164}
-!1164 = metadata !{i32 64, i32 16, metadata !1162, metadata !1160}
-!1165 = metadata !{i32 1879, i32 145, metadata !955, metadata !1166}
-!1166 = metadata !{i32 1896, i32 5, metadata !958, metadata !1167}
-!1167 = metadata !{i32 64, i32 27, metadata !1162, metadata !1160}
-!1168 = metadata !{i32 786688, metadata !1156, metadata !"dummy", metadata !62, i32 61, metadata !962, i32 0, metadata !1160} ; [ DW_TAG_auto_variable ]
-!1169 = metadata !{i32 65, i32 3, metadata !1170, metadata !1160}
-!1170 = metadata !{i32 786443, metadata !1162, i32 64, i32 33, metadata !62, i32 11} ; [ DW_TAG_lexical_block ]
-!1171 = metadata !{i32 790529, metadata !1172, metadata !"ctr.V", null, i32 62, metadata !1055, i32 0, metadata !1166} ; [ DW_TAG_auto_variable_field ]
-!1172 = metadata !{i32 786688, metadata !1156, metadata !"ctr", metadata !62, i32 62, metadata !967, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!1173 = metadata !{i32 156, i32 21, metadata !1174, null}
-!1174 = metadata !{i32 786443, metadata !1151, i32 156, i32 3, metadata !62, i32 4} ; [ DW_TAG_lexical_block ]
-!1175 = metadata !{i32 156, i32 34, metadata !1174, null}
-!1176 = metadata !{i32 157, i32 4, metadata !1177, null}
-!1177 = metadata !{i32 786443, metadata !1174, i32 156, i32 43, metadata !62, i32 5} ; [ DW_TAG_lexical_block ]
-!1178 = metadata !{i32 790529, metadata !1179, metadata !"sensorData[0]", null, i32 83, metadata !67, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
-!1179 = metadata !{i32 786688, metadata !84, metadata !"sensorData", metadata !62, i32 83, metadata !1180, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!1180 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 96, i64 32, i32 0, i32 0, metadata !67, metadata !1181, i32 0, i32 0} ; [ DW_TAG_array_type ]
-!1181 = metadata !{metadata !1182}
-!1182 = metadata !{i32 786465, i64 0, i64 2}      ; [ DW_TAG_subrange_type ]
-!1183 = metadata !{i32 790529, metadata !1179, metadata !"sensorData[2]", null, i32 83, metadata !67, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
-!1184 = metadata !{i32 790529, metadata !1179, metadata !"sensorData[1]", null, i32 83, metadata !67, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
-!1185 = metadata !{i32 786688, metadata !1174, metadata !"index", metadata !62, i32 156, metadata !67, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!1186 = metadata !{i32 172, i32 2, metadata !84, null}
-!1187 = metadata !{i32 173, i32 2, metadata !84, null}
-!1188 = metadata !{i32 174, i32 2, metadata !84, null}
-!1189 = metadata !{i32 177, i32 1, metadata !84, null}
+!1106 = metadata !{i32 60, i32 1, metadata !1107, metadata !1111}
+!1107 = metadata !{i32 786443, metadata !1108, i32 57, i32 22, metadata !62, i32 9} ; [ DW_TAG_lexical_block ]
+!1108 = metadata !{i32 786478, i32 0, metadata !62, metadata !"delay_until_ms<500, 100000000>", metadata !"delay_until_ms<500, 100000000>", metadata !"_Z14delay_until_msILy500ELy100000000EEvv", metadata !62, i32 57, metadata !101, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, metadata !1109, null, metadata !71, i32 57} ; [ DW_TAG_subprogram ]
+!1109 = metadata !{metadata !1110, metadata !106}
+!1110 = metadata !{i32 786480, null, metadata !"MILLISECONDS", metadata !105, i64 500, null, i32 0, i32 0} ; [ DW_TAG_template_value_parameter ]
+!1111 = metadata !{i32 134, i32 3, metadata !92, null}
+!1112 = metadata !{i32 64, i32 7, metadata !1113, metadata !1111}
+!1113 = metadata !{i32 786443, metadata !1107, i32 64, i32 2, metadata !62, i32 10} ; [ DW_TAG_lexical_block ]
+!1114 = metadata !{i32 2042, i32 5, metadata !111, metadata !1115}
+!1115 = metadata !{i32 64, i32 16, metadata !1113, metadata !1111}
+!1116 = metadata !{i32 1879, i32 145, metadata !955, metadata !1117}
+!1117 = metadata !{i32 1896, i32 5, metadata !958, metadata !1118}
+!1118 = metadata !{i32 64, i32 27, metadata !1113, metadata !1111}
+!1119 = metadata !{i32 786688, metadata !1107, metadata !"dummy", metadata !62, i32 61, metadata !962, i32 0, metadata !1111} ; [ DW_TAG_auto_variable ]
+!1120 = metadata !{i32 65, i32 3, metadata !1121, metadata !1111}
+!1121 = metadata !{i32 786443, metadata !1113, i32 64, i32 33, metadata !62, i32 11} ; [ DW_TAG_lexical_block ]
+!1122 = metadata !{i32 790529, metadata !1123, metadata !"ctr.V", null, i32 62, metadata !1055, i32 0, metadata !1117} ; [ DW_TAG_auto_variable_field ]
+!1123 = metadata !{i32 786688, metadata !1107, metadata !"ctr", metadata !62, i32 62, metadata !967, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!1124 = metadata !{i32 135, i32 3, metadata !92, null}
+!1125 = metadata !{i32 136, i32 3, metadata !92, null}
+!1126 = metadata !{i32 142, i32 3, metadata !92, null}
+!1127 = metadata !{i32 143, i32 2, metadata !92, null}
+!1128 = metadata !{i32 149, i32 3, metadata !1129, null}
+!1129 = metadata !{i32 786443, metadata !84, i32 147, i32 26, metadata !62, i32 3} ; [ DW_TAG_lexical_block ]
+!1130 = metadata !{i32 150, i32 3, metadata !1129, null}
+!1131 = metadata !{i32 151, i32 3, metadata !1129, null}
+!1132 = metadata !{i32 152, i32 3, metadata !1129, null}
+!1133 = metadata !{i32 156, i32 21, metadata !1134, null}
+!1134 = metadata !{i32 786443, metadata !1129, i32 156, i32 3, metadata !62, i32 4} ; [ DW_TAG_lexical_block ]
+!1135 = metadata !{i32 156, i32 34, metadata !1134, null}
+!1136 = metadata !{i32 157, i32 4, metadata !1137, null}
+!1137 = metadata !{i32 786443, metadata !1134, i32 156, i32 43, metadata !62, i32 5} ; [ DW_TAG_lexical_block ]
+!1138 = metadata !{i32 790529, metadata !1139, metadata !"sensorData[0]", null, i32 83, metadata !67, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
+!1139 = metadata !{i32 786688, metadata !84, metadata !"sensorData", metadata !62, i32 83, metadata !1140, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!1140 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 96, i64 32, i32 0, i32 0, metadata !67, metadata !1141, i32 0, i32 0} ; [ DW_TAG_array_type ]
+!1141 = metadata !{metadata !1142}
+!1142 = metadata !{i32 786465, i64 0, i64 2}      ; [ DW_TAG_subrange_type ]
+!1143 = metadata !{i32 790529, metadata !1139, metadata !"sensorData[2]", null, i32 83, metadata !67, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
+!1144 = metadata !{i32 790529, metadata !1139, metadata !"sensorData[1]", null, i32 83, metadata !67, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
+!1145 = metadata !{i32 786688, metadata !1134, metadata !"index", metadata !62, i32 156, metadata !67, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!1146 = metadata !{i32 172, i32 2, metadata !84, null}
+!1147 = metadata !{i32 173, i32 2, metadata !84, null}
+!1148 = metadata !{i32 174, i32 2, metadata !84, null}
+!1149 = metadata !{i32 177, i32 1, metadata !84, null}

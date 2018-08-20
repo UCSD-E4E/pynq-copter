@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "1000042",
+    "Latency": "41",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -879,7 +879,7 @@
       "statusOffset": "20",
       "handshakeRef": "ap_vld",
       "Object": "CTRL",
-      "firstOutLatency": "76"
+      "firstOutLatency": "73"
     },
     "pressure_lsb": {
       "interfaceRef": "s_axi_CTRL",
@@ -888,7 +888,7 @@
       "statusOffset": "28",
       "handshakeRef": "ap_vld",
       "Object": "CTRL",
-      "firstOutLatency": "76"
+      "firstOutLatency": "73"
     },
     "pressure_xlsb": {
       "interfaceRef": "s_axi_CTRL",
@@ -897,7 +897,7 @@
       "statusOffset": "36",
       "handshakeRef": "ap_vld",
       "Object": "CTRL",
-      "firstOutLatency": "76"
+      "firstOutLatency": "73"
     },
     "ap_ctrl": {
       "interfaceRef": "s_axi_CTRL",
@@ -913,12 +913,12 @@
     "Hierarchy": {"ModuleName": "multibyteOg"},
     "Metrics": {"multibyteOg": {
         "Latency": {
-          "LatencyBest": "1000042",
-          "LatencyAvg": "103500074",
-          "LatencyWorst": "206000105",
-          "PipelineIIMin": "1000043",
-          "PipelineIIMax": "206000106",
-          "PipelineII": "1000043 ~ 206000106",
+          "LatencyBest": "41",
+          "LatencyAvg": "35000072",
+          "LatencyWorst": "70000102",
+          "PipelineIIMin": "42",
+          "PipelineIIMax": "70000103",
+          "PipelineII": "42 ~ 70000103",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -965,34 +965,13 @@
           },
           {
             "Name": "Loop 6",
-            "TripCount": "5000000",
-            "Latency": "5000000",
+            "TripCount": "50000000",
+            "Latency": "50000000",
             "PipelineII": "",
             "PipelineDepth": "1"
           },
           {
             "Name": "Loop 7",
-            "TripCount": "175000000",
-            "Latency": "175000000",
-            "PipelineII": "",
-            "PipelineDepth": "1"
-          },
-          {
-            "Name": "Loop 8",
-            "TripCount": "5000000",
-            "Latency": "5000000",
-            "PipelineII": "",
-            "PipelineDepth": "1"
-          },
-          {
-            "Name": "Loop 9",
-            "TripCount": "1000000",
-            "Latency": "1000000",
-            "PipelineII": "",
-            "PipelineDepth": "1"
-          },
-          {
-            "Name": "Loop 10",
             "TripCount": "3",
             "Latency": "27",
             "PipelineII": "",
@@ -1001,15 +980,15 @@
         ],
         "Area": {
           "BRAM_18K": "2",
-          "FF": "1264",
-          "LUT": "2251",
+          "FF": "1193",
+          "LUT": "2079",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-19 17:47:20 PDT",
+    "Time": "2018-08-19 23:17:07 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

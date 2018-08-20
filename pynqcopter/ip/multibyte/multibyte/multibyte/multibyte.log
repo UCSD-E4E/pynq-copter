@@ -86,4 +86,34 @@ INFO: [RTGEN 206-500] Setting interface mode on function 'multibyte' to 's_axili
 WARNING: [RTGEN 206-101] Register 'firstSample' is power-on initialization.
 INFO: [RTGEN 206-100] Bundling port 'return', 'pressure_lsb', 'pressure_xlsb', 'temperature_msb', 'temperature_lsb', 'temperature_xlsb', 'stateSetUp', 'state', 'stateDataReads', 'dig_T1', 'dig_P9', 'pressureRaw', 'temperatureRaw', 'trimVal1', 'trimVal2', 'trimVal3', 'trimVal4', 'trimVal5', 'trimVal6', 'trimVal23' and 'trimVal24' to AXI-Lite port CTRL.
 INFO: [SYN 201-210] Renamed object name 'multibyte_trimmingData' to 'multibyte_trimminbkb' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'multibyte_sensorData' to 'multibyte_sensorDcud' due to the 
+INFO: [SYN 201-210] Renamed object name 'multibyte_sensorData' to 'multibyte_sensorDcud' due to the length limit 20
+WARNING: [RTGEN 206-101] Port 'multibyte/dig_T2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'multibyte/dig_T3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'multibyte/dig_P1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'multibyte/dig_P2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'multibyte/dig_P3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'multibyte/dig_P4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'multibyte/dig_P5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'multibyte/dig_P6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'multibyte/dig_P7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'multibyte/dig_P8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'multibyte'.
+INFO: [HLS 200-111]  Elapsed time: 0.5 seconds; current allocated memory: 90.635 MB.
+INFO: [RTMG 210-278] Implementing memory 'multibyte_trimminbkb_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'multibyte_sensorDcud_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:20 ; elapsed = 00:00:35 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 55210 ; free virtual = 444290
+INFO: [SYSC 207-301] Generating SystemC RTL for multibyte.
+INFO: [VHDL 208-304] Generating VHDL RTL for multibyte.
+INFO: [VLOG 209-307] Generating Verilog RTL for multibyte.
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-112] Total elapsed time: 88.2 seconds; peak allocated memory: 90.635 MB.

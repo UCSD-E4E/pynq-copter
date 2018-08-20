@@ -73,10 +73,7 @@ void multibyte(volatile int iic[4096],
 	uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb,
 	uint32_t& temperature_msb, uint32_t& temperature_lsb, uint32_t& temperature_xlsb,  
 	int& stateSetUp,  int& state, int& stateDataReads,
-	uint32_t& dig_T1, uint32_t& dig_T2, uint32_t& dig_T3, 
-	uint32_t& dig_P1, uint32_t& dig_P2, uint32_t& dig_P3, 
-	uint32_t& dig_P4, uint32_t& dig_P5, uint32_t& dig_P6,
-	uint32_t& dig_P7, uint32_t& dig_P8, uint32_t& dig_P9, 
+	uint32_t& dig_T1, uint32_t& dig_P9, 
 	uint32_t& pressureRaw, uint32_t& temperatureRaw, 
 	uint32_t& trimVal1, uint32_t& trimVal2, uint32_t& trimVal3, 
 	uint32_t& trimVal4, uint32_t& trimVal5, uint32_t& trimVal6,
@@ -114,9 +111,8 @@ void multibyte(volatile int iic[4096],
 
 	//initialize variables
 	bool setupSuccess = true;
-	uint16_t trimmingData[24] = {};
+	uint32_t trimmingData[24] = {};
 	int sensorData[6] = {};
-	stateSetUp = 0;
 
 	//only undergo setup on first run
 	static bool firstSample = true;
@@ -163,7 +159,7 @@ void multibyte(volatile int iic[4096],
 	//CONFIGURE REGISTER SETTINGS: time sampling, time constant IIR Filter
 		iic[IIC_INDEX+TX_FIFO] = 0x1EC;
 		iic[IIC_INDEX+TX_FIFO] = 0xF5; 
-		iic[IIC_INDEX+TX_FIFO] = 0x24;
+		iic[IIC_INDEX+TX_FIFO] = 0xA0; //temp and press oversampling x1 
 
 
 		//4. want to: keep checking if the system is back up by checking to see if the chip ID can be read
@@ -189,7 +185,7 @@ void multibyte(volatile int iic[4096],
 		iic[IIC_INDEX + TX_FIFO] = 0x88;
 		iic[IIC_INDEX + TX_FIFO] = 0x1ED;
 		iic[IIC_INDEX + TX_FIFO] = 0x224; //read 24 bytes
-		delay_until_ms<10>(); //sample rate
+		//delay_until_ms<10>(); //sample rate
 		
 		state = 10;
 		//READ RECIEVED DATA
@@ -200,7 +196,7 @@ void multibyte(volatile int iic[4096],
 	} 
 	else 
 	{
-		delay_until_ms<10>(); //sample rate 
+		//delay_until_ms<10>(); //sample rate 
 		state = 1;  //check if it enters "else" first time around
 		//READ RECIEVED DATA
 		for (int index = 0; index < 24; index++) 
@@ -240,7 +236,7 @@ void multibyte(volatile int iic[4096],
 		iic[IIC_INDEX + TX_FIFO] = 0xF7; //pressure msb to temperature xlsb
 		iic[IIC_INDEX + TX_FIFO] = 0x1ED;
 		iic[IIC_INDEX + TX_FIFO] = 0x206; //read 6 bytes
-		delay_until_ms<10>(); //sample rate
+		//delay_until_ms<10>(); //sample rate
 		
 		stateDataReads = 10;
 		//READ RECIEVED DATA
@@ -251,7 +247,7 @@ void multibyte(volatile int iic[4096],
 	} 
 	else 
 	{
-		delay_until_ms<10>(); //sample rate 
+		//delay_until_ms<10>(); //sample rate 
 		stateDataReads = 1;  //check if it enters "else" first time around
 		//READ RECIEVED DATA
 		for (int index = 0; index < 6; index++) 

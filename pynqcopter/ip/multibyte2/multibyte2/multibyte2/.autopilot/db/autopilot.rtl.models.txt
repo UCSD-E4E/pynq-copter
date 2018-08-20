@@ -1,5 +1,0 @@
-multibyte2_trimmibkb
-multibyte2_sensorcud
-multibyte2_CTRL_s_axi
-multibyte2_CTRL_m_axi
-multibyte2

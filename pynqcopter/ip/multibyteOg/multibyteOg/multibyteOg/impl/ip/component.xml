@@ -1154,7 +1154,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>651ae93b</spirit:value>
+            <spirit:value>b2fd47c0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1170,7 +1170,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e27ebf2f</spirit:value>
+            <spirit:value>46e8c5f0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1186,7 +1186,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>9bab89a9</spirit:value>
+            <spirit:value>eabba9f7</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1202,7 +1202,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>efba1573</spirit:value>
+            <spirit:value>30f01eb7</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2770,7 +2770,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="18">1000042</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="18">41</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -2787,18 +2787,18 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </xilinx:taxonomies>
       <xilinx:displayName>MultibyteOg</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808191747</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-20T00:47:37Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808192317</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-20T06:17:24Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="05f34d91"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="4c3ebedf"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="a80c6d92"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ef211804"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="9195c0c2"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="86c48405"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="026b2add"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="c5a3afac"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="b92aba06"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>
