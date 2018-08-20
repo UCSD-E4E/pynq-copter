@@ -1,33 +1,33 @@
 <?xml version="1.0"?>
 <Runs Version="1" Minor="0">
-	<Run Id="iicComm_auto_pc_1_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_auto_pc_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="iicComm_auto_pc_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="iicComm_iiccomm_0_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_iiccomm_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Run Id="iicComm_axi_iic_0_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_axi_iic_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="iicComm_s01_mmu_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_s01_mmu_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="iicComm_auto_pc_1_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_auto_pc_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="iicComm_xbar_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Run Id="iicComm_processing_system7_0_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Run Id="iicComm_rst_ps7_0_100M_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_rst_ps7_0_100M_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="iicComm_iiccomm_0_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_iiccomm_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="iicComm_auto_pc_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="iicComm_s01_mmu_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_s01_mmu_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-	<Run Id="iicComm_xbar_0_synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/iicComm_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Run Id="synth_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
-		<Parent Id="iicComm_auto_pc_1_synth_1"/>
+		<Parent Id="iicComm_auto_pc_0_synth_1"/>
+		<Parent Id="iicComm_iiccomm_0_0_synth_1"/>
 		<Parent Id="iicComm_axi_iic_0_0_synth_1"/>
+		<Parent Id="iicComm_s01_mmu_0_synth_1"/>
+		<Parent Id="iicComm_auto_pc_1_synth_1"/>
+		<Parent Id="iicComm_xbar_0_synth_1"/>
 		<Parent Id="iicComm_processing_system7_0_0_synth_1"/>
 		<Parent Id="iicComm_rst_ps7_0_100M_0_synth_1"/>
-		<Parent Id="iicComm_iiccomm_0_0_synth_1"/>
-		<Parent Id="iicComm_auto_pc_0_synth_1"/>
-		<Parent Id="iicComm_s01_mmu_0_synth_1"/>
-		<Parent Id="iicComm_xbar_0_synth_1"/>
 	</Run>
 	<Run Id="impl_1" LaunchDir="/home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
 		<Parent Id="synth_1"/>
-		<Parent Id="iicComm_auto_pc_1_synth_1"/>
+		<Parent Id="iicComm_auto_pc_0_synth_1"/>
+		<Parent Id="iicComm_iiccomm_0_0_synth_1"/>
 		<Parent Id="iicComm_axi_iic_0_0_synth_1"/>
+		<Parent Id="iicComm_s01_mmu_0_synth_1"/>
+		<Parent Id="iicComm_auto_pc_1_synth_1"/>
+		<Parent Id="iicComm_xbar_0_synth_1"/>
 		<Parent Id="iicComm_processing_system7_0_0_synth_1"/>
 		<Parent Id="iicComm_rst_ps7_0_100M_0_synth_1"/>
-		<Parent Id="iicComm_iiccomm_0_0_synth_1"/>
-		<Parent Id="iicComm_auto_pc_0_synth_1"/>
-		<Parent Id="iicComm_s01_mmu_0_synth_1"/>
-		<Parent Id="iicComm_xbar_0_synth_1"/>
 	</Run>
 </Runs>
 
