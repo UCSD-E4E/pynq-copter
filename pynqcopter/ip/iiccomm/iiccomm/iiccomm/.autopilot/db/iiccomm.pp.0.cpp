@@ -33221,8 +33221,7 @@ static uint32_t stat_reg_val4;
 static uint32_t rx_fifo_val;
 
 
-
-void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1, volatile uint32_t& empty_pirq_outValue, volatile uint32_t& full_pirq_outValue, volatile uint32_t& stat_reg_outValue2, volatile uint32_t& stat_reg_outValue3, volatile uint32_t& stat_reg_outValue4, volatile uint32_t& tx_fifo_outValue, volatile uint32_t& rx_fifo_outValue, volatile uint32_t&ctrl_reg_outValue)
+void iiccomm(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& stat_reg_outValue2, uint32_t& stat_reg_outValue3, uint32_t& stat_reg_outValue4, uint32_t& tx_fifo_outValue, uint32_t& rx_fifo_outValue, uint32_t& ctrl_reg_outValue, uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb)
 {
 #pragma HLS INTERFACE s_axilite port=return
 
@@ -33237,6 +33236,8 @@ void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1,
 #pragma HLS INTERFACE s_axilite port=rx_fifo_outValue
 #pragma HLS INTERFACE s_axilite port=tx_fifo_outValue
 #pragma HLS INTERFACE s_axilite port=ctrl_reg_outValue
+
+ uint32_t sensorData[3] = {};
 
 
 
@@ -33281,32 +33282,30 @@ void iiccomm(volatile uint32_t iic[4096], volatile uint32_t& stat_reg_outValue1,
  iic[(0x40001000/4)+(0x108/4)] = 0xF5;
  iic[(0x40001000/4)+(0x108/4)] = 0x24;
 
- delay_until_ms<10000>();
+ delay_until_ms<1000>();
 
 
 
 
  iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
-# 127 "iiccomm.cpp"
+# 128 "iiccomm.cpp"
  iic[(0x40001000/4)+(0x108/4)] = 0xF7;
 
 
-
-
-
-
- iic[(0x40001000/4)+(0x108/4)] = 0x1ED;
+ iic[(0x40001000/4)+(0x108/4)] = 0xED;
 
 
  iic[(0x40001000/4)+(0x108/4)] = 0x203;
+# 145 "iiccomm.cpp"
+ for (int index = 0; index < 3; index++) {
+   sensorData[index] = iic[(0x40001000/4) + (0x120/4)];
+  }
 
 
 
+ pressure_msb = (uint32_t)sensorData[0];
+ pressure_lsb = (uint32_t)sensorData[1];
+ pressure_xlsb = (uint32_t)sensorData[2];
 
-
-
-
- rx_fifo_val = iic[(0x40001000/4)+(0x10C/4)];
-    rx_fifo_outValue=rx_fifo_val;
 
 }
