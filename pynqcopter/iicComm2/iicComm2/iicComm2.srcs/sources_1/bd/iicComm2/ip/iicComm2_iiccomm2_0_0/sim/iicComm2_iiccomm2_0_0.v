@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:iiccomm2:1.0
-// IP Revision: 1808201038
+// IP Revision: 1808201217
 
 `timescale 1ns/1ps
 

@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Mon Aug 20 10:39:54 2018
+//Date        : Mon Aug 20 12:19:12 2018
 //Host        : fabricant running 64-bit Linux Mint 18 Sarah
 //Command     : generate_target iicComm2_wrapper.bd
 //Design      : iicComm2_wrapper
