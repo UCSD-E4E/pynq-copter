@@ -47,13 +47,14 @@ port (
     empty_pirq_outValue_ap_vld :in   STD_LOGIC;
     full_pirq_outValue    :in   STD_LOGIC_VECTOR(31 downto 0);
     full_pirq_outValue_ap_vld :in   STD_LOGIC;
-    stat_reg_outValue2    :out  STD_LOGIC_VECTOR(31 downto 0);
-    stat_reg_outValue3    :out  STD_LOGIC_VECTOR(31 downto 0);
-    stat_reg_outValue4    :out  STD_LOGIC_VECTOR(31 downto 0);
-    tx_fifo_outValue      :out  STD_LOGIC_VECTOR(31 downto 0);
-    rx_fifo_outValue      :out  STD_LOGIC_VECTOR(31 downto 0);
     ctrl_reg_outValue     :in   STD_LOGIC_VECTOR(31 downto 0);
-    ctrl_reg_outValue_ap_vld :in   STD_LOGIC
+    ctrl_reg_outValue_ap_vld :in   STD_LOGIC;
+    pressure_msb          :in   STD_LOGIC_VECTOR(31 downto 0);
+    pressure_msb_ap_vld   :in   STD_LOGIC;
+    pressure_lsb          :in   STD_LOGIC_VECTOR(31 downto 0);
+    pressure_lsb_ap_vld   :in   STD_LOGIC;
+    pressure_xlsb         :in   STD_LOGIC_VECTOR(31 downto 0);
+    pressure_xlsb_ap_vld  :in   STD_LOGIC
 );
 end entity iiccomm_AXILiteS_s_axi;
 
@@ -91,25 +92,25 @@ end entity iiccomm_AXILiteS_s_axi;
 -- 0x24 : Control signal of full_pirq_outValue
 --        bit 0  - full_pirq_outValue_ap_vld (Read/COR)
 --        others - reserved
--- 0x28 : Data signal of stat_reg_outValue2
---        bit 31~0 - stat_reg_outValue2[31:0] (Read/Write)
--- 0x2c : reserved
--- 0x30 : Data signal of stat_reg_outValue3
---        bit 31~0 - stat_reg_outValue3[31:0] (Read/Write)
--- 0x34 : reserved
--- 0x38 : Data signal of stat_reg_outValue4
---        bit 31~0 - stat_reg_outValue4[31:0] (Read/Write)
--- 0x3c : reserved
--- 0x40 : Data signal of tx_fifo_outValue
---        bit 31~0 - tx_fifo_outValue[31:0] (Read/Write)
--- 0x44 : reserved
--- 0x48 : Data signal of rx_fifo_outValue
---        bit 31~0 - rx_fifo_outValue[31:0] (Read/Write)
--- 0x4c : reserved
--- 0x50 : Data signal of ctrl_reg_outValue
+-- 0x28 : Data signal of ctrl_reg_outValue
 --        bit 31~0 - ctrl_reg_outValue[31:0] (Read)
--- 0x54 : Control signal of ctrl_reg_outValue
+-- 0x2c : Control signal of ctrl_reg_outValue
 --        bit 0  - ctrl_reg_outValue_ap_vld (Read/COR)
+--        others - reserved
+-- 0x30 : Data signal of pressure_msb
+--        bit 31~0 - pressure_msb[31:0] (Read)
+-- 0x34 : Control signal of pressure_msb
+--        bit 0  - pressure_msb_ap_vld (Read/COR)
+--        others - reserved
+-- 0x38 : Data signal of pressure_lsb
+--        bit 31~0 - pressure_lsb[31:0] (Read)
+-- 0x3c : Control signal of pressure_lsb
+--        bit 0  - pressure_lsb_ap_vld (Read/COR)
+--        others - reserved
+-- 0x40 : Data signal of pressure_xlsb
+--        bit 31~0 - pressure_xlsb[31:0] (Read)
+-- 0x44 : Control signal of pressure_xlsb
+--        bit 0  - pressure_xlsb_ap_vld (Read/COR)
 --        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -128,18 +129,14 @@ architecture behave of iiccomm_AXILiteS_s_axi is
     constant ADDR_EMPTY_PIRQ_OUTVALUE_CTRL   : INTEGER := 16#1c#;
     constant ADDR_FULL_PIRQ_OUTVALUE_DATA_0  : INTEGER := 16#20#;
     constant ADDR_FULL_PIRQ_OUTVALUE_CTRL    : INTEGER := 16#24#;
-    constant ADDR_STAT_REG_OUTVALUE2_DATA_0  : INTEGER := 16#28#;
-    constant ADDR_STAT_REG_OUTVALUE2_CTRL    : INTEGER := 16#2c#;
-    constant ADDR_STAT_REG_OUTVALUE3_DATA_0  : INTEGER := 16#30#;
-    constant ADDR_STAT_REG_OUTVALUE3_CTRL    : INTEGER := 16#34#;
-    constant ADDR_STAT_REG_OUTVALUE4_DATA_0  : INTEGER := 16#38#;
-    constant ADDR_STAT_REG_OUTVALUE4_CTRL    : INTEGER := 16#3c#;
-    constant ADDR_TX_FIFO_OUTVALUE_DATA_0    : INTEGER := 16#40#;
-    constant ADDR_TX_FIFO_OUTVALUE_CTRL      : INTEGER := 16#44#;
-    constant ADDR_RX_FIFO_OUTVALUE_DATA_0    : INTEGER := 16#48#;
-    constant ADDR_RX_FIFO_OUTVALUE_CTRL      : INTEGER := 16#4c#;
-    constant ADDR_CTRL_REG_OUTVALUE_DATA_0   : INTEGER := 16#50#;
-    constant ADDR_CTRL_REG_OUTVALUE_CTRL     : INTEGER := 16#54#;
+    constant ADDR_CTRL_REG_OUTVALUE_DATA_0   : INTEGER := 16#28#;
+    constant ADDR_CTRL_REG_OUTVALUE_CTRL     : INTEGER := 16#2c#;
+    constant ADDR_PRESSURE_MSB_DATA_0        : INTEGER := 16#30#;
+    constant ADDR_PRESSURE_MSB_CTRL          : INTEGER := 16#34#;
+    constant ADDR_PRESSURE_LSB_DATA_0        : INTEGER := 16#38#;
+    constant ADDR_PRESSURE_LSB_CTRL          : INTEGER := 16#3c#;
+    constant ADDR_PRESSURE_XLSB_DATA_0       : INTEGER := 16#40#;
+    constant ADDR_PRESSURE_XLSB_CTRL         : INTEGER := 16#44#;
     constant ADDR_BITS         : INTEGER := 7;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -168,13 +165,14 @@ architecture behave of iiccomm_AXILiteS_s_axi is
     signal int_empty_pirq_outValue_ap_vld : STD_LOGIC;
     signal int_full_pirq_outValue : UNSIGNED(31 downto 0) := (others => '0');
     signal int_full_pirq_outValue_ap_vld : STD_LOGIC;
-    signal int_stat_reg_outValue2 : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_stat_reg_outValue3 : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_stat_reg_outValue4 : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_tx_fifo_outValue : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_rx_fifo_outValue : UNSIGNED(31 downto 0) := (others => '0');
     signal int_ctrl_reg_outValue : UNSIGNED(31 downto 0) := (others => '0');
     signal int_ctrl_reg_outValue_ap_vld : STD_LOGIC;
+    signal int_pressure_msb    : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_pressure_msb_ap_vld : STD_LOGIC;
+    signal int_pressure_lsb    : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_pressure_lsb_ap_vld : STD_LOGIC;
+    signal int_pressure_xlsb   : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_pressure_xlsb_ap_vld : STD_LOGIC;
 
 
 begin
@@ -308,20 +306,22 @@ begin
                         rdata_data <= RESIZE(int_full_pirq_outValue(31 downto 0), 32);
                     when ADDR_FULL_PIRQ_OUTVALUE_CTRL =>
                         rdata_data <= (0 => int_full_pirq_outValue_ap_vld, others => '0');
-                    when ADDR_STAT_REG_OUTVALUE2_DATA_0 =>
-                        rdata_data <= RESIZE(int_stat_reg_outValue2(31 downto 0), 32);
-                    when ADDR_STAT_REG_OUTVALUE3_DATA_0 =>
-                        rdata_data <= RESIZE(int_stat_reg_outValue3(31 downto 0), 32);
-                    when ADDR_STAT_REG_OUTVALUE4_DATA_0 =>
-                        rdata_data <= RESIZE(int_stat_reg_outValue4(31 downto 0), 32);
-                    when ADDR_TX_FIFO_OUTVALUE_DATA_0 =>
-                        rdata_data <= RESIZE(int_tx_fifo_outValue(31 downto 0), 32);
-                    when ADDR_RX_FIFO_OUTVALUE_DATA_0 =>
-                        rdata_data <= RESIZE(int_rx_fifo_outValue(31 downto 0), 32);
                     when ADDR_CTRL_REG_OUTVALUE_DATA_0 =>
                         rdata_data <= RESIZE(int_ctrl_reg_outValue(31 downto 0), 32);
                     when ADDR_CTRL_REG_OUTVALUE_CTRL =>
                         rdata_data <= (0 => int_ctrl_reg_outValue_ap_vld, others => '0');
+                    when ADDR_PRESSURE_MSB_DATA_0 =>
+                        rdata_data <= RESIZE(int_pressure_msb(31 downto 0), 32);
+                    when ADDR_PRESSURE_MSB_CTRL =>
+                        rdata_data <= (0 => int_pressure_msb_ap_vld, others => '0');
+                    when ADDR_PRESSURE_LSB_DATA_0 =>
+                        rdata_data <= RESIZE(int_pressure_lsb(31 downto 0), 32);
+                    when ADDR_PRESSURE_LSB_CTRL =>
+                        rdata_data <= (0 => int_pressure_lsb_ap_vld, others => '0');
+                    when ADDR_PRESSURE_XLSB_DATA_0 =>
+                        rdata_data <= RESIZE(int_pressure_xlsb(31 downto 0), 32);
+                    when ADDR_PRESSURE_XLSB_CTRL =>
+                        rdata_data <= (0 => int_pressure_xlsb_ap_vld, others => '0');
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -333,11 +333,6 @@ begin
 -- ----------------------- Register logic ----------------
     interrupt            <= int_gie and (int_isr(0) or int_isr(1));
     ap_start             <= int_ap_start;
-    stat_reg_outValue2   <= STD_LOGIC_VECTOR(int_stat_reg_outValue2);
-    stat_reg_outValue3   <= STD_LOGIC_VECTOR(int_stat_reg_outValue3);
-    stat_reg_outValue4   <= STD_LOGIC_VECTOR(int_stat_reg_outValue4);
-    tx_fifo_outValue     <= STD_LOGIC_VECTOR(int_tx_fifo_outValue);
-    rx_fifo_outValue     <= STD_LOGIC_VECTOR(int_rx_fifo_outValue);
 
     process (ACLK)
     begin
@@ -551,61 +546,6 @@ begin
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_STAT_REG_OUTVALUE2_DATA_0) then
-                    int_stat_reg_outValue2(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_stat_reg_outValue2(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_STAT_REG_OUTVALUE3_DATA_0) then
-                    int_stat_reg_outValue3(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_stat_reg_outValue3(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_STAT_REG_OUTVALUE4_DATA_0) then
-                    int_stat_reg_outValue4(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_stat_reg_outValue4(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_TX_FIFO_OUTVALUE_DATA_0) then
-                    int_tx_fifo_outValue(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_tx_fifo_outValue(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_RX_FIFO_OUTVALUE_DATA_0) then
-                    int_rx_fifo_outValue(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_rx_fifo_outValue(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
                 int_ctrl_reg_outValue <= (others => '0');
             elsif (ACLK_EN = '1') then
@@ -626,6 +566,90 @@ begin
                     int_ctrl_reg_outValue_ap_vld <= '1';
                 elsif (ar_hs = '1' and raddr = ADDR_CTRL_REG_OUTVALUE_CTRL) then
                     int_ctrl_reg_outValue_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_pressure_msb <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (pressure_msb_ap_vld = '1') then
+                    int_pressure_msb <= UNSIGNED(pressure_msb); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_pressure_msb_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (pressure_msb_ap_vld = '1') then
+                    int_pressure_msb_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_PRESSURE_MSB_CTRL) then
+                    int_pressure_msb_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_pressure_lsb <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (pressure_lsb_ap_vld = '1') then
+                    int_pressure_lsb <= UNSIGNED(pressure_lsb); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_pressure_lsb_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (pressure_lsb_ap_vld = '1') then
+                    int_pressure_lsb_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_PRESSURE_LSB_CTRL) then
+                    int_pressure_lsb_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_pressure_xlsb <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (pressure_xlsb_ap_vld = '1') then
+                    int_pressure_xlsb <= UNSIGNED(pressure_xlsb); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_pressure_xlsb_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (pressure_xlsb_ap_vld = '1') then
+                    int_pressure_xlsb_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_PRESSURE_XLSB_CTRL) then
+                    int_pressure_xlsb_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;

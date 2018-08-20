@@ -121,53 +121,37 @@ full_pirq_outValue {
 	offset 32
 	offset_end 39
 }
-stat_reg_outValue2 { 
-	dir I
-	width 32
-	depth 1
-	mode ap_none
-	offset 40
-	offset_end 47
-}
-stat_reg_outValue3 { 
-	dir I
-	width 32
-	depth 1
-	mode ap_none
-	offset 48
-	offset_end 55
-}
-stat_reg_outValue4 { 
-	dir I
-	width 32
-	depth 1
-	mode ap_none
-	offset 56
-	offset_end 63
-}
-tx_fifo_outValue { 
-	dir I
-	width 32
-	depth 1
-	mode ap_none
-	offset 64
-	offset_end 71
-}
-rx_fifo_outValue { 
-	dir I
-	width 32
-	depth 1
-	mode ap_none
-	offset 72
-	offset_end 79
-}
 ctrl_reg_outValue { 
 	dir O
 	width 32
 	depth 1
 	mode ap_vld
-	offset 80
-	offset_end 87
+	offset 40
+	offset_end 47
+}
+pressure_msb { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 48
+	offset_end 55
+}
+pressure_lsb { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 56
+	offset_end 63
+}
+pressure_xlsb { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 64
+	offset_end 71
 }
 }
 
@@ -209,51 +193,6 @@ puts "@W \[IMPL-110\] Cannot find AXI interface model in the library. Ignored ge
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler iiccomm_iic_m_axi
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 7 \
-    name pressure_msb \
-    type other \
-    dir O \
-    reset_level 0 \
-    sync_rst true \
-    corename dc_pressure_msb \
-    op interface \
-    ports { pressure_msb { O 32 vector } pressure_msb_ap_vld { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 8 \
-    name pressure_lsb \
-    type other \
-    dir O \
-    reset_level 0 \
-    sync_rst true \
-    corename dc_pressure_lsb \
-    op interface \
-    ports { pressure_lsb { O 32 vector } pressure_lsb_ap_vld { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 9 \
-    name pressure_xlsb \
-    type other \
-    dir O \
-    reset_level 0 \
-    sync_rst true \
-    corename dc_pressure_xlsb \
-    op interface \
-    ports { pressure_xlsb { O 32 vector } pressure_xlsb_ap_vld { O 1 bit } } \
-} "
 }
 
 

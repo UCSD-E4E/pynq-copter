@@ -44,13 +44,14 @@ module iiccomm_AXILiteS_s_axi
     input  wire                          empty_pirq_outValue_ap_vld,
     input  wire [31:0]                   full_pirq_outValue,
     input  wire                          full_pirq_outValue_ap_vld,
-    output wire [31:0]                   stat_reg_outValue2,
-    output wire [31:0]                   stat_reg_outValue3,
-    output wire [31:0]                   stat_reg_outValue4,
-    output wire [31:0]                   tx_fifo_outValue,
-    output wire [31:0]                   rx_fifo_outValue,
     input  wire [31:0]                   ctrl_reg_outValue,
-    input  wire                          ctrl_reg_outValue_ap_vld
+    input  wire                          ctrl_reg_outValue_ap_vld,
+    input  wire [31:0]                   pressure_msb,
+    input  wire                          pressure_msb_ap_vld,
+    input  wire [31:0]                   pressure_lsb,
+    input  wire                          pressure_lsb_ap_vld,
+    input  wire [31:0]                   pressure_xlsb,
+    input  wire                          pressure_xlsb_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -86,25 +87,25 @@ module iiccomm_AXILiteS_s_axi
 // 0x24 : Control signal of full_pirq_outValue
 //        bit 0  - full_pirq_outValue_ap_vld (Read/COR)
 //        others - reserved
-// 0x28 : Data signal of stat_reg_outValue2
-//        bit 31~0 - stat_reg_outValue2[31:0] (Read/Write)
-// 0x2c : reserved
-// 0x30 : Data signal of stat_reg_outValue3
-//        bit 31~0 - stat_reg_outValue3[31:0] (Read/Write)
-// 0x34 : reserved
-// 0x38 : Data signal of stat_reg_outValue4
-//        bit 31~0 - stat_reg_outValue4[31:0] (Read/Write)
-// 0x3c : reserved
-// 0x40 : Data signal of tx_fifo_outValue
-//        bit 31~0 - tx_fifo_outValue[31:0] (Read/Write)
-// 0x44 : reserved
-// 0x48 : Data signal of rx_fifo_outValue
-//        bit 31~0 - rx_fifo_outValue[31:0] (Read/Write)
-// 0x4c : reserved
-// 0x50 : Data signal of ctrl_reg_outValue
+// 0x28 : Data signal of ctrl_reg_outValue
 //        bit 31~0 - ctrl_reg_outValue[31:0] (Read)
-// 0x54 : Control signal of ctrl_reg_outValue
+// 0x2c : Control signal of ctrl_reg_outValue
 //        bit 0  - ctrl_reg_outValue_ap_vld (Read/COR)
+//        others - reserved
+// 0x30 : Data signal of pressure_msb
+//        bit 31~0 - pressure_msb[31:0] (Read)
+// 0x34 : Control signal of pressure_msb
+//        bit 0  - pressure_msb_ap_vld (Read/COR)
+//        others - reserved
+// 0x38 : Data signal of pressure_lsb
+//        bit 31~0 - pressure_lsb[31:0] (Read)
+// 0x3c : Control signal of pressure_lsb
+//        bit 0  - pressure_lsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x40 : Data signal of pressure_xlsb
+//        bit 31~0 - pressure_xlsb[31:0] (Read)
+// 0x44 : Control signal of pressure_xlsb
+//        bit 0  - pressure_xlsb_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -120,18 +121,14 @@ localparam
     ADDR_EMPTY_PIRQ_OUTVALUE_CTRL   = 7'h1c,
     ADDR_FULL_PIRQ_OUTVALUE_DATA_0  = 7'h20,
     ADDR_FULL_PIRQ_OUTVALUE_CTRL    = 7'h24,
-    ADDR_STAT_REG_OUTVALUE2_DATA_0  = 7'h28,
-    ADDR_STAT_REG_OUTVALUE2_CTRL    = 7'h2c,
-    ADDR_STAT_REG_OUTVALUE3_DATA_0  = 7'h30,
-    ADDR_STAT_REG_OUTVALUE3_CTRL    = 7'h34,
-    ADDR_STAT_REG_OUTVALUE4_DATA_0  = 7'h38,
-    ADDR_STAT_REG_OUTVALUE4_CTRL    = 7'h3c,
-    ADDR_TX_FIFO_OUTVALUE_DATA_0    = 7'h40,
-    ADDR_TX_FIFO_OUTVALUE_CTRL      = 7'h44,
-    ADDR_RX_FIFO_OUTVALUE_DATA_0    = 7'h48,
-    ADDR_RX_FIFO_OUTVALUE_CTRL      = 7'h4c,
-    ADDR_CTRL_REG_OUTVALUE_DATA_0   = 7'h50,
-    ADDR_CTRL_REG_OUTVALUE_CTRL     = 7'h54,
+    ADDR_CTRL_REG_OUTVALUE_DATA_0   = 7'h28,
+    ADDR_CTRL_REG_OUTVALUE_CTRL     = 7'h2c,
+    ADDR_PRESSURE_MSB_DATA_0        = 7'h30,
+    ADDR_PRESSURE_MSB_CTRL          = 7'h34,
+    ADDR_PRESSURE_LSB_DATA_0        = 7'h38,
+    ADDR_PRESSURE_LSB_CTRL          = 7'h3c,
+    ADDR_PRESSURE_XLSB_DATA_0       = 7'h40,
+    ADDR_PRESSURE_XLSB_CTRL         = 7'h44,
     WRIDLE                          = 2'd0,
     WRDATA                          = 2'd1,
     WRRESP                          = 2'd2,
@@ -168,13 +165,14 @@ localparam
     reg                           int_empty_pirq_outValue_ap_vld;
     reg  [31:0]                   int_full_pirq_outValue = 'b0;
     reg                           int_full_pirq_outValue_ap_vld;
-    reg  [31:0]                   int_stat_reg_outValue2 = 'b0;
-    reg  [31:0]                   int_stat_reg_outValue3 = 'b0;
-    reg  [31:0]                   int_stat_reg_outValue4 = 'b0;
-    reg  [31:0]                   int_tx_fifo_outValue = 'b0;
-    reg  [31:0]                   int_rx_fifo_outValue = 'b0;
     reg  [31:0]                   int_ctrl_reg_outValue = 'b0;
     reg                           int_ctrl_reg_outValue_ap_vld;
+    reg  [31:0]                   int_pressure_msb = 'b0;
+    reg                           int_pressure_msb_ap_vld;
+    reg  [31:0]                   int_pressure_lsb = 'b0;
+    reg                           int_pressure_lsb_ap_vld;
+    reg  [31:0]                   int_pressure_xlsb = 'b0;
+    reg                           int_pressure_xlsb_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -300,26 +298,29 @@ always @(posedge ACLK) begin
                 ADDR_FULL_PIRQ_OUTVALUE_CTRL: begin
                     rdata[0] <= int_full_pirq_outValue_ap_vld;
                 end
-                ADDR_STAT_REG_OUTVALUE2_DATA_0: begin
-                    rdata <= int_stat_reg_outValue2[31:0];
-                end
-                ADDR_STAT_REG_OUTVALUE3_DATA_0: begin
-                    rdata <= int_stat_reg_outValue3[31:0];
-                end
-                ADDR_STAT_REG_OUTVALUE4_DATA_0: begin
-                    rdata <= int_stat_reg_outValue4[31:0];
-                end
-                ADDR_TX_FIFO_OUTVALUE_DATA_0: begin
-                    rdata <= int_tx_fifo_outValue[31:0];
-                end
-                ADDR_RX_FIFO_OUTVALUE_DATA_0: begin
-                    rdata <= int_rx_fifo_outValue[31:0];
-                end
                 ADDR_CTRL_REG_OUTVALUE_DATA_0: begin
                     rdata <= int_ctrl_reg_outValue[31:0];
                 end
                 ADDR_CTRL_REG_OUTVALUE_CTRL: begin
                     rdata[0] <= int_ctrl_reg_outValue_ap_vld;
+                end
+                ADDR_PRESSURE_MSB_DATA_0: begin
+                    rdata <= int_pressure_msb[31:0];
+                end
+                ADDR_PRESSURE_MSB_CTRL: begin
+                    rdata[0] <= int_pressure_msb_ap_vld;
+                end
+                ADDR_PRESSURE_LSB_DATA_0: begin
+                    rdata <= int_pressure_lsb[31:0];
+                end
+                ADDR_PRESSURE_LSB_CTRL: begin
+                    rdata[0] <= int_pressure_lsb_ap_vld;
+                end
+                ADDR_PRESSURE_XLSB_DATA_0: begin
+                    rdata <= int_pressure_xlsb[31:0];
+                end
+                ADDR_PRESSURE_XLSB_CTRL: begin
+                    rdata[0] <= int_pressure_xlsb_ap_vld;
                 end
             endcase
         end
@@ -328,13 +329,8 @@ end
 
 
 //------------------------Register logic-----------------
-assign interrupt          = int_gie & (|int_isr);
-assign ap_start           = int_ap_start;
-assign stat_reg_outValue2 = int_stat_reg_outValue2;
-assign stat_reg_outValue3 = int_stat_reg_outValue3;
-assign stat_reg_outValue4 = int_stat_reg_outValue4;
-assign tx_fifo_outValue   = int_tx_fifo_outValue;
-assign rx_fifo_outValue   = int_rx_fifo_outValue;
+assign interrupt = int_gie & (|int_isr);
+assign ap_start  = int_ap_start;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -497,56 +493,6 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_stat_reg_outValue2[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_stat_reg_outValue2[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_STAT_REG_OUTVALUE2_DATA_0)
-            int_stat_reg_outValue2[31:0] <= (WDATA[31:0] & wmask) | (int_stat_reg_outValue2[31:0] & ~wmask);
-    end
-end
-
-// int_stat_reg_outValue3[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_stat_reg_outValue3[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_STAT_REG_OUTVALUE3_DATA_0)
-            int_stat_reg_outValue3[31:0] <= (WDATA[31:0] & wmask) | (int_stat_reg_outValue3[31:0] & ~wmask);
-    end
-end
-
-// int_stat_reg_outValue4[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_stat_reg_outValue4[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_STAT_REG_OUTVALUE4_DATA_0)
-            int_stat_reg_outValue4[31:0] <= (WDATA[31:0] & wmask) | (int_stat_reg_outValue4[31:0] & ~wmask);
-    end
-end
-
-// int_tx_fifo_outValue[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_tx_fifo_outValue[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_TX_FIFO_OUTVALUE_DATA_0)
-            int_tx_fifo_outValue[31:0] <= (WDATA[31:0] & wmask) | (int_tx_fifo_outValue[31:0] & ~wmask);
-    end
-end
-
-// int_rx_fifo_outValue[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_rx_fifo_outValue[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_RX_FIFO_OUTVALUE_DATA_0)
-            int_rx_fifo_outValue[31:0] <= (WDATA[31:0] & wmask) | (int_rx_fifo_outValue[31:0] & ~wmask);
-    end
-end
-
 // int_ctrl_reg_outValue
 always @(posedge ACLK) begin
     if (ARESET)
@@ -566,6 +512,72 @@ always @(posedge ACLK) begin
             int_ctrl_reg_outValue_ap_vld <= 1'b1;
         else if (ar_hs && raddr == ADDR_CTRL_REG_OUTVALUE_CTRL)
             int_ctrl_reg_outValue_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_pressure_msb
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_pressure_msb <= 0;
+    else if (ACLK_EN) begin
+        if (pressure_msb_ap_vld)
+            int_pressure_msb <= pressure_msb;
+    end
+end
+
+// int_pressure_msb_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_pressure_msb_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (pressure_msb_ap_vld)
+            int_pressure_msb_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_PRESSURE_MSB_CTRL)
+            int_pressure_msb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_pressure_lsb
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_pressure_lsb <= 0;
+    else if (ACLK_EN) begin
+        if (pressure_lsb_ap_vld)
+            int_pressure_lsb <= pressure_lsb;
+    end
+end
+
+// int_pressure_lsb_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_pressure_lsb_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (pressure_lsb_ap_vld)
+            int_pressure_lsb_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_PRESSURE_LSB_CTRL)
+            int_pressure_lsb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_pressure_xlsb
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_pressure_xlsb <= 0;
+    else if (ACLK_EN) begin
+        if (pressure_xlsb_ap_vld)
+            int_pressure_xlsb <= pressure_xlsb;
+    end
+end
+
+// int_pressure_xlsb_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_pressure_xlsb_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (pressure_xlsb_ap_vld)
+            int_pressure_xlsb_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_PRESSURE_XLSB_CTRL)
+            int_pressure_xlsb_ap_vld <= 1'b0; // clear on read
     end
 end
 

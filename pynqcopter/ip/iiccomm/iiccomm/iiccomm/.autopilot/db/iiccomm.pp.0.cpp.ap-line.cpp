@@ -33214,28 +33214,22 @@ static uint32_t empty_pirq_val;
 static uint32_t full_pirq_val;
 static uint32_t ctrl_reg_val;
 static uint32_t stat_reg_val1;
-static uint32_t tx_fifo_val;
-static uint32_t stat_reg_val2;
-static uint32_t stat_reg_val3;
-static uint32_t stat_reg_val4;
-static uint32_t rx_fifo_val;
 #pragma empty_line
 #pragma empty_line
-void iiccomm(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& stat_reg_outValue2, uint32_t& stat_reg_outValue3, uint32_t& stat_reg_outValue4, uint32_t& tx_fifo_outValue, uint32_t& rx_fifo_outValue, uint32_t& ctrl_reg_outValue, uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb)
+#pragma empty_line
+void iiccomm(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue, uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb)
 {
 #pragma HLS INTERFACE s_axilite port=return
 #pragma empty_line
 #pragma HLS INTERFACE m_axi port=iic
 #pragma empty_line
 #pragma HLS INTERFACE s_axilite port=stat_reg_outValue1
-#pragma HLS INTERFACE s_axilite port=stat_reg_outValue2
-#pragma HLS INTERFACE s_axilite port=stat_reg_outValue3
-#pragma HLS INTERFACE s_axilite port=stat_reg_outValue4
 #pragma HLS INTERFACE s_axilite port=empty_pirq_outValue
 #pragma HLS INTERFACE s_axilite port=full_pirq_outValue
-#pragma HLS INTERFACE s_axilite port=rx_fifo_outValue
-#pragma HLS INTERFACE s_axilite port=tx_fifo_outValue
 #pragma HLS INTERFACE s_axilite port=ctrl_reg_outValue
+#pragma HLS INTERFACE s_axilite port=pressure_msb
+#pragma HLS INTERFACE s_axilite port=pressure_lsb
+#pragma HLS INTERFACE s_axilite port=pressure_xlsb
 #pragma empty_line
  uint32_t sensorData[3] = {};
 #pragma empty_line
@@ -33288,7 +33282,8 @@ void iiccomm(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t
 #pragma empty_line
 #pragma empty_line
  iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
-#pragma line 128 "iiccomm.cpp"
+#pragma empty_line
+#pragma empty_line
  iic[(0x40001000/4)+(0x108/4)] = 0xF7;
 #pragma empty_line
 #pragma empty_line
@@ -33296,12 +33291,14 @@ void iiccomm(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t
 #pragma empty_line
 #pragma empty_line
  iic[(0x40001000/4)+(0x108/4)] = 0x203;
-#pragma line 145 "iiccomm.cpp"
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
  for (int index = 0; index < 3; index++) {
    sensorData[index] = iic[(0x40001000/4) + (0x120/4)];
   }
-#pragma empty_line
-#pragma empty_line
 #pragma empty_line
  pressure_msb = (uint32_t)sensorData[0];
  pressure_lsb = (uint32_t)sensorData[1];

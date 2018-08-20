@@ -61,7 +61,7 @@ set Library     "hlsip"
 set IPName      "iiccomm"
 set Version     "1.0"
 set DisplayName "Iiccomm"
-set Revision    "1808200942"
+set Revision    "1808201030"
 set Description "HLS Core: Iiccomm Function"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -88,7 +88,7 @@ set Interfaces {
         param_prefix "C_S_AXI_AXILITES"
         addr_bits "7"
         port_width "AWADDR 7 WDATA 32 WSTRB 4 ARADDR 7 RDATA 32"
-        registers {{0x00 CTRL       RW   0x0 "Control signals" {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 24 RESERVED_2 R 0 "Reserved.  0s on read." }}} {0x04 GIER       RW   0x0 "Global Interrupt Enable Register" {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }} } {0x08 IP_IER     RW   0x0 "IP Interrupt Enable Register" {{ 0 1 CHAN0_INT_EN RW 0 "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled." } { 1 1 CHAN1_INT_EN RW 0 "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled." } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x0c IP_ISR     RW   0x0 "IP Interrupt Status Register" {{ 0 1 CHAN0_INT_ST RTOW 0 "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup" } { 1 1 CHAN1_INT_ST RTOW 0 "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup" } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x10 stat_reg_outValue1 R 0x0 "Data signal of stat_reg_outValue1" {{0 32 stat_reg_outValue1 R 0 "Bit 31 to 0 Data signal of stat_reg_outValue1"}}} {0x14 stat_reg_outValue1_ctrl R 0x0 "Control signal of stat_reg_outValue1" {{0 1 stat_reg_outValue1_ap_vld R 0 "Control signal stat_reg_outValue1_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x18 empty_pirq_outValue R 0x0 "Data signal of empty_pirq_outValue" {{0 32 empty_pirq_outValue R 0 "Bit 31 to 0 Data signal of empty_pirq_outValue"}}} {0x1c empty_pirq_outValue_ctrl R 0x0 "Control signal of empty_pirq_outValue" {{0 1 empty_pirq_outValue_ap_vld R 0 "Control signal empty_pirq_outValue_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x20 full_pirq_outValue R 0x0 "Data signal of full_pirq_outValue" {{0 32 full_pirq_outValue R 0 "Bit 31 to 0 Data signal of full_pirq_outValue"}}} {0x24 full_pirq_outValue_ctrl R 0x0 "Control signal of full_pirq_outValue" {{0 1 full_pirq_outValue_ap_vld R 0 "Control signal full_pirq_outValue_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x28 stat_reg_outValue2 W 0x0 "Data signal of stat_reg_outValue2" {{0 32 stat_reg_outValue2 W 0 "Bit 31 to 0 Data signal of stat_reg_outValue2"}}} {0x30 stat_reg_outValue3 W 0x0 "Data signal of stat_reg_outValue3" {{0 32 stat_reg_outValue3 W 0 "Bit 31 to 0 Data signal of stat_reg_outValue3"}}} {0x38 stat_reg_outValue4 W 0x0 "Data signal of stat_reg_outValue4" {{0 32 stat_reg_outValue4 W 0 "Bit 31 to 0 Data signal of stat_reg_outValue4"}}} {0x40 tx_fifo_outValue W 0x0 "Data signal of tx_fifo_outValue" {{0 32 tx_fifo_outValue W 0 "Bit 31 to 0 Data signal of tx_fifo_outValue"}}} {0x48 rx_fifo_outValue W 0x0 "Data signal of rx_fifo_outValue" {{0 32 rx_fifo_outValue W 0 "Bit 31 to 0 Data signal of rx_fifo_outValue"}}} {0x50 ctrl_reg_outValue R 0x0 "Data signal of ctrl_reg_outValue" {{0 32 ctrl_reg_outValue R 0 "Bit 31 to 0 Data signal of ctrl_reg_outValue"}}} {0x54 ctrl_reg_outValue_ctrl R 0x0 "Control signal of ctrl_reg_outValue" {{0 1 ctrl_reg_outValue_ap_vld R 0 "Control signal ctrl_reg_outValue_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}}}
+        registers {{0x00 CTRL       RW   0x0 "Control signals" {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 24 RESERVED_2 R 0 "Reserved.  0s on read." }}} {0x04 GIER       RW   0x0 "Global Interrupt Enable Register" {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }} } {0x08 IP_IER     RW   0x0 "IP Interrupt Enable Register" {{ 0 1 CHAN0_INT_EN RW 0 "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled." } { 1 1 CHAN1_INT_EN RW 0 "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled." } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x0c IP_ISR     RW   0x0 "IP Interrupt Status Register" {{ 0 1 CHAN0_INT_ST RTOW 0 "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup" } { 1 1 CHAN1_INT_ST RTOW 0 "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup" } { 2 30 RESERVED R 0 "Reserved.  0s on read." }}} {0x10 stat_reg_outValue1 R 0x0 "Data signal of stat_reg_outValue1" {{0 32 stat_reg_outValue1 R 0 "Bit 31 to 0 Data signal of stat_reg_outValue1"}}} {0x14 stat_reg_outValue1_ctrl R 0x0 "Control signal of stat_reg_outValue1" {{0 1 stat_reg_outValue1_ap_vld R 0 "Control signal stat_reg_outValue1_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x18 empty_pirq_outValue R 0x0 "Data signal of empty_pirq_outValue" {{0 32 empty_pirq_outValue R 0 "Bit 31 to 0 Data signal of empty_pirq_outValue"}}} {0x1c empty_pirq_outValue_ctrl R 0x0 "Control signal of empty_pirq_outValue" {{0 1 empty_pirq_outValue_ap_vld R 0 "Control signal empty_pirq_outValue_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x20 full_pirq_outValue R 0x0 "Data signal of full_pirq_outValue" {{0 32 full_pirq_outValue R 0 "Bit 31 to 0 Data signal of full_pirq_outValue"}}} {0x24 full_pirq_outValue_ctrl R 0x0 "Control signal of full_pirq_outValue" {{0 1 full_pirq_outValue_ap_vld R 0 "Control signal full_pirq_outValue_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x28 ctrl_reg_outValue R 0x0 "Data signal of ctrl_reg_outValue" {{0 32 ctrl_reg_outValue R 0 "Bit 31 to 0 Data signal of ctrl_reg_outValue"}}} {0x2c ctrl_reg_outValue_ctrl R 0x0 "Control signal of ctrl_reg_outValue" {{0 1 ctrl_reg_outValue_ap_vld R 0 "Control signal ctrl_reg_outValue_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x30 pressure_msb R 0x0 "Data signal of pressure_msb" {{0 32 pressure_msb R 0 "Bit 31 to 0 Data signal of pressure_msb"}}} {0x34 pressure_msb_ctrl R 0x0 "Control signal of pressure_msb" {{0 1 pressure_msb_ap_vld R 0 "Control signal pressure_msb_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x38 pressure_lsb R 0x0 "Data signal of pressure_lsb" {{0 32 pressure_lsb R 0 "Bit 31 to 0 Data signal of pressure_lsb"}}} {0x3c pressure_lsb_ctrl R 0x0 "Control signal of pressure_lsb" {{0 1 pressure_lsb_ap_vld R 0 "Control signal pressure_lsb_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}} {0x40 pressure_xlsb R 0x0 "Data signal of pressure_xlsb" {{0 32 pressure_xlsb R 0 "Bit 31 to 0 Data signal of pressure_xlsb"}}} {0x44 pressure_xlsb_ctrl R 0x0 "Control signal of pressure_xlsb" {{0 1 pressure_xlsb_ap_vld R 0 "Control signal pressure_xlsb_ap_vld"} {1 31 RESERVED R 0 "Reserved.  0s on read."}}}}
         memories ""
         ctype {
             AWVALID {
@@ -454,42 +454,6 @@ set Interfaces {
         NUM_WRITE_OUTSTANDING "16"
         MAX_READ_BURST_LENGTH "16"
         MAX_WRITE_BURST_LENGTH "16"
-    }
-    pressure_msb {
-        type "data"
-        dir "out"
-        width "32"
-        ctype {
-            DATA {
-                Type "integer unsigned"
-                Width "32"
-                Bits "32"
-            }
-        }
-    }
-    pressure_lsb {
-        type "data"
-        dir "out"
-        width "32"
-        ctype {
-            DATA {
-                Type "integer unsigned"
-                Width "32"
-                Bits "32"
-            }
-        }
-    }
-    pressure_xlsb {
-        type "data"
-        dir "out"
-        width "32"
-        ctype {
-            DATA {
-                Type "integer unsigned"
-                Width "32"
-                Bits "32"
-            }
-        }
     }
 }
 
