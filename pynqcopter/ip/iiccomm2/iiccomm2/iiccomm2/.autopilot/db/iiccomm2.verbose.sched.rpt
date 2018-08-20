@@ -1,0 +1,1115 @@
+
+
+================================================================
+== Vivado HLS Report for 'iiccomm2'
+================================================================
+* Date:           Mon Aug 20 10:38:38 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        iiccomm2
+* Solution:       iiccomm2
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|      3.50|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +----------+----------+----------+----------+---------+
+    |       Latency       |       Interval      | Pipeline|
+    |    min   |    max   |    min   |    max   |   Type  |
+    +----------+----------+----------+----------+---------+
+    |  50000095|  50000095|  50000095|  50000095|   none  |
+    +----------+----------+----------+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+----------+----------+----------+-----------+-----------+----------+----------+
+        |                     |       Latency       | Iteration|  Initiation Interval  |   Trip   |          |
+        |      Loop Name      |    min   |    max   |  Latency |  achieved |   target  |   Count  | Pipelined|
+        +---------------------+----------+----------+----------+-----------+-----------+----------+----------+
+        |- memset_sensorData  |         2|         2|         1|          -|          -|         3|    no    |
+        |- Loop 2             |  50000000|  50000000|         1|          -|          -|  50000000|    no    |
+        |- Loop 3             |        27|        27|         9|          -|          -|         3|    no    |
+        +---------------------+----------+----------+----------+-----------+-----------+----------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 75
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	2  / (!tmp_1)
+	3  / (tmp_1)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / (tmp_2)
+	57  / (!tmp_2)
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	64  / true
+64 --> 
+	65  / true
+65 --> 
+	66  / true
+66 --> 
+	67  / true
+67 --> 
+	68  / (!exitcond)
+68 --> 
+	69  / true
+69 --> 
+	70  / true
+70 --> 
+	71  / true
+71 --> 
+	72  / true
+72 --> 
+	73  / true
+73 --> 
+	74  / true
+74 --> 
+	75  / true
+75 --> 
+	67  / true
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%sensorData = alloca i32"
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%sensorData_1 = alloca i32"
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%sensorData_2 = alloca i32"
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %iic), !map !37"
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %stat_reg_outValue1) nounwind, !map !43"
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %empty_pirq_outValue) nounwind, !map !47"
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %full_pirq_outValue) nounwind, !map !51"
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %ctrl_reg_outValue) nounwind, !map !55"
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %pressure_msb) nounwind, !map !59"
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %pressure_lsb) nounwind, !map !63"
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %pressure_xlsb) nounwind, !map !67"
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%dummy = alloca i8, align 1"
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @iiccomm2_str) nounwind"
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm2.cpp:50]
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %iic, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %stat_reg_outValue1, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm2.cpp:54]
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %empty_pirq_outValue, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm2.cpp:55]
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %full_pirq_outValue, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm2.cpp:56]
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %ctrl_reg_outValue, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm2.cpp:57]
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %pressure_msb, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm2.cpp:58]
+ST_1 : Operation 96 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %pressure_lsb, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm2.cpp:59]
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %pressure_xlsb, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm2.cpp:60]
+ST_1 : Operation 98 [1/1] (1.76ns)   --->   "br label %meminst"
+
+ <State 2> : 3.50ns
+ST_2 : Operation 99 [1/1] (0.00ns)   --->   "%invdar = phi i2 [ 0, %0 ], [ %indvarinc, %meminst ]" [iiccomm2.cpp:62]
+ST_2 : Operation 100 [1/1] (0.00ns)   --->   "%sensorData_load = load i32* %sensorData"
+ST_2 : Operation 101 [1/1] (0.00ns)   --->   "%sensorData_1_load = load i32* %sensorData_1"
+ST_2 : Operation 102 [1/1] (0.00ns)   --->   "%sensorData_2_load = load i32* %sensorData_2"
+ST_2 : Operation 103 [1/1] (1.56ns)   --->   "%indvarinc = add i2 %invdar, 1" [iiccomm2.cpp:62]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 104 [1/1] (1.95ns)   --->   "%sensorData_0_1 = call i32 @_ssdm_op_Mux.ap_auto.4i32.i2(i32 0, i32 %sensorData_load, i32 %sensorData_load, i32 %sensorData_load, i2 %invdar) nounwind" [iiccomm2.cpp:62]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 105 [1/1] (1.95ns)   --->   "%sensorData_1_1 = call i32 @_ssdm_op_Mux.ap_auto.4i32.i2(i32 %sensorData_1_load, i32 0, i32 %sensorData_1_load, i32 %sensorData_1_load, i2 %invdar) nounwind" [iiccomm2.cpp:62]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 106 [1/1] (1.95ns)   --->   "%sensorData_2_1 = call i32 @_ssdm_op_Mux.ap_auto.4i32.i2(i32 %sensorData_2_load, i32 %sensorData_2_load, i32 0, i32 0, i2 %invdar) nounwind" [iiccomm2.cpp:62]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 107 [1/1] (0.95ns)   --->   "%tmp_1 = icmp eq i2 %invdar, -2" [iiccomm2.cpp:62]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 108 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopName([18 x i8]* @memset_sensorData_st) nounwind"
+ST_2 : Operation 109 [1/1] (0.00ns)   --->   "%empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3) nounwind"
+ST_2 : Operation 110 [1/1] (0.00ns)   --->   "store i32 %sensorData_2_1, i32* %sensorData_2" [iiccomm2.cpp:62]
+ST_2 : Operation 111 [1/1] (0.00ns)   --->   "store i32 %sensorData_1_1, i32* %sensorData_1" [iiccomm2.cpp:62]
+ST_2 : Operation 112 [1/1] (0.00ns)   --->   "store i32 %sensorData_0_1, i32* %sensorData" [iiccomm2.cpp:62]
+ST_2 : Operation 113 [1/1] (0.00ns)   --->   "br i1 %tmp_1, label %1, label %meminst" [iiccomm2.cpp:62]
+ST_2 : Operation 114 [1/1] (0.00ns)   --->   "%iic_addr = getelementptr i32* %iic, i64 268436552"
+ST_2 : Operation 115 [7/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm2.cpp:66]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 3> : 3.50ns
+ST_3 : Operation 116 [6/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm2.cpp:66]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 4> : 3.50ns
+ST_4 : Operation 117 [5/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm2.cpp:66]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 5> : 3.50ns
+ST_5 : Operation 118 [4/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm2.cpp:66]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 6> : 3.50ns
+ST_6 : Operation 119 [3/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm2.cpp:66]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 7> : 3.50ns
+ST_7 : Operation 120 [2/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm2.cpp:66]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 8> : 3.50ns
+ST_8 : Operation 121 [1/7] (3.50ns)   --->   "%iic_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr, i32 1)" [iiccomm2.cpp:66]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 9> : 3.50ns
+ST_9 : Operation 122 [1/1] (0.00ns)   --->   "%iic_addr_1 = getelementptr i32* %iic, i64 268436552"
+ST_9 : Operation 123 [1/1] (3.50ns)   --->   "%iic_addr_1_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr_1)" [iiccomm2.cpp:66]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 124 [1/1] (0.00ns)   --->   "%iic_addr_2 = getelementptr i32* %iic, i64 268436552"
+ST_9 : Operation 125 [1/1] (3.50ns)   --->   "%iic_addr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_2, i32 1)" [iiccomm2.cpp:70]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 10> : 3.50ns
+ST_10 : Operation 126 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %empty_pirq_outValue, i32 %iic_addr_1_read)" [iiccomm2.cpp:67]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_10 : Operation 127 [1/1] (0.00ns)   --->   "%iic_addr_3 = getelementptr i32* %iic, i64 268436552"
+ST_10 : Operation 128 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_3, i32 15, i4 -1)" [iiccomm2.cpp:70]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 11> : 3.50ns
+ST_11 : Operation 129 [1/1] (0.00ns)   --->   "%iic_addr_4 = getelementptr i32* %iic, i64 268436552"
+ST_11 : Operation 130 [5/5] (3.50ns)   --->   "%iic_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_4)" [iiccomm2.cpp:70]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 12> : 3.50ns
+ST_12 : Operation 131 [4/5] (3.50ns)   --->   "%iic_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_4)" [iiccomm2.cpp:70]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 13> : 3.50ns
+ST_13 : Operation 132 [3/5] (3.50ns)   --->   "%iic_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_4)" [iiccomm2.cpp:70]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 14> : 3.50ns
+ST_14 : Operation 133 [2/5] (3.50ns)   --->   "%iic_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_4)" [iiccomm2.cpp:70]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 15> : 3.50ns
+ST_15 : Operation 134 [1/5] (3.50ns)   --->   "%iic_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_4)" [iiccomm2.cpp:70]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 16> : 3.50ns
+ST_16 : Operation 135 [1/1] (0.00ns)   --->   "%iic_addr_5 = getelementptr i32* %iic, i64 268436552"
+ST_16 : Operation 136 [7/7] (3.50ns)   --->   "%iic_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_5, i32 1)" [iiccomm2.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 17> : 3.50ns
+ST_17 : Operation 137 [6/7] (3.50ns)   --->   "%iic_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_5, i32 1)" [iiccomm2.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 18> : 3.50ns
+ST_18 : Operation 138 [5/7] (3.50ns)   --->   "%iic_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_5, i32 1)" [iiccomm2.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 19> : 3.50ns
+ST_19 : Operation 139 [4/7] (3.50ns)   --->   "%iic_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_5, i32 1)" [iiccomm2.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 20> : 3.50ns
+ST_20 : Operation 140 [3/7] (3.50ns)   --->   "%iic_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_5, i32 1)" [iiccomm2.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 21> : 3.50ns
+ST_21 : Operation 141 [2/7] (3.50ns)   --->   "%iic_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_5, i32 1)" [iiccomm2.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 22> : 3.50ns
+ST_22 : Operation 142 [1/7] (3.50ns)   --->   "%iic_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_5, i32 1)" [iiccomm2.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 23> : 3.50ns
+ST_23 : Operation 143 [1/1] (0.00ns)   --->   "%iic_addr_6 = getelementptr i32* %iic, i64 268436552"
+ST_23 : Operation 144 [1/1] (3.50ns)   --->   "%iic_addr_6_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr_6)" [iiccomm2.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_23 : Operation 145 [1/1] (0.00ns)   --->   "%iic_addr_7 = getelementptr i32* %iic, i64 268436544"
+ST_23 : Operation 146 [1/1] (3.50ns)   --->   "%iic_addr_1_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_7, i32 1)" [iiccomm2.cpp:75]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 24> : 3.50ns
+ST_24 : Operation 147 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %full_pirq_outValue, i32 %iic_addr_6_read)" [iiccomm2.cpp:72]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_24 : Operation 148 [1/1] (0.00ns)   --->   "%iic_addr_8 = getelementptr i32* %iic, i64 268436544"
+ST_24 : Operation 149 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_8, i32 2, i4 -1)" [iiccomm2.cpp:75]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_24 : Operation 150 [1/1] (0.00ns)   --->   "%iic_addr_10 = getelementptr i32* %iic, i64 268436544"
+ST_24 : Operation 151 [1/1] (3.50ns)   --->   "%iic_addr_1_req2 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_10, i32 1)" [iiccomm2.cpp:78]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 25> : 3.50ns
+ST_25 : Operation 152 [1/1] (0.00ns)   --->   "%iic_addr_9 = getelementptr i32* %iic, i64 268436544"
+ST_25 : Operation 153 [5/5] (3.50ns)   --->   "%iic_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_9)" [iiccomm2.cpp:75]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_25 : Operation 154 [1/1] (0.00ns)   --->   "%iic_addr_11 = getelementptr i32* %iic, i64 268436544"
+ST_25 : Operation 155 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_11, i32 1, i4 -1)" [iiccomm2.cpp:78]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 26> : 3.50ns
+ST_26 : Operation 156 [4/5] (3.50ns)   --->   "%iic_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_9)" [iiccomm2.cpp:75]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_26 : Operation 157 [1/1] (0.00ns)   --->   "%iic_addr_12 = getelementptr i32* %iic, i64 268436544"
+ST_26 : Operation 158 [5/5] (3.50ns)   --->   "%iic_addr_1_resp3 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_12)" [iiccomm2.cpp:78]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 27> : 3.50ns
+ST_27 : Operation 159 [3/5] (3.50ns)   --->   "%iic_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_9)" [iiccomm2.cpp:75]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_27 : Operation 160 [4/5] (3.50ns)   --->   "%iic_addr_1_resp3 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_12)" [iiccomm2.cpp:78]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 28> : 3.50ns
+ST_28 : Operation 161 [2/5] (3.50ns)   --->   "%iic_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_9)" [iiccomm2.cpp:75]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_28 : Operation 162 [3/5] (3.50ns)   --->   "%iic_addr_1_resp3 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_12)" [iiccomm2.cpp:78]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 29> : 3.50ns
+ST_29 : Operation 163 [1/5] (3.50ns)   --->   "%iic_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_9)" [iiccomm2.cpp:75]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_29 : Operation 164 [2/5] (3.50ns)   --->   "%iic_addr_1_resp3 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_12)" [iiccomm2.cpp:78]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 30> : 3.50ns
+ST_30 : Operation 165 [1/5] (3.50ns)   --->   "%iic_addr_1_resp3 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_12)" [iiccomm2.cpp:78]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 31> : 3.50ns
+ST_31 : Operation 166 [1/1] (0.00ns)   --->   "%iic_addr_13 = getelementptr i32* %iic, i64 268436544"
+ST_31 : Operation 167 [7/7] (3.50ns)   --->   "%iic_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_13, i32 1)" [iiccomm2.cpp:79]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 32> : 3.50ns
+ST_32 : Operation 168 [6/7] (3.50ns)   --->   "%iic_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_13, i32 1)" [iiccomm2.cpp:79]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_32 : Operation 169 [1/1] (0.00ns)   --->   "%iic_addr_15 = getelementptr i32* %iic, i64 268436545"
+ST_32 : Operation 170 [7/7] (3.50ns)   --->   "%iic_load_3_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_15, i32 1)" [iiccomm2.cpp:83]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 33> : 3.50ns
+ST_33 : Operation 171 [5/7] (3.50ns)   --->   "%iic_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_13, i32 1)" [iiccomm2.cpp:79]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_33 : Operation 172 [6/7] (3.50ns)   --->   "%iic_load_3_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_15, i32 1)" [iiccomm2.cpp:83]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 34> : 3.50ns
+ST_34 : Operation 173 [4/7] (3.50ns)   --->   "%iic_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_13, i32 1)" [iiccomm2.cpp:79]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_34 : Operation 174 [5/7] (3.50ns)   --->   "%iic_load_3_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_15, i32 1)" [iiccomm2.cpp:83]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 35> : 3.50ns
+ST_35 : Operation 175 [3/7] (3.50ns)   --->   "%iic_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_13, i32 1)" [iiccomm2.cpp:79]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_35 : Operation 176 [4/7] (3.50ns)   --->   "%iic_load_3_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_15, i32 1)" [iiccomm2.cpp:83]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 36> : 3.50ns
+ST_36 : Operation 177 [2/7] (3.50ns)   --->   "%iic_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_13, i32 1)" [iiccomm2.cpp:79]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_36 : Operation 178 [3/7] (3.50ns)   --->   "%iic_load_3_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_15, i32 1)" [iiccomm2.cpp:83]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 37> : 3.50ns
+ST_37 : Operation 179 [1/7] (3.50ns)   --->   "%iic_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_13, i32 1)" [iiccomm2.cpp:79]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_37 : Operation 180 [2/7] (3.50ns)   --->   "%iic_load_3_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_15, i32 1)" [iiccomm2.cpp:83]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 38> : 3.50ns
+ST_38 : Operation 181 [1/1] (0.00ns)   --->   "%iic_addr_14 = getelementptr i32* %iic, i64 268436544"
+ST_38 : Operation 182 [1/1] (3.50ns)   --->   "%iic_addr_14_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr_14)" [iiccomm2.cpp:79]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_38 : Operation 183 [1/7] (3.50ns)   --->   "%iic_load_3_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_15, i32 1)" [iiccomm2.cpp:83]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 39> : 3.50ns
+ST_39 : Operation 184 [1/1] (0.00ns)   --->   "%iic_addr_16 = getelementptr i32* %iic, i64 268436545"
+ST_39 : Operation 185 [1/1] (3.50ns)   --->   "%iic_addr_16_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr_16)" [iiccomm2.cpp:83]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_39 : Operation 186 [1/1] (0.00ns)   --->   "%iic_addr_17 = getelementptr i32* %iic, i64 268436546"
+ST_39 : Operation 187 [1/1] (3.50ns)   --->   "%iic_addr_3_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_17, i32 1)" [iiccomm2.cpp:88]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 40> : 3.50ns
+ST_40 : Operation 188 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %ctrl_reg_outValue, i32 %iic_addr_14_read)" [iiccomm2.cpp:80]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_40 : Operation 189 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %stat_reg_outValue1, i32 %iic_addr_16_read)" [iiccomm2.cpp:84]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_40 : Operation 190 [1/1] (0.00ns)   --->   "%iic_addr_18 = getelementptr i32* %iic, i64 268436546"
+ST_40 : Operation 191 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_18, i32 492, i4 -1)" [iiccomm2.cpp:88]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_40 : Operation 192 [1/1] (0.00ns)   --->   "%iic_addr_20 = getelementptr i32* %iic, i64 268436546"
+ST_40 : Operation 193 [1/1] (3.50ns)   --->   "%iic_addr_3_req4 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_20, i32 1)" [iiccomm2.cpp:89]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 41> : 3.50ns
+ST_41 : Operation 194 [1/1] (0.00ns)   --->   "%iic_addr_19 = getelementptr i32* %iic, i64 268436546"
+ST_41 : Operation 195 [5/5] (3.50ns)   --->   "%iic_addr_3_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_19)" [iiccomm2.cpp:88]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_41 : Operation 196 [1/1] (0.00ns)   --->   "%iic_addr_21 = getelementptr i32* %iic, i64 268436546"
+ST_41 : Operation 197 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_21, i32 224, i4 -1)" [iiccomm2.cpp:89]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_41 : Operation 198 [1/1] (0.00ns)   --->   "%iic_addr_23 = getelementptr i32* %iic, i64 268436546"
+ST_41 : Operation 199 [1/1] (3.50ns)   --->   "%iic_addr_3_req6 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_23, i32 1)" [iiccomm2.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 42> : 3.50ns
+ST_42 : Operation 200 [4/5] (3.50ns)   --->   "%iic_addr_3_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_19)" [iiccomm2.cpp:88]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_42 : Operation 201 [1/1] (0.00ns)   --->   "%iic_addr_22 = getelementptr i32* %iic, i64 268436546"
+ST_42 : Operation 202 [5/5] (3.50ns)   --->   "%iic_addr_3_resp5 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_22)" [iiccomm2.cpp:89]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_42 : Operation 203 [1/1] (0.00ns)   --->   "%iic_addr_24 = getelementptr i32* %iic, i64 268436546"
+ST_42 : Operation 204 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_24, i32 182, i4 -1)" [iiccomm2.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_42 : Operation 205 [1/1] (0.00ns)   --->   "%iic_addr_26 = getelementptr i32* %iic, i64 268436546"
+ST_42 : Operation 206 [1/1] (3.50ns)   --->   "%iic_addr_3_req8 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_26, i32 1)" [iiccomm2.cpp:93]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 43> : 3.50ns
+ST_43 : Operation 207 [3/5] (3.50ns)   --->   "%iic_addr_3_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_19)" [iiccomm2.cpp:88]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_43 : Operation 208 [4/5] (3.50ns)   --->   "%iic_addr_3_resp5 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_22)" [iiccomm2.cpp:89]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_43 : Operation 209 [1/1] (0.00ns)   --->   "%iic_addr_25 = getelementptr i32* %iic, i64 268436546"
+ST_43 : Operation 210 [5/5] (3.50ns)   --->   "%iic_addr_3_resp7 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_25)" [iiccomm2.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_43 : Operation 211 [1/1] (0.00ns)   --->   "%iic_addr_27 = getelementptr i32* %iic, i64 268436546"
+ST_43 : Operation 212 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_27, i32 492, i4 -1)" [iiccomm2.cpp:93]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_43 : Operation 213 [1/1] (0.00ns)   --->   "%iic_addr_29 = getelementptr i32* %iic, i64 268436546"
+ST_43 : Operation 214 [1/1] (3.50ns)   --->   "%iic_addr_3_req10 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_29, i32 1)" [iiccomm2.cpp:94]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 44> : 3.50ns
+ST_44 : Operation 215 [2/5] (3.50ns)   --->   "%iic_addr_3_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_19)" [iiccomm2.cpp:88]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_44 : Operation 216 [3/5] (3.50ns)   --->   "%iic_addr_3_resp5 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_22)" [iiccomm2.cpp:89]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_44 : Operation 217 [4/5] (3.50ns)   --->   "%iic_addr_3_resp7 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_25)" [iiccomm2.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_44 : Operation 218 [1/1] (0.00ns)   --->   "%iic_addr_28 = getelementptr i32* %iic, i64 268436546"
+ST_44 : Operation 219 [5/5] (3.50ns)   --->   "%iic_addr_3_resp9 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_28)" [iiccomm2.cpp:93]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_44 : Operation 220 [1/1] (0.00ns)   --->   "%iic_addr_30 = getelementptr i32* %iic, i64 268436546"
+ST_44 : Operation 221 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_30, i32 242, i4 -1)" [iiccomm2.cpp:94]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_44 : Operation 222 [1/1] (0.00ns)   --->   "%iic_addr_32 = getelementptr i32* %iic, i64 268436546"
+ST_44 : Operation 223 [1/1] (3.50ns)   --->   "%iic_addr_3_req12 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_32, i32 1)" [iiccomm2.cpp:95]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 45> : 3.50ns
+ST_45 : Operation 224 [1/5] (3.50ns)   --->   "%iic_addr_3_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_19)" [iiccomm2.cpp:88]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_45 : Operation 225 [2/5] (3.50ns)   --->   "%iic_addr_3_resp5 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_22)" [iiccomm2.cpp:89]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_45 : Operation 226 [3/5] (3.50ns)   --->   "%iic_addr_3_resp7 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_25)" [iiccomm2.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_45 : Operation 227 [4/5] (3.50ns)   --->   "%iic_addr_3_resp9 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_28)" [iiccomm2.cpp:93]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_45 : Operation 228 [1/1] (0.00ns)   --->   "%iic_addr_31 = getelementptr i32* %iic, i64 268436546"
+ST_45 : Operation 229 [5/5] (3.50ns)   --->   "%iic_addr_3_resp11 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_31)" [iiccomm2.cpp:94]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_45 : Operation 230 [1/1] (0.00ns)   --->   "%iic_addr_33 = getelementptr i32* %iic, i64 268436546"
+ST_45 : Operation 231 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_33, i32 0, i4 -1)" [iiccomm2.cpp:95]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_45 : Operation 232 [1/1] (0.00ns)   --->   "%iic_addr_35 = getelementptr i32* %iic, i64 268436546"
+ST_45 : Operation 233 [1/1] (3.50ns)   --->   "%iic_addr_3_req14 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_35, i32 1)" [iiccomm2.cpp:98]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 46> : 3.50ns
+ST_46 : Operation 234 [1/5] (3.50ns)   --->   "%iic_addr_3_resp5 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_22)" [iiccomm2.cpp:89]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_46 : Operation 235 [2/5] (3.50ns)   --->   "%iic_addr_3_resp7 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_25)" [iiccomm2.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_46 : Operation 236 [3/5] (3.50ns)   --->   "%iic_addr_3_resp9 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_28)" [iiccomm2.cpp:93]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_46 : Operation 237 [4/5] (3.50ns)   --->   "%iic_addr_3_resp11 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_31)" [iiccomm2.cpp:94]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_46 : Operation 238 [1/1] (0.00ns)   --->   "%iic_addr_34 = getelementptr i32* %iic, i64 268436546"
+ST_46 : Operation 239 [5/5] (3.50ns)   --->   "%iic_addr_3_resp13 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_34)" [iiccomm2.cpp:95]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_46 : Operation 240 [1/1] (0.00ns)   --->   "%iic_addr_36 = getelementptr i32* %iic, i64 268436546"
+ST_46 : Operation 241 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_36, i32 492, i4 -1)" [iiccomm2.cpp:98]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_46 : Operation 242 [1/1] (0.00ns)   --->   "%iic_addr_38 = getelementptr i32* %iic, i64 268436546"
+ST_46 : Operation 243 [1/1] (3.50ns)   --->   "%iic_addr_3_req16 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_38, i32 1)" [iiccomm2.cpp:99]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 47> : 3.50ns
+ST_47 : Operation 244 [1/5] (3.50ns)   --->   "%iic_addr_3_resp7 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_25)" [iiccomm2.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_47 : Operation 245 [2/5] (3.50ns)   --->   "%iic_addr_3_resp9 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_28)" [iiccomm2.cpp:93]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_47 : Operation 246 [3/5] (3.50ns)   --->   "%iic_addr_3_resp11 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_31)" [iiccomm2.cpp:94]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_47 : Operation 247 [4/5] (3.50ns)   --->   "%iic_addr_3_resp13 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_34)" [iiccomm2.cpp:95]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_47 : Operation 248 [1/1] (0.00ns)   --->   "%iic_addr_37 = getelementptr i32* %iic, i64 268436546"
+ST_47 : Operation 249 [5/5] (3.50ns)   --->   "%iic_addr_3_resp15 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_37)" [iiccomm2.cpp:98]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_47 : Operation 250 [1/1] (0.00ns)   --->   "%iic_addr_39 = getelementptr i32* %iic, i64 268436546"
+ST_47 : Operation 251 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_39, i32 244, i4 -1)" [iiccomm2.cpp:99]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_47 : Operation 252 [1/1] (0.00ns)   --->   "%iic_addr_41 = getelementptr i32* %iic, i64 268436546"
+ST_47 : Operation 253 [1/1] (3.50ns)   --->   "%iic_addr_3_req18 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_41, i32 1)" [iiccomm2.cpp:100]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 48> : 3.50ns
+ST_48 : Operation 254 [1/5] (3.50ns)   --->   "%iic_addr_3_resp9 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_28)" [iiccomm2.cpp:93]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_48 : Operation 255 [2/5] (3.50ns)   --->   "%iic_addr_3_resp11 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_31)" [iiccomm2.cpp:94]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_48 : Operation 256 [3/5] (3.50ns)   --->   "%iic_addr_3_resp13 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_34)" [iiccomm2.cpp:95]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_48 : Operation 257 [4/5] (3.50ns)   --->   "%iic_addr_3_resp15 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_37)" [iiccomm2.cpp:98]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_48 : Operation 258 [1/1] (0.00ns)   --->   "%iic_addr_40 = getelementptr i32* %iic, i64 268436546"
+ST_48 : Operation 259 [5/5] (3.50ns)   --->   "%iic_addr_3_resp17 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_40)" [iiccomm2.cpp:99]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_48 : Operation 260 [1/1] (0.00ns)   --->   "%iic_addr_42 = getelementptr i32* %iic, i64 268436546"
+ST_48 : Operation 261 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_42, i32 39, i4 -1)" [iiccomm2.cpp:100]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_48 : Operation 262 [1/1] (0.00ns)   --->   "%iic_addr_44 = getelementptr i32* %iic, i64 268436546"
+ST_48 : Operation 263 [1/1] (3.50ns)   --->   "%iic_addr_3_req20 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_44, i32 1)" [iiccomm2.cpp:103]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 49> : 3.50ns
+ST_49 : Operation 264 [1/5] (3.50ns)   --->   "%iic_addr_3_resp11 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_31)" [iiccomm2.cpp:94]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_49 : Operation 265 [2/5] (3.50ns)   --->   "%iic_addr_3_resp13 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_34)" [iiccomm2.cpp:95]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_49 : Operation 266 [3/5] (3.50ns)   --->   "%iic_addr_3_resp15 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_37)" [iiccomm2.cpp:98]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_49 : Operation 267 [4/5] (3.50ns)   --->   "%iic_addr_3_resp17 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_40)" [iiccomm2.cpp:99]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_49 : Operation 268 [1/1] (0.00ns)   --->   "%iic_addr_43 = getelementptr i32* %iic, i64 268436546"
+ST_49 : Operation 269 [5/5] (3.50ns)   --->   "%iic_addr_3_resp19 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_43)" [iiccomm2.cpp:100]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_49 : Operation 270 [1/1] (0.00ns)   --->   "%iic_addr_45 = getelementptr i32* %iic, i64 268436546"
+ST_49 : Operation 271 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_45, i32 492, i4 -1)" [iiccomm2.cpp:103]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_49 : Operation 272 [1/1] (0.00ns)   --->   "%iic_addr_47 = getelementptr i32* %iic, i64 268436546"
+ST_49 : Operation 273 [1/1] (3.50ns)   --->   "%iic_addr_3_req22 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_47, i32 1)" [iiccomm2.cpp:104]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 50> : 3.50ns
+ST_50 : Operation 274 [1/5] (3.50ns)   --->   "%iic_addr_3_resp13 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_34)" [iiccomm2.cpp:95]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_50 : Operation 275 [2/5] (3.50ns)   --->   "%iic_addr_3_resp15 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_37)" [iiccomm2.cpp:98]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_50 : Operation 276 [3/5] (3.50ns)   --->   "%iic_addr_3_resp17 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_40)" [iiccomm2.cpp:99]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_50 : Operation 277 [4/5] (3.50ns)   --->   "%iic_addr_3_resp19 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_43)" [iiccomm2.cpp:100]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_50 : Operation 278 [1/1] (0.00ns)   --->   "%iic_addr_46 = getelementptr i32* %iic, i64 268436546"
+ST_50 : Operation 279 [5/5] (3.50ns)   --->   "%iic_addr_3_resp21 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_46)" [iiccomm2.cpp:103]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_50 : Operation 280 [1/1] (0.00ns)   --->   "%iic_addr_48 = getelementptr i32* %iic, i64 268436546"
+ST_50 : Operation 281 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_48, i32 245, i4 -1)" [iiccomm2.cpp:104]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_50 : Operation 282 [1/1] (0.00ns)   --->   "%iic_addr_50 = getelementptr i32* %iic, i64 268436546"
+ST_50 : Operation 283 [1/1] (3.50ns)   --->   "%iic_addr_3_req24 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_50, i32 1)" [iiccomm2.cpp:105]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 51> : 3.50ns
+ST_51 : Operation 284 [1/5] (3.50ns)   --->   "%iic_addr_3_resp15 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_37)" [iiccomm2.cpp:98]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_51 : Operation 285 [2/5] (3.50ns)   --->   "%iic_addr_3_resp17 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_40)" [iiccomm2.cpp:99]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_51 : Operation 286 [3/5] (3.50ns)   --->   "%iic_addr_3_resp19 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_43)" [iiccomm2.cpp:100]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_51 : Operation 287 [4/5] (3.50ns)   --->   "%iic_addr_3_resp21 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_46)" [iiccomm2.cpp:103]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_51 : Operation 288 [1/1] (0.00ns)   --->   "%iic_addr_49 = getelementptr i32* %iic, i64 268436546"
+ST_51 : Operation 289 [5/5] (3.50ns)   --->   "%iic_addr_3_resp23 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_49)" [iiccomm2.cpp:104]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_51 : Operation 290 [1/1] (0.00ns)   --->   "%iic_addr_51 = getelementptr i32* %iic, i64 268436546"
+ST_51 : Operation 291 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_51, i32 160, i4 -1)" [iiccomm2.cpp:105]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 52> : 3.50ns
+ST_52 : Operation 292 [1/5] (3.50ns)   --->   "%iic_addr_3_resp17 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_40)" [iiccomm2.cpp:99]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_52 : Operation 293 [2/5] (3.50ns)   --->   "%iic_addr_3_resp19 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_43)" [iiccomm2.cpp:100]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_52 : Operation 294 [3/5] (3.50ns)   --->   "%iic_addr_3_resp21 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_46)" [iiccomm2.cpp:103]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_52 : Operation 295 [4/5] (3.50ns)   --->   "%iic_addr_3_resp23 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_49)" [iiccomm2.cpp:104]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_52 : Operation 296 [1/1] (0.00ns)   --->   "%iic_addr_52 = getelementptr i32* %iic, i64 268436546"
+ST_52 : Operation 297 [5/5] (3.50ns)   --->   "%iic_addr_3_resp25 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_52)" [iiccomm2.cpp:105]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 53> : 3.50ns
+ST_53 : Operation 298 [1/5] (3.50ns)   --->   "%iic_addr_3_resp19 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_43)" [iiccomm2.cpp:100]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_53 : Operation 299 [2/5] (3.50ns)   --->   "%iic_addr_3_resp21 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_46)" [iiccomm2.cpp:103]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_53 : Operation 300 [3/5] (3.50ns)   --->   "%iic_addr_3_resp23 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_49)" [iiccomm2.cpp:104]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_53 : Operation 301 [4/5] (3.50ns)   --->   "%iic_addr_3_resp25 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_52)" [iiccomm2.cpp:105]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 54> : 3.50ns
+ST_54 : Operation 302 [1/5] (3.50ns)   --->   "%iic_addr_3_resp21 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_46)" [iiccomm2.cpp:103]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_54 : Operation 303 [2/5] (3.50ns)   --->   "%iic_addr_3_resp23 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_49)" [iiccomm2.cpp:104]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_54 : Operation 304 [3/5] (3.50ns)   --->   "%iic_addr_3_resp25 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_52)" [iiccomm2.cpp:105]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 55> : 3.50ns
+ST_55 : Operation 305 [1/5] (3.50ns)   --->   "%iic_addr_3_resp23 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_49)" [iiccomm2.cpp:104]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_55 : Operation 306 [2/5] (3.50ns)   --->   "%iic_addr_3_resp25 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_52)" [iiccomm2.cpp:105]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 56> : 3.50ns
+ST_56 : Operation 307 [1/5] (3.50ns)   --->   "%iic_addr_3_resp25 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_52)" [iiccomm2.cpp:105]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_56 : Operation 308 [1/1] (0.00ns)   --->   "%rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([44 x i8]* @delay_until_ms_MD_10) nounwind"
+ST_56 : Operation 309 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind" [./iiccomm2.hpp:58->iiccomm2.cpp:107]
+ST_56 : Operation 310 [1/1] (1.76ns)   --->   "br label %2" [./iiccomm2.hpp:62->iiccomm2.cpp:107]
+
+ <State 57> : 3.50ns
+ST_57 : Operation 311 [1/1] (0.00ns)   --->   "%p_014_0_i = phi i26 [ 0, %1 ], [ %ctr_V, %3 ]"
+ST_57 : Operation 312 [1/1] (2.45ns)   --->   "%tmp_2 = icmp eq i26 %p_014_0_i, -17108864" [./iiccomm2.hpp:62->iiccomm2.cpp:107]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_57 : Operation 313 [1/1] (0.00ns)   --->   "%empty_3 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 50000000, i64 50000000, i64 50000000) nounwind"
+ST_57 : Operation 314 [1/1] (2.37ns)   --->   "%ctr_V = add i26 %p_014_0_i, 1" [./iiccomm2.hpp:62->iiccomm2.cpp:107]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_57 : Operation 315 [1/1] (0.00ns)   --->   "br i1 %tmp_2, label %"delay_until_ms<1000ull, 50000000ull>.exit", label %3" [./iiccomm2.hpp:62->iiccomm2.cpp:107]
+ST_57 : Operation 316 [1/1] (0.00ns)   --->   "%dummy_1 = load volatile i8* %dummy, align 1" [./iiccomm2.hpp:63->iiccomm2.cpp:107]
+ST_57 : Operation 317 [1/1] (0.00ns)   --->   "store volatile i8 %dummy_1, i8* %dummy, align 1" [./iiccomm2.hpp:63->iiccomm2.cpp:107]
+ST_57 : Operation 318 [1/1] (0.00ns)   --->   "br label %2" [./iiccomm2.hpp:62->iiccomm2.cpp:107]
+ST_57 : Operation 319 [1/1] (0.00ns)   --->   "%rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([44 x i8]* @delay_until_ms_MD_10, i32 %rbegin) nounwind"
+ST_57 : Operation 320 [1/1] (0.00ns)   --->   "%iic_addr_53 = getelementptr i32* %iic, i64 268436546"
+ST_57 : Operation 321 [1/1] (3.50ns)   --->   "%iic_addr_3_req26 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_53, i32 1)" [iiccomm2.cpp:112]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 58> : 3.50ns
+ST_58 : Operation 322 [1/1] (0.00ns)   --->   "%iic_addr_54 = getelementptr i32* %iic, i64 268436546"
+ST_58 : Operation 323 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_54, i32 492, i4 -1)" [iiccomm2.cpp:112]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_58 : Operation 324 [1/1] (0.00ns)   --->   "%iic_addr_56 = getelementptr i32* %iic, i64 268436546"
+ST_58 : Operation 325 [1/1] (3.50ns)   --->   "%iic_addr_3_req28 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_56, i32 1)" [iiccomm2.cpp:115]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 59> : 3.50ns
+ST_59 : Operation 326 [1/1] (0.00ns)   --->   "%iic_addr_55 = getelementptr i32* %iic, i64 268436546"
+ST_59 : Operation 327 [5/5] (3.50ns)   --->   "%iic_addr_3_resp27 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_55)" [iiccomm2.cpp:112]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_59 : Operation 328 [1/1] (0.00ns)   --->   "%iic_addr_57 = getelementptr i32* %iic, i64 268436546"
+ST_59 : Operation 329 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_57, i32 247, i4 -1)" [iiccomm2.cpp:115]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_59 : Operation 330 [1/1] (0.00ns)   --->   "%iic_addr_59 = getelementptr i32* %iic, i64 268436546"
+ST_59 : Operation 331 [1/1] (3.50ns)   --->   "%iic_addr_3_req30 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_59, i32 1)" [iiccomm2.cpp:118]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 60> : 3.50ns
+ST_60 : Operation 332 [4/5] (3.50ns)   --->   "%iic_addr_3_resp27 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_55)" [iiccomm2.cpp:112]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_60 : Operation 333 [1/1] (0.00ns)   --->   "%iic_addr_58 = getelementptr i32* %iic, i64 268436546"
+ST_60 : Operation 334 [5/5] (3.50ns)   --->   "%iic_addr_3_resp29 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_58)" [iiccomm2.cpp:115]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_60 : Operation 335 [1/1] (0.00ns)   --->   "%iic_addr_60 = getelementptr i32* %iic, i64 268436546"
+ST_60 : Operation 336 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_60, i32 237, i4 -1)" [iiccomm2.cpp:118]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_60 : Operation 337 [1/1] (0.00ns)   --->   "%iic_addr_62 = getelementptr i32* %iic, i64 268436546"
+ST_60 : Operation 338 [1/1] (3.50ns)   --->   "%iic_addr_3_req32 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_62, i32 1)" [iiccomm2.cpp:121]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 61> : 3.50ns
+ST_61 : Operation 339 [3/5] (3.50ns)   --->   "%iic_addr_3_resp27 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_55)" [iiccomm2.cpp:112]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_61 : Operation 340 [4/5] (3.50ns)   --->   "%iic_addr_3_resp29 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_58)" [iiccomm2.cpp:115]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_61 : Operation 341 [1/1] (0.00ns)   --->   "%iic_addr_61 = getelementptr i32* %iic, i64 268436546"
+ST_61 : Operation 342 [5/5] (3.50ns)   --->   "%iic_addr_3_resp31 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_61)" [iiccomm2.cpp:118]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_61 : Operation 343 [1/1] (0.00ns)   --->   "%iic_addr_63 = getelementptr i32* %iic, i64 268436546"
+ST_61 : Operation 344 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_63, i32 515, i4 -1)" [iiccomm2.cpp:121]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 62> : 3.50ns
+ST_62 : Operation 345 [2/5] (3.50ns)   --->   "%iic_addr_3_resp27 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_55)" [iiccomm2.cpp:112]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_62 : Operation 346 [3/5] (3.50ns)   --->   "%iic_addr_3_resp29 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_58)" [iiccomm2.cpp:115]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_62 : Operation 347 [4/5] (3.50ns)   --->   "%iic_addr_3_resp31 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_61)" [iiccomm2.cpp:118]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_62 : Operation 348 [1/1] (0.00ns)   --->   "%iic_addr_64 = getelementptr i32* %iic, i64 268436546"
+ST_62 : Operation 349 [5/5] (3.50ns)   --->   "%iic_addr_3_resp33 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_64)" [iiccomm2.cpp:121]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 63> : 3.50ns
+ST_63 : Operation 350 [1/5] (3.50ns)   --->   "%iic_addr_3_resp27 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_55)" [iiccomm2.cpp:112]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_63 : Operation 351 [2/5] (3.50ns)   --->   "%iic_addr_3_resp29 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_58)" [iiccomm2.cpp:115]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_63 : Operation 352 [3/5] (3.50ns)   --->   "%iic_addr_3_resp31 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_61)" [iiccomm2.cpp:118]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_63 : Operation 353 [4/5] (3.50ns)   --->   "%iic_addr_3_resp33 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_64)" [iiccomm2.cpp:121]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 64> : 3.50ns
+ST_64 : Operation 354 [1/5] (3.50ns)   --->   "%iic_addr_3_resp29 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_58)" [iiccomm2.cpp:115]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_64 : Operation 355 [2/5] (3.50ns)   --->   "%iic_addr_3_resp31 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_61)" [iiccomm2.cpp:118]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_64 : Operation 356 [3/5] (3.50ns)   --->   "%iic_addr_3_resp33 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_64)" [iiccomm2.cpp:121]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 65> : 3.50ns
+ST_65 : Operation 357 [1/5] (3.50ns)   --->   "%iic_addr_3_resp31 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_61)" [iiccomm2.cpp:118]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_65 : Operation 358 [2/5] (3.50ns)   --->   "%iic_addr_3_resp33 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_64)" [iiccomm2.cpp:121]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 66> : 3.50ns
+ST_66 : Operation 359 [1/5] (3.50ns)   --->   "%iic_addr_3_resp33 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_64)" [iiccomm2.cpp:121]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_66 : Operation 360 [1/1] (1.76ns)   --->   "br label %4" [iiccomm2.cpp:127]
+
+ <State 67> : 3.50ns
+ST_67 : Operation 361 [1/1] (0.00ns)   --->   "%sensorData_2_2 = phi i32 [ %sensorData_2_1, %"delay_until_ms<1000ull, 50000000ull>.exit" ], [ %sensorData_2_1_6, %_ifconv ]"
+ST_67 : Operation 362 [1/1] (0.00ns)   --->   "%sensorData_1_2 = phi i32 [ %sensorData_1_1, %"delay_until_ms<1000ull, 50000000ull>.exit" ], [ %sensorData_2_3, %_ifconv ]"
+ST_67 : Operation 363 [1/1] (0.00ns)   --->   "%sensorData_2_4 = phi i32 [ %sensorData_0_1, %"delay_until_ms<1000ull, 50000000ull>.exit" ], [ %sensorData_2_5_8, %_ifconv ]"
+ST_67 : Operation 364 [1/1] (0.00ns)   --->   "%index = phi i2 [ 0, %"delay_until_ms<1000ull, 50000000ull>.exit" ], [ %index_1, %_ifconv ]"
+ST_67 : Operation 365 [1/1] (0.95ns)   --->   "%exitcond = icmp eq i2 %index, -1" [iiccomm2.cpp:127]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_67 : Operation 366 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3) nounwind"
+ST_67 : Operation 367 [1/1] (1.56ns)   --->   "%index_1 = add i2 %index, 1" [iiccomm2.cpp:127]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_67 : Operation 368 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %5, label %_ifconv" [iiccomm2.cpp:127]
+ST_67 : Operation 369 [1/1] (0.00ns)   --->   "%iic_addr35 = getelementptr i32* %iic, i64 268436552"
+ST_67 : Operation 370 [7/7] (3.50ns)   --->   "%sensorData_0_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr35, i32 1)" [iiccomm2.cpp:128]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_67 : Operation 371 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %pressure_msb, i32 %sensorData_2_4)" [iiccomm2.cpp:131]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_67 : Operation 372 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %pressure_lsb, i32 %sensorData_1_2)" [iiccomm2.cpp:132]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_67 : Operation 373 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %pressure_xlsb, i32 %sensorData_2_2)" [iiccomm2.cpp:133]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_67 : Operation 374 [1/1] (0.00ns)   --->   "ret void" [iiccomm2.cpp:136]
+
+ <State 68> : 3.50ns
+ST_68 : Operation 375 [6/7] (3.50ns)   --->   "%sensorData_0_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr35, i32 1)" [iiccomm2.cpp:128]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 69> : 3.50ns
+ST_69 : Operation 376 [5/7] (3.50ns)   --->   "%sensorData_0_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr35, i32 1)" [iiccomm2.cpp:128]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 70> : 3.50ns
+ST_70 : Operation 377 [4/7] (3.50ns)   --->   "%sensorData_0_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr35, i32 1)" [iiccomm2.cpp:128]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 71> : 3.50ns
+ST_71 : Operation 378 [3/7] (3.50ns)   --->   "%sensorData_0_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr35, i32 1)" [iiccomm2.cpp:128]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 72> : 3.50ns
+ST_72 : Operation 379 [2/7] (3.50ns)   --->   "%sensorData_0_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr35, i32 1)" [iiccomm2.cpp:128]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 73> : 3.50ns
+ST_73 : Operation 380 [1/7] (3.50ns)   --->   "%sensorData_0_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr35, i32 1)" [iiccomm2.cpp:128]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 74> : 3.50ns
+ST_74 : Operation 381 [1/1] (0.00ns)   --->   "%iic_addr34 = getelementptr i32* %iic, i64 268436552"
+ST_74 : Operation 382 [1/1] (3.50ns)   --->   "%sensorData_0 = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr34)" [iiccomm2.cpp:128]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 75> : 2.33ns
+ST_75 : Operation 383 [1/1] (0.95ns)   --->   "%sel_tmp = icmp eq i2 %index, 1" [iiccomm2.cpp:127]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 384 [1/1] (0.00ns) (grouped into LUT with out node sensorData_2_1_6)   --->   "%sensorData_2_5 = select i1 %sel_tmp, i32 %sensorData_2_2, i32 %sensorData_0" [iiccomm2.cpp:127]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_75 : Operation 385 [1/1] (0.95ns)   --->   "%sel_tmp2 = icmp eq i2 %index, 0" [iiccomm2.cpp:127]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_75 : Operation 386 [1/1] (1.37ns) (out node of the LUT)   --->   "%sensorData_2_1_6 = select i1 %sel_tmp2, i32 %sensorData_2_2, i32 %sensorData_2_5" [iiccomm2.cpp:127]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_75 : Operation 387 [1/1] (0.00ns) (grouped into LUT with out node sensorData_2_3)   --->   "%sensorData_2_2_7 = select i1 %sel_tmp, i32 %sensorData_0, i32 %sensorData_1_2" [iiccomm2.cpp:127]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_75 : Operation 388 [1/1] (1.37ns) (out node of the LUT)   --->   "%sensorData_2_3 = select i1 %sel_tmp2, i32 %sensorData_1_2, i32 %sensorData_2_2_7" [iiccomm2.cpp:127]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_75 : Operation 389 [1/1] (1.37ns)   --->   "%sensorData_2_5_8 = select i1 %sel_tmp2, i32 %sensorData_0, i32 %sensorData_2_4" [iiccomm2.cpp:127]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_75 : Operation 390 [1/1] (0.00ns)   --->   "br label %4" [iiccomm2.cpp:127]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('invdar', iiccomm2.cpp:62) with incoming values : ('indvarinc', iiccomm2.cpp:62) [33]  (1.77 ns)
+
+ <State 2>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr') [49]  (0 ns)
+	bus request on port 'iic' (iiccomm2.cpp:66) [50]  (3.5 ns)
+
+ <State 3>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:66) [50]  (3.5 ns)
+
+ <State 4>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:66) [50]  (3.5 ns)
+
+ <State 5>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:66) [50]  (3.5 ns)
+
+ <State 6>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:66) [50]  (3.5 ns)
+
+ <State 7>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:66) [50]  (3.5 ns)
+
+ <State 8>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:66) [50]  (3.5 ns)
+
+ <State 9>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_1') [51]  (0 ns)
+	bus read on port 'iic' (iiccomm2.cpp:66) [52]  (3.5 ns)
+
+ <State 10>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_3') [56]  (0 ns)
+	bus write on port 'iic' (iiccomm2.cpp:70) [57]  (3.5 ns)
+
+ <State 11>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_4') [58]  (0 ns)
+	bus access on port 'iic' (iiccomm2.cpp:70) [59]  (3.5 ns)
+
+ <State 12>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:70) [59]  (3.5 ns)
+
+ <State 13>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:70) [59]  (3.5 ns)
+
+ <State 14>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:70) [59]  (3.5 ns)
+
+ <State 15>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:70) [59]  (3.5 ns)
+
+ <State 16>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_5') [60]  (0 ns)
+	bus request on port 'iic' (iiccomm2.cpp:71) [61]  (3.5 ns)
+
+ <State 17>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:71) [61]  (3.5 ns)
+
+ <State 18>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:71) [61]  (3.5 ns)
+
+ <State 19>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:71) [61]  (3.5 ns)
+
+ <State 20>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:71) [61]  (3.5 ns)
+
+ <State 21>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:71) [61]  (3.5 ns)
+
+ <State 22>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:71) [61]  (3.5 ns)
+
+ <State 23>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_6') [62]  (0 ns)
+	bus read on port 'iic' (iiccomm2.cpp:71) [63]  (3.5 ns)
+
+ <State 24>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_8') [67]  (0 ns)
+	bus write on port 'iic' (iiccomm2.cpp:75) [68]  (3.5 ns)
+
+ <State 25>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_9') [69]  (0 ns)
+	bus access on port 'iic' (iiccomm2.cpp:75) [70]  (3.5 ns)
+
+ <State 26>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:75) [70]  (3.5 ns)
+
+ <State 27>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:75) [70]  (3.5 ns)
+
+ <State 28>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:75) [70]  (3.5 ns)
+
+ <State 29>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:75) [70]  (3.5 ns)
+
+ <State 30>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:78) [76]  (3.5 ns)
+
+ <State 31>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_13') [77]  (0 ns)
+	bus request on port 'iic' (iiccomm2.cpp:79) [78]  (3.5 ns)
+
+ <State 32>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:79) [78]  (3.5 ns)
+
+ <State 33>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:79) [78]  (3.5 ns)
+
+ <State 34>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:79) [78]  (3.5 ns)
+
+ <State 35>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:79) [78]  (3.5 ns)
+
+ <State 36>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:79) [78]  (3.5 ns)
+
+ <State 37>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:79) [78]  (3.5 ns)
+
+ <State 38>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_14') [79]  (0 ns)
+	bus read on port 'iic' (iiccomm2.cpp:79) [80]  (3.5 ns)
+
+ <State 39>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_16') [84]  (0 ns)
+	bus read on port 'iic' (iiccomm2.cpp:83) [85]  (3.5 ns)
+
+ <State 40>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_18') [89]  (0 ns)
+	bus write on port 'iic' (iiccomm2.cpp:88) [90]  (3.5 ns)
+
+ <State 41>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_19') [91]  (0 ns)
+	bus access on port 'iic' (iiccomm2.cpp:88) [92]  (3.5 ns)
+
+ <State 42>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:88) [92]  (3.5 ns)
+
+ <State 43>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:88) [92]  (3.5 ns)
+
+ <State 44>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:88) [92]  (3.5 ns)
+
+ <State 45>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:88) [92]  (3.5 ns)
+
+ <State 46>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:89) [98]  (3.5 ns)
+
+ <State 47>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:90) [104]  (3.5 ns)
+
+ <State 48>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:93) [110]  (3.5 ns)
+
+ <State 49>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:94) [116]  (3.5 ns)
+
+ <State 50>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:95) [122]  (3.5 ns)
+
+ <State 51>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:98) [128]  (3.5 ns)
+
+ <State 52>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:99) [134]  (3.5 ns)
+
+ <State 53>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:100) [140]  (3.5 ns)
+
+ <State 54>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:103) [146]  (3.5 ns)
+
+ <State 55>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:104) [152]  (3.5 ns)
+
+ <State 56>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:105) [158]  (3.5 ns)
+
+ <State 57>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_53') [174]  (0 ns)
+	bus request on port 'iic' (iiccomm2.cpp:112) [175]  (3.5 ns)
+
+ <State 58>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_54') [176]  (0 ns)
+	bus write on port 'iic' (iiccomm2.cpp:112) [177]  (3.5 ns)
+
+ <State 59>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr_55') [178]  (0 ns)
+	bus access on port 'iic' (iiccomm2.cpp:112) [179]  (3.5 ns)
+
+ <State 60>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:112) [179]  (3.5 ns)
+
+ <State 61>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:112) [179]  (3.5 ns)
+
+ <State 62>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:112) [179]  (3.5 ns)
+
+ <State 63>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:112) [179]  (3.5 ns)
+
+ <State 64>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:115) [185]  (3.5 ns)
+
+ <State 65>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:118) [191]  (3.5 ns)
+
+ <State 66>: 3.5ns
+The critical path consists of the following:
+	bus access on port 'iic' (iiccomm2.cpp:121) [197]  (3.5 ns)
+
+ <State 67>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr35') [209]  (0 ns)
+	bus request on port 'iic' (iiccomm2.cpp:128) [210]  (3.5 ns)
+
+ <State 68>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:128) [210]  (3.5 ns)
+
+ <State 69>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:128) [210]  (3.5 ns)
+
+ <State 70>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:128) [210]  (3.5 ns)
+
+ <State 71>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:128) [210]  (3.5 ns)
+
+ <State 72>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:128) [210]  (3.5 ns)
+
+ <State 73>: 3.5ns
+The critical path consists of the following:
+	bus request on port 'iic' (iiccomm2.cpp:128) [210]  (3.5 ns)
+
+ <State 74>: 3.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('iic_addr34') [211]  (0 ns)
+	bus read on port 'iic' (iiccomm2.cpp:128) [212]  (3.5 ns)
+
+ <State 75>: 2.33ns
+The critical path consists of the following:
+	'icmp' operation ('sel_tmp', iiccomm2.cpp:127) [213]  (0.959 ns)
+	'select' operation ('sensorData[2]', iiccomm2.cpp:127) [214]  (0 ns)
+	'select' operation ('sensorData[2]', iiccomm2.cpp:127) [216]  (1.37 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

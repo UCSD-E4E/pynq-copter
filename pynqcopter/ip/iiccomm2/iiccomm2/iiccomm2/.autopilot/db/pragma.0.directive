@@ -1,0 +1,78 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="delay_until_ms" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="delay_until_ms" label="">
+<pragma name="PROTOCOL">
+<option name="floating" positionalBoolean="mode" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm2" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="iic"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="stat_reg_outValue1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="stat_reg_outValue2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="stat_reg_outValue3"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="stat_reg_outValue4"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="empty_pirq_outValue"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="full_pirq_outValue"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="rx_fifo_outValue"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="tx_fifo_outValue"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="iiccomm2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="ctrl_reg_outValue"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>
