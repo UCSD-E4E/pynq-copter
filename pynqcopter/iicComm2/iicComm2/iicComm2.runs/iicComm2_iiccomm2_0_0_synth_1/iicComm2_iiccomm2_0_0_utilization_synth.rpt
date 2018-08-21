@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Tue Aug 21 09:46:04 2018
+| Date         : Tue Aug 21 13:52:12 2018
 | Host         : fabricant running 64-bit Linux Mint 18 Sarah
 | Command      : report_utilization -file iicComm2_iiccomm2_0_0_utilization_synth.rpt -pb iicComm2_iiccomm2_0_0_utilization_synth.pb
 | Design       : iicComm2_iiccomm2_0_0
@@ -27,20 +27,20 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+----------------------------+------+-------+-----------+-------+
-|          Site Type         | Used | Fixed | Available | Util% |
-+----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  868 |     0 |     53200 |  1.63 |
-|   LUT as Logic             |  844 |     0 |     53200 |  1.59 |
-|   LUT as Memory            |   24 |     0 |     17400 |  0.14 |
-|     LUT as Distributed RAM |    0 |     0 |           |       |
-|     LUT as Shift Register  |   24 |     0 |           |       |
-| Slice Registers            | 1299 |     0 |    106400 |  1.22 |
-|   Register as Flip Flop    | 1299 |     0 |    106400 |  1.22 |
-|   Register as Latch        |    0 |     0 |    106400 |  0.00 |
-| F7 Muxes                   |    0 |     0 |     26600 |  0.00 |
-| F8 Muxes                   |    0 |     0 |     13300 |  0.00 |
-+----------------------------+------+-------+-----------+-------+
++----------------------------+-------+-------+-----------+-------+
+|          Site Type         |  Used | Fixed | Available | Util% |
++----------------------------+-------+-------+-----------+-------+
+| Slice LUTs*                | 21691 |     0 |     53200 | 40.77 |
+|   LUT as Logic             | 20811 |     0 |     53200 | 39.12 |
+|   LUT as Memory            |   880 |     0 |     17400 |  5.06 |
+|     LUT as Distributed RAM |     0 |     0 |           |       |
+|     LUT as Shift Register  |   880 |     0 |           |       |
+| Slice Registers            | 19918 |     0 |    106400 | 18.72 |
+|   Register as Flip Flop    | 19918 |     0 |    106400 | 18.72 |
+|   Register as Latch        |     0 |     0 |    106400 |  0.00 |
+| F7 Muxes                   |    82 |     0 |     26600 |  0.31 |
+| F8 Muxes                   |    10 |     0 |     13300 |  0.08 |
++----------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 6     |          Yes |         Set |            - |
-| 1293  |          Yes |       Reset |            - |
+| 19912 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -69,8 +69,9 @@ Table of Contents
 +-------------------+------+-------+-----------+-------+
 |     Site Type     | Used | Fixed | Available | Util% |
 +-------------------+------+-------+-----------+-------+
-| Block RAM Tile    |    1 |     0 |       140 |  0.71 |
-|   RAMB36/FIFO*    |    0 |     0 |       140 |  0.00 |
+| Block RAM Tile    |    2 |     0 |       140 |  1.43 |
+|   RAMB36/FIFO*    |    1 |     0 |       140 |  0.71 |
+|     RAMB36E1 only |    1 |       |           |       |
 |   RAMB18          |    2 |     0 |       280 |  0.71 |
 |     RAMB18E1 only |    2 |       |           |       |
 +-------------------+------+-------+-----------+-------+
@@ -80,11 +81,12 @@ Table of Contents
 3. DSP
 ------
 
-+-----------+------+-------+-----------+-------+
-| Site Type | Used | Fixed | Available | Util% |
-+-----------+------+-------+-----------+-------+
-| DSPs      |    0 |     0 |       220 |  0.00 |
-+-----------+------+-------+-----------+-------+
++----------------+------+-------+-----------+-------+
+|    Site Type   | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| DSPs           |   54 |     0 |       220 | 24.55 |
+|   DSP48E1 only |   54 |       |           |       |
++----------------+------+-------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -146,21 +148,26 @@ Table of Contents
 7. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| FDRE     | 1293 |        Flop & Latch |
-| LUT6     |  336 |                 LUT |
-| LUT2     |  161 |                 LUT |
-| LUT3     |  160 |                 LUT |
-| LUT4     |  124 |                 LUT |
-| LUT5     |  109 |                 LUT |
-| CARRY4   |   64 |          CarryLogic |
-| SRL16E   |   24 |  Distributed Memory |
-| LUT1     |   15 |                 LUT |
-| FDSE     |    6 |        Flop & Latch |
-| RAMB18E1 |    2 |        Block Memory |
-+----------+------+---------------------+
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| FDRE     | 19912 |        Flop & Latch |
+| LUT2     |  9440 |                 LUT |
+| LUT3     |  7981 |                 LUT |
+| CARRY4   |  3089 |          CarryLogic |
+| LUT1     |  2366 |                 LUT |
+| LUT6     |   739 |                 LUT |
+| SRL16E   |   476 |  Distributed Memory |
+| SRLC32E  |   404 |  Distributed Memory |
+| LUT4     |   347 |                 LUT |
+| LUT5     |   183 |                 LUT |
+| MUXF7    |    82 |               MuxFx |
+| DSP48E1  |    54 |    Block Arithmetic |
+| MUXF8    |    10 |               MuxFx |
+| FDSE     |     6 |        Flop & Latch |
+| RAMB18E1 |     2 |        Block Memory |
+| RAMB36E1 |     1 |        Block Memory |
++----------+-------+---------------------+
 
 
 8. Black Boxes
