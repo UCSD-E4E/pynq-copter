@@ -256,6 +256,13 @@ u32 XMultibyte_Get_stateDataReads_vld(XMultibyte *InstancePtr) {
     return Data & 0x1;
 }
 
+void XMultibyte_Set_dig_T1(XMultibyte *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XMultibyte_WriteReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_DIG_T1_DATA, Data);
+}
+
 u32 XMultibyte_Get_dig_T1(XMultibyte *InstancePtr) {
     u32 Data;
 
@@ -266,14 +273,11 @@ u32 XMultibyte_Get_dig_T1(XMultibyte *InstancePtr) {
     return Data;
 }
 
-u32 XMultibyte_Get_dig_T1_vld(XMultibyte *InstancePtr) {
-    u32 Data;
+void XMultibyte_Set_dig_P9(XMultibyte *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XMultibyte_ReadReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_DIG_T1_CTRL);
-    return Data & 0x1;
+    XMultibyte_WriteReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_DIG_P9_DATA, Data);
 }
 
 u32 XMultibyte_Get_dig_P9(XMultibyte *InstancePtr) {
@@ -284,16 +288,6 @@ u32 XMultibyte_Get_dig_P9(XMultibyte *InstancePtr) {
 
     Data = XMultibyte_ReadReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_DIG_P9_DATA);
     return Data;
-}
-
-u32 XMultibyte_Get_dig_P9_vld(XMultibyte *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XMultibyte_ReadReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_DIG_P9_CTRL);
-    return Data & 0x1;
 }
 
 u32 XMultibyte_Get_pressureRaw(XMultibyte *InstancePtr) {
@@ -336,6 +330,13 @@ u32 XMultibyte_Get_temperatureRaw_vld(XMultibyte *InstancePtr) {
     return Data & 0x1;
 }
 
+void XMultibyte_Set_trimVal1(XMultibyte *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XMultibyte_WriteReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL1_DATA, Data);
+}
+
 u32 XMultibyte_Get_trimVal1(XMultibyte *InstancePtr) {
     u32 Data;
 
@@ -346,14 +347,11 @@ u32 XMultibyte_Get_trimVal1(XMultibyte *InstancePtr) {
     return Data;
 }
 
-u32 XMultibyte_Get_trimVal1_vld(XMultibyte *InstancePtr) {
-    u32 Data;
+void XMultibyte_Set_trimVal2(XMultibyte *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XMultibyte_ReadReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL1_CTRL);
-    return Data & 0x1;
+    XMultibyte_WriteReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL2_DATA, Data);
 }
 
 u32 XMultibyte_Get_trimVal2(XMultibyte *InstancePtr) {
@@ -366,14 +364,11 @@ u32 XMultibyte_Get_trimVal2(XMultibyte *InstancePtr) {
     return Data;
 }
 
-u32 XMultibyte_Get_trimVal2_vld(XMultibyte *InstancePtr) {
-    u32 Data;
+void XMultibyte_Set_trimVal3(XMultibyte *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XMultibyte_ReadReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL2_CTRL);
-    return Data & 0x1;
+    XMultibyte_WriteReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL3_DATA, Data);
 }
 
 u32 XMultibyte_Get_trimVal3(XMultibyte *InstancePtr) {
@@ -386,14 +381,11 @@ u32 XMultibyte_Get_trimVal3(XMultibyte *InstancePtr) {
     return Data;
 }
 
-u32 XMultibyte_Get_trimVal3_vld(XMultibyte *InstancePtr) {
-    u32 Data;
+void XMultibyte_Set_trimVal4(XMultibyte *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XMultibyte_ReadReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL3_CTRL);
-    return Data & 0x1;
+    XMultibyte_WriteReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL4_DATA, Data);
 }
 
 u32 XMultibyte_Get_trimVal4(XMultibyte *InstancePtr) {
@@ -406,14 +398,11 @@ u32 XMultibyte_Get_trimVal4(XMultibyte *InstancePtr) {
     return Data;
 }
 
-u32 XMultibyte_Get_trimVal4_vld(XMultibyte *InstancePtr) {
-    u32 Data;
+void XMultibyte_Set_trimVal5(XMultibyte *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XMultibyte_ReadReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL4_CTRL);
-    return Data & 0x1;
+    XMultibyte_WriteReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL5_DATA, Data);
 }
 
 u32 XMultibyte_Get_trimVal5(XMultibyte *InstancePtr) {
@@ -426,14 +415,11 @@ u32 XMultibyte_Get_trimVal5(XMultibyte *InstancePtr) {
     return Data;
 }
 
-u32 XMultibyte_Get_trimVal5_vld(XMultibyte *InstancePtr) {
-    u32 Data;
+void XMultibyte_Set_trimVal6(XMultibyte *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XMultibyte_ReadReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL5_CTRL);
-    return Data & 0x1;
+    XMultibyte_WriteReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL6_DATA, Data);
 }
 
 u32 XMultibyte_Get_trimVal6(XMultibyte *InstancePtr) {
@@ -446,14 +432,11 @@ u32 XMultibyte_Get_trimVal6(XMultibyte *InstancePtr) {
     return Data;
 }
 
-u32 XMultibyte_Get_trimVal6_vld(XMultibyte *InstancePtr) {
-    u32 Data;
+void XMultibyte_Set_trimVal23(XMultibyte *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XMultibyte_ReadReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL6_CTRL);
-    return Data & 0x1;
+    XMultibyte_WriteReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL23_DATA, Data);
 }
 
 u32 XMultibyte_Get_trimVal23(XMultibyte *InstancePtr) {
@@ -466,14 +449,11 @@ u32 XMultibyte_Get_trimVal23(XMultibyte *InstancePtr) {
     return Data;
 }
 
-u32 XMultibyte_Get_trimVal23_vld(XMultibyte *InstancePtr) {
-    u32 Data;
+void XMultibyte_Set_trimVal24(XMultibyte *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XMultibyte_ReadReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL23_CTRL);
-    return Data & 0x1;
+    XMultibyte_WriteReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL24_DATA, Data);
 }
 
 u32 XMultibyte_Get_trimVal24(XMultibyte *InstancePtr) {
@@ -484,16 +464,6 @@ u32 XMultibyte_Get_trimVal24(XMultibyte *InstancePtr) {
 
     Data = XMultibyte_ReadReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL24_DATA);
     return Data;
-}
-
-u32 XMultibyte_Get_trimVal24_vld(XMultibyte *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XMultibyte_ReadReg(InstancePtr->Ctrl_BaseAddress, XMULTIBYTE_CTRL_ADDR_TRIMVAL24_CTRL);
-    return Data & 0x1;
 }
 
 void XMultibyte_InterruptGlobalEnable(XMultibyte *InstancePtr) {

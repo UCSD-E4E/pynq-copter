@@ -37,6 +37,7 @@
 #include "ap_int.h"
 #include "stdint.h"
 
+//three seperate rx_fifo reads
 
 static uint32_t empty_pirq_val; //return 0
 static uint32_t full_pirq_val; //return 16 
@@ -44,8 +45,10 @@ static uint32_t ctrl_reg_val;
 static uint32_t stat_reg_val1;
 
 
-
-void iiccomm2(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue, uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb)
+void iiccomm2(volatile uint32_t iic[4096], 
+	uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue,
+	uint32_t& stat_reg_outValue1, uint32_t& pressure_msb, uint32_t& pressure_lsb, 
+	uint32_t& pressure_xlsb)
 {
     #pragma HLS INTERFACE s_axilite port=return
 	
@@ -59,7 +62,6 @@ void iiccomm2(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_
     #pragma HLS INTERFACE s_axilite port=pressure_lsb
     #pragma HLS INTERFACE s_axilite port=pressure_xlsb
 
-	uint32_t sensorData[3] = {};
 
 //INITIALIZE TO READ AND WRITE
 	
@@ -104,7 +106,7 @@ void iiccomm2(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF5; 
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xA0;
 
-	delay_until_ms<1000>();
+	delay_until_ms<10000>();
 
 //BEGIN READING AND WRITING TO SENSOR
 	
@@ -120,17 +122,8 @@ void iiccomm2(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_
 	//SET STOP BIT AND NUMBER OF BYTES TO READ
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x203;
 
-	//READ RX_FIFO 
-	//rx_fifo_val = iic[IIC_INDEX+IIC_RX_FIFO_OFF];
-    //rx_fifo_outValue=rx_fifo_val;
-
-	for (int index = 0; index < 3; index++) {
-			sensorData[index] = iic[IIC_INDEX + IIC_RX_FIFO_PIRQ_OFF];
-		}
-
-	pressure_msb = (uint32_t)sensorData[0];
-	pressure_lsb = (uint32_t)sensorData[1];
-	pressure_xlsb = (uint32_t)sensorData[2];
-
+	pressure_msb = iic[IIC_INDEX+IIC_RX_FIFO_OFF];
+	pressure_lsb = iic[IIC_INDEX+IIC_RX_FIFO_OFF];
+	pressure_xlsb = iic[IIC_INDEX+IIC_RX_FIFO_OFF];
 				
 }

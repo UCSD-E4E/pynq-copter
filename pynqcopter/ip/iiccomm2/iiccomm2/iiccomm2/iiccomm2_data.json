@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "50000095",
+    "Latency": "500000075",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -41,13 +41,11 @@
     "Vhdl": [
       "impl\/vhdl\/iiccomm2_AXILiteS_s_axi.vhd",
       "impl\/vhdl\/iiccomm2_iic_m_axi.vhd",
-      "impl\/vhdl\/iiccomm2_mux_42_3bkb.vhd",
       "impl\/vhdl\/iiccomm2.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/iiccomm2_AXILiteS_s_axi.v",
       "impl\/verilog\/iiccomm2_iic_m_axi.v",
-      "impl\/verilog\/iiccomm2_mux_42_3bkb.v",
       "impl\/verilog\/iiccomm2.v"
     ],
     "SwDriver": [
@@ -428,46 +426,6 @@
         },
         {
           "offset": "0x10",
-          "name": "stat_reg_outValue1",
-          "access": "R",
-          "reset_value": "0x0",
-          "description": "Data signal of stat_reg_outValue1",
-          "fields": [{
-              "offset": "0",
-              "width": "32",
-              "name": "stat_reg_outValue1",
-              "access": "R",
-              "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of stat_reg_outValue1"
-            }]
-        },
-        {
-          "offset": "0x14",
-          "name": "stat_reg_outValue1_ctrl",
-          "access": "R",
-          "reset_value": "0x0",
-          "description": "Control signal of stat_reg_outValue1",
-          "fields": [
-            {
-              "offset": "0",
-              "width": "1",
-              "name": "stat_reg_outValue1_ap_vld",
-              "access": "R",
-              "reset_value": "0",
-              "description": "Control signal stat_reg_outValue1_ap_vld"
-            },
-            {
-              "offset": "1",
-              "width": "31",
-              "name": "RESERVED",
-              "access": "R",
-              "reset_value": "0",
-              "description": "Reserved.  0s on read."
-            }
-          ]
-        },
-        {
-          "offset": "0x18",
           "name": "empty_pirq_outValue",
           "access": "R",
           "reset_value": "0x0",
@@ -482,7 +440,7 @@
             }]
         },
         {
-          "offset": "0x1c",
+          "offset": "0x14",
           "name": "empty_pirq_outValue_ctrl",
           "access": "R",
           "reset_value": "0x0",
@@ -507,7 +465,7 @@
           ]
         },
         {
-          "offset": "0x20",
+          "offset": "0x18",
           "name": "full_pirq_outValue",
           "access": "R",
           "reset_value": "0x0",
@@ -522,7 +480,7 @@
             }]
         },
         {
-          "offset": "0x24",
+          "offset": "0x1c",
           "name": "full_pirq_outValue_ctrl",
           "access": "R",
           "reset_value": "0x0",
@@ -547,7 +505,7 @@
           ]
         },
         {
-          "offset": "0x28",
+          "offset": "0x20",
           "name": "ctrl_reg_outValue",
           "access": "R",
           "reset_value": "0x0",
@@ -562,7 +520,7 @@
             }]
         },
         {
-          "offset": "0x2c",
+          "offset": "0x24",
           "name": "ctrl_reg_outValue_ctrl",
           "access": "R",
           "reset_value": "0x0",
@@ -575,6 +533,46 @@
               "access": "R",
               "reset_value": "0",
               "description": "Control signal ctrl_reg_outValue_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x28",
+          "name": "stat_reg_outValue1",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of stat_reg_outValue1",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "stat_reg_outValue1",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of stat_reg_outValue1"
+            }]
+        },
+        {
+          "offset": "0x2c",
+          "name": "stat_reg_outValue1_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of stat_reg_outValue1",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "stat_reg_outValue1_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal stat_reg_outValue1_ap_vld"
             },
             {
               "offset": "1",
@@ -1032,41 +1030,41 @@
     }
   },
   "CPorts": {
-    "stat_reg_outValue1": {
+    "empty_pirq_outValue": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
       "offset": "16",
       "statusOffset": "20",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "39"
+      "firstOutLatency": "8"
     },
-    "empty_pirq_outValue": {
+    "full_pirq_outValue": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
       "offset": "24",
       "statusOffset": "28",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "9"
+      "firstOutLatency": "22"
     },
-    "full_pirq_outValue": {
+    "ctrl_reg_outValue": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
       "offset": "32",
       "statusOffset": "36",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "23"
+      "firstOutLatency": "38"
     },
-    "ctrl_reg_outValue": {
+    "stat_reg_outValue1": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
       "offset": "40",
       "statusOffset": "44",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "39"
+      "firstOutLatency": "38"
     },
     "pressure_msb": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1075,7 +1073,7 @@
       "statusOffset": "52",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "66"
+      "firstOutLatency": "75"
     },
     "pressure_lsb": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1084,7 +1082,7 @@
       "statusOffset": "60",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "66"
+      "firstOutLatency": "75"
     },
     "pressure_xlsb": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1093,7 +1091,7 @@
       "statusOffset": "68",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "66"
+      "firstOutLatency": "75"
     },
     "ap_ctrl": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1109,10 +1107,10 @@
     "Hierarchy": {"ModuleName": "iiccomm2"},
     "Metrics": {"iiccomm2": {
         "Latency": {
-          "LatencyBest": "50000095",
-          "LatencyAvg": "50000095",
-          "LatencyWorst": "50000095",
-          "PipelineII": "50000096",
+          "LatencyBest": "500000075",
+          "LatencyAvg": "500000075",
+          "LatencyWorst": "500000075",
+          "PipelineII": "500000076",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1121,40 +1119,24 @@
           "Uncertainty": "0.50",
           "Estimate": "3.50"
         },
-        "Loops": [
-          {
-            "Name": "memset_sensorData",
-            "TripCount": "3",
-            "Latency": "2",
+        "Loops": [{
+            "Name": "Loop 1",
+            "TripCount": "500000000",
+            "Latency": "500000000",
             "PipelineII": "",
             "PipelineDepth": "1"
-          },
-          {
-            "Name": "Loop 2",
-            "TripCount": "50000000",
-            "Latency": "50000000",
-            "PipelineII": "",
-            "PipelineDepth": "1"
-          },
-          {
-            "Name": "Loop 3",
-            "TripCount": "3",
-            "Latency": "27",
-            "PipelineII": "",
-            "PipelineDepth": "9"
-          }
-        ],
+          }],
         "Area": {
           "BRAM_18K": "2",
-          "FF": "1376",
-          "LUT": "2014",
+          "FF": "1150",
+          "LUT": "1690",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-20 10:38:39 PDT",
+    "Time": "2018-08-21 09:40:55 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

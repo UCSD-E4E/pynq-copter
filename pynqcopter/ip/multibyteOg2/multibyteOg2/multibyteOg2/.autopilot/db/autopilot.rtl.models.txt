@@ -1,4 +1,0 @@
-multibyteOg2_mux_bkb
-multibyteOg2_CTRL_s_axi
-multibyteOg2_CTRL_m_axi
-multibyteOg2

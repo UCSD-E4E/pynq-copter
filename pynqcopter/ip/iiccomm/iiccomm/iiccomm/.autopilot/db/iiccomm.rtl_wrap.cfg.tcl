@@ -64,7 +64,7 @@ set Interface4 "wire"
 set DataType4 "unsigned int"
 set Port4 [list $PortName4 $Interface4 $DataType4 $Pointer4 $Dims4 $Const4 $Volatile4 $ArrayOpt4]
 lappend PortList $Port4
-set PortName5 "pressure_msb"
+set PortName5 "rx_fifo_outValue"
 set BitWidth5 "32"
 set ArrayOpt5 ""
 set Const5 "0"
@@ -76,30 +76,6 @@ set Interface5 "wire"
 set DataType5 "unsigned int"
 set Port5 [list $PortName5 $Interface5 $DataType5 $Pointer5 $Dims5 $Const5 $Volatile5 $ArrayOpt5]
 lappend PortList $Port5
-set PortName6 "pressure_lsb"
-set BitWidth6 "32"
-set ArrayOpt6 ""
-set Const6 "0"
-set Volatile6 "0"
-set Pointer6 "2"
-set Reference6 "1"
-set Dims6 [list 0]
-set Interface6 "wire"
-set DataType6 "unsigned int"
-set Port6 [list $PortName6 $Interface6 $DataType6 $Pointer6 $Dims6 $Const6 $Volatile6 $ArrayOpt6]
-lappend PortList $Port6
-set PortName7 "pressure_xlsb"
-set BitWidth7 "32"
-set ArrayOpt7 ""
-set Const7 "0"
-set Volatile7 "0"
-set Pointer7 "2"
-set Reference7 "1"
-set Dims7 [list 0]
-set Interface7 "wire"
-set DataType7 "unsigned int"
-set Port7 [list $PortName7 $Interface7 $DataType7 $Pointer7 $Dims7 $Const7 $Volatile7 $ArrayOpt7]
-lappend PortList $Port7
 set globalAPint "" 
 set returnAPInt "" 
 set hasCPPAPInt 0 

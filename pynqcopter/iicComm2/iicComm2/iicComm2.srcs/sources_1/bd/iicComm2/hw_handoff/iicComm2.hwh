@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Aug 20 14:29:46 2018" VIVADOVERSION="2017.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Aug 21 09:42:16 2018" VIVADOVERSION="2017.4">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="iicComm2" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -1965,59 +1965,9 @@
                 </FIELD>
               </FIELDS>
             </REGISTER>
-            <REGISTER NAME="stat_reg_outValue1">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of stat_reg_outValue1"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="16"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="read-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="stat_reg_outValue1">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of stat_reg_outValue1"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
-            <REGISTER NAME="stat_reg_outValue1_ctrl">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Control signal of stat_reg_outValue1"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="20"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="read-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="stat_reg_outValue1_ap_vld">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Control signal stat_reg_outValue1_ap_vld"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
-                </FIELD>
-                <FIELD NAME="RESERVED">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Reserved.  0s on read."/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="1"/>
-                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="1"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="31"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
             <REGISTER NAME="empty_pirq_outValue">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of empty_pirq_outValue"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="24"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="16"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2037,7 +1987,7 @@
             </REGISTER>
             <REGISTER NAME="empty_pirq_outValue_ctrl">
               <PROPERTY NAME="DESCRIPTION" VALUE="Control signal of empty_pirq_outValue"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="28"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="20"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2067,7 +2017,7 @@
             </REGISTER>
             <REGISTER NAME="full_pirq_outValue">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of full_pirq_outValue"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="32"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="24"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2087,7 +2037,7 @@
             </REGISTER>
             <REGISTER NAME="full_pirq_outValue_ctrl">
               <PROPERTY NAME="DESCRIPTION" VALUE="Control signal of full_pirq_outValue"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="36"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="28"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2117,7 +2067,7 @@
             </REGISTER>
             <REGISTER NAME="ctrl_reg_outValue">
               <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of ctrl_reg_outValue"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="40"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="32"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2137,7 +2087,7 @@
             </REGISTER>
             <REGISTER NAME="ctrl_reg_outValue_ctrl">
               <PROPERTY NAME="DESCRIPTION" VALUE="Control signal of ctrl_reg_outValue"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="44"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="36"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="read-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
@@ -2145,6 +2095,56 @@
               <FIELDS>
                 <FIELD NAME="ctrl_reg_outValue_ap_vld">
                   <PROPERTY NAME="DESCRIPTION" VALUE="Control signal ctrl_reg_outValue_ap_vld"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
+                </FIELD>
+                <FIELD NAME="RESERVED">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Reserved.  0s on read."/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="1"/>
+                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="1"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="31"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="stat_reg_outValue1">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of stat_reg_outValue1"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="40"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="stat_reg_outValue1">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of stat_reg_outValue1"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="stat_reg_outValue1_ctrl">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Control signal of stat_reg_outValue1"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="44"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="stat_reg_outValue1_ap_vld">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Control signal stat_reg_outValue1_ap_vld"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -2315,56 +2315,6 @@
                 </FIELD>
               </FIELDS>
             </REGISTER>
-            <REGISTER NAME="rx_fifo_outValue">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of rx_fifo_outValue"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="72"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="read-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="rx_fifo_outValue">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of rx_fifo_outValue"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
-            <REGISTER NAME="rx_fifo_outValue_ctrl">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Control signal of rx_fifo_outValue"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="76"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="read-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="rx_fifo_outValue_ap_vld">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Control signal rx_fifo_outValue_ap_vld"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
-                </FIELD>
-                <FIELD NAME="RESERVED">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Reserved.  0s on read."/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="1"/>
-                  <PROPERTY NAME="ACCESS" VALUE="read-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE="modify"/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="1"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="31"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
           </REGISTERS>
         </ADDRESSBLOCK>
       </ADDRESSBLOCKS>
@@ -2389,7 +2339,7 @@
         <PARAMETER NAME="clk_period" VALUE="4"/>
         <PARAMETER NAME="machine" VALUE="64"/>
         <PARAMETER NAME="combinational" VALUE="0"/>
-        <PARAMETER NAME="latency" VALUE="500000080"/>
+        <PARAMETER NAME="latency" VALUE="500000075"/>
         <PARAMETER NAME="II" VALUE="x"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S_AXI_AXILITES_BASEADDR" VALUE="0x40000000"/>

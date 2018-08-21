@@ -41,14 +41,14 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    stat_reg_outValue1    :in   STD_LOGIC_VECTOR(31 downto 0);
-    stat_reg_outValue1_ap_vld :in   STD_LOGIC;
     empty_pirq_outValue   :in   STD_LOGIC_VECTOR(31 downto 0);
     empty_pirq_outValue_ap_vld :in   STD_LOGIC;
     full_pirq_outValue    :in   STD_LOGIC_VECTOR(31 downto 0);
     full_pirq_outValue_ap_vld :in   STD_LOGIC;
     ctrl_reg_outValue     :in   STD_LOGIC_VECTOR(31 downto 0);
     ctrl_reg_outValue_ap_vld :in   STD_LOGIC;
+    stat_reg_outValue1    :in   STD_LOGIC_VECTOR(31 downto 0);
+    stat_reg_outValue1_ap_vld :in   STD_LOGIC;
     pressure_msb          :in   STD_LOGIC_VECTOR(31 downto 0);
     pressure_msb_ap_vld   :in   STD_LOGIC;
     pressure_lsb          :in   STD_LOGIC_VECTOR(31 downto 0);
@@ -77,25 +77,25 @@ end entity iiccomm2_AXILiteS_s_axi;
 --        bit 0  - Channel 0 (ap_done)
 --        bit 1  - Channel 1 (ap_ready)
 --        others - reserved
--- 0x10 : Data signal of stat_reg_outValue1
---        bit 31~0 - stat_reg_outValue1[31:0] (Read)
--- 0x14 : Control signal of stat_reg_outValue1
---        bit 0  - stat_reg_outValue1_ap_vld (Read/COR)
---        others - reserved
--- 0x18 : Data signal of empty_pirq_outValue
+-- 0x10 : Data signal of empty_pirq_outValue
 --        bit 31~0 - empty_pirq_outValue[31:0] (Read)
--- 0x1c : Control signal of empty_pirq_outValue
+-- 0x14 : Control signal of empty_pirq_outValue
 --        bit 0  - empty_pirq_outValue_ap_vld (Read/COR)
 --        others - reserved
--- 0x20 : Data signal of full_pirq_outValue
+-- 0x18 : Data signal of full_pirq_outValue
 --        bit 31~0 - full_pirq_outValue[31:0] (Read)
--- 0x24 : Control signal of full_pirq_outValue
+-- 0x1c : Control signal of full_pirq_outValue
 --        bit 0  - full_pirq_outValue_ap_vld (Read/COR)
 --        others - reserved
--- 0x28 : Data signal of ctrl_reg_outValue
+-- 0x20 : Data signal of ctrl_reg_outValue
 --        bit 31~0 - ctrl_reg_outValue[31:0] (Read)
--- 0x2c : Control signal of ctrl_reg_outValue
+-- 0x24 : Control signal of ctrl_reg_outValue
 --        bit 0  - ctrl_reg_outValue_ap_vld (Read/COR)
+--        others - reserved
+-- 0x28 : Data signal of stat_reg_outValue1
+--        bit 31~0 - stat_reg_outValue1[31:0] (Read)
+-- 0x2c : Control signal of stat_reg_outValue1
+--        bit 0  - stat_reg_outValue1_ap_vld (Read/COR)
 --        others - reserved
 -- 0x30 : Data signal of pressure_msb
 --        bit 31~0 - pressure_msb[31:0] (Read)
@@ -123,14 +123,14 @@ architecture behave of iiccomm2_AXILiteS_s_axi is
     constant ADDR_GIE                        : INTEGER := 16#04#;
     constant ADDR_IER                        : INTEGER := 16#08#;
     constant ADDR_ISR                        : INTEGER := 16#0c#;
-    constant ADDR_STAT_REG_OUTVALUE1_DATA_0  : INTEGER := 16#10#;
-    constant ADDR_STAT_REG_OUTVALUE1_CTRL    : INTEGER := 16#14#;
-    constant ADDR_EMPTY_PIRQ_OUTVALUE_DATA_0 : INTEGER := 16#18#;
-    constant ADDR_EMPTY_PIRQ_OUTVALUE_CTRL   : INTEGER := 16#1c#;
-    constant ADDR_FULL_PIRQ_OUTVALUE_DATA_0  : INTEGER := 16#20#;
-    constant ADDR_FULL_PIRQ_OUTVALUE_CTRL    : INTEGER := 16#24#;
-    constant ADDR_CTRL_REG_OUTVALUE_DATA_0   : INTEGER := 16#28#;
-    constant ADDR_CTRL_REG_OUTVALUE_CTRL     : INTEGER := 16#2c#;
+    constant ADDR_EMPTY_PIRQ_OUTVALUE_DATA_0 : INTEGER := 16#10#;
+    constant ADDR_EMPTY_PIRQ_OUTVALUE_CTRL   : INTEGER := 16#14#;
+    constant ADDR_FULL_PIRQ_OUTVALUE_DATA_0  : INTEGER := 16#18#;
+    constant ADDR_FULL_PIRQ_OUTVALUE_CTRL    : INTEGER := 16#1c#;
+    constant ADDR_CTRL_REG_OUTVALUE_DATA_0   : INTEGER := 16#20#;
+    constant ADDR_CTRL_REG_OUTVALUE_CTRL     : INTEGER := 16#24#;
+    constant ADDR_STAT_REG_OUTVALUE1_DATA_0  : INTEGER := 16#28#;
+    constant ADDR_STAT_REG_OUTVALUE1_CTRL    : INTEGER := 16#2c#;
     constant ADDR_PRESSURE_MSB_DATA_0        : INTEGER := 16#30#;
     constant ADDR_PRESSURE_MSB_CTRL          : INTEGER := 16#34#;
     constant ADDR_PRESSURE_LSB_DATA_0        : INTEGER := 16#38#;
@@ -159,14 +159,14 @@ architecture behave of iiccomm2_AXILiteS_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_stat_reg_outValue1 : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_stat_reg_outValue1_ap_vld : STD_LOGIC;
     signal int_empty_pirq_outValue : UNSIGNED(31 downto 0) := (others => '0');
     signal int_empty_pirq_outValue_ap_vld : STD_LOGIC;
     signal int_full_pirq_outValue : UNSIGNED(31 downto 0) := (others => '0');
     signal int_full_pirq_outValue_ap_vld : STD_LOGIC;
     signal int_ctrl_reg_outValue : UNSIGNED(31 downto 0) := (others => '0');
     signal int_ctrl_reg_outValue_ap_vld : STD_LOGIC;
+    signal int_stat_reg_outValue1 : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_stat_reg_outValue1_ap_vld : STD_LOGIC;
     signal int_pressure_msb    : UNSIGNED(31 downto 0) := (others => '0');
     signal int_pressure_msb_ap_vld : STD_LOGIC;
     signal int_pressure_lsb    : UNSIGNED(31 downto 0) := (others => '0');
@@ -294,10 +294,6 @@ begin
                         rdata_data <= (1 => int_ier(1), 0 => int_ier(0), others => '0');
                     when ADDR_ISR =>
                         rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
-                    when ADDR_STAT_REG_OUTVALUE1_DATA_0 =>
-                        rdata_data <= RESIZE(int_stat_reg_outValue1(31 downto 0), 32);
-                    when ADDR_STAT_REG_OUTVALUE1_CTRL =>
-                        rdata_data <= (0 => int_stat_reg_outValue1_ap_vld, others => '0');
                     when ADDR_EMPTY_PIRQ_OUTVALUE_DATA_0 =>
                         rdata_data <= RESIZE(int_empty_pirq_outValue(31 downto 0), 32);
                     when ADDR_EMPTY_PIRQ_OUTVALUE_CTRL =>
@@ -310,6 +306,10 @@ begin
                         rdata_data <= RESIZE(int_ctrl_reg_outValue(31 downto 0), 32);
                     when ADDR_CTRL_REG_OUTVALUE_CTRL =>
                         rdata_data <= (0 => int_ctrl_reg_outValue_ap_vld, others => '0');
+                    when ADDR_STAT_REG_OUTVALUE1_DATA_0 =>
+                        rdata_data <= RESIZE(int_stat_reg_outValue1(31 downto 0), 32);
+                    when ADDR_STAT_REG_OUTVALUE1_CTRL =>
+                        rdata_data <= (0 => int_stat_reg_outValue1_ap_vld, others => '0');
                     when ADDR_PRESSURE_MSB_DATA_0 =>
                         rdata_data <= RESIZE(int_pressure_msb(31 downto 0), 32);
                     when ADDR_PRESSURE_MSB_CTRL =>
@@ -463,34 +463,6 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_stat_reg_outValue1 <= (others => '0');
-            elsif (ACLK_EN = '1') then
-                if (stat_reg_outValue1_ap_vld = '1') then
-                    int_stat_reg_outValue1 <= UNSIGNED(stat_reg_outValue1); -- clear on read
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_stat_reg_outValue1_ap_vld <= '0';
-            elsif (ACLK_EN = '1') then
-                if (stat_reg_outValue1_ap_vld = '1') then
-                    int_stat_reg_outValue1_ap_vld <= '1';
-                elsif (ar_hs = '1' and raddr = ADDR_STAT_REG_OUTVALUE1_CTRL) then
-                    int_stat_reg_outValue1_ap_vld <= '0'; -- clear on read
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
                 int_empty_pirq_outValue <= (others => '0');
             elsif (ACLK_EN = '1') then
                 if (empty_pirq_outValue_ap_vld = '1') then
@@ -566,6 +538,34 @@ begin
                     int_ctrl_reg_outValue_ap_vld <= '1';
                 elsif (ar_hs = '1' and raddr = ADDR_CTRL_REG_OUTVALUE_CTRL) then
                     int_ctrl_reg_outValue_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_stat_reg_outValue1 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (stat_reg_outValue1_ap_vld = '1') then
+                    int_stat_reg_outValue1 <= UNSIGNED(stat_reg_outValue1); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_stat_reg_outValue1_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (stat_reg_outValue1_ap_vld = '1') then
+                    int_stat_reg_outValue1_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_STAT_REG_OUTVALUE1_CTRL) then
+                    int_stat_reg_outValue1_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;

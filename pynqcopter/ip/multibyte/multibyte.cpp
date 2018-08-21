@@ -205,28 +205,6 @@ void multibyte(volatile int iic[4096],
 		}
 	}
 	
-	trimVal1 = trimmingData[0];
-	trimVal2 = trimmingData[1];
-	trimVal3 = trimmingData[2];
-	trimVal4 = trimmingData[3];
-	trimVal5 = trimmingData[4];
-	trimVal6 = trimmingData[5];
-	trimVal23 = trimmingData[22];
-	trimVal24 = trimmingData[23];
-	
-	dig_T1 = ((trimmingData[1]) << 8 | (trimmingData[0]));
-	/*dig_T2 = trimmingData[3] << 8 | trimmingData[2];
-	dig_T3 = trimmingData[5] << 8 | trimmingData[4];
-	dig_P1 = trimmingData[7] << 8 | trimmingData[6];
-	dig_P2 = trimmingData[9] << 8 | trimmingData[8];
-	dig_P3 = trimmingData[11] << 8 | trimmingData[10];
-	dig_P4 = trimmingData[13] << 8 | trimmingData[12];
-	dig_P5 = trimmingData[15] << 8 | trimmingData[14];
-	dig_P6 = trimmingData[17] << 8 | trimmingData[16];
-	dig_P7 = trimmingData[19] << 8 | trimmingData[18];
-	dig_P8 = trimmingData[21] << 8 | trimmingData[20];*/
-	dig_P9 = ((trimmingData[23]) << 8 | (trimmingData[22]));
-	
 	delay_until_ms<10>();
 
 	if(state == 10)
@@ -236,7 +214,7 @@ void multibyte(volatile int iic[4096],
 		iic[IIC_INDEX + TX_FIFO] = 0xF7; //pressure msb to temperature xlsb
 		iic[IIC_INDEX + TX_FIFO] = 0x1ED;
 		iic[IIC_INDEX + TX_FIFO] = 0x206; //read 6 bytes
-		//delay_until_ms<10>(); //sample rate
+		delay_until_ms<10>(); //sample rate
 		
 		stateDataReads = 10;
 		//READ RECIEVED DATA
@@ -247,7 +225,7 @@ void multibyte(volatile int iic[4096],
 	} 
 	else 
 	{
-		//delay_until_ms<10>(); //sample rate 
+		delay_until_ms<10>(); //sample rate 
 		stateDataReads = 1;  //check if it enters "else" first time around
 		//READ RECIEVED DATA
 		for (int index = 0; index < 6; index++) 

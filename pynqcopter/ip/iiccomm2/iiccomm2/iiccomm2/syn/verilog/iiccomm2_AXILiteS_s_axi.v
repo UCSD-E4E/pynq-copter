@@ -38,14 +38,14 @@ module iiccomm2_AXILiteS_s_axi
     input  wire                          ap_done,
     input  wire                          ap_ready,
     input  wire                          ap_idle,
-    input  wire [31:0]                   stat_reg_outValue1,
-    input  wire                          stat_reg_outValue1_ap_vld,
     input  wire [31:0]                   empty_pirq_outValue,
     input  wire                          empty_pirq_outValue_ap_vld,
     input  wire [31:0]                   full_pirq_outValue,
     input  wire                          full_pirq_outValue_ap_vld,
     input  wire [31:0]                   ctrl_reg_outValue,
     input  wire                          ctrl_reg_outValue_ap_vld,
+    input  wire [31:0]                   stat_reg_outValue1,
+    input  wire                          stat_reg_outValue1_ap_vld,
     input  wire [31:0]                   pressure_msb,
     input  wire                          pressure_msb_ap_vld,
     input  wire [31:0]                   pressure_lsb,
@@ -72,25 +72,25 @@ module iiccomm2_AXILiteS_s_axi
 //        bit 0  - Channel 0 (ap_done)
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
-// 0x10 : Data signal of stat_reg_outValue1
-//        bit 31~0 - stat_reg_outValue1[31:0] (Read)
-// 0x14 : Control signal of stat_reg_outValue1
-//        bit 0  - stat_reg_outValue1_ap_vld (Read/COR)
-//        others - reserved
-// 0x18 : Data signal of empty_pirq_outValue
+// 0x10 : Data signal of empty_pirq_outValue
 //        bit 31~0 - empty_pirq_outValue[31:0] (Read)
-// 0x1c : Control signal of empty_pirq_outValue
+// 0x14 : Control signal of empty_pirq_outValue
 //        bit 0  - empty_pirq_outValue_ap_vld (Read/COR)
 //        others - reserved
-// 0x20 : Data signal of full_pirq_outValue
+// 0x18 : Data signal of full_pirq_outValue
 //        bit 31~0 - full_pirq_outValue[31:0] (Read)
-// 0x24 : Control signal of full_pirq_outValue
+// 0x1c : Control signal of full_pirq_outValue
 //        bit 0  - full_pirq_outValue_ap_vld (Read/COR)
 //        others - reserved
-// 0x28 : Data signal of ctrl_reg_outValue
+// 0x20 : Data signal of ctrl_reg_outValue
 //        bit 31~0 - ctrl_reg_outValue[31:0] (Read)
-// 0x2c : Control signal of ctrl_reg_outValue
+// 0x24 : Control signal of ctrl_reg_outValue
 //        bit 0  - ctrl_reg_outValue_ap_vld (Read/COR)
+//        others - reserved
+// 0x28 : Data signal of stat_reg_outValue1
+//        bit 31~0 - stat_reg_outValue1[31:0] (Read)
+// 0x2c : Control signal of stat_reg_outValue1
+//        bit 0  - stat_reg_outValue1_ap_vld (Read/COR)
 //        others - reserved
 // 0x30 : Data signal of pressure_msb
 //        bit 31~0 - pressure_msb[31:0] (Read)
@@ -115,14 +115,14 @@ localparam
     ADDR_GIE                        = 7'h04,
     ADDR_IER                        = 7'h08,
     ADDR_ISR                        = 7'h0c,
-    ADDR_STAT_REG_OUTVALUE1_DATA_0  = 7'h10,
-    ADDR_STAT_REG_OUTVALUE1_CTRL    = 7'h14,
-    ADDR_EMPTY_PIRQ_OUTVALUE_DATA_0 = 7'h18,
-    ADDR_EMPTY_PIRQ_OUTVALUE_CTRL   = 7'h1c,
-    ADDR_FULL_PIRQ_OUTVALUE_DATA_0  = 7'h20,
-    ADDR_FULL_PIRQ_OUTVALUE_CTRL    = 7'h24,
-    ADDR_CTRL_REG_OUTVALUE_DATA_0   = 7'h28,
-    ADDR_CTRL_REG_OUTVALUE_CTRL     = 7'h2c,
+    ADDR_EMPTY_PIRQ_OUTVALUE_DATA_0 = 7'h10,
+    ADDR_EMPTY_PIRQ_OUTVALUE_CTRL   = 7'h14,
+    ADDR_FULL_PIRQ_OUTVALUE_DATA_0  = 7'h18,
+    ADDR_FULL_PIRQ_OUTVALUE_CTRL    = 7'h1c,
+    ADDR_CTRL_REG_OUTVALUE_DATA_0   = 7'h20,
+    ADDR_CTRL_REG_OUTVALUE_CTRL     = 7'h24,
+    ADDR_STAT_REG_OUTVALUE1_DATA_0  = 7'h28,
+    ADDR_STAT_REG_OUTVALUE1_CTRL    = 7'h2c,
     ADDR_PRESSURE_MSB_DATA_0        = 7'h30,
     ADDR_PRESSURE_MSB_CTRL          = 7'h34,
     ADDR_PRESSURE_LSB_DATA_0        = 7'h38,
@@ -159,14 +159,14 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
-    reg  [31:0]                   int_stat_reg_outValue1 = 'b0;
-    reg                           int_stat_reg_outValue1_ap_vld;
     reg  [31:0]                   int_empty_pirq_outValue = 'b0;
     reg                           int_empty_pirq_outValue_ap_vld;
     reg  [31:0]                   int_full_pirq_outValue = 'b0;
     reg                           int_full_pirq_outValue_ap_vld;
     reg  [31:0]                   int_ctrl_reg_outValue = 'b0;
     reg                           int_ctrl_reg_outValue_ap_vld;
+    reg  [31:0]                   int_stat_reg_outValue1 = 'b0;
+    reg                           int_stat_reg_outValue1_ap_vld;
     reg  [31:0]                   int_pressure_msb = 'b0;
     reg                           int_pressure_msb_ap_vld;
     reg  [31:0]                   int_pressure_lsb = 'b0;
@@ -280,12 +280,6 @@ always @(posedge ACLK) begin
                 ADDR_ISR: begin
                     rdata <= int_isr;
                 end
-                ADDR_STAT_REG_OUTVALUE1_DATA_0: begin
-                    rdata <= int_stat_reg_outValue1[31:0];
-                end
-                ADDR_STAT_REG_OUTVALUE1_CTRL: begin
-                    rdata[0] <= int_stat_reg_outValue1_ap_vld;
-                end
                 ADDR_EMPTY_PIRQ_OUTVALUE_DATA_0: begin
                     rdata <= int_empty_pirq_outValue[31:0];
                 end
@@ -303,6 +297,12 @@ always @(posedge ACLK) begin
                 end
                 ADDR_CTRL_REG_OUTVALUE_CTRL: begin
                     rdata[0] <= int_ctrl_reg_outValue_ap_vld;
+                end
+                ADDR_STAT_REG_OUTVALUE1_DATA_0: begin
+                    rdata <= int_stat_reg_outValue1[31:0];
+                end
+                ADDR_STAT_REG_OUTVALUE1_CTRL: begin
+                    rdata[0] <= int_stat_reg_outValue1_ap_vld;
                 end
                 ADDR_PRESSURE_MSB_DATA_0: begin
                     rdata <= int_pressure_msb[31:0];
@@ -427,28 +427,6 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_stat_reg_outValue1
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_stat_reg_outValue1 <= 0;
-    else if (ACLK_EN) begin
-        if (stat_reg_outValue1_ap_vld)
-            int_stat_reg_outValue1 <= stat_reg_outValue1;
-    end
-end
-
-// int_stat_reg_outValue1_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_stat_reg_outValue1_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (stat_reg_outValue1_ap_vld)
-            int_stat_reg_outValue1_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_STAT_REG_OUTVALUE1_CTRL)
-            int_stat_reg_outValue1_ap_vld <= 1'b0; // clear on read
-    end
-end
-
 // int_empty_pirq_outValue
 always @(posedge ACLK) begin
     if (ARESET)
@@ -512,6 +490,28 @@ always @(posedge ACLK) begin
             int_ctrl_reg_outValue_ap_vld <= 1'b1;
         else if (ar_hs && raddr == ADDR_CTRL_REG_OUTVALUE_CTRL)
             int_ctrl_reg_outValue_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_stat_reg_outValue1
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_stat_reg_outValue1 <= 0;
+    else if (ACLK_EN) begin
+        if (stat_reg_outValue1_ap_vld)
+            int_stat_reg_outValue1 <= stat_reg_outValue1;
+    end
+end
+
+// int_stat_reg_outValue1_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_stat_reg_outValue1_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (stat_reg_outValue1_ap_vld)
+            int_stat_reg_outValue1_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_STAT_REG_OUTVALUE1_CTRL)
+            int_stat_reg_outValue1_ap_vld <= 1'b0; // clear on read
     end
 end
 

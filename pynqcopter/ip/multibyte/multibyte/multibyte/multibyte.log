@@ -5,8 +5,8 @@ Copyright (C) 1986-2017 Xilinx, Inc. All Rights Reserved.
 
 ==============================================================
 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 INFO: [SIM 211-1] CSim done with 0 errors.
@@ -14,25 +14,24 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'multibyte.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:13 ; elapsed = 00:00:26 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 54932 ; free virtual = 444013
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:14 ; elapsed = 00:00:28 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 54958 ; free virtual = 444039
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:58 ; elapsed = 00:00:26 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 111471 ; free virtual = 501897
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:00 ; elapsed = 00:00:28 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 111480 ; free virtual = 501908
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyte' (multibyte.cpp:177).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyte' (multibyte.cpp:161).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyte' (multibyte.cpp:155).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyte' (multibyte.cpp:149).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyte' (multibyte.cpp:142).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<1750ull, 100000000ull>' into 'multibyte' (multibyte.cpp:171).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 100000000ull>' into 'multibyte' (multibyte.cpp:254).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 100000000ull>' into 'multibyte' (multibyte.cpp:243).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 100000000ull>' into 'multibyte' (multibyte.cpp:234).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 100000000ull>' into 'multibyte' (multibyte.cpp:192).
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:16 ; elapsed = 00:00:29 . Memory (MB): peak = 360.223 ; gain = 13.656 ; free physical = 55284 ; free virtual = 444364
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyte' (multibyte.cpp:173).
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyte' (multibyte.cpp:157).
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyte' (multibyte.cpp:151).
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyte' (multibyte.cpp:145).
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 100000000ull>' into 'multibyte' (multibyte.cpp:138).
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<1750ull, 100000000ull>' into 'multibyte' (multibyte.cpp:167).
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 100000000ull>' into 'multibyte' (multibyte.cpp:228).
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 100000000ull>' into 'multibyte' (multibyte.cpp:217).
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 100000000ull>' into 'multibyte' (multibyte.cpp:208).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:01 ; elapsed = 00:00:29 . Memory (MB): peak = 360.219 ; gain = 13.656 ; free physical = 111451 ; free virtual = 501881
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:16 ; elapsed = 00:00:30 . Memory (MB): peak = 360.223 ; gain = 13.656 ; free physical = 55282 ; free virtual = 444363
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:17 ; elapsed = 00:00:31 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 55262 ; free virtual = 444342
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:01 ; elapsed = 00:00:29 . Memory (MB): peak = 360.219 ; gain = 13.656 ; free physical = 111464 ; free virtual = 501894
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:02 ; elapsed = 00:00:30 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 111436 ; free virtual = 501870
 WARNING: [XFORM 203-803] Cannot bundle argument 'iic' to m_axi port 'CTRL' since its offset mode is off.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:18 ; elapsed = 00:00:32 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 55234 ; free virtual = 444314
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:03 ; elapsed = 00:00:31 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 111431 ; free virtual = 501865
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'multibyte' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -40,13 +39,13 @@ INFO: [HLS 200-42] -- Implementing module 'multibyte'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 31.93 seconds; current allocated memory: 85.538 MB.
+INFO: [HLS 200-111]  Elapsed time: 31.04 seconds; current allocated memory: 84.082 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.26 seconds; current allocated memory: 87.345 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 85.549 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'multibyte'
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -60,60 +59,28 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/temperature_xlsb
 INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/stateSetUp' to 's_axilite & ap_vld'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/state' to 's_axilite & ap_vld'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/stateDataReads' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_T1' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_T2' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_T3' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_P1' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_P2' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_P3' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_P4' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_P5' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_P6' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_P7' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_P8' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_P9' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_T1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/dig_P9' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/pressureRaw' to 's_axilite & ap_vld'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/temperatureRaw' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal1' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal2' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal3' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal4' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal5' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal6' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal23' to 's_axilite & ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal24' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal4' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal5' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal6' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal23' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'multibyte/trimVal24' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'multibyte' to 's_axilite & ap_ctrl_hs'.
 WARNING: [RTGEN 206-101] Register 'firstSample' is power-on initialization.
 INFO: [RTGEN 206-100] Bundling port 'return', 'pressure_lsb', 'pressure_xlsb', 'temperature_msb', 'temperature_lsb', 'temperature_xlsb', 'stateSetUp', 'state', 'stateDataReads', 'dig_T1', 'dig_P9', 'pressureRaw', 'temperatureRaw', 'trimVal1', 'trimVal2', 'trimVal3', 'trimVal4', 'trimVal5', 'trimVal6', 'trimVal23' and 'trimVal24' to AXI-Lite port CTRL.
-INFO: [SYN 201-210] Renamed object name 'multibyte_trimmingData' to 'multibyte_trimminbkb' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'multibyte_sensorData' to 'multibyte_sensorDcud' due to the length limit 20
-WARNING: [RTGEN 206-101] Port 'multibyte/dig_T2' has no fanin or fanout and is left dangling.
-               Please use C simulation to confirm this function argument can be read from or written to.
-WARNING: [RTGEN 206-101] Port 'multibyte/dig_T3' has no fanin or fanout and is left dangling.
-               Please use C simulation to confirm this function argument can be read from or written to.
-WARNING: [RTGEN 206-101] Port 'multibyte/dig_P1' has no fanin or fanout and is left dangling.
-               Please use C simulation to confirm this function argument can be read from or written to.
-WARNING: [RTGEN 206-101] Port 'multibyte/dig_P2' has no fanin or fanout and is left dangling.
-               Please use C simulation to confirm this function argument can be read from or written to.
-WARNING: [RTGEN 206-101] Port 'multibyte/dig_P3' has no fanin or fanout and is left dangling.
-               Please use C simulation to confirm this function argument can be read from or written to.
-WARNING: [RTGEN 206-101] Port 'multibyte/dig_P4' has no fanin or fanout and is left dangling.
-               Please use C simulation to confirm this function argument can be read from or written to.
-WARNING: [RTGEN 206-101] Port 'multibyte/dig_P5' has no fanin or fanout and is left dangling.
-               Please use C simulation to confirm this function argument can be read from or written to.
-WARNING: [RTGEN 206-101] Port 'multibyte/dig_P6' has no fanin or fanout and is left dangling.
-               Please use C simulation to confirm this function argument can be read from or written to.
-WARNING: [RTGEN 206-101] Port 'multibyte/dig_P7' has no fanin or fanout and is left dangling.
-               Please use C simulation to confirm this function argument can be read from or written to.
-WARNING: [RTGEN 206-101] Port 'multibyte/dig_P8' has no fanin or fanout and is left dangling.
-               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [SYN 201-210] Renamed object name 'multibyte_sensorData' to 'multibyte_sensorDbkb' due to the length limit 20
 INFO: [RTGEN 206-100] Finished creating RTL model for 'multibyte'.
-INFO: [HLS 200-111]  Elapsed time: 0.5 seconds; current allocated memory: 90.635 MB.
-INFO: [RTMG 210-278] Implementing memory 'multibyte_trimminbkb_ram (RAM)' using block RAMs.
-INFO: [RTMG 210-278] Implementing memory 'multibyte_sensorDcud_ram (RAM)' using block RAMs.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:20 ; elapsed = 00:00:35 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 55210 ; free virtual = 444290
+INFO: [HLS 200-111]  Elapsed time: 0.34 seconds; current allocated memory: 88.400 MB.
+INFO: [RTMG 210-278] Implementing memory 'multibyte_sensorDbkb_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:05 ; elapsed = 00:00:33 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 111394 ; free virtual = 501836
 INFO: [SYSC 207-301] Generating SystemC RTL for multibyte.
 INFO: [VHDL 208-304] Generating VHDL RTL for multibyte.
 INFO: [VLOG 209-307] Generating Verilog RTL for multibyte.
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-INFO: [HLS 200-112] Total elapsed time: 88.2 seconds; peak allocated memory: 90.635 MB.
+INFO: [HLS 200-112] Total elapsed time: 71.34 seconds; peak allocated memory: 88.400 MB.

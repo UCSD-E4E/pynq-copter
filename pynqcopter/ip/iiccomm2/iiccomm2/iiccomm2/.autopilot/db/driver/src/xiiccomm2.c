@@ -76,26 +76,6 @@ void XIiccomm2_DisableAutoRestart(XIiccomm2 *InstancePtr) {
     XIiccomm2_WriteReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_AP_CTRL, 0);
 }
 
-u32 XIiccomm2_Get_stat_reg_outValue1(XIiccomm2 *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_STAT_REG_OUTVALUE1_DATA);
-    return Data;
-}
-
-u32 XIiccomm2_Get_stat_reg_outValue1_vld(XIiccomm2 *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_STAT_REG_OUTVALUE1_CTRL);
-    return Data & 0x1;
-}
-
 u32 XIiccomm2_Get_empty_pirq_outValue(XIiccomm2 *InstancePtr) {
     u32 Data;
 
@@ -153,6 +133,26 @@ u32 XIiccomm2_Get_ctrl_reg_outValue_vld(XIiccomm2 *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_CTRL_REG_OUTVALUE_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2_Get_stat_reg_outValue1(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_STAT_REG_OUTVALUE1_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_stat_reg_outValue1_vld(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_STAT_REG_OUTVALUE1_CTRL);
     return Data & 0x1;
 }
 

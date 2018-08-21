@@ -2,89 +2,7 @@
 
 # Memory (RAM/ROM)  definition:
 set ID 1
-set MemName multibyte_trimminbkb
-set CoreName ap_simcore_mem
-set PortList { 2 2 }
-set DataWd 16
-set AddrRange 24
-set AddrWd 5
-set impl_style block
-set TrueReset 0
-set HasInitializer 0
-set IsROM 0
-set ROMData {}
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.322
-set ClkPeriod 4
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 2 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    style ${impl_style} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName RAM
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RAM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_RAM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 2 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    style ${impl_style} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_RAM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 2
-set MemName multibyte_sensorDcud
+set MemName multibyte_sensorDbkb
 set CoreName ap_simcore_mem
 set PortList { 2 2 }
 set DataWd 32
@@ -249,18 +167,18 @@ stateDataReads {
 	offset_end 87
 }
 dig_T1 { 
-	dir O
+	dir I
 	width 32
 	depth 1
-	mode ap_vld
+	mode ap_none
 	offset 88
 	offset_end 95
 }
 dig_P9 { 
-	dir O
+	dir I
 	width 32
 	depth 1
-	mode ap_vld
+	mode ap_none
 	offset 96
 	offset_end 103
 }
@@ -281,66 +199,66 @@ temperatureRaw {
 	offset_end 119
 }
 trimVal1 { 
-	dir O
+	dir I
 	width 32
 	depth 1
-	mode ap_vld
+	mode ap_none
 	offset 120
 	offset_end 127
 }
 trimVal2 { 
-	dir O
+	dir I
 	width 32
 	depth 1
-	mode ap_vld
+	mode ap_none
 	offset 128
 	offset_end 135
 }
 trimVal3 { 
-	dir O
+	dir I
 	width 32
 	depth 1
-	mode ap_vld
+	mode ap_none
 	offset 136
 	offset_end 143
 }
 trimVal4 { 
-	dir O
+	dir I
 	width 32
 	depth 1
-	mode ap_vld
+	mode ap_none
 	offset 144
 	offset_end 151
 }
 trimVal5 { 
-	dir O
+	dir I
 	width 32
 	depth 1
-	mode ap_vld
+	mode ap_none
 	offset 152
 	offset_end 159
 }
 trimVal6 { 
-	dir O
+	dir I
 	width 32
 	depth 1
-	mode ap_vld
+	mode ap_none
 	offset 160
 	offset_end 167
 }
 trimVal23 { 
-	dir O
+	dir I
 	width 32
 	depth 1
-	mode ap_vld
+	mode ap_none
 	offset 168
 	offset_end 175
 }
 trimVal24 { 
-	dir O
+	dir I
 	width 32
 	depth 1
-	mode ap_vld
+	mode ap_none
 	offset 176
 	offset_end 183
 }
@@ -351,7 +269,7 @@ trimVal24 {
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 3 \
+			id 2 \
 			corename multibyte_CTRL_axilite \
 			name multibyte_CTRL_s_axi \
 			ports {$port_CTRL} \
@@ -370,7 +288,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 4 \
+    id 3 \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 

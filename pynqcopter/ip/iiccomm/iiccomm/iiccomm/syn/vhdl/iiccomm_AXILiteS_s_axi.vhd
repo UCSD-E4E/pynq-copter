@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity iiccomm_AXILiteS_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 7;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 6;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     -- axi4 lite slave signals
@@ -49,12 +49,8 @@ port (
     full_pirq_outValue_ap_vld :in   STD_LOGIC;
     ctrl_reg_outValue     :in   STD_LOGIC_VECTOR(31 downto 0);
     ctrl_reg_outValue_ap_vld :in   STD_LOGIC;
-    pressure_msb          :in   STD_LOGIC_VECTOR(31 downto 0);
-    pressure_msb_ap_vld   :in   STD_LOGIC;
-    pressure_lsb          :in   STD_LOGIC_VECTOR(31 downto 0);
-    pressure_lsb_ap_vld   :in   STD_LOGIC;
-    pressure_xlsb         :in   STD_LOGIC_VECTOR(31 downto 0);
-    pressure_xlsb_ap_vld  :in   STD_LOGIC
+    rx_fifo_outValue      :in   STD_LOGIC_VECTOR(31 downto 0);
+    rx_fifo_outValue_ap_vld :in   STD_LOGIC
 );
 end entity iiccomm_AXILiteS_s_axi;
 
@@ -97,20 +93,10 @@ end entity iiccomm_AXILiteS_s_axi;
 -- 0x2c : Control signal of ctrl_reg_outValue
 --        bit 0  - ctrl_reg_outValue_ap_vld (Read/COR)
 --        others - reserved
--- 0x30 : Data signal of pressure_msb
---        bit 31~0 - pressure_msb[31:0] (Read)
--- 0x34 : Control signal of pressure_msb
---        bit 0  - pressure_msb_ap_vld (Read/COR)
---        others - reserved
--- 0x38 : Data signal of pressure_lsb
---        bit 31~0 - pressure_lsb[31:0] (Read)
--- 0x3c : Control signal of pressure_lsb
---        bit 0  - pressure_lsb_ap_vld (Read/COR)
---        others - reserved
--- 0x40 : Data signal of pressure_xlsb
---        bit 31~0 - pressure_xlsb[31:0] (Read)
--- 0x44 : Control signal of pressure_xlsb
---        bit 0  - pressure_xlsb_ap_vld (Read/COR)
+-- 0x30 : Data signal of rx_fifo_outValue
+--        bit 31~0 - rx_fifo_outValue[31:0] (Read)
+-- 0x34 : Control signal of rx_fifo_outValue
+--        bit 0  - rx_fifo_outValue_ap_vld (Read/COR)
 --        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -131,13 +117,9 @@ architecture behave of iiccomm_AXILiteS_s_axi is
     constant ADDR_FULL_PIRQ_OUTVALUE_CTRL    : INTEGER := 16#24#;
     constant ADDR_CTRL_REG_OUTVALUE_DATA_0   : INTEGER := 16#28#;
     constant ADDR_CTRL_REG_OUTVALUE_CTRL     : INTEGER := 16#2c#;
-    constant ADDR_PRESSURE_MSB_DATA_0        : INTEGER := 16#30#;
-    constant ADDR_PRESSURE_MSB_CTRL          : INTEGER := 16#34#;
-    constant ADDR_PRESSURE_LSB_DATA_0        : INTEGER := 16#38#;
-    constant ADDR_PRESSURE_LSB_CTRL          : INTEGER := 16#3c#;
-    constant ADDR_PRESSURE_XLSB_DATA_0       : INTEGER := 16#40#;
-    constant ADDR_PRESSURE_XLSB_CTRL         : INTEGER := 16#44#;
-    constant ADDR_BITS         : INTEGER := 7;
+    constant ADDR_RX_FIFO_OUTVALUE_DATA_0    : INTEGER := 16#30#;
+    constant ADDR_RX_FIFO_OUTVALUE_CTRL      : INTEGER := 16#34#;
+    constant ADDR_BITS         : INTEGER := 6;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(31 downto 0);
@@ -167,12 +149,8 @@ architecture behave of iiccomm_AXILiteS_s_axi is
     signal int_full_pirq_outValue_ap_vld : STD_LOGIC;
     signal int_ctrl_reg_outValue : UNSIGNED(31 downto 0) := (others => '0');
     signal int_ctrl_reg_outValue_ap_vld : STD_LOGIC;
-    signal int_pressure_msb    : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_pressure_msb_ap_vld : STD_LOGIC;
-    signal int_pressure_lsb    : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_pressure_lsb_ap_vld : STD_LOGIC;
-    signal int_pressure_xlsb   : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_pressure_xlsb_ap_vld : STD_LOGIC;
+    signal int_rx_fifo_outValue : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_rx_fifo_outValue_ap_vld : STD_LOGIC;
 
 
 begin
@@ -310,18 +288,10 @@ begin
                         rdata_data <= RESIZE(int_ctrl_reg_outValue(31 downto 0), 32);
                     when ADDR_CTRL_REG_OUTVALUE_CTRL =>
                         rdata_data <= (0 => int_ctrl_reg_outValue_ap_vld, others => '0');
-                    when ADDR_PRESSURE_MSB_DATA_0 =>
-                        rdata_data <= RESIZE(int_pressure_msb(31 downto 0), 32);
-                    when ADDR_PRESSURE_MSB_CTRL =>
-                        rdata_data <= (0 => int_pressure_msb_ap_vld, others => '0');
-                    when ADDR_PRESSURE_LSB_DATA_0 =>
-                        rdata_data <= RESIZE(int_pressure_lsb(31 downto 0), 32);
-                    when ADDR_PRESSURE_LSB_CTRL =>
-                        rdata_data <= (0 => int_pressure_lsb_ap_vld, others => '0');
-                    when ADDR_PRESSURE_XLSB_DATA_0 =>
-                        rdata_data <= RESIZE(int_pressure_xlsb(31 downto 0), 32);
-                    when ADDR_PRESSURE_XLSB_CTRL =>
-                        rdata_data <= (0 => int_pressure_xlsb_ap_vld, others => '0');
+                    when ADDR_RX_FIFO_OUTVALUE_DATA_0 =>
+                        rdata_data <= RESIZE(int_rx_fifo_outValue(31 downto 0), 32);
+                    when ADDR_RX_FIFO_OUTVALUE_CTRL =>
+                        rdata_data <= (0 => int_rx_fifo_outValue_ap_vld, others => '0');
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -575,10 +545,10 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_pressure_msb <= (others => '0');
+                int_rx_fifo_outValue <= (others => '0');
             elsif (ACLK_EN = '1') then
-                if (pressure_msb_ap_vld = '1') then
-                    int_pressure_msb <= UNSIGNED(pressure_msb); -- clear on read
+                if (rx_fifo_outValue_ap_vld = '1') then
+                    int_rx_fifo_outValue <= UNSIGNED(rx_fifo_outValue); -- clear on read
                 end if;
             end if;
         end if;
@@ -588,68 +558,12 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_pressure_msb_ap_vld <= '0';
+                int_rx_fifo_outValue_ap_vld <= '0';
             elsif (ACLK_EN = '1') then
-                if (pressure_msb_ap_vld = '1') then
-                    int_pressure_msb_ap_vld <= '1';
-                elsif (ar_hs = '1' and raddr = ADDR_PRESSURE_MSB_CTRL) then
-                    int_pressure_msb_ap_vld <= '0'; -- clear on read
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_pressure_lsb <= (others => '0');
-            elsif (ACLK_EN = '1') then
-                if (pressure_lsb_ap_vld = '1') then
-                    int_pressure_lsb <= UNSIGNED(pressure_lsb); -- clear on read
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_pressure_lsb_ap_vld <= '0';
-            elsif (ACLK_EN = '1') then
-                if (pressure_lsb_ap_vld = '1') then
-                    int_pressure_lsb_ap_vld <= '1';
-                elsif (ar_hs = '1' and raddr = ADDR_PRESSURE_LSB_CTRL) then
-                    int_pressure_lsb_ap_vld <= '0'; -- clear on read
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_pressure_xlsb <= (others => '0');
-            elsif (ACLK_EN = '1') then
-                if (pressure_xlsb_ap_vld = '1') then
-                    int_pressure_xlsb <= UNSIGNED(pressure_xlsb); -- clear on read
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                int_pressure_xlsb_ap_vld <= '0';
-            elsif (ACLK_EN = '1') then
-                if (pressure_xlsb_ap_vld = '1') then
-                    int_pressure_xlsb_ap_vld <= '1';
-                elsif (ar_hs = '1' and raddr = ADDR_PRESSURE_XLSB_CTRL) then
-                    int_pressure_xlsb_ap_vld <= '0'; -- clear on read
+                if (rx_fifo_outValue_ap_vld = '1') then
+                    int_rx_fifo_outValue_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_RX_FIFO_OUTVALUE_CTRL) then
+                    int_rx_fifo_outValue_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;

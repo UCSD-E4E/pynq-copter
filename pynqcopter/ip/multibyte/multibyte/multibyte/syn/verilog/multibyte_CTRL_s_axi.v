@@ -56,30 +56,20 @@ module multibyte_CTRL_s_axi
     input  wire                          state_ap_vld,
     input  wire [31:0]                   stateDataReads,
     input  wire                          stateDataReads_ap_vld,
-    input  wire [31:0]                   dig_T1,
-    input  wire                          dig_T1_ap_vld,
-    input  wire [31:0]                   dig_P9,
-    input  wire                          dig_P9_ap_vld,
+    output wire [31:0]                   dig_T1,
+    output wire [31:0]                   dig_P9,
     input  wire [31:0]                   pressureRaw,
     input  wire                          pressureRaw_ap_vld,
     input  wire [31:0]                   temperatureRaw,
     input  wire                          temperatureRaw_ap_vld,
-    input  wire [31:0]                   trimVal1,
-    input  wire                          trimVal1_ap_vld,
-    input  wire [31:0]                   trimVal2,
-    input  wire                          trimVal2_ap_vld,
-    input  wire [31:0]                   trimVal3,
-    input  wire                          trimVal3_ap_vld,
-    input  wire [31:0]                   trimVal4,
-    input  wire                          trimVal4_ap_vld,
-    input  wire [31:0]                   trimVal5,
-    input  wire                          trimVal5_ap_vld,
-    input  wire [31:0]                   trimVal6,
-    input  wire                          trimVal6_ap_vld,
-    input  wire [31:0]                   trimVal23,
-    input  wire                          trimVal23_ap_vld,
-    input  wire [31:0]                   trimVal24,
-    input  wire                          trimVal24_ap_vld
+    output wire [31:0]                   trimVal1,
+    output wire [31:0]                   trimVal2,
+    output wire [31:0]                   trimVal3,
+    output wire [31:0]                   trimVal4,
+    output wire [31:0]                   trimVal5,
+    output wire [31:0]                   trimVal6,
+    output wire [31:0]                   trimVal23,
+    output wire [31:0]                   trimVal24
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -146,15 +136,11 @@ module multibyte_CTRL_s_axi
 //        bit 0  - stateDataReads_ap_vld (Read/COR)
 //        others - reserved
 // 0x58 : Data signal of dig_T1
-//        bit 31~0 - dig_T1[31:0] (Read)
-// 0x5c : Control signal of dig_T1
-//        bit 0  - dig_T1_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - dig_T1[31:0] (Read/Write)
+// 0x5c : reserved
 // 0x60 : Data signal of dig_P9
-//        bit 31~0 - dig_P9[31:0] (Read)
-// 0x64 : Control signal of dig_P9
-//        bit 0  - dig_P9_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - dig_P9[31:0] (Read/Write)
+// 0x64 : reserved
 // 0x68 : Data signal of pressureRaw
 //        bit 31~0 - pressureRaw[31:0] (Read)
 // 0x6c : Control signal of pressureRaw
@@ -166,45 +152,29 @@ module multibyte_CTRL_s_axi
 //        bit 0  - temperatureRaw_ap_vld (Read/COR)
 //        others - reserved
 // 0x78 : Data signal of trimVal1
-//        bit 31~0 - trimVal1[31:0] (Read)
-// 0x7c : Control signal of trimVal1
-//        bit 0  - trimVal1_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal1[31:0] (Read/Write)
+// 0x7c : reserved
 // 0x80 : Data signal of trimVal2
-//        bit 31~0 - trimVal2[31:0] (Read)
-// 0x84 : Control signal of trimVal2
-//        bit 0  - trimVal2_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal2[31:0] (Read/Write)
+// 0x84 : reserved
 // 0x88 : Data signal of trimVal3
-//        bit 31~0 - trimVal3[31:0] (Read)
-// 0x8c : Control signal of trimVal3
-//        bit 0  - trimVal3_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal3[31:0] (Read/Write)
+// 0x8c : reserved
 // 0x90 : Data signal of trimVal4
-//        bit 31~0 - trimVal4[31:0] (Read)
-// 0x94 : Control signal of trimVal4
-//        bit 0  - trimVal4_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal4[31:0] (Read/Write)
+// 0x94 : reserved
 // 0x98 : Data signal of trimVal5
-//        bit 31~0 - trimVal5[31:0] (Read)
-// 0x9c : Control signal of trimVal5
-//        bit 0  - trimVal5_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal5[31:0] (Read/Write)
+// 0x9c : reserved
 // 0xa0 : Data signal of trimVal6
-//        bit 31~0 - trimVal6[31:0] (Read)
-// 0xa4 : Control signal of trimVal6
-//        bit 0  - trimVal6_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal6[31:0] (Read/Write)
+// 0xa4 : reserved
 // 0xa8 : Data signal of trimVal23
-//        bit 31~0 - trimVal23[31:0] (Read)
-// 0xac : Control signal of trimVal23
-//        bit 0  - trimVal23_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal23[31:0] (Read/Write)
+// 0xac : reserved
 // 0xb0 : Data signal of trimVal24
-//        bit 31~0 - trimVal24[31:0] (Read)
-// 0xb4 : Control signal of trimVal24
-//        bit 0  - trimVal24_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal24[31:0] (Read/Write)
+// 0xb4 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
@@ -304,29 +274,19 @@ localparam
     reg  [31:0]                   int_stateDataReads = 'b0;
     reg                           int_stateDataReads_ap_vld;
     reg  [31:0]                   int_dig_T1 = 'b0;
-    reg                           int_dig_T1_ap_vld;
     reg  [31:0]                   int_dig_P9 = 'b0;
-    reg                           int_dig_P9_ap_vld;
     reg  [31:0]                   int_pressureRaw = 'b0;
     reg                           int_pressureRaw_ap_vld;
     reg  [31:0]                   int_temperatureRaw = 'b0;
     reg                           int_temperatureRaw_ap_vld;
     reg  [31:0]                   int_trimVal1 = 'b0;
-    reg                           int_trimVal1_ap_vld;
     reg  [31:0]                   int_trimVal2 = 'b0;
-    reg                           int_trimVal2_ap_vld;
     reg  [31:0]                   int_trimVal3 = 'b0;
-    reg                           int_trimVal3_ap_vld;
     reg  [31:0]                   int_trimVal4 = 'b0;
-    reg                           int_trimVal4_ap_vld;
     reg  [31:0]                   int_trimVal5 = 'b0;
-    reg                           int_trimVal5_ap_vld;
     reg  [31:0]                   int_trimVal6 = 'b0;
-    reg                           int_trimVal6_ap_vld;
     reg  [31:0]                   int_trimVal23 = 'b0;
-    reg                           int_trimVal23_ap_vld;
     reg  [31:0]                   int_trimVal24 = 'b0;
-    reg                           int_trimVal24_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -491,14 +451,8 @@ always @(posedge ACLK) begin
                 ADDR_DIG_T1_DATA_0: begin
                     rdata <= int_dig_T1[31:0];
                 end
-                ADDR_DIG_T1_CTRL: begin
-                    rdata[0] <= int_dig_T1_ap_vld;
-                end
                 ADDR_DIG_P9_DATA_0: begin
                     rdata <= int_dig_P9[31:0];
-                end
-                ADDR_DIG_P9_CTRL: begin
-                    rdata[0] <= int_dig_P9_ap_vld;
                 end
                 ADDR_PRESSURERAW_DATA_0: begin
                     rdata <= int_pressureRaw[31:0];
@@ -515,50 +469,26 @@ always @(posedge ACLK) begin
                 ADDR_TRIMVAL1_DATA_0: begin
                     rdata <= int_trimVal1[31:0];
                 end
-                ADDR_TRIMVAL1_CTRL: begin
-                    rdata[0] <= int_trimVal1_ap_vld;
-                end
                 ADDR_TRIMVAL2_DATA_0: begin
                     rdata <= int_trimVal2[31:0];
-                end
-                ADDR_TRIMVAL2_CTRL: begin
-                    rdata[0] <= int_trimVal2_ap_vld;
                 end
                 ADDR_TRIMVAL3_DATA_0: begin
                     rdata <= int_trimVal3[31:0];
                 end
-                ADDR_TRIMVAL3_CTRL: begin
-                    rdata[0] <= int_trimVal3_ap_vld;
-                end
                 ADDR_TRIMVAL4_DATA_0: begin
                     rdata <= int_trimVal4[31:0];
-                end
-                ADDR_TRIMVAL4_CTRL: begin
-                    rdata[0] <= int_trimVal4_ap_vld;
                 end
                 ADDR_TRIMVAL5_DATA_0: begin
                     rdata <= int_trimVal5[31:0];
                 end
-                ADDR_TRIMVAL5_CTRL: begin
-                    rdata[0] <= int_trimVal5_ap_vld;
-                end
                 ADDR_TRIMVAL6_DATA_0: begin
                     rdata <= int_trimVal6[31:0];
-                end
-                ADDR_TRIMVAL6_CTRL: begin
-                    rdata[0] <= int_trimVal6_ap_vld;
                 end
                 ADDR_TRIMVAL23_DATA_0: begin
                     rdata <= int_trimVal23[31:0];
                 end
-                ADDR_TRIMVAL23_CTRL: begin
-                    rdata[0] <= int_trimVal23_ap_vld;
-                end
                 ADDR_TRIMVAL24_DATA_0: begin
                     rdata <= int_trimVal24[31:0];
-                end
-                ADDR_TRIMVAL24_CTRL: begin
-                    rdata[0] <= int_trimVal24_ap_vld;
                 end
             endcase
         end
@@ -569,6 +499,16 @@ end
 //------------------------Register logic-----------------
 assign interrupt = int_gie & (|int_isr);
 assign ap_start  = int_ap_start;
+assign dig_T1    = int_dig_T1;
+assign dig_P9    = int_dig_P9;
+assign trimVal1  = int_trimVal1;
+assign trimVal2  = int_trimVal2;
+assign trimVal3  = int_trimVal3;
+assign trimVal4  = int_trimVal4;
+assign trimVal5  = int_trimVal5;
+assign trimVal6  = int_trimVal6;
+assign trimVal23 = int_trimVal23;
+assign trimVal24 = int_trimVal24;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -863,47 +803,23 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_dig_T1
+// int_dig_T1[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_dig_T1 <= 0;
+        int_dig_T1[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (dig_T1_ap_vld)
-            int_dig_T1 <= dig_T1;
+        if (w_hs && waddr == ADDR_DIG_T1_DATA_0)
+            int_dig_T1[31:0] <= (WDATA[31:0] & wmask) | (int_dig_T1[31:0] & ~wmask);
     end
 end
 
-// int_dig_T1_ap_vld
+// int_dig_P9[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_dig_T1_ap_vld <= 1'b0;
+        int_dig_P9[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (dig_T1_ap_vld)
-            int_dig_T1_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_DIG_T1_CTRL)
-            int_dig_T1_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_dig_P9
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P9 <= 0;
-    else if (ACLK_EN) begin
-        if (dig_P9_ap_vld)
-            int_dig_P9 <= dig_P9;
-    end
-end
-
-// int_dig_P9_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_dig_P9_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (dig_P9_ap_vld)
-            int_dig_P9_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_DIG_P9_CTRL)
-            int_dig_P9_ap_vld <= 1'b0; // clear on read
+        if (w_hs && waddr == ADDR_DIG_P9_DATA_0)
+            int_dig_P9[31:0] <= (WDATA[31:0] & wmask) | (int_dig_P9[31:0] & ~wmask);
     end
 end
 
@@ -951,179 +867,83 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_trimVal1
+// int_trimVal1[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_trimVal1 <= 0;
+        int_trimVal1[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (trimVal1_ap_vld)
-            int_trimVal1 <= trimVal1;
+        if (w_hs && waddr == ADDR_TRIMVAL1_DATA_0)
+            int_trimVal1[31:0] <= (WDATA[31:0] & wmask) | (int_trimVal1[31:0] & ~wmask);
     end
 end
 
-// int_trimVal1_ap_vld
+// int_trimVal2[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_trimVal1_ap_vld <= 1'b0;
+        int_trimVal2[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (trimVal1_ap_vld)
-            int_trimVal1_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_TRIMVAL1_CTRL)
-            int_trimVal1_ap_vld <= 1'b0; // clear on read
+        if (w_hs && waddr == ADDR_TRIMVAL2_DATA_0)
+            int_trimVal2[31:0] <= (WDATA[31:0] & wmask) | (int_trimVal2[31:0] & ~wmask);
     end
 end
 
-// int_trimVal2
+// int_trimVal3[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_trimVal2 <= 0;
+        int_trimVal3[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (trimVal2_ap_vld)
-            int_trimVal2 <= trimVal2;
+        if (w_hs && waddr == ADDR_TRIMVAL3_DATA_0)
+            int_trimVal3[31:0] <= (WDATA[31:0] & wmask) | (int_trimVal3[31:0] & ~wmask);
     end
 end
 
-// int_trimVal2_ap_vld
+// int_trimVal4[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_trimVal2_ap_vld <= 1'b0;
+        int_trimVal4[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (trimVal2_ap_vld)
-            int_trimVal2_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_TRIMVAL2_CTRL)
-            int_trimVal2_ap_vld <= 1'b0; // clear on read
+        if (w_hs && waddr == ADDR_TRIMVAL4_DATA_0)
+            int_trimVal4[31:0] <= (WDATA[31:0] & wmask) | (int_trimVal4[31:0] & ~wmask);
     end
 end
 
-// int_trimVal3
+// int_trimVal5[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_trimVal3 <= 0;
+        int_trimVal5[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (trimVal3_ap_vld)
-            int_trimVal3 <= trimVal3;
+        if (w_hs && waddr == ADDR_TRIMVAL5_DATA_0)
+            int_trimVal5[31:0] <= (WDATA[31:0] & wmask) | (int_trimVal5[31:0] & ~wmask);
     end
 end
 
-// int_trimVal3_ap_vld
+// int_trimVal6[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_trimVal3_ap_vld <= 1'b0;
+        int_trimVal6[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (trimVal3_ap_vld)
-            int_trimVal3_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_TRIMVAL3_CTRL)
-            int_trimVal3_ap_vld <= 1'b0; // clear on read
+        if (w_hs && waddr == ADDR_TRIMVAL6_DATA_0)
+            int_trimVal6[31:0] <= (WDATA[31:0] & wmask) | (int_trimVal6[31:0] & ~wmask);
     end
 end
 
-// int_trimVal4
+// int_trimVal23[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_trimVal4 <= 0;
+        int_trimVal23[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (trimVal4_ap_vld)
-            int_trimVal4 <= trimVal4;
+        if (w_hs && waddr == ADDR_TRIMVAL23_DATA_0)
+            int_trimVal23[31:0] <= (WDATA[31:0] & wmask) | (int_trimVal23[31:0] & ~wmask);
     end
 end
 
-// int_trimVal4_ap_vld
+// int_trimVal24[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_trimVal4_ap_vld <= 1'b0;
+        int_trimVal24[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (trimVal4_ap_vld)
-            int_trimVal4_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_TRIMVAL4_CTRL)
-            int_trimVal4_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_trimVal5
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_trimVal5 <= 0;
-    else if (ACLK_EN) begin
-        if (trimVal5_ap_vld)
-            int_trimVal5 <= trimVal5;
-    end
-end
-
-// int_trimVal5_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_trimVal5_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (trimVal5_ap_vld)
-            int_trimVal5_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_TRIMVAL5_CTRL)
-            int_trimVal5_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_trimVal6
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_trimVal6 <= 0;
-    else if (ACLK_EN) begin
-        if (trimVal6_ap_vld)
-            int_trimVal6 <= trimVal6;
-    end
-end
-
-// int_trimVal6_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_trimVal6_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (trimVal6_ap_vld)
-            int_trimVal6_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_TRIMVAL6_CTRL)
-            int_trimVal6_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_trimVal23
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_trimVal23 <= 0;
-    else if (ACLK_EN) begin
-        if (trimVal23_ap_vld)
-            int_trimVal23 <= trimVal23;
-    end
-end
-
-// int_trimVal23_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_trimVal23_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (trimVal23_ap_vld)
-            int_trimVal23_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_TRIMVAL23_CTRL)
-            int_trimVal23_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_trimVal24
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_trimVal24 <= 0;
-    else if (ACLK_EN) begin
-        if (trimVal24_ap_vld)
-            int_trimVal24 <= trimVal24;
-    end
-end
-
-// int_trimVal24_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_trimVal24_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (trimVal24_ap_vld)
-            int_trimVal24_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_TRIMVAL24_CTRL)
-            int_trimVal24_ap_vld <= 1'b0; // clear on read
+        if (w_hs && waddr == ADDR_TRIMVAL24_DATA_0)
+            int_trimVal24[31:0] <= (WDATA[31:0] & wmask) | (int_trimVal24[31:0] & ~wmask);
     end
 end
 

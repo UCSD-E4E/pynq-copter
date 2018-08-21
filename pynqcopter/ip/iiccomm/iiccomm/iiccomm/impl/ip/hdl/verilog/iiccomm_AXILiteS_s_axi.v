@@ -8,7 +8,7 @@
 `timescale 1ns/1ps
 module iiccomm_AXILiteS_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 7,
+    C_S_AXI_ADDR_WIDTH = 6,
     C_S_AXI_DATA_WIDTH = 32
 )(
     // axi4 lite slave signals
@@ -46,12 +46,8 @@ module iiccomm_AXILiteS_s_axi
     input  wire                          full_pirq_outValue_ap_vld,
     input  wire [31:0]                   ctrl_reg_outValue,
     input  wire                          ctrl_reg_outValue_ap_vld,
-    input  wire [31:0]                   pressure_msb,
-    input  wire                          pressure_msb_ap_vld,
-    input  wire [31:0]                   pressure_lsb,
-    input  wire                          pressure_lsb_ap_vld,
-    input  wire [31:0]                   pressure_xlsb,
-    input  wire                          pressure_xlsb_ap_vld
+    input  wire [31:0]                   rx_fifo_outValue,
+    input  wire                          rx_fifo_outValue_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -92,43 +88,29 @@ module iiccomm_AXILiteS_s_axi
 // 0x2c : Control signal of ctrl_reg_outValue
 //        bit 0  - ctrl_reg_outValue_ap_vld (Read/COR)
 //        others - reserved
-// 0x30 : Data signal of pressure_msb
-//        bit 31~0 - pressure_msb[31:0] (Read)
-// 0x34 : Control signal of pressure_msb
-//        bit 0  - pressure_msb_ap_vld (Read/COR)
-//        others - reserved
-// 0x38 : Data signal of pressure_lsb
-//        bit 31~0 - pressure_lsb[31:0] (Read)
-// 0x3c : Control signal of pressure_lsb
-//        bit 0  - pressure_lsb_ap_vld (Read/COR)
-//        others - reserved
-// 0x40 : Data signal of pressure_xlsb
-//        bit 31~0 - pressure_xlsb[31:0] (Read)
-// 0x44 : Control signal of pressure_xlsb
-//        bit 0  - pressure_xlsb_ap_vld (Read/COR)
+// 0x30 : Data signal of rx_fifo_outValue
+//        bit 31~0 - rx_fifo_outValue[31:0] (Read)
+// 0x34 : Control signal of rx_fifo_outValue
+//        bit 0  - rx_fifo_outValue_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL                    = 7'h00,
-    ADDR_GIE                        = 7'h04,
-    ADDR_IER                        = 7'h08,
-    ADDR_ISR                        = 7'h0c,
-    ADDR_STAT_REG_OUTVALUE1_DATA_0  = 7'h10,
-    ADDR_STAT_REG_OUTVALUE1_CTRL    = 7'h14,
-    ADDR_EMPTY_PIRQ_OUTVALUE_DATA_0 = 7'h18,
-    ADDR_EMPTY_PIRQ_OUTVALUE_CTRL   = 7'h1c,
-    ADDR_FULL_PIRQ_OUTVALUE_DATA_0  = 7'h20,
-    ADDR_FULL_PIRQ_OUTVALUE_CTRL    = 7'h24,
-    ADDR_CTRL_REG_OUTVALUE_DATA_0   = 7'h28,
-    ADDR_CTRL_REG_OUTVALUE_CTRL     = 7'h2c,
-    ADDR_PRESSURE_MSB_DATA_0        = 7'h30,
-    ADDR_PRESSURE_MSB_CTRL          = 7'h34,
-    ADDR_PRESSURE_LSB_DATA_0        = 7'h38,
-    ADDR_PRESSURE_LSB_CTRL          = 7'h3c,
-    ADDR_PRESSURE_XLSB_DATA_0       = 7'h40,
-    ADDR_PRESSURE_XLSB_CTRL         = 7'h44,
+    ADDR_AP_CTRL                    = 6'h00,
+    ADDR_GIE                        = 6'h04,
+    ADDR_IER                        = 6'h08,
+    ADDR_ISR                        = 6'h0c,
+    ADDR_STAT_REG_OUTVALUE1_DATA_0  = 6'h10,
+    ADDR_STAT_REG_OUTVALUE1_CTRL    = 6'h14,
+    ADDR_EMPTY_PIRQ_OUTVALUE_DATA_0 = 6'h18,
+    ADDR_EMPTY_PIRQ_OUTVALUE_CTRL   = 6'h1c,
+    ADDR_FULL_PIRQ_OUTVALUE_DATA_0  = 6'h20,
+    ADDR_FULL_PIRQ_OUTVALUE_CTRL    = 6'h24,
+    ADDR_CTRL_REG_OUTVALUE_DATA_0   = 6'h28,
+    ADDR_CTRL_REG_OUTVALUE_CTRL     = 6'h2c,
+    ADDR_RX_FIFO_OUTVALUE_DATA_0    = 6'h30,
+    ADDR_RX_FIFO_OUTVALUE_CTRL      = 6'h34,
     WRIDLE                          = 2'd0,
     WRDATA                          = 2'd1,
     WRRESP                          = 2'd2,
@@ -136,7 +118,7 @@ localparam
     RDIDLE                          = 2'd0,
     RDDATA                          = 2'd1,
     RDRESET                         = 2'd2,
-    ADDR_BITS         = 7;
+    ADDR_BITS         = 6;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -167,12 +149,8 @@ localparam
     reg                           int_full_pirq_outValue_ap_vld;
     reg  [31:0]                   int_ctrl_reg_outValue = 'b0;
     reg                           int_ctrl_reg_outValue_ap_vld;
-    reg  [31:0]                   int_pressure_msb = 'b0;
-    reg                           int_pressure_msb_ap_vld;
-    reg  [31:0]                   int_pressure_lsb = 'b0;
-    reg                           int_pressure_lsb_ap_vld;
-    reg  [31:0]                   int_pressure_xlsb = 'b0;
-    reg                           int_pressure_xlsb_ap_vld;
+    reg  [31:0]                   int_rx_fifo_outValue = 'b0;
+    reg                           int_rx_fifo_outValue_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -304,23 +282,11 @@ always @(posedge ACLK) begin
                 ADDR_CTRL_REG_OUTVALUE_CTRL: begin
                     rdata[0] <= int_ctrl_reg_outValue_ap_vld;
                 end
-                ADDR_PRESSURE_MSB_DATA_0: begin
-                    rdata <= int_pressure_msb[31:0];
+                ADDR_RX_FIFO_OUTVALUE_DATA_0: begin
+                    rdata <= int_rx_fifo_outValue[31:0];
                 end
-                ADDR_PRESSURE_MSB_CTRL: begin
-                    rdata[0] <= int_pressure_msb_ap_vld;
-                end
-                ADDR_PRESSURE_LSB_DATA_0: begin
-                    rdata <= int_pressure_lsb[31:0];
-                end
-                ADDR_PRESSURE_LSB_CTRL: begin
-                    rdata[0] <= int_pressure_lsb_ap_vld;
-                end
-                ADDR_PRESSURE_XLSB_DATA_0: begin
-                    rdata <= int_pressure_xlsb[31:0];
-                end
-                ADDR_PRESSURE_XLSB_CTRL: begin
-                    rdata[0] <= int_pressure_xlsb_ap_vld;
+                ADDR_RX_FIFO_OUTVALUE_CTRL: begin
+                    rdata[0] <= int_rx_fifo_outValue_ap_vld;
                 end
             endcase
         end
@@ -515,69 +481,25 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_pressure_msb
+// int_rx_fifo_outValue
 always @(posedge ACLK) begin
     if (ARESET)
-        int_pressure_msb <= 0;
+        int_rx_fifo_outValue <= 0;
     else if (ACLK_EN) begin
-        if (pressure_msb_ap_vld)
-            int_pressure_msb <= pressure_msb;
+        if (rx_fifo_outValue_ap_vld)
+            int_rx_fifo_outValue <= rx_fifo_outValue;
     end
 end
 
-// int_pressure_msb_ap_vld
+// int_rx_fifo_outValue_ap_vld
 always @(posedge ACLK) begin
     if (ARESET)
-        int_pressure_msb_ap_vld <= 1'b0;
+        int_rx_fifo_outValue_ap_vld <= 1'b0;
     else if (ACLK_EN) begin
-        if (pressure_msb_ap_vld)
-            int_pressure_msb_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_PRESSURE_MSB_CTRL)
-            int_pressure_msb_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_pressure_lsb
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_pressure_lsb <= 0;
-    else if (ACLK_EN) begin
-        if (pressure_lsb_ap_vld)
-            int_pressure_lsb <= pressure_lsb;
-    end
-end
-
-// int_pressure_lsb_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_pressure_lsb_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (pressure_lsb_ap_vld)
-            int_pressure_lsb_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_PRESSURE_LSB_CTRL)
-            int_pressure_lsb_ap_vld <= 1'b0; // clear on read
-    end
-end
-
-// int_pressure_xlsb
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_pressure_xlsb <= 0;
-    else if (ACLK_EN) begin
-        if (pressure_xlsb_ap_vld)
-            int_pressure_xlsb <= pressure_xlsb;
-    end
-end
-
-// int_pressure_xlsb_ap_vld
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_pressure_xlsb_ap_vld <= 1'b0;
-    else if (ACLK_EN) begin
-        if (pressure_xlsb_ap_vld)
-            int_pressure_xlsb_ap_vld <= 1'b1;
-        else if (ar_hs && raddr == ADDR_PRESSURE_XLSB_CTRL)
-            int_pressure_xlsb_ap_vld <= 1'b0; // clear on read
+        if (rx_fifo_outValue_ap_vld)
+            int_rx_fifo_outValue_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_RX_FIFO_OUTVALUE_CTRL)
+            int_rx_fifo_outValue_ap_vld <= 1'b0; // clear on read
     end
 end
 

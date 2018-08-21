@@ -33231,10 +33231,7 @@ void multibyte(volatile int iic[4096],
  uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb,
  uint32_t& temperature_msb, uint32_t& temperature_lsb, uint32_t& temperature_xlsb,
  int& stateSetUp, int& state, int& stateDataReads,
- uint32_t& dig_T1, uint32_t& dig_T2, uint32_t& dig_T3,
- uint32_t& dig_P1, uint32_t& dig_P2, uint32_t& dig_P3,
- uint32_t& dig_P4, uint32_t& dig_P5, uint32_t& dig_P6,
- uint32_t& dig_P7, uint32_t& dig_P8, uint32_t& dig_P9,
+ uint32_t& dig_T1, uint32_t& dig_P9,
  uint32_t& pressureRaw, uint32_t& temperatureRaw,
  uint32_t& trimVal1, uint32_t& trimVal2, uint32_t& trimVal3,
  uint32_t& trimVal4, uint32_t& trimVal5, uint32_t& trimVal6,
@@ -33272,9 +33269,8 @@ void multibyte(volatile int iic[4096],
 #pragma empty_line
 #pragma empty_line
  bool setupSuccess = true;
- uint16_t trimmingData[24] = {};
+ uint32_t trimmingData[24] = {};
  int sensorData[6] = {};
- stateSetUp = 0;
 #pragma empty_line
 #pragma empty_line
  static bool firstSample = true;
@@ -33321,7 +33317,7 @@ void multibyte(volatile int iic[4096],
 #pragma empty_line
   iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
   iic[(0x40001000/4)+(0x108/4)] = 0xF5;
-  iic[(0x40001000/4)+(0x108/4)] = 0x24;
+  iic[(0x40001000/4)+(0x108/4)] = 0xA0;
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -33347,7 +33343,7 @@ void multibyte(volatile int iic[4096],
   iic[(0x40001000/4) + (0x108/4)] = 0x88;
   iic[(0x40001000/4) + (0x108/4)] = 0x1ED;
   iic[(0x40001000/4) + (0x108/4)] = 0x224;
-  delay_until_ms<10>();
+#pragma empty_line
 #pragma empty_line
   state = 10;
 #pragma empty_line
@@ -33358,7 +33354,7 @@ void multibyte(volatile int iic[4096],
  }
  else
  {
-  delay_until_ms<10>();
+#pragma empty_line
   state = 1;
 #pragma empty_line
   for (int index = 0; index < 24; index++)
@@ -33366,19 +33362,6 @@ void multibyte(volatile int iic[4096],
    trimmingData[index] = 0;
   }
  }
-#pragma empty_line
- trimVal1 = trimmingData[0];
- trimVal2 = trimmingData[1];
- trimVal3 = trimmingData[2];
- trimVal4 = trimmingData[3];
- trimVal5 = trimmingData[4];
- trimVal6 = trimmingData[5];
- trimVal23 = trimmingData[22];
- trimVal24 = trimmingData[23];
-#pragma empty_line
- dig_T1 = ((trimmingData[1]) << 8 | (trimmingData[0]));
-#pragma line 232 "multibyte.cpp"
- dig_P9 = ((trimmingData[23]) << 8 | (trimmingData[22]));
 #pragma empty_line
  delay_until_ms<10>();
 #pragma empty_line

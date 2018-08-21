@@ -1,5 +1,4 @@
-multibyte_trimminbkb
-multibyte_sensorDcud
+multibyte_sensorDbkb
 multibyte_CTRL_s_axi
 multibyte_CTRL_m_axi
 multibyte

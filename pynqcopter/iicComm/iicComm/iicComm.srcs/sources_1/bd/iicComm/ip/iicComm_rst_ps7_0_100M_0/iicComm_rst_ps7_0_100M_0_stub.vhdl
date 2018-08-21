@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Mon Aug 20 14:33:49 2018
+-- Date        : Tue Aug 21 09:47:10 2018
 -- Host        : fabricant running 64-bit Linux Mint 18 Sarah
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/iavendano/pynq-copter/pynqcopter/iicComm/iicComm/iicComm.srcs/sources_1/bd/iicComm/ip/iicComm_rst_ps7_0_100M_0/iicComm_rst_ps7_0_100M_0_stub.vhdl

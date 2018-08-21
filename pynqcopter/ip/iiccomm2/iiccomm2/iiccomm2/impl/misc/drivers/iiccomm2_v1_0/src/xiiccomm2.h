@@ -87,14 +87,14 @@ u32 XIiccomm2_IsReady(XIiccomm2 *InstancePtr);
 void XIiccomm2_EnableAutoRestart(XIiccomm2 *InstancePtr);
 void XIiccomm2_DisableAutoRestart(XIiccomm2 *InstancePtr);
 
-u32 XIiccomm2_Get_stat_reg_outValue1(XIiccomm2 *InstancePtr);
-u32 XIiccomm2_Get_stat_reg_outValue1_vld(XIiccomm2 *InstancePtr);
 u32 XIiccomm2_Get_empty_pirq_outValue(XIiccomm2 *InstancePtr);
 u32 XIiccomm2_Get_empty_pirq_outValue_vld(XIiccomm2 *InstancePtr);
 u32 XIiccomm2_Get_full_pirq_outValue(XIiccomm2 *InstancePtr);
 u32 XIiccomm2_Get_full_pirq_outValue_vld(XIiccomm2 *InstancePtr);
 u32 XIiccomm2_Get_ctrl_reg_outValue(XIiccomm2 *InstancePtr);
 u32 XIiccomm2_Get_ctrl_reg_outValue_vld(XIiccomm2 *InstancePtr);
+u32 XIiccomm2_Get_stat_reg_outValue1(XIiccomm2 *InstancePtr);
+u32 XIiccomm2_Get_stat_reg_outValue1_vld(XIiccomm2 *InstancePtr);
 u32 XIiccomm2_Get_pressure_msb(XIiccomm2 *InstancePtr);
 u32 XIiccomm2_Get_pressure_msb_vld(XIiccomm2 *InstancePtr);
 u32 XIiccomm2_Get_pressure_lsb(XIiccomm2 *InstancePtr);

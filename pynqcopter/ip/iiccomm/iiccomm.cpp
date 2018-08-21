@@ -37,27 +37,26 @@
 #include "ap_int.h"
 #include "stdint.h"
 
+//includes single read from rx_fifo; original version
 
 static uint32_t empty_pirq_val; //return 0
 static uint32_t full_pirq_val; //return 16 
 static uint32_t ctrl_reg_val;
 static uint32_t stat_reg_val1;
+static uint32_t rx_fifo_val;
 
-
-
-void iiccomm(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue, uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb)
+void iiccomm(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue, uint32_t& rx_fifo_outValue)
 {
     #pragma HLS INTERFACE s_axilite port=return
 	
     #pragma HLS INTERFACE m_axi port=iic
 
-    #pragma HLS INTERFACE s_axilite port=stat_reg_outValue1
+
     #pragma HLS INTERFACE s_axilite port=empty_pirq_outValue
     #pragma HLS INTERFACE s_axilite port=full_pirq_outValue
     #pragma HLS INTERFACE s_axilite port=ctrl_reg_outValue
-    #pragma HLS INTERFACE s_axilite port=pressure_msb	
-    #pragma HLS INTERFACE s_axilite port=pressure_lsb
-    #pragma HLS INTERFACE s_axilite port=pressure_xlsb
+    #pragma HLS INTERFACE s_axilite port=stat_reg_outValue1
+    #pragma HLS INTERFACE s_axilite port=rx_fifo_outValue
 
 	uint32_t sensorData[3] = {};
 
@@ -104,7 +103,7 @@ void iiccomm(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF5; 
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x24;
 
-	delay_until_ms<1000>();
+	delay_until_ms<10000>();
 
 //BEGIN READING AND WRITING TO SENSOR
 	
@@ -115,22 +114,17 @@ void iiccomm(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF7;
 
 	//WRITE SENSOR ADDRESS TO TX_FIFO READ ACCESS
-	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xED;
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1ED;
 	
 	//SET STOP BIT AND NUMBER OF BYTES TO READ
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x203;
 
 	//READ RX_FIFO 
-	//rx_fifo_val = iic[IIC_INDEX+IIC_RX_FIFO_OFF];
-    //rx_fifo_outValue=rx_fifo_val;
-
-	for (int index = 0; index < 3; index++) {
-			sensorData[index] = iic[IIC_INDEX + IIC_RX_FIFO_PIRQ_OFF];
-		}
-
-	pressure_msb = (uint32_t)sensorData[0];
-	pressure_lsb = (uint32_t)sensorData[1];
-	pressure_xlsb = (uint32_t)sensorData[2];
-
+	rx_fifo_val = iic[IIC_INDEX+IIC_RX_FIFO_OFF];
+    rx_fifo_outValue=rx_fifo_val;
 				
 }
+
+
+
+

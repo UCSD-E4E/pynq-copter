@@ -95,12 +95,8 @@ u32 XIiccomm_Get_full_pirq_outValue(XIiccomm *InstancePtr);
 u32 XIiccomm_Get_full_pirq_outValue_vld(XIiccomm *InstancePtr);
 u32 XIiccomm_Get_ctrl_reg_outValue(XIiccomm *InstancePtr);
 u32 XIiccomm_Get_ctrl_reg_outValue_vld(XIiccomm *InstancePtr);
-u32 XIiccomm_Get_pressure_msb(XIiccomm *InstancePtr);
-u32 XIiccomm_Get_pressure_msb_vld(XIiccomm *InstancePtr);
-u32 XIiccomm_Get_pressure_lsb(XIiccomm *InstancePtr);
-u32 XIiccomm_Get_pressure_lsb_vld(XIiccomm *InstancePtr);
-u32 XIiccomm_Get_pressure_xlsb(XIiccomm *InstancePtr);
-u32 XIiccomm_Get_pressure_xlsb_vld(XIiccomm *InstancePtr);
+u32 XIiccomm_Get_rx_fifo_outValue(XIiccomm *InstancePtr);
+u32 XIiccomm_Get_rx_fifo_outValue_vld(XIiccomm *InstancePtr);
 
 void XIiccomm_InterruptGlobalEnable(XIiccomm *InstancePtr);
 void XIiccomm_InterruptGlobalDisable(XIiccomm *InstancePtr);

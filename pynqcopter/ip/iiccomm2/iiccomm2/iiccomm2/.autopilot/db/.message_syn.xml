@@ -3,18 +3,15 @@
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;iiccomm2.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;main.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:01:25 ; elapsed = 00:00:29 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 72701 ; free virtual = 462472" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:27 ; elapsed = 00:00:31 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 72771 ; free virtual = 462543" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:01:14 ; elapsed = 00:00:27 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 109308 ; free virtual = 500352" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:15 ; elapsed = 00:00:28 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 109285 ; free virtual = 500330" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;delay_until_ms&lt;1000ull, 50000000ull&gt;&apos; into &apos;iiccomm2&apos; (iiccomm2.cpp:107)." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:28 ; elapsed = 00:00:32 . Memory (MB): peak = 360.207 ; gain = 13.648 ; free physical = 72745 ; free virtual = 462517" tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;delay_until_ms&lt;10000ull, 50000000ull&gt;&apos; into &apos;iiccomm2&apos; (iiccomm2.cpp:109)." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:17 ; elapsed = 00:00:30 . Memory (MB): peak = 360.211 ; gain = 13.652 ; free physical = 109172 ; free virtual = 500216" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:28 ; elapsed = 00:00:32 . Memory (MB): peak = 360.207 ; gain = 13.648 ; free physical = 72670 ; free virtual = 462442" tag=""/>
-	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;sensorData&apos; (iiccomm2.cpp:62) completely based on array size." tag=""/>
-	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;sensorData&apos; (iiccomm2.cpp:62) in dimension 1 completely." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (iiccomm2.cpp:128:4) to (iiccomm2.cpp:127:33) in function &apos;iiccomm2&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:29 ; elapsed = 00:00:33 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 72563 ; free virtual = 462335" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:30 ; elapsed = 00:00:34 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 72593 ; free virtual = 462365" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:17 ; elapsed = 00:00:30 . Memory (MB): peak = 360.211 ; gain = 13.652 ; free physical = 109196 ; free virtual = 500240" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:17 ; elapsed = 00:00:30 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 109208 ; free virtual = 500252" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:18 ; elapsed = 00:00:31 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 109096 ; free virtual = 500139" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;iiccomm2&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
@@ -22,31 +19,29 @@
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 33.82 seconds; current allocated memory: 83.280 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 31.2 seconds; current allocated memory: 83.142 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.08 seconds; current allocated memory: 84.235 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.06 seconds; current allocated memory: 83.999 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;iiccomm2&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;iiccomm2/iic&apos; to &apos;m_axi&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;iiccomm2/stat_reg_outValue1&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;iiccomm2/empty_pirq_outValue&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;iiccomm2/full_pirq_outValue&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;iiccomm2/ctrl_reg_outValue&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;iiccomm2/stat_reg_outValue1&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;iiccomm2/pressure_msb&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;iiccomm2/pressure_lsb&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;iiccomm2/pressure_xlsb&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;iiccomm2&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos;, &apos;stat_reg_outValue1&apos;, &apos;empty_pirq_outValue&apos;, &apos;full_pirq_outValue&apos;, &apos;ctrl_reg_outValue&apos;, &apos;pressure_msb&apos;, &apos;pressure_lsb&apos; and &apos;pressure_xlsb&apos; to AXI-Lite port AXILiteS." tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;iiccomm2_mux_42_32_1_1&apos; to &apos;iiccomm2_mux_42_3bkb&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;iiccomm2_mux_42_3bkb&apos;: 3 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos;, &apos;empty_pirq_outValue&apos;, &apos;full_pirq_outValue&apos;, &apos;ctrl_reg_outValue&apos;, &apos;stat_reg_outValue1&apos;, &apos;pressure_msb&apos;, &apos;pressure_lsb&apos; and &apos;pressure_xlsb&apos; to AXI-Lite port AXILiteS." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;iiccomm2&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.16 seconds; current allocated memory: 86.306 MB." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:31 ; elapsed = 00:00:35 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 72515 ; free virtual = 462287" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.14 seconds; current allocated memory: 85.847 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:19 ; elapsed = 00:00:32 . Memory (MB): peak = 487.930 ; gain = 141.371 ; free physical = 109034 ; free virtual = 500077" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for iiccomm2." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for iiccomm2." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for iiccomm2." tag=""/>

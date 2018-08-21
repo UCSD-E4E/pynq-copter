@@ -48,7 +48,7 @@
 
 
 // IP VLNV: UCSD:hlsip:multibyte:1.0
-// IP Revision: 1808191848
+// IP Revision: 1808201549
 
 (* X_CORE_INFO = "multibyte,Vivado 2017.4" *)
 (* CHECK_LICENSE_TYPE = "bmeMultibyte_multibyte_0_0,multibyte,{}" *)
@@ -108,17 +108,7 @@ module bmeMultibyte_multibyte_0_0 (
   m_axi_CTRL_RRESP,
   m_axi_CTRL_RLAST,
   m_axi_CTRL_RVALID,
-  m_axi_CTRL_RREADY,
-  dig_T2,
-  dig_T3,
-  dig_P1,
-  dig_P2,
-  dig_P3,
-  dig_P4,
-  dig_P5,
-  dig_P6,
-  dig_P7,
-  dig_P8
+  m_axi_CTRL_RREADY
 );
 
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_CTRL AWADDR" *)
@@ -236,36 +226,6 @@ input wire m_axi_CTRL_RVALID;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axi_CTRL, ADDR_WIDTH 32, MAX_BURST_LENGTH 256, NUM_READ_OUTSTANDING 16, NUM_WRITE_OUTSTANDING 16, MAX_READ_BURST_LENGTH 16, MAX_WRITE_BURST_LENGTH 16, PROTOCOL AXI4, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, FREQ_HZ 100000000, ID_WIDTH 0, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 1, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, PHASE 0.000, CLK_DOMAIN bmeMultibyte_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi_CTRL RREADY" *)
 output wire m_axi_CTRL_RREADY;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dig_T2, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 dig_T2 DATA" *)
-input wire [31 : 0] dig_T2;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dig_T3, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 dig_T3 DATA" *)
-input wire [31 : 0] dig_T3;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dig_P1, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 dig_P1 DATA" *)
-input wire [31 : 0] dig_P1;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dig_P2, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 dig_P2 DATA" *)
-input wire [31 : 0] dig_P2;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dig_P3, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 dig_P3 DATA" *)
-input wire [31 : 0] dig_P3;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dig_P4, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 dig_P4 DATA" *)
-input wire [31 : 0] dig_P4;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dig_P5, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 dig_P5 DATA" *)
-input wire [31 : 0] dig_P5;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dig_P6, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 dig_P6 DATA" *)
-input wire [31 : 0] dig_P6;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dig_P7, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 dig_P7 DATA" *)
-input wire [31 : 0] dig_P7;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dig_P8, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 dig_P8 DATA" *)
-input wire [31 : 0] dig_P8;
 
   multibyte #(
     .C_S_AXI_CTRL_ADDR_WIDTH(8),
@@ -347,16 +307,6 @@ input wire [31 : 0] dig_P8;
     .m_axi_CTRL_RLAST(m_axi_CTRL_RLAST),
     .m_axi_CTRL_RUSER(1'B0),
     .m_axi_CTRL_RVALID(m_axi_CTRL_RVALID),
-    .m_axi_CTRL_RREADY(m_axi_CTRL_RREADY),
-    .dig_T2(dig_T2),
-    .dig_T3(dig_T3),
-    .dig_P1(dig_P1),
-    .dig_P2(dig_P2),
-    .dig_P3(dig_P3),
-    .dig_P4(dig_P4),
-    .dig_P5(dig_P5),
-    .dig_P6(dig_P6),
-    .dig_P7(dig_P7),
-    .dig_P8(dig_P8)
+    .m_axi_CTRL_RREADY(m_axi_CTRL_RREADY)
   );
 endmodule

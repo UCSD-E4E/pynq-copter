@@ -33371,26 +33371,25 @@ _ssdm_op_SpecProtocol(0, "");
 
 
 
+
 static uint32_t empty_pirq_val;
 static uint32_t full_pirq_val;
 static uint32_t ctrl_reg_val;
 static uint32_t stat_reg_val1;
+static uint32_t rx_fifo_val;
 
-
-
-void iiccomm(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue, uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb)
+void iiccomm(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue, uint32_t& rx_fifo_outValue)
 {_ssdm_SpecArrayDimSize(iic,4096);
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
 _ssdm_op_SpecInterface(iic, "m_axi", 0, 0, "", 0, 0, "", "", "", 16, 16, 16, 16, "", "");
 
-_ssdm_op_SpecInterface(stat_reg_outValue1, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+
 _ssdm_op_SpecInterface(empty_pirq_outValue, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(full_pirq_outValue, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(ctrl_reg_outValue, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(pressure_msb, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(pressure_lsb, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(pressure_xlsb, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(stat_reg_outValue1, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(rx_fifo_outValue, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
  uint32_t sensorData[3] = {};
 
@@ -33437,7 +33436,7 @@ _ssdm_op_SpecInterface(pressure_xlsb, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0
  iic[(0x40001000/4)+(0x108/4)] = 0xF5;
  iic[(0x40001000/4)+(0x108/4)] = 0x24;
 
- delay_until_ms<1000>();
+ delay_until_ms<10000>();
 
 
 
@@ -33448,22 +33447,13 @@ _ssdm_op_SpecInterface(pressure_xlsb, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0
  iic[(0x40001000/4)+(0x108/4)] = 0xF7;
 
 
- iic[(0x40001000/4)+(0x108/4)] = 0xED;
+ iic[(0x40001000/4)+(0x108/4)] = 0x1ED;
 
 
  iic[(0x40001000/4)+(0x108/4)] = 0x203;
 
 
-
-
-
- for (int index = 0; index < 3; index++) {
-   sensorData[index] = iic[(0x40001000/4) + (0x120/4)];
-  }
-
- pressure_msb = (uint32_t)sensorData[0];
- pressure_lsb = (uint32_t)sensorData[1];
- pressure_xlsb = (uint32_t)sensorData[2];
-
+ rx_fifo_val = iic[(0x40001000/4)+(0x10C/4)];
+    rx_fifo_outValue=rx_fifo_val;
 
 }

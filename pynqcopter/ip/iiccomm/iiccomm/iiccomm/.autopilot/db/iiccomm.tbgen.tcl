@@ -1,5 +1,5 @@
 set C_TypeInfoList {{ 
-"iiccomm" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"stat_reg_outValue1": [[], {"reference": "1"}] }, {"empty_pirq_outValue": [[], {"reference": "1"}] }, {"full_pirq_outValue": [[], {"reference": "1"}] }, {"ctrl_reg_outValue": [[], {"reference": "1"}] }, {"pressure_msb": [[], {"reference": "1"}] }, {"pressure_lsb": [[], {"reference": "1"}] }, {"pressure_xlsb": [[], {"reference": "1"}] }],[],""], 
+"iiccomm" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"stat_reg_outValue1": [[], {"reference": "1"}] }, {"empty_pirq_outValue": [[], {"reference": "1"}] }, {"full_pirq_outValue": [[], {"reference": "1"}] }, {"ctrl_reg_outValue": [[], {"reference": "1"}] }, {"rx_fifo_outValue": [[], {"reference": "1"}] }],[],""], 
 "0": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}], 
 "1": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}]
 }}
@@ -20,9 +20,7 @@ set C_modelArgList {
 	{ empty_pirq_outValue int 32 regular {axi_slave 1}  }
 	{ full_pirq_outValue int 32 regular {axi_slave 1}  }
 	{ ctrl_reg_outValue int 32 regular {axi_slave 1}  }
-	{ pressure_msb int 32 regular {axi_slave 1}  }
-	{ pressure_lsb int 32 regular {axi_slave 1}  }
-	{ pressure_xlsb int 32 regular {axi_slave 1}  }
+	{ rx_fifo_outValue int 32 regular {axi_slave 1}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "iic", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "iic","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 4095,"step" : 1}]}]}]} , 
@@ -30,9 +28,7 @@ set C_modelArgMapList {[
  	{ "Name" : "empty_pirq_outValue", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "empty_pirq_outValue","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":24}, "offset_end" : {"out":31}} , 
  	{ "Name" : "full_pirq_outValue", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "full_pirq_outValue","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":32}, "offset_end" : {"out":39}} , 
  	{ "Name" : "ctrl_reg_outValue", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "ctrl_reg_outValue","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":40}, "offset_end" : {"out":47}} , 
- 	{ "Name" : "pressure_msb", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "pressure_msb","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":48}, "offset_end" : {"out":55}} , 
- 	{ "Name" : "pressure_lsb", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "pressure_lsb","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":56}, "offset_end" : {"out":63}} , 
- 	{ "Name" : "pressure_xlsb", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "pressure_xlsb","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":64}, "offset_end" : {"out":71}} ]}
+ 	{ "Name" : "rx_fifo_outValue", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "rx_fifo_outValue","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":48}, "offset_end" : {"out":55}} ]}
 # RTL Port declarations: 
 set portNum 65
 set portList { 
@@ -85,14 +81,14 @@ set portList {
 	{ m_axi_iic_BUSER sc_in sc_lv 1 signal 0 } 
 	{ s_axi_AXILiteS_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_AWREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_AXILiteS_AWADDR sc_in sc_lv 7 signal -1 } 
+	{ s_axi_AXILiteS_AWADDR sc_in sc_lv 6 signal -1 } 
 	{ s_axi_AXILiteS_WVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_WREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_WDATA sc_in sc_lv 32 signal -1 } 
 	{ s_axi_AXILiteS_WSTRB sc_in sc_lv 4 signal -1 } 
 	{ s_axi_AXILiteS_ARVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_ARREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_AXILiteS_ARADDR sc_in sc_lv 7 signal -1 } 
+	{ s_axi_AXILiteS_ARADDR sc_in sc_lv 6 signal -1 } 
 	{ s_axi_AXILiteS_RVALID sc_out sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_RREADY sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_RDATA sc_out sc_lv 32 signal -1 } 
@@ -103,14 +99,14 @@ set portList {
 	{ interrupt sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_AXILiteS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWADDR" },"address":[{"name":"iiccomm","role":"start","value":"0","valid_bit":"0"},{"name":"iiccomm","role":"continue","value":"0","valid_bit":"4"},{"name":"iiccomm","role":"auto_start","value":"0","valid_bit":"7"}] },
+	{ "name": "s_axi_AXILiteS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWADDR" },"address":[{"name":"iiccomm","role":"start","value":"0","valid_bit":"0"},{"name":"iiccomm","role":"continue","value":"0","valid_bit":"4"},{"name":"iiccomm","role":"auto_start","value":"0","valid_bit":"7"}] },
 	{ "name": "s_axi_AXILiteS_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWVALID" } },
 	{ "name": "s_axi_AXILiteS_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWREADY" } },
 	{ "name": "s_axi_AXILiteS_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WVALID" } },
 	{ "name": "s_axi_AXILiteS_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WREADY" } },
 	{ "name": "s_axi_AXILiteS_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WDATA" } },
 	{ "name": "s_axi_AXILiteS_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WSTRB" } },
-	{ "name": "s_axi_AXILiteS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARADDR" },"address":[{"name":"iiccomm","role":"start","value":"0","valid_bit":"0"},{"name":"iiccomm","role":"done","value":"0","valid_bit":"1"},{"name":"iiccomm","role":"idle","value":"0","valid_bit":"2"},{"name":"iiccomm","role":"ready","value":"0","valid_bit":"3"},{"name":"iiccomm","role":"auto_start","value":"0","valid_bit":"7"},{"name":"stat_reg_outValue1","role":"data","value":"16"}, {"name":"stat_reg_outValue1","role":"valid","value":"20","valid_bit":"0"},{"name":"empty_pirq_outValue","role":"data","value":"24"}, {"name":"empty_pirq_outValue","role":"valid","value":"28","valid_bit":"0"},{"name":"full_pirq_outValue","role":"data","value":"32"}, {"name":"full_pirq_outValue","role":"valid","value":"36","valid_bit":"0"},{"name":"ctrl_reg_outValue","role":"data","value":"40"}, {"name":"ctrl_reg_outValue","role":"valid","value":"44","valid_bit":"0"},{"name":"pressure_msb","role":"data","value":"48"}, {"name":"pressure_msb","role":"valid","value":"52","valid_bit":"0"},{"name":"pressure_lsb","role":"data","value":"56"}, {"name":"pressure_lsb","role":"valid","value":"60","valid_bit":"0"},{"name":"pressure_xlsb","role":"data","value":"64"}, {"name":"pressure_xlsb","role":"valid","value":"68","valid_bit":"0"}] },
+	{ "name": "s_axi_AXILiteS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARADDR" },"address":[{"name":"iiccomm","role":"start","value":"0","valid_bit":"0"},{"name":"iiccomm","role":"done","value":"0","valid_bit":"1"},{"name":"iiccomm","role":"idle","value":"0","valid_bit":"2"},{"name":"iiccomm","role":"ready","value":"0","valid_bit":"3"},{"name":"iiccomm","role":"auto_start","value":"0","valid_bit":"7"},{"name":"stat_reg_outValue1","role":"data","value":"16"}, {"name":"stat_reg_outValue1","role":"valid","value":"20","valid_bit":"0"},{"name":"empty_pirq_outValue","role":"data","value":"24"}, {"name":"empty_pirq_outValue","role":"valid","value":"28","valid_bit":"0"},{"name":"full_pirq_outValue","role":"data","value":"32"}, {"name":"full_pirq_outValue","role":"valid","value":"36","valid_bit":"0"},{"name":"ctrl_reg_outValue","role":"data","value":"40"}, {"name":"ctrl_reg_outValue","role":"valid","value":"44","valid_bit":"0"},{"name":"rx_fifo_outValue","role":"data","value":"48"}, {"name":"rx_fifo_outValue","role":"valid","value":"52","valid_bit":"0"}] },
 	{ "name": "s_axi_AXILiteS_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARVALID" } },
 	{ "name": "s_axi_AXILiteS_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARREADY" } },
 	{ "name": "s_axi_AXILiteS_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "RVALID" } },
@@ -170,7 +166,7 @@ set NewPortList {[
  	{ "name": "m_axi_iic_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "iic", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2"],
 		"CDFG" : "iiccomm",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"FunctionPipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -190,32 +186,25 @@ set RtlHierarchyInfo {[
 			{"Name" : "empty_pirq_outValue", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "full_pirq_outValue", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "ctrl_reg_outValue", "Type" : "Vld", "Direction" : "O"},
-			{"Name" : "pressure_msb", "Type" : "Vld", "Direction" : "O"},
-			{"Name" : "pressure_lsb", "Type" : "Vld", "Direction" : "O"},
-			{"Name" : "pressure_xlsb", "Type" : "Vld", "Direction" : "O"}]},
+			{"Name" : "rx_fifo_outValue", "Type" : "Vld", "Direction" : "O"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm_AXILiteS_s_axi_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm_iic_m_axi_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm_mux_42_32bkb_U1", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm_mux_42_32bkb_U2", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm_mux_42_32bkb_U3", "Parent" : "0"}]}
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm_iic_m_axi_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	iiccomm {
-		iic {Type IO LastRead 73 FirstWrite 9}
-		stat_reg_outValue1 {Type O LastRead -1 FirstWrite 39}
-		empty_pirq_outValue {Type O LastRead -1 FirstWrite 9}
-		full_pirq_outValue {Type O LastRead -1 FirstWrite 23}
-		ctrl_reg_outValue {Type O LastRead -1 FirstWrite 39}
-		pressure_msb {Type O LastRead -1 FirstWrite 66}
-		pressure_lsb {Type O LastRead -1 FirstWrite 66}
-		pressure_xlsb {Type O LastRead -1 FirstWrite 66}}}
+		iic {Type IO LastRead 72 FirstWrite 8}
+		stat_reg_outValue1 {Type O LastRead -1 FirstWrite 38}
+		empty_pirq_outValue {Type O LastRead -1 FirstWrite 8}
+		full_pirq_outValue {Type O LastRead -1 FirstWrite 22}
+		ctrl_reg_outValue {Type O LastRead -1 FirstWrite 38}
+		rx_fifo_outValue {Type O LastRead -1 FirstWrite 73}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "50000095", "Max" : "50000095"}
-	, {"Name" : "Interval", "Min" : "50000096", "Max" : "50000096"}
+	{"Name" : "Latency", "Min" : "500000073", "Max" : "500000073"}
+	, {"Name" : "Interval", "Min" : "500000074", "Max" : "500000074"}
 ]}
 
 set PipelineEnableSignalInfo {[

@@ -70,15 +70,11 @@
 //        bit 0  - stateDataReads_ap_vld (Read/COR)
 //        others - reserved
 // 0x58 : Data signal of dig_T1
-//        bit 31~0 - dig_T1[31:0] (Read)
-// 0x5c : Control signal of dig_T1
-//        bit 0  - dig_T1_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - dig_T1[31:0] (Read/Write)
+// 0x5c : reserved
 // 0x60 : Data signal of dig_P9
-//        bit 31~0 - dig_P9[31:0] (Read)
-// 0x64 : Control signal of dig_P9
-//        bit 0  - dig_P9_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - dig_P9[31:0] (Read/Write)
+// 0x64 : reserved
 // 0x68 : Data signal of pressureRaw
 //        bit 31~0 - pressureRaw[31:0] (Read)
 // 0x6c : Control signal of pressureRaw
@@ -90,45 +86,29 @@
 //        bit 0  - temperatureRaw_ap_vld (Read/COR)
 //        others - reserved
 // 0x78 : Data signal of trimVal1
-//        bit 31~0 - trimVal1[31:0] (Read)
-// 0x7c : Control signal of trimVal1
-//        bit 0  - trimVal1_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal1[31:0] (Read/Write)
+// 0x7c : reserved
 // 0x80 : Data signal of trimVal2
-//        bit 31~0 - trimVal2[31:0] (Read)
-// 0x84 : Control signal of trimVal2
-//        bit 0  - trimVal2_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal2[31:0] (Read/Write)
+// 0x84 : reserved
 // 0x88 : Data signal of trimVal3
-//        bit 31~0 - trimVal3[31:0] (Read)
-// 0x8c : Control signal of trimVal3
-//        bit 0  - trimVal3_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal3[31:0] (Read/Write)
+// 0x8c : reserved
 // 0x90 : Data signal of trimVal4
-//        bit 31~0 - trimVal4[31:0] (Read)
-// 0x94 : Control signal of trimVal4
-//        bit 0  - trimVal4_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal4[31:0] (Read/Write)
+// 0x94 : reserved
 // 0x98 : Data signal of trimVal5
-//        bit 31~0 - trimVal5[31:0] (Read)
-// 0x9c : Control signal of trimVal5
-//        bit 0  - trimVal5_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal5[31:0] (Read/Write)
+// 0x9c : reserved
 // 0xa0 : Data signal of trimVal6
-//        bit 31~0 - trimVal6[31:0] (Read)
-// 0xa4 : Control signal of trimVal6
-//        bit 0  - trimVal6_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal6[31:0] (Read/Write)
+// 0xa4 : reserved
 // 0xa8 : Data signal of trimVal23
-//        bit 31~0 - trimVal23[31:0] (Read)
-// 0xac : Control signal of trimVal23
-//        bit 0  - trimVal23_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal23[31:0] (Read/Write)
+// 0xac : reserved
 // 0xb0 : Data signal of trimVal24
-//        bit 31~0 - trimVal24[31:0] (Read)
-// 0xb4 : Control signal of trimVal24
-//        bit 0  - trimVal24_ap_vld (Read/COR)
-//        others - reserved
+//        bit 31~0 - trimVal24[31:0] (Read/Write)
+// 0xb4 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XMULTIBYTE_CTRL_ADDR_AP_CTRL               0x00
@@ -164,10 +144,8 @@
 #define XMULTIBYTE_CTRL_ADDR_STATEDATAREADS_CTRL   0x54
 #define XMULTIBYTE_CTRL_ADDR_DIG_T1_DATA           0x58
 #define XMULTIBYTE_CTRL_BITS_DIG_T1_DATA           32
-#define XMULTIBYTE_CTRL_ADDR_DIG_T1_CTRL           0x5c
 #define XMULTIBYTE_CTRL_ADDR_DIG_P9_DATA           0x60
 #define XMULTIBYTE_CTRL_BITS_DIG_P9_DATA           32
-#define XMULTIBYTE_CTRL_ADDR_DIG_P9_CTRL           0x64
 #define XMULTIBYTE_CTRL_ADDR_PRESSURERAW_DATA      0x68
 #define XMULTIBYTE_CTRL_BITS_PRESSURERAW_DATA      32
 #define XMULTIBYTE_CTRL_ADDR_PRESSURERAW_CTRL      0x6c
@@ -176,26 +154,18 @@
 #define XMULTIBYTE_CTRL_ADDR_TEMPERATURERAW_CTRL   0x74
 #define XMULTIBYTE_CTRL_ADDR_TRIMVAL1_DATA         0x78
 #define XMULTIBYTE_CTRL_BITS_TRIMVAL1_DATA         32
-#define XMULTIBYTE_CTRL_ADDR_TRIMVAL1_CTRL         0x7c
 #define XMULTIBYTE_CTRL_ADDR_TRIMVAL2_DATA         0x80
 #define XMULTIBYTE_CTRL_BITS_TRIMVAL2_DATA         32
-#define XMULTIBYTE_CTRL_ADDR_TRIMVAL2_CTRL         0x84
 #define XMULTIBYTE_CTRL_ADDR_TRIMVAL3_DATA         0x88
 #define XMULTIBYTE_CTRL_BITS_TRIMVAL3_DATA         32
-#define XMULTIBYTE_CTRL_ADDR_TRIMVAL3_CTRL         0x8c
 #define XMULTIBYTE_CTRL_ADDR_TRIMVAL4_DATA         0x90
 #define XMULTIBYTE_CTRL_BITS_TRIMVAL4_DATA         32
-#define XMULTIBYTE_CTRL_ADDR_TRIMVAL4_CTRL         0x94
 #define XMULTIBYTE_CTRL_ADDR_TRIMVAL5_DATA         0x98
 #define XMULTIBYTE_CTRL_BITS_TRIMVAL5_DATA         32
-#define XMULTIBYTE_CTRL_ADDR_TRIMVAL5_CTRL         0x9c
 #define XMULTIBYTE_CTRL_ADDR_TRIMVAL6_DATA         0xa0
 #define XMULTIBYTE_CTRL_BITS_TRIMVAL6_DATA         32
-#define XMULTIBYTE_CTRL_ADDR_TRIMVAL6_CTRL         0xa4
 #define XMULTIBYTE_CTRL_ADDR_TRIMVAL23_DATA        0xa8
 #define XMULTIBYTE_CTRL_BITS_TRIMVAL23_DATA        32
-#define XMULTIBYTE_CTRL_ADDR_TRIMVAL23_CTRL        0xac
 #define XMULTIBYTE_CTRL_ADDR_TRIMVAL24_DATA        0xb0
 #define XMULTIBYTE_CTRL_BITS_TRIMVAL24_DATA        32
-#define XMULTIBYTE_CTRL_ADDR_TRIMVAL24_CTRL        0xb4
 

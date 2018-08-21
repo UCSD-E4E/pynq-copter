@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "50000095",
+    "Latency": "500000073",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -41,13 +41,11 @@
     "Vhdl": [
       "impl\/vhdl\/iiccomm_AXILiteS_s_axi.vhd",
       "impl\/vhdl\/iiccomm_iic_m_axi.vhd",
-      "impl\/vhdl\/iiccomm_mux_42_32bkb.vhd",
       "impl\/vhdl\/iiccomm.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/iiccomm_AXILiteS_s_axi.v",
       "impl\/verilog\/iiccomm_iic_m_axi.v",
-      "impl\/verilog\/iiccomm_mux_42_32bkb.v",
       "impl\/verilog\/iiccomm.v"
     ],
     "SwDriver": [
@@ -268,7 +266,7 @@
       "mode": "slave",
       "port_prefix": "s_axi_AXILiteS",
       "param_prefix": "C_S_AXI_AXILITES",
-      "addr_bits": "7",
+      "addr_bits": "6",
       "registers": [
         {
           "offset": "0x00",
@@ -588,113 +586,33 @@
         },
         {
           "offset": "0x30",
-          "name": "pressure_msb",
+          "name": "rx_fifo_outValue",
           "access": "R",
           "reset_value": "0x0",
-          "description": "Data signal of pressure_msb",
+          "description": "Data signal of rx_fifo_outValue",
           "fields": [{
               "offset": "0",
               "width": "32",
-              "name": "pressure_msb",
+              "name": "rx_fifo_outValue",
               "access": "R",
               "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of pressure_msb"
+              "description": "Bit 31 to 0 Data signal of rx_fifo_outValue"
             }]
         },
         {
           "offset": "0x34",
-          "name": "pressure_msb_ctrl",
+          "name": "rx_fifo_outValue_ctrl",
           "access": "R",
           "reset_value": "0x0",
-          "description": "Control signal of pressure_msb",
+          "description": "Control signal of rx_fifo_outValue",
           "fields": [
             {
               "offset": "0",
               "width": "1",
-              "name": "pressure_msb_ap_vld",
+              "name": "rx_fifo_outValue_ap_vld",
               "access": "R",
               "reset_value": "0",
-              "description": "Control signal pressure_msb_ap_vld"
-            },
-            {
-              "offset": "1",
-              "width": "31",
-              "name": "RESERVED",
-              "access": "R",
-              "reset_value": "0",
-              "description": "Reserved.  0s on read."
-            }
-          ]
-        },
-        {
-          "offset": "0x38",
-          "name": "pressure_lsb",
-          "access": "R",
-          "reset_value": "0x0",
-          "description": "Data signal of pressure_lsb",
-          "fields": [{
-              "offset": "0",
-              "width": "32",
-              "name": "pressure_lsb",
-              "access": "R",
-              "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of pressure_lsb"
-            }]
-        },
-        {
-          "offset": "0x3c",
-          "name": "pressure_lsb_ctrl",
-          "access": "R",
-          "reset_value": "0x0",
-          "description": "Control signal of pressure_lsb",
-          "fields": [
-            {
-              "offset": "0",
-              "width": "1",
-              "name": "pressure_lsb_ap_vld",
-              "access": "R",
-              "reset_value": "0",
-              "description": "Control signal pressure_lsb_ap_vld"
-            },
-            {
-              "offset": "1",
-              "width": "31",
-              "name": "RESERVED",
-              "access": "R",
-              "reset_value": "0",
-              "description": "Reserved.  0s on read."
-            }
-          ]
-        },
-        {
-          "offset": "0x40",
-          "name": "pressure_xlsb",
-          "access": "R",
-          "reset_value": "0x0",
-          "description": "Data signal of pressure_xlsb",
-          "fields": [{
-              "offset": "0",
-              "width": "32",
-              "name": "pressure_xlsb",
-              "access": "R",
-              "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of pressure_xlsb"
-            }]
-        },
-        {
-          "offset": "0x44",
-          "name": "pressure_xlsb_ctrl",
-          "access": "R",
-          "reset_value": "0x0",
-          "description": "Control signal of pressure_xlsb",
-          "fields": [
-            {
-              "offset": "0",
-              "width": "1",
-              "name": "pressure_xlsb_ap_vld",
-              "access": "R",
-              "reset_value": "0",
-              "description": "Control signal pressure_xlsb_ap_vld"
+              "description": "Control signal rx_fifo_outValue_ap_vld"
             },
             {
               "offset": "1",
@@ -729,7 +647,7 @@
         },
         "AWADDR": {
           "Type": "integer unsigned",
-          "Width": "7"
+          "Width": "6"
         },
         "WDATA": {
           "Type": "integer unsigned",
@@ -741,7 +659,7 @@
         },
         "ARADDR": {
           "Type": "integer unsigned",
-          "Width": "7"
+          "Width": "6"
         },
         "RDATA": {
           "Type": "integer unsigned",
@@ -750,8 +668,8 @@
       },
       "data_width": "32",
       "port_width": {
-        "ARADDR": "7",
-        "AWADDR": "7",
+        "ARADDR": "6",
+        "AWADDR": "6",
         "RDATA": "32",
         "WDATA": "32",
         "WSTRB": "4"
@@ -769,7 +687,7 @@
     },
     "s_axi_AXILiteS_AWADDR": {
       "dir": "in",
-      "width": "7"
+      "width": "6"
     },
     "s_axi_AXILiteS_WVALID": {
       "dir": "in",
@@ -797,7 +715,7 @@
     },
     "s_axi_AXILiteS_ARADDR": {
       "dir": "in",
-      "width": "7"
+      "width": "6"
     },
     "s_axi_AXILiteS_RVALID": {
       "dir": "out",
@@ -1039,7 +957,7 @@
       "statusOffset": "20",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "39"
+      "firstOutLatency": "38"
     },
     "empty_pirq_outValue": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1048,7 +966,7 @@
       "statusOffset": "28",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "9"
+      "firstOutLatency": "8"
     },
     "full_pirq_outValue": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1057,7 +975,7 @@
       "statusOffset": "36",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "23"
+      "firstOutLatency": "22"
     },
     "ctrl_reg_outValue": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1066,34 +984,16 @@
       "statusOffset": "44",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "39"
+      "firstOutLatency": "38"
     },
-    "pressure_msb": {
+    "rx_fifo_outValue": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
       "offset": "48",
       "statusOffset": "52",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "66"
-    },
-    "pressure_lsb": {
-      "interfaceRef": "s_axi_AXILiteS",
-      "dir": "out",
-      "offset": "56",
-      "statusOffset": "60",
-      "handshakeRef": "ap_vld",
-      "Object": "AXILiteS",
-      "firstOutLatency": "66"
-    },
-    "pressure_xlsb": {
-      "interfaceRef": "s_axi_AXILiteS",
-      "dir": "out",
-      "offset": "64",
-      "statusOffset": "68",
-      "handshakeRef": "ap_vld",
-      "Object": "AXILiteS",
-      "firstOutLatency": "66"
+      "firstOutLatency": "73"
     },
     "ap_ctrl": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1109,10 +1009,10 @@
     "Hierarchy": {"ModuleName": "iiccomm"},
     "Metrics": {"iiccomm": {
         "Latency": {
-          "LatencyBest": "50000095",
-          "LatencyAvg": "50000095",
-          "LatencyWorst": "50000095",
-          "PipelineII": "50000096",
+          "LatencyBest": "500000073",
+          "LatencyAvg": "500000073",
+          "LatencyWorst": "500000073",
+          "PipelineII": "500000074",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1121,40 +1021,24 @@
           "Uncertainty": "0.50",
           "Estimate": "3.50"
         },
-        "Loops": [
-          {
-            "Name": "memset_sensorData",
-            "TripCount": "3",
-            "Latency": "2",
+        "Loops": [{
+            "Name": "Loop 1",
+            "TripCount": "500000000",
+            "Latency": "500000000",
             "PipelineII": "",
             "PipelineDepth": "1"
-          },
-          {
-            "Name": "Loop 2",
-            "TripCount": "50000000",
-            "Latency": "50000000",
-            "PipelineII": "",
-            "PipelineDepth": "1"
-          },
-          {
-            "Name": "Loop 3",
-            "TripCount": "3",
-            "Latency": "27",
-            "PipelineII": "",
-            "PipelineDepth": "9"
-          }
-        ],
+          }],
         "Area": {
           "BRAM_18K": "2",
-          "FF": "1376",
-          "LUT": "2014",
+          "FF": "1008",
+          "LUT": "1554",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-20 10:30:27 PDT",
+    "Time": "2018-08-21 09:41:25 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

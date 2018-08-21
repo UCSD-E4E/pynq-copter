@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="iiccomm" xd:componentRef="iiccomm" xd:initiationInterval="50000096" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="iiccomm" xd:componentRef="iiccomm" xd:initiationInterval="500000074" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
   <xd:arg xd:name="iic[]" xd:originalName="iic" xd:direction="inout" xd:interfaceRef="m_axi_iic" xd:busTypeRef="aximm" xd:arraySize="4096" xd:dataWidth="32" xd:bufferDirection="inout"/>
   <xd:arg xd:name="stat_reg_outValue1" xd:originalName="stat_reg_outValue1" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x10" xd:statusOffset="0x14" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:arg xd:name="empty_pirq_outValue" xd:originalName="empty_pirq_outValue" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x18" xd:statusOffset="0x1C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:arg xd:name="full_pirq_outValue" xd:originalName="full_pirq_outValue" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x20" xd:statusOffset="0x24" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:arg xd:name="ctrl_reg_outValue" xd:originalName="ctrl_reg_outValue" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x28" xd:statusOffset="0x2C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
-  <xd:arg xd:name="pressure_msb" xd:originalName="pressure_msb" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x30" xd:statusOffset="0x34" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
-  <xd:arg xd:name="pressure_lsb" xd:originalName="pressure_lsb" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x38" xd:statusOffset="0x3C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
-  <xd:arg xd:name="pressure_xlsb" xd:originalName="pressure_xlsb" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x40" xd:statusOffset="0x44" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
-  <xd:latencyEstimates xd:best-case="50000095" xd:worst-case="50000095" xd:average-case="50000095"/>
-  <xd:resourceEstimates xd:LUT="2014" xd:FF="1376" xd:BRAM="2" xd:DSP="0"/>
+  <xd:arg xd:name="rx_fifo_outValue" xd:originalName="rx_fifo_outValue" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x30" xd:statusOffset="0x34" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="500000073" xd:worst-case="500000073" xd:average-case="500000073"/>
+  <xd:resourceEstimates xd:LUT="1554" xd:FF="1008" xd:BRAM="2" xd:DSP="0"/>
 </xd:acceleratorMap>

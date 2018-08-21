@@ -24,25 +24,25 @@
 //        bit 0  - Channel 0 (ap_done)
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
-// 0x10 : Data signal of stat_reg_outValue1
-//        bit 31~0 - stat_reg_outValue1[31:0] (Read)
-// 0x14 : Control signal of stat_reg_outValue1
-//        bit 0  - stat_reg_outValue1_ap_vld (Read/COR)
-//        others - reserved
-// 0x18 : Data signal of empty_pirq_outValue
+// 0x10 : Data signal of empty_pirq_outValue
 //        bit 31~0 - empty_pirq_outValue[31:0] (Read)
-// 0x1c : Control signal of empty_pirq_outValue
+// 0x14 : Control signal of empty_pirq_outValue
 //        bit 0  - empty_pirq_outValue_ap_vld (Read/COR)
 //        others - reserved
-// 0x20 : Data signal of full_pirq_outValue
+// 0x18 : Data signal of full_pirq_outValue
 //        bit 31~0 - full_pirq_outValue[31:0] (Read)
-// 0x24 : Control signal of full_pirq_outValue
+// 0x1c : Control signal of full_pirq_outValue
 //        bit 0  - full_pirq_outValue_ap_vld (Read/COR)
 //        others - reserved
-// 0x28 : Data signal of ctrl_reg_outValue
+// 0x20 : Data signal of ctrl_reg_outValue
 //        bit 31~0 - ctrl_reg_outValue[31:0] (Read)
-// 0x2c : Control signal of ctrl_reg_outValue
+// 0x24 : Control signal of ctrl_reg_outValue
 //        bit 0  - ctrl_reg_outValue_ap_vld (Read/COR)
+//        others - reserved
+// 0x28 : Data signal of stat_reg_outValue1
+//        bit 31~0 - stat_reg_outValue1[31:0] (Read)
+// 0x2c : Control signal of stat_reg_outValue1
+//        bit 0  - stat_reg_outValue1_ap_vld (Read/COR)
 //        others - reserved
 // 0x30 : Data signal of pressure_msb
 //        bit 31~0 - pressure_msb[31:0] (Read)
@@ -65,18 +65,18 @@
 #define XIICCOMM2_AXILITES_ADDR_GIE                      0x04
 #define XIICCOMM2_AXILITES_ADDR_IER                      0x08
 #define XIICCOMM2_AXILITES_ADDR_ISR                      0x0c
-#define XIICCOMM2_AXILITES_ADDR_STAT_REG_OUTVALUE1_DATA  0x10
-#define XIICCOMM2_AXILITES_BITS_STAT_REG_OUTVALUE1_DATA  32
-#define XIICCOMM2_AXILITES_ADDR_STAT_REG_OUTVALUE1_CTRL  0x14
-#define XIICCOMM2_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_DATA 0x18
+#define XIICCOMM2_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_DATA 0x10
 #define XIICCOMM2_AXILITES_BITS_EMPTY_PIRQ_OUTVALUE_DATA 32
-#define XIICCOMM2_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_CTRL 0x1c
-#define XIICCOMM2_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_DATA  0x20
+#define XIICCOMM2_AXILITES_ADDR_EMPTY_PIRQ_OUTVALUE_CTRL 0x14
+#define XIICCOMM2_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_DATA  0x18
 #define XIICCOMM2_AXILITES_BITS_FULL_PIRQ_OUTVALUE_DATA  32
-#define XIICCOMM2_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_CTRL  0x24
-#define XIICCOMM2_AXILITES_ADDR_CTRL_REG_OUTVALUE_DATA   0x28
+#define XIICCOMM2_AXILITES_ADDR_FULL_PIRQ_OUTVALUE_CTRL  0x1c
+#define XIICCOMM2_AXILITES_ADDR_CTRL_REG_OUTVALUE_DATA   0x20
 #define XIICCOMM2_AXILITES_BITS_CTRL_REG_OUTVALUE_DATA   32
-#define XIICCOMM2_AXILITES_ADDR_CTRL_REG_OUTVALUE_CTRL   0x2c
+#define XIICCOMM2_AXILITES_ADDR_CTRL_REG_OUTVALUE_CTRL   0x24
+#define XIICCOMM2_AXILITES_ADDR_STAT_REG_OUTVALUE1_DATA  0x28
+#define XIICCOMM2_AXILITES_BITS_STAT_REG_OUTVALUE1_DATA  32
+#define XIICCOMM2_AXILITES_ADDR_STAT_REG_OUTVALUE1_CTRL  0x2c
 #define XIICCOMM2_AXILITES_ADDR_PRESSURE_MSB_DATA        0x30
 #define XIICCOMM2_AXILITES_BITS_PRESSURE_MSB_DATA        32
 #define XIICCOMM2_AXILITES_ADDR_PRESSURE_MSB_CTRL        0x34

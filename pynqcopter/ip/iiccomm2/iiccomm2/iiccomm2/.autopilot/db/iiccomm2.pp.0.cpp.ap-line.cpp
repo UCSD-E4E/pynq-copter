@@ -33207,14 +33207,17 @@ void delay_until_ms(){
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
+#pragma empty_line
 static uint32_t empty_pirq_val;
 static uint32_t full_pirq_val;
 static uint32_t ctrl_reg_val;
 static uint32_t stat_reg_val1;
 #pragma empty_line
 #pragma empty_line
-#pragma empty_line
-void iiccomm2(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue, uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb)
+void iiccomm2(volatile uint32_t iic[4096],
+ uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue,
+ uint32_t& stat_reg_outValue1, uint32_t& pressure_msb, uint32_t& pressure_lsb,
+ uint32_t& pressure_xlsb)
 {
 #pragma HLS INTERFACE s_axilite port=return
 #pragma empty_line
@@ -33228,7 +33231,6 @@ void iiccomm2(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_
 #pragma HLS INTERFACE s_axilite port=pressure_lsb
 #pragma HLS INTERFACE s_axilite port=pressure_xlsb
 #pragma empty_line
- uint32_t sensorData[3] = {};
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -33273,7 +33275,7 @@ void iiccomm2(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_
  iic[(0x40001000/4)+(0x108/4)] = 0xF5;
  iic[(0x40001000/4)+(0x108/4)] = 0xA0;
 #pragma empty_line
- delay_until_ms<1000>();
+ delay_until_ms<10000>();
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -33289,17 +33291,8 @@ void iiccomm2(volatile uint32_t iic[4096], uint32_t& stat_reg_outValue1, uint32_
 #pragma empty_line
  iic[(0x40001000/4)+(0x108/4)] = 0x203;
 #pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
- for (int index = 0; index < 3; index++) {
-   sensorData[index] = iic[(0x40001000/4) + (0x120/4)];
-  }
-#pragma empty_line
- pressure_msb = (uint32_t)sensorData[0];
- pressure_lsb = (uint32_t)sensorData[1];
- pressure_xlsb = (uint32_t)sensorData[2];
-#pragma empty_line
+ pressure_msb = iic[(0x40001000/4)+(0x10C/4)];
+ pressure_lsb = iic[(0x40001000/4)+(0x10C/4)];
+ pressure_xlsb = iic[(0x40001000/4)+(0x10C/4)];
 #pragma empty_line
 }

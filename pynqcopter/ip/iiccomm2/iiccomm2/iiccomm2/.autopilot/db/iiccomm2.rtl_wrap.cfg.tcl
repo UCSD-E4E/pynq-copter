@@ -16,7 +16,7 @@ set Interface0 "wire"
 set DataType0 "unsigned int"
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
 lappend PortList $Port0
-set PortName1 "stat_reg_outValue1"
+set PortName1 "empty_pirq_outValue"
 set BitWidth1 "32"
 set ArrayOpt1 ""
 set Const1 "0"
@@ -28,7 +28,7 @@ set Interface1 "wire"
 set DataType1 "unsigned int"
 set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
 lappend PortList $Port1
-set PortName2 "empty_pirq_outValue"
+set PortName2 "full_pirq_outValue"
 set BitWidth2 "32"
 set ArrayOpt2 ""
 set Const2 "0"
@@ -40,7 +40,7 @@ set Interface2 "wire"
 set DataType2 "unsigned int"
 set Port2 [list $PortName2 $Interface2 $DataType2 $Pointer2 $Dims2 $Const2 $Volatile2 $ArrayOpt2]
 lappend PortList $Port2
-set PortName3 "full_pirq_outValue"
+set PortName3 "ctrl_reg_outValue"
 set BitWidth3 "32"
 set ArrayOpt3 ""
 set Const3 "0"
@@ -52,7 +52,7 @@ set Interface3 "wire"
 set DataType3 "unsigned int"
 set Port3 [list $PortName3 $Interface3 $DataType3 $Pointer3 $Dims3 $Const3 $Volatile3 $ArrayOpt3]
 lappend PortList $Port3
-set PortName4 "ctrl_reg_outValue"
+set PortName4 "stat_reg_outValue1"
 set BitWidth4 "32"
 set ArrayOpt4 ""
 set Const4 "0"
