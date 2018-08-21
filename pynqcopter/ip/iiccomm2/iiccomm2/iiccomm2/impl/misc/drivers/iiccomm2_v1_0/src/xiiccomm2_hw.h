@@ -44,20 +44,65 @@
 // 0x2c : Control signal of stat_reg_outValue1
 //        bit 0  - stat_reg_outValue1_ap_vld (Read/COR)
 //        others - reserved
-// 0x30 : Data signal of pressure_msb
+// 0x30 : Data signal of stat_reg_val2
+//        bit 31~0 - stat_reg_val2[31:0] (Read)
+// 0x34 : Control signal of stat_reg_val2
+//        bit 0  - stat_reg_val2_ap_vld (Read/COR)
+//        others - reserved
+// 0x38 : Data signal of pressure_msb
 //        bit 31~0 - pressure_msb[31:0] (Read)
-// 0x34 : Control signal of pressure_msb
+// 0x3c : Control signal of pressure_msb
 //        bit 0  - pressure_msb_ap_vld (Read/COR)
 //        others - reserved
-// 0x38 : Data signal of pressure_lsb
+// 0x40 : Data signal of pressure_lsb
 //        bit 31~0 - pressure_lsb[31:0] (Read)
-// 0x3c : Control signal of pressure_lsb
+// 0x44 : Control signal of pressure_lsb
 //        bit 0  - pressure_lsb_ap_vld (Read/COR)
 //        others - reserved
-// 0x40 : Data signal of pressure_xlsb
+// 0x48 : Data signal of pressure_xlsb
 //        bit 31~0 - pressure_xlsb[31:0] (Read)
-// 0x44 : Control signal of pressure_xlsb
+// 0x4c : Control signal of pressure_xlsb
 //        bit 0  - pressure_xlsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x50 : Data signal of temp_msb
+//        bit 31~0 - temp_msb[31:0] (Read)
+// 0x54 : Control signal of temp_msb
+//        bit 0  - temp_msb_ap_vld (Read/COR)
+//        others - reserved
+// 0x58 : Data signal of temp_lsb
+//        bit 31~0 - temp_lsb[31:0] (Read)
+// 0x5c : Control signal of temp_lsb
+//        bit 0  - temp_lsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x60 : Data signal of temp_xlsb
+//        bit 31~0 - temp_xlsb[31:0] (Read)
+// 0x64 : Control signal of temp_xlsb
+//        bit 0  - temp_xlsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x68 : Data signal of press_raw
+//        bit 31~0 - press_raw[31:0] (Read)
+// 0x6c : Control signal of press_raw
+//        bit 0  - press_raw_ap_vld (Read/COR)
+//        others - reserved
+// 0x70 : Data signal of temp_raw
+//        bit 31~0 - temp_raw[31:0] (Read)
+// 0x74 : Control signal of temp_raw
+//        bit 0  - temp_raw_ap_vld (Read/COR)
+//        others - reserved
+// 0x78 : Data signal of operation
+//        bit 31~0 - operation[31:0] (Read)
+// 0x7c : Control signal of operation
+//        bit 0  - operation_ap_vld (Read/COR)
+//        others - reserved
+// 0x80 : Data signal of press_cal
+//        bit 31~0 - press_cal[31:0] (Read)
+// 0x84 : Control signal of press_cal
+//        bit 0  - press_cal_ap_vld (Read/COR)
+//        others - reserved
+// 0x88 : Data signal of press_act
+//        bit 31~0 - press_act[31:0] (Read)
+// 0x8c : Control signal of press_act
+//        bit 0  - press_act_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -77,13 +122,40 @@
 #define XIICCOMM2_AXILITES_ADDR_STAT_REG_OUTVALUE1_DATA  0x28
 #define XIICCOMM2_AXILITES_BITS_STAT_REG_OUTVALUE1_DATA  32
 #define XIICCOMM2_AXILITES_ADDR_STAT_REG_OUTVALUE1_CTRL  0x2c
-#define XIICCOMM2_AXILITES_ADDR_PRESSURE_MSB_DATA        0x30
+#define XIICCOMM2_AXILITES_ADDR_STAT_REG_VAL2_DATA       0x30
+#define XIICCOMM2_AXILITES_BITS_STAT_REG_VAL2_DATA       32
+#define XIICCOMM2_AXILITES_ADDR_STAT_REG_VAL2_CTRL       0x34
+#define XIICCOMM2_AXILITES_ADDR_PRESSURE_MSB_DATA        0x38
 #define XIICCOMM2_AXILITES_BITS_PRESSURE_MSB_DATA        32
-#define XIICCOMM2_AXILITES_ADDR_PRESSURE_MSB_CTRL        0x34
-#define XIICCOMM2_AXILITES_ADDR_PRESSURE_LSB_DATA        0x38
+#define XIICCOMM2_AXILITES_ADDR_PRESSURE_MSB_CTRL        0x3c
+#define XIICCOMM2_AXILITES_ADDR_PRESSURE_LSB_DATA        0x40
 #define XIICCOMM2_AXILITES_BITS_PRESSURE_LSB_DATA        32
-#define XIICCOMM2_AXILITES_ADDR_PRESSURE_LSB_CTRL        0x3c
-#define XIICCOMM2_AXILITES_ADDR_PRESSURE_XLSB_DATA       0x40
+#define XIICCOMM2_AXILITES_ADDR_PRESSURE_LSB_CTRL        0x44
+#define XIICCOMM2_AXILITES_ADDR_PRESSURE_XLSB_DATA       0x48
 #define XIICCOMM2_AXILITES_BITS_PRESSURE_XLSB_DATA       32
-#define XIICCOMM2_AXILITES_ADDR_PRESSURE_XLSB_CTRL       0x44
+#define XIICCOMM2_AXILITES_ADDR_PRESSURE_XLSB_CTRL       0x4c
+#define XIICCOMM2_AXILITES_ADDR_TEMP_MSB_DATA            0x50
+#define XIICCOMM2_AXILITES_BITS_TEMP_MSB_DATA            32
+#define XIICCOMM2_AXILITES_ADDR_TEMP_MSB_CTRL            0x54
+#define XIICCOMM2_AXILITES_ADDR_TEMP_LSB_DATA            0x58
+#define XIICCOMM2_AXILITES_BITS_TEMP_LSB_DATA            32
+#define XIICCOMM2_AXILITES_ADDR_TEMP_LSB_CTRL            0x5c
+#define XIICCOMM2_AXILITES_ADDR_TEMP_XLSB_DATA           0x60
+#define XIICCOMM2_AXILITES_BITS_TEMP_XLSB_DATA           32
+#define XIICCOMM2_AXILITES_ADDR_TEMP_XLSB_CTRL           0x64
+#define XIICCOMM2_AXILITES_ADDR_PRESS_RAW_DATA           0x68
+#define XIICCOMM2_AXILITES_BITS_PRESS_RAW_DATA           32
+#define XIICCOMM2_AXILITES_ADDR_PRESS_RAW_CTRL           0x6c
+#define XIICCOMM2_AXILITES_ADDR_TEMP_RAW_DATA            0x70
+#define XIICCOMM2_AXILITES_BITS_TEMP_RAW_DATA            32
+#define XIICCOMM2_AXILITES_ADDR_TEMP_RAW_CTRL            0x74
+#define XIICCOMM2_AXILITES_ADDR_OPERATION_DATA           0x78
+#define XIICCOMM2_AXILITES_BITS_OPERATION_DATA           32
+#define XIICCOMM2_AXILITES_ADDR_OPERATION_CTRL           0x7c
+#define XIICCOMM2_AXILITES_ADDR_PRESS_CAL_DATA           0x80
+#define XIICCOMM2_AXILITES_BITS_PRESS_CAL_DATA           32
+#define XIICCOMM2_AXILITES_ADDR_PRESS_CAL_CTRL           0x84
+#define XIICCOMM2_AXILITES_ADDR_PRESS_ACT_DATA           0x88
+#define XIICCOMM2_AXILITES_BITS_PRESS_ACT_DATA           32
+#define XIICCOMM2_AXILITES_ADDR_PRESS_ACT_CTRL           0x8c
 

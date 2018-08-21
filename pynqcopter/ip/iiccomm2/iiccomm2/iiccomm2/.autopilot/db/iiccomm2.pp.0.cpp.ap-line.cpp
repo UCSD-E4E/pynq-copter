@@ -33216,21 +33216,51 @@ static uint32_t stat_reg_val1;
 #pragma empty_line
 void iiccomm2(volatile uint32_t iic[4096],
  uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue,
- uint32_t& stat_reg_outValue1, uint32_t& pressure_msb, uint32_t& pressure_lsb,
- uint32_t& pressure_xlsb)
+ uint32_t& stat_reg_outValue1, uint32_t& stat_reg_val2,
+ uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb,
+ uint32_t& temp_msb, uint32_t& temp_lsb, uint32_t& temp_xlsb,
+ uint32_t& press_raw, uint32_t& temp_raw,
+ uint32_t& operation, uint32_t& press_cal, uint32_t& press_act)
 {
 #pragma HLS INTERFACE s_axilite port=return
 #pragma empty_line
 #pragma HLS INTERFACE m_axi port=iic
 #pragma empty_line
-#pragma HLS INTERFACE s_axilite port=stat_reg_outValue1
 #pragma HLS INTERFACE s_axilite port=empty_pirq_outValue
 #pragma HLS INTERFACE s_axilite port=full_pirq_outValue
 #pragma HLS INTERFACE s_axilite port=ctrl_reg_outValue
+#pragma HLS INTERFACE s_axilite port=stat_reg_outValue1
+#pragma HLS INTERFACE s_axilite port=stat_reg_val2
+#pragma HLS INTERFACE s_axilite port=operation
 #pragma HLS INTERFACE s_axilite port=pressure_msb
 #pragma HLS INTERFACE s_axilite port=pressure_lsb
 #pragma HLS INTERFACE s_axilite port=pressure_xlsb
+#pragma HLS INTERFACE s_axilite port=temp_msb
+#pragma HLS INTERFACE s_axilite port=temp_lsb
+#pragma HLS INTERFACE s_axilite port=temp_xlsb
+#pragma HLS INTERFACE s_axilite port=press_raw
+#pragma HLS INTERFACE s_axilite port=temp_raw
+#pragma HLS INTERFACE s_axilite port=press_cal
+#pragma HLS INTERFACE s_axilite port=press_act
 #pragma empty_line
+ uint32_t dig_T1 = 28585;
+ uint32_t dig_T2 = 26941;
+ uint32_t dig_T3 = 50;
+ uint32_t dig_P1 = 37935;
+ uint32_t dig_P2 = 54930;
+ uint32_t dig_P3 = 3024;
+ uint32_t dig_P4 = 8914;
+ uint32_t dig_P5 = 65477;
+ uint32_t dig_P6 = 65529;
+ uint32_t dig_P7 = 9900;
+ uint32_t dig_P8 = 55306;
+ uint32_t dig_P9 = 4285;
+#pragma empty_line
+ static uint32_t empty_pirq_val;
+ static uint32_t full_pirq_val;
+ static uint32_t ctrl_reg_val;
+ static uint32_t stat_reg_val1;
+ uint32_t sensorData[6] = {};
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -33273,9 +33303,9 @@ void iiccomm2(volatile uint32_t iic[4096],
 #pragma empty_line
  iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
  iic[(0x40001000/4)+(0x108/4)] = 0xF5;
- iic[(0x40001000/4)+(0x108/4)] = 0xA0;
+ iic[(0x40001000/4)+(0x108/4)] = 0x40;
 #pragma empty_line
- delay_until_ms<10000>();
+ delay_until_ms<50>();
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -33286,13 +33316,82 @@ void iiccomm2(volatile uint32_t iic[4096],
  iic[(0x40001000/4)+(0x108/4)] = 0xF7;
 #pragma empty_line
 #pragma empty_line
- iic[(0x40001000/4)+(0x108/4)] = 0xED;
+ iic[(0x40001000/4)+(0x108/4)] = 0x1ED;
 #pragma empty_line
 #pragma empty_line
- iic[(0x40001000/4)+(0x108/4)] = 0x203;
+ iic[(0x40001000/4)+(0x108/4)] = 0x206;
 #pragma empty_line
- pressure_msb = iic[(0x40001000/4)+(0x10C/4)];
- pressure_lsb = iic[(0x40001000/4)+(0x10C/4)];
- pressure_xlsb = iic[(0x40001000/4)+(0x10C/4)];
 #pragma empty_line
+#pragma empty_line
+ delay_until_ms<10>();
+#pragma empty_line
+#pragma empty_line
+ stat_reg_val2 = iic[(0x40001000/4)+(0x104/4)];
+ operation = stat_reg_val2 & 0x40;
+#pragma empty_line
+ int index = 0;
+#pragma empty_line
+ while(operation == 0x00)
+ {
+#pragma empty_line
+  sensorData[index] = iic[(0x40001000/4) + (0x10C/4)];
+  index = index + 1;
+#pragma empty_line
+  delay_until_ms<10>();
+  stat_reg_val2 = iic[(0x40001000/4)+(0x104/4)];
+  operation = stat_reg_val2 & 0x40;
+ }
+#pragma empty_line
+ pressure_msb = (uint32_t)sensorData[0];
+ pressure_lsb = (uint32_t)sensorData[1];
+ pressure_xlsb = (uint32_t)sensorData[2];
+#pragma empty_line
+ temp_msb = (uint32_t)sensorData[3];
+ temp_lsb = (uint32_t)sensorData[4];
+ temp_xlsb = (uint32_t)sensorData[5];
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+ press_raw = (sensorData[0] << 12) | (sensorData[1] << 4) | (sensorData[2] >> 4);
+ temp_raw = (sensorData[3] << 12) | (sensorData[4] << 4) | (sensorData[5] >> 4);
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+ signed long int var1, var2, t_fine;
+#pragma empty_line
+ var1 = ((((temp_raw >> 3) - ((signed long int)dig_T1<<1))) * ((signed long int)dig_T2)) >> 11;
+    var2 = (((((temp_raw >> 4) - ((signed long int)dig_T1)) * ((temp_raw>>4) - ((signed long int)dig_T1))) >> 12) * ((signed long int)dig_T3)) >> 14;
+#pragma empty_line
+ t_fine = var1 + var2;
+#pragma empty_line
+#pragma empty_line
+ signed long int var3, var4;
+    unsigned long int pressure;
+    var3 = (((signed long int)t_fine)>>1) - (signed long int)64000;
+    var4 = (((var3>>2) * (var3>>2)) >> 11) * ((signed long int)dig_P6);
+    var4 = var4 + ((var3*((signed long int)dig_P5))<<1);
+    var4 = (var4>>2)+(((signed long int)dig_P4)<<16);
+    var3 = (((dig_P3 * (((var3>>2)*(var3>>2)) >> 13)) >>3) + ((((signed long int)dig_P2) * var3)>>1))>>18;
+    var3 = ((((32768+var3))*((signed long int)dig_P1))>>15);
+    if (var3 == 0)
+    {
+        pressure = 100;
+    }
+    pressure = (((unsigned long int)(((signed long int)1048576)-press_raw)-(var4>>12)))*3125;
+    if(pressure<0x80000000)
+    {
+       pressure = (pressure << 1) / ((unsigned long int) var3);
+    }
+    else
+    {
+        pressure = (pressure / (unsigned long int)var3) * 2;
+    }
+    var3 = (((signed long int)dig_P9) * ((signed long int)(((pressure>>3) * (pressure>>3))>>13)))>>12;
+    var4 = (((signed long int)(pressure>>2)) * ((signed long int)dig_P8))>>13;
+    pressure = (unsigned long int)((signed long int)pressure + ((var3 + var4 + dig_P7) >> 4));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+ press_cal = pressure;
+ press_act = (double)press_cal / 100.0;
 }

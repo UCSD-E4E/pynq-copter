@@ -156,6 +156,26 @@ u32 XIiccomm2_Get_stat_reg_outValue1_vld(XIiccomm2 *InstancePtr) {
     return Data & 0x1;
 }
 
+u32 XIiccomm2_Get_stat_reg_val2(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_STAT_REG_VAL2_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_stat_reg_val2_vld(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_STAT_REG_VAL2_CTRL);
+    return Data & 0x1;
+}
+
 u32 XIiccomm2_Get_pressure_msb(XIiccomm2 *InstancePtr) {
     u32 Data;
 
@@ -213,6 +233,166 @@ u32 XIiccomm2_Get_pressure_xlsb_vld(XIiccomm2 *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_PRESSURE_XLSB_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2_Get_temp_msb(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_TEMP_MSB_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_temp_msb_vld(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_TEMP_MSB_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2_Get_temp_lsb(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_TEMP_LSB_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_temp_lsb_vld(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_TEMP_LSB_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2_Get_temp_xlsb(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_TEMP_XLSB_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_temp_xlsb_vld(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_TEMP_XLSB_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2_Get_press_raw(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_PRESS_RAW_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_press_raw_vld(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_PRESS_RAW_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2_Get_temp_raw(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_TEMP_RAW_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_temp_raw_vld(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_TEMP_RAW_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2_Get_operation(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_OPERATION_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_operation_vld(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_OPERATION_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2_Get_press_cal(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_PRESS_CAL_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_press_cal_vld(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_PRESS_CAL_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2_Get_press_act(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_PRESS_ACT_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_press_act_vld(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_PRESS_ACT_CTRL);
     return Data & 0x1;
 }
 

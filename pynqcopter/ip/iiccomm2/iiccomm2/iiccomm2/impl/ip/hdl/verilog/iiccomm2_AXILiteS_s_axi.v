@@ -8,7 +8,7 @@
 `timescale 1ns/1ps
 module iiccomm2_AXILiteS_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 7,
+    C_S_AXI_ADDR_WIDTH = 8,
     C_S_AXI_DATA_WIDTH = 32
 )(
     // axi4 lite slave signals
@@ -46,12 +46,30 @@ module iiccomm2_AXILiteS_s_axi
     input  wire                          ctrl_reg_outValue_ap_vld,
     input  wire [31:0]                   stat_reg_outValue1,
     input  wire                          stat_reg_outValue1_ap_vld,
+    input  wire [31:0]                   stat_reg_val2,
+    input  wire                          stat_reg_val2_ap_vld,
     input  wire [31:0]                   pressure_msb,
     input  wire                          pressure_msb_ap_vld,
     input  wire [31:0]                   pressure_lsb,
     input  wire                          pressure_lsb_ap_vld,
     input  wire [31:0]                   pressure_xlsb,
-    input  wire                          pressure_xlsb_ap_vld
+    input  wire                          pressure_xlsb_ap_vld,
+    input  wire [31:0]                   temp_msb,
+    input  wire                          temp_msb_ap_vld,
+    input  wire [31:0]                   temp_lsb,
+    input  wire                          temp_lsb_ap_vld,
+    input  wire [31:0]                   temp_xlsb,
+    input  wire                          temp_xlsb_ap_vld,
+    input  wire [31:0]                   press_raw,
+    input  wire                          press_raw_ap_vld,
+    input  wire [31:0]                   temp_raw,
+    input  wire                          temp_raw_ap_vld,
+    input  wire [31:0]                   operation,
+    input  wire                          operation_ap_vld,
+    input  wire [31:0]                   press_cal,
+    input  wire                          press_cal_ap_vld,
+    input  wire [31:0]                   press_act,
+    input  wire                          press_act_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -92,43 +110,106 @@ module iiccomm2_AXILiteS_s_axi
 // 0x2c : Control signal of stat_reg_outValue1
 //        bit 0  - stat_reg_outValue1_ap_vld (Read/COR)
 //        others - reserved
-// 0x30 : Data signal of pressure_msb
+// 0x30 : Data signal of stat_reg_val2
+//        bit 31~0 - stat_reg_val2[31:0] (Read)
+// 0x34 : Control signal of stat_reg_val2
+//        bit 0  - stat_reg_val2_ap_vld (Read/COR)
+//        others - reserved
+// 0x38 : Data signal of pressure_msb
 //        bit 31~0 - pressure_msb[31:0] (Read)
-// 0x34 : Control signal of pressure_msb
+// 0x3c : Control signal of pressure_msb
 //        bit 0  - pressure_msb_ap_vld (Read/COR)
 //        others - reserved
-// 0x38 : Data signal of pressure_lsb
+// 0x40 : Data signal of pressure_lsb
 //        bit 31~0 - pressure_lsb[31:0] (Read)
-// 0x3c : Control signal of pressure_lsb
+// 0x44 : Control signal of pressure_lsb
 //        bit 0  - pressure_lsb_ap_vld (Read/COR)
 //        others - reserved
-// 0x40 : Data signal of pressure_xlsb
+// 0x48 : Data signal of pressure_xlsb
 //        bit 31~0 - pressure_xlsb[31:0] (Read)
-// 0x44 : Control signal of pressure_xlsb
+// 0x4c : Control signal of pressure_xlsb
 //        bit 0  - pressure_xlsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x50 : Data signal of temp_msb
+//        bit 31~0 - temp_msb[31:0] (Read)
+// 0x54 : Control signal of temp_msb
+//        bit 0  - temp_msb_ap_vld (Read/COR)
+//        others - reserved
+// 0x58 : Data signal of temp_lsb
+//        bit 31~0 - temp_lsb[31:0] (Read)
+// 0x5c : Control signal of temp_lsb
+//        bit 0  - temp_lsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x60 : Data signal of temp_xlsb
+//        bit 31~0 - temp_xlsb[31:0] (Read)
+// 0x64 : Control signal of temp_xlsb
+//        bit 0  - temp_xlsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x68 : Data signal of press_raw
+//        bit 31~0 - press_raw[31:0] (Read)
+// 0x6c : Control signal of press_raw
+//        bit 0  - press_raw_ap_vld (Read/COR)
+//        others - reserved
+// 0x70 : Data signal of temp_raw
+//        bit 31~0 - temp_raw[31:0] (Read)
+// 0x74 : Control signal of temp_raw
+//        bit 0  - temp_raw_ap_vld (Read/COR)
+//        others - reserved
+// 0x78 : Data signal of operation
+//        bit 31~0 - operation[31:0] (Read)
+// 0x7c : Control signal of operation
+//        bit 0  - operation_ap_vld (Read/COR)
+//        others - reserved
+// 0x80 : Data signal of press_cal
+//        bit 31~0 - press_cal[31:0] (Read)
+// 0x84 : Control signal of press_cal
+//        bit 0  - press_cal_ap_vld (Read/COR)
+//        others - reserved
+// 0x88 : Data signal of press_act
+//        bit 31~0 - press_act[31:0] (Read)
+// 0x8c : Control signal of press_act
+//        bit 0  - press_act_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL                    = 7'h00,
-    ADDR_GIE                        = 7'h04,
-    ADDR_IER                        = 7'h08,
-    ADDR_ISR                        = 7'h0c,
-    ADDR_EMPTY_PIRQ_OUTVALUE_DATA_0 = 7'h10,
-    ADDR_EMPTY_PIRQ_OUTVALUE_CTRL   = 7'h14,
-    ADDR_FULL_PIRQ_OUTVALUE_DATA_0  = 7'h18,
-    ADDR_FULL_PIRQ_OUTVALUE_CTRL    = 7'h1c,
-    ADDR_CTRL_REG_OUTVALUE_DATA_0   = 7'h20,
-    ADDR_CTRL_REG_OUTVALUE_CTRL     = 7'h24,
-    ADDR_STAT_REG_OUTVALUE1_DATA_0  = 7'h28,
-    ADDR_STAT_REG_OUTVALUE1_CTRL    = 7'h2c,
-    ADDR_PRESSURE_MSB_DATA_0        = 7'h30,
-    ADDR_PRESSURE_MSB_CTRL          = 7'h34,
-    ADDR_PRESSURE_LSB_DATA_0        = 7'h38,
-    ADDR_PRESSURE_LSB_CTRL          = 7'h3c,
-    ADDR_PRESSURE_XLSB_DATA_0       = 7'h40,
-    ADDR_PRESSURE_XLSB_CTRL         = 7'h44,
+    ADDR_AP_CTRL                    = 8'h00,
+    ADDR_GIE                        = 8'h04,
+    ADDR_IER                        = 8'h08,
+    ADDR_ISR                        = 8'h0c,
+    ADDR_EMPTY_PIRQ_OUTVALUE_DATA_0 = 8'h10,
+    ADDR_EMPTY_PIRQ_OUTVALUE_CTRL   = 8'h14,
+    ADDR_FULL_PIRQ_OUTVALUE_DATA_0  = 8'h18,
+    ADDR_FULL_PIRQ_OUTVALUE_CTRL    = 8'h1c,
+    ADDR_CTRL_REG_OUTVALUE_DATA_0   = 8'h20,
+    ADDR_CTRL_REG_OUTVALUE_CTRL     = 8'h24,
+    ADDR_STAT_REG_OUTVALUE1_DATA_0  = 8'h28,
+    ADDR_STAT_REG_OUTVALUE1_CTRL    = 8'h2c,
+    ADDR_STAT_REG_VAL2_DATA_0       = 8'h30,
+    ADDR_STAT_REG_VAL2_CTRL         = 8'h34,
+    ADDR_PRESSURE_MSB_DATA_0        = 8'h38,
+    ADDR_PRESSURE_MSB_CTRL          = 8'h3c,
+    ADDR_PRESSURE_LSB_DATA_0        = 8'h40,
+    ADDR_PRESSURE_LSB_CTRL          = 8'h44,
+    ADDR_PRESSURE_XLSB_DATA_0       = 8'h48,
+    ADDR_PRESSURE_XLSB_CTRL         = 8'h4c,
+    ADDR_TEMP_MSB_DATA_0            = 8'h50,
+    ADDR_TEMP_MSB_CTRL              = 8'h54,
+    ADDR_TEMP_LSB_DATA_0            = 8'h58,
+    ADDR_TEMP_LSB_CTRL              = 8'h5c,
+    ADDR_TEMP_XLSB_DATA_0           = 8'h60,
+    ADDR_TEMP_XLSB_CTRL             = 8'h64,
+    ADDR_PRESS_RAW_DATA_0           = 8'h68,
+    ADDR_PRESS_RAW_CTRL             = 8'h6c,
+    ADDR_TEMP_RAW_DATA_0            = 8'h70,
+    ADDR_TEMP_RAW_CTRL              = 8'h74,
+    ADDR_OPERATION_DATA_0           = 8'h78,
+    ADDR_OPERATION_CTRL             = 8'h7c,
+    ADDR_PRESS_CAL_DATA_0           = 8'h80,
+    ADDR_PRESS_CAL_CTRL             = 8'h84,
+    ADDR_PRESS_ACT_DATA_0           = 8'h88,
+    ADDR_PRESS_ACT_CTRL             = 8'h8c,
     WRIDLE                          = 2'd0,
     WRDATA                          = 2'd1,
     WRRESP                          = 2'd2,
@@ -136,7 +217,7 @@ localparam
     RDIDLE                          = 2'd0,
     RDDATA                          = 2'd1,
     RDRESET                         = 2'd2,
-    ADDR_BITS         = 7;
+    ADDR_BITS         = 8;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -167,12 +248,30 @@ localparam
     reg                           int_ctrl_reg_outValue_ap_vld;
     reg  [31:0]                   int_stat_reg_outValue1 = 'b0;
     reg                           int_stat_reg_outValue1_ap_vld;
+    reg  [31:0]                   int_stat_reg_val2 = 'b0;
+    reg                           int_stat_reg_val2_ap_vld;
     reg  [31:0]                   int_pressure_msb = 'b0;
     reg                           int_pressure_msb_ap_vld;
     reg  [31:0]                   int_pressure_lsb = 'b0;
     reg                           int_pressure_lsb_ap_vld;
     reg  [31:0]                   int_pressure_xlsb = 'b0;
     reg                           int_pressure_xlsb_ap_vld;
+    reg  [31:0]                   int_temp_msb = 'b0;
+    reg                           int_temp_msb_ap_vld;
+    reg  [31:0]                   int_temp_lsb = 'b0;
+    reg                           int_temp_lsb_ap_vld;
+    reg  [31:0]                   int_temp_xlsb = 'b0;
+    reg                           int_temp_xlsb_ap_vld;
+    reg  [31:0]                   int_press_raw = 'b0;
+    reg                           int_press_raw_ap_vld;
+    reg  [31:0]                   int_temp_raw = 'b0;
+    reg                           int_temp_raw_ap_vld;
+    reg  [31:0]                   int_operation = 'b0;
+    reg                           int_operation_ap_vld;
+    reg  [31:0]                   int_press_cal = 'b0;
+    reg                           int_press_cal_ap_vld;
+    reg  [31:0]                   int_press_act = 'b0;
+    reg                           int_press_act_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -304,6 +403,12 @@ always @(posedge ACLK) begin
                 ADDR_STAT_REG_OUTVALUE1_CTRL: begin
                     rdata[0] <= int_stat_reg_outValue1_ap_vld;
                 end
+                ADDR_STAT_REG_VAL2_DATA_0: begin
+                    rdata <= int_stat_reg_val2[31:0];
+                end
+                ADDR_STAT_REG_VAL2_CTRL: begin
+                    rdata[0] <= int_stat_reg_val2_ap_vld;
+                end
                 ADDR_PRESSURE_MSB_DATA_0: begin
                     rdata <= int_pressure_msb[31:0];
                 end
@@ -321,6 +426,54 @@ always @(posedge ACLK) begin
                 end
                 ADDR_PRESSURE_XLSB_CTRL: begin
                     rdata[0] <= int_pressure_xlsb_ap_vld;
+                end
+                ADDR_TEMP_MSB_DATA_0: begin
+                    rdata <= int_temp_msb[31:0];
+                end
+                ADDR_TEMP_MSB_CTRL: begin
+                    rdata[0] <= int_temp_msb_ap_vld;
+                end
+                ADDR_TEMP_LSB_DATA_0: begin
+                    rdata <= int_temp_lsb[31:0];
+                end
+                ADDR_TEMP_LSB_CTRL: begin
+                    rdata[0] <= int_temp_lsb_ap_vld;
+                end
+                ADDR_TEMP_XLSB_DATA_0: begin
+                    rdata <= int_temp_xlsb[31:0];
+                end
+                ADDR_TEMP_XLSB_CTRL: begin
+                    rdata[0] <= int_temp_xlsb_ap_vld;
+                end
+                ADDR_PRESS_RAW_DATA_0: begin
+                    rdata <= int_press_raw[31:0];
+                end
+                ADDR_PRESS_RAW_CTRL: begin
+                    rdata[0] <= int_press_raw_ap_vld;
+                end
+                ADDR_TEMP_RAW_DATA_0: begin
+                    rdata <= int_temp_raw[31:0];
+                end
+                ADDR_TEMP_RAW_CTRL: begin
+                    rdata[0] <= int_temp_raw_ap_vld;
+                end
+                ADDR_OPERATION_DATA_0: begin
+                    rdata <= int_operation[31:0];
+                end
+                ADDR_OPERATION_CTRL: begin
+                    rdata[0] <= int_operation_ap_vld;
+                end
+                ADDR_PRESS_CAL_DATA_0: begin
+                    rdata <= int_press_cal[31:0];
+                end
+                ADDR_PRESS_CAL_CTRL: begin
+                    rdata[0] <= int_press_cal_ap_vld;
+                end
+                ADDR_PRESS_ACT_DATA_0: begin
+                    rdata <= int_press_act[31:0];
+                end
+                ADDR_PRESS_ACT_CTRL: begin
+                    rdata[0] <= int_press_act_ap_vld;
                 end
             endcase
         end
@@ -515,6 +668,28 @@ always @(posedge ACLK) begin
     end
 end
 
+// int_stat_reg_val2
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_stat_reg_val2 <= 0;
+    else if (ACLK_EN) begin
+        if (stat_reg_val2_ap_vld)
+            int_stat_reg_val2 <= stat_reg_val2;
+    end
+end
+
+// int_stat_reg_val2_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_stat_reg_val2_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (stat_reg_val2_ap_vld)
+            int_stat_reg_val2_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_STAT_REG_VAL2_CTRL)
+            int_stat_reg_val2_ap_vld <= 1'b0; // clear on read
+    end
+end
+
 // int_pressure_msb
 always @(posedge ACLK) begin
     if (ARESET)
@@ -578,6 +753,182 @@ always @(posedge ACLK) begin
             int_pressure_xlsb_ap_vld <= 1'b1;
         else if (ar_hs && raddr == ADDR_PRESSURE_XLSB_CTRL)
             int_pressure_xlsb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_temp_msb
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_msb <= 0;
+    else if (ACLK_EN) begin
+        if (temp_msb_ap_vld)
+            int_temp_msb <= temp_msb;
+    end
+end
+
+// int_temp_msb_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_msb_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (temp_msb_ap_vld)
+            int_temp_msb_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TEMP_MSB_CTRL)
+            int_temp_msb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_temp_lsb
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_lsb <= 0;
+    else if (ACLK_EN) begin
+        if (temp_lsb_ap_vld)
+            int_temp_lsb <= temp_lsb;
+    end
+end
+
+// int_temp_lsb_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_lsb_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (temp_lsb_ap_vld)
+            int_temp_lsb_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TEMP_LSB_CTRL)
+            int_temp_lsb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_temp_xlsb
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_xlsb <= 0;
+    else if (ACLK_EN) begin
+        if (temp_xlsb_ap_vld)
+            int_temp_xlsb <= temp_xlsb;
+    end
+end
+
+// int_temp_xlsb_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_xlsb_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (temp_xlsb_ap_vld)
+            int_temp_xlsb_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TEMP_XLSB_CTRL)
+            int_temp_xlsb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_press_raw
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_press_raw <= 0;
+    else if (ACLK_EN) begin
+        if (press_raw_ap_vld)
+            int_press_raw <= press_raw;
+    end
+end
+
+// int_press_raw_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_press_raw_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (press_raw_ap_vld)
+            int_press_raw_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_PRESS_RAW_CTRL)
+            int_press_raw_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_temp_raw
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_raw <= 0;
+    else if (ACLK_EN) begin
+        if (temp_raw_ap_vld)
+            int_temp_raw <= temp_raw;
+    end
+end
+
+// int_temp_raw_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_raw_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (temp_raw_ap_vld)
+            int_temp_raw_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TEMP_RAW_CTRL)
+            int_temp_raw_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_operation
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_operation <= 0;
+    else if (ACLK_EN) begin
+        if (operation_ap_vld)
+            int_operation <= operation;
+    end
+end
+
+// int_operation_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_operation_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (operation_ap_vld)
+            int_operation_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_OPERATION_CTRL)
+            int_operation_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_press_cal
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_press_cal <= 0;
+    else if (ACLK_EN) begin
+        if (press_cal_ap_vld)
+            int_press_cal <= press_cal;
+    end
+end
+
+// int_press_cal_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_press_cal_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (press_cal_ap_vld)
+            int_press_cal_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_PRESS_CAL_CTRL)
+            int_press_cal_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_press_act
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_press_act <= 0;
+    else if (ACLK_EN) begin
+        if (press_act_ap_vld)
+            int_press_act <= press_act;
+    end
+end
+
+// int_press_act_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_press_act_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (press_act_ap_vld)
+            int_press_act_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_PRESS_ACT_CTRL)
+            int_press_act_ap_vld <= 1'b0; // clear on read
     end
 end
 
