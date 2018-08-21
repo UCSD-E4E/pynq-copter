@@ -41,13 +41,13 @@
     "Vhdl": [
       "impl\/vhdl\/iiccomm4_AXILiteS_s_axi.vhd",
       "impl\/vhdl\/iiccomm4_iic_m_axi.vhd",
-      "impl\/vhdl\/iiccomm4_mux_42_3bkb.vhd",
+      "impl\/vhdl\/iiccomm4_sensorData.vhd",
       "impl\/vhdl\/iiccomm4.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/iiccomm4_AXILiteS_s_axi.v",
       "impl\/verilog\/iiccomm4_iic_m_axi.v",
-      "impl\/verilog\/iiccomm4_mux_42_3bkb.v",
+      "impl\/verilog\/iiccomm4_sensorData.v",
       "impl\/verilog\/iiccomm4.v"
     ],
     "SwDriver": [
@@ -748,6 +748,126 @@
         },
         {
           "offset": "0x50",
+          "name": "temp_msb",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of temp_msb",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "temp_msb",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of temp_msb"
+            }]
+        },
+        {
+          "offset": "0x54",
+          "name": "temp_msb_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of temp_msb",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "temp_msb_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal temp_msb_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x58",
+          "name": "temp_lsb",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of temp_lsb",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "temp_lsb",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of temp_lsb"
+            }]
+        },
+        {
+          "offset": "0x5c",
+          "name": "temp_lsb_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of temp_lsb",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "temp_lsb_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal temp_lsb_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x60",
+          "name": "temp_xlsb",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of temp_xlsb",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "temp_xlsb",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of temp_xlsb"
+            }]
+        },
+        {
+          "offset": "0x64",
+          "name": "temp_xlsb_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of temp_xlsb",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "temp_xlsb_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal temp_xlsb_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x68",
           "name": "operation",
           "access": "R",
           "reset_value": "0x0",
@@ -762,7 +882,7 @@
             }]
         },
         {
-          "offset": "0x54",
+          "offset": "0x6c",
           "name": "operation_ctrl",
           "access": "R",
           "reset_value": "0x0",
@@ -1164,7 +1284,7 @@
       "statusOffset": "60",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "75"
+      "firstOutLatency": "78"
     },
     "pressure_lsb": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1173,7 +1293,7 @@
       "statusOffset": "68",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "75"
+      "firstOutLatency": "78"
     },
     "pressure_xlsb": {
       "interfaceRef": "s_axi_AXILiteS",
@@ -1182,13 +1302,40 @@
       "statusOffset": "76",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "75"
+      "firstOutLatency": "78"
     },
-    "operation": {
+    "temp_msb": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
       "offset": "80",
       "statusOffset": "84",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "78"
+    },
+    "temp_lsb": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "88",
+      "statusOffset": "92",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "78"
+    },
+    "temp_xlsb": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "96",
+      "statusOffset": "100",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "78"
+    },
+    "operation": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "104",
+      "statusOffset": "108",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
       "firstOutLatency": "75"
@@ -1222,15 +1369,15 @@
         "Loops": [
           {
             "Name": "memset_sensorData",
-            "TripCount": "3",
-            "Latency": "2",
+            "TripCount": "6",
+            "Latency": "5",
             "PipelineII": "",
             "PipelineDepth": "1"
           },
           {
             "Name": "Loop 2",
-            "TripCount": "30000000",
-            "Latency": "30000000",
+            "TripCount": "500000",
+            "Latency": "500000",
             "PipelineII": "",
             "PipelineDepth": "1"
           },
@@ -1257,16 +1404,16 @@
           }
         ],
         "Area": {
-          "BRAM_18K": "2",
-          "FF": "1728",
-          "LUT": "2378",
+          "BRAM_18K": "4",
+          "FF": "1582",
+          "LUT": "2366",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-21 09:32:52 PDT",
+    "Time": "2018-08-21 13:45:05 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

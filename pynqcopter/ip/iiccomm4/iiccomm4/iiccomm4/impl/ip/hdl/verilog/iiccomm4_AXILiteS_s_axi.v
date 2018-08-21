@@ -54,6 +54,12 @@ module iiccomm4_AXILiteS_s_axi
     input  wire                          pressure_lsb_ap_vld,
     input  wire [31:0]                   pressure_xlsb,
     input  wire                          pressure_xlsb_ap_vld,
+    input  wire [31:0]                   temp_msb,
+    input  wire                          temp_msb_ap_vld,
+    input  wire [31:0]                   temp_lsb,
+    input  wire                          temp_lsb_ap_vld,
+    input  wire [31:0]                   temp_xlsb,
+    input  wire                          temp_xlsb_ap_vld,
     input  wire [31:0]                   operation,
     input  wire                          operation_ap_vld
 );
@@ -116,9 +122,24 @@ module iiccomm4_AXILiteS_s_axi
 // 0x4c : Control signal of pressure_xlsb
 //        bit 0  - pressure_xlsb_ap_vld (Read/COR)
 //        others - reserved
-// 0x50 : Data signal of operation
+// 0x50 : Data signal of temp_msb
+//        bit 31~0 - temp_msb[31:0] (Read)
+// 0x54 : Control signal of temp_msb
+//        bit 0  - temp_msb_ap_vld (Read/COR)
+//        others - reserved
+// 0x58 : Data signal of temp_lsb
+//        bit 31~0 - temp_lsb[31:0] (Read)
+// 0x5c : Control signal of temp_lsb
+//        bit 0  - temp_lsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x60 : Data signal of temp_xlsb
+//        bit 31~0 - temp_xlsb[31:0] (Read)
+// 0x64 : Control signal of temp_xlsb
+//        bit 0  - temp_xlsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x68 : Data signal of operation
 //        bit 31~0 - operation[31:0] (Read)
-// 0x54 : Control signal of operation
+// 0x6c : Control signal of operation
 //        bit 0  - operation_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -145,8 +166,14 @@ localparam
     ADDR_PRESSURE_LSB_CTRL          = 7'h44,
     ADDR_PRESSURE_XLSB_DATA_0       = 7'h48,
     ADDR_PRESSURE_XLSB_CTRL         = 7'h4c,
-    ADDR_OPERATION_DATA_0           = 7'h50,
-    ADDR_OPERATION_CTRL             = 7'h54,
+    ADDR_TEMP_MSB_DATA_0            = 7'h50,
+    ADDR_TEMP_MSB_CTRL              = 7'h54,
+    ADDR_TEMP_LSB_DATA_0            = 7'h58,
+    ADDR_TEMP_LSB_CTRL              = 7'h5c,
+    ADDR_TEMP_XLSB_DATA_0           = 7'h60,
+    ADDR_TEMP_XLSB_CTRL             = 7'h64,
+    ADDR_OPERATION_DATA_0           = 7'h68,
+    ADDR_OPERATION_CTRL             = 7'h6c,
     WRIDLE                          = 2'd0,
     WRDATA                          = 2'd1,
     WRRESP                          = 2'd2,
@@ -193,6 +220,12 @@ localparam
     reg                           int_pressure_lsb_ap_vld;
     reg  [31:0]                   int_pressure_xlsb = 'b0;
     reg                           int_pressure_xlsb_ap_vld;
+    reg  [31:0]                   int_temp_msb = 'b0;
+    reg                           int_temp_msb_ap_vld;
+    reg  [31:0]                   int_temp_lsb = 'b0;
+    reg                           int_temp_lsb_ap_vld;
+    reg  [31:0]                   int_temp_xlsb = 'b0;
+    reg                           int_temp_xlsb_ap_vld;
     reg  [31:0]                   int_operation = 'b0;
     reg                           int_operation_ap_vld;
 
@@ -349,6 +382,24 @@ always @(posedge ACLK) begin
                 end
                 ADDR_PRESSURE_XLSB_CTRL: begin
                     rdata[0] <= int_pressure_xlsb_ap_vld;
+                end
+                ADDR_TEMP_MSB_DATA_0: begin
+                    rdata <= int_temp_msb[31:0];
+                end
+                ADDR_TEMP_MSB_CTRL: begin
+                    rdata[0] <= int_temp_msb_ap_vld;
+                end
+                ADDR_TEMP_LSB_DATA_0: begin
+                    rdata <= int_temp_lsb[31:0];
+                end
+                ADDR_TEMP_LSB_CTRL: begin
+                    rdata[0] <= int_temp_lsb_ap_vld;
+                end
+                ADDR_TEMP_XLSB_DATA_0: begin
+                    rdata <= int_temp_xlsb[31:0];
+                end
+                ADDR_TEMP_XLSB_CTRL: begin
+                    rdata[0] <= int_temp_xlsb_ap_vld;
                 end
                 ADDR_OPERATION_DATA_0: begin
                     rdata <= int_operation[31:0];
@@ -634,6 +685,72 @@ always @(posedge ACLK) begin
             int_pressure_xlsb_ap_vld <= 1'b1;
         else if (ar_hs && raddr == ADDR_PRESSURE_XLSB_CTRL)
             int_pressure_xlsb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_temp_msb
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_msb <= 0;
+    else if (ACLK_EN) begin
+        if (temp_msb_ap_vld)
+            int_temp_msb <= temp_msb;
+    end
+end
+
+// int_temp_msb_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_msb_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (temp_msb_ap_vld)
+            int_temp_msb_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TEMP_MSB_CTRL)
+            int_temp_msb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_temp_lsb
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_lsb <= 0;
+    else if (ACLK_EN) begin
+        if (temp_lsb_ap_vld)
+            int_temp_lsb <= temp_lsb;
+    end
+end
+
+// int_temp_lsb_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_lsb_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (temp_lsb_ap_vld)
+            int_temp_lsb_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TEMP_LSB_CTRL)
+            int_temp_lsb_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_temp_xlsb
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_xlsb <= 0;
+    else if (ACLK_EN) begin
+        if (temp_xlsb_ap_vld)
+            int_temp_xlsb <= temp_xlsb;
+    end
+end
+
+// int_temp_xlsb_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_temp_xlsb_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (temp_xlsb_ap_vld)
+            int_temp_xlsb_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_TEMP_XLSB_CTRL)
+            int_temp_xlsb_ap_vld <= 1'b0; // clear on read
     end
 end
 

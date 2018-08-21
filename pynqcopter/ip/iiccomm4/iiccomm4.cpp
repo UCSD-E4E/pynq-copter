@@ -41,6 +41,7 @@ void iiccomm4(volatile uint32_t iic[4096],
 	uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue,
 	uint32_t& stat_reg_outValue1, uint32_t& stat_reg_val2, 
 	uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb,
+	uint32_t& temp_msb, uint32_t& temp_lsb, uint32_t& temp_xlsb,
 	uint32_t& operation)
 {
     #pragma HLS INTERFACE s_axilite port=return
@@ -56,6 +57,9 @@ void iiccomm4(volatile uint32_t iic[4096],
     #pragma HLS INTERFACE s_axilite port=pressure_msb	
     #pragma HLS INTERFACE s_axilite port=pressure_lsb
     #pragma HLS INTERFACE s_axilite port=pressure_xlsb
+	#pragma HLS INTERFACE s_axilite port=temp_msb
+	#pragma HLS INTERFACE s_axilite port=temp_lsb
+	#pragma HLS INTERFACE s_axilite port=temp_xlsb
 
 
 	
@@ -63,7 +67,7 @@ void iiccomm4(volatile uint32_t iic[4096],
 	static uint32_t full_pirq_val; //return 16 
 	static uint32_t ctrl_reg_val;
 	static uint32_t stat_reg_val1;
-	uint32_t sensorData[3] = {};
+	uint32_t sensorData[6] = {};
 
 //INITIALIZE TO READ AND WRITE
 	
@@ -101,14 +105,14 @@ void iiccomm4(volatile uint32_t iic[4096],
 	//ENABLE PRESSURE MEASUREMENT, SKIP TEMPERATURE
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF4; 
-	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x07; 
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x27; 
 
 	//CONFIGURE REGISTER SETTINGS: time sampling, time constant IIR Filter
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF5; 
-	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xA0;
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x20; //62.5 ms
 
-	delay_until_ms<600>();
+	delay_until_ms<10>();
 
 //BEGIN READING AND WRITING TO SENSOR
 	
@@ -122,7 +126,7 @@ void iiccomm4(volatile uint32_t iic[4096],
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1ED;
 	
 	//SET STOP BIT AND NUMBER OF BYTES TO READ
-	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x203;
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x206;
 
 	//READ RX_FIFO 
 	//rx_fifo_val = iic[IIC_INDEX+IIC_RX_FIFO_OFF];
@@ -149,7 +153,10 @@ void iiccomm4(volatile uint32_t iic[4096],
 	pressure_msb = (uint32_t)sensorData[0];
 	pressure_lsb = (uint32_t)sensorData[1];
 	pressure_xlsb = (uint32_t)sensorData[2];
-				
+			
+	temp_msb = (uint32_t)sensorData[3];
+	temp_lsb = (uint32_t)sensorData[4];
+	temp_xlsb = (uint32_t)sensorData[5];	
 }
 
 

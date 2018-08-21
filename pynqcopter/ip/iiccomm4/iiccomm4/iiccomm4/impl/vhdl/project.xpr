@@ -6,7 +6,7 @@
 <Project Version="7" Minor="35" Path="/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm4/iiccomm4/iiccomm4/impl/vhdl/project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="d94f69f591be4894b3cdf8cc4c290272"/>
+    <Option Name="Id" Val="56dc768020f348fd8cb38423bca22684"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -73,7 +73,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/iiccomm4_mux_42_3bkb.vhd">
+      <File Path="$PPRDIR/iiccomm4_sensorData.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>

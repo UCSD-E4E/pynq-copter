@@ -33210,6 +33210,7 @@ void iiccomm4(volatile uint32_t iic[4096],
  uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue,
  uint32_t& stat_reg_outValue1, uint32_t& stat_reg_val2,
  uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb,
+ uint32_t& temp_msb, uint32_t& temp_lsb, uint32_t& temp_xlsb,
  uint32_t& operation)
 {
 #pragma HLS INTERFACE s_axilite port=return
@@ -33225,6 +33226,9 @@ void iiccomm4(volatile uint32_t iic[4096],
 #pragma HLS INTERFACE s_axilite port=pressure_msb
 #pragma HLS INTERFACE s_axilite port=pressure_lsb
 #pragma HLS INTERFACE s_axilite port=pressure_xlsb
+#pragma HLS INTERFACE s_axilite port=temp_msb
+#pragma HLS INTERFACE s_axilite port=temp_lsb
+#pragma HLS INTERFACE s_axilite port=temp_xlsb
 
 
 
@@ -33232,7 +33236,7 @@ void iiccomm4(volatile uint32_t iic[4096],
  static uint32_t full_pirq_val;
  static uint32_t ctrl_reg_val;
  static uint32_t stat_reg_val1;
- uint32_t sensorData[3] = {};
+ uint32_t sensorData[6] = {};
 
 
 
@@ -33270,14 +33274,14 @@ void iiccomm4(volatile uint32_t iic[4096],
 
  iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
  iic[(0x40001000/4)+(0x108/4)] = 0xF4;
- iic[(0x40001000/4)+(0x108/4)] = 0x07;
+ iic[(0x40001000/4)+(0x108/4)] = 0x27;
 
 
  iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
  iic[(0x40001000/4)+(0x108/4)] = 0xF5;
- iic[(0x40001000/4)+(0x108/4)] = 0xA0;
+ iic[(0x40001000/4)+(0x108/4)] = 0x20;
 
- delay_until_ms<600>();
+ delay_until_ms<10>();
 
 
 
@@ -33291,7 +33295,7 @@ void iiccomm4(volatile uint32_t iic[4096],
  iic[(0x40001000/4)+(0x108/4)] = 0x1ED;
 
 
- iic[(0x40001000/4)+(0x108/4)] = 0x203;
+ iic[(0x40001000/4)+(0x108/4)] = 0x206;
 
 
 
@@ -33319,4 +33323,7 @@ void iiccomm4(volatile uint32_t iic[4096],
  pressure_lsb = (uint32_t)sensorData[1];
  pressure_xlsb = (uint32_t)sensorData[2];
 
+ temp_msb = (uint32_t)sensorData[3];
+ temp_lsb = (uint32_t)sensorData[4];
+ temp_xlsb = (uint32_t)sensorData[5];
 }

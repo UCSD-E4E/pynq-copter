@@ -1443,10 +1443,193 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
           </spirit:field>
         </spirit:register>
         <spirit:register>
+          <spirit:name>temp_msb</spirit:name>
+          <spirit:displayName>temp_msb</spirit:displayName>
+          <spirit:description>Data signal of temp_msb</spirit:description>
+          <spirit:addressOffset>80</spirit:addressOffset>
+          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>temp_msb</spirit:name>
+            <spirit:description>Bit 31 to 0 Data signal of temp_msb</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>temp_msb_ctrl</spirit:name>
+          <spirit:displayName>temp_msb_ctrl</spirit:displayName>
+          <spirit:description>Control signal of temp_msb</spirit:description>
+          <spirit:addressOffset>84</spirit:addressOffset>
+          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>temp_msb_ap_vld</spirit:name>
+            <spirit:description>Control signal temp_msb_ap_vld</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>RESERVED</spirit:name>
+            <spirit:description>Reserved.  0s on read.</spirit:description>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">31</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>temp_lsb</spirit:name>
+          <spirit:displayName>temp_lsb</spirit:displayName>
+          <spirit:description>Data signal of temp_lsb</spirit:description>
+          <spirit:addressOffset>88</spirit:addressOffset>
+          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>temp_lsb</spirit:name>
+            <spirit:description>Bit 31 to 0 Data signal of temp_lsb</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>temp_lsb_ctrl</spirit:name>
+          <spirit:displayName>temp_lsb_ctrl</spirit:displayName>
+          <spirit:description>Control signal of temp_lsb</spirit:description>
+          <spirit:addressOffset>92</spirit:addressOffset>
+          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>temp_lsb_ap_vld</spirit:name>
+            <spirit:description>Control signal temp_lsb_ap_vld</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>RESERVED</spirit:name>
+            <spirit:description>Reserved.  0s on read.</spirit:description>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">31</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>temp_xlsb</spirit:name>
+          <spirit:displayName>temp_xlsb</spirit:displayName>
+          <spirit:description>Data signal of temp_xlsb</spirit:description>
+          <spirit:addressOffset>96</spirit:addressOffset>
+          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>temp_xlsb</spirit:name>
+            <spirit:description>Bit 31 to 0 Data signal of temp_xlsb</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>temp_xlsb_ctrl</spirit:name>
+          <spirit:displayName>temp_xlsb_ctrl</spirit:displayName>
+          <spirit:description>Control signal of temp_xlsb</spirit:description>
+          <spirit:addressOffset>100</spirit:addressOffset>
+          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>temp_xlsb_ap_vld</spirit:name>
+            <spirit:description>Control signal temp_xlsb_ap_vld</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>RESERVED</spirit:name>
+            <spirit:description>Reserved.  0s on read.</spirit:description>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">31</spirit:bitWidth>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
           <spirit:name>operation</spirit:name>
           <spirit:displayName>operation</spirit:displayName>
           <spirit:description>Data signal of operation</spirit:description>
-          <spirit:addressOffset>80</spirit:addressOffset>
+          <spirit:addressOffset>104</spirit:addressOffset>
           <spirit:size spirit:format="long">32</spirit:size>
           <spirit:access>read-only</spirit:access>
           <spirit:reset>
@@ -1470,7 +1653,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
           <spirit:name>operation_ctrl</spirit:name>
           <spirit:displayName>operation_ctrl</spirit:displayName>
           <spirit:description>Control signal of operation</spirit:description>
-          <spirit:addressOffset>84</spirit:addressOffset>
+          <spirit:addressOffset>108</spirit:addressOffset>
           <spirit:size spirit:format="long">32</spirit:size>
           <spirit:access>read-only</spirit:access>
           <spirit:reset>
@@ -1520,7 +1703,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>4afc688b</spirit:value>
+            <spirit:value>eecf8ddd</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1536,7 +1719,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2301be0f</spirit:value>
+            <spirit:value>74a4f6c6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1552,7 +1735,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>25adb04f</spirit:value>
+            <spirit:value>b27e9b5f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1568,7 +1751,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>21858c31</spirit:value>
+            <spirit:value>51233714</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1582,7 +1765,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ccca19a3</spirit:value>
+            <spirit:value>9a23f025</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2848,6 +3031,10 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/verilog/iiccomm4_sensorData.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/verilog/iiccomm4_iic_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
@@ -2857,16 +3044,17 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/iiccomm4.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/iiccomm4_mux_42_3bkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
+        <spirit:name>hdl/verilog/iiccomm4_sensorData.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/verilog/iiccomm4_iic_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
@@ -2878,11 +3066,6 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/iiccomm4.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/iiccomm4_mux_42_3bkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -2907,9 +3090,9 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/iiccomm4_mux_42_3bkb.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/iiccomm4_sensorData.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_7dd3f52b</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_11ec1996</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -2930,7 +3113,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/iiccomm4_mux_42_3bkb.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/iiccomm4_sensorData.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -3153,15 +3336,15 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </xilinx:taxonomies>
       <xilinx:displayName>Iiccomm4</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808210932</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-21T16:33:03Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808211345</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-21T20:45:18Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="974ec83d"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="e48f3472"/>
-      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="3e7a96b9"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4d364e2d"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="13c43cf7"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2db1b7cb"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="819ce980"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="c26d28df"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="b36a4083"/>

@@ -103,6 +103,12 @@ u32 XIiccomm4_Get_pressure_lsb(XIiccomm4 *InstancePtr);
 u32 XIiccomm4_Get_pressure_lsb_vld(XIiccomm4 *InstancePtr);
 u32 XIiccomm4_Get_pressure_xlsb(XIiccomm4 *InstancePtr);
 u32 XIiccomm4_Get_pressure_xlsb_vld(XIiccomm4 *InstancePtr);
+u32 XIiccomm4_Get_temp_msb(XIiccomm4 *InstancePtr);
+u32 XIiccomm4_Get_temp_msb_vld(XIiccomm4 *InstancePtr);
+u32 XIiccomm4_Get_temp_lsb(XIiccomm4 *InstancePtr);
+u32 XIiccomm4_Get_temp_lsb_vld(XIiccomm4 *InstancePtr);
+u32 XIiccomm4_Get_temp_xlsb(XIiccomm4 *InstancePtr);
+u32 XIiccomm4_Get_temp_xlsb_vld(XIiccomm4 *InstancePtr);
 u32 XIiccomm4_Get_operation(XIiccomm4 *InstancePtr);
 u32 XIiccomm4_Get_operation_vld(XIiccomm4 *InstancePtr);
 

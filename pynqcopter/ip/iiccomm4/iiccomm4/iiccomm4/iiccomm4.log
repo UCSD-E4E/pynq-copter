@@ -5,8 +5,8 @@ Copyright (C) 1986-2017 Xilinx, Inc. All Rights Reserved.
 
 ==============================================================
 
-INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 INFO: [SIM 211-1] CSim done with 0 errors.
@@ -14,20 +14,17 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'iiccomm4.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:50 ; elapsed = 00:00:21 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 111649 ; free virtual = 502579
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:52 ; elapsed = 00:00:23 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 111656 ; free virtual = 502586
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:49 ; elapsed = 00:00:21 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 108937 ; free virtual = 500403
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:50 ; elapsed = 00:00:23 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 108916 ; free virtual = 500382
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<600ull, 50000000ull>' into 'iiccomm4' (iiccomm4.cpp:111).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 50000000ull>' into 'iiccomm4' (iiccomm4.cpp:144).
-INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 50000000ull>' into 'iiccomm4' (iiccomm4.cpp:130).
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:53 ; elapsed = 00:00:24 . Memory (MB): peak = 360.141 ; gain = 13.574 ; free physical = 111629 ; free virtual = 502561
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 50000000ull>' into 'iiccomm4' (iiccomm4.cpp:148).
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 50000000ull>' into 'iiccomm4' (iiccomm4.cpp:134).
+INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 50000000ull>' into 'iiccomm4' (iiccomm4.cpp:115).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:52 ; elapsed = 00:00:24 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 109309 ; free virtual = 500775
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:53 ; elapsed = 00:00:24 . Memory (MB): peak = 360.141 ; gain = 13.574 ; free physical = 111632 ; free virtual = 502565
-INFO: [XFORM 203-102] Automatically partitioning small array 'sensorData' (iiccomm4.cpp:66) completely based on array size.
-INFO: [XFORM 203-101] Partitioning array 'sensorData' (iiccomm4.cpp:66) in dimension 1 completely.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (iiccomm4.cpp:141:3) to (./iiccomm4.hpp:61:10) in function 'iiccomm4'... converting 4 basic blocks.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:54 ; elapsed = 00:00:25 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 111592 ; free virtual = 502526
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:55 ; elapsed = 00:00:26 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 111584 ; free virtual = 502519
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:53 ; elapsed = 00:00:25 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 109251 ; free virtual = 500717
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:55 ; elapsed = 00:00:27 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 109228 ; free virtual = 500694
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:56 ; elapsed = 00:00:28 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 109272 ; free virtual = 500738
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'iiccomm4' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -35,13 +32,13 @@ INFO: [HLS 200-42] -- Implementing module 'iiccomm4'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 25.96 seconds; current allocated memory: 75.785 MB.
+INFO: [HLS 200-111]  Elapsed time: 28.25 seconds; current allocated memory: 92.225 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 76.906 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 93.401 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'iiccomm4'
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -54,16 +51,18 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm4/stat_reg_val2' to
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm4/pressure_msb' to 's_axilite & ap_vld'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm4/pressure_lsb' to 's_axilite & ap_vld'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm4/pressure_xlsb' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm4/temp_msb' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm4/temp_lsb' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm4/temp_xlsb' to 's_axilite & ap_vld'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'iiccomm4/operation' to 's_axilite & ap_vld'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'iiccomm4' to 's_axilite & ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Bundling port 'return', 'empty_pirq_outValue', 'full_pirq_outValue', 'ctrl_reg_outValue', 'stat_reg_outValue1', 'stat_reg_val2', 'pressure_msb', 'pressure_lsb', 'pressure_xlsb' and 'operation' to AXI-Lite port AXILiteS.
-INFO: [SYN 201-210] Renamed object name 'iiccomm4_mux_42_32_1_1' to 'iiccomm4_mux_42_3bkb' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'iiccomm4_mux_42_3bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Bundling port 'return', 'full_pirq_outValue', 'ctrl_reg_outValue', 'stat_reg_outValue1', 'stat_reg_val2', 'pressure_msb', 'pressure_lsb', 'pressure_xlsb', 'temp_msb', 'temp_lsb', 'temp_xlsb' and 'operation' to AXI-Lite port AXILiteS.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'iiccomm4'.
-INFO: [HLS 200-111]  Elapsed time: 0.22 seconds; current allocated memory: 79.256 MB.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:56 ; elapsed = 00:00:28 . Memory (MB): peak = 487.938 ; gain = 141.371 ; free physical = 111603 ; free virtual = 502543
+INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 95.641 MB.
+INFO: [RTMG 210-278] Implementing memory 'iiccomm4_sensorData_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:57 ; elapsed = 00:00:29 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 109259 ; free virtual = 500725
 INFO: [SYSC 207-301] Generating SystemC RTL for iiccomm4.
 INFO: [VHDL 208-304] Generating VHDL RTL for iiccomm4.
 INFO: [VLOG 209-307] Generating Verilog RTL for iiccomm4.
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-INFO: [HLS 200-112] Total elapsed time: 62.06 seconds; peak allocated memory: 79.256 MB.
+INFO: [HLS 200-112] Total elapsed time: 64.71 seconds; peak allocated memory: 95.641 MB.

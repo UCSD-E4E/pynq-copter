@@ -64,9 +64,24 @@
 // 0x4c : Control signal of pressure_xlsb
 //        bit 0  - pressure_xlsb_ap_vld (Read/COR)
 //        others - reserved
-// 0x50 : Data signal of operation
+// 0x50 : Data signal of temp_msb
+//        bit 31~0 - temp_msb[31:0] (Read)
+// 0x54 : Control signal of temp_msb
+//        bit 0  - temp_msb_ap_vld (Read/COR)
+//        others - reserved
+// 0x58 : Data signal of temp_lsb
+//        bit 31~0 - temp_lsb[31:0] (Read)
+// 0x5c : Control signal of temp_lsb
+//        bit 0  - temp_lsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x60 : Data signal of temp_xlsb
+//        bit 31~0 - temp_xlsb[31:0] (Read)
+// 0x64 : Control signal of temp_xlsb
+//        bit 0  - temp_xlsb_ap_vld (Read/COR)
+//        others - reserved
+// 0x68 : Data signal of operation
 //        bit 31~0 - operation[31:0] (Read)
-// 0x54 : Control signal of operation
+// 0x6c : Control signal of operation
 //        bit 0  - operation_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -99,7 +114,16 @@
 #define XIICCOMM4_AXILITES_ADDR_PRESSURE_XLSB_DATA       0x48
 #define XIICCOMM4_AXILITES_BITS_PRESSURE_XLSB_DATA       32
 #define XIICCOMM4_AXILITES_ADDR_PRESSURE_XLSB_CTRL       0x4c
-#define XIICCOMM4_AXILITES_ADDR_OPERATION_DATA           0x50
+#define XIICCOMM4_AXILITES_ADDR_TEMP_MSB_DATA            0x50
+#define XIICCOMM4_AXILITES_BITS_TEMP_MSB_DATA            32
+#define XIICCOMM4_AXILITES_ADDR_TEMP_MSB_CTRL            0x54
+#define XIICCOMM4_AXILITES_ADDR_TEMP_LSB_DATA            0x58
+#define XIICCOMM4_AXILITES_BITS_TEMP_LSB_DATA            32
+#define XIICCOMM4_AXILITES_ADDR_TEMP_LSB_CTRL            0x5c
+#define XIICCOMM4_AXILITES_ADDR_TEMP_XLSB_DATA           0x60
+#define XIICCOMM4_AXILITES_BITS_TEMP_XLSB_DATA           32
+#define XIICCOMM4_AXILITES_ADDR_TEMP_XLSB_CTRL           0x64
+#define XIICCOMM4_AXILITES_ADDR_OPERATION_DATA           0x68
 #define XIICCOMM4_AXILITES_BITS_OPERATION_DATA           32
-#define XIICCOMM4_AXILITES_ADDR_OPERATION_CTRL           0x54
+#define XIICCOMM4_AXILITES_ADDR_OPERATION_CTRL           0x6c
 

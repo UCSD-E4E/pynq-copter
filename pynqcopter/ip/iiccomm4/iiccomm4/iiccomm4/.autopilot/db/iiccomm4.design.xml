@@ -25,15 +25,15 @@
 <SummaryOfLoopLatency>
 <memset_sensorData>
 <Name>memset_sensorData</Name>
-<TripCount>3</TripCount>
-<Latency>2</Latency>
+<TripCount>6</TripCount>
+<Latency>5</Latency>
 <IterationLatency>1</IterationLatency>
 <PipelineDepth>1</PipelineDepth>
 </memset_sensorData>
 <Loop2>
 <Name>Loop 2</Name>
-<TripCount>30000000</TripCount>
-<Latency>30000000</Latency>
+<TripCount>500000</TripCount>
+<Latency>500000</Latency>
 <IterationLatency>1</IterationLatency>
 <PipelineDepth>1</PipelineDepth>
 </Loop2>
@@ -62,9 +62,9 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<BRAM_18K>2</BRAM_18K>
-<FF>1728</FF>
-<LUT>2378</LUT>
+<BRAM_18K>4</BRAM_18K>
+<FF>1582</FF>
+<LUT>2366</LUT>
 <DSP48E>0</DSP48E>
 </Resources>
 </AreaEstimates>

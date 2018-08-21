@@ -236,6 +236,66 @@ u32 XIiccomm4_Get_pressure_xlsb_vld(XIiccomm4 *InstancePtr) {
     return Data & 0x1;
 }
 
+u32 XIiccomm4_Get_temp_msb(XIiccomm4 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm4_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM4_AXILITES_ADDR_TEMP_MSB_DATA);
+    return Data;
+}
+
+u32 XIiccomm4_Get_temp_msb_vld(XIiccomm4 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm4_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM4_AXILITES_ADDR_TEMP_MSB_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm4_Get_temp_lsb(XIiccomm4 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm4_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM4_AXILITES_ADDR_TEMP_LSB_DATA);
+    return Data;
+}
+
+u32 XIiccomm4_Get_temp_lsb_vld(XIiccomm4 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm4_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM4_AXILITES_ADDR_TEMP_LSB_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm4_Get_temp_xlsb(XIiccomm4 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm4_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM4_AXILITES_ADDR_TEMP_XLSB_DATA);
+    return Data;
+}
+
+u32 XIiccomm4_Get_temp_xlsb_vld(XIiccomm4 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm4_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM4_AXILITES_ADDR_TEMP_XLSB_CTRL);
+    return Data & 0x1;
+}
+
 u32 XIiccomm4_Get_operation(XIiccomm4 *InstancePtr) {
     u32 Data;
 

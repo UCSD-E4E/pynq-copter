@@ -57,6 +57,12 @@ port (
     pressure_lsb_ap_vld   :in   STD_LOGIC;
     pressure_xlsb         :in   STD_LOGIC_VECTOR(31 downto 0);
     pressure_xlsb_ap_vld  :in   STD_LOGIC;
+    temp_msb              :in   STD_LOGIC_VECTOR(31 downto 0);
+    temp_msb_ap_vld       :in   STD_LOGIC;
+    temp_lsb              :in   STD_LOGIC_VECTOR(31 downto 0);
+    temp_lsb_ap_vld       :in   STD_LOGIC;
+    temp_xlsb             :in   STD_LOGIC_VECTOR(31 downto 0);
+    temp_xlsb_ap_vld      :in   STD_LOGIC;
     operation             :in   STD_LOGIC_VECTOR(31 downto 0);
     operation_ap_vld      :in   STD_LOGIC
 );
@@ -121,9 +127,24 @@ end entity iiccomm4_AXILiteS_s_axi;
 -- 0x4c : Control signal of pressure_xlsb
 --        bit 0  - pressure_xlsb_ap_vld (Read/COR)
 --        others - reserved
--- 0x50 : Data signal of operation
+-- 0x50 : Data signal of temp_msb
+--        bit 31~0 - temp_msb[31:0] (Read)
+-- 0x54 : Control signal of temp_msb
+--        bit 0  - temp_msb_ap_vld (Read/COR)
+--        others - reserved
+-- 0x58 : Data signal of temp_lsb
+--        bit 31~0 - temp_lsb[31:0] (Read)
+-- 0x5c : Control signal of temp_lsb
+--        bit 0  - temp_lsb_ap_vld (Read/COR)
+--        others - reserved
+-- 0x60 : Data signal of temp_xlsb
+--        bit 31~0 - temp_xlsb[31:0] (Read)
+-- 0x64 : Control signal of temp_xlsb
+--        bit 0  - temp_xlsb_ap_vld (Read/COR)
+--        others - reserved
+-- 0x68 : Data signal of operation
 --        bit 31~0 - operation[31:0] (Read)
--- 0x54 : Control signal of operation
+-- 0x6c : Control signal of operation
 --        bit 0  - operation_ap_vld (Read/COR)
 --        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -153,8 +174,14 @@ architecture behave of iiccomm4_AXILiteS_s_axi is
     constant ADDR_PRESSURE_LSB_CTRL          : INTEGER := 16#44#;
     constant ADDR_PRESSURE_XLSB_DATA_0       : INTEGER := 16#48#;
     constant ADDR_PRESSURE_XLSB_CTRL         : INTEGER := 16#4c#;
-    constant ADDR_OPERATION_DATA_0           : INTEGER := 16#50#;
-    constant ADDR_OPERATION_CTRL             : INTEGER := 16#54#;
+    constant ADDR_TEMP_MSB_DATA_0            : INTEGER := 16#50#;
+    constant ADDR_TEMP_MSB_CTRL              : INTEGER := 16#54#;
+    constant ADDR_TEMP_LSB_DATA_0            : INTEGER := 16#58#;
+    constant ADDR_TEMP_LSB_CTRL              : INTEGER := 16#5c#;
+    constant ADDR_TEMP_XLSB_DATA_0           : INTEGER := 16#60#;
+    constant ADDR_TEMP_XLSB_CTRL             : INTEGER := 16#64#;
+    constant ADDR_OPERATION_DATA_0           : INTEGER := 16#68#;
+    constant ADDR_OPERATION_CTRL             : INTEGER := 16#6c#;
     constant ADDR_BITS         : INTEGER := 7;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -193,6 +220,12 @@ architecture behave of iiccomm4_AXILiteS_s_axi is
     signal int_pressure_lsb_ap_vld : STD_LOGIC;
     signal int_pressure_xlsb   : UNSIGNED(31 downto 0) := (others => '0');
     signal int_pressure_xlsb_ap_vld : STD_LOGIC;
+    signal int_temp_msb        : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_temp_msb_ap_vld : STD_LOGIC;
+    signal int_temp_lsb        : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_temp_lsb_ap_vld : STD_LOGIC;
+    signal int_temp_xlsb       : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_temp_xlsb_ap_vld : STD_LOGIC;
     signal int_operation       : UNSIGNED(31 downto 0) := (others => '0');
     signal int_operation_ap_vld : STD_LOGIC;
 
@@ -348,6 +381,18 @@ begin
                         rdata_data <= RESIZE(int_pressure_xlsb(31 downto 0), 32);
                     when ADDR_PRESSURE_XLSB_CTRL =>
                         rdata_data <= (0 => int_pressure_xlsb_ap_vld, others => '0');
+                    when ADDR_TEMP_MSB_DATA_0 =>
+                        rdata_data <= RESIZE(int_temp_msb(31 downto 0), 32);
+                    when ADDR_TEMP_MSB_CTRL =>
+                        rdata_data <= (0 => int_temp_msb_ap_vld, others => '0');
+                    when ADDR_TEMP_LSB_DATA_0 =>
+                        rdata_data <= RESIZE(int_temp_lsb(31 downto 0), 32);
+                    when ADDR_TEMP_LSB_CTRL =>
+                        rdata_data <= (0 => int_temp_lsb_ap_vld, others => '0');
+                    when ADDR_TEMP_XLSB_DATA_0 =>
+                        rdata_data <= RESIZE(int_temp_xlsb(31 downto 0), 32);
+                    when ADDR_TEMP_XLSB_CTRL =>
+                        rdata_data <= (0 => int_temp_xlsb_ap_vld, others => '0');
                     when ADDR_OPERATION_DATA_0 =>
                         rdata_data <= RESIZE(int_operation(31 downto 0), 32);
                     when ADDR_OPERATION_CTRL =>
@@ -708,6 +753,90 @@ begin
                     int_pressure_xlsb_ap_vld <= '1';
                 elsif (ar_hs = '1' and raddr = ADDR_PRESSURE_XLSB_CTRL) then
                     int_pressure_xlsb_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temp_msb <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (temp_msb_ap_vld = '1') then
+                    int_temp_msb <= UNSIGNED(temp_msb); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temp_msb_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (temp_msb_ap_vld = '1') then
+                    int_temp_msb_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TEMP_MSB_CTRL) then
+                    int_temp_msb_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temp_lsb <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (temp_lsb_ap_vld = '1') then
+                    int_temp_lsb <= UNSIGNED(temp_lsb); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temp_lsb_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (temp_lsb_ap_vld = '1') then
+                    int_temp_lsb_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TEMP_LSB_CTRL) then
+                    int_temp_lsb_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temp_xlsb <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (temp_xlsb_ap_vld = '1') then
+                    int_temp_xlsb <= UNSIGNED(temp_xlsb); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_temp_xlsb_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (temp_xlsb_ap_vld = '1') then
+                    int_temp_xlsb_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_TEMP_XLSB_CTRL) then
+                    int_temp_xlsb_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;
