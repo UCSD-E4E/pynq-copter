@@ -36,6 +36,6 @@ BUILD_PATH=../
 IP_PATH=../ip/
 PART=xc7z020clg400-1
 DESIGN=base
-IPS=ctrlloop
+IPS=
 
 include $(BUILD_PATH)/include.mk
