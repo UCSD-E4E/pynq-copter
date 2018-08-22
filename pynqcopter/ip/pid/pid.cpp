@@ -51,7 +51,6 @@
 */
 void pid (F16_t rcCmdIn[5],
 		F16_t measured[4],
-		F32_t dt,
 		F32_t kp[4],
 		F32_t kd[4],
 		F32_t ki[4],
@@ -61,7 +60,6 @@ void pid (F16_t rcCmdIn[5],
 	#pragma HLS INTERFACE s_axilite port=return bundle=CTRL
 	#pragma HLS INTERFACE s_axilite port=rcCmdIn bundle=CTRL
 	#pragma HLS INTERFACE s_axilite port=measured bundle=CTRL
-	#pragma HLS INTERFACE s_axilite port=dt bundle=CTRL
 	#pragma HLS INTERFACE s_axilite port=kp bundle=CTRL
 	#pragma HLS INTERFACE s_axilite port=kd bundle=CTRL
 	#pragma HLS INTERFACE s_axilite port=ki bundle=CTRL
@@ -81,8 +79,8 @@ void pid (F16_t rcCmdIn[5],
 	{
 		// calculate the error from rc and measured
 		F32_t curr_error = rcCmdIn[i] - measured[i];
-		integral[i] +=  (curr_error * dt);
-		F32_t deriv = (curr_error-prev_error[i]) / dt;
+		integral[i] +=  (curr_error);
+		F32_t deriv = (curr_error-prev_error[i]);
 		F32_t correction = (kp[i] * curr_error) + (ki[i] * integral[i]) + (kd[i] * deriv);
 
 		//keep each value [-1,1)

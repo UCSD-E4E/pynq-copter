@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1534957000">
+  <File Type="VDS-TIMING-PB" Name="pwm_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="pwm_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="pwm_wrapper.dcp"/>
+  <File Type="REPORTS-TCL" Name="pwm_wrapper_reports.tcl"/>
+  <File Type="PA-TCL" Name="pwm_wrapper.tcl"/>
+  <File Type="RDS-RDS" Name="pwm_wrapper.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="pwm_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="pwm_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="pwm_wrapper_utilization_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/pwm/pwm.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/pwm/hdl/pwm_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="pwm_wrapper"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../design.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_normalizer_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_xlconstant_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_synchronizer_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_xlconcat_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_xlslice_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_s02_mmu_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_rst_ps7_0_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_rc_receiver_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_auto_pc_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_mixer_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_wire_distributor_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_xlslice_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_pwm_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_xlconcat_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_auto_pc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="pwm_auto_pc_2"/>
+</GenRun>
