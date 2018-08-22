@@ -39,19 +39,14 @@
 
 //while loop with 10000 ms delay before reading and writing to sensor for data
 
-static uint32_t empty_pirq_val; //return 0
-static uint32_t full_pirq_val; //return 16 
-static uint32_t ctrl_reg_val;
-static uint32_t stat_reg_val1;
-
-
 void iiccomm2(volatile uint32_t iic[4096], 
 	uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue,
 	uint32_t& stat_reg_outValue1, uint32_t& stat_reg_val2, 
 	uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb,
 	uint32_t& temp_msb, uint32_t& temp_lsb, uint32_t& temp_xlsb,
 	uint32_t& press_raw, uint32_t& temp_raw, 
-	uint32_t& operation, uint32_t& press_cal, uint32_t& press_act)
+	uint32_t& operation, uint32_t& press_cal, uint32_t& press_act, 
+	uint32_t basepoint, int& flag, uint32_t& pressure_diff)
 {
     #pragma HLS INTERFACE s_axilite port=return
 	
@@ -73,6 +68,9 @@ void iiccomm2(volatile uint32_t iic[4096],
 	#pragma HLS INTERFACE s_axilite port=temp_raw
 	#pragma HLS INTERFACE s_axilite port=press_cal
 	#pragma HLS INTERFACE s_axilite port=press_act
+	#pragma HLS INTERFACE s_axilite port=basepoint
+	#pragma HLS INTERFACE s_axilite port=flag
+	#pragma HLS INTERFACE s_axilite port=pressure_diff
 
 	uint32_t dig_T1 = 28585;
 	uint32_t dig_T2 = 26941;
@@ -134,7 +132,7 @@ void iiccomm2(volatile uint32_t iic[4096],
 	//CONFIGURE REGISTER SETTINGS: time sampling, time constant IIR Filter
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF5; 
-	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x40; //125 ms
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x40; //time standby 125 ms
 
 	delay_until_ms<50>();
 
@@ -183,8 +181,8 @@ void iiccomm2(volatile uint32_t iic[4096],
 
 	//RAW PRESSURE AND TEMP VALUES
 
-	press_raw = (sensorData[0] << 12) | (sensorData[1] << 4) | (sensorData[2] >> 4);
-	temp_raw = (sensorData[3] << 12) | (sensorData[4] << 4) | (sensorData[5] >> 4);
+	press_raw = (pressure_msb << 12) | (pressure_lsb << 4) | (pressure_xlsb >> 4);
+	temp_raw = (temp_msb << 12) | (temp_lsb << 4) | (temp_xlsb >> 4);
 
 	//////////////////TEMPERATURE CALIBRATION////////////////////
 
@@ -219,11 +217,21 @@ void iiccomm2(volatile uint32_t iic[4096],
     }
     var3 = (((signed long int)dig_P9) * ((signed long int)(((pressure>>3) * (pressure>>3))>>13)))>>12;
     var4 = (((signed long int)(pressure>>2)) * ((signed long int)dig_P8))>>13;
-    pressure = (unsigned long int)((signed long int)pressure + ((var3 + var4 + dig_P7) >> 4)); //APPLY ABS() FUNCTION
-	///////////////////////////////////////////////////////////////	
+    pressure = (unsigned long int)((signed long int)pressure + ((var3 + var4 + dig_P7) >> 4));
 
 	//ACTUAL PRESSURE DATA
 	press_cal = pressure; //double 
 	press_act = (double)press_cal / 100.0;
+
+	if(basepoint == 0)
+	{
+		flag = 0; 
+	}
+	else
+	{
+		flag = 1; 
+		pressure_diff = press_act - basepoint; 
+		//transmit pressure_diff to normalizer
+	}
 }
 

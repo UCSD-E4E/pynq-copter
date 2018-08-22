@@ -208,6 +208,42 @@ set Interface16 "wire"
 set DataType16 "unsigned int"
 set Port16 [list $PortName16 $Interface16 $DataType16 $Pointer16 $Dims16 $Const16 $Volatile16 $ArrayOpt16]
 lappend PortList $Port16
+set PortName17 "basepoint"
+set BitWidth17 "32"
+set ArrayOpt17 ""
+set Const17 "0"
+set Volatile17 "0"
+set Pointer17 "0"
+set Reference17 "0"
+set Dims17 [list 0]
+set Interface17 "wire"
+set DataType17 "unsigned int"
+set Port17 [list $PortName17 $Interface17 $DataType17 $Pointer17 $Dims17 $Const17 $Volatile17 $ArrayOpt17]
+lappend PortList $Port17
+set PortName18 "flag"
+set BitWidth18 "32"
+set ArrayOpt18 ""
+set Const18 "0"
+set Volatile18 "0"
+set Pointer18 "2"
+set Reference18 "1"
+set Dims18 [list 0]
+set Interface18 "wire"
+set DataType18 "int"
+set Port18 [list $PortName18 $Interface18 $DataType18 $Pointer18 $Dims18 $Const18 $Volatile18 $ArrayOpt18]
+lappend PortList $Port18
+set PortName19 "pressure_diff"
+set BitWidth19 "32"
+set ArrayOpt19 ""
+set Const19 "0"
+set Volatile19 "0"
+set Pointer19 "2"
+set Reference19 "1"
+set Dims19 [list 0]
+set Interface19 "wire"
+set DataType19 "unsigned int"
+set Port19 [list $PortName19 $Interface19 $DataType19 $Pointer19 $Dims19 $Const19 $Volatile19 $ArrayOpt19]
+lappend PortList $Port19
 set globalAPint "" 
 set returnAPInt "" 
 set hasCPPAPInt 0 

@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Tue Aug 21 13:45:32 2018
-# Process ID: 1504
+# Start of session at: Wed Aug 22 10:12:26 2018
+# Process ID: 19008
 # Current directory: /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm2/iiccomm2/iiccomm2/impl/ip
 # Command line: vivado -notrace -mode batch -source run_ippack.tcl
 # Log file: /home/iavendano/pynq-copter/pynqcopter/ip/iiccomm2/iiccomm2/iiccomm2/impl/ip/vivado.log
@@ -22,4 +22,4 @@ INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'iiccomm2_ap_uitod
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Tue Aug 21 13:45:48 2018...
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 22 10:12:42 2018...

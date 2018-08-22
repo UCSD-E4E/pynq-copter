@@ -2007,6 +2007,30 @@ press_act {
 	offset 136
 	offset_end 143
 }
+basepoint { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 144
+	offset_end 151
+}
+flag { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 152
+	offset_end 159
+}
+pressure_diff { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 160
+	offset_end 167
+}
 }
 
 

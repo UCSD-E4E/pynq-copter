@@ -42,7 +42,7 @@ declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
 declare void @llvm.dbg.declare(metadata, metadata) nounwind readnone
 
-define void @iiccomm2(i32* %iic, i32* %empty_pirq_outValue, i32* %full_pirq_outValue, i32* %ctrl_reg_outValue, i32* %stat_reg_outValue1, i32* %stat_reg_val2, i32* %pressure_msb, i32* %pressure_lsb, i32* %pressure_xlsb, i32* %temp_msb, i32* %temp_lsb, i32* %temp_xlsb, i32* %press_raw, i32* %temp_raw, i32* %operation, i32* %press_cal, i32* %press_act) {
+define void @iiccomm2(i32* %iic, i32* %empty_pirq_outValue, i32* %full_pirq_outValue, i32* %ctrl_reg_outValue, i32* %stat_reg_outValue1, i32* %stat_reg_val2, i32* %pressure_msb, i32* %pressure_lsb, i32* %pressure_xlsb, i32* %temp_msb, i32* %temp_lsb, i32* %temp_xlsb, i32* %press_raw, i32* %temp_raw, i32* %operation, i32* %press_cal, i32* %press_act, i32 %basepoint, i32* %flag, i32* %pressure_diff) {
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %iic), !map !37
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %empty_pirq_outValue) nounwind, !map !43
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %full_pirq_outValue) nounwind, !map !47
@@ -60,6 +60,10 @@ define void @iiccomm2(i32* %iic, i32* %empty_pirq_outValue, i32* %full_pirq_outV
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %operation) nounwind, !map !95
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %press_cal) nounwind, !map !99
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %press_act) nounwind, !map !103
+  call void (...)* @_ssdm_op_SpecBitsMap(i32 %basepoint) nounwind, !map !107
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %flag) nounwind, !map !113
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %pressure_diff) nounwind, !map !117
+  %basepoint_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %basepoint)
   %dummy_2 = alloca i8, align 1
   %dummy_4 = alloca i8, align 1
   %dummy = alloca i8, align 1
@@ -83,6 +87,9 @@ define void @iiccomm2(i32* %iic, i32* %empty_pirq_outValue, i32* %full_pirq_outV
   call void (...)* @_ssdm_op_SpecInterface(i32* %temp_raw, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32* %press_cal, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   call void (...)* @_ssdm_op_SpecInterface(i32* %press_act, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32 %basepoint, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32* %flag, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32* %pressure_diff, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
   br label %meminst
 
 meminst:                                          ; preds = %meminst, %0
@@ -102,10 +109,10 @@ meminst:                                          ; preds = %meminst, %0
   %iic_addr_1 = getelementptr i32* %iic, i64 268436552
   %iic_addr_1_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr_1)
   call void @_ssdm_op_Write.s_axilite.i32P(i32* %empty_pirq_outValue, i32 %iic_addr_1_read)
-  %iic_addr41 = getelementptr i32* %iic, i64 268436552
-  %iic_addr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr41, i32 1)
   %iic_addr_2 = getelementptr i32* %iic, i64 268436552
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_2, i32 15, i4 -1)
+  %iic_addr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_2, i32 1)
+  %iic_addr41 = getelementptr i32* %iic, i64 268436552
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr41, i32 15, i4 -1)
   %iic_addr_3 = getelementptr i32* %iic, i64 268436552
   %iic_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_3)
   %iic_addr_4 = getelementptr i32* %iic, i64 268436552
@@ -120,11 +127,11 @@ meminst:                                          ; preds = %meminst, %0
   %iic_addr_8 = getelementptr i32* %iic, i64 268436544
   %iic_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_8)
   %iic_addr_9 = getelementptr i32* %iic, i64 268436544
-  %iic_addr_1_req5 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_9, i32 1)
+  %iic_addr_1_req6 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_9, i32 1)
   %iic_addr_10 = getelementptr i32* %iic, i64 268436544
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_10, i32 1, i4 -1)
   %iic_addr_11 = getelementptr i32* %iic, i64 268436544
-  %iic_addr_1_resp6 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_11)
+  %iic_addr_1_resp7 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_11)
   %iic_addr_12 = getelementptr i32* %iic, i64 268436544
   %iic_load_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_12, i32 1)
   %iic_addr_13 = getelementptr i32* %iic, i64 268436544
@@ -142,71 +149,71 @@ meminst:                                          ; preds = %meminst, %0
   %iic_addr_18 = getelementptr i32* %iic, i64 268436546
   %iic_addr_3_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_18)
   %iic_addr_19 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req7 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_19, i32 1)
+  %iic_addr_3_req8 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_19, i32 1)
   %iic_addr_20 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_20, i32 224, i4 -1)
   %iic_addr_21 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp8 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_21)
+  %iic_addr_3_resp9 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_21)
   %iic_addr_22 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req9 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_22, i32 1)
+  %iic_addr_3_req10 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_22, i32 1)
   %iic_addr_23 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_23, i32 182, i4 -1)
   %iic_addr_24 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp10 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_24)
+  %iic_addr_3_resp11 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_24)
   %iic_addr_25 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req11 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_25, i32 1)
+  %iic_addr_3_req12 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_25, i32 1)
   %iic_addr_26 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_26, i32 492, i4 -1)
   %iic_addr_27 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp12 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_27)
+  %iic_addr_3_resp13 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_27)
   %iic_addr_28 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req13 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_28, i32 1)
+  %iic_addr_3_req14 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_28, i32 1)
   %iic_addr_29 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_29, i32 242, i4 -1)
   %iic_addr_30 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp14 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_30)
+  %iic_addr_3_resp15 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_30)
   %iic_addr_31 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req15 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_31, i32 1)
+  %iic_addr_3_req16 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_31, i32 1)
   %iic_addr_32 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_32, i32 0, i4 -1)
   %iic_addr_33 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp16 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_33)
+  %iic_addr_3_resp17 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_33)
   %iic_addr_34 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req17 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_34, i32 1)
+  %iic_addr_3_req18 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_34, i32 1)
   %iic_addr_35 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_35, i32 492, i4 -1)
   %iic_addr_36 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp18 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_36)
+  %iic_addr_3_resp19 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_36)
   %iic_addr_37 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req19 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_37, i32 1)
+  %iic_addr_3_req20 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_37, i32 1)
   %iic_addr_38 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_38, i32 244, i4 -1)
   %iic_addr_39 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp20 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_39)
+  %iic_addr_3_resp21 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_39)
   %iic_addr_40 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req21 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_40, i32 1)
+  %iic_addr_3_req22 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_40, i32 1)
   %iic_addr_41 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_41, i32 39, i4 -1)
   %iic_addr_42 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp22 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_42)
+  %iic_addr_3_resp23 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_42)
   %iic_addr_43 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req23 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_43, i32 1)
+  %iic_addr_3_req24 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_43, i32 1)
   %iic_addr_44 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_44, i32 492, i4 -1)
   %iic_addr_45 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp24 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_45)
+  %iic_addr_3_resp25 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_45)
   %iic_addr_46 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req25 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_46, i32 1)
+  %iic_addr_3_req26 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_46, i32 1)
   %iic_addr_47 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_47, i32 245, i4 -1)
   %iic_addr_48 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp26 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_48)
+  %iic_addr_3_resp27 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_48)
   %iic_addr_49 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req27 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_49, i32 1)
+  %iic_addr_3_req28 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_49, i32 1)
   %iic_addr_50 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_50, i32 64, i4 -1)
   %iic_addr_51 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp28 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_51)
+  %iic_addr_3_resp29 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_51)
   %rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_50) nounwind
   call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind
   br label %2
@@ -226,29 +233,29 @@ meminst:                                          ; preds = %meminst, %0
 "delay_until_ms<50ull, 50000000ull>.exit":        ; preds = %2
   %rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([42 x i8]* @delay_until_ms_MD_50, i32 %rbegin) nounwind
   %iic_addr_52 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req29 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_52, i32 1)
+  %iic_addr_3_req30 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_52, i32 1)
   %iic_addr_53 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_53, i32 492, i4 -1)
   %iic_addr_54 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp30 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_54)
+  %iic_addr_3_resp31 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_54)
   %iic_addr_55 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req31 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_55, i32 1)
+  %iic_addr_3_req32 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_55, i32 1)
   %iic_addr_56 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_56, i32 247, i4 -1)
   %iic_addr_57 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp32 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_57)
+  %iic_addr_3_resp33 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_57)
   %iic_addr_58 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req33 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_58, i32 1)
+  %iic_addr_3_req34 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_58, i32 1)
   %iic_addr_59 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_59, i32 493, i4 -1)
   %iic_addr_60 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp34 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_60)
+  %iic_addr_3_resp35 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_60)
   %iic_addr_61 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_req35 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_61, i32 1)
+  %iic_addr_3_req36 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_61, i32 1)
   %iic_addr_62 = getelementptr i32* %iic, i64 268436546
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_62, i32 518, i4 -1)
   %iic_addr_63 = getelementptr i32* %iic, i64 268436546
-  %iic_addr_3_resp36 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_63)
+  %iic_addr_3_resp37 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_63)
   %rbegin6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_10) nounwind
   call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind
   br label %4
@@ -400,20 +407,20 @@ meminst:                                          ; preds = %meminst, %0
   %var3_1_cast = sext i46 %tmp_59 to i62
   %tmp_37 = mul i62 37935, %var3_1_cast
   %tmp_38 = add i62 1243054080, %tmp_37
-  %tmp_60 = call i47 @_ssdm_op_PartSelect.i47.i62.i32.i32(i62 %tmp_38, i32 15, i32 61)
-  %var3_1 = sext i47 %tmp_60 to i64
-  %var3_1_cast4 = sext i47 %tmp_60 to i63
+  %tmp_62 = call i47 @_ssdm_op_PartSelect.i47.i62.i32.i32(i62 %tmp_38, i32 15, i32 61)
+  %var3_1 = sext i47 %tmp_62 to i64
+  %var3_1_cast4 = sext i47 %tmp_62 to i63
   %tmp_39_cast = zext i32 %tmp_8 to i33
   %tmp_40 = sub i33 1048576, %tmp_39_cast
   %tmp_40_cast_cast = sext i33 %tmp_40 to i52
-  %tmp_61 = call i51 @_ssdm_op_PartSelect.i51.i63.i32.i32(i63 %var4_2, i32 12, i32 62)
-  %tmp_41_cast_cast = sext i51 %tmp_61 to i52
+  %tmp_63 = call i51 @_ssdm_op_PartSelect.i51.i63.i32.i32(i63 %var4_2, i32 12, i32 62)
+  %tmp_41_cast_cast = sext i51 %tmp_63 to i52
   %tmp_42 = sub i52 %tmp_40_cast_cast, %tmp_41_cast_cast
   %tmp_42_cast = sext i52 %tmp_42 to i64
   %tmp_42_cast_cast = sext i52 %tmp_42 to i63
   %pressure = mul i63 3125, %tmp_42_cast_cast
-  %tmp_62 = call i32 @_ssdm_op_PartSelect.i32.i63.i32.i32(i63 %pressure, i32 31, i32 62)
-  %icmp = icmp eq i32 %tmp_62, 0
+  %tmp_64 = call i32 @_ssdm_op_PartSelect.i32.i63.i32.i32(i63 %pressure, i32 31, i32 62)
+  %icmp = icmp eq i32 %tmp_64, 0
   br i1 %icmp, label %11, label %12
 
 ; <label>:11                                      ; preds = %10
@@ -438,9 +445,9 @@ meminst:                                          ; preds = %meminst, %0
   %var4_3_cast = call i36 @_ssdm_op_PartSelect.i36.i49.i32.i32(i49 %tmp_52, i32 13, i32 48)
   %tmp3 = add i36 9900, %var3_3_cast
   %tmp_54 = add i36 %tmp3, %var4_3_cast
-  %tmp_63 = trunc i64 %pressure3 to i32
-  %tmp_64 = call i32 @_ssdm_op_PartSelect.i32.i36.i32.i32(i36 %tmp_54, i32 4, i32 35)
-  %tmp_56 = add i32 %tmp_64, %tmp_63
+  %tmp_65 = trunc i64 %pressure3 to i32
+  %tmp_66 = call i32 @_ssdm_op_PartSelect.i32.i36.i32.i32(i36 %tmp_54, i32 4, i32 35)
+  %tmp_56 = add i32 %tmp_66, %tmp_65
   call void @_ssdm_op_Write.s_axilite.i32P(i32* %press_cal, i32 %tmp_56)
   %tmp_57 = uitofp i32 %tmp_56 to double
   %x_assign = fdiv double %tmp_57, 1.000000e+02
@@ -452,19 +459,33 @@ meminst:                                          ; preds = %meminst, %0
   %tmp_i_i_i_i_cast4 = zext i11 %loc_V to i12
   %sh_assign = add i12 -1023, %tmp_i_i_i_i_cast4
   %isNeg = call i1 @_ssdm_op_BitSelect.i1.i12.i32(i12 %sh_assign, i32 11)
-  %tmp_60_i_i_i = sub i11 1023, %loc_V
-  %tmp_60_i_i_i_cast = sext i11 %tmp_60_i_i_i to i12
-  %sh_assign_1 = select i1 %isNeg, i12 %tmp_60_i_i_i_cast, i12 %sh_assign
+  %tmp_62_i_i_i = sub i11 1023, %loc_V
+  %tmp_62_i_i_i_cast = sext i11 %tmp_62_i_i_i to i12
+  %sh_assign_1 = select i1 %isNeg, i12 %tmp_62_i_i_i_cast, i12 %sh_assign
   %sh_assign_1_cast = sext i12 %sh_assign_1 to i32
-  %tmp_61_i_i_i = zext i32 %sh_assign_1_cast to i137
-  %tmp_61_i_i_i_cast = zext i32 %sh_assign_1_cast to i54
-  %tmp_62_i_i_i = lshr i54 %tmp_i_i_i, %tmp_61_i_i_i_cast
-  %tmp_64_i_i_i = shl i137 %tmp_i_i_i_cast, %tmp_61_i_i_i
-  %tmp_67 = call i1 @_ssdm_op_BitSelect.i1.i54.i32(i54 %tmp_62_i_i_i, i32 53)
-  %tmp_65 = zext i1 %tmp_67 to i32
-  %tmp_66 = call i32 @_ssdm_op_PartSelect.i32.i137.i32.i32(i137 %tmp_64_i_i_i, i32 53, i32 84)
-  %p_Val2_3 = select i1 %isNeg, i32 %tmp_65, i32 %tmp_66
+  %tmp_63_i_i_i = zext i32 %sh_assign_1_cast to i137
+  %tmp_63_i_i_i_cast = zext i32 %sh_assign_1_cast to i54
+  %tmp_64_i_i_i = lshr i54 %tmp_i_i_i, %tmp_63_i_i_i_cast
+  %tmp_66_i_i_i = shl i137 %tmp_i_i_i_cast, %tmp_63_i_i_i
+  %tmp_69 = call i1 @_ssdm_op_BitSelect.i1.i54.i32(i54 %tmp_64_i_i_i, i32 53)
+  %tmp_67 = zext i1 %tmp_69 to i32
+  %tmp_68 = call i32 @_ssdm_op_PartSelect.i32.i137.i32.i32(i137 %tmp_66_i_i_i, i32 53, i32 84)
+  %p_Val2_3 = select i1 %isNeg, i32 %tmp_67, i32 %tmp_68
   call void @_ssdm_op_Write.s_axilite.i32P(i32* %press_act, i32 %p_Val2_3)
+  %tmp_60 = icmp eq i32 %basepoint_read, 0
+  br i1 %tmp_60, label %14, label %15
+
+; <label>:14                                      ; preds = %13
+  call void @_ssdm_op_Write.s_axilite.i32P(i32* %flag, i32 0)
+  br label %16
+
+; <label>:15                                      ; preds = %13
+  call void @_ssdm_op_Write.s_axilite.i32P(i32* %flag, i32 1)
+  %tmp_61 = sub i32 %p_Val2_3, %basepoint_read
+  call void @_ssdm_op_Write.s_axilite.i32P(i32* %pressure_diff, i32 %tmp_61)
+  br label %16
+
+; <label>:16                                      ; preds = %15, %14
   ret void
 }
 
@@ -532,6 +553,11 @@ entry:
 define weak i1 @_ssdm_op_ReadReq.m_axi.i32P(i32*, i32) {
 entry:
   ret i1 true
+}
+
+define weak i32 @_ssdm_op_Read.s_axilite.i32(i32) {
+entry:
+  ret i32 %0
 }
 
 define weak i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32*) {
@@ -805,11 +831,11 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !llvm.map.gv = !{!30}
 
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
-!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0}
-!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!3 = metadata !{metadata !"kernel_arg_type", metadata !"uint32_t*", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &"}
-!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"volatile", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
-!5 = metadata !{metadata !"kernel_arg_name", metadata !"iic", metadata !"empty_pirq_outValue", metadata !"full_pirq_outValue", metadata !"ctrl_reg_outValue", metadata !"stat_reg_outValue1", metadata !"stat_reg_val2", metadata !"pressure_msb", metadata !"pressure_lsb", metadata !"pressure_xlsb", metadata !"temp_msb", metadata !"temp_lsb", metadata !"temp_xlsb", metadata !"press_raw", metadata !"temp_raw", metadata !"operation", metadata !"press_cal", metadata !"press_act"}
+!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0}
+!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!3 = metadata !{metadata !"kernel_arg_type", metadata !"uint32_t*", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t", metadata !"int &", metadata !"uint32_t &"}
+!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"volatile", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
+!5 = metadata !{metadata !"kernel_arg_name", metadata !"iic", metadata !"empty_pirq_outValue", metadata !"full_pirq_outValue", metadata !"ctrl_reg_outValue", metadata !"stat_reg_outValue1", metadata !"stat_reg_val2", metadata !"pressure_msb", metadata !"pressure_lsb", metadata !"pressure_xlsb", metadata !"temp_msb", metadata !"temp_lsb", metadata !"temp_xlsb", metadata !"press_raw", metadata !"temp_raw", metadata !"operation", metadata !"press_cal", metadata !"press_act", metadata !"basepoint", metadata !"flag", metadata !"pressure_diff"}
 !6 = metadata !{metadata !"reqd_work_group_size", i32 1, i32 1, i32 1}
 !7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}
 !8 = metadata !{metadata !"kernel_arg_addr_space"}
@@ -911,3 +937,17 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !104 = metadata !{i32 0, i32 31, metadata !105}
 !105 = metadata !{metadata !106}
 !106 = metadata !{metadata !"press_act", metadata !35, metadata !"unsigned int", i32 0, i32 31}
+!107 = metadata !{metadata !108}
+!108 = metadata !{i32 0, i32 31, metadata !109}
+!109 = metadata !{metadata !110}
+!110 = metadata !{metadata !"basepoint", metadata !111, metadata !"unsigned int", i32 0, i32 31}
+!111 = metadata !{metadata !112}
+!112 = metadata !{i32 0, i32 0, i32 0}
+!113 = metadata !{metadata !114}
+!114 = metadata !{i32 0, i32 31, metadata !115}
+!115 = metadata !{metadata !116}
+!116 = metadata !{metadata !"flag", metadata !35, metadata !"int", i32 0, i32 31}
+!117 = metadata !{metadata !118}
+!118 = metadata !{i32 0, i32 31, metadata !119}
+!119 = metadata !{metadata !120}
+!120 = metadata !{metadata !"pressure_diff", metadata !35, metadata !"unsigned int", i32 0, i32 31}

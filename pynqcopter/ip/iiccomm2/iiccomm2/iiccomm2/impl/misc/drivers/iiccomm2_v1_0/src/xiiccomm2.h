@@ -119,6 +119,12 @@ u32 XIiccomm2_Get_press_cal(XIiccomm2 *InstancePtr);
 u32 XIiccomm2_Get_press_cal_vld(XIiccomm2 *InstancePtr);
 u32 XIiccomm2_Get_press_act(XIiccomm2 *InstancePtr);
 u32 XIiccomm2_Get_press_act_vld(XIiccomm2 *InstancePtr);
+void XIiccomm2_Set_basepoint(XIiccomm2 *InstancePtr, u32 Data);
+u32 XIiccomm2_Get_basepoint(XIiccomm2 *InstancePtr);
+u32 XIiccomm2_Get_flag(XIiccomm2 *InstancePtr);
+u32 XIiccomm2_Get_flag_vld(XIiccomm2 *InstancePtr);
+u32 XIiccomm2_Get_pressure_diff(XIiccomm2 *InstancePtr);
+u32 XIiccomm2_Get_pressure_diff_vld(XIiccomm2 *InstancePtr);
 
 void XIiccomm2_InterruptGlobalEnable(XIiccomm2 *InstancePtr);
 void XIiccomm2_InterruptGlobalDisable(XIiccomm2 *InstancePtr);

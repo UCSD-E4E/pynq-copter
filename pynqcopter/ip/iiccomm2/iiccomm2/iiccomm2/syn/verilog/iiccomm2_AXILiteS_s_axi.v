@@ -69,7 +69,12 @@ module iiccomm2_AXILiteS_s_axi
     input  wire [31:0]                   press_cal,
     input  wire                          press_cal_ap_vld,
     input  wire [31:0]                   press_act,
-    input  wire                          press_act_ap_vld
+    input  wire                          press_act_ap_vld,
+    output wire [31:0]                   basepoint,
+    input  wire [31:0]                   flag,
+    input  wire                          flag_ap_vld,
+    input  wire [31:0]                   pressure_diff,
+    input  wire                          pressure_diff_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -170,6 +175,19 @@ module iiccomm2_AXILiteS_s_axi
 // 0x8c : Control signal of press_act
 //        bit 0  - press_act_ap_vld (Read/COR)
 //        others - reserved
+// 0x90 : Data signal of basepoint
+//        bit 31~0 - basepoint[31:0] (Read/Write)
+// 0x94 : reserved
+// 0x98 : Data signal of flag
+//        bit 31~0 - flag[31:0] (Read)
+// 0x9c : Control signal of flag
+//        bit 0  - flag_ap_vld (Read/COR)
+//        others - reserved
+// 0xa0 : Data signal of pressure_diff
+//        bit 31~0 - pressure_diff[31:0] (Read)
+// 0xa4 : Control signal of pressure_diff
+//        bit 0  - pressure_diff_ap_vld (Read/COR)
+//        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
@@ -210,6 +228,12 @@ localparam
     ADDR_PRESS_CAL_CTRL             = 8'h84,
     ADDR_PRESS_ACT_DATA_0           = 8'h88,
     ADDR_PRESS_ACT_CTRL             = 8'h8c,
+    ADDR_BASEPOINT_DATA_0           = 8'h90,
+    ADDR_BASEPOINT_CTRL             = 8'h94,
+    ADDR_FLAG_DATA_0                = 8'h98,
+    ADDR_FLAG_CTRL                  = 8'h9c,
+    ADDR_PRESSURE_DIFF_DATA_0       = 8'ha0,
+    ADDR_PRESSURE_DIFF_CTRL         = 8'ha4,
     WRIDLE                          = 2'd0,
     WRDATA                          = 2'd1,
     WRRESP                          = 2'd2,
@@ -272,6 +296,11 @@ localparam
     reg                           int_press_cal_ap_vld;
     reg  [31:0]                   int_press_act = 'b0;
     reg                           int_press_act_ap_vld;
+    reg  [31:0]                   int_basepoint = 'b0;
+    reg  [31:0]                   int_flag = 'b0;
+    reg                           int_flag_ap_vld;
+    reg  [31:0]                   int_pressure_diff = 'b0;
+    reg                           int_pressure_diff_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -475,6 +504,21 @@ always @(posedge ACLK) begin
                 ADDR_PRESS_ACT_CTRL: begin
                     rdata[0] <= int_press_act_ap_vld;
                 end
+                ADDR_BASEPOINT_DATA_0: begin
+                    rdata <= int_basepoint[31:0];
+                end
+                ADDR_FLAG_DATA_0: begin
+                    rdata <= int_flag[31:0];
+                end
+                ADDR_FLAG_CTRL: begin
+                    rdata[0] <= int_flag_ap_vld;
+                end
+                ADDR_PRESSURE_DIFF_DATA_0: begin
+                    rdata <= int_pressure_diff[31:0];
+                end
+                ADDR_PRESSURE_DIFF_CTRL: begin
+                    rdata[0] <= int_pressure_diff_ap_vld;
+                end
             endcase
         end
     end
@@ -484,6 +528,7 @@ end
 //------------------------Register logic-----------------
 assign interrupt = int_gie & (|int_isr);
 assign ap_start  = int_ap_start;
+assign basepoint = int_basepoint;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -929,6 +974,60 @@ always @(posedge ACLK) begin
             int_press_act_ap_vld <= 1'b1;
         else if (ar_hs && raddr == ADDR_PRESS_ACT_CTRL)
             int_press_act_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_basepoint[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_basepoint[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_BASEPOINT_DATA_0)
+            int_basepoint[31:0] <= (WDATA[31:0] & wmask) | (int_basepoint[31:0] & ~wmask);
+    end
+end
+
+// int_flag
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_flag <= 0;
+    else if (ACLK_EN) begin
+        if (flag_ap_vld)
+            int_flag <= flag;
+    end
+end
+
+// int_flag_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_flag_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (flag_ap_vld)
+            int_flag_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_FLAG_CTRL)
+            int_flag_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_pressure_diff
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_pressure_diff <= 0;
+    else if (ACLK_EN) begin
+        if (pressure_diff_ap_vld)
+            int_pressure_diff <= pressure_diff;
+    end
+end
+
+// int_pressure_diff_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_pressure_diff_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (pressure_diff_ap_vld)
+            int_pressure_diff_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_PRESSURE_DIFF_CTRL)
+            int_pressure_diff_ap_vld <= 1'b0; // clear on read
     end
 end
 

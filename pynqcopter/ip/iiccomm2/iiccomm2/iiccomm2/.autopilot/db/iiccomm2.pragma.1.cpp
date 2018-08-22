@@ -33206,7 +33206,7 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 
 };
 #40 "./iiccomm2.hpp" 2
-#54 "./iiccomm2.hpp"
+#57 "./iiccomm2.hpp"
 template <unsigned long long MILLISECONDS, unsigned long long F_OVERLAY_HZ = 50000000ULL>
 void delay_until_ms(){
 
@@ -33228,19 +33228,14 @@ _ssdm_op_SpecProtocol(0, "");
 
 
 
-static uint32_t empty_pirq_val;
-static uint32_t full_pirq_val;
-static uint32_t ctrl_reg_val;
-static uint32_t stat_reg_val1;
-
-
 void iiccomm2(volatile uint32_t iic[4096],
  uint32_t& empty_pirq_outValue, uint32_t& full_pirq_outValue, uint32_t& ctrl_reg_outValue,
  uint32_t& stat_reg_outValue1, uint32_t& stat_reg_val2,
  uint32_t& pressure_msb, uint32_t& pressure_lsb, uint32_t& pressure_xlsb,
  uint32_t& temp_msb, uint32_t& temp_lsb, uint32_t& temp_xlsb,
  uint32_t& press_raw, uint32_t& temp_raw,
- uint32_t& operation, uint32_t& press_cal, uint32_t& press_act)
+ uint32_t& operation, uint32_t& press_cal, uint32_t& press_act,
+ uint32_t basepoint, int& flag, uint32_t& pressure_diff)
 {_ssdm_SpecArrayDimSize(iic,4096);
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
@@ -33262,6 +33257,9 @@ _ssdm_op_SpecInterface(press_raw, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0,
 _ssdm_op_SpecInterface(temp_raw, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(press_cal, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(press_act, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(basepoint, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(flag, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(pressure_diff, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
  uint32_t dig_T1 = 28585;
  uint32_t dig_T2 = 26941;
@@ -33372,8 +33370,8 @@ _ssdm_op_SpecInterface(press_act, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0,
 
 
 
- press_raw = (sensorData[0] << 12) | (sensorData[1] << 4) | (sensorData[2] >> 4);
- temp_raw = (sensorData[3] << 12) | (sensorData[4] << 4) | (sensorData[5] >> 4);
+ press_raw = (pressure_msb << 12) | (pressure_lsb << 4) | (pressure_xlsb >> 4);
+ temp_raw = (temp_msb << 12) | (temp_lsb << 4) | (temp_xlsb >> 4);
 
 
 
@@ -33411,7 +33409,17 @@ _ssdm_op_SpecInterface(press_act, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0,
     pressure = (unsigned long int)((signed long int)pressure + ((var3 + var4 + dig_P7) >> 4));
 
 
-
  press_cal = pressure;
  press_act = (double)press_cal / 100.0;
+
+ if(basepoint == 0)
+ {
+  flag = 0;
+ }
+ else
+ {
+  flag = 1;
+  pressure_diff = press_act - basepoint;
+
+ }
 }

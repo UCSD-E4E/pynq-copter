@@ -104,6 +104,19 @@
 // 0x8c : Control signal of press_act
 //        bit 0  - press_act_ap_vld (Read/COR)
 //        others - reserved
+// 0x90 : Data signal of basepoint
+//        bit 31~0 - basepoint[31:0] (Read/Write)
+// 0x94 : reserved
+// 0x98 : Data signal of flag
+//        bit 31~0 - flag[31:0] (Read)
+// 0x9c : Control signal of flag
+//        bit 0  - flag_ap_vld (Read/COR)
+//        others - reserved
+// 0xa0 : Data signal of pressure_diff
+//        bit 31~0 - pressure_diff[31:0] (Read)
+// 0xa4 : Control signal of pressure_diff
+//        bit 0  - pressure_diff_ap_vld (Read/COR)
+//        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XIICCOMM2_AXILITES_ADDR_AP_CTRL                  0x00
@@ -158,4 +171,12 @@
 #define XIICCOMM2_AXILITES_ADDR_PRESS_ACT_DATA           0x88
 #define XIICCOMM2_AXILITES_BITS_PRESS_ACT_DATA           32
 #define XIICCOMM2_AXILITES_ADDR_PRESS_ACT_CTRL           0x8c
+#define XIICCOMM2_AXILITES_ADDR_BASEPOINT_DATA           0x90
+#define XIICCOMM2_AXILITES_BITS_BASEPOINT_DATA           32
+#define XIICCOMM2_AXILITES_ADDR_FLAG_DATA                0x98
+#define XIICCOMM2_AXILITES_BITS_FLAG_DATA                32
+#define XIICCOMM2_AXILITES_ADDR_FLAG_CTRL                0x9c
+#define XIICCOMM2_AXILITES_ADDR_PRESSURE_DIFF_DATA       0xa0
+#define XIICCOMM2_AXILITES_BITS_PRESSURE_DIFF_DATA       32
+#define XIICCOMM2_AXILITES_ADDR_PRESSURE_DIFF_CTRL       0xa4
 

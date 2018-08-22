@@ -18,6 +18,9 @@
   <xd:arg xd:name="operation" xd:originalName="operation" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x78" xd:statusOffset="0x7C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:arg xd:name="press_cal" xd:originalName="press_cal" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x80" xd:statusOffset="0x84" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:arg xd:name="press_act" xd:originalName="press_act" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x88" xd:statusOffset="0x8C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="basepoint" xd:originalName="basepoint" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x90" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="flag" xd:originalName="flag" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x98" xd:statusOffset="0x9C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="pressure_diff" xd:originalName="pressure_diff" xd:direction="out" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0xA0" xd:statusOffset="0xA4" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
-  <xd:resourceEstimates xd:LUT="25075" xd:FF="35652" xd:BRAM="4" xd:DSP="122"/>
+  <xd:resourceEstimates xd:LUT="25347" xd:FF="35865" xd:BRAM="4" xd:DSP="122"/>
 </xd:acceleratorMap>

@@ -396,6 +396,63 @@ u32 XIiccomm2_Get_press_act_vld(XIiccomm2 *InstancePtr) {
     return Data & 0x1;
 }
 
+void XIiccomm2_Set_basepoint(XIiccomm2 *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XIiccomm2_WriteReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_BASEPOINT_DATA, Data);
+}
+
+u32 XIiccomm2_Get_basepoint(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_BASEPOINT_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_flag(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_FLAG_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_flag_vld(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_FLAG_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2_Get_pressure_diff(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_PRESSURE_DIFF_DATA);
+    return Data;
+}
+
+u32 XIiccomm2_Get_pressure_diff_vld(XIiccomm2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2_AXILITES_ADDR_PRESSURE_DIFF_CTRL);
+    return Data & 0x1;
+}
+
 void XIiccomm2_InterruptGlobalEnable(XIiccomm2 *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

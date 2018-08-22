@@ -1122,6 +1122,101 @@
               "description": "Reserved.  0s on read."
             }
           ]
+        },
+        {
+          "offset": "0x90",
+          "name": "basepoint",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of basepoint",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "basepoint",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of basepoint"
+            }]
+        },
+        {
+          "offset": "0x98",
+          "name": "flag",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of flag",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "flag",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of flag"
+            }]
+        },
+        {
+          "offset": "0x9c",
+          "name": "flag_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of flag",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "flag_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal flag_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0xa0",
+          "name": "pressure_diff",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of pressure_diff",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "pressure_diff",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of pressure_diff"
+            }]
+        },
+        {
+          "offset": "0xa4",
+          "name": "pressure_diff_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of pressure_diff",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "pressure_diff_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal pressure_diff_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
         }
       ],
       "memories": "",
@@ -1593,6 +1688,32 @@
       "Object": "AXILiteS",
       "firstOutLatency": "297"
     },
+    "basepoint": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "in",
+      "offset": "144",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "AXILiteS"
+    },
+    "flag": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "152",
+      "statusOffset": "156",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "297"
+    },
+    "pressure_diff": {
+      "interfaceRef": "s_axi_AXILiteS",
+      "dir": "out",
+      "offset": "160",
+      "statusOffset": "164",
+      "handshakeRef": "ap_vld",
+      "Object": "AXILiteS",
+      "firstOutLatency": "299"
+    },
     "ap_ctrl": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "in",
@@ -1659,14 +1780,14 @@
         "Area": {
           "BRAM_18K": "4",
           "DSP48E": "122",
-          "FF": "35652",
-          "LUT": "25075"
+          "FF": "35865",
+          "LUT": "25347"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-21 13:45:31 PDT",
+    "Time": "2018-08-22 10:12:24 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }
