@@ -1,2 +1,11 @@
 *.jou
 *.log
+/pynqcopter/hex/hex
+/pynqcopter/pwm/pwm
+/pynqcopter/base/base
+/pynqcopter/ip/imu_driver/imu_driver
+/pynqcopter/ip/mixer/mixer
+/pynqcopter/ip/normalizer/normalizer
+/pynqcopter/ip/pid/pid
+/pynqcopter/ip/pwm/pwm
+/pynqcopter/ip/rc_receiver/rc_receiver
