@@ -1703,7 +1703,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>eecf8ddd</spirit:value>
+            <spirit:value>e6a33f25</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1719,7 +1719,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>74a4f6c6</spirit:value>
+            <spirit:value>8842c660</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1735,7 +1735,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b27e9b5f</spirit:value>
+            <spirit:value>f835bbea</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1751,7 +1751,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>51233714</spirit:value>
+            <spirit:value>ab3ade3f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3336,15 +3336,15 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </xilinx:taxonomies>
       <xilinx:displayName>Iiccomm4</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808211345</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-21T20:45:18Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808211631</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-21T23:31:35Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="974ec83d"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="e48f3472"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="13c43cf7"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2db1b7cb"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="42009859"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="819ce980"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="c26d28df"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="b36a4083"/>

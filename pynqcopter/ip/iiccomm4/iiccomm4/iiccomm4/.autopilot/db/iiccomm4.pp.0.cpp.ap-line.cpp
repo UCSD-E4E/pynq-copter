@@ -33281,7 +33281,7 @@ void iiccomm4(volatile uint32_t iic[4096],
  iic[(0x40001000/4)+(0x108/4)] = 0xF5;
  iic[(0x40001000/4)+(0x108/4)] = 0x20;
 #pragma empty_line
- delay_until_ms<10>();
+ delay_until_ms<600>();
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line

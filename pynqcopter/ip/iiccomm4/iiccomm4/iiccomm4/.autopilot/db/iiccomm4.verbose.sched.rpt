@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'iiccomm4'
 ================================================================
-* Date:           Tue Aug 21 13:45:03 2018
+* Date:           Tue Aug 21 16:31:20 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        iiccomm4
@@ -37,16 +37,16 @@
         N/A
 
         * Loop: 
-        +---------------------+--------+--------+----------+-----------+-----------+--------+----------+
-        |                     |     Latency     | Iteration|  Initiation Interval  |  Trip  |          |
-        |      Loop Name      |   min  |   max  |  Latency |  achieved |   target  |  Count | Pipelined|
-        +---------------------+--------+--------+----------+-----------+-----------+--------+----------+
-        |- memset_sensorData  |       5|       5|         1|          -|          -|       6|    no    |
-        |- Loop 2             |  500000|  500000|         1|          -|          -|  500000|    no    |
-        |- Loop 3             |  500000|  500000|         1|          -|          -|  500000|    no    |
-        |- Loop 4             |       ?|       ?|    500017|          -|          -|       ?|    no    |
-        | + Loop 4.1          |  500000|  500000|         1|          -|          -|  500000|    no    |
-        +---------------------+--------+--------+----------+-----------+-----------+--------+----------+
+        +---------------------+----------+----------+----------+-----------+-----------+----------+----------+
+        |                     |       Latency       | Iteration|  Initiation Interval  |   Trip   |          |
+        |      Loop Name      |    min   |    max   |  Latency |  achieved |   target  |   Count  | Pipelined|
+        +---------------------+----------+----------+----------+-----------+-----------+----------+----------+
+        |- memset_sensorData  |         5|         5|         1|          -|          -|         6|    no    |
+        |- Loop 2             |  30000000|  30000000|         1|          -|          -|  30000000|    no    |
+        |- Loop 3             |    500000|    500000|         1|          -|          -|    500000|    no    |
+        |- Loop 4             |         ?|         ?|    500017|          -|          -|         ?|    no    |
+        | + Loop 4.1          |    500000|    500000|         1|          -|          -|    500000|    no    |
+        +---------------------+----------+----------+----------+-----------+-----------+----------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -290,9 +290,9 @@ ST_1 : Operation 105 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBit
 ST_1 : Operation 106 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %temp_lsb) nounwind, !map !79"
 ST_1 : Operation 107 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %temp_xlsb) nounwind, !map !83"
 ST_1 : Operation 108 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %operation) nounwind, !map !87"
-ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%dummy = alloca i8, align 1"
-ST_1 : Operation 110 [1/1] (0.00ns)   --->   "%dummy_2 = alloca i8, align 1"
-ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%dummy_4 = alloca i8, align 1"
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%dummy_2 = alloca i8, align 1"
+ST_1 : Operation 110 [1/1] (0.00ns)   --->   "%dummy_4 = alloca i8, align 1"
+ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%dummy = alloca i8, align 1"
 ST_1 : Operation 112 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @iiccomm4_str) nounwind"
 ST_1 : Operation 113 [1/1] (0.00ns)   --->   "%sensorData = alloca [6 x i32], align 16" [iiccomm4.cpp:70]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6> <RAM>
 ST_1 : Operation 114 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [iiccomm4.cpp:47]
@@ -623,20 +623,20 @@ ST_55 : Operation 330 [2/5] (3.50ns)   --->   "%iic_addr_3_resp25 = call i1 @_ss
 
  <State 56> : 3.50ns
 ST_56 : Operation 331 [1/5] (3.50ns)   --->   "%iic_addr_3_resp25 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_51)" [iiccomm4.cpp:113]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_56 : Operation 332 [1/1] (0.00ns)   --->   "%rbegin7 = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_10) nounwind"
+ST_56 : Operation 332 [1/1] (0.00ns)   --->   "%rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([43 x i8]* @delay_until_ms_MD_60) nounwind"
 ST_56 : Operation 333 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind" [./iiccomm4.hpp:57->iiccomm4.cpp:115]
 ST_56 : Operation 334 [1/1] (1.76ns)   --->   "br label %2" [./iiccomm4.hpp:61->iiccomm4.cpp:115]
 
  <State 57> : 3.50ns
-ST_57 : Operation 335 [1/1] (0.00ns)   --->   "%p_014_0_i1 = phi i19 [ 0, %1 ], [ %ctr_V, %3 ]"
-ST_57 : Operation 336 [1/1] (2.43ns)   --->   "%tmp_2 = icmp eq i19 %p_014_0_i1, -24288" [./iiccomm4.hpp:61->iiccomm4.cpp:115]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_57 : Operation 337 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 500000, i64 500000, i64 500000) nounwind"
-ST_57 : Operation 338 [1/1] (2.16ns)   --->   "%ctr_V = add i19 %p_014_0_i1, 1" [./iiccomm4.hpp:61->iiccomm4.cpp:115]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.16> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_57 : Operation 339 [1/1] (0.00ns)   --->   "br i1 %tmp_2, label %"delay_until_ms<10ull, 50000000ull>.exit11", label %3" [./iiccomm4.hpp:61->iiccomm4.cpp:115]
+ST_57 : Operation 335 [1/1] (0.00ns)   --->   "%p_014_0_i = phi i25 [ 0, %1 ], [ %ctr_V, %3 ]"
+ST_57 : Operation 336 [1/1] (2.45ns)   --->   "%tmp_2 = icmp eq i25 %p_014_0_i, -3554432" [./iiccomm4.hpp:61->iiccomm4.cpp:115]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_57 : Operation 337 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 30000000, i64 30000000, i64 30000000) nounwind"
+ST_57 : Operation 338 [1/1] (2.34ns)   --->   "%ctr_V = add i25 %p_014_0_i, 1" [./iiccomm4.hpp:61->iiccomm4.cpp:115]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.16> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_57 : Operation 339 [1/1] (0.00ns)   --->   "br i1 %tmp_2, label %"delay_until_ms<600ull, 50000000ull>.exit", label %3" [./iiccomm4.hpp:61->iiccomm4.cpp:115]
 ST_57 : Operation 340 [1/1] (0.00ns)   --->   "%dummy_1 = load volatile i8* %dummy, align 1" [./iiccomm4.hpp:62->iiccomm4.cpp:115]
 ST_57 : Operation 341 [1/1] (0.00ns)   --->   "store volatile i8 %dummy_1, i8* %dummy, align 1" [./iiccomm4.hpp:62->iiccomm4.cpp:115]
 ST_57 : Operation 342 [1/1] (0.00ns)   --->   "br label %2" [./iiccomm4.hpp:61->iiccomm4.cpp:115]
-ST_57 : Operation 343 [1/1] (0.00ns)   --->   "%rend8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([42 x i8]* @delay_until_ms_MD_10, i32 %rbegin7) nounwind"
+ST_57 : Operation 343 [1/1] (0.00ns)   --->   "%rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_60, i32 %rbegin) nounwind"
 ST_57 : Operation 344 [1/1] (0.00ns)   --->   "%iic_addr_52 = getelementptr i32* %iic, i64 268436546"
 ST_57 : Operation 345 [1/1] (3.50ns)   --->   "%iic_addr_3_req26 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_52, i32 1)" [iiccomm4.cpp:120]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
@@ -695,20 +695,20 @@ ST_65 : Operation 382 [2/5] (3.50ns)   --->   "%iic_addr_3_resp33 = call i1 @_ss
 
  <State 66> : 3.50ns
 ST_66 : Operation 383 [1/5] (3.50ns)   --->   "%iic_addr_3_resp33 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_63)" [iiccomm4.cpp:129]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_66 : Operation 384 [1/1] (0.00ns)   --->   "%rbegin2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_10) nounwind"
+ST_66 : Operation 384 [1/1] (0.00ns)   --->   "%rbegin6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_10) nounwind"
 ST_66 : Operation 385 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind" [./iiccomm4.hpp:57->iiccomm4.cpp:134]
 ST_66 : Operation 386 [1/1] (1.76ns)   --->   "br label %4" [./iiccomm4.hpp:61->iiccomm4.cpp:134]
 
  <State 67> : 3.50ns
-ST_67 : Operation 387 [1/1] (0.00ns)   --->   "%p_014_0_i5 = phi i19 [ 0, %"delay_until_ms<10ull, 50000000ull>.exit11" ], [ %ctr_V_1, %5 ]"
-ST_67 : Operation 388 [1/1] (2.43ns)   --->   "%tmp_4 = icmp eq i19 %p_014_0_i5, -24288" [./iiccomm4.hpp:61->iiccomm4.cpp:134]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_67 : Operation 387 [1/1] (0.00ns)   --->   "%p_014_0_i9 = phi i19 [ 0, %"delay_until_ms<600ull, 50000000ull>.exit" ], [ %ctr_V_1, %5 ]"
+ST_67 : Operation 388 [1/1] (2.43ns)   --->   "%tmp_4 = icmp eq i19 %p_014_0_i9, -24288" [./iiccomm4.hpp:61->iiccomm4.cpp:134]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_67 : Operation 389 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 500000, i64 500000, i64 500000) nounwind"
-ST_67 : Operation 390 [1/1] (2.16ns)   --->   "%ctr_V_1 = add i19 %p_014_0_i5, 1" [./iiccomm4.hpp:61->iiccomm4.cpp:134]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.16> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_67 : Operation 391 [1/1] (0.00ns)   --->   "br i1 %tmp_4, label %"delay_until_ms<10ull, 50000000ull>.exit6", label %5" [./iiccomm4.hpp:61->iiccomm4.cpp:134]
+ST_67 : Operation 390 [1/1] (2.16ns)   --->   "%ctr_V_1 = add i19 %p_014_0_i9, 1" [./iiccomm4.hpp:61->iiccomm4.cpp:134]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.16> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_67 : Operation 391 [1/1] (0.00ns)   --->   "br i1 %tmp_4, label %"delay_until_ms<10ull, 50000000ull>.exit10", label %5" [./iiccomm4.hpp:61->iiccomm4.cpp:134]
 ST_67 : Operation 392 [1/1] (0.00ns)   --->   "%dummy_3 = load volatile i8* %dummy_2, align 1" [./iiccomm4.hpp:62->iiccomm4.cpp:134]
 ST_67 : Operation 393 [1/1] (0.00ns)   --->   "store volatile i8 %dummy_3, i8* %dummy_2, align 1" [./iiccomm4.hpp:62->iiccomm4.cpp:134]
 ST_67 : Operation 394 [1/1] (0.00ns)   --->   "br label %4" [./iiccomm4.hpp:61->iiccomm4.cpp:134]
-ST_67 : Operation 395 [1/1] (0.00ns)   --->   "%rend3 = call i32 (...)* @_ssdm_op_SpecRegionEnd([42 x i8]* @delay_until_ms_MD_10, i32 %rbegin2) nounwind"
+ST_67 : Operation 395 [1/1] (0.00ns)   --->   "%rend7 = call i32 (...)* @_ssdm_op_SpecRegionEnd([42 x i8]* @delay_until_ms_MD_10, i32 %rbegin6) nounwind"
 ST_67 : Operation 396 [1/1] (0.00ns)   --->   "%iic_addr_64 = getelementptr i32* %iic, i64 268436545"
 ST_67 : Operation 397 [7/7] (3.50ns)   --->   "%iic_load_4_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_64, i32 1)" [iiccomm4.cpp:137]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
@@ -738,8 +738,8 @@ ST_74 : Operation 405 [1/1] (3.50ns)   --->   "%iic_addr_65_read = call i32 @_ss
 ST_75 : Operation 406 [1/1] (1.76ns)   --->   "br label %6" [iiccomm4.cpp:142]
 
  <State 76> : 3.50ns
-ST_76 : Operation 407 [1/1] (0.00ns)   --->   "%storemerge1 = phi i32 [ %iic_addr_65_read, %"delay_until_ms<10ull, 50000000ull>.exit6" ], [ %iic_addr_69_read, %"delay_until_ms<10ull, 50000000ull>.exit" ]" [iiccomm4.cpp:137]
-ST_76 : Operation 408 [1/1] (0.00ns)   --->   "%index = phi i32 [ 0, %"delay_until_ms<10ull, 50000000ull>.exit6" ], [ %index_1, %"delay_until_ms<10ull, 50000000ull>.exit" ]"
+ST_76 : Operation 407 [1/1] (0.00ns)   --->   "%storemerge1 = phi i32 [ %iic_addr_65_read, %"delay_until_ms<10ull, 50000000ull>.exit10" ], [ %iic_addr_69_read, %"delay_until_ms<10ull, 50000000ull>.exit" ]" [iiccomm4.cpp:137]
+ST_76 : Operation 408 [1/1] (0.00ns)   --->   "%index = phi i32 [ 0, %"delay_until_ms<10ull, 50000000ull>.exit10" ], [ %index_1, %"delay_until_ms<10ull, 50000000ull>.exit" ]"
 ST_76 : Operation 409 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i32P(i32* %stat_reg_val2, i32 %storemerge1)" [iiccomm4.cpp:149]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
 ST_76 : Operation 410 [1/1] (0.00ns)   --->   "%tmp_3 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %storemerge1, i32 6)" [iiccomm4.cpp:137]
 ST_76 : Operation 411 [1/1] (0.00ns)   --->   "%storemerge = call i7 @_ssdm_op_BitConcatenate.i7.i1.i6(i1 %tmp_3, i6 0)" [iiccomm4.cpp:150]
@@ -781,20 +781,20 @@ ST_83 : Operation 430 [1/1] (3.50ns)   --->   "%iic_addr_67_read = call i32 @_ss
 ST_84 : Operation 431 [1/1] (0.00ns)   --->   "%tmp_7 = sext i32 %index to i64" [iiccomm4.cpp:145]
 ST_84 : Operation 432 [1/1] (0.00ns)   --->   "%sensorData_addr_1 = getelementptr inbounds [6 x i32]* %sensorData, i64 0, i64 %tmp_7" [iiccomm4.cpp:145]
 ST_84 : Operation 433 [1/1] (2.32ns)   --->   "store i32 %iic_addr_67_read, i32* %sensorData_addr_1, align 4" [iiccomm4.cpp:145]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 6> <RAM>
-ST_84 : Operation 434 [1/1] (0.00ns)   --->   "%rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_10) nounwind"
+ST_84 : Operation 434 [1/1] (0.00ns)   --->   "%rbegin2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_10) nounwind"
 ST_84 : Operation 435 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind" [./iiccomm4.hpp:57->iiccomm4.cpp:148]
 ST_84 : Operation 436 [1/1] (1.76ns)   --->   "br label %8" [./iiccomm4.hpp:61->iiccomm4.cpp:148]
 
  <State 85> : 3.50ns
-ST_85 : Operation 437 [1/1] (0.00ns)   --->   "%p_014_0_i = phi i19 [ 0, %7 ], [ %ctr_V_2, %9 ]"
-ST_85 : Operation 438 [1/1] (2.43ns)   --->   "%tmp_9 = icmp eq i19 %p_014_0_i, -24288" [./iiccomm4.hpp:61->iiccomm4.cpp:148]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_85 : Operation 437 [1/1] (0.00ns)   --->   "%p_014_0_i5 = phi i19 [ 0, %7 ], [ %ctr_V_2, %9 ]"
+ST_85 : Operation 438 [1/1] (2.43ns)   --->   "%tmp_9 = icmp eq i19 %p_014_0_i5, -24288" [./iiccomm4.hpp:61->iiccomm4.cpp:148]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_85 : Operation 439 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 500000, i64 500000, i64 500000) nounwind"
-ST_85 : Operation 440 [1/1] (2.16ns)   --->   "%ctr_V_2 = add i19 %p_014_0_i, 1" [./iiccomm4.hpp:61->iiccomm4.cpp:148]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.16> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_85 : Operation 440 [1/1] (2.16ns)   --->   "%ctr_V_2 = add i19 %p_014_0_i5, 1" [./iiccomm4.hpp:61->iiccomm4.cpp:148]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.16> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_85 : Operation 441 [1/1] (0.00ns)   --->   "br i1 %tmp_9, label %"delay_until_ms<10ull, 50000000ull>.exit", label %9" [./iiccomm4.hpp:61->iiccomm4.cpp:148]
 ST_85 : Operation 442 [1/1] (0.00ns)   --->   "%dummy_5 = load volatile i8* %dummy_4, align 1" [./iiccomm4.hpp:62->iiccomm4.cpp:148]
 ST_85 : Operation 443 [1/1] (0.00ns)   --->   "store volatile i8 %dummy_5, i8* %dummy_4, align 1" [./iiccomm4.hpp:62->iiccomm4.cpp:148]
 ST_85 : Operation 444 [1/1] (0.00ns)   --->   "br label %8" [./iiccomm4.hpp:61->iiccomm4.cpp:148]
-ST_85 : Operation 445 [1/1] (0.00ns)   --->   "%rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([42 x i8]* @delay_until_ms_MD_10, i32 %rbegin) nounwind"
+ST_85 : Operation 445 [1/1] (0.00ns)   --->   "%rend3 = call i32 (...)* @_ssdm_op_SpecRegionEnd([42 x i8]* @delay_until_ms_MD_10, i32 %rbegin2) nounwind"
 ST_85 : Operation 446 [1/1] (0.00ns)   --->   "%iic_addr_68 = getelementptr i32* %iic, i64 268436545"
 ST_85 : Operation 447 [7/7] (3.50ns)   --->   "%iic_load_6_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_68, i32 1)" [iiccomm4.cpp:149]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 

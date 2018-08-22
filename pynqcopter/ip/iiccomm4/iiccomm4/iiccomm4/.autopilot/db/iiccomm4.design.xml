@@ -32,8 +32,8 @@
 </memset_sensorData>
 <Loop2>
 <Name>Loop 2</Name>
-<TripCount>500000</TripCount>
-<Latency>500000</Latency>
+<TripCount>30000000</TripCount>
+<Latency>30000000</Latency>
 <IterationLatency>1</IterationLatency>
 <PipelineDepth>1</PipelineDepth>
 </Loop2>
@@ -63,8 +63,8 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>4</BRAM_18K>
-<FF>1582</FF>
-<LUT>2366</LUT>
+<FF>1588</FF>
+<LUT>2372</LUT>
 <DSP48E>0</DSP48E>
 </Resources>
 </AreaEstimates>

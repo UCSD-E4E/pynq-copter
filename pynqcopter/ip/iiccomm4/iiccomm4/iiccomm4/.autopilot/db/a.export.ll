@@ -6,6 +6,7 @@ target triple = "x86_64-unknown-linux-gnu"
 @llvm_global_ctors_1 = appending global [0 x void ()*] zeroinitializer
 @llvm_global_ctors_0 = appending global [0 x i32] zeroinitializer
 @iiccomm4_str = internal unnamed_addr constant [9 x i8] c"iiccomm4\00"
+@delay_until_ms_MD_60 = internal unnamed_addr constant [43 x i8] c"delay_until_ms<600ull, 50000000ull>.region\00"
 @delay_until_ms_MD_10 = internal unnamed_addr constant [42 x i8] c"delay_until_ms<10ull, 50000000ull>.region\00"
 @p_str2 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1
 @p_str1 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
@@ -29,9 +30,9 @@ define void @iiccomm4(i32* %iic, i32* %empty_pirq_outValue, i32* %full_pirq_outV
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %temp_lsb) nounwind, !map !79
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %temp_xlsb) nounwind, !map !83
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %operation) nounwind, !map !87
-  %dummy = alloca i8, align 1
   %dummy_2 = alloca i8, align 1
   %dummy_4 = alloca i8, align 1
+  %dummy = alloca i8, align 1
   call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @iiccomm4_str) nounwind
   %sensorData = alloca [6 x i32], align 16
   call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
@@ -172,24 +173,24 @@ meminst:                                          ; preds = %meminst, %0
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_50, i32 32, i4 -1)
   %iic_addr_51 = getelementptr i32* %iic, i64 268436546
   %iic_addr_3_resp25 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_51)
-  %rbegin7 = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_10) nounwind
+  %rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([43 x i8]* @delay_until_ms_MD_60) nounwind
   call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind
   br label %2
 
 ; <label>:2                                       ; preds = %3, %1
-  %p_014_0_i1 = phi i19 [ 0, %1 ], [ %ctr_V, %3 ]
-  %tmp_2 = icmp eq i19 %p_014_0_i1, -24288
-  %empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 500000, i64 500000, i64 500000) nounwind
-  %ctr_V = add i19 %p_014_0_i1, 1
-  br i1 %tmp_2, label %"delay_until_ms<10ull, 50000000ull>.exit11", label %3
+  %p_014_0_i = phi i25 [ 0, %1 ], [ %ctr_V, %3 ]
+  %tmp_2 = icmp eq i25 %p_014_0_i, -3554432
+  %empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 30000000, i64 30000000, i64 30000000) nounwind
+  %ctr_V = add i25 %p_014_0_i, 1
+  br i1 %tmp_2, label %"delay_until_ms<600ull, 50000000ull>.exit", label %3
 
 ; <label>:3                                       ; preds = %2
   %dummy_1 = load volatile i8* %dummy, align 1
   store volatile i8 %dummy_1, i8* %dummy, align 1
   br label %2
 
-"delay_until_ms<10ull, 50000000ull>.exit11":      ; preds = %2
-  %rend8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([42 x i8]* @delay_until_ms_MD_10, i32 %rbegin7) nounwind
+"delay_until_ms<600ull, 50000000ull>.exit":       ; preds = %2
+  %rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([43 x i8]* @delay_until_ms_MD_60, i32 %rbegin) nounwind
   %iic_addr_52 = getelementptr i32* %iic, i64 268436546
   %iic_addr_3_req26 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_52, i32 1)
   %iic_addr_53 = getelementptr i32* %iic, i64 268436546
@@ -214,33 +215,33 @@ meminst:                                          ; preds = %meminst, %0
   call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_62, i32 518, i4 -1)
   %iic_addr_63 = getelementptr i32* %iic, i64 268436546
   %iic_addr_3_resp33 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_63)
-  %rbegin2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_10) nounwind
+  %rbegin6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_10) nounwind
   call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind
   br label %4
 
-; <label>:4                                       ; preds = %5, %"delay_until_ms<10ull, 50000000ull>.exit11"
-  %p_014_0_i5 = phi i19 [ 0, %"delay_until_ms<10ull, 50000000ull>.exit11" ], [ %ctr_V_1, %5 ]
-  %tmp_4 = icmp eq i19 %p_014_0_i5, -24288
+; <label>:4                                       ; preds = %5, %"delay_until_ms<600ull, 50000000ull>.exit"
+  %p_014_0_i9 = phi i19 [ 0, %"delay_until_ms<600ull, 50000000ull>.exit" ], [ %ctr_V_1, %5 ]
+  %tmp_4 = icmp eq i19 %p_014_0_i9, -24288
   %empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 500000, i64 500000, i64 500000) nounwind
-  %ctr_V_1 = add i19 %p_014_0_i5, 1
-  br i1 %tmp_4, label %"delay_until_ms<10ull, 50000000ull>.exit6", label %5
+  %ctr_V_1 = add i19 %p_014_0_i9, 1
+  br i1 %tmp_4, label %"delay_until_ms<10ull, 50000000ull>.exit10", label %5
 
 ; <label>:5                                       ; preds = %4
   %dummy_3 = load volatile i8* %dummy_2, align 1
   store volatile i8 %dummy_3, i8* %dummy_2, align 1
   br label %4
 
-"delay_until_ms<10ull, 50000000ull>.exit6":       ; preds = %4
-  %rend3 = call i32 (...)* @_ssdm_op_SpecRegionEnd([42 x i8]* @delay_until_ms_MD_10, i32 %rbegin2) nounwind
+"delay_until_ms<10ull, 50000000ull>.exit10":      ; preds = %4
+  %rend7 = call i32 (...)* @_ssdm_op_SpecRegionEnd([42 x i8]* @delay_until_ms_MD_10, i32 %rbegin6) nounwind
   %iic_addr_64 = getelementptr i32* %iic, i64 268436545
   %iic_load_4_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_64, i32 1)
   %iic_addr_65 = getelementptr i32* %iic, i64 268436545
   %iic_addr_65_read = call i32 @_ssdm_op_Read.m_axi.volatile.i32P(i32* %iic_addr_65)
   br label %6
 
-; <label>:6                                       ; preds = %"delay_until_ms<10ull, 50000000ull>.exit", %"delay_until_ms<10ull, 50000000ull>.exit6"
-  %storemerge1 = phi i32 [ %iic_addr_65_read, %"delay_until_ms<10ull, 50000000ull>.exit6" ], [ %iic_addr_69_read, %"delay_until_ms<10ull, 50000000ull>.exit" ]
-  %index = phi i32 [ 0, %"delay_until_ms<10ull, 50000000ull>.exit6" ], [ %index_1, %"delay_until_ms<10ull, 50000000ull>.exit" ]
+; <label>:6                                       ; preds = %"delay_until_ms<10ull, 50000000ull>.exit", %"delay_until_ms<10ull, 50000000ull>.exit10"
+  %storemerge1 = phi i32 [ %iic_addr_65_read, %"delay_until_ms<10ull, 50000000ull>.exit10" ], [ %iic_addr_69_read, %"delay_until_ms<10ull, 50000000ull>.exit" ]
+  %index = phi i32 [ 0, %"delay_until_ms<10ull, 50000000ull>.exit10" ], [ %index_1, %"delay_until_ms<10ull, 50000000ull>.exit" ]
   call void @_ssdm_op_Write.s_axilite.i32P(i32* %stat_reg_val2, i32 %storemerge1)
   %tmp_3 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %storemerge1, i32 6)
   %storemerge = call i7 @_ssdm_op_BitConcatenate.i7.i1.i6(i1 %tmp_3, i6 0)
@@ -258,15 +259,15 @@ meminst:                                          ; preds = %meminst, %0
   %tmp_7 = sext i32 %index to i64
   %sensorData_addr_1 = getelementptr inbounds [6 x i32]* %sensorData, i64 0, i64 %tmp_7
   store i32 %iic_addr_67_read, i32* %sensorData_addr_1, align 4
-  %rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_10) nounwind
+  %rbegin2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_10) nounwind
   call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1) nounwind
   br label %8
 
 ; <label>:8                                       ; preds = %9, %7
-  %p_014_0_i = phi i19 [ 0, %7 ], [ %ctr_V_2, %9 ]
-  %tmp_9 = icmp eq i19 %p_014_0_i, -24288
+  %p_014_0_i5 = phi i19 [ 0, %7 ], [ %ctr_V_2, %9 ]
+  %tmp_9 = icmp eq i19 %p_014_0_i5, -24288
   %empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 500000, i64 500000, i64 500000) nounwind
-  %ctr_V_2 = add i19 %p_014_0_i, 1
+  %ctr_V_2 = add i19 %p_014_0_i5, 1
   br i1 %tmp_9, label %"delay_until_ms<10ull, 50000000ull>.exit", label %9
 
 ; <label>:9                                       ; preds = %8
@@ -275,7 +276,7 @@ meminst:                                          ; preds = %meminst, %0
   br label %8
 
 "delay_until_ms<10ull, 50000000ull>.exit":        ; preds = %8
-  %rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([42 x i8]* @delay_until_ms_MD_10, i32 %rbegin) nounwind
+  %rend3 = call i32 (...)* @_ssdm_op_SpecRegionEnd([42 x i8]* @delay_until_ms_MD_10, i32 %rbegin2) nounwind
   %iic_addr_68 = getelementptr i32* %iic, i64 268436545
   %iic_load_6_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %iic_addr_68, i32 1)
   %iic_addr_69 = getelementptr i32* %iic, i64 268436545
@@ -393,7 +394,7 @@ entry:
   ret i7 %empty_11
 }
 
-!opencl.kernels = !{!0, !7, !7, !13, !13, !7, !19, !22, !24, !24, !7, !7, !26, !28, !28, !7, !7, !7}
+!opencl.kernels = !{!0, !7, !7, !13, !13, !7, !19, !22, !24, !24, !7, !7, !26, !28, !28, !7, !7, !7, !7}
 !hls.encrypted.func = !{}
 !llvm.map.gv = !{!30}
 

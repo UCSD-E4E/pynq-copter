@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'iiccomm4'" level="0">
-<item name = "Date">Tue Aug 21 13:45:03 2018
+<item name = "Date">Tue Aug 21 16:31:21 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">iiccomm4</item>
@@ -36,7 +36,7 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- memset_sensorData">5, 5, 1, -, -, 6, no</column>
-<column name="- Loop 2">500000, 500000, 1, -, -, 500000, no</column>
+<column name="- Loop 2">30000000, 30000000, 1, -, -, 30000000, no</column>
 <column name="- Loop 3">500000, 500000, 1, -, -, 500000, no</column>
 <column name="- Loop 4">?, ?, 500017, -, -, ?, no</column>
 <column name=" + Loop 4.1">500000, 500000, 1, -, -, 500000, no</column>

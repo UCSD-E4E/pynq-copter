@@ -1376,8 +1376,8 @@
           },
           {
             "Name": "Loop 2",
-            "TripCount": "500000",
-            "Latency": "500000",
+            "TripCount": "30000000",
+            "Latency": "30000000",
             "PipelineII": "",
             "PipelineDepth": "1"
           },
@@ -1405,15 +1405,15 @@
         ],
         "Area": {
           "BRAM_18K": "4",
-          "FF": "1582",
-          "LUT": "2366",
+          "FF": "1588",
+          "LUT": "2372",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-21 13:45:05 PDT",
+    "Time": "2018-08-21 16:31:22 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

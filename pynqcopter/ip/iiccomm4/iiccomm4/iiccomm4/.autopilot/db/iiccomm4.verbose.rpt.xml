@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'iiccomm4'" level="0">
-<item name = "Date">Tue Aug 21 13:45:04 2018
+<item name = "Date">Tue Aug 21 16:31:21 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">iiccomm4</item>
@@ -36,7 +36,7 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- memset_sensorData">5, 5, 1, -, -, 6, no</column>
-<column name="- Loop 2">500000, 500000, 1, -, -, 500000, no</column>
+<column name="- Loop 2">30000000, 30000000, 1, -, -, 30000000, no</column>
 <column name="- Loop 3">500000, 500000, 1, -, -, 500000, no</column>
 <column name="- Loop 4">?, ?, 500017, -, -, ?, no</column>
 <column name=" + Loop 4.1">500000, 500000, 1, -, -, 500000, no</column>
@@ -52,12 +52,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 251</column>
+<column name="Expression">-, -, 0, 257</column>
 <column name="FIFO">-, -, -, -</column>
 <column name="Instance">2, -, 1004, 1388</column>
 <column name="Memory">2, -, 0, 0</column>
 <column name="Multiplexer">-, -, -, 727</column>
-<column name="Register">-, -, 578, -</column>
+<column name="Register">-, -, 584, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
 <specialColumn name="Utilization (%)">1, 0, 1, 4</specialColumn>
 </table>
@@ -85,21 +85,21 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="ctr_V_1_fu_1089_p2">+, 0, 0, 26, 19, 1</column>
-<column name="ctr_V_2_fu_1147_p2">+, 0, 0, 26, 19, 1</column>
-<column name="ctr_V_fu_1069_p2">+, 0, 0, 26, 19, 1</column>
-<column name="index_1_fu_1130_p2">+, 0, 0, 39, 32, 1</column>
-<column name="indvarinc_fu_1039_p2">+, 0, 0, 12, 3, 1</column>
+<column name="ctr_V_1_fu_1099_p2">+, 0, 0, 26, 19, 1</column>
+<column name="ctr_V_2_fu_1157_p2">+, 0, 0, 26, 19, 1</column>
+<column name="ctr_V_fu_1079_p2">+, 0, 0, 32, 25, 1</column>
+<column name="index_1_fu_1140_p2">+, 0, 0, 39, 32, 1</column>
+<column name="indvarinc_fu_1049_p2">+, 0, 0, 12, 3, 1</column>
 <column name="ap_block_state2_io">and, 0, 0, 8, 1, 1</column>
 <column name="ap_block_state57_io">and, 0, 0, 8, 1, 1</column>
 <column name="ap_block_state67_io">and, 0, 0, 8, 1, 1</column>
 <column name="ap_block_state76_io">and, 0, 0, 8, 1, 1</column>
 <column name="ap_block_state85_io">and, 0, 0, 8, 1, 1</column>
-<column name="tmp_1_fu_1050_p2">icmp, 0, 0, 9, 3, 3</column>
-<column name="tmp_2_fu_1063_p2">icmp, 0, 0, 18, 19, 16</column>
-<column name="tmp_4_fu_1083_p2">icmp, 0, 0, 18, 19, 16</column>
-<column name="tmp_6_fu_1124_p2">icmp, 0, 0, 11, 7, 1</column>
-<column name="tmp_9_fu_1141_p2">icmp, 0, 0, 18, 19, 16</column>
+<column name="tmp_1_fu_1060_p2">icmp, 0, 0, 9, 3, 3</column>
+<column name="tmp_2_fu_1073_p2">icmp, 0, 0, 18, 25, 23</column>
+<column name="tmp_4_fu_1093_p2">icmp, 0, 0, 18, 19, 16</column>
+<column name="tmp_6_fu_1134_p2">icmp, 0, 0, 11, 7, 1</column>
+<column name="tmp_9_fu_1151_p2">icmp, 0, 0, 18, 19, 16</column>
 <column name="ap_block_state24_io">or, 0, 0, 8, 1, 1</column>
 </table>
 </item>
@@ -117,14 +117,14 @@
 <column name="iic_blk_n_B">9, 2, 1, 2</column>
 <column name="iic_blk_n_R">9, 2, 1, 2</column>
 <column name="iic_blk_n_W">9, 2, 1, 2</column>
-<column name="index_reg_846">9, 2, 32, 64</column>
-<column name="invdar_reg_803">9, 2, 3, 6</column>
-<column name="p_014_0_i1_reg_814">9, 2, 19, 38</column>
-<column name="p_014_0_i5_reg_825">9, 2, 19, 38</column>
-<column name="p_014_0_i_reg_858">9, 2, 19, 38</column>
+<column name="index_reg_856">9, 2, 32, 64</column>
+<column name="invdar_reg_813">9, 2, 3, 6</column>
+<column name="p_014_0_i5_reg_868">9, 2, 19, 38</column>
+<column name="p_014_0_i9_reg_835">9, 2, 19, 38</column>
+<column name="p_014_0_i_reg_824">9, 2, 25, 50</column>
 <column name="sensorData_address0">27, 5, 3, 15</column>
 <column name="sensorData_address1">27, 5, 3, 15</column>
-<column name="storemerge1_reg_836">9, 2, 32, 64</column>
+<column name="storemerge1_reg_846">9, 2, 32, 64</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -137,23 +137,23 @@
 <column name="ap_reg_ioackin_iic_AWREADY">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_iic_WREADY">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_stat_reg_outValue1_dummy_ack">1, 0, 1, 0</column>
-<column name="iic_addr34_read_reg_1192">32, 0, 32, 0</column>
-<column name="iic_addr_13_read_reg_1202">32, 0, 32, 0</column>
-<column name="iic_addr_15_read_reg_1207">32, 0, 32, 0</column>
-<column name="iic_addr_1_read_reg_1187">32, 0, 32, 0</column>
-<column name="iic_addr_65_read_reg_1228">32, 0, 32, 0</column>
-<column name="iic_addr_67_read_reg_1256">32, 0, 32, 0</column>
-<column name="index_1_reg_1236">32, 0, 32, 0</column>
-<column name="index_reg_846">32, 0, 32, 0</column>
-<column name="invdar_reg_803">3, 0, 3, 0</column>
-<column name="p_014_0_i1_reg_814">19, 0, 19, 0</column>
-<column name="p_014_0_i5_reg_825">19, 0, 19, 0</column>
-<column name="p_014_0_i_reg_858">19, 0, 19, 0</column>
-<column name="sensorData_load_1_reg_1279">32, 0, 32, 0</column>
-<column name="sensorData_load_2_reg_1294">32, 0, 32, 0</column>
-<column name="sensorData_load_3_reg_1299">32, 0, 32, 0</column>
-<column name="sensorData_load_reg_1274">32, 0, 32, 0</column>
-<column name="storemerge1_reg_836">32, 0, 32, 0</column>
+<column name="iic_addr34_read_reg_1202">32, 0, 32, 0</column>
+<column name="iic_addr_13_read_reg_1212">32, 0, 32, 0</column>
+<column name="iic_addr_15_read_reg_1217">32, 0, 32, 0</column>
+<column name="iic_addr_1_read_reg_1197">32, 0, 32, 0</column>
+<column name="iic_addr_65_read_reg_1238">32, 0, 32, 0</column>
+<column name="iic_addr_67_read_reg_1266">32, 0, 32, 0</column>
+<column name="index_1_reg_1246">32, 0, 32, 0</column>
+<column name="index_reg_856">32, 0, 32, 0</column>
+<column name="invdar_reg_813">3, 0, 3, 0</column>
+<column name="p_014_0_i5_reg_868">19, 0, 19, 0</column>
+<column name="p_014_0_i9_reg_835">19, 0, 19, 0</column>
+<column name="p_014_0_i_reg_824">25, 0, 25, 0</column>
+<column name="sensorData_load_1_reg_1289">32, 0, 32, 0</column>
+<column name="sensorData_load_2_reg_1304">32, 0, 32, 0</column>
+<column name="sensorData_load_3_reg_1309">32, 0, 32, 0</column>
+<column name="sensorData_load_reg_1284">32, 0, 32, 0</column>
+<column name="storemerge1_reg_846">32, 0, 32, 0</column>
 </table>
 </item>
 </section>

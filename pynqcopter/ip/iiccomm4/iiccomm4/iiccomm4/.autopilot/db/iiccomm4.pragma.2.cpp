@@ -33442,7 +33442,7 @@ _ssdm_op_SpecInterface(temp_xlsb, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0,
  iic[(0x40001000/4)+(0x108/4)] = 0xF5;
  iic[(0x40001000/4)+(0x108/4)] = 0x20;
 
- delay_until_ms<10>();
+ delay_until_ms<600>();
 
 
 

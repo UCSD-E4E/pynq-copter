@@ -49,6 +49,11 @@
 #define IIC_TX_FIFO_OFF (0x108/4)
 #define IIC_RX_FIFO_OFF (0x10C/4)
 
+//NORMALIZER OFFSET
+#define NORM_OFFSET 0x40002000
+#define IIC_STATUS_REG_OFF (0x/4)
+
+
 //delay function in milliseconds
 template <unsigned long long MILLISECONDS, unsigned long long F_OVERLAY_HZ = 50000000ULL>
 void delay_until_ms(){

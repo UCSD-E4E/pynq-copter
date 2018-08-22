@@ -1,0 +1,42 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source /data/opt/Xilinx/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/data/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Wed Aug 22 10:13:17 PDT 2018
+INFO: [HLS 200-10] On os Linux Mint 18 Sarah
+INFO: [HLS 200-10] In directory '/home/iavendano/pynq-copter/pynqcopter/ip/normalizer'
+INFO: [HLS 200-10] Creating and opening project '/home/iavendano/pynq-copter/pynqcopter/ip/normalizer/normalizer'.
+INFO: [HLS 200-10] Adding test bench file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'normalizer.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'normalizer.cpp' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/iavendano/pynq-copter/pynqcopter/ip/normalizer/normalizer/normalizer'.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+make[1]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/normalizer/normalizer/normalizer/csim/build'
+   Compiling ../../../../normalizer.cpp in debug mode
+csim.mk:85: recipe for target 'obj/normalizer.o' failed
+make[1]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/normalizer/normalizer/normalizer/csim/build'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+In file included from ../../../../normalizer.cpp:41:
+../../../../normalizer.hpp:41:10: fatal error: '../common/pynqCopterIp.hpp' file not found
+#include "../common/pynqCopterIp.hpp"
+         ^
+1 error generated.
+make[1]: *** [obj/normalizer.o] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+4
+    while executing
+"source [lindex $::argv 1] "
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 { source [lindex $::argv 1] } "
+
+INFO: [Common 17-206] Exiting vivado_hls at Wed Aug 22 10:13:17 2018...
