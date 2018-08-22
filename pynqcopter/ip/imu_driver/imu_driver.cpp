@@ -43,7 +43,7 @@ void imu_driver (volatile int iic[4096], int sensor_mix[4096]) {
 
 	//initialize variables
 	bool calibrationSuccess = true;
-	int rateData[6] = {};
+	uint8_t rateData[6] = {};
 
 	//only undergo 9dof setup on first run
 	static bool firstSample = true;
