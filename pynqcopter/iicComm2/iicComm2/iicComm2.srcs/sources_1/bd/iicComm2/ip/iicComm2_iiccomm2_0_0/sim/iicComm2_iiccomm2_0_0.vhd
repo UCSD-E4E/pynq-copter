@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: UCSD:hlsip:iiccomm2:1.0
--- IP Revision: 1808211345
+-- IP Revision: 1808221012
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
