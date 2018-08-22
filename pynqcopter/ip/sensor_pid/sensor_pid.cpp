@@ -35,17 +35,17 @@ void delay_until_ms(){
 }
 
 //sensor/pid ip core
-void sensor_pid (volatile int iic[4096], int& rateR, int& rateP, int& rateY) {
+void sensor_pid (volatile int iic[4096], int16_t& rateX, int16_t& rateY, int16_t& rateZ) {
 	//SETUP PRAGMAS
 	#pragma HLS INTERFACE s_axilite port=return bundle=CTRL /*use ap_ctrl_none for autorestart*/
 	#pragma HLS INTERFACE m_axi port=iic bundle=CTRL
-	#pragma HLS INTERFACE s_axilite port=rateR bundle=CTRL
-	#pragma HLS INTERFACE s_axilite port=rateP bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=rateX bundle=CTRL
 	#pragma HLS INTERFACE s_axilite port=rateY bundle=CTRL
+	#pragma HLS INTERFACE s_axilite port=rateZ bundle=CTRL
 
 	//initialize variables
 	bool calibrationSuccess = true;
-	int rateData[6] = {};
+	uint8_t rateData[6] = {};
 
 	//only undergo 9dof setup on first run
 	static bool firstSample = true;
@@ -184,14 +184,15 @@ void sensor_pid (volatile int iic[4096], int& rateR, int& rateP, int& rateY) {
 	}
 
 	//format raw values to euler angles
-	int rx, ry, rz;
-	rx = ((int)rateData[0]) | (((int)rateData[1]) << 8);
-	ry = ((int)rateData[2]) | (((int)rateData[3]) << 8);
-	rz = ((int)rateData[4]) | (((int)rateData[5]) << 8);
+	int16_t x, y, z;
+	x = y = z = 0;
+	x = ((uint16_t)rateData[0]) | (((uint16_t)rateData[1]) << 8);
+	y = ((uint16_t)rateData[2]) | (((uint16_t)rateData[3]) << 8);
+	z = ((uint16_t)rateData[4]) | (((uint16_t)rateData[5]) << 8);
 
 	//output data
-	rateR = int(((double)rz)/16.0);
-	rateP = int(((double)ry)/16.0);
-	rateY = int(((double)rx)/16.0);
+	rateX = x;//((double)x)/16.0;
+	rateY = y;//((double)y)/16.0;
+	rateZ = z;//((double)z)/16.0;
 }
 
