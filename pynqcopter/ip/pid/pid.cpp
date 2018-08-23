@@ -91,10 +91,10 @@ void pid (F16_t rcCmdIn[5],
 	// mixed _in contains noramlized values for each channel
 	// lets convert those to what we want to use
 	// change all to F19_t and make sure thrust is scaled to [0,1)
-	F19_t r_c = mixer_in[0];
-	F19_t p_c = mixer_in[1];
-	F19_t t_c = (mixer_in[2]+1)*F19_t(.5);//move thrust up to [0,2) then [0,1)
-	F19_t y_c = mixer_in[3];
+	F19_t r_c = rcCmdIn[0]*2-1;
+	F19_t p_c = rcCmdIn[1]*2-1;
+	F19_t t_c = rcCmdIn[2];//move thrust up to [0,2) then [0,1)
+	F19_t y_c = rcCmdIn[3]*2-1;
 
 	for(char i=0; i < 6; i++) {
 	#pragma HLS unroll
