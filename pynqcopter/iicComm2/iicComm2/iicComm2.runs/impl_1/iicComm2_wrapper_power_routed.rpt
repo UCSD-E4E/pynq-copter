@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Wed Aug 22 10:24:09 2018
+| Date             : Fri Aug 24 11:39:13 2018
 | Host             : fabricant running 64-bit Linux Mint 18 Sarah
 | Command          : report_power -file iicComm2_wrapper_power_routed.rpt -pb iicComm2_wrapper_power_summary_routed.pb -rpx iicComm2_wrapper_power_routed.rpx
 | Design           : iicComm2_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.522        |
+| Total On-Chip Power (W)  | 1.517        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.386        |
+| Dynamic (W)              | 1.381        |
 | Device Static (W)        | 0.136        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 67.5         |
@@ -52,21 +52,21 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.093 |        4 |       --- |             --- |
-| Slice Logic             |     0.006 |    49885 |       --- |             --- |
-|   LUT as Logic          |     0.005 |    21899 |     53200 |           41.16 |
+| Clocks                  |     0.088 |        4 |       --- |             --- |
+| Slice Logic             |     0.006 |    49890 |       --- |             --- |
+|   LUT as Logic          |     0.005 |    21894 |     53200 |           41.15 |
 |   Register              |    <0.001 |    21489 |    106400 |           20.20 |
 |   CARRY4                |    <0.001 |     3130 |     13300 |           23.53 |
 |   F7/F8 Muxes           |    <0.001 |       88 |     53200 |            0.17 |
-|   LUT as Shift Register |    <0.001 |      837 |     17400 |            4.81 |
+|   LUT as Shift Register |    <0.001 |      836 |     17400 |            4.80 |
 |   Others                |     0.000 |     1646 |       --- |             --- |
-| Signals                 |     0.009 |    37046 |       --- |             --- |
+| Signals                 |     0.009 |    37051 |       --- |             --- |
 | Block RAM               |     0.007 |        2 |       140 |            1.43 |
 | DSPs                    |     0.001 |       54 |       220 |           24.55 |
 | I/O                     |     0.000 |        6 |       125 |            4.80 |
 | PS7                     |     1.270 |        1 |       --- |             --- |
 | Static Power            |     0.136 |          |           |                 |
-| Total                   |     1.522 |          |           |                 |
+| Total                   |     1.517 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.129 |       0.115 |      0.014 |
+| Vccint    |       1.000 |     0.125 |       0.111 |      0.014 |
 | Vccaux    |       1.800 |     0.015 |       0.000 |      0.015 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -152,10 +152,10 @@ Table of Contents
 +-----------------------------------------------------------+-----------+
 | Name                                                      | Power (W) |
 +-----------------------------------------------------------+-----------+
-| iicComm2_wrapper                                          |     1.386 |
+| iicComm2_wrapper                                          |     1.381 |
 |   arduino_iic_scl_iobuf                                   |     0.000 |
 |   arduino_iic_sda_iobuf                                   |     0.000 |
-|   iicComm2_i                                              |     1.386 |
+|   iicComm2_i                                              |     1.381 |
 |     axi_iic_0                                             |     0.002 |
 |       U0                                                  |     0.002 |
 |         X_IIC                                             |     0.002 |
@@ -181,18 +181,18 @@ Table of Contents
 |                 I_DECODER                                 |    <0.001 |
 |             X_INTERRUPT_CONTROL                           |    <0.001 |
 |             X_SOFT_RESET                                  |    <0.001 |
-|     iiccomm2_0                                            |     0.100 |
-|       inst                                                |     0.100 |
+|     iiccomm2_0                                            |     0.096 |
+|       inst                                                |     0.096 |
 |         iiccomm2_AXILiteS_s_axi_U                         |     0.004 |
 |         iiccomm2_add_64nslbW_U11                          |    <0.001 |
 |           iiccomm2_add_64nslbW_AddSubnS_0_U               |    <0.001 |
 |             u1                                            |     0.000 |
 |             u2                                            |     0.000 |
-|         iiccomm2_ddiv_64nbkb_U1                           |     0.014 |
-|           iiccomm2_ap_ddiv_57_no_dsp_64_u                 |     0.014 |
-|             U0                                            |     0.014 |
-|               i_synth                                     |     0.014 |
-|                 DIV_OP.SPD.OP                             |     0.014 |
+|         iiccomm2_ddiv_64nbkb_U1                           |     0.013 |
+|           iiccomm2_ap_ddiv_57_no_dsp_64_u                 |     0.013 |
+|             U0                                            |     0.013 |
+|               i_synth                                     |     0.013 |
+|                 DIV_OP.SPD.OP                             |     0.013 |
 |                   EXP                                     |    <0.001 |
 |                     COND_DET_A                            |    <0.001 |
 |                       EXP_DET_LUT.EXP_ALL_ONE_DEL         |    <0.001 |
@@ -218,7 +218,7 @@ Table of Contents
 |                       i_pipe                              |    <0.001 |
 |                     STATE_UP_DELAY                        |    <0.001 |
 |                       i_pipe                              |    <0.001 |
-|                   MANT_DIV                                |     0.013 |
+|                   MANT_DIV                                |     0.012 |
 |                     MSB_DEL                               |    <0.001 |
 |                       i_pipe                              |    <0.001 |
 |                     RT[0].ADDSUB                          |    <0.001 |
@@ -615,9 +615,9 @@ Table of Contents
 |             buff_rdata                                    |     0.004 |
 |             fifo_rctl                                     |    <0.001 |
 |             fifo_rreq                                     |    <0.001 |
-|             rs_rdata                                      |     0.001 |
+|             rs_rdata                                      |    <0.001 |
 |             rs_rreq                                       |    <0.001 |
-|           bus_write                                       |     0.006 |
+|           bus_write                                       |     0.005 |
 |             buff_wdata                                    |     0.004 |
 |             bus_equal_gen.fifo_burst                      |    <0.001 |
 |             fifo_resp                                     |    <0.001 |
@@ -655,12 +655,12 @@ Table of Contents
 |         iiccomm2_mul_7ns_eOg_U4                           |    <0.001 |
 |           iiccomm2_mul_7ns_eOg_MulnS_1_U                  |    <0.001 |
 |         iiccomm2_shl_137nvdy_U21                          |     0.001 |
-|         iiccomm2_udiv_63npcA_U15                          |     0.029 |
-|           iiccomm2_udiv_63npcA_div_U                      |     0.029 |
-|             iiccomm2_udiv_63npcA_div_u_0                  |     0.028 |
-|         iiccomm2_udiv_64nqcK_U16                          |     0.017 |
-|           iiccomm2_udiv_64nqcK_div_U                      |     0.017 |
-|             iiccomm2_udiv_64nqcK_div_u_0                  |     0.017 |
+|         iiccomm2_udiv_63npcA_U15                          |     0.027 |
+|           iiccomm2_udiv_63npcA_div_U                      |     0.027 |
+|             iiccomm2_udiv_63npcA_div_u_0                  |     0.027 |
+|         iiccomm2_udiv_64nqcK_U16                          |     0.016 |
+|           iiccomm2_udiv_64nqcK_div_U                      |     0.016 |
+|             iiccomm2_udiv_64nqcK_div_u_0                  |     0.016 |
 |         iiccomm2_uitodp_3cud_U2                           |     0.002 |
 |           iiccomm2_ap_uitodp_6_no_dsp_32_u                |     0.002 |
 |             U0                                            |     0.002 |
@@ -722,8 +722,8 @@ Table of Contents
 |                       NORM_1_OR_0.STRUCT_REQ.GENERAL.RND1 |     0.000 |
 |                   Z_C_DEL                                 |    <0.001 |
 |                     i_pipe                                |    <0.001 |
-|         sensorData_U                                      |     0.001 |
-|           iiccomm2_sensorData_ram_U                       |     0.001 |
+|         sensorData_U                                      |     0.002 |
+|           iiccomm2_sensorData_ram_U                       |     0.002 |
 |     processing_system7_0                                  |     1.271 |
 |       inst                                                |     1.271 |
 |     ps7_0_axi_periph                                      |     0.012 |
@@ -764,7 +764,7 @@ Table of Contents
 |               RD.r_channel_0                              |    <0.001 |
 |                 rd_data_fifo_0                            |    <0.001 |
 |                 transaction_fifo_0                        |    <0.001 |
-|               SI_REG                                      |     0.002 |
+|               SI_REG                                      |     0.001 |
 |                 ar.ar_pipe                                |    <0.001 |
 |                 aw.aw_pipe                                |    <0.001 |
 |                 b.b_pipe                                  |    <0.001 |

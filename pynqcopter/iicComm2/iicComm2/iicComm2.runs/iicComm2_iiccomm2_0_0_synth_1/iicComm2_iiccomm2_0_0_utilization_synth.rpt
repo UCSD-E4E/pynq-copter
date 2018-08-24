@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Wed Aug 22 10:18:27 2018
+| Date         : Fri Aug 24 11:24:53 2018
 | Host         : fabricant running 64-bit Linux Mint 18 Sarah
 | Command      : report_utilization -file iicComm2_iiccomm2_0_0_utilization_synth.rpt -pb iicComm2_iiccomm2_0_0_utilization_synth.pb
 | Design       : iicComm2_iiccomm2_0_0
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 21790 |     0 |     53200 | 40.96 |
-|   LUT as Logic             | 20910 |     0 |     53200 | 39.30 |
+| Slice LUTs*                | 21795 |     0 |     53200 | 40.97 |
+|   LUT as Logic             | 20915 |     0 |     53200 | 39.31 |
 |   LUT as Memory            |   880 |     0 |     17400 |  5.06 |
 |     LUT as Distributed RAM |     0 |     0 |           |       |
 |     LUT as Shift Register  |   880 |     0 |           |       |
@@ -153,14 +153,14 @@ Table of Contents
 +----------+-------+---------------------+
 | FDRE     | 20077 |        Flop & Latch |
 | LUT2     |  9474 |                 LUT |
-| LUT3     |  8006 |                 LUT |
+| LUT3     |  8008 |                 LUT |
 | CARRY4   |  3097 |          CarryLogic |
 | LUT1     |  2365 |                 LUT |
-| LUT6     |   769 |                 LUT |
+| LUT6     |   768 |                 LUT |
 | SRL16E   |   476 |  Distributed Memory |
 | SRLC32E  |   404 |  Distributed Memory |
-| LUT4     |   359 |                 LUT |
-| LUT5     |   195 |                 LUT |
+| LUT4     |   361 |                 LUT |
+| LUT5     |   197 |                 LUT |
 | MUXF7    |    82 |               MuxFx |
 | DSP48E1  |    54 |    Block Arithmetic |
 | MUXF8    |    10 |               MuxFx |
