@@ -1,0 +1,1521 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Fri Aug 24 11:18:55 2018
+| Host         : fabricant running 64-bit Linux Mint 18 Sarah
+| Command      : report_timing_summary -max_paths 10 -file iicComm2Update_wrapper_timing_summary_routed.rpt -rpx iicComm2Update_wrapper_timing_summary_routed.rpx -warn_on_violation
+| Design       : iicComm2Update_wrapper
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  false
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 2 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 2 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      1.756        0.000                      0                33822        0.011        0.000                      0                33822        3.750        0.000                       0                 22746  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock       Waveform(ns)       Period(ns)      Frequency(MHz)
+-----       ------------       ----------      --------------
+clk_fpga_0  {0.000 5.000}      10.000          100.000         
+clk_fpga_1  {0.000 10.000}     20.000          50.000          
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_fpga_0          1.756        0.000                      0                33822        0.011        0.000                      0                33822        3.750        0.000                       0                 22746  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_fpga_0
+  To Clock:  clk_fpga_0
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.756ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.011ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        3.750ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.756ns  (required time - arrival time)
+  Source:                 iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[23]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        8.033ns  (logic 1.096ns (13.644%)  route 6.937ns (86.356%))
+  Logic Levels:           3  (LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.088ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.716ns = ( 12.716 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.933ns
+    Clock Pessimism Removal (CPR):    0.129ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.639     2.933    iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
+    SLICE_X40Y69         FDRE                                         r  iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y69         FDRE (Prop_fdre_C_Q)         0.456     3.389 r  iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/Q
+                         net (fo=211, routed)         5.835     9.224    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/s_axi_AXILiteS_ARADDR[5]
+    SLICE_X64Y51         LUT6 (Prop_lut6_I1_O)        0.124     9.348 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[23]_i_8/O
+                         net (fo=1, routed)           0.000     9.348    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[23]_i_8_n_2
+    SLICE_X64Y51         MUXF7 (Prop_muxf7_I1_O)      0.217     9.565 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[23]_i_3/O
+                         net (fo=1, routed)           1.101    10.667    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[23]_i_3_n_2
+    SLICE_X57Y56         LUT6 (Prop_lut6_I2_O)        0.299    10.966 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[23]_i_1/O
+                         net (fo=1, routed)           0.000    10.966    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[23]_i_1_n_2
+    SLICE_X57Y56         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    11.088    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.537    12.716    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/ap_clk
+    SLICE_X57Y56         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[23]/C
+                         clock pessimism              0.129    12.845    
+                         clock uncertainty           -0.154    12.691    
+    SLICE_X57Y56         FDRE (Setup_fdre_C_D)        0.031    12.722    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[23]
+  -------------------------------------------------------------------
+                         required time                         12.722    
+                         arrival time                         -10.966    
+  -------------------------------------------------------------------
+                         slack                                  1.756    
+
+Slack (MET) :             1.792ns  (required time - arrival time)
+  Source:                 iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.923ns  (logic 1.091ns (13.770%)  route 6.832ns (86.230%))
+  Logic Levels:           3  (LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.159ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.645ns = ( 12.645 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.933ns
+    Clock Pessimism Removal (CPR):    0.129ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.639     2.933    iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
+    SLICE_X40Y69         FDRE                                         r  iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y69         FDRE (Prop_fdre_C_Q)         0.456     3.389 r  iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/Q
+                         net (fo=211, routed)         5.826     9.215    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/s_axi_AXILiteS_ARADDR[5]
+    SLICE_X58Y45         LUT6 (Prop_lut6_I1_O)        0.124     9.339 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[14]_i_8/O
+                         net (fo=1, routed)           0.000     9.339    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[14]_i_8_n_2
+    SLICE_X58Y45         MUXF7 (Prop_muxf7_I1_O)      0.214     9.553 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[14]_i_3/O
+                         net (fo=1, routed)           1.006    10.559    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[14]_i_3_n_2
+    SLICE_X52Y53         LUT6 (Prop_lut6_I2_O)        0.297    10.856 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[14]_i_1/O
+                         net (fo=1, routed)           0.000    10.856    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[14]_i_1_n_2
+    SLICE_X52Y53         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    11.088    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.466    12.645    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/ap_clk
+    SLICE_X52Y53         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[14]/C
+                         clock pessimism              0.129    12.774    
+                         clock uncertainty           -0.154    12.620    
+    SLICE_X52Y53         FDRE (Setup_fdre_C_D)        0.029    12.649    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[14]
+  -------------------------------------------------------------------
+                         required time                         12.649    
+                         arrival time                         -10.856    
+  -------------------------------------------------------------------
+                         slack                                  1.792    
+
+Slack (MET) :             1.796ns  (required time - arrival time)
+  Source:                 iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        8.039ns  (logic 1.096ns (13.633%)  route 6.943ns (86.367%))
+  Logic Levels:           3  (LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.089ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.715ns = ( 12.715 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.933ns
+    Clock Pessimism Removal (CPR):    0.129ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.639     2.933    iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
+    SLICE_X40Y69         FDRE                                         r  iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y69         FDRE (Prop_fdre_C_Q)         0.456     3.389 r  iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/Q
+                         net (fo=211, routed)         5.702     9.091    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/s_axi_AXILiteS_ARADDR[5]
+    SLICE_X69Y46         LUT6 (Prop_lut6_I1_O)        0.124     9.215 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[9]_i_8/O
+                         net (fo=1, routed)           0.000     9.215    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[9]_i_8_n_2
+    SLICE_X69Y46         MUXF7 (Prop_muxf7_I1_O)      0.217     9.432 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[9]_i_3/O
+                         net (fo=1, routed)           1.241    10.673    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[9]_i_3_n_2
+    SLICE_X54Y55         LUT6 (Prop_lut6_I2_O)        0.299    10.972 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[9]_i_1/O
+                         net (fo=1, routed)           0.000    10.972    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[9]_i_1_n_2
+    SLICE_X54Y55         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    11.088    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.536    12.715    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/ap_clk
+    SLICE_X54Y55         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[9]/C
+                         clock pessimism              0.129    12.844    
+                         clock uncertainty           -0.154    12.690    
+    SLICE_X54Y55         FDRE (Setup_fdre_C_D)        0.079    12.769    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[9]
+  -------------------------------------------------------------------
+                         required time                         12.769    
+                         arrival time                         -10.972    
+  -------------------------------------------------------------------
+                         slack                                  1.796    
+
+Slack (MET) :             1.800ns  (required time - arrival time)
+  Source:                 iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[18]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.920ns  (logic 1.096ns (13.838%)  route 6.824ns (86.162%))
+  Logic Levels:           3  (LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.158ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.646ns = ( 12.646 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.933ns
+    Clock Pessimism Removal (CPR):    0.129ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.639     2.933    iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
+    SLICE_X40Y69         FDRE                                         r  iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y69         FDRE (Prop_fdre_C_Q)         0.456     3.389 r  iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/Q
+                         net (fo=211, routed)         5.987     9.376    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/s_axi_AXILiteS_ARADDR[5]
+    SLICE_X56Y45         LUT6 (Prop_lut6_I1_O)        0.124     9.500 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[18]_i_8/O
+                         net (fo=1, routed)           0.000     9.500    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[18]_i_8_n_2
+    SLICE_X56Y45         MUXF7 (Prop_muxf7_I1_O)      0.217     9.717 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[18]_i_3/O
+                         net (fo=1, routed)           0.837    10.554    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[18]_i_3_n_2
+    SLICE_X51Y50         LUT6 (Prop_lut6_I2_O)        0.299    10.853 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[18]_i_1/O
+                         net (fo=1, routed)           0.000    10.853    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[18]_i_1_n_2
+    SLICE_X51Y50         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[18]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    11.088    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.467    12.646    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/ap_clk
+    SLICE_X51Y50         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[18]/C
+                         clock pessimism              0.129    12.775    
+                         clock uncertainty           -0.154    12.621    
+    SLICE_X51Y50         FDRE (Setup_fdre_C_D)        0.032    12.653    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[18]
+  -------------------------------------------------------------------
+                         required time                         12.653    
+                         arrival time                         -10.853    
+  -------------------------------------------------------------------
+                         slack                                  1.800    
+
+Slack (MET) :             1.923ns  (required time - arrival time)
+  Source:                 iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[26]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.794ns  (logic 1.096ns (14.061%)  route 6.698ns (85.939%))
+  Logic Levels:           3  (LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.159ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.645ns = ( 12.645 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.933ns
+    Clock Pessimism Removal (CPR):    0.129ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.639     2.933    iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/aclk
+    SLICE_X40Y69         FDRE                                         r  iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y69         FDRE (Prop_fdre_C_Q)         0.456     3.389 r  iicComm2Update_i/ps7_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_arbiter.m_amesg_i_reg[6]/Q
+                         net (fo=211, routed)         6.049     9.438    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/s_axi_AXILiteS_ARADDR[5]
+    SLICE_X52Y44         LUT6 (Prop_lut6_I1_O)        0.124     9.562 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[26]_i_8/O
+                         net (fo=1, routed)           0.000     9.562    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[26]_i_8_n_2
+    SLICE_X52Y44         MUXF7 (Prop_muxf7_I1_O)      0.217     9.779 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[26]_i_3/O
+                         net (fo=1, routed)           0.649    10.428    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[26]_i_3_n_2
+    SLICE_X52Y53         LUT6 (Prop_lut6_I2_O)        0.299    10.727 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[26]_i_1/O
+                         net (fo=1, routed)           0.000    10.727    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata[26]_i_1_n_2
+    SLICE_X52Y53         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[26]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    11.088    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.466    12.645    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/ap_clk
+    SLICE_X52Y53         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[26]/C
+                         clock pessimism              0.129    12.774    
+                         clock uncertainty           -0.154    12.620    
+    SLICE_X52Y53         FDRE (Setup_fdre_C_D)        0.031    12.651    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/rdata_reg[26]
+  -------------------------------------------------------------------
+                         required time                         12.651    
+                         arrival time                         -10.727    
+  -------------------------------------------------------------------
+                         slack                                  1.923    
+
+Slack (MET) :             2.067ns  (required time - arrival time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].dividend_tmp_reg[39][0]__0/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.852ns  (logic 3.536ns (45.033%)  route 4.316ns (54.967%))
+  Logic Levels:           19  (CARRY4=17 LUT1=1 LUT2=1)
+  Clock Path Skew:        -0.008ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.942ns = ( 12.942 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.079ns
+    Clock Pessimism Removal (CPR):    0.129ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.785     3.079    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/ap_clk
+    SLICE_X104Y93        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y93        FDRE (Prop_fdre_C_Q)         0.478     3.557 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/Q
+                         net (fo=3, routed)           2.430     5.987    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0_n_2
+    SLICE_X111Y127       LUT2 (Prop_lut2_I0_O)        0.295     6.282 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][3]_i_6__0/O
+                         net (fo=1, routed)           0.000     6.282    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][3]_i_6__0_n_2
+    SLICE_X111Y127       CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     6.814 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][3]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     6.814    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][3]_i_2__0_n_2
+    SLICE_X111Y128       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.928 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     6.928    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]_i_2__0_n_2
+    SLICE_X111Y129       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.042 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][11]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.042    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][11]_i_2__0_n_2
+    SLICE_X111Y130       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.156 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][15]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.156    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][15]_i_2__0_n_2
+    SLICE_X111Y131       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.270 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][19]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.270    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][19]_i_2__0_n_2
+    SLICE_X111Y132       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.384 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][23]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.384    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][23]_i_2__0_n_2
+    SLICE_X111Y133       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.498 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][27]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.498    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][27]_i_2__0_n_2
+    SLICE_X111Y134       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.612 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][31]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.612    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][31]_i_2__0_n_2
+    SLICE_X111Y135       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.726 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][35]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.726    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][35]_i_2__0_n_2
+    SLICE_X111Y136       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.840 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][39]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.840    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][39]_i_2__0_n_2
+    SLICE_X111Y137       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.954 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][43]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.954    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][43]_i_2__0_n_2
+    SLICE_X111Y138       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.068 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][47]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.068    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][47]_i_2__0_n_2
+    SLICE_X111Y139       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.182 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][51]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.182    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][51]_i_2__0_n_2
+    SLICE_X111Y140       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.296 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][55]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.296    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][55]_i_2__0_n_2
+    SLICE_X111Y141       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.410 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][59]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.410    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][59]_i_2__0_n_2
+    SLICE_X111Y142       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.524 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     8.524    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_3_n_2
+    SLICE_X111Y143       CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     8.746 f  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_2/O[0]
+                         net (fo=64, routed)          1.886    10.632    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/cal_tmp[38]_37[64]
+    SLICE_X92Y124        LUT1 (Prop_lut1_I0_O)        0.299    10.931 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].dividend_tmp[39][0]__0_i_1__0/O
+                         net (fo=1, routed)           0.000    10.931    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].dividend_tmp[39][0]__0_i_1__0_n_2
+    SLICE_X92Y124        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].dividend_tmp_reg[39][0]__0/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    11.088    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.763    12.942    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/ap_clk
+    SLICE_X92Y124        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].dividend_tmp_reg[39][0]__0/C
+                         clock pessimism              0.129    13.071    
+                         clock uncertainty           -0.154    12.917    
+    SLICE_X92Y124        FDRE (Setup_fdre_C_D)        0.081    12.998    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].dividend_tmp_reg[39][0]__0
+  -------------------------------------------------------------------
+                         required time                         12.998    
+                         arrival time                         -10.931    
+  -------------------------------------------------------------------
+                         slack                                  2.067    
+
+Slack (MET) :             2.080ns  (required time - arrival time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][21]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.796ns  (logic 3.536ns (45.359%)  route 4.260ns (54.641%))
+  Logic Levels:           19  (CARRY4=17 LUT2=1 LUT3=1)
+  Clock Path Skew:        -0.001ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.949ns = ( 12.949 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.079ns
+    Clock Pessimism Removal (CPR):    0.129ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.785     3.079    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/ap_clk
+    SLICE_X104Y93        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y93        FDRE (Prop_fdre_C_Q)         0.478     3.557 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/Q
+                         net (fo=3, routed)           2.430     5.987    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0_n_2
+    SLICE_X111Y127       LUT2 (Prop_lut2_I0_O)        0.295     6.282 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][3]_i_6__0/O
+                         net (fo=1, routed)           0.000     6.282    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][3]_i_6__0_n_2
+    SLICE_X111Y127       CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     6.814 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][3]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     6.814    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][3]_i_2__0_n_2
+    SLICE_X111Y128       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.928 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     6.928    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]_i_2__0_n_2
+    SLICE_X111Y129       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.042 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][11]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.042    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][11]_i_2__0_n_2
+    SLICE_X111Y130       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.156 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][15]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.156    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][15]_i_2__0_n_2
+    SLICE_X111Y131       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.270 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][19]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.270    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][19]_i_2__0_n_2
+    SLICE_X111Y132       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.384 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][23]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.384    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][23]_i_2__0_n_2
+    SLICE_X111Y133       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.498 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][27]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.498    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][27]_i_2__0_n_2
+    SLICE_X111Y134       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.612 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][31]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.612    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][31]_i_2__0_n_2
+    SLICE_X111Y135       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.726 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][35]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.726    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][35]_i_2__0_n_2
+    SLICE_X111Y136       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.840 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][39]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.840    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][39]_i_2__0_n_2
+    SLICE_X111Y137       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.954 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][43]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.954    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][43]_i_2__0_n_2
+    SLICE_X111Y138       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.068 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][47]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.068    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][47]_i_2__0_n_2
+    SLICE_X111Y139       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.182 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][51]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.182    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][51]_i_2__0_n_2
+    SLICE_X111Y140       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.296 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][55]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.296    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][55]_i_2__0_n_2
+    SLICE_X111Y141       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.410 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][59]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.410    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][59]_i_2__0_n_2
+    SLICE_X111Y142       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.524 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     8.524    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_3_n_2
+    SLICE_X111Y143       CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     8.746 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_2/O[0]
+                         net (fo=64, routed)          1.829    10.576    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/cal_tmp[38]_37[64]
+    SLICE_X95Y128        LUT3 (Prop_lut3_I1_O)        0.299    10.875 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][21]_i_1__0/O
+                         net (fo=1, routed)           0.000    10.875    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][21]_i_1__0_n_2
+    SLICE_X95Y128        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][21]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    11.088    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.770    12.949    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/ap_clk
+    SLICE_X95Y128        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][21]/C
+                         clock pessimism              0.129    13.078    
+                         clock uncertainty           -0.154    12.924    
+    SLICE_X95Y128        FDRE (Setup_fdre_C_D)        0.031    12.955    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][21]
+  -------------------------------------------------------------------
+                         required time                         12.955    
+                         arrival time                         -10.875    
+  -------------------------------------------------------------------
+                         slack                                  2.080    
+
+Slack (MET) :             2.180ns  (required time - arrival time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.697ns  (logic 3.536ns (45.938%)  route 4.161ns (54.062%))
+  Logic Levels:           19  (CARRY4=17 LUT2=1 LUT3=1)
+  Clock Path Skew:        -0.001ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.949ns = ( 12.949 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.079ns
+    Clock Pessimism Removal (CPR):    0.129ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.785     3.079    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/ap_clk
+    SLICE_X104Y93        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y93        FDRE (Prop_fdre_C_Q)         0.478     3.557 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/Q
+                         net (fo=3, routed)           2.430     5.987    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0_n_2
+    SLICE_X111Y127       LUT2 (Prop_lut2_I0_O)        0.295     6.282 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][3]_i_6__0/O
+                         net (fo=1, routed)           0.000     6.282    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][3]_i_6__0_n_2
+    SLICE_X111Y127       CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     6.814 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][3]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     6.814    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][3]_i_2__0_n_2
+    SLICE_X111Y128       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.928 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     6.928    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]_i_2__0_n_2
+    SLICE_X111Y129       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.042 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][11]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.042    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][11]_i_2__0_n_2
+    SLICE_X111Y130       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.156 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][15]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.156    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][15]_i_2__0_n_2
+    SLICE_X111Y131       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.270 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][19]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.270    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][19]_i_2__0_n_2
+    SLICE_X111Y132       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.384 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][23]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.384    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][23]_i_2__0_n_2
+    SLICE_X111Y133       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.498 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][27]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.498    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][27]_i_2__0_n_2
+    SLICE_X111Y134       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.612 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][31]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.612    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][31]_i_2__0_n_2
+    SLICE_X111Y135       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.726 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][35]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.726    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][35]_i_2__0_n_2
+    SLICE_X111Y136       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.840 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][39]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.840    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][39]_i_2__0_n_2
+    SLICE_X111Y137       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.954 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][43]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.954    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][43]_i_2__0_n_2
+    SLICE_X111Y138       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.068 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][47]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.068    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][47]_i_2__0_n_2
+    SLICE_X111Y139       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.182 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][51]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.182    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][51]_i_2__0_n_2
+    SLICE_X111Y140       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.296 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][55]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.296    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][55]_i_2__0_n_2
+    SLICE_X111Y141       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.410 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][59]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.410    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][59]_i_2__0_n_2
+    SLICE_X111Y142       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.524 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     8.524    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_3_n_2
+    SLICE_X111Y143       CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     8.746 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_2/O[0]
+                         net (fo=64, routed)          1.731    10.477    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/cal_tmp[38]_37[64]
+    SLICE_X101Y128       LUT3 (Prop_lut3_I1_O)        0.299    10.776 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][7]_i_1__0/O
+                         net (fo=1, routed)           0.000    10.776    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][7]_i_1__0_n_2
+    SLICE_X101Y128       FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    11.088    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.770    12.949    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/ap_clk
+    SLICE_X101Y128       FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]/C
+                         clock pessimism              0.129    13.078    
+                         clock uncertainty           -0.154    12.924    
+    SLICE_X101Y128       FDRE (Setup_fdre_C_D)        0.032    12.956    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]
+  -------------------------------------------------------------------
+                         required time                         12.956    
+                         arrival time                         -10.776    
+  -------------------------------------------------------------------
+                         slack                                  2.180    
+
+Slack (MET) :             2.183ns  (required time - arrival time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][17]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.739ns  (logic 3.536ns (45.689%)  route 4.203ns (54.311%))
+  Logic Levels:           19  (CARRY4=17 LUT2=1 LUT3=1)
+  Clock Path Skew:        -0.003ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.947ns = ( 12.947 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.079ns
+    Clock Pessimism Removal (CPR):    0.129ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.785     3.079    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/ap_clk
+    SLICE_X104Y93        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y93        FDRE (Prop_fdre_C_Q)         0.478     3.557 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/Q
+                         net (fo=3, routed)           2.430     5.987    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0_n_2
+    SLICE_X111Y127       LUT2 (Prop_lut2_I0_O)        0.295     6.282 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][3]_i_6__0/O
+                         net (fo=1, routed)           0.000     6.282    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][3]_i_6__0_n_2
+    SLICE_X111Y127       CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     6.814 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][3]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     6.814    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][3]_i_2__0_n_2
+    SLICE_X111Y128       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.928 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     6.928    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]_i_2__0_n_2
+    SLICE_X111Y129       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.042 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][11]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.042    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][11]_i_2__0_n_2
+    SLICE_X111Y130       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.156 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][15]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.156    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][15]_i_2__0_n_2
+    SLICE_X111Y131       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.270 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][19]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.270    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][19]_i_2__0_n_2
+    SLICE_X111Y132       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.384 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][23]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.384    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][23]_i_2__0_n_2
+    SLICE_X111Y133       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.498 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][27]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.498    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][27]_i_2__0_n_2
+    SLICE_X111Y134       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.612 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][31]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.612    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][31]_i_2__0_n_2
+    SLICE_X111Y135       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.726 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][35]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.726    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][35]_i_2__0_n_2
+    SLICE_X111Y136       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.840 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][39]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.840    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][39]_i_2__0_n_2
+    SLICE_X111Y137       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.954 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][43]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.954    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][43]_i_2__0_n_2
+    SLICE_X111Y138       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.068 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][47]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.068    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][47]_i_2__0_n_2
+    SLICE_X111Y139       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.182 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][51]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.182    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][51]_i_2__0_n_2
+    SLICE_X111Y140       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.296 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][55]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.296    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][55]_i_2__0_n_2
+    SLICE_X111Y141       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.410 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][59]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.410    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][59]_i_2__0_n_2
+    SLICE_X111Y142       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.524 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     8.524    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_3_n_2
+    SLICE_X111Y143       CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     8.746 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_2/O[0]
+                         net (fo=64, routed)          1.773    10.519    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/cal_tmp[38]_37[64]
+    SLICE_X98Y127        LUT3 (Prop_lut3_I1_O)        0.299    10.818 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][17]_i_1__0/O
+                         net (fo=1, routed)           0.000    10.818    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][17]_i_1__0_n_2
+    SLICE_X98Y127        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][17]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    11.088    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.768    12.947    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/ap_clk
+    SLICE_X98Y127        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][17]/C
+                         clock pessimism              0.129    13.076    
+                         clock uncertainty           -0.154    12.922    
+    SLICE_X98Y127        FDRE (Setup_fdre_C_D)        0.079    13.001    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][17]
+  -------------------------------------------------------------------
+                         required time                         13.001    
+                         arrival time                         -10.818    
+  -------------------------------------------------------------------
+                         slack                                  2.183    
+
+Slack (MET) :             2.193ns  (required time - arrival time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][22]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        7.733ns  (logic 3.536ns (45.728%)  route 4.197ns (54.272%))
+  Logic Levels:           19  (CARRY4=17 LUT2=1 LUT3=1)
+  Clock Path Skew:        -0.001ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.949ns = ( 12.949 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.079ns
+    Clock Pessimism Removal (CPR):    0.129ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.785     3.079    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/ap_clk
+    SLICE_X104Y93        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X104Y93        FDRE (Prop_fdre_C_Q)         0.478     3.557 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0/Q
+                         net (fo=3, routed)           2.430     5.987    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[37].dividend_tmp_reg[38][63]__0_n_2
+    SLICE_X111Y127       LUT2 (Prop_lut2_I0_O)        0.295     6.282 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][3]_i_6__0/O
+                         net (fo=1, routed)           0.000     6.282    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][3]_i_6__0_n_2
+    SLICE_X111Y127       CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     6.814 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][3]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     6.814    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][3]_i_2__0_n_2
+    SLICE_X111Y128       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     6.928 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     6.928    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][7]_i_2__0_n_2
+    SLICE_X111Y129       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.042 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][11]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.042    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][11]_i_2__0_n_2
+    SLICE_X111Y130       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.156 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][15]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.156    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][15]_i_2__0_n_2
+    SLICE_X111Y131       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.270 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][19]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.270    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][19]_i_2__0_n_2
+    SLICE_X111Y132       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.384 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][23]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.384    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][23]_i_2__0_n_2
+    SLICE_X111Y133       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.498 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][27]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.498    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][27]_i_2__0_n_2
+    SLICE_X111Y134       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.612 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][31]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.612    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][31]_i_2__0_n_2
+    SLICE_X111Y135       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.726 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][35]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.726    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][35]_i_2__0_n_2
+    SLICE_X111Y136       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.840 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][39]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.840    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][39]_i_2__0_n_2
+    SLICE_X111Y137       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.954 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][43]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     7.954    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][43]_i_2__0_n_2
+    SLICE_X111Y138       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.068 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][47]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.068    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][47]_i_2__0_n_2
+    SLICE_X111Y139       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.182 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][51]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.182    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][51]_i_2__0_n_2
+    SLICE_X111Y140       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.296 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][55]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.296    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][55]_i_2__0_n_2
+    SLICE_X111Y141       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.410 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][59]_i_2__0/CO[3]
+                         net (fo=1, routed)           0.000     8.410    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][59]_i_2__0_n_2
+    SLICE_X111Y142       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.524 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_3/CO[3]
+                         net (fo=1, routed)           0.000     8.524    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_3_n_2
+    SLICE_X111Y143       CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     8.746 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][62]_i_2/O[0]
+                         net (fo=64, routed)          1.767    10.513    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/cal_tmp[38]_37[64]
+    SLICE_X94Y128        LUT3 (Prop_lut3_I1_O)        0.299    10.812 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][22]_i_1__0/O
+                         net (fo=1, routed)           0.000    10.812    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp[39][22]_i_1__0_n_2
+    SLICE_X94Y128        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    11.088    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       1.770    12.949    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/ap_clk
+    SLICE_X94Y128        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][22]/C
+                         clock pessimism              0.129    13.078    
+                         clock uncertainty           -0.154    12.924    
+    SLICE_X94Y128        FDRE (Setup_fdre_C_D)        0.081    13.005    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_udsc4_U16/iiccomm2update_udsc4_div_U/iiccomm2update_udsc4_div_u_0/loop[38].remd_tmp_reg[39][22]
+  -------------------------------------------------------------------
+                         required time                         13.005    
+                         arrival time                         -10.812    
+  -------------------------------------------------------------------
+                         slack                                  2.193    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.011ns  (arrival time - required time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/storemerge1_reg_1134_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_stat_reg_val2_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.345ns  (logic 0.141ns (40.868%)  route 0.204ns (59.132%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.262ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.187ns
+    Source Clock Delay      (SCD):    0.895ns
+    Clock Pessimism Removal (CPR):    0.030ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.559     0.895    iicComm2Update_i/iiccomm2update_0/inst/ap_clk
+    SLICE_X52Y49         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/storemerge1_reg_1134_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y49         FDRE (Prop_fdre_C_Q)         0.141     1.036 r  iicComm2Update_i/iiccomm2update_0/inst/storemerge1_reg_1134_reg[2]/Q
+                         net (fo=1, routed)           0.204     1.240    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/storemerge1_reg_1134_reg[31][2]
+    SLICE_X52Y50         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_stat_reg_val2_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.821     1.187    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/ap_clk
+    SLICE_X52Y50         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_stat_reg_val2_reg[2]/C
+                         clock pessimism             -0.030     1.157    
+    SLICE_X52Y50         FDRE (Hold_fdre_C_D)         0.072     1.229    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_stat_reg_val2_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.229    
+                         arrival time                           1.240    
+  -------------------------------------------------------------------
+                         slack                                  0.011    
+
+Slack (MET) :             0.014ns  (arrival time - required time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/iic_addr_13_read_reg_2339_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_ctrl_reg_outValue_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.343ns  (logic 0.141ns (41.052%)  route 0.202ns (58.948%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.263ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.191ns
+    Source Clock Delay      (SCD):    0.898ns
+    Clock Pessimism Removal (CPR):    0.030ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.562     0.898    iicComm2Update_i/iiccomm2update_0/inst/ap_clk
+    SLICE_X49Y49         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iic_addr_13_read_reg_2339_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y49         FDRE (Prop_fdre_C_Q)         0.141     1.039 r  iicComm2Update_i/iiccomm2update_0/inst/iic_addr_13_read_reg_2339_reg[4]/Q
+                         net (fo=1, routed)           0.202     1.241    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/iic_addr_13_read_reg_2339_reg[31][4]
+    SLICE_X49Y50         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_ctrl_reg_outValue_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.825     1.191    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/ap_clk
+    SLICE_X49Y50         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_ctrl_reg_outValue_reg[4]/C
+                         clock pessimism             -0.030     1.161    
+    SLICE_X49Y50         FDRE (Hold_fdre_C_D)         0.066     1.227    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_ctrl_reg_outValue_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.227    
+                         arrival time                           1.241    
+  -------------------------------------------------------------------
+                         slack                                  0.014    
+
+Slack (MET) :             0.015ns  (arrival time - required time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/storemerge1_reg_1134_reg[17]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_stat_reg_val2_reg[17]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.324ns  (logic 0.141ns (43.531%)  route 0.183ns (56.469%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.262ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.187ns
+    Source Clock Delay      (SCD):    0.895ns
+    Clock Pessimism Removal (CPR):    0.030ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.559     0.895    iicComm2Update_i/iiccomm2update_0/inst/ap_clk
+    SLICE_X52Y49         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/storemerge1_reg_1134_reg[17]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y49         FDRE (Prop_fdre_C_Q)         0.141     1.036 r  iicComm2Update_i/iiccomm2update_0/inst/storemerge1_reg_1134_reg[17]/Q
+                         net (fo=1, routed)           0.183     1.218    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/storemerge1_reg_1134_reg[31][17]
+    SLICE_X52Y50         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_stat_reg_val2_reg[17]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.821     1.187    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/ap_clk
+    SLICE_X52Y50         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_stat_reg_val2_reg[17]/C
+                         clock pessimism             -0.030     1.157    
+    SLICE_X52Y50         FDRE (Hold_fdre_C_D)         0.047     1.204    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_stat_reg_val2_reg[17]
+  -------------------------------------------------------------------
+                         required time                         -1.204    
+                         arrival time                           1.218    
+  -------------------------------------------------------------------
+                         slack                                  0.015    
+
+Slack (MET) :             0.018ns  (arrival time - required time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[15].ADDSUB/ADDSUB/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[24]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[16].ADDSUB/ADDSUB/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[25]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.472ns  (logic 0.274ns (58.050%)  route 0.198ns (41.950%))
+  Logic Levels:           2  (CARRY4=1 LUT2=1)
+  Clock Path Skew:        0.349ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.277ns
+    Source Clock Delay      (SCD):    0.893ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.557     0.893    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[15].ADDSUB/ADDSUB/Q_DEL/i_pipe/aclk
+    SLICE_X36Y99         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[15].ADDSUB/ADDSUB/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[24]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y99         FDRE (Prop_fdre_C_Q)         0.164     1.057 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[15].ADDSUB/ADDSUB/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[24]/Q
+                         net (fo=2, routed)           0.198     1.255    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[15].ADDSUB/ADDSUB/Q_DEL/i_pipe/first_q[24]
+    SLICE_X43Y100        LUT2 (Prop_lut2_I1_O)        0.045     1.300 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[15].ADDSUB/ADDSUB/Q_DEL/i_pipe/CHAIN_GEN[25].C_MUX.CARRY_MUX_i_1__15/O
+                         net (fo=1, routed)           0.000     1.300    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[16].ADDSUB/ADDSUB/a_xor_b_sub_0[24]
+    SLICE_X43Y100        CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.065     1.365 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[16].ADDSUB/ADDSUB/CHAIN_GEN[24].C_MUX.CARRY_MUX_CARRY4/O[1]
+                         net (fo=1, routed)           0.000     1.365    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[16].ADDSUB/ADDSUB/Q_DEL/i_pipe/p_28_out
+    SLICE_X43Y100        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[16].ADDSUB/ADDSUB/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.911     1.277    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[16].ADDSUB/ADDSUB/Q_DEL/i_pipe/aclk
+    SLICE_X43Y100        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[16].ADDSUB/ADDSUB/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[25]/C
+                         clock pessimism             -0.035     1.242    
+    SLICE_X43Y100        FDRE (Hold_fdre_C_D)         0.105     1.347    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[16].ADDSUB/ADDSUB/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[25]
+  -------------------------------------------------------------------
+                         required time                         -1.347    
+                         arrival time                           1.365    
+  -------------------------------------------------------------------
+                         slack                                  0.018    
+
+Slack (MET) :             0.018ns  (arrival time - required time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/iic_addr_13_read_reg_2339_reg[21]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_ctrl_reg_outValue_reg[21]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.344ns  (logic 0.141ns (40.974%)  route 0.203ns (59.026%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.260ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.187ns
+    Source Clock Delay      (SCD):    0.892ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.556     0.892    iicComm2Update_i/iiccomm2update_0/inst/ap_clk
+    SLICE_X48Y52         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iic_addr_13_read_reg_2339_reg[21]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X48Y52         FDRE (Prop_fdre_C_Q)         0.141     1.033 r  iicComm2Update_i/iiccomm2update_0/inst/iic_addr_13_read_reg_2339_reg[21]/Q
+                         net (fo=1, routed)           0.203     1.236    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/iic_addr_13_read_reg_2339_reg[31][21]
+    SLICE_X52Y52         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_ctrl_reg_outValue_reg[21]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.821     1.187    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/ap_clk
+    SLICE_X52Y52         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_ctrl_reg_outValue_reg[21]/C
+                         clock pessimism             -0.035     1.152    
+    SLICE_X52Y52         FDRE (Hold_fdre_C_D)         0.066     1.218    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_ctrl_reg_outValue_reg[21]
+  -------------------------------------------------------------------
+                         required time                         -1.218    
+                         arrival time                           1.236    
+  -------------------------------------------------------------------
+                         slack                                  0.018    
+
+Slack (MET) :             0.018ns  (arrival time - required time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/storemerge1_reg_1134_reg[21]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_stat_reg_val2_reg[21]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.350ns  (logic 0.141ns (40.236%)  route 0.209ns (59.764%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.262ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.187ns
+    Source Clock Delay      (SCD):    0.895ns
+    Clock Pessimism Removal (CPR):    0.030ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.559     0.895    iicComm2Update_i/iiccomm2update_0/inst/ap_clk
+    SLICE_X51Y48         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/storemerge1_reg_1134_reg[21]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X51Y48         FDRE (Prop_fdre_C_Q)         0.141     1.036 r  iicComm2Update_i/iiccomm2update_0/inst/storemerge1_reg_1134_reg[21]/Q
+                         net (fo=1, routed)           0.209     1.245    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/storemerge1_reg_1134_reg[31][21]
+    SLICE_X52Y50         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_stat_reg_val2_reg[21]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.821     1.187    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/ap_clk
+    SLICE_X52Y50         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_stat_reg_val2_reg[21]/C
+                         clock pessimism             -0.030     1.157    
+    SLICE_X52Y50         FDRE (Hold_fdre_C_D)         0.070     1.227    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_AXILiteS_s_axi_U/int_stat_reg_val2_reg[21]
+  -------------------------------------------------------------------
+                         required time                         -1.227    
+                         arrival time                           1.245    
+  -------------------------------------------------------------------
+                         slack                                  0.018    
+
+Slack (MET) :             0.021ns  (arrival time - required time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/pressure_1_reg_2679_reg[31]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/pressure3_reg_1167_reg[31]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.393ns  (logic 0.212ns (53.982%)  route 0.181ns (46.018%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.264ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.260ns
+    Source Clock Delay      (SCD):    0.957ns
+    Clock Pessimism Removal (CPR):    0.039ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.621     0.957    iicComm2Update_i/iiccomm2update_0/inst/ap_clk
+    SLICE_X50Y124        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/pressure_1_reg_2679_reg[31]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X50Y124        FDRE (Prop_fdre_C_Q)         0.164     1.121 r  iicComm2Update_i/iiccomm2update_0/inst/pressure_1_reg_2679_reg[31]/Q
+                         net (fo=1, routed)           0.181     1.302    iicComm2Update_i/iiccomm2update_0/inst/pressure_1_reg_2679[31]
+    SLICE_X49Y124        LUT3 (Prop_lut3_I2_O)        0.048     1.350 r  iicComm2Update_i/iiccomm2update_0/inst/pressure3_reg_1167[31]_i_1/O
+                         net (fo=1, routed)           0.000     1.350    iicComm2Update_i/iiccomm2update_0/inst/p_2_in[31]
+    SLICE_X49Y124        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/pressure3_reg_1167_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.894     1.260    iicComm2Update_i/iiccomm2update_0/inst/ap_clk
+    SLICE_X49Y124        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/pressure3_reg_1167_reg[31]/C
+                         clock pessimism             -0.039     1.221    
+    SLICE_X49Y124        FDRE (Hold_fdre_C_D)         0.107     1.328    iicComm2Update_i/iiccomm2update_0/inst/pressure3_reg_1167_reg[31]
+  -------------------------------------------------------------------
+                         required time                         -1.328    
+                         arrival time                           1.350    
+  -------------------------------------------------------------------
+                         slack                                  0.021    
+
+Slack (MET) :             0.022ns  (arrival time - required time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_uieOg_U2/iiccomm2update_ap_uitodp_6_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_2.CC/CHAIN_GEN[0].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_uieOg_U2/iiccomm2update_ap_uitodp_6_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ENCODE[0].MUX_Z/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.375ns  (logic 0.186ns (49.660%)  route 0.189ns (50.340%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.260ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.182ns
+    Source Clock Delay      (SCD):    0.887ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.551     0.887    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_uieOg_U2/iiccomm2update_ap_uitodp_6_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_2.CC/aclk
+    SLICE_X49Y86         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_uieOg_U2/iiccomm2update_ap_uitodp_6_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_2.CC/CHAIN_GEN[0].CARRYS_DEL.NEED_DEL.CARRYS_FD/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y86         FDRE (Prop_fdre_C_Q)         0.141     1.028 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_uieOg_U2/iiccomm2update_ap_uitodp_6_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_2.CC/CHAIN_GEN[0].CARRYS_DEL.NEED_DEL.CARRYS_FD/Q
+                         net (fo=1, routed)           0.189     1.216    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_uieOg_U2/iiccomm2update_ap_uitodp_6_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_2.CC/p_0_out[0]
+    SLICE_X53Y87         LUT5 (Prop_lut5_I2_O)        0.045     1.261 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_uieOg_U2/iiccomm2update_ap_uitodp_6_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ZERO_DET_CC_2.CC/opt_has_pipe.first_q[0]_i_1__1/O
+                         net (fo=1, routed)           0.000     1.261    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_uieOg_U2/iiccomm2update_ap_uitodp_6_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ENCODE[0].MUX_Z/OP_DEL/i_pipe/op_int_0[0]
+    SLICE_X53Y87         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_uieOg_U2/iiccomm2update_ap_uitodp_6_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ENCODE[0].MUX_Z/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.816     1.182    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_uieOg_U2/iiccomm2update_ap_uitodp_6_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ENCODE[0].MUX_Z/OP_DEL/i_pipe/aclk
+    SLICE_X53Y87         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_uieOg_U2/iiccomm2update_ap_uitodp_6_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ENCODE[0].MUX_Z/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[0]/C
+                         clock pessimism             -0.035     1.147    
+    SLICE_X53Y87         FDRE (Hold_fdre_C_D)         0.092     1.239    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_uieOg_U2/iiccomm2update_ap_uitodp_6_no_dsp_32_u/U0/i_synth/FIX_TO_FLT_OP.SPD.OP/LZE/ENCODE[0].MUX_Z/OP_DEL/i_pipe/opt_has_pipe.first_q_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.239    
+                         arrival time                           1.261    
+  -------------------------------------------------------------------
+                         slack                                  0.022    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_write/buff_wdata/dout_buf_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_write/bus_equal_gen.data_buf_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.372ns  (logic 0.141ns (37.893%)  route 0.231ns (62.107%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.265ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.178ns
+    Source Clock Delay      (SCD):    0.878ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.542     0.878    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_write/buff_wdata/ap_clk
+    SLICE_X52Y71         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_write/buff_wdata/dout_buf_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y71         FDRE (Prop_fdre_C_Q)         0.141     1.019 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_write/buff_wdata/dout_buf_reg[9]/Q
+                         net (fo=1, routed)           0.231     1.250    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_write/buff_wdata_n_51
+    SLICE_X45Y71         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_write/bus_equal_gen.data_buf_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.812     1.178    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_write/ap_clk
+    SLICE_X45Y71         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_write/bus_equal_gen.data_buf_reg[9]/C
+                         clock pessimism             -0.035     1.143    
+    SLICE_X45Y71         FDRE (Hold_fdre_C_D)         0.076     1.219    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_write/bus_equal_gen.data_buf_reg[9]
+  -------------------------------------------------------------------
+                         required time                         -1.219    
+                         arrival time                           1.250    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[9].MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[48]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[10].ADDSUB/ADDSUB/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[48]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.485ns  (logic 0.296ns (61.078%)  route 0.189ns (38.922%))
+  Logic Levels:           2  (CARRY4=1 LUT3=1)
+  Clock Path Skew:        0.348ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.278ns
+    Source Clock Delay      (SCD):    0.895ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.559     0.895    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[9].MANT_DEL/i_pipe/aclk
+    SLICE_X33Y99         FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[9].MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[48]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y99         FDRE (Prop_fdre_C_Q)         0.128     1.023 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[9].MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[48]/Q
+                         net (fo=2, routed)           0.189     1.211    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[9].ADDSUB/ADDSUB/Q_DEL/i_pipe/ma[10]_62[0]
+    SLICE_X33Y100        LUT3 (Prop_lut3_I1_O)        0.098     1.309 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[9].ADDSUB/ADDSUB/Q_DEL/i_pipe/CHAIN_GEN[48].C_MUX.CARRY_MUX_i_1__8/O
+                         net (fo=1, routed)           0.000     1.309    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[10].ADDSUB/ADDSUB/a_xor_b_sub_0[47]
+    SLICE_X33Y100        CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.070     1.379 r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[10].ADDSUB/ADDSUB/CHAIN_GEN[48].C_MUX.CARRY_MUX_CARRY4/O[0]
+                         net (fo=1, routed)           0.000     1.379    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[10].ADDSUB/ADDSUB/Q_DEL/i_pipe/p_5_out
+    SLICE_X33Y100        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[10].ADDSUB/ADDSUB/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[48]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    iicComm2Update_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=22749, routed)       0.912     1.278    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[10].ADDSUB/ADDSUB/Q_DEL/i_pipe/aclk
+    SLICE_X33Y100        FDRE                                         r  iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[10].ADDSUB/ADDSUB/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[48]/C
+                         clock pessimism             -0.035     1.243    
+    SLICE_X33Y100        FDRE (Hold_fdre_C_D)         0.105     1.348    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_dddEe_U1/iiccomm2update_ap_ddiv_57_no_dsp_64_u/U0/i_synth/DIV_OP.SPD.OP/MANT_DIV/RT[10].ADDSUB/ADDSUB/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[48]
+  -------------------------------------------------------------------
+                         required time                         -1.348    
+                         arrival time                           1.379    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_fpga_0
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { iicComm2Update_i/processing_system7_0/inst/PS7_i/FCLKCLK[0] }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         10.000      7.056      RAMB18_X3Y22    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_read/buff_rdata/mem_reg/CLKARDCLK
+Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            2.944         10.000      7.056      RAMB18_X3Y22    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_read/buff_rdata/mem_reg/CLKBWRCLK
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         10.000      7.056      RAMB18_X3Y28    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_write/buff_wdata/mem_reg/CLKARDCLK
+Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            2.944         10.000      7.056      RAMB18_X3Y28    iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_iic_m_axi_U/bus_write/buff_wdata/mem_reg/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB36_X3Y9     iicComm2Update_i/iiccomm2update_0/inst/sensorData_U/iiccomm2update_sebkb_ram_U/ram_reg/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         10.000      7.424      RAMB36_X3Y9     iicComm2Update_i/iiccomm2update_0/inst/sensorData_U/iiccomm2update_sebkb_ram_U/ram_reg/CLKBWRCLK
+Min Period        n/a     BUFG/I              n/a            2.155         10.000      7.845      BUFGCTRL_X0Y16  iicComm2Update_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/I
+Min Period        n/a     DSP48E1/CLK         n/a            2.154         10.000      7.846      DSP48_X4Y21     iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_muibs_U6/iiccomm2update_muibs_Mul6S_0_U/buff1_reg/CLK
+Min Period        n/a     DSP48E1/CLK         n/a            2.154         10.000      7.846      DSP48_X3Y29     iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_mujbC_U7/iiccomm2update_mujbC_MulnS_3_U/buff4_reg__1/CLK
+Min Period        n/a     DSP48E1/CLK         n/a            2.154         10.000      7.846      DSP48_X3Y32     iicComm2Update_i/iiccomm2update_0/inst/iiccomm2update_muocq_U12/iiccomm2update_muocq_MulnS_5_U/buff4_reg__1/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y62    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_0_0/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y62    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_10_10/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y62    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_11_11/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y62    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_12_12/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y61    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_17_17/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y61    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_18_18/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y61    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_19_19/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y61    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_1_1/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y63    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_20_20/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y63    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_21_21/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X62Y65    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_24_24/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X62Y65    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_25_25/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X62Y65    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_26_26/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X62Y65    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_27_27/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y62    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_0_0/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y62    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_0_0/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y62    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_10_10/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y62    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_10_10/SP/CLK
+High Pulse Width  Slow    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y62    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_11_11/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         5.000       3.750      SLICE_X58Y62    iicComm2Update_i/iiccomm2update_0/inst/basepointData_U/iiccomm2update_bacud_ram_U/ram_reg_0_15_11_11/SP/CLK
+
+
+
