@@ -1,0 +1,367 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'iiccomm2update'" level="0">
+<item name = "Date">Fri Aug 24 10:49:02 2018
+</item>
+<item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
+<item name = "Project">iiccomm2update</item>
+<item name = "Solution">iiccomm2update</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Target clock period (ns)">4.00</item>
+<item name = "Clock uncertainty (ns)">0.50</item>
+<item name = "Estimated clock period (ns)">6.97</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- memset_sensorData">5, 5, 1, -, -, 6, no</column>
+<column name="- memset_basepointData">9, 9, 1, -, -, 10, no</column>
+<column name="- Loop 3">2500000, 2500000, 1, -, -, 2500000, no</column>
+<column name="- Loop 4">500000, 500000, 1, -, -, 500000, no</column>
+<column name="- Loop 5">?, ?, 500017, -, -, ?, no</column>
+<column name=" + Loop 5.1">500000, 500000, 1, -, -, 500000, no</column>
+<column name="- Loop 6">30, 30, 3, -, -, 10, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 1351</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">2, 122, 32796, 22199</column>
+<column name="Memory">2, -, 64, 5</column>
+<column name="Multiplexer">-, -, -, 2121</column>
+<column name="Register">-, -, 3233, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">1, 55, 33, 48</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="iiccomm2update_AXILiteS_s_axi_U">iiccomm2update_AXILiteS_s_axi, 0, 0, 796, 1320</column>
+<column name="iiccomm2update_adncg_U11">iiccomm2update_adncg, 0, 0, 292, 68</column>
+<column name="iiccomm2update_dddEe_U1">iiccomm2update_dddEe, 0, 0, 6160, 3871</column>
+<column name="iiccomm2update_iic_m_axi_U">iiccomm2update_iic_m_axi, 2, 0, 512, 580</column>
+<column name="iiccomm2update_lswdI_U20">iiccomm2update_lswdI, 0, 0, 538, 453</column>
+<column name="iiccomm2update_mufYi_U3">iiccomm2update_mufYi, 0, 4, 165, 22</column>
+<column name="iiccomm2update_mug8j_U4">iiccomm2update_mug8j, 0, 9, 547, 127</column>
+<column name="iiccomm2update_muhbi_U5">iiccomm2update_muhbi, 0, 4, 165, 22</column>
+<column name="iiccomm2update_muibs_U6">iiccomm2update_muibs, 0, 9, 435, 136</column>
+<column name="iiccomm2update_mujbC_U7">iiccomm2update_mujbC, 0, 9, 547, 127</column>
+<column name="iiccomm2update_mukbM_U8">iiccomm2update_mukbM, 0, 9, 547, 127</column>
+<column name="iiccomm2update_mulbW_U9">iiccomm2update_mulbW, 0, 9, 464, 159</column>
+<column name="iiccomm2update_mumb6_U10">iiccomm2update_mumb6, 0, 9, 406, 113</column>
+<column name="iiccomm2update_muocq_U12">iiccomm2update_muocq, 0, 9, 560, 129</column>
+<column name="iiccomm2update_mupcA_U13">iiccomm2update_mupcA, 0, 9, 435, 136</column>
+<column name="iiccomm2update_muqcK_U14">iiccomm2update_muqcK, 0, 9, 435, 136</column>
+<column name="iiccomm2update_mutde_U17">iiccomm2update_mutde, 0, 15, 453, 292</column>
+<column name="iiccomm2update_muudo_U18">iiccomm2update_muudo, 0, 9, 599, 135</column>
+<column name="iiccomm2update_muvdy_U19">iiccomm2update_muvdy, 0, 9, 586, 133</column>
+<column name="iiccomm2update_shxdS_U21">iiccomm2update_shxdS, 0, 0, 538, 453</column>
+<column name="iiccomm2update_udrcU_U15">iiccomm2update_udrcU, 0, 0, 8416, 6428</column>
+<column name="iiccomm2update_udsc4_U16">iiccomm2update_udsc4, 0, 0, 8651, 6607</column>
+<column name="iiccomm2update_uieOg_U2">iiccomm2update_uieOg, 0, 0, 549, 625</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="basepointData_U">iiccomm2update_bacud, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="sensorData_U">iiccomm2update_sebkb, 2, 0, 0, 6, 32, 1, 192</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ctr_V_1_fu_1447_p2">+, 0, 0, 26, 19, 1</column>
+<column name="ctr_V_2_fu_1505_p2">+, 0, 0, 26, 19, 1</column>
+<column name="ctr_V_fu_1427_p2">+, 0, 0, 29, 22, 1</column>
+<column name="i_1_fu_2236_p2">+, 0, 0, 13, 4, 1</column>
+<column name="index_1_fu_1488_p2">+, 0, 0, 39, 32, 1</column>
+<column name="indvarinc4_fu_1397_p2">+, 0, 0, 13, 4, 1</column>
+<column name="indvarinc_fu_1380_p2">+, 0, 0, 12, 3, 1</column>
+<column name="sh_assign_fu_2119_p2">+, 0, 0, 19, 11, 12</column>
+<column name="t_fine_fu_1731_p2">+, 0, 0, 52, 45, 45</column>
+<column name="tmp3_fu_2075_p2">+, 0, 0, 43, 14, 36</column>
+<column name="tmp_16_fu_1699_p2">+, 0, 0, 52, 32, 45</column>
+<column name="tmp_19_fu_1653_p2">+, 0, 0, 36, 16, 29</column>
+<column name="tmp_38_fu_1858_p2">+, 0, 0, 71, 64, 64</column>
+<column name="tmp_40_fu_1952_p2">+, 0, 0, 69, 31, 62</column>
+<column name="tmp_56_fu_2080_p2">+, 0, 0, 43, 36, 36</column>
+<column name="tmp_58_fu_2094_p2">+, 0, 0, 39, 32, 32</column>
+<column name="tmp_64_fu_2262_p2">+, 0, 0, 39, 32, 1</column>
+<column name="tmp_67_fu_2247_p2">+, 0, 0, 39, 32, 32</column>
+<column name="var3_fu_1750_p2">+, 0, 0, 61, 17, 54</column>
+<column name="var4_2_fu_1896_p2">+, 0, 0, 70, 30, 63</column>
+<column name="tmp_42_fu_1905_p2">-, 0, 0, 40, 21, 33</column>
+<column name="tmp_44_fu_1927_p2">-, 0, 0, 59, 52, 52</column>
+<column name="tmp_69_fu_2279_p2">-, 0, 0, 39, 32, 32</column>
+<column name="tmp_70_i_i_i_fu_2133_p2">-, 0, 0, 18, 10, 11</column>
+<column name="ap_block_state3_io">and, 0, 0, 8, 1, 1</column>
+<column name="ap_block_state58_io">and, 0, 0, 8, 1, 1</column>
+<column name="ap_block_state68_io">and, 0, 0, 8, 1, 1</column>
+<column name="ap_block_state77_io">and, 0, 0, 8, 1, 1</column>
+<column name="ap_block_state86_io">and, 0, 0, 8, 1, 1</column>
+<column name="exitcond_fu_2230_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="icmp_fu_1978_p2">icmp, 0, 0, 18, 32, 1</column>
+<column name="tmp_1_fu_1391_p2">icmp, 0, 0, 9, 3, 3</column>
+<column name="tmp_3_fu_1408_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="tmp_46_fu_1499_p2">icmp, 0, 0, 18, 19, 16</column>
+<column name="tmp_4_fu_1421_p2">icmp, 0, 0, 18, 22, 22</column>
+<column name="tmp_62_fu_2218_p2">icmp, 0, 0, 18, 32, 4</column>
+<column name="tmp_65_fu_2224_p2">icmp, 0, 0, 18, 32, 4</column>
+<column name="tmp_68_fu_2273_p2">icmp, 0, 0, 18, 32, 1</column>
+<column name="tmp_6_fu_1441_p2">icmp, 0, 0, 18, 19, 16</column>
+<column name="tmp_8_fu_1482_p2">icmp, 0, 0, 11, 7, 1</column>
+<column name="ap_block_state25_io">or, 0, 0, 8, 1, 1</column>
+<column name="tmp_13_fu_1568_p2">or, 0, 0, 39, 32, 32</column>
+<column name="tmp_18_fu_1621_p2">or, 0, 0, 35, 28, 28</column>
+<column name="tmp_26_fu_1545_p2">or, 0, 0, 35, 28, 28</column>
+<column name="tmp_s_fu_1644_p2">or, 0, 0, 39, 32, 32</column>
+<column name="p_Val2_3_fu_2207_p3">select, 0, 0, 32, 1, 32</column>
+<column name="sh_assign_1_fu_2142_p3">select, 0, 0, 12, 1, 12</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">1709, 391, 1, 391</column>
+<column name="ap_sig_ioackin_iic_ARREADY">9, 2, 1, 2</column>
+<column name="ap_sig_ioackin_iic_AWREADY">9, 2, 1, 2</column>
+<column name="ap_sig_ioackin_iic_WREADY">9, 2, 1, 2</column>
+<column name="basepointData_address0">21, 4, 4, 16</column>
+<column name="basepointData_d0">15, 3, 32, 96</column>
+<column name="flag">15, 3, 32, 96</column>
+<column name="flag2">15, 3, 32, 96</column>
+<column name="i_reg_1176">9, 2, 4, 8</column>
+<column name="iic_ARADDR">27, 5, 32, 160</column>
+<column name="iic_AWADDR">38, 7, 32, 224</column>
+<column name="iic_WDATA">65, 16, 32, 512</column>
+<column name="iic_blk_n_AR">9, 2, 1, 2</column>
+<column name="iic_blk_n_AW">9, 2, 1, 2</column>
+<column name="iic_blk_n_B">9, 2, 1, 2</column>
+<column name="iic_blk_n_R">9, 2, 1, 2</column>
+<column name="iic_blk_n_W">9, 2, 1, 2</column>
+<column name="index_reg_1144">9, 2, 32, 64</column>
+<column name="invdar3_reg_1101">9, 2, 4, 8</column>
+<column name="invdar_reg_1090">9, 2, 3, 6</column>
+<column name="p_014_0_i1_reg_1123">9, 2, 19, 38</column>
+<column name="p_014_0_i8_reg_1156">9, 2, 19, 38</column>
+<column name="p_014_0_i_reg_1112">9, 2, 22, 44</column>
+<column name="p_1_reg_1187">9, 2, 32, 64</column>
+<column name="pressure3_reg_1167">9, 2, 64, 128</column>
+<column name="sensorData_address0">27, 5, 3, 15</column>
+<column name="sensorData_address1">27, 5, 3, 15</column>
+<column name="storemerge1_reg_1134">9, 2, 32, 64</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">390, 0, 390, 0</column>
+<column name="ap_reg_ioackin_ctrl_reg_outValue_dummy_ack">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_empty_pirq_outValue_dummy_ack">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_full_pirq_outValue_dummy_ack">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_iic_ARREADY">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_iic_AWREADY">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_iic_WREADY">1, 0, 1, 0</column>
+<column name="ap_reg_ioackin_stat_reg_outValue1_dummy_ack">1, 0, 1, 0</column>
+<column name="basepointData_load_reg_2824">32, 0, 32, 0</column>
+<column name="basepointSum">32, 0, 32, 0</column>
+<column name="basepoint_read_reg_2284">32, 0, 32, 0</column>
+<column name="count">32, 0, 32, 0</column>
+<column name="count_load_reg_2793">32, 0, 32, 0</column>
+<column name="i_1_reg_2809">4, 0, 4, 0</column>
+<column name="i_reg_1176">4, 0, 4, 0</column>
+<column name="iic_addr_13_read_reg_2339">32, 0, 32, 0</column>
+<column name="iic_addr_15_read_reg_2344">32, 0, 32, 0</column>
+<column name="iic_addr_1_read_reg_2324">32, 0, 32, 0</column>
+<column name="iic_addr_5_read_reg_2329">32, 0, 32, 0</column>
+<column name="iic_addr_65_read_reg_2365">32, 0, 32, 0</column>
+<column name="iic_addr_67_read_reg_2393">32, 0, 32, 0</column>
+<column name="index_1_reg_2373">32, 0, 32, 0</column>
+<column name="index_reg_1144">32, 0, 32, 0</column>
+<column name="invdar3_reg_1101">4, 0, 4, 0</column>
+<column name="invdar_reg_1090">3, 0, 3, 0</column>
+<column name="isNeg_reg_2747">1, 0, 1, 0</column>
+<column name="loc_V_1_reg_2742">52, 0, 52, 0</column>
+<column name="loc_V_reg_2736">11, 0, 11, 0</column>
+<column name="p_014_0_i1_reg_1123">19, 0, 19, 0</column>
+<column name="p_014_0_i8_reg_1156">19, 0, 19, 0</column>
+<column name="p_014_0_i_reg_1112">22, 0, 22, 0</column>
+<column name="p_1_reg_1187">32, 0, 32, 0</column>
+<column name="p_Val2_3_reg_2787">32, 0, 32, 0</column>
+<column name="pressure3_reg_1167">64, 0, 64, 0</column>
+<column name="pressure_1_reg_2679">64, 0, 64, 0</column>
+<column name="pressure_reg_2636">63, 0, 63, 0</column>
+<column name="sensorData_load_1_reg_2471">32, 0, 32, 0</column>
+<column name="sensorData_load_2_reg_2476">32, 0, 32, 0</column>
+<column name="sensorData_load_3_reg_2416">32, 0, 32, 0</column>
+<column name="sensorData_load_4_reg_2423">32, 0, 32, 0</column>
+<column name="sensorData_load_5_reg_2451">32, 0, 32, 0</column>
+<column name="sensorData_load_reg_2434">32, 0, 32, 0</column>
+<column name="sh_assign_1_reg_2752">12, 0, 12, 0</column>
+<column name="storemerge1_reg_1134">32, 0, 32, 0</column>
+<column name="tmp3_reg_2715">36, 0, 36, 0</column>
+<column name="tmp_13_reg_2456">32, 0, 32, 0</column>
+<column name="tmp_14_reg_2461">29, 0, 29, 0</column>
+<column name="tmp_15_reg_2513">44, 0, 44, 0</column>
+<column name="tmp_19_reg_2487">29, 0, 29, 0</column>
+<column name="tmp_31_reg_2580">64, 0, 64, 0</column>
+<column name="tmp_32_reg_2518">34, 0, 34, 0</column>
+<column name="tmp_33_reg_2466">28, 0, 28, 0</column>
+<column name="tmp_39_reg_2631">62, 0, 62, 0</column>
+<column name="tmp_41_reg_2498">45, 0, 45, 0</column>
+<column name="tmp_42_reg_2610">33, 0, 33, 0</column>
+<column name="tmp_43_reg_2523">37, 0, 37, 0</column>
+<column name="tmp_44_reg_2620">52, 0, 52, 0</column>
+<column name="tmp_45_reg_2528">44, 0, 44, 0</column>
+<column name="tmp_47_reg_2674">64, 0, 64, 0</column>
+<column name="tmp_48_reg_2664">63, 0, 63, 0</column>
+<column name="tmp_49_reg_2538">52, 0, 52, 0</column>
+<column name="tmp_51_cast_reg_2700">48, 0, 48, 0</column>
+<column name="tmp_51_reg_2555">53, 0, 53, 0</column>
+<column name="tmp_53_reg_2600">62, 0, 62, 0</column>
+<column name="tmp_55_reg_2560">51, 0, 51, 0</column>
+<column name="tmp_57_reg_2585">60, 0, 60, 0</column>
+<column name="tmp_58_reg_2725">32, 0, 32, 0</column>
+<column name="tmp_59_reg_2731">64, 0, 64, 0</column>
+<column name="tmp_60_reg_2590">63, 0, 63, 0</column>
+<column name="tmp_61_reg_2595">46, 0, 46, 0</column>
+<column name="tmp_65_reg_2802">1, 0, 1, 0</column>
+<column name="tmp_68_reg_2829">1, 0, 1, 0</column>
+<column name="tmp_69_reg_2833">32, 0, 32, 0</column>
+<column name="tmp_71_reg_2615">51, 0, 51, 0</column>
+<column name="tmp_72_reg_2641">32, 0, 32, 0</column>
+<column name="tmp_73_reg_2695">32, 0, 32, 0</column>
+<column name="tmp_74_reg_2720">32, 0, 32, 0</column>
+<column name="tmp_76_reg_2782">32, 0, 32, 0</column>
+<column name="tmp_77_reg_2777">1, 0, 1, 0</column>
+<column name="tmp_s_reg_2481">32, 0, 32, 0</column>
+<column name="var3_1_cast3_reg_2651">63, 0, 63, 0</column>
+<column name="var3_1_reg_2646">64, 0, 64, 0</column>
+<column name="var3_3_cast_reg_2710">36, 0, 36, 0</column>
+<column name="var3_reg_2533">54, 0, 54, 0</column>
+<column name="var4_3_cast_reg_2705">36, 0, 36, 0</column>
+<column name="var4_reg_2575">64, 0, 64, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="s_axi_AXILiteS_AWVALID">in, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_AWREADY">out, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_AWADDR">in, 8, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_WVALID">in, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_WREADY">out, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_WDATA">in, 32, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_WSTRB">in, 4, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_ARVALID">in, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_ARREADY">out, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_ARADDR">in, 8, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_RVALID">out, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_RREADY">in, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_RDATA">out, 32, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_RRESP">out, 2, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_BVALID">out, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_BREADY">in, 1, s_axi, AXILiteS, pointer</column>
+<column name="s_axi_AXILiteS_BRESP">out, 2, s_axi, AXILiteS, pointer</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, iiccomm2update, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_hs, iiccomm2update, return value</column>
+<column name="interrupt">out, 1, ap_ctrl_hs, iiccomm2update, return value</column>
+<column name="m_axi_iic_AWVALID">out, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_AWREADY">in, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_AWADDR">out, 32, m_axi, iic, pointer</column>
+<column name="m_axi_iic_AWID">out, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_AWLEN">out, 8, m_axi, iic, pointer</column>
+<column name="m_axi_iic_AWSIZE">out, 3, m_axi, iic, pointer</column>
+<column name="m_axi_iic_AWBURST">out, 2, m_axi, iic, pointer</column>
+<column name="m_axi_iic_AWLOCK">out, 2, m_axi, iic, pointer</column>
+<column name="m_axi_iic_AWCACHE">out, 4, m_axi, iic, pointer</column>
+<column name="m_axi_iic_AWPROT">out, 3, m_axi, iic, pointer</column>
+<column name="m_axi_iic_AWQOS">out, 4, m_axi, iic, pointer</column>
+<column name="m_axi_iic_AWREGION">out, 4, m_axi, iic, pointer</column>
+<column name="m_axi_iic_AWUSER">out, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_WVALID">out, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_WREADY">in, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_WDATA">out, 32, m_axi, iic, pointer</column>
+<column name="m_axi_iic_WSTRB">out, 4, m_axi, iic, pointer</column>
+<column name="m_axi_iic_WLAST">out, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_WID">out, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_WUSER">out, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARVALID">out, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARREADY">in, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARADDR">out, 32, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARID">out, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARLEN">out, 8, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARSIZE">out, 3, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARBURST">out, 2, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARLOCK">out, 2, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARCACHE">out, 4, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARPROT">out, 3, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARQOS">out, 4, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARREGION">out, 4, m_axi, iic, pointer</column>
+<column name="m_axi_iic_ARUSER">out, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_RVALID">in, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_RREADY">out, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_RDATA">in, 32, m_axi, iic, pointer</column>
+<column name="m_axi_iic_RLAST">in, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_RID">in, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_RUSER">in, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_RRESP">in, 2, m_axi, iic, pointer</column>
+<column name="m_axi_iic_BVALID">in, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_BREADY">out, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_BRESP">in, 2, m_axi, iic, pointer</column>
+<column name="m_axi_iic_BID">in, 1, m_axi, iic, pointer</column>
+<column name="m_axi_iic_BUSER">in, 1, m_axi, iic, pointer</column>
+</table>
+</item>
+</section>
+
+<section name = "Critical Path" level="0">
+<item name = "Max Delay">6.97</item>
+<item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
+<keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
+<column name="'pressure'">phi, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, &apos;pressure&apos;, iiccomm2update.cpp:219, &apos;pressure&apos;, iiccomm2update.cpp:215</column>
+<column name="'tmp_49_cast', iiccomm2update.cpp:221">partselect, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'tmp_50', iiccomm2update.cpp:221">mul, 6.97, 6.97, -, -, -, -, -, -, -, -, -, -, -</column>
+</table>
+</item>
+</section>
+</profile>
