@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Fri Aug 24 11:02:59 2018
+| Date         : Sat Aug 25 16:14:06 2018
 | Host         : fabricant running 64-bit Linux Mint 18 Sarah
 | Command      : report_utilization -file iicComm2Update_iiccomm2update_0_0_utilization_synth.rpt -pb iicComm2Update_iiccomm2update_0_0_utilization_synth.pb
 | Design       : iicComm2Update_iiccomm2update_0_0
@@ -30,16 +30,16 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 21983 |     0 |     53200 | 41.32 |
-|   LUT as Logic             | 21071 |     0 |     53200 | 39.61 |
-|   LUT as Memory            |   912 |     0 |     17400 |  5.24 |
-|     LUT as Distributed RAM |    32 |     0 |           |       |
+| Slice LUTs*                | 21783 |     0 |     53200 | 40.95 |
+|   LUT as Logic             | 20903 |     0 |     53200 | 39.29 |
+|   LUT as Memory            |   880 |     0 |     17400 |  5.06 |
+|     LUT as Distributed RAM |     0 |     0 |           |       |
 |     LUT as Shift Register  |   880 |     0 |           |       |
-| Slice Registers            | 20244 |     0 |    106400 | 19.03 |
-|   Register as Flip Flop    | 20244 |     0 |    106400 | 19.03 |
+| Slice Registers            | 20069 |     0 |    106400 | 18.86 |
+|   Register as Flip Flop    | 20069 |     0 |    106400 | 18.86 |
 |   Register as Latch        |     0 |     0 |    106400 |  0.00 |
-| F7 Muxes                   |    82 |     0 |     26600 |  0.31 |
-| F8 Muxes                   |    10 |     0 |     13300 |  0.08 |
+| F7 Muxes                   |    16 |     0 |     26600 |  0.06 |
+| F8 Muxes                   |     8 |     0 |     13300 |  0.06 |
 +----------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 6     |          Yes |         Set |            - |
-| 20238 |          Yes |       Reset |            - |
+| 20063 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,20 +151,19 @@ Table of Contents
 +----------+-------+---------------------+
 | Ref Name |  Used | Functional Category |
 +----------+-------+---------------------+
-| FDRE     | 20238 |        Flop & Latch |
-| LUT2     |  9563 |                 LUT |
-| LUT3     |  8048 |                 LUT |
-| CARRY4   |  3117 |          CarryLogic |
-| LUT1     |  2370 |                 LUT |
-| LUT6     |   784 |                 LUT |
+| FDRE     | 20063 |        Flop & Latch |
+| LUT2     |  9475 |                 LUT |
+| LUT3     |  8053 |                 LUT |
+| CARRY4   |  3097 |          CarryLogic |
+| LUT1     |  2365 |                 LUT |
+| LUT6     |   811 |                 LUT |
 | SRL16E   |   476 |  Distributed Memory |
 | SRLC32E  |   404 |  Distributed Memory |
-| LUT4     |   396 |                 LUT |
-| LUT5     |   199 |                 LUT |
-| MUXF7    |    82 |               MuxFx |
+| LUT4     |   299 |                 LUT |
+| LUT5     |   176 |                 LUT |
 | DSP48E1  |    54 |    Block Arithmetic |
-| RAMS32   |    32 |  Distributed Memory |
-| MUXF8    |    10 |               MuxFx |
+| MUXF7    |    16 |               MuxFx |
+| MUXF8    |     8 |               MuxFx |
 | FDSE     |     6 |        Flop & Latch |
 | RAMB18E1 |     2 |        Block Memory |
 | RAMB36E1 |     1 |        Block Memory |

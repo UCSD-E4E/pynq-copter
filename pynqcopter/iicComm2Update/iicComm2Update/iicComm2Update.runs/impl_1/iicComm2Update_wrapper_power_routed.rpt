@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Fri Aug 24 11:18:53 2018
+| Date             : Sat Aug 25 16:29:58 2018
 | Host             : fabricant running 64-bit Linux Mint 18 Sarah
 | Command          : report_power -file iicComm2Update_wrapper_power_routed.rpt -pb iicComm2Update_wrapper_power_summary_routed.pb -rpx iicComm2Update_wrapper_power_routed.rpx
 | Design           : iicComm2Update_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.516        |
+| Total On-Chip Power (W)  | 1.519        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.381        |
+| Dynamic (W)              | 1.383        |
 | Device Static (W)        | 0.136        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 67.5         |
@@ -49,26 +49,25 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+--------------------------+-----------+----------+-----------+-----------------+
-| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
-+--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.089 |        4 |       --- |             --- |
-| Slice Logic              |     0.006 |    50292 |       --- |             --- |
-|   LUT as Logic           |     0.005 |    22051 |     53200 |           41.45 |
-|   Register               |    <0.001 |    21650 |    106400 |           20.35 |
-|   CARRY4                 |    <0.001 |     3150 |     13300 |           23.68 |
-|   F7/F8 Muxes            |    <0.001 |       88 |     53200 |            0.17 |
-|   LUT as Shift Register  |    <0.001 |      837 |     17400 |            4.81 |
-|   Others                 |     0.000 |     1648 |       --- |             --- |
-|   LUT as Distributed RAM |     0.000 |       32 |     17400 |            0.18 |
-| Signals                  |     0.009 |    37325 |       --- |             --- |
-| Block RAM                |     0.006 |        2 |       140 |            1.43 |
-| DSPs                     |     0.001 |       54 |       220 |           24.55 |
-| I/O                      |     0.000 |        6 |       125 |            4.80 |
-| PS7                      |     1.270 |        1 |       --- |             --- |
-| Static Power             |     0.136 |          |           |                 |
-| Total                    |     1.516 |          |           |                 |
-+--------------------------+-----------+----------+-----------+-----------------+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Clocks                  |     0.092 |        4 |       --- |             --- |
+| Slice Logic             |     0.005 |    49814 |       --- |             --- |
+|   LUT as Logic          |     0.004 |    21891 |     53200 |           41.15 |
+|   Register              |    <0.001 |    21475 |    106400 |           20.18 |
+|   CARRY4                |    <0.001 |     3130 |     13300 |           23.53 |
+|   LUT as Shift Register |    <0.001 |      837 |     17400 |            4.81 |
+|   F7/F8 Muxes           |    <0.001 |       20 |     53200 |            0.04 |
+|   Others                |     0.000 |     1646 |       --- |             --- |
+| Signals                 |     0.008 |    37081 |       --- |             --- |
+| Block RAM               |     0.007 |        2 |       140 |            1.43 |
+| DSPs                    |     0.001 |       54 |       220 |           24.55 |
+| I/O                     |     0.000 |        6 |       125 |            4.80 |
+| PS7                     |     1.270 |        1 |       --- |             --- |
+| Static Power            |     0.136 |          |           |                 |
+| Total                   |     1.519 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -77,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.124 |       0.110 |      0.014 |
+| Vccint    |       1.000 |     0.127 |       0.113 |      0.014 |
 | Vccaux    |       1.800 |     0.015 |       0.000 |      0.015 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -153,10 +152,10 @@ Table of Contents
 +-----------------------------------------------------------+-----------+
 | Name                                                      | Power (W) |
 +-----------------------------------------------------------+-----------+
-| iicComm2Update_wrapper                                    |     1.381 |
+| iicComm2Update_wrapper                                    |     1.383 |
 |   arduino_iic_scl_iobuf                                   |     0.000 |
 |   arduino_iic_sda_iobuf                                   |     0.000 |
-|   iicComm2Update_i                                        |     1.381 |
+|   iicComm2Update_i                                        |     1.383 |
 |     axi_iic_0                                             |     0.002 |
 |       U0                                                  |     0.002 |
 |         X_IIC                                             |     0.002 |
@@ -182,52 +181,18 @@ Table of Contents
 |                 I_DECODER                                 |    <0.001 |
 |             X_INTERRUPT_CONTROL                           |    <0.001 |
 |             X_SOFT_RESET                                  |    <0.001 |
-|     iiccomm2update_0                                      |     0.095 |
-|       inst                                                |     0.095 |
-|         basepointData_U                                   |    <0.001 |
-|           iiccomm2update_bacud_ram_U                      |    <0.001 |
-|             ram_reg_0_15_0_0                              |    <0.001 |
-|             ram_reg_0_15_10_10                            |    <0.001 |
-|             ram_reg_0_15_11_11                            |    <0.001 |
-|             ram_reg_0_15_12_12                            |    <0.001 |
-|             ram_reg_0_15_13_13                            |    <0.001 |
-|             ram_reg_0_15_14_14                            |    <0.001 |
-|             ram_reg_0_15_15_15                            |    <0.001 |
-|             ram_reg_0_15_16_16                            |    <0.001 |
-|             ram_reg_0_15_17_17                            |    <0.001 |
-|             ram_reg_0_15_18_18                            |    <0.001 |
-|             ram_reg_0_15_19_19                            |    <0.001 |
-|             ram_reg_0_15_1_1                              |    <0.001 |
-|             ram_reg_0_15_20_20                            |    <0.001 |
-|             ram_reg_0_15_21_21                            |    <0.001 |
-|             ram_reg_0_15_22_22                            |    <0.001 |
-|             ram_reg_0_15_23_23                            |    <0.001 |
-|             ram_reg_0_15_24_24                            |    <0.001 |
-|             ram_reg_0_15_25_25                            |    <0.001 |
-|             ram_reg_0_15_26_26                            |    <0.001 |
-|             ram_reg_0_15_27_27                            |    <0.001 |
-|             ram_reg_0_15_28_28                            |    <0.001 |
-|             ram_reg_0_15_29_29                            |    <0.001 |
-|             ram_reg_0_15_2_2                              |    <0.001 |
-|             ram_reg_0_15_30_30                            |    <0.001 |
-|             ram_reg_0_15_31_31                            |    <0.001 |
-|             ram_reg_0_15_3_3                              |    <0.001 |
-|             ram_reg_0_15_4_4                              |    <0.001 |
-|             ram_reg_0_15_5_5                              |    <0.001 |
-|             ram_reg_0_15_6_6                              |    <0.001 |
-|             ram_reg_0_15_7_7                              |    <0.001 |
-|             ram_reg_0_15_8_8                              |    <0.001 |
-|             ram_reg_0_15_9_9                              |    <0.001 |
-|         iiccomm2update_AXILiteS_s_axi_U                   |     0.004 |
-|         iiccomm2update_adncg_U11                          |    <0.001 |
-|           iiccomm2update_adncg_AddSubnS_0_U               |    <0.001 |
+|     iiccomm2update_0                                      |     0.098 |
+|       inst                                                |     0.098 |
+|         iiccomm2update_AXILiteS_s_axi_U                   |     0.003 |
+|         iiccomm2update_admb6_U11                          |    <0.001 |
+|           iiccomm2update_admb6_AddSubnS_0_U               |    <0.001 |
 |             u1                                            |     0.000 |
 |             u2                                            |     0.000 |
-|         iiccomm2update_dddEe_U1                           |     0.013 |
-|           iiccomm2update_ap_ddiv_57_no_dsp_64_u           |     0.013 |
-|             U0                                            |     0.013 |
-|               i_synth                                     |     0.013 |
-|                 DIV_OP.SPD.OP                             |     0.013 |
+|         iiccomm2update_ddcud_U1                           |     0.014 |
+|           iiccomm2update_ap_ddiv_57_no_dsp_64_u           |     0.014 |
+|             U0                                            |     0.014 |
+|               i_synth                                     |     0.014 |
+|                 DIV_OP.SPD.OP                             |     0.014 |
 |                   EXP                                     |    <0.001 |
 |                     COND_DET_A                            |    <0.001 |
 |                       EXP_DET_LUT.EXP_ALL_ONE_DEL         |    <0.001 |
@@ -253,7 +218,7 @@ Table of Contents
 |                       i_pipe                              |    <0.001 |
 |                     STATE_UP_DELAY                        |    <0.001 |
 |                       i_pipe                              |    <0.001 |
-|                   MANT_DIV                                |     0.012 |
+|                   MANT_DIV                                |     0.013 |
 |                     MSB_DEL                               |    <0.001 |
 |                       i_pipe                              |    <0.001 |
 |                     RT[0].ADDSUB                          |    <0.001 |
@@ -645,58 +610,58 @@ Table of Contents
 |                         i_pipe                            |    <0.001 |
 |                     RND_BIT_GEN                           |     0.000 |
 |                       NORM_1_OR_0.STRUCT_REQ.GENERAL.RND1 |     0.000 |
-|         iiccomm2update_iic_m_axi_U                        |     0.011 |
-|           bus_read                                        |     0.005 |
-|             buff_rdata                                    |     0.003 |
+|         iiccomm2update_iic_m_axi_U                        |     0.013 |
+|           bus_read                                        |     0.007 |
+|             buff_rdata                                    |     0.005 |
 |             fifo_rctl                                     |    <0.001 |
 |             fifo_rreq                                     |    <0.001 |
-|             rs_rdata                                      |    <0.001 |
+|             rs_rdata                                      |     0.001 |
 |             rs_rreq                                       |    <0.001 |
-|           bus_write                                       |     0.006 |
-|             buff_wdata                                    |     0.004 |
+|           bus_write                                       |     0.005 |
+|             buff_wdata                                    |     0.003 |
 |             bus_equal_gen.fifo_burst                      |    <0.001 |
 |             fifo_resp                                     |    <0.001 |
 |             fifo_resp_to_user                             |    <0.001 |
 |             fifo_wreq                                     |    <0.001 |
 |             rs_wreq                                       |    <0.001 |
 |           wreq_throttl                                    |    <0.001 |
-|         iiccomm2update_lswdI_U20                          |    <0.001 |
-|         iiccomm2update_mufYi_U3                           |    <0.001 |
-|           iiccomm2update_mufYi_MulnS_0_U                  |    <0.001 |
-|         iiccomm2update_mug8j_U4                           |    <0.001 |
-|           iiccomm2update_mug8j_MulnS_1_U                  |    <0.001 |
-|         iiccomm2update_muhbi_U5                           |    <0.001 |
-|           iiccomm2update_muhbi_MulnS_2_U                  |    <0.001 |
-|         iiccomm2update_muibs_U6                           |    <0.001 |
-|           iiccomm2update_muibs_Mul6S_0_U                  |    <0.001 |
-|         iiccomm2update_mujbC_U7                           |    <0.001 |
-|           iiccomm2update_mujbC_MulnS_3_U                  |    <0.001 |
-|         iiccomm2update_mukbM_U8                           |    <0.001 |
-|           iiccomm2update_mukbM_MulnS_4_U                  |    <0.001 |
-|         iiccomm2update_mulbW_U9                           |    <0.001 |
-|           iiccomm2update_mulbW_Mul6S_1_U                  |    <0.001 |
-|         iiccomm2update_mumb6_U10                          |    <0.001 |
-|           iiccomm2update_mumb6_Mul6S_2_U                  |    <0.001 |
-|         iiccomm2update_muocq_U12                          |    <0.001 |
-|           iiccomm2update_muocq_MulnS_5_U                  |    <0.001 |
-|         iiccomm2update_mupcA_U13                          |    <0.001 |
-|           iiccomm2update_mupcA_Mul6S_3_U                  |    <0.001 |
-|         iiccomm2update_muqcK_U14                          |    <0.001 |
-|           iiccomm2update_muqcK_Mul6S_4_U                  |    <0.001 |
-|         iiccomm2update_mutde_U17                          |    <0.001 |
-|           iiccomm2update_mutde_MulnS_6_U                  |    <0.001 |
-|         iiccomm2update_muudo_U18                          |    <0.001 |
-|           iiccomm2update_muudo_MulnS_7_U                  |    <0.001 |
-|         iiccomm2update_muvdy_U19                          |    <0.001 |
-|           iiccomm2update_muvdy_MulnS_8_U                  |    <0.001 |
-|         iiccomm2update_shxdS_U21                          |     0.001 |
-|         iiccomm2update_udrcU_U15                          |     0.027 |
-|           iiccomm2update_udrcU_div_U                      |     0.027 |
-|             iiccomm2update_udrcU_div_u_0                  |     0.027 |
-|         iiccomm2update_udsc4_U16                          |     0.016 |
-|           iiccomm2update_udsc4_div_U                      |     0.016 |
-|             iiccomm2update_udsc4_div_u_0                  |     0.016 |
-|         iiccomm2update_uieOg_U2                           |     0.002 |
+|         iiccomm2update_lsvdy_U20                          |    <0.001 |
+|         iiccomm2update_mueOg_U3                           |    <0.001 |
+|           iiccomm2update_mueOg_MulnS_0_U                  |    <0.001 |
+|         iiccomm2update_mufYi_U4                           |    <0.001 |
+|           iiccomm2update_mufYi_MulnS_1_U                  |    <0.001 |
+|         iiccomm2update_mug8j_U5                           |    <0.001 |
+|           iiccomm2update_mug8j_MulnS_2_U                  |    <0.001 |
+|         iiccomm2update_muhbi_U6                           |    <0.001 |
+|           iiccomm2update_muhbi_Mul6S_0_U                  |    <0.001 |
+|         iiccomm2update_muibs_U7                           |    <0.001 |
+|           iiccomm2update_muibs_MulnS_3_U                  |    <0.001 |
+|         iiccomm2update_mujbC_U8                           |    <0.001 |
+|           iiccomm2update_mujbC_MulnS_4_U                  |    <0.001 |
+|         iiccomm2update_mukbM_U9                           |    <0.001 |
+|           iiccomm2update_mukbM_Mul6S_1_U                  |    <0.001 |
+|         iiccomm2update_mulbW_U10                          |    <0.001 |
+|           iiccomm2update_mulbW_Mul6S_2_U                  |    <0.001 |
+|         iiccomm2update_muncg_U12                          |    <0.001 |
+|           iiccomm2update_muncg_MulnS_5_U                  |    <0.001 |
+|         iiccomm2update_muocq_U13                          |    <0.001 |
+|           iiccomm2update_muocq_Mul6S_3_U                  |    <0.001 |
+|         iiccomm2update_mupcA_U14                          |    <0.001 |
+|           iiccomm2update_mupcA_Mul6S_4_U                  |    <0.001 |
+|         iiccomm2update_musc4_U17                          |    <0.001 |
+|           iiccomm2update_musc4_MulnS_6_U                  |    <0.001 |
+|         iiccomm2update_mutde_U18                          |    <0.001 |
+|           iiccomm2update_mutde_MulnS_7_U                  |    <0.001 |
+|         iiccomm2update_muudo_U19                          |    <0.001 |
+|           iiccomm2update_muudo_MulnS_8_U                  |    <0.001 |
+|         iiccomm2update_shwdI_U21                          |     0.001 |
+|         iiccomm2update_udqcK_U15                          |     0.029 |
+|           iiccomm2update_udqcK_div_U                      |     0.029 |
+|             iiccomm2update_udqcK_div_u_0                  |     0.028 |
+|         iiccomm2update_udrcU_U16                          |     0.017 |
+|           iiccomm2update_udrcU_div_U                      |     0.017 |
+|             iiccomm2update_udrcU_div_u_0                  |     0.017 |
+|         iiccomm2update_uidEe_U2                           |     0.002 |
 |           iiccomm2update_ap_uitodp_6_no_dsp_32_u          |     0.002 |
 |             U0                                            |     0.002 |
 |               i_synth                                     |     0.002 |
@@ -761,11 +726,11 @@ Table of Contents
 |           iiccomm2update_sebkb_ram_U                      |     0.001 |
 |     processing_system7_0                                  |     1.271 |
 |       inst                                                |     1.271 |
-|     ps7_0_axi_periph                                      |     0.012 |
-|       s00_couplers                                        |     0.004 |
-|         auto_pc                                           |     0.004 |
-|           inst                                            |     0.004 |
-|             gen_axilite.gen_b2s_conv.axilite_b2s          |     0.004 |
+|     ps7_0_axi_periph                                      |     0.011 |
+|       s00_couplers                                        |     0.005 |
+|         auto_pc                                           |     0.005 |
+|           inst                                            |     0.005 |
+|             gen_axilite.gen_b2s_conv.axilite_b2s          |     0.005 |
 |               RD.ar_channel_0                             |    <0.001 |
 |                 ar_cmd_fsm_0                              |    <0.001 |
 |                 cmd_translator_0                          |    <0.001 |
@@ -799,7 +764,7 @@ Table of Contents
 |               RD.r_channel_0                              |    <0.001 |
 |                 rd_data_fifo_0                            |    <0.001 |
 |                 transaction_fifo_0                        |    <0.001 |
-|               SI_REG                                      |     0.002 |
+|               SI_REG                                      |     0.001 |
 |                 ar.ar_pipe                                |    <0.001 |
 |                 aw.aw_pipe                                |    <0.001 |
 |                 b.b_pipe                                  |    <0.001 |
@@ -818,10 +783,10 @@ Table of Contents
 |           register_slice_inst                             |    <0.001 |
 |             ar.ar_pipe                                    |    <0.001 |
 |             aw.aw_pipe                                    |    <0.001 |
-|       xbar                                                |     0.003 |
-|         inst                                              |     0.003 |
-|           gen_sasd.crossbar_sasd_0                        |     0.003 |
-|             addr_arbiter_inst                             |     0.002 |
+|       xbar                                                |     0.002 |
+|         inst                                              |     0.002 |
+|           gen_sasd.crossbar_sasd_0                        |     0.002 |
+|             addr_arbiter_inst                             |     0.001 |
 |             gen_decerr.decerr_slave_inst                  |    <0.001 |
 |             reg_slice_r                                   |    <0.001 |
 |             splitter_ar                                   |    <0.001 |
