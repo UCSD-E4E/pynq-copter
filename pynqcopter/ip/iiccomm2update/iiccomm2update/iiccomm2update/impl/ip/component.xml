@@ -2461,7 +2461,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>101212b4</spirit:value>
+            <spirit:value>e3e0119d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2480,7 +2480,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>972cd4d1</spirit:value>
+            <spirit:value>e592eae3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2499,7 +2499,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>10c9e046</spirit:value>
+            <spirit:value>417de49c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2518,7 +2518,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>a78c160c</spirit:value>
+            <spirit:value>6c564d01</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3826,6 +3826,10 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/verilog/iiccomm2update_secud.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/verilog/iiccomm2update_muocq.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
@@ -3839,10 +3843,6 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/iiccomm2update.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/iiccomm2update_sebkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -3874,10 +3874,6 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/iiccomm2update_bacud.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>hdl/verilog/iiccomm2update_iic_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
@@ -3886,7 +3882,15 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/verilog/iiccomm2update_babkb_ram.dat</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/verilog/iiccomm2update_muvdy.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/iiccomm2update_babkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -3952,6 +3956,11 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/verilog/iiccomm2update_secud.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/verilog/iiccomm2update_muocq.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
@@ -3968,11 +3977,6 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/iiccomm2update.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/iiccomm2update_sebkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4012,11 +4016,6 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/iiccomm2update_bacud.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>hdl/verilog/iiccomm2update_iic_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
@@ -4027,7 +4026,16 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/verilog/iiccomm2update_babkb_ram.dat</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/verilog/iiccomm2update_muvdy.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/iiccomm2update_babkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4106,6 +4114,10 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/vhdl/iiccomm2update_secud.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/vhdl/iiccomm2update_mujbC.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
@@ -4174,7 +4186,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/iiccomm2update_sebkb.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/iiccomm2update_babkb.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4195,10 +4207,6 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/iiccomm2update_iic_m_axi.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/iiccomm2update_bacud.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4230,6 +4238,11 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/vhdl/iiccomm2update_secud.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/vhdl/iiccomm2update_mujbC.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
@@ -4315,7 +4328,7 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/iiccomm2update_sebkb.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/iiccomm2update_babkb.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4341,11 +4354,6 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/iiccomm2update_iic_m_axi.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/iiccomm2update_bacud.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4593,15 +4601,15 @@ solve_type immediate dependency {} format string minimum {} maximum {}} value {}
       </xilinx:taxonomies>
       <xilinx:displayName>Iiccomm2update</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808252002</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-26T03:03:14Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808252141</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-26T04:41:56Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="c765bfbf"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="e48f3472"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="e9aa8aeb"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="1fef3988"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d7613fe5"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="29b43e56"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="29caf5a7"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="176028b7"/>

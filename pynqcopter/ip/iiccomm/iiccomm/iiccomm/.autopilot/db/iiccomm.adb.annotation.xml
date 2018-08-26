@@ -1,4 +1,0 @@
-<annotationInfo>
-<item  id="137" filename="./iiccomm.hpp" linenumber="63" name="tmp" contextFuncName="delay_until_ms&lt;10000, 50000000&gt;" moduleName="iiccomm" rtlName="tmp_fu_777_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="18" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm"></item>
-<item  id="139" filename="./iiccomm.hpp" linenumber="63" name="ctr_V" contextFuncName="delay_until_ms&lt;10000, 50000000&gt;" moduleName="iiccomm" rtlName="ctr_V_fu_783_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="36" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/iiccomm"></item>
-</annotationInfo>

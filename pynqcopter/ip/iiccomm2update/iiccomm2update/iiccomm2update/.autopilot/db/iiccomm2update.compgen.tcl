@@ -1872,17 +1872,18 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, che
 
 # Memory (RAM/ROM)  definition:
 set ID 45
-set MemName iiccomm2update_sebkb
+set MemName iiccomm2update_babkb
 set CoreName ap_simcore_mem
-set PortList { 2 2 }
+set PortList { 2 1 }
 set DataWd 32
-set AddrRange 6
-set AddrWd 3
+set AddrRange 10
+set AddrWd 4
 set impl_style block
 set TrueReset 0
-set HasInitializer 0
 set IsROM 0
-set ROMData {}
+set ROMData { }
+set HasInitializer 1
+set Initializer $ROMData
 set NumOfStage 2
 set MaxLatency -1
 set DelayBudget 2.322
@@ -1954,12 +1955,12 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 # Memory (RAM/ROM)  definition:
 set ID 46
-set MemName iiccomm2update_bacud
+set MemName iiccomm2update_secud
 set CoreName ap_simcore_mem
-set PortList { 2 1 }
+set PortList { 2 2 }
 set DataWd 32
-set AddrRange 10
-set AddrWd 4
+set AddrRange 6
+set AddrWd 3
 set impl_style block
 set TrueReset 0
 set HasInitializer 0

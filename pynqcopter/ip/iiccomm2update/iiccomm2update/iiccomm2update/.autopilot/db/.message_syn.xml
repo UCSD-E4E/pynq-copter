@@ -3,15 +3,15 @@
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;iiccomm2update.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;main.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:01:08 ; elapsed = 00:00:36 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 100513 ; free virtual = 495070" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:10 ; elapsed = 00:00:38 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 100507 ; free virtual = 495064" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:01:07 ; elapsed = 00:00:37 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 99360 ; free virtual = 494215" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:09 ; elapsed = 00:00:39 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 99343 ; free virtual = 494197" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
 	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;delay_until_ms&lt;50ull, 50000000ull&gt;&apos; into &apos;iiccomm2update&apos; (iiccomm2update.cpp:147)." tag=""/>
 	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;delay_until_ms&lt;10ull, 50000000ull&gt;&apos; into &apos;iiccomm2update&apos; (iiccomm2update.cpp:178)." tag=""/>
 	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;delay_until_ms&lt;10ull, 50000000ull&gt;&apos; into &apos;iiccomm2update&apos; (iiccomm2update.cpp:165)." tag=""/>
 	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;ap_fixed_base&lt;137, 84, false, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&lt;&lt;&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330)." tag=""/>
 	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;ap_fixed_base&lt;1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0&gt;::overflow_adjust&apos; into &apos;ap_fixed_base&lt;1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0&gt;::ap_fixed_base&lt;137, 84, false, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&apos; ()." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:14 ; elapsed = 00:00:42 . Memory (MB): peak = 490.898 ; gain = 144.332 ; free physical = 100447 ; free virtual = 495004" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:13 ; elapsed = 00:00:43 . Memory (MB): peak = 490.898 ; gain = 144.332 ; free physical = 99321 ; free virtual = 494176" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
 	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;double&gt;::mantissa&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:327) automatically." tag=""/>
 	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;double&gt;::expv&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330) automatically." tag=""/>
@@ -19,33 +19,33 @@
 	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically." tag=""/>
 	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;generic_cast_IEEE754&lt;unsigned int, double&gt;&apos; into &apos;__hls_fptoui_double_i32&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:67) automatically." tag=""/>
 	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;__hls_fptoui_double_i32&apos; into &apos;iiccomm2update&apos; (iiccomm2update.cpp:233) automatically." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:16 ; elapsed = 00:00:44 . Memory (MB): peak = 490.898 ; gain = 144.332 ; free physical = 100404 ; free virtual = 494960" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:15 ; elapsed = 00:00:45 . Memory (MB): peak = 490.898 ; gain = 144.332 ; free physical = 99303 ; free virtual = 494158" tag=""/>
 	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;double&gt;::mantissa&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:327) automatically." tag=""/>
 	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;double&gt;::expv&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330) automatically." tag=""/>
 	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically." tag=""/>
 	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;generic_cast_IEEE754&lt;unsigned int, double&gt;&apos; into &apos;__hls_fptoui_double_i32&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:67) automatically." tag=""/>
 	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;__hls_fptoui_double_i32&apos; into &apos;iiccomm2update&apos; (iiccomm2update.cpp:233) automatically." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:20 ; elapsed = 00:00:48 . Memory (MB): peak = 554.367 ; gain = 207.801 ; free physical = 100342 ; free virtual = 494899" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:21 ; elapsed = 00:00:49 . Memory (MB): peak = 554.367 ; gain = 207.801 ; free physical = 100392 ; free virtual = 494948" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:18 ; elapsed = 00:00:48 . Memory (MB): peak = 554.367 ; gain = 207.801 ; free physical = 99244 ; free virtual = 494099" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:20 ; elapsed = 00:00:50 . Memory (MB): peak = 554.367 ; gain = 207.801 ; free physical = 99250 ; free virtual = 494104" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;iiccomm2update&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;iiccomm2update&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
-	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="86" content="Estimated delay (6.97ns) of &apos;mul&apos; operation (&apos;tmp_50&apos;, iiccomm2update.cpp:227) exceeds the target cycle time (target cycle time: 4ns, clock uncertainty: 0.5ns, effective cycle time: 3.5ns)." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="86" content="Estimated delay (6.97ns) of &apos;mul&apos; operation (&apos;tmp_48&apos;, iiccomm2update.cpp:227) exceeds the target cycle time (target cycle time: 4ns, clock uncertainty: 0.5ns, effective cycle time: 3.5ns)." tag=""/>
 	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="137" content="Estimated clock period (6.973ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns)." tag=""/>
 	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="135" content="The critical path consists of the following:
 	&apos;phi&apos; operation (&apos;pressure&apos;) with incoming values : (&apos;pressure&apos;, iiccomm2update.cpp:225) (&apos;pressure&apos;, iiccomm2update.cpp:221) (0 ns)
-	&apos;mul&apos; operation (&apos;tmp_50&apos;, iiccomm2update.cpp:227) (6.97 ns)" tag=""/>
+	&apos;mul&apos; operation (&apos;tmp_48&apos;, iiccomm2update.cpp:227) (6.97 ns)" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 50.28 seconds; current allocated memory: 175.430 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 50.69 seconds; current allocated memory: 175.308 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.64 seconds; current allocated memory: 179.004 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.84 seconds; current allocated memory: 178.828 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;iiccomm2update&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
@@ -76,10 +76,10 @@
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;iiccomm2update/basepoint9&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;iiccomm2update&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;count&apos; is power-on initialization." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;iiccomm2update_basepointData&apos; to &apos;iiccomm2update_babkb&apos; due to the length limit 20" tag=""/>
 	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;basepointSum&apos; is power-on initialization." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos;, &apos;full_pirq_outValue&apos;, &apos;ctrl_reg_outValue&apos;, &apos;stat_reg_outValue1&apos;, &apos;stat_reg_val2&apos;, &apos;pressure_msb&apos;, &apos;pressure_lsb&apos;, &apos;pressure_xlsb&apos;, &apos;temp_msb&apos;, &apos;temp_lsb&apos;, &apos;temp_xlsb&apos;, &apos;press_raw&apos;, &apos;temp_raw&apos;, &apos;operation&apos;, &apos;press_cal&apos;, &apos;press_act&apos;, &apos;basepoint&apos;, &apos;flag&apos;, &apos;pressure_diff&apos;, &apos;flag2&apos;, &apos;flag3&apos;, &apos;basepointVal&apos;, &apos;basepoint0&apos; and &apos;basepoint9&apos; to AXI-Lite port AXILiteS." tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;iiccomm2update_sensorData&apos; to &apos;iiccomm2update_sebkb&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;iiccomm2update_basepointData&apos; to &apos;iiccomm2update_bacud&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;iiccomm2update_sensorData&apos; to &apos;iiccomm2update_secud&apos; due to the length limit 20" tag=""/>
 	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;iiccomm2update_ddiv_64ns_64ns_64_59_1&apos; to &apos;iiccomm2update_dddEe&apos; due to the length limit 20" tag=""/>
 	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;iiccomm2update_uitodp_32ns_64_8_1&apos; to &apos;iiccomm2update_uieOg&apos; due to the length limit 20" tag=""/>
 	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;iiccomm2update_mul_29s_29s_57_7_1&apos; to &apos;iiccomm2update_mufYi&apos; due to the length limit 20" tag=""/>
@@ -125,7 +125,7 @@
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;iiccomm2update_udsc4&apos;: 1 instance(s)." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;iiccomm2update_uieOg&apos;: 1 instance(s)." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;iiccomm2update&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.29 seconds; current allocated memory: 185.362 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.75 seconds; current allocated memory: 185.109 MB." tag=""/>
 	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;iiccomm2update_mufYi_MulnS_0&apos;" tag=""/>
 	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;iiccomm2update_mug8j_MulnS_1&apos;" tag=""/>
 	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;iiccomm2update_muhbi_MulnS_2&apos;" tag=""/>
@@ -146,9 +146,9 @@
 	<Message prefix="[RTMG 210-286]" severity="INFO" keynum="RTMG_286_1800" content="Generating pipelined shifter : &apos;iiccomm2update_lswdI&apos;" tag=""/>
 	<Message prefix="[RTMG 210-286]" severity="INFO" keynum="RTMG_286_1800" content="Generating pipelined shifter : &apos;iiccomm2update_shxdS&apos;" tag=""/>
 	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;iiccomm2update_muyd2_MulnS_9&apos;" tag=""/>
-	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1790" content="Implementing memory &apos;iiccomm2update_sebkb_ram (RAM)&apos; using block RAMs." tag=""/>
-	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1790" content="Implementing memory &apos;iiccomm2update_bacud_ram (RAM)&apos; using distributed RAMs." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:26 ; elapsed = 00:00:56 . Memory (MB): peak = 554.367 ; gain = 207.801 ; free physical = 100383 ; free virtual = 494893" tag=""/>
+	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1792" content="Implementing memory &apos;iiccomm2update_babkb_ram (RAM)&apos; using distributed RAMs with power-on initialization." tag=""/>
+	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1790" content="Implementing memory &apos;iiccomm2update_secud_ram (RAM)&apos; using block RAMs." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:27 ; elapsed = 00:00:58 . Memory (MB): peak = 554.367 ; gain = 207.801 ; free physical = 99255 ; free virtual = 494062" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for iiccomm2update." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for iiccomm2update." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for iiccomm2update." tag=""/>

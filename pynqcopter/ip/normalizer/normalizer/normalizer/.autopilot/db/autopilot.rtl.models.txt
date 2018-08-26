@@ -1,3 +1,0 @@
-normalizer_sdiv_9bkb
-normalizer_in_s_axi
-normalizer

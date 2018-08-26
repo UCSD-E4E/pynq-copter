@@ -33267,7 +33267,7 @@ void iiccomm2update(volatile uint32_t iic[4096],
  static uint32_t ctrl_reg_val;
  static uint32_t stat_reg_val1;
  uint32_t sensorData[6] = {};
- uint32_t basepointData[10] = {};
+ static uint32_t basepointData[10] = {};
  static uint32_t basepointSum;
 
 
@@ -33405,7 +33405,7 @@ void iiccomm2update(volatile uint32_t iic[4096],
 
  if(count<10)
  {
-  flag2 = 0;
+  flag2 = 1;
   basepointData[count] = press_act;
   count = count + 1;
   basepointVal = basepointData[count];

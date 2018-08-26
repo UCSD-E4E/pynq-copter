@@ -1,9 +1,0 @@
-<annotationInfo>
-<item  id="21" filename="normalizer.cpp" linenumber="82" name="tmp" contextFuncName="normalizer" moduleName="normalizer" rtlName="tmp_fu_77_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="18" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/normalizer"></item>
-<item  id="27" filename="normalizer.cpp" linenumber="87" name="p_Val2_s" contextFuncName="normalizer" moduleName="normalizer" rtlName="p_Val2_s_fu_87_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/normalizer"></item>
-<item  id="28" filename="normalizer.cpp" linenumber="87" name="p_Val2_1" contextFuncName="normalizer" moduleName="normalizer" rtlName="p_Val2_1_fu_91_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/normalizer"></item>
-<item  id="29" filename="normalizer.cpp" linenumber="87" name="tmp_4" contextFuncName="normalizer" moduleName="normalizer" rtlName="tmp_4_fu_95_p3" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/normalizer"></item>
-<item  id="30" filename="normalizer.cpp" linenumber="87" name="tmp_6" contextFuncName="normalizer" moduleName="normalizer" rtlName="grp_fu_113_p0" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/normalizer"></item>
-<item  id="32" filename="normalizer.cpp" linenumber="87" name="tmp_8" contextFuncName="normalizer" moduleName="normalizer" rtlName="normalizer_sdiv_9bkb_U1" latency="99" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/normalizer"></item>
-<item  id="33" filename="normalizer.cpp" linenumber="87" name="tmp_2" contextFuncName="normalizer" moduleName="normalizer" rtlName="tmp_2_reg_171" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/iavendano/pynq-copter/pynqcopter/ip/normalizer"></item>
-</annotationInfo>

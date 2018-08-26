@@ -30,56 +30,49 @@
 <IterationLatency>1</IterationLatency>
 <PipelineDepth>1</PipelineDepth>
 </memset_sensorData>
-<memset_basepointData>
-<Name>memset_basepointData</Name>
-<TripCount>10</TripCount>
-<Latency>9</Latency>
-<IterationLatency>1</IterationLatency>
-<PipelineDepth>1</PipelineDepth>
-</memset_basepointData>
-<Loop3>
-<Name>Loop 3</Name>
+<Loop2>
+<Name>Loop 2</Name>
 <TripCount>2500000</TripCount>
 <Latency>2500000</Latency>
+<IterationLatency>1</IterationLatency>
+<PipelineDepth>1</PipelineDepth>
+</Loop2>
+<Loop3>
+<Name>Loop 3</Name>
+<TripCount>500000</TripCount>
+<Latency>500000</Latency>
 <IterationLatency>1</IterationLatency>
 <PipelineDepth>1</PipelineDepth>
 </Loop3>
 <Loop4>
 <Name>Loop 4</Name>
-<TripCount>500000</TripCount>
-<Latency>500000</Latency>
-<IterationLatency>1</IterationLatency>
-<PipelineDepth>1</PipelineDepth>
-</Loop4>
-<Loop5>
-<Name>Loop 5</Name>
 <TripCount>undef</TripCount>
 <Latency>undef</Latency>
 <IterationLatency>500017</IterationLatency>
 <PipelineDepth>500017</PipelineDepth>
-<Loop5.1>
-<Name>Loop 5.1</Name>
+<Loop4.1>
+<Name>Loop 4.1</Name>
 <TripCount>500000</TripCount>
 <Latency>500000</Latency>
 <IterationLatency>1</IterationLatency>
 <PipelineDepth>1</PipelineDepth>
-</Loop5.1>
-</Loop5>
-<Loop6>
-<Name>Loop 6</Name>
+</Loop4.1>
+</Loop4>
+<Loop5>
+<Name>Loop 5</Name>
 <TripCount>10</TripCount>
 <Latency>30</Latency>
 <IterationLatency>3</IterationLatency>
 <PipelineDepth>3</PipelineDepth>
-</Loop6>
+</Loop5>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
 <BRAM_18K>4</BRAM_18K>
 <DSP48E>126</DSP48E>
-<FF>36586</FF>
-<LUT>26077</LUT>
+<FF>36581</FF>
+<LUT>26021</LUT>
 </Resources>
 </AreaEstimates>
 <InterfaceSummary>

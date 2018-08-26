@@ -1,4 +1,0 @@
-iiccomm3_mux_42_3bkb
-iiccomm3_AXILiteS_s_axi
-iiccomm3_iic_m_axi
-iiccomm3

@@ -246,11 +246,12 @@ set RtlHierarchyInfo {[
 			{"Name" : "basepoint0", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "basepoint9", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "count", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "basepointData", "Type" : "Memory", "Direction" : "IO"},
 			{"Name" : "basepointSum", "Type" : "OVld", "Direction" : "IO"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_AXILiteS_s_axi_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_iic_m_axi_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sensorData_U", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.basepointData_U", "Parent" : "0"},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.basepointData_U", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_AXILiteS_s_axi_U", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_iic_m_axi_U", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sensorData_U", "Parent" : "0"},
 	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_dddEe_U1", "Parent" : "0"},
 	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_uieOg_U2", "Parent" : "0"},
 	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_mufYi_U3", "Parent" : "0"},
@@ -277,32 +278,33 @@ set RtlHierarchyInfo {[
 
 set ArgLastReadFirstWriteLatency {
 	iiccomm2update {
-		iic {Type IO LastRead 92 FirstWrite 10}
-		empty_pirq_outValue {Type O LastRead -1 FirstWrite 10}
-		full_pirq_outValue {Type O LastRead -1 FirstWrite 24}
-		ctrl_reg_outValue {Type O LastRead -1 FirstWrite 40}
-		stat_reg_outValue1 {Type O LastRead -1 FirstWrite 40}
-		stat_reg_val2 {Type O LastRead -1 FirstWrite 76}
-		pressure_msb {Type O LastRead -1 FirstWrite 80}
-		pressure_lsb {Type O LastRead -1 FirstWrite 80}
-		pressure_xlsb {Type O LastRead -1 FirstWrite 80}
-		temp_msb {Type O LastRead -1 FirstWrite 80}
-		temp_lsb {Type O LastRead -1 FirstWrite 80}
-		temp_xlsb {Type O LastRead -1 FirstWrite 80}
-		press_raw {Type O LastRead -1 FirstWrite 80}
-		temp_raw {Type O LastRead -1 FirstWrite 80}
-		operation {Type O LastRead -1 FirstWrite 76}
-		press_cal {Type O LastRead -1 FirstWrite 298}
-		press_act {Type O LastRead -1 FirstWrite 298}
-		basepoint {Type IO LastRead 309 FirstWrite 308}
-		flag {Type O LastRead -1 FirstWrite 309}
-		pressure_diff {Type O LastRead -1 FirstWrite 311}
-		flag2 {Type O LastRead -1 FirstWrite 300}
-		flag3 {Type O LastRead -1 FirstWrite 304}
-		basepointVal {Type O LastRead -1 FirstWrite 300}
-		basepoint0 {Type O LastRead -1 FirstWrite 301}
-		basepoint9 {Type O LastRead -1 FirstWrite 301}
+		iic {Type IO LastRead 91 FirstWrite 9}
+		empty_pirq_outValue {Type O LastRead -1 FirstWrite 9}
+		full_pirq_outValue {Type O LastRead -1 FirstWrite 23}
+		ctrl_reg_outValue {Type O LastRead -1 FirstWrite 39}
+		stat_reg_outValue1 {Type O LastRead -1 FirstWrite 39}
+		stat_reg_val2 {Type O LastRead -1 FirstWrite 75}
+		pressure_msb {Type O LastRead -1 FirstWrite 79}
+		pressure_lsb {Type O LastRead -1 FirstWrite 79}
+		pressure_xlsb {Type O LastRead -1 FirstWrite 79}
+		temp_msb {Type O LastRead -1 FirstWrite 79}
+		temp_lsb {Type O LastRead -1 FirstWrite 79}
+		temp_xlsb {Type O LastRead -1 FirstWrite 79}
+		press_raw {Type O LastRead -1 FirstWrite 79}
+		temp_raw {Type O LastRead -1 FirstWrite 79}
+		operation {Type O LastRead -1 FirstWrite 75}
+		press_cal {Type O LastRead -1 FirstWrite 297}
+		press_act {Type O LastRead -1 FirstWrite 297}
+		basepoint {Type IO LastRead 308 FirstWrite 307}
+		flag {Type O LastRead -1 FirstWrite 308}
+		pressure_diff {Type O LastRead -1 FirstWrite 310}
+		flag2 {Type O LastRead -1 FirstWrite 299}
+		flag3 {Type O LastRead -1 FirstWrite 303}
+		basepointVal {Type O LastRead -1 FirstWrite 299}
+		basepoint0 {Type O LastRead -1 FirstWrite 300}
+		basepoint9 {Type O LastRead -1 FirstWrite 300}
 		count {Type IO LastRead -1 FirstWrite -1}
+		basepointData {Type IO LastRead -1 FirstWrite -1}
 		basepointSum {Type IO LastRead -1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0

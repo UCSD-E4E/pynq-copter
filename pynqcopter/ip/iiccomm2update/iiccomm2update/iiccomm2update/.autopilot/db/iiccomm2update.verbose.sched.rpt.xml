@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'iiccomm2update'" level="0">
-<item name = "Date">Sat Aug 25 20:02:40 2018
+<item name = "Date">Sat Aug 25 21:41:21 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">iiccomm2update</item>
@@ -36,12 +36,11 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- memset_sensorData">5, 5, 1, -, -, 6, no</column>
-<column name="- memset_basepointData">9, 9, 1, -, -, 10, no</column>
-<column name="- Loop 3">2500000, 2500000, 1, -, -, 2500000, no</column>
-<column name="- Loop 4">500000, 500000, 1, -, -, 500000, no</column>
-<column name="- Loop 5">?, ?, 500017, -, -, ?, no</column>
-<column name=" + Loop 5.1">500000, 500000, 1, -, -, 500000, no</column>
-<column name="- Loop 6">30, 30, 3, -, -, 10, no</column>
+<column name="- Loop 2">2500000, 2500000, 1, -, -, 2500000, no</column>
+<column name="- Loop 3">500000, 500000, 1, -, -, 500000, no</column>
+<column name="- Loop 4">?, ?, 500017, -, -, ?, no</column>
+<column name=" + Loop 4.1">500000, 500000, 1, -, -, 500000, no</column>
+<column name="- Loop 5">30, 30, 3, -, -, 10, no</column>
 </table>
 </item>
 </section>

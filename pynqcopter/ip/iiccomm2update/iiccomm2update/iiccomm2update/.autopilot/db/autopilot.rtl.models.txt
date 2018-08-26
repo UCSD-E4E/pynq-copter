@@ -20,8 +20,8 @@ iiccomm2update_muvdy
 iiccomm2update_lswdI
 iiccomm2update_shxdS
 iiccomm2update_muyd2
-iiccomm2update_sebkb
-iiccomm2update_bacud
+iiccomm2update_babkb
+iiccomm2update_secud
 iiccomm2update_AXILiteS_s_axi
 iiccomm2update_iic_m_axi
 iiccomm2update
