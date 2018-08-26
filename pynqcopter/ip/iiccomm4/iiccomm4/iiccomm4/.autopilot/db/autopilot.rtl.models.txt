@@ -1,4 +1,0 @@
-iiccomm4_sensorData
-iiccomm4_AXILiteS_s_axi
-iiccomm4_iic_m_axi
-iiccomm4

@@ -241,7 +241,7 @@ set Pointer19 "2"
 set Reference19 "1"
 set Dims19 [list 0]
 set Interface19 "wire"
-set DataType19 "unsigned int"
+set DataType19 "int"
 set Port19 [list $PortName19 $Interface19 $DataType19 $Pointer19 $Dims19 $Const19 $Volatile19 $ArrayOpt19]
 lappend PortList $Port19
 set globalAPint "" 

@@ -33235,7 +33235,7 @@ void iiccomm2(volatile uint32_t iic[4096],
  uint32_t& temp_msb, uint32_t& temp_lsb, uint32_t& temp_xlsb,
  uint32_t& press_raw, uint32_t& temp_raw,
  uint32_t& operation, uint32_t& press_cal, uint32_t& press_act,
- uint32_t basepoint, int& flag, uint32_t& pressure_diff)
+ uint32_t basepoint, int& flag, int32_t& pressure_diff)
 {_ssdm_SpecArrayDimSize(iic,4096);
 #pragma HLS INTERFACE s_axilite port=return
 
@@ -33316,12 +33316,12 @@ void iiccomm2(volatile uint32_t iic[4096],
 
  iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
  iic[(0x40001000/4)+(0x108/4)] = 0xF4;
- iic[(0x40001000/4)+(0x108/4)] = 0x27;
+ iic[(0x40001000/4)+(0x108/4)] = 0x2F;
 
 
  iic[(0x40001000/4)+(0x108/4)] = 0x1EC;
  iic[(0x40001000/4)+(0x108/4)] = 0xF5;
- iic[(0x40001000/4)+(0x108/4)] = 0x40;
+ iic[(0x40001000/4)+(0x108/4)] = 0x10;
 
  delay_until_ms<50>();
 

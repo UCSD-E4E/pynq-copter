@@ -70,13 +70,23 @@ module iiccomm2update_AXILiteS_s_axi
     input  wire                          press_cal_ap_vld,
     input  wire [31:0]                   press_act,
     input  wire                          press_act_ap_vld,
-    output wire [31:0]                   basepoint,
+    output wire [31:0]                   basepoint_i,
+    input  wire [31:0]                   basepoint_o,
+    input  wire                          basepoint_o_ap_vld,
     input  wire [31:0]                   flag,
     input  wire                          flag_ap_vld,
     input  wire [31:0]                   pressure_diff,
     input  wire                          pressure_diff_ap_vld,
     input  wire [31:0]                   flag2,
-    input  wire                          flag2_ap_vld
+    input  wire                          flag2_ap_vld,
+    input  wire [31:0]                   flag3,
+    input  wire                          flag3_ap_vld,
+    input  wire [31:0]                   basepointVal,
+    input  wire                          basepointVal_ap_vld,
+    input  wire [31:0]                   basepoint0,
+    input  wire                          basepoint0_ap_vld,
+    input  wire [31:0]                   basepoint9,
+    input  wire                          basepoint9_ap_vld
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -177,23 +187,48 @@ module iiccomm2update_AXILiteS_s_axi
 // 0x8c : Control signal of press_act
 //        bit 0  - press_act_ap_vld (Read/COR)
 //        others - reserved
-// 0x90 : Data signal of basepoint
-//        bit 31~0 - basepoint[31:0] (Read/Write)
+// 0x90 : Data signal of basepoint_i
+//        bit 31~0 - basepoint_i[31:0] (Read/Write)
 // 0x94 : reserved
-// 0x98 : Data signal of flag
+// 0x98 : Data signal of basepoint_o
+//        bit 31~0 - basepoint_o[31:0] (Read)
+// 0x9c : Control signal of basepoint_o
+//        bit 0  - basepoint_o_ap_vld (Read/COR)
+//        others - reserved
+// 0xa0 : Data signal of flag
 //        bit 31~0 - flag[31:0] (Read)
-// 0x9c : Control signal of flag
+// 0xa4 : Control signal of flag
 //        bit 0  - flag_ap_vld (Read/COR)
 //        others - reserved
-// 0xa0 : Data signal of pressure_diff
+// 0xa8 : Data signal of pressure_diff
 //        bit 31~0 - pressure_diff[31:0] (Read)
-// 0xa4 : Control signal of pressure_diff
+// 0xac : Control signal of pressure_diff
 //        bit 0  - pressure_diff_ap_vld (Read/COR)
 //        others - reserved
-// 0xa8 : Data signal of flag2
+// 0xb0 : Data signal of flag2
 //        bit 31~0 - flag2[31:0] (Read)
-// 0xac : Control signal of flag2
+// 0xb4 : Control signal of flag2
 //        bit 0  - flag2_ap_vld (Read/COR)
+//        others - reserved
+// 0xb8 : Data signal of flag3
+//        bit 31~0 - flag3[31:0] (Read)
+// 0xbc : Control signal of flag3
+//        bit 0  - flag3_ap_vld (Read/COR)
+//        others - reserved
+// 0xc0 : Data signal of basepointVal
+//        bit 31~0 - basepointVal[31:0] (Read)
+// 0xc4 : Control signal of basepointVal
+//        bit 0  - basepointVal_ap_vld (Read/COR)
+//        others - reserved
+// 0xc8 : Data signal of basepoint0
+//        bit 31~0 - basepoint0[31:0] (Read)
+// 0xcc : Control signal of basepoint0
+//        bit 0  - basepoint0_ap_vld (Read/COR)
+//        others - reserved
+// 0xd0 : Data signal of basepoint9
+//        bit 31~0 - basepoint9[31:0] (Read)
+// 0xd4 : Control signal of basepoint9
+//        bit 0  - basepoint9_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -235,14 +270,24 @@ localparam
     ADDR_PRESS_CAL_CTRL             = 8'h84,
     ADDR_PRESS_ACT_DATA_0           = 8'h88,
     ADDR_PRESS_ACT_CTRL             = 8'h8c,
-    ADDR_BASEPOINT_DATA_0           = 8'h90,
-    ADDR_BASEPOINT_CTRL             = 8'h94,
-    ADDR_FLAG_DATA_0                = 8'h98,
-    ADDR_FLAG_CTRL                  = 8'h9c,
-    ADDR_PRESSURE_DIFF_DATA_0       = 8'ha0,
-    ADDR_PRESSURE_DIFF_CTRL         = 8'ha4,
-    ADDR_FLAG2_DATA_0               = 8'ha8,
-    ADDR_FLAG2_CTRL                 = 8'hac,
+    ADDR_BASEPOINT_I_DATA_0         = 8'h90,
+    ADDR_BASEPOINT_I_CTRL           = 8'h94,
+    ADDR_BASEPOINT_O_DATA_0         = 8'h98,
+    ADDR_BASEPOINT_O_CTRL           = 8'h9c,
+    ADDR_FLAG_DATA_0                = 8'ha0,
+    ADDR_FLAG_CTRL                  = 8'ha4,
+    ADDR_PRESSURE_DIFF_DATA_0       = 8'ha8,
+    ADDR_PRESSURE_DIFF_CTRL         = 8'hac,
+    ADDR_FLAG2_DATA_0               = 8'hb0,
+    ADDR_FLAG2_CTRL                 = 8'hb4,
+    ADDR_FLAG3_DATA_0               = 8'hb8,
+    ADDR_FLAG3_CTRL                 = 8'hbc,
+    ADDR_BASEPOINTVAL_DATA_0        = 8'hc0,
+    ADDR_BASEPOINTVAL_CTRL          = 8'hc4,
+    ADDR_BASEPOINT0_DATA_0          = 8'hc8,
+    ADDR_BASEPOINT0_CTRL            = 8'hcc,
+    ADDR_BASEPOINT9_DATA_0          = 8'hd0,
+    ADDR_BASEPOINT9_CTRL            = 8'hd4,
     WRIDLE                          = 2'd0,
     WRDATA                          = 2'd1,
     WRRESP                          = 2'd2,
@@ -305,13 +350,23 @@ localparam
     reg                           int_press_cal_ap_vld;
     reg  [31:0]                   int_press_act = 'b0;
     reg                           int_press_act_ap_vld;
-    reg  [31:0]                   int_basepoint = 'b0;
+    reg  [31:0]                   int_basepoint_i = 'b0;
+    reg  [31:0]                   int_basepoint_o = 'b0;
+    reg                           int_basepoint_o_ap_vld;
     reg  [31:0]                   int_flag = 'b0;
     reg                           int_flag_ap_vld;
     reg  [31:0]                   int_pressure_diff = 'b0;
     reg                           int_pressure_diff_ap_vld;
     reg  [31:0]                   int_flag2 = 'b0;
     reg                           int_flag2_ap_vld;
+    reg  [31:0]                   int_flag3 = 'b0;
+    reg                           int_flag3_ap_vld;
+    reg  [31:0]                   int_basepointVal = 'b0;
+    reg                           int_basepointVal_ap_vld;
+    reg  [31:0]                   int_basepoint0 = 'b0;
+    reg                           int_basepoint0_ap_vld;
+    reg  [31:0]                   int_basepoint9 = 'b0;
+    reg                           int_basepoint9_ap_vld;
 
 //------------------------Instantiation------------------
 
@@ -515,8 +570,14 @@ always @(posedge ACLK) begin
                 ADDR_PRESS_ACT_CTRL: begin
                     rdata[0] <= int_press_act_ap_vld;
                 end
-                ADDR_BASEPOINT_DATA_0: begin
-                    rdata <= int_basepoint[31:0];
+                ADDR_BASEPOINT_I_DATA_0: begin
+                    rdata <= int_basepoint_i[31:0];
+                end
+                ADDR_BASEPOINT_O_DATA_0: begin
+                    rdata <= int_basepoint_o[31:0];
+                end
+                ADDR_BASEPOINT_O_CTRL: begin
+                    rdata[0] <= int_basepoint_o_ap_vld;
                 end
                 ADDR_FLAG_DATA_0: begin
                     rdata <= int_flag[31:0];
@@ -536,6 +597,30 @@ always @(posedge ACLK) begin
                 ADDR_FLAG2_CTRL: begin
                     rdata[0] <= int_flag2_ap_vld;
                 end
+                ADDR_FLAG3_DATA_0: begin
+                    rdata <= int_flag3[31:0];
+                end
+                ADDR_FLAG3_CTRL: begin
+                    rdata[0] <= int_flag3_ap_vld;
+                end
+                ADDR_BASEPOINTVAL_DATA_0: begin
+                    rdata <= int_basepointVal[31:0];
+                end
+                ADDR_BASEPOINTVAL_CTRL: begin
+                    rdata[0] <= int_basepointVal_ap_vld;
+                end
+                ADDR_BASEPOINT0_DATA_0: begin
+                    rdata <= int_basepoint0[31:0];
+                end
+                ADDR_BASEPOINT0_CTRL: begin
+                    rdata[0] <= int_basepoint0_ap_vld;
+                end
+                ADDR_BASEPOINT9_DATA_0: begin
+                    rdata <= int_basepoint9[31:0];
+                end
+                ADDR_BASEPOINT9_CTRL: begin
+                    rdata[0] <= int_basepoint9_ap_vld;
+                end
             endcase
         end
     end
@@ -543,9 +628,9 @@ end
 
 
 //------------------------Register logic-----------------
-assign interrupt = int_gie & (|int_isr);
-assign ap_start  = int_ap_start;
-assign basepoint = int_basepoint;
+assign interrupt   = int_gie & (|int_isr);
+assign ap_start    = int_ap_start;
+assign basepoint_i = int_basepoint_i;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -994,13 +1079,35 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_basepoint[31:0]
+// int_basepoint_i[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_basepoint[31:0] <= 0;
+        int_basepoint_i[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_BASEPOINT_DATA_0)
-            int_basepoint[31:0] <= (WDATA[31:0] & wmask) | (int_basepoint[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_BASEPOINT_I_DATA_0)
+            int_basepoint_i[31:0] <= (WDATA[31:0] & wmask) | (int_basepoint_i[31:0] & ~wmask);
+    end
+end
+
+// int_basepoint_o
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_basepoint_o <= 0;
+    else if (ACLK_EN) begin
+        if (basepoint_o_ap_vld)
+            int_basepoint_o <= basepoint_o;
+    end
+end
+
+// int_basepoint_o_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_basepoint_o_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (basepoint_o_ap_vld)
+            int_basepoint_o_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_BASEPOINT_O_CTRL)
+            int_basepoint_o_ap_vld <= 1'b0; // clear on read
     end
 end
 
@@ -1067,6 +1174,94 @@ always @(posedge ACLK) begin
             int_flag2_ap_vld <= 1'b1;
         else if (ar_hs && raddr == ADDR_FLAG2_CTRL)
             int_flag2_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_flag3
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_flag3 <= 0;
+    else if (ACLK_EN) begin
+        if (flag3_ap_vld)
+            int_flag3 <= flag3;
+    end
+end
+
+// int_flag3_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_flag3_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (flag3_ap_vld)
+            int_flag3_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_FLAG3_CTRL)
+            int_flag3_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_basepointVal
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_basepointVal <= 0;
+    else if (ACLK_EN) begin
+        if (basepointVal_ap_vld)
+            int_basepointVal <= basepointVal;
+    end
+end
+
+// int_basepointVal_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_basepointVal_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (basepointVal_ap_vld)
+            int_basepointVal_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_BASEPOINTVAL_CTRL)
+            int_basepointVal_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_basepoint0
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_basepoint0 <= 0;
+    else if (ACLK_EN) begin
+        if (basepoint0_ap_vld)
+            int_basepoint0 <= basepoint0;
+    end
+end
+
+// int_basepoint0_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_basepoint0_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (basepoint0_ap_vld)
+            int_basepoint0_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_BASEPOINT0_CTRL)
+            int_basepoint0_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_basepoint9
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_basepoint9 <= 0;
+    else if (ACLK_EN) begin
+        if (basepoint9_ap_vld)
+            int_basepoint9 <= basepoint9;
+    end
+end
+
+// int_basepoint9_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_basepoint9_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (basepoint9_ap_vld)
+            int_basepoint9_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_BASEPOINT9_CTRL)
+            int_basepoint9_ap_vld <= 1'b0; // clear on read
     end
 end
 

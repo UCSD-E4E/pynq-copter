@@ -1,15 +1,7 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch CLANG as the compiler.
-make[1]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/normalizer/normalizer/normalizer/csim/build'
-   Compiling ../../../../normalizer.cpp in debug mode
-csim.mk:85: recipe for target 'obj/normalizer.o' failed
-make[1]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/normalizer/normalizer/normalizer/csim/build'
-awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
-In file included from ../../../../normalizer.cpp:41:
-../../../../normalizer.hpp:41:10: fatal error: '../common/pynqCopterIp.hpp' file not found
-#include "../common/pynqCopterIp.hpp"
-         ^
-1 error generated.
-make[1]: *** [obj/normalizer.o] Error 1
-CRITICAL WARNING: [SIM 100] 'csim_design' failed: compilation error(s).
+make[2]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/normalizer/normalizer/normalizer/csim/build'
+make[2]: 'csim.exe' is up to date.
+make[2]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/normalizer/normalizer/normalizer/csim/build'
+INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

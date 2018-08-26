@@ -46,7 +46,7 @@ void iiccomm2(volatile uint32_t iic[4096],
 	uint32_t& temp_msb, uint32_t& temp_lsb, uint32_t& temp_xlsb,
 	uint32_t& press_raw, uint32_t& temp_raw, 
 	uint32_t& operation, uint32_t& press_cal, uint32_t& press_act, 
-	uint32_t basepoint, int& flag, uint32_t& pressure_diff)
+	uint32_t basepoint, int& flag, int32_t& pressure_diff)
 {
     #pragma HLS INTERFACE s_axilite port=return
 	
@@ -123,16 +123,16 @@ void iiccomm2(volatile uint32_t iic[4096],
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF2;
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x00; 
-
+//GAME CONTROL SETTINGS
 	//ENABLE PRESSURE MEASUREMENT, SKIP TEMPERATURE
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF4; 
-	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x27; 
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x2F; //pressure x4, temperature x1;  
 
 	//CONFIGURE REGISTER SETTINGS: time sampling, time constant IIR Filter
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x1EC;
 	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0xF5; 
-	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x40; //time standby 125 ms
+	iic[IIC_INDEX+IIC_TX_FIFO_OFF] = 0x10; //time standby 0.5 ms
 
 	delay_until_ms<50>();
 

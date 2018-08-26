@@ -396,21 +396,41 @@ u32 XIiccomm2update_Get_press_act_vld(XIiccomm2update *InstancePtr) {
     return Data & 0x1;
 }
 
-void XIiccomm2update_Set_basepoint(XIiccomm2update *InstancePtr, u32 Data) {
+void XIiccomm2update_Set_basepoint_i(XIiccomm2update *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XIiccomm2update_WriteReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT_DATA, Data);
+    XIiccomm2update_WriteReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT_I_DATA, Data);
 }
 
-u32 XIiccomm2update_Get_basepoint(XIiccomm2update *InstancePtr) {
+u32 XIiccomm2update_Get_basepoint_i(XIiccomm2update *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT_DATA);
+    Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT_I_DATA);
     return Data;
+}
+
+u32 XIiccomm2update_Get_basepoint_o(XIiccomm2update *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT_O_DATA);
+    return Data;
+}
+
+u32 XIiccomm2update_Get_basepoint_o_vld(XIiccomm2update *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT_O_CTRL);
+    return Data & 0x1;
 }
 
 u32 XIiccomm2update_Get_flag(XIiccomm2update *InstancePtr) {
@@ -470,6 +490,86 @@ u32 XIiccomm2update_Get_flag2_vld(XIiccomm2update *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_FLAG2_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2update_Get_flag3(XIiccomm2update *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_FLAG3_DATA);
+    return Data;
+}
+
+u32 XIiccomm2update_Get_flag3_vld(XIiccomm2update *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_FLAG3_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2update_Get_basepointVal(XIiccomm2update *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINTVAL_DATA);
+    return Data;
+}
+
+u32 XIiccomm2update_Get_basepointVal_vld(XIiccomm2update *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINTVAL_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2update_Get_basepoint0(XIiccomm2update *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT0_DATA);
+    return Data;
+}
+
+u32 XIiccomm2update_Get_basepoint0_vld(XIiccomm2update *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT0_CTRL);
+    return Data & 0x1;
+}
+
+u32 XIiccomm2update_Get_basepoint9(XIiccomm2update *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT9_DATA);
+    return Data;
+}
+
+u32 XIiccomm2update_Get_basepoint9_vld(XIiccomm2update *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIiccomm2update_ReadReg(InstancePtr->Axilites_BaseAddress, XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT9_CTRL);
     return Data & 0x1;
 }
 

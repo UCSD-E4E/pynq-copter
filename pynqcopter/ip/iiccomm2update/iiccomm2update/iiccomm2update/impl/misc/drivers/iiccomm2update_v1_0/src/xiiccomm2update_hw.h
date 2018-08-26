@@ -104,23 +104,48 @@
 // 0x8c : Control signal of press_act
 //        bit 0  - press_act_ap_vld (Read/COR)
 //        others - reserved
-// 0x90 : Data signal of basepoint
-//        bit 31~0 - basepoint[31:0] (Read/Write)
+// 0x90 : Data signal of basepoint_i
+//        bit 31~0 - basepoint_i[31:0] (Read/Write)
 // 0x94 : reserved
-// 0x98 : Data signal of flag
+// 0x98 : Data signal of basepoint_o
+//        bit 31~0 - basepoint_o[31:0] (Read)
+// 0x9c : Control signal of basepoint_o
+//        bit 0  - basepoint_o_ap_vld (Read/COR)
+//        others - reserved
+// 0xa0 : Data signal of flag
 //        bit 31~0 - flag[31:0] (Read)
-// 0x9c : Control signal of flag
+// 0xa4 : Control signal of flag
 //        bit 0  - flag_ap_vld (Read/COR)
 //        others - reserved
-// 0xa0 : Data signal of pressure_diff
+// 0xa8 : Data signal of pressure_diff
 //        bit 31~0 - pressure_diff[31:0] (Read)
-// 0xa4 : Control signal of pressure_diff
+// 0xac : Control signal of pressure_diff
 //        bit 0  - pressure_diff_ap_vld (Read/COR)
 //        others - reserved
-// 0xa8 : Data signal of flag2
+// 0xb0 : Data signal of flag2
 //        bit 31~0 - flag2[31:0] (Read)
-// 0xac : Control signal of flag2
+// 0xb4 : Control signal of flag2
 //        bit 0  - flag2_ap_vld (Read/COR)
+//        others - reserved
+// 0xb8 : Data signal of flag3
+//        bit 31~0 - flag3[31:0] (Read)
+// 0xbc : Control signal of flag3
+//        bit 0  - flag3_ap_vld (Read/COR)
+//        others - reserved
+// 0xc0 : Data signal of basepointVal
+//        bit 31~0 - basepointVal[31:0] (Read)
+// 0xc4 : Control signal of basepointVal
+//        bit 0  - basepointVal_ap_vld (Read/COR)
+//        others - reserved
+// 0xc8 : Data signal of basepoint0
+//        bit 31~0 - basepoint0[31:0] (Read)
+// 0xcc : Control signal of basepoint0
+//        bit 0  - basepoint0_ap_vld (Read/COR)
+//        others - reserved
+// 0xd0 : Data signal of basepoint9
+//        bit 31~0 - basepoint9[31:0] (Read)
+// 0xd4 : Control signal of basepoint9
+//        bit 0  - basepoint9_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -176,15 +201,30 @@
 #define XIICCOMM2UPDATE_AXILITES_ADDR_PRESS_ACT_DATA           0x88
 #define XIICCOMM2UPDATE_AXILITES_BITS_PRESS_ACT_DATA           32
 #define XIICCOMM2UPDATE_AXILITES_ADDR_PRESS_ACT_CTRL           0x8c
-#define XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT_DATA           0x90
-#define XIICCOMM2UPDATE_AXILITES_BITS_BASEPOINT_DATA           32
-#define XIICCOMM2UPDATE_AXILITES_ADDR_FLAG_DATA                0x98
+#define XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT_I_DATA         0x90
+#define XIICCOMM2UPDATE_AXILITES_BITS_BASEPOINT_I_DATA         32
+#define XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT_O_DATA         0x98
+#define XIICCOMM2UPDATE_AXILITES_BITS_BASEPOINT_O_DATA         32
+#define XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT_O_CTRL         0x9c
+#define XIICCOMM2UPDATE_AXILITES_ADDR_FLAG_DATA                0xa0
 #define XIICCOMM2UPDATE_AXILITES_BITS_FLAG_DATA                32
-#define XIICCOMM2UPDATE_AXILITES_ADDR_FLAG_CTRL                0x9c
-#define XIICCOMM2UPDATE_AXILITES_ADDR_PRESSURE_DIFF_DATA       0xa0
+#define XIICCOMM2UPDATE_AXILITES_ADDR_FLAG_CTRL                0xa4
+#define XIICCOMM2UPDATE_AXILITES_ADDR_PRESSURE_DIFF_DATA       0xa8
 #define XIICCOMM2UPDATE_AXILITES_BITS_PRESSURE_DIFF_DATA       32
-#define XIICCOMM2UPDATE_AXILITES_ADDR_PRESSURE_DIFF_CTRL       0xa4
-#define XIICCOMM2UPDATE_AXILITES_ADDR_FLAG2_DATA               0xa8
+#define XIICCOMM2UPDATE_AXILITES_ADDR_PRESSURE_DIFF_CTRL       0xac
+#define XIICCOMM2UPDATE_AXILITES_ADDR_FLAG2_DATA               0xb0
 #define XIICCOMM2UPDATE_AXILITES_BITS_FLAG2_DATA               32
-#define XIICCOMM2UPDATE_AXILITES_ADDR_FLAG2_CTRL               0xac
+#define XIICCOMM2UPDATE_AXILITES_ADDR_FLAG2_CTRL               0xb4
+#define XIICCOMM2UPDATE_AXILITES_ADDR_FLAG3_DATA               0xb8
+#define XIICCOMM2UPDATE_AXILITES_BITS_FLAG3_DATA               32
+#define XIICCOMM2UPDATE_AXILITES_ADDR_FLAG3_CTRL               0xbc
+#define XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINTVAL_DATA        0xc0
+#define XIICCOMM2UPDATE_AXILITES_BITS_BASEPOINTVAL_DATA        32
+#define XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINTVAL_CTRL        0xc4
+#define XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT0_DATA          0xc8
+#define XIICCOMM2UPDATE_AXILITES_BITS_BASEPOINT0_DATA          32
+#define XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT0_CTRL          0xcc
+#define XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT9_DATA          0xd0
+#define XIICCOMM2UPDATE_AXILITES_BITS_BASEPOINT9_DATA          32
+#define XIICCOMM2UPDATE_AXILITES_ADDR_BASEPOINT9_CTRL          0xd4
 

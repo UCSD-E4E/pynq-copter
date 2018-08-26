@@ -77,9 +77,9 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>4</BRAM_18K>
-<DSP48E>122</DSP48E>
-<FF>36093</FF>
-<LUT>25676</LUT>
+<DSP48E>126</DSP48E>
+<FF>36586</FF>
+<LUT>26077</LUT>
 </Resources>
 </AreaEstimates>
 <InterfaceSummary>

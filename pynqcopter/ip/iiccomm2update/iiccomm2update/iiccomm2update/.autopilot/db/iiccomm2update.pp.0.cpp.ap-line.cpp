@@ -33215,7 +33215,8 @@ void iiccomm2update(volatile uint32_t iic[4096],
  uint32_t& temp_msb, uint32_t& temp_lsb, uint32_t& temp_xlsb,
  uint32_t& press_raw, uint32_t& temp_raw,
  uint32_t& operation, uint32_t& press_cal, uint32_t& press_act,
- uint32_t basepoint, int& flag, uint32_t& pressure_diff, int& flag2)
+ uint32_t& basepoint, int& flag, int32_t& pressure_diff, int& flag2, int& flag3,
+ uint32_t& basepointVal, uint32_t& basepoint0, uint32_t& basepoint9)
 {
 #pragma HLS INTERFACE s_axilite port=return
 #pragma empty_line
@@ -33241,6 +33242,12 @@ void iiccomm2update(volatile uint32_t iic[4096],
 #pragma HLS INTERFACE s_axilite port=flag
 #pragma HLS INTERFACE s_axilite port=pressure_diff
 #pragma HLS INTERFACE s_axilite port=flag2
+#pragma HLS INTERFACE s_axilite port=flag3
+#pragma empty_line
+#pragma HLS INTERFACE s_axilite port=basepointVal
+#pragma HLS INTERFACE s_axilite port=basepoint0
+#pragma HLS INTERFACE s_axilite port=basepoint9
+#pragma empty_line
 #pragma empty_line
  uint32_t dig_T1 = 28585;
  uint32_t dig_T2 = 26941;
@@ -33261,8 +33268,7 @@ void iiccomm2update(volatile uint32_t iic[4096],
  static uint32_t stat_reg_val1;
  uint32_t sensorData[6] = {};
  uint32_t basepointData[10] = {};
- static uint32_t basepointSum = 0;
- static int count;
+ static uint32_t basepointSum;
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -33395,21 +33401,29 @@ void iiccomm2update(volatile uint32_t iic[4096],
  press_cal = pressure;
  press_act = (double)press_cal / 100.0;
 #pragma empty_line
+ static int count;
+#pragma empty_line
  if(count<10)
  {
   flag2 = 0;
   basepointData[count] = press_act;
   count = count + 1;
+  basepointVal = basepointData[count];
  }
- else if(count == 10)
+#pragma empty_line
+ basepoint0 = basepointData[0];
+ basepoint9 = basepointData[9];
+#pragma empty_line
+ if(count >= 10)
  {
   flag2 = 10;
   for(int i=0; i<10; i++)
   {
-   basepointSum += basepointData[i];
+   flag3 = 5;
+   basepointSum = basepointData[i] + basepointSum;
   }
 #pragma empty_line
-  basepoint = basepointSum;
+  basepoint = basepointSum / 10;
  }
 #pragma empty_line
  if(basepoint == 0)

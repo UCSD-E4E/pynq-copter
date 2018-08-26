@@ -5576,7 +5576,7 @@ meminst:8  br i1 %tmp_1, label %1, label %meminst
 
 <Node id="169" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="4">
 <![CDATA[
-:89  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_41, i32 39, i4 -1)
+:89  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_41, i32 47, i4 -1)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -6035,7 +6035,7 @@ meminst:8  br i1 %tmp_1, label %1, label %meminst
 
 <Node id="187" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="4">
 <![CDATA[
-:107  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_50, i32 64, i4 -1)
+:107  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_50, i32 16, i4 -1)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>

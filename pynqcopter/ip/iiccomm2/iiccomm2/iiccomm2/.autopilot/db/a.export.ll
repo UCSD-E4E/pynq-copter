@@ -193,7 +193,7 @@ meminst:                                          ; preds = %meminst, %0
   %iic_addr_40 = getelementptr i32* %iic, i64 268436546
   %iic_addr_3_req22 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_40, i32 1)
   %iic_addr_41 = getelementptr i32* %iic, i64 268436546
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_41, i32 39, i4 -1)
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_41, i32 47, i4 -1)
   %iic_addr_42 = getelementptr i32* %iic, i64 268436546
   %iic_addr_3_resp23 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_42)
   %iic_addr_43 = getelementptr i32* %iic, i64 268436546
@@ -211,7 +211,7 @@ meminst:                                          ; preds = %meminst, %0
   %iic_addr_49 = getelementptr i32* %iic, i64 268436546
   %iic_addr_3_req28 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_49, i32 1)
   %iic_addr_50 = getelementptr i32* %iic, i64 268436546
-  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_50, i32 64, i4 -1)
+  call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_50, i32 16, i4 -1)
   %iic_addr_51 = getelementptr i32* %iic, i64 268436546
   %iic_addr_3_resp29 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_51)
   %rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([42 x i8]* @delay_until_ms_MD_50) nounwind
@@ -833,7 +833,7 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
 !1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0}
 !2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!3 = metadata !{metadata !"kernel_arg_type", metadata !"uint32_t*", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t", metadata !"int &", metadata !"uint32_t &"}
+!3 = metadata !{metadata !"kernel_arg_type", metadata !"uint32_t*", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t &", metadata !"uint32_t", metadata !"int &", metadata !"int32_t &"}
 !4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"volatile", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
 !5 = metadata !{metadata !"kernel_arg_name", metadata !"iic", metadata !"empty_pirq_outValue", metadata !"full_pirq_outValue", metadata !"ctrl_reg_outValue", metadata !"stat_reg_outValue1", metadata !"stat_reg_val2", metadata !"pressure_msb", metadata !"pressure_lsb", metadata !"pressure_xlsb", metadata !"temp_msb", metadata !"temp_lsb", metadata !"temp_xlsb", metadata !"press_raw", metadata !"temp_raw", metadata !"operation", metadata !"press_cal", metadata !"press_act", metadata !"basepoint", metadata !"flag", metadata !"pressure_diff"}
 !6 = metadata !{metadata !"reqd_work_group_size", i32 1, i32 1, i32 1}
@@ -950,4 +950,4 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !117 = metadata !{metadata !118}
 !118 = metadata !{i32 0, i32 31, metadata !119}
 !119 = metadata !{metadata !120}
-!120 = metadata !{metadata !"pressure_diff", metadata !35, metadata !"unsigned int", i32 0, i32 31}
+!120 = metadata !{metadata !"pressure_diff", metadata !35, metadata !"int", i32 0, i32 31}

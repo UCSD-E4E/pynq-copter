@@ -19,6 +19,7 @@ iiccomm2update_muudo
 iiccomm2update_muvdy
 iiccomm2update_lswdI
 iiccomm2update_shxdS
+iiccomm2update_muyd2
 iiccomm2update_sebkb
 iiccomm2update_bacud
 iiccomm2update_AXILiteS_s_axi

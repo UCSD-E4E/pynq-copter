@@ -73,13 +73,23 @@ port (
     press_cal_ap_vld      :in   STD_LOGIC;
     press_act             :in   STD_LOGIC_VECTOR(31 downto 0);
     press_act_ap_vld      :in   STD_LOGIC;
-    basepoint             :out  STD_LOGIC_VECTOR(31 downto 0);
+    basepoint_i           :out  STD_LOGIC_VECTOR(31 downto 0);
+    basepoint_o           :in   STD_LOGIC_VECTOR(31 downto 0);
+    basepoint_o_ap_vld    :in   STD_LOGIC;
     flag                  :in   STD_LOGIC_VECTOR(31 downto 0);
     flag_ap_vld           :in   STD_LOGIC;
     pressure_diff         :in   STD_LOGIC_VECTOR(31 downto 0);
     pressure_diff_ap_vld  :in   STD_LOGIC;
     flag2                 :in   STD_LOGIC_VECTOR(31 downto 0);
-    flag2_ap_vld          :in   STD_LOGIC
+    flag2_ap_vld          :in   STD_LOGIC;
+    flag3                 :in   STD_LOGIC_VECTOR(31 downto 0);
+    flag3_ap_vld          :in   STD_LOGIC;
+    basepointVal          :in   STD_LOGIC_VECTOR(31 downto 0);
+    basepointVal_ap_vld   :in   STD_LOGIC;
+    basepoint0            :in   STD_LOGIC_VECTOR(31 downto 0);
+    basepoint0_ap_vld     :in   STD_LOGIC;
+    basepoint9            :in   STD_LOGIC_VECTOR(31 downto 0);
+    basepoint9_ap_vld     :in   STD_LOGIC
 );
 end entity iiccomm2update_AXILiteS_s_axi;
 
@@ -182,23 +192,48 @@ end entity iiccomm2update_AXILiteS_s_axi;
 -- 0x8c : Control signal of press_act
 --        bit 0  - press_act_ap_vld (Read/COR)
 --        others - reserved
--- 0x90 : Data signal of basepoint
---        bit 31~0 - basepoint[31:0] (Read/Write)
+-- 0x90 : Data signal of basepoint_i
+--        bit 31~0 - basepoint_i[31:0] (Read/Write)
 -- 0x94 : reserved
--- 0x98 : Data signal of flag
+-- 0x98 : Data signal of basepoint_o
+--        bit 31~0 - basepoint_o[31:0] (Read)
+-- 0x9c : Control signal of basepoint_o
+--        bit 0  - basepoint_o_ap_vld (Read/COR)
+--        others - reserved
+-- 0xa0 : Data signal of flag
 --        bit 31~0 - flag[31:0] (Read)
--- 0x9c : Control signal of flag
+-- 0xa4 : Control signal of flag
 --        bit 0  - flag_ap_vld (Read/COR)
 --        others - reserved
--- 0xa0 : Data signal of pressure_diff
+-- 0xa8 : Data signal of pressure_diff
 --        bit 31~0 - pressure_diff[31:0] (Read)
--- 0xa4 : Control signal of pressure_diff
+-- 0xac : Control signal of pressure_diff
 --        bit 0  - pressure_diff_ap_vld (Read/COR)
 --        others - reserved
--- 0xa8 : Data signal of flag2
+-- 0xb0 : Data signal of flag2
 --        bit 31~0 - flag2[31:0] (Read)
--- 0xac : Control signal of flag2
+-- 0xb4 : Control signal of flag2
 --        bit 0  - flag2_ap_vld (Read/COR)
+--        others - reserved
+-- 0xb8 : Data signal of flag3
+--        bit 31~0 - flag3[31:0] (Read)
+-- 0xbc : Control signal of flag3
+--        bit 0  - flag3_ap_vld (Read/COR)
+--        others - reserved
+-- 0xc0 : Data signal of basepointVal
+--        bit 31~0 - basepointVal[31:0] (Read)
+-- 0xc4 : Control signal of basepointVal
+--        bit 0  - basepointVal_ap_vld (Read/COR)
+--        others - reserved
+-- 0xc8 : Data signal of basepoint0
+--        bit 31~0 - basepoint0[31:0] (Read)
+-- 0xcc : Control signal of basepoint0
+--        bit 0  - basepoint0_ap_vld (Read/COR)
+--        others - reserved
+-- 0xd0 : Data signal of basepoint9
+--        bit 31~0 - basepoint9[31:0] (Read)
+-- 0xd4 : Control signal of basepoint9
+--        bit 0  - basepoint9_ap_vld (Read/COR)
 --        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -243,14 +278,24 @@ architecture behave of iiccomm2update_AXILiteS_s_axi is
     constant ADDR_PRESS_CAL_CTRL             : INTEGER := 16#84#;
     constant ADDR_PRESS_ACT_DATA_0           : INTEGER := 16#88#;
     constant ADDR_PRESS_ACT_CTRL             : INTEGER := 16#8c#;
-    constant ADDR_BASEPOINT_DATA_0           : INTEGER := 16#90#;
-    constant ADDR_BASEPOINT_CTRL             : INTEGER := 16#94#;
-    constant ADDR_FLAG_DATA_0                : INTEGER := 16#98#;
-    constant ADDR_FLAG_CTRL                  : INTEGER := 16#9c#;
-    constant ADDR_PRESSURE_DIFF_DATA_0       : INTEGER := 16#a0#;
-    constant ADDR_PRESSURE_DIFF_CTRL         : INTEGER := 16#a4#;
-    constant ADDR_FLAG2_DATA_0               : INTEGER := 16#a8#;
-    constant ADDR_FLAG2_CTRL                 : INTEGER := 16#ac#;
+    constant ADDR_BASEPOINT_I_DATA_0         : INTEGER := 16#90#;
+    constant ADDR_BASEPOINT_I_CTRL           : INTEGER := 16#94#;
+    constant ADDR_BASEPOINT_O_DATA_0         : INTEGER := 16#98#;
+    constant ADDR_BASEPOINT_O_CTRL           : INTEGER := 16#9c#;
+    constant ADDR_FLAG_DATA_0                : INTEGER := 16#a0#;
+    constant ADDR_FLAG_CTRL                  : INTEGER := 16#a4#;
+    constant ADDR_PRESSURE_DIFF_DATA_0       : INTEGER := 16#a8#;
+    constant ADDR_PRESSURE_DIFF_CTRL         : INTEGER := 16#ac#;
+    constant ADDR_FLAG2_DATA_0               : INTEGER := 16#b0#;
+    constant ADDR_FLAG2_CTRL                 : INTEGER := 16#b4#;
+    constant ADDR_FLAG3_DATA_0               : INTEGER := 16#b8#;
+    constant ADDR_FLAG3_CTRL                 : INTEGER := 16#bc#;
+    constant ADDR_BASEPOINTVAL_DATA_0        : INTEGER := 16#c0#;
+    constant ADDR_BASEPOINTVAL_CTRL          : INTEGER := 16#c4#;
+    constant ADDR_BASEPOINT0_DATA_0          : INTEGER := 16#c8#;
+    constant ADDR_BASEPOINT0_CTRL            : INTEGER := 16#cc#;
+    constant ADDR_BASEPOINT9_DATA_0          : INTEGER := 16#d0#;
+    constant ADDR_BASEPOINT9_CTRL            : INTEGER := 16#d4#;
     constant ADDR_BITS         : INTEGER := 8;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -305,13 +350,23 @@ architecture behave of iiccomm2update_AXILiteS_s_axi is
     signal int_press_cal_ap_vld : STD_LOGIC;
     signal int_press_act       : UNSIGNED(31 downto 0) := (others => '0');
     signal int_press_act_ap_vld : STD_LOGIC;
-    signal int_basepoint       : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_basepoint_i     : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_basepoint_o     : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_basepoint_o_ap_vld : STD_LOGIC;
     signal int_flag            : UNSIGNED(31 downto 0) := (others => '0');
     signal int_flag_ap_vld     : STD_LOGIC;
     signal int_pressure_diff   : UNSIGNED(31 downto 0) := (others => '0');
     signal int_pressure_diff_ap_vld : STD_LOGIC;
     signal int_flag2           : UNSIGNED(31 downto 0) := (others => '0');
     signal int_flag2_ap_vld    : STD_LOGIC;
+    signal int_flag3           : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_flag3_ap_vld    : STD_LOGIC;
+    signal int_basepointVal    : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_basepointVal_ap_vld : STD_LOGIC;
+    signal int_basepoint0      : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_basepoint0_ap_vld : STD_LOGIC;
+    signal int_basepoint9      : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_basepoint9_ap_vld : STD_LOGIC;
 
 
 begin
@@ -497,8 +552,12 @@ begin
                         rdata_data <= RESIZE(int_press_act(31 downto 0), 32);
                     when ADDR_PRESS_ACT_CTRL =>
                         rdata_data <= (0 => int_press_act_ap_vld, others => '0');
-                    when ADDR_BASEPOINT_DATA_0 =>
-                        rdata_data <= RESIZE(int_basepoint(31 downto 0), 32);
+                    when ADDR_BASEPOINT_I_DATA_0 =>
+                        rdata_data <= RESIZE(int_basepoint_i(31 downto 0), 32);
+                    when ADDR_BASEPOINT_O_DATA_0 =>
+                        rdata_data <= RESIZE(int_basepoint_o(31 downto 0), 32);
+                    when ADDR_BASEPOINT_O_CTRL =>
+                        rdata_data <= (0 => int_basepoint_o_ap_vld, others => '0');
                     when ADDR_FLAG_DATA_0 =>
                         rdata_data <= RESIZE(int_flag(31 downto 0), 32);
                     when ADDR_FLAG_CTRL =>
@@ -511,6 +570,22 @@ begin
                         rdata_data <= RESIZE(int_flag2(31 downto 0), 32);
                     when ADDR_FLAG2_CTRL =>
                         rdata_data <= (0 => int_flag2_ap_vld, others => '0');
+                    when ADDR_FLAG3_DATA_0 =>
+                        rdata_data <= RESIZE(int_flag3(31 downto 0), 32);
+                    when ADDR_FLAG3_CTRL =>
+                        rdata_data <= (0 => int_flag3_ap_vld, others => '0');
+                    when ADDR_BASEPOINTVAL_DATA_0 =>
+                        rdata_data <= RESIZE(int_basepointVal(31 downto 0), 32);
+                    when ADDR_BASEPOINTVAL_CTRL =>
+                        rdata_data <= (0 => int_basepointVal_ap_vld, others => '0');
+                    when ADDR_BASEPOINT0_DATA_0 =>
+                        rdata_data <= RESIZE(int_basepoint0(31 downto 0), 32);
+                    when ADDR_BASEPOINT0_CTRL =>
+                        rdata_data <= (0 => int_basepoint0_ap_vld, others => '0');
+                    when ADDR_BASEPOINT9_DATA_0 =>
+                        rdata_data <= RESIZE(int_basepoint9(31 downto 0), 32);
+                    when ADDR_BASEPOINT9_CTRL =>
+                        rdata_data <= (0 => int_basepoint9_ap_vld, others => '0');
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -522,7 +597,7 @@ begin
 -- ----------------------- Register logic ----------------
     interrupt            <= int_gie and (int_isr(0) or int_isr(1));
     ap_start             <= int_ap_start;
-    basepoint            <= STD_LOGIC_VECTOR(int_basepoint);
+    basepoint_i          <= STD_LOGIC_VECTOR(int_basepoint_i);
 
     process (ACLK)
     begin
@@ -1101,8 +1176,36 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_BASEPOINT_DATA_0) then
-                    int_basepoint(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_basepoint(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_BASEPOINT_I_DATA_0) then
+                    int_basepoint_i(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_basepoint_i(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_basepoint_o <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (basepoint_o_ap_vld = '1') then
+                    int_basepoint_o <= UNSIGNED(basepoint_o); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_basepoint_o_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (basepoint_o_ap_vld = '1') then
+                    int_basepoint_o_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_BASEPOINT_O_CTRL) then
+                    int_basepoint_o_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;
@@ -1187,6 +1290,118 @@ begin
                     int_flag2_ap_vld <= '1';
                 elsif (ar_hs = '1' and raddr = ADDR_FLAG2_CTRL) then
                     int_flag2_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_flag3 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (flag3_ap_vld = '1') then
+                    int_flag3 <= UNSIGNED(flag3); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_flag3_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (flag3_ap_vld = '1') then
+                    int_flag3_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_FLAG3_CTRL) then
+                    int_flag3_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_basepointVal <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (basepointVal_ap_vld = '1') then
+                    int_basepointVal <= UNSIGNED(basepointVal); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_basepointVal_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (basepointVal_ap_vld = '1') then
+                    int_basepointVal_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_BASEPOINTVAL_CTRL) then
+                    int_basepointVal_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_basepoint0 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (basepoint0_ap_vld = '1') then
+                    int_basepoint0 <= UNSIGNED(basepoint0); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_basepoint0_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (basepoint0_ap_vld = '1') then
+                    int_basepoint0_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_BASEPOINT0_CTRL) then
+                    int_basepoint0_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_basepoint9 <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (basepoint9_ap_vld = '1') then
+                    int_basepoint9 <= UNSIGNED(basepoint9); -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_basepoint9_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (basepoint9_ap_vld = '1') then
+                    int_basepoint9_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_BASEPOINT9_CTRL) then
+                    int_basepoint9_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;

@@ -1,0 +1,250 @@
+
+
+================================================================
+== Vivado HLS Report for 'normalizer'
+================================================================
+* Date:           Wed Aug 22 11:37:39 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        normalizer
+* Solution:       normalizer
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|      5.27|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |  102|  102|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    112|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        0|      -|    8823|   6871|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|     311|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|    9134|   6983|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       8|     13|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+----------------------+---------+-------+------+------+
+    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF  |  LUT |
+    +-------------------------+----------------------+---------+-------+------+------+
+    |normalizer_in_s_axi_U    |normalizer_in_s_axi   |        0|      0|   172|   264|
+    |normalizer_sdiv_9bkb_U1  |normalizer_sdiv_9bkb  |        0|      0|  8651|  6607|
+    +-------------------------+----------------------+---------+-------+------+------+
+    |Total                    |                      |        0|      0|  8823|  6871|
+    +-------------------------+----------------------+---------+-------+------+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |p_Val2_1_fu_91_p2          |     -    |      0|  0|  39|          32|          32|
+    |p_Val2_s_fu_87_p2          |     -    |      0|  0|  39|          32|          32|
+    |ap_block_pp0_stage0_01001  |    and   |      0|  0|   8|           1|           1|
+    |tmp_fu_77_p2               |   icmp   |      0|  0|  18|          32|          32|
+    |ap_enable_pp0              |    xor   |      0|  0|   8|           1|           2|
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |Total                      |          |      0|  0| 112|          98|          99|
+    +---------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    +---------------------------+----+----+-----+-----------+
+    |            Name           | FF | LUT| Bits| Const Bits|
+    +---------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter10   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter100  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter101  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter102  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter11   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter12   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter13   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter14   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter15   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter16   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter17   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter18   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter19   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter20   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter21   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter22   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter23   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter24   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter25   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter26   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter27   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter28   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter29   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter30   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter31   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter32   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter33   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter34   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter35   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter36   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter37   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter38   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter39   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter40   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter41   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter42   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter43   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter44   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter45   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter46   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter47   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter48   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter49   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter50   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter51   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter52   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter53   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter54   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter55   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter56   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter57   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter58   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter59   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter60   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter61   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter62   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter63   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter64   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter65   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter66   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter67   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter68   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter69   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter7    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter70   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter71   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter72   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter73   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter74   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter75   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter76   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter77   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter78   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter79   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter8    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter80   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter81   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter82   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter83   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter84   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter85   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter86   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter87   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter88   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter89   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter9    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter90   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter91   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter92   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter93   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter94   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter95   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter96   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter97   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter98   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter99   |   1|   0|    1|          0|
+    |last                       |  32|   0|   32|          0|
+    |max_high_read_reg_129      |  32|   0|   32|          0|
+    |min_high_read_reg_134      |  32|   0|   32|          0|
+    |p_Val2_1_reg_156           |  32|   0|   32|          0|
+    |p_Val2_s_reg_151           |  32|   0|   32|          0|
+    |regs_in_read_reg_140       |  32|   0|   32|          0|
+    |tmp_2_reg_171              |  16|   0|   16|          0|
+    +---------------------------+----+----+-----+-----------+
+    |Total                      | 311|   0|  311|          0|
+    +---------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+------------+--------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol  | Source Object|    C Type    |
++------------------+-----+-----+------------+--------------+--------------+
+|s_axi_in_AWVALID  |  in |    1|    s_axi   |      in      |    pointer   |
+|s_axi_in_AWREADY  | out |    1|    s_axi   |      in      |    pointer   |
+|s_axi_in_AWADDR   |  in |    6|    s_axi   |      in      |    pointer   |
+|s_axi_in_WVALID   |  in |    1|    s_axi   |      in      |    pointer   |
+|s_axi_in_WREADY   | out |    1|    s_axi   |      in      |    pointer   |
+|s_axi_in_WDATA    |  in |   32|    s_axi   |      in      |    pointer   |
+|s_axi_in_WSTRB    |  in |    4|    s_axi   |      in      |    pointer   |
+|s_axi_in_ARVALID  |  in |    1|    s_axi   |      in      |    pointer   |
+|s_axi_in_ARREADY  | out |    1|    s_axi   |      in      |    pointer   |
+|s_axi_in_ARADDR   |  in |    6|    s_axi   |      in      |    pointer   |
+|s_axi_in_RVALID   | out |    1|    s_axi   |      in      |    pointer   |
+|s_axi_in_RREADY   |  in |    1|    s_axi   |      in      |    pointer   |
+|s_axi_in_RDATA    | out |   32|    s_axi   |      in      |    pointer   |
+|s_axi_in_RRESP    | out |    2|    s_axi   |      in      |    pointer   |
+|s_axi_in_BVALID   | out |    1|    s_axi   |      in      |    pointer   |
+|s_axi_in_BREADY   |  in |    1|    s_axi   |      in      |    pointer   |
+|s_axi_in_BRESP    | out |    2|    s_axi   |      in      |    pointer   |
+|ap_clk            |  in |    1| ap_ctrl_hs |  normalizer  | return value |
+|ap_rst_n          |  in |    1| ap_ctrl_hs |  normalizer  | return value |
+|interrupt         | out |    1| ap_ctrl_hs |  normalizer  | return value |
++------------------+-----+-----+------------+--------------+--------------+
+

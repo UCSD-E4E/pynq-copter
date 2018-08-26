@@ -6,7 +6,7 @@
 <Project Version="7" Minor="35" Path="/home/iavendano/pynq-copter/pynqcopter/iicComm2Update/iicComm2Update/iicComm2Update.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="529a586c523343f694dad296da059f04"/>
+    <Option Name="Id" Val="bdf0f5cb06bf4917b5fe75793df4c202"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -68,11 +68,11 @@
         <CompFileExtendedInfo CompFileName="iicComm2Update.bd" FileRelPathName="ip/iicComm2Update_rst_ps7_0_100M_0/iicComm2Update_rst_ps7_0_100M_0.xci">
           <Proxy FileSetName="iicComm2Update_rst_ps7_0_100M_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="iicComm2Update.bd" FileRelPathName="ip/iicComm2Update_s01_mmu_0/iicComm2Update_s01_mmu_0.xci">
-          <Proxy FileSetName="iicComm2Update_s01_mmu_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="iicComm2Update.bd" FileRelPathName="ip/iicComm2Update_xbar_0/iicComm2Update_xbar_0.xci">
           <Proxy FileSetName="iicComm2Update_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="iicComm2Update.bd" FileRelPathName="ip/iicComm2Update_s01_mmu_0/iicComm2Update_s01_mmu_0.xci">
+          <Proxy FileSetName="iicComm2Update_s01_mmu_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="iicComm2Update.bd" FileRelPathName="ip/iicComm2Update_auto_pc_1/iicComm2Update_auto_pc_1.xci">
           <Proxy FileSetName="iicComm2Update_auto_pc_1"/>
@@ -132,15 +132,15 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="iicComm2Update_s01_mmu_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/iicComm2Update_s01_mmu_0">
-      <Config>
-        <Option Name="TopModule" Val="iicComm2Update_s01_mmu_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="iicComm2Update_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/iicComm2Update_xbar_0">
       <Config>
         <Option Name="TopModule" Val="iicComm2Update_xbar_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="iicComm2Update_s01_mmu_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/iicComm2Update_s01_mmu_0">
+      <Config>
+        <Option Name="TopModule" Val="iicComm2Update_s01_mmu_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -224,7 +224,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="iicComm2Update_s01_mmu_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm2Update_s01_mmu_0" Part="xc7z020clg400-1" ConstrsSet="iicComm2Update_s01_mmu_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm2Update_s01_mmu_0_synth_1" IncludeInArchive="true">
+    <Run Id="iicComm2Update_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm2Update_xbar_0" Part="xc7z020clg400-1" ConstrsSet="iicComm2Update_xbar_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm2Update_xbar_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -235,7 +235,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="iicComm2Update_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm2Update_xbar_0" Part="xc7z020clg400-1" ConstrsSet="iicComm2Update_xbar_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm2Update_xbar_0_synth_1" IncludeInArchive="true">
+    <Run Id="iicComm2Update_s01_mmu_0_synth_1" Type="Ft3:Synth" SrcSet="iicComm2Update_s01_mmu_0" Part="xc7z020clg400-1" ConstrsSet="iicComm2Update_s01_mmu_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/iicComm2Update_s01_mmu_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -345,7 +345,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="iicComm2Update_s01_mmu_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm2Update_s01_mmu_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm2Update_s01_mmu_0_synth_1" IncludeInArchive="false">
+    <Run Id="iicComm2Update_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm2Update_xbar_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm2Update_xbar_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>
@@ -363,7 +363,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="iicComm2Update_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm2Update_xbar_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm2Update_xbar_0_synth_1" IncludeInArchive="false">
+    <Run Id="iicComm2Update_s01_mmu_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="iicComm2Update_s01_mmu_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="iicComm2Update_s01_mmu_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>

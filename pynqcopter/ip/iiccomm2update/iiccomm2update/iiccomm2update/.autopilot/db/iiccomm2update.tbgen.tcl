@@ -1,7 +1,8 @@
 set C_TypeInfoList {{ 
-"iiccomm2update" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"empty_pirq_outValue": [[], {"reference": "1"}] }, {"full_pirq_outValue": [[], {"reference": "1"}] }, {"ctrl_reg_outValue": [[], {"reference": "1"}] }, {"stat_reg_outValue1": [[], {"reference": "1"}] }, {"stat_reg_val2": [[], {"reference": "1"}] }, {"pressure_msb": [[], {"reference": "1"}] }, {"pressure_lsb": [[], {"reference": "1"}] }, {"pressure_xlsb": [[], {"reference": "1"}] }, {"temp_msb": [[], {"reference": "1"}] }, {"temp_lsb": [[], {"reference": "1"}] }, {"temp_xlsb": [[], {"reference": "1"}] }, {"press_raw": [[], {"reference": "1"}] }, {"temp_raw": [[], {"reference": "1"}] }, {"operation": [[], {"reference": "1"}] }, {"press_cal": [[], {"reference": "1"}] }, {"press_act": [[], {"reference": "1"}] }, {"basepoint": [[],"1"] }, {"flag": [[], {"reference":  {"scalar": "int"}}] }, {"pressure_diff": [[], {"reference": "1"}] }, {"flag2": [[], {"reference":  {"scalar": "int"}}] }],[],""], 
+"iiccomm2update" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"iic": [[], {"array": ["0", [4096]]}] }, {"empty_pirq_outValue": [[], {"reference": "1"}] }, {"full_pirq_outValue": [[], {"reference": "1"}] }, {"ctrl_reg_outValue": [[], {"reference": "1"}] }, {"stat_reg_outValue1": [[], {"reference": "1"}] }, {"stat_reg_val2": [[], {"reference": "1"}] }, {"pressure_msb": [[], {"reference": "1"}] }, {"pressure_lsb": [[], {"reference": "1"}] }, {"pressure_xlsb": [[], {"reference": "1"}] }, {"temp_msb": [[], {"reference": "1"}] }, {"temp_lsb": [[], {"reference": "1"}] }, {"temp_xlsb": [[], {"reference": "1"}] }, {"press_raw": [[], {"reference": "1"}] }, {"temp_raw": [[], {"reference": "1"}] }, {"operation": [[], {"reference": "1"}] }, {"press_cal": [[], {"reference": "1"}] }, {"press_act": [[], {"reference": "1"}] }, {"basepoint": [[], {"reference": "1"}] }, {"flag": [[], {"reference":  {"scalar": "int"}}] }, {"pressure_diff": [[], {"reference": "2"}] }, {"flag2": [[], {"reference":  {"scalar": "int"}}] }, {"flag3": [[], {"reference":  {"scalar": "int"}}] }, {"basepointVal": [[], {"reference": "1"}] }, {"basepoint0": [[], {"reference": "1"}] }, {"basepoint9": [[], {"reference": "1"}] }],[],""], 
 "0": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}], 
-"1": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}]
+"1": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}], 
+"2": [ "int32_t", {"typedef": [[[], {"scalar": "int"}],""]}]
 }}
 set moduleName iiccomm2update
 set isCombinational 0
@@ -32,10 +33,14 @@ set C_modelArgList {
 	{ operation int 32 regular {axi_slave 1}  }
 	{ press_cal int 32 regular {axi_slave 1}  }
 	{ press_act int 32 regular {axi_slave 1}  }
-	{ basepoint int 32 regular {axi_slave 0}  }
+	{ basepoint int 32 regular {axi_slave 2}  }
 	{ flag int 32 regular {axi_slave 1}  }
 	{ pressure_diff int 32 regular {axi_slave 1}  }
 	{ flag2 int 32 regular {axi_slave 1}  }
+	{ flag3 int 32 regular {axi_slave 1}  }
+	{ basepointVal int 32 regular {axi_slave 1}  }
+	{ basepoint0 int 32 regular {axi_slave 1}  }
+	{ basepoint9 int 32 regular {axi_slave 1}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "iic", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "iic","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 4095,"step" : 1}]}]}]} , 
@@ -55,10 +60,14 @@ set C_modelArgMapList {[
  	{ "Name" : "operation", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "operation","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":120}, "offset_end" : {"out":127}} , 
  	{ "Name" : "press_cal", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "press_cal","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":128}, "offset_end" : {"out":135}} , 
  	{ "Name" : "press_act", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "press_act","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":136}, "offset_end" : {"out":143}} , 
- 	{ "Name" : "basepoint", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "basepoint","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":144}, "offset_end" : {"in":151}} , 
- 	{ "Name" : "flag", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "flag","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":152}, "offset_end" : {"out":159}} , 
- 	{ "Name" : "pressure_diff", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "pressure_diff","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":160}, "offset_end" : {"out":167}} , 
- 	{ "Name" : "flag2", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "flag2","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":168}, "offset_end" : {"out":175}} ]}
+ 	{ "Name" : "basepoint", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_ovld","bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "basepoint","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"in":144, "out":152}, "offset_end" : {"in":151, "out":159}} , 
+ 	{ "Name" : "flag", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "flag","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":160}, "offset_end" : {"out":167}} , 
+ 	{ "Name" : "pressure_diff", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "pressure_diff","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":168}, "offset_end" : {"out":175}} , 
+ 	{ "Name" : "flag2", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "flag2","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":176}, "offset_end" : {"out":183}} , 
+ 	{ "Name" : "flag3", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "flag3","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":184}, "offset_end" : {"out":191}} , 
+ 	{ "Name" : "basepointVal", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "basepointVal","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":192}, "offset_end" : {"out":199}} , 
+ 	{ "Name" : "basepoint0", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "basepoint0","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":200}, "offset_end" : {"out":207}} , 
+ 	{ "Name" : "basepoint9", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_vld","bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "basepoint9","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}], "offset" : {"out":208}, "offset_end" : {"out":215}} ]}
 # RTL Port declarations: 
 set portNum 65
 set portList { 
@@ -136,7 +145,7 @@ set NewPortList {[
 	{ "name": "s_axi_AXILiteS_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WREADY" } },
 	{ "name": "s_axi_AXILiteS_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WDATA" } },
 	{ "name": "s_axi_AXILiteS_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WSTRB" } },
-	{ "name": "s_axi_AXILiteS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARADDR" },"address":[{"name":"iiccomm2update","role":"start","value":"0","valid_bit":"0"},{"name":"iiccomm2update","role":"done","value":"0","valid_bit":"1"},{"name":"iiccomm2update","role":"idle","value":"0","valid_bit":"2"},{"name":"iiccomm2update","role":"ready","value":"0","valid_bit":"3"},{"name":"iiccomm2update","role":"auto_start","value":"0","valid_bit":"7"},{"name":"empty_pirq_outValue","role":"data","value":"16"}, {"name":"empty_pirq_outValue","role":"valid","value":"20","valid_bit":"0"},{"name":"full_pirq_outValue","role":"data","value":"24"}, {"name":"full_pirq_outValue","role":"valid","value":"28","valid_bit":"0"},{"name":"ctrl_reg_outValue","role":"data","value":"32"}, {"name":"ctrl_reg_outValue","role":"valid","value":"36","valid_bit":"0"},{"name":"stat_reg_outValue1","role":"data","value":"40"}, {"name":"stat_reg_outValue1","role":"valid","value":"44","valid_bit":"0"},{"name":"stat_reg_val2","role":"data","value":"48"}, {"name":"stat_reg_val2","role":"valid","value":"52","valid_bit":"0"},{"name":"pressure_msb","role":"data","value":"56"}, {"name":"pressure_msb","role":"valid","value":"60","valid_bit":"0"},{"name":"pressure_lsb","role":"data","value":"64"}, {"name":"pressure_lsb","role":"valid","value":"68","valid_bit":"0"},{"name":"pressure_xlsb","role":"data","value":"72"}, {"name":"pressure_xlsb","role":"valid","value":"76","valid_bit":"0"},{"name":"temp_msb","role":"data","value":"80"}, {"name":"temp_msb","role":"valid","value":"84","valid_bit":"0"},{"name":"temp_lsb","role":"data","value":"88"}, {"name":"temp_lsb","role":"valid","value":"92","valid_bit":"0"},{"name":"temp_xlsb","role":"data","value":"96"}, {"name":"temp_xlsb","role":"valid","value":"100","valid_bit":"0"},{"name":"press_raw","role":"data","value":"104"}, {"name":"press_raw","role":"valid","value":"108","valid_bit":"0"},{"name":"temp_raw","role":"data","value":"112"}, {"name":"temp_raw","role":"valid","value":"116","valid_bit":"0"},{"name":"operation","role":"data","value":"120"}, {"name":"operation","role":"valid","value":"124","valid_bit":"0"},{"name":"press_cal","role":"data","value":"128"}, {"name":"press_cal","role":"valid","value":"132","valid_bit":"0"},{"name":"press_act","role":"data","value":"136"}, {"name":"press_act","role":"valid","value":"140","valid_bit":"0"},{"name":"flag","role":"data","value":"152"}, {"name":"flag","role":"valid","value":"156","valid_bit":"0"},{"name":"pressure_diff","role":"data","value":"160"}, {"name":"pressure_diff","role":"valid","value":"164","valid_bit":"0"},{"name":"flag2","role":"data","value":"168"}, {"name":"flag2","role":"valid","value":"172","valid_bit":"0"}] },
+	{ "name": "s_axi_AXILiteS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARADDR" },"address":[{"name":"iiccomm2update","role":"start","value":"0","valid_bit":"0"},{"name":"iiccomm2update","role":"done","value":"0","valid_bit":"1"},{"name":"iiccomm2update","role":"idle","value":"0","valid_bit":"2"},{"name":"iiccomm2update","role":"ready","value":"0","valid_bit":"3"},{"name":"iiccomm2update","role":"auto_start","value":"0","valid_bit":"7"},{"name":"empty_pirq_outValue","role":"data","value":"16"}, {"name":"empty_pirq_outValue","role":"valid","value":"20","valid_bit":"0"},{"name":"full_pirq_outValue","role":"data","value":"24"}, {"name":"full_pirq_outValue","role":"valid","value":"28","valid_bit":"0"},{"name":"ctrl_reg_outValue","role":"data","value":"32"}, {"name":"ctrl_reg_outValue","role":"valid","value":"36","valid_bit":"0"},{"name":"stat_reg_outValue1","role":"data","value":"40"}, {"name":"stat_reg_outValue1","role":"valid","value":"44","valid_bit":"0"},{"name":"stat_reg_val2","role":"data","value":"48"}, {"name":"stat_reg_val2","role":"valid","value":"52","valid_bit":"0"},{"name":"pressure_msb","role":"data","value":"56"}, {"name":"pressure_msb","role":"valid","value":"60","valid_bit":"0"},{"name":"pressure_lsb","role":"data","value":"64"}, {"name":"pressure_lsb","role":"valid","value":"68","valid_bit":"0"},{"name":"pressure_xlsb","role":"data","value":"72"}, {"name":"pressure_xlsb","role":"valid","value":"76","valid_bit":"0"},{"name":"temp_msb","role":"data","value":"80"}, {"name":"temp_msb","role":"valid","value":"84","valid_bit":"0"},{"name":"temp_lsb","role":"data","value":"88"}, {"name":"temp_lsb","role":"valid","value":"92","valid_bit":"0"},{"name":"temp_xlsb","role":"data","value":"96"}, {"name":"temp_xlsb","role":"valid","value":"100","valid_bit":"0"},{"name":"press_raw","role":"data","value":"104"}, {"name":"press_raw","role":"valid","value":"108","valid_bit":"0"},{"name":"temp_raw","role":"data","value":"112"}, {"name":"temp_raw","role":"valid","value":"116","valid_bit":"0"},{"name":"operation","role":"data","value":"120"}, {"name":"operation","role":"valid","value":"124","valid_bit":"0"},{"name":"press_cal","role":"data","value":"128"}, {"name":"press_cal","role":"valid","value":"132","valid_bit":"0"},{"name":"press_act","role":"data","value":"136"}, {"name":"press_act","role":"valid","value":"140","valid_bit":"0"},{"name":"basepoint","role":"data","value":"152"}, {"name":"basepoint","role":"valid","value":"156","valid_bit":"0"},{"name":"flag","role":"data","value":"160"}, {"name":"flag","role":"valid","value":"164","valid_bit":"0"},{"name":"pressure_diff","role":"data","value":"168"}, {"name":"pressure_diff","role":"valid","value":"172","valid_bit":"0"},{"name":"flag2","role":"data","value":"176"}, {"name":"flag2","role":"valid","value":"180","valid_bit":"0"},{"name":"flag3","role":"data","value":"184"}, {"name":"flag3","role":"valid","value":"188","valid_bit":"0"},{"name":"basepointVal","role":"data","value":"192"}, {"name":"basepointVal","role":"valid","value":"196","valid_bit":"0"},{"name":"basepoint0","role":"data","value":"200"}, {"name":"basepoint0","role":"valid","value":"204","valid_bit":"0"},{"name":"basepoint9","role":"data","value":"208"}, {"name":"basepoint9","role":"valid","value":"212","valid_bit":"0"}] },
 	{ "name": "s_axi_AXILiteS_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARVALID" } },
 	{ "name": "s_axi_AXILiteS_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARREADY" } },
 	{ "name": "s_axi_AXILiteS_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "RVALID" } },
@@ -196,7 +205,7 @@ set NewPortList {[
  	{ "name": "m_axi_iic_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "iic", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26"],
 		"CDFG" : "iiccomm2update",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"FunctionPipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -228,10 +237,14 @@ set RtlHierarchyInfo {[
 			{"Name" : "operation", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "press_cal", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "press_act", "Type" : "Vld", "Direction" : "O"},
-			{"Name" : "basepoint", "Type" : "None", "Direction" : "I"},
+			{"Name" : "basepoint", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "flag", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "pressure_diff", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "flag2", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "flag3", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "basepointVal", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "basepoint0", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "basepoint9", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "count", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "basepointSum", "Type" : "OVld", "Direction" : "IO"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_AXILiteS_s_axi_U", "Parent" : "0"},
@@ -258,7 +271,8 @@ set RtlHierarchyInfo {[
 	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_muudo_U18", "Parent" : "0"},
 	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_muvdy_U19", "Parent" : "0"},
 	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_lswdI_U20", "Parent" : "0"},
-	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_shxdS_U21", "Parent" : "0"}]}
+	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_shxdS_U21", "Parent" : "0"},
+	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.iiccomm2update_muyd2_U22", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -280,10 +294,14 @@ set ArgLastReadFirstWriteLatency {
 		operation {Type O LastRead -1 FirstWrite 76}
 		press_cal {Type O LastRead -1 FirstWrite 298}
 		press_act {Type O LastRead -1 FirstWrite 298}
-		basepoint {Type I LastRead 0 FirstWrite -1}
-		flag {Type O LastRead -1 FirstWrite 301}
-		pressure_diff {Type O LastRead -1 FirstWrite 302}
-		flag2 {Type O LastRead -1 FirstWrite 299}
+		basepoint {Type IO LastRead 309 FirstWrite 308}
+		flag {Type O LastRead -1 FirstWrite 309}
+		pressure_diff {Type O LastRead -1 FirstWrite 311}
+		flag2 {Type O LastRead -1 FirstWrite 300}
+		flag3 {Type O LastRead -1 FirstWrite 304}
+		basepointVal {Type O LastRead -1 FirstWrite 300}
+		basepoint0 {Type O LastRead -1 FirstWrite 301}
+		basepoint9 {Type O LastRead -1 FirstWrite 301}
 		count {Type IO LastRead -1 FirstWrite -1}
 		basepointSum {Type IO LastRead -1 FirstWrite -1}}}
 

@@ -1244,7 +1244,7 @@
           "Width": "8"
         },
         "WDATA": {
-          "Type": "integer unsigned",
+          "Type": "integer signed",
           "Width": "32"
         },
         "WSTRB": {
@@ -1256,7 +1256,7 @@
           "Width": "8"
         },
         "RDATA": {
-          "Type": "integer unsigned",
+          "Type": "integer signed",
           "Width": "32"
         }
       },
@@ -1787,7 +1787,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-22 10:12:24 PDT",
+    "Time": "2018-08-25 15:57:34 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

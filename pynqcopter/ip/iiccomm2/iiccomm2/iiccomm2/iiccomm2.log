@@ -14,15 +14,15 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'iiccomm2.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:20 ; elapsed = 00:00:29 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 110571 ; free virtual = 503174
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:22 ; elapsed = 00:00:31 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 110556 ; free virtual = 503160
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:52 ; elapsed = 00:00:59 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 99881 ; free virtual = 493874
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:54 ; elapsed = 00:01:01 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 99868 ; free virtual = 493861
 INFO: [HLS 200-10] Starting code transformations ...
 INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 50000000ull>' into 'iiccomm2' (iiccomm2.cpp:137).
 INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 50000000ull>' into 'iiccomm2' (iiccomm2.cpp:169).
 INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 50000000ull>' into 'iiccomm2' (iiccomm2.cpp:155).
 INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<137, 84, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330).
 INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0>::overflow_adjust' into 'ap_fixed_base<1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0>::ap_fixed_base<137, 84, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:24 ; elapsed = 00:00:34 . Memory (MB): peak = 490.984 ; gain = 144.422 ; free physical = 110498 ; free virtual = 503102
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:58 ; elapsed = 00:01:05 . Memory (MB): peak = 490.988 ; gain = 144.422 ; free physical = 99740 ; free virtual = 493733
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::mantissa' into 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:327) automatically.
 INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330) automatically.
@@ -30,14 +30,14 @@ INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::__signbit' into 'gen
 INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' into 'generic_cast_IEEE754<unsigned int, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically.
 INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned int, double>' into '__hls_fptoui_double_i32' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:67) automatically.
 INFO: [XFORM 203-602] Inlining function '__hls_fptoui_double_i32' into 'iiccomm2' (iiccomm2.cpp:224) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:26 ; elapsed = 00:00:35 . Memory (MB): peak = 554.188 ; gain = 207.625 ; free physical = 110477 ; free virtual = 503080
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:02:01 ; elapsed = 00:01:07 . Memory (MB): peak = 554.191 ; gain = 207.625 ; free physical = 99661 ; free virtual = 493662
 INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::mantissa' into 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:327) automatically.
 INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330) automatically.
 INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' into 'generic_cast_IEEE754<unsigned int, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically.
 INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned int, double>' into '__hls_fptoui_double_i32' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:67) automatically.
 INFO: [XFORM 203-602] Inlining function '__hls_fptoui_double_i32' into 'iiccomm2' (iiccomm2.cpp:224) automatically.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:28 ; elapsed = 00:00:38 . Memory (MB): peak = 554.188 ; gain = 207.625 ; free physical = 110344 ; free virtual = 502947
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:30 ; elapsed = 00:00:39 . Memory (MB): peak = 554.188 ; gain = 207.625 ; free physical = 110416 ; free virtual = 503019
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:02:04 ; elapsed = 00:01:12 . Memory (MB): peak = 554.191 ; gain = 207.625 ; free physical = 99742 ; free virtual = 493751
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:02:06 ; elapsed = 00:01:14 . Memory (MB): peak = 554.191 ; gain = 207.625 ; free physical = 99725 ; free virtual = 493734
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'iiccomm2' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -50,13 +50,13 @@ WARNING: [SCHED 204-21] The critical path consists of the following:
 	'phi' operation ('pressure') with incoming values : ('pressure', iiccomm2.cpp:216) ('pressure', iiccomm2.cpp:212) (0 ns)
 	'mul' operation ('tmp_48', iiccomm2.cpp:218) (6.97 ns)
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 40.42 seconds; current allocated memory: 219.321 MB.
+INFO: [HLS 200-111]  Elapsed time: 75.3 seconds; current allocated memory: 219.319 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.52 seconds; current allocated memory: 222.649 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.15 seconds; current allocated memory: 222.645 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'iiccomm2'
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -125,7 +125,7 @@ INFO: [RTGEN 206-100] Generating core module 'iiccomm2_udiv_63npcA': 1 instance(
 INFO: [RTGEN 206-100] Generating core module 'iiccomm2_udiv_64nqcK': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'iiccomm2_uitodp_3cud': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'iiccomm2'.
-INFO: [HLS 200-111]  Elapsed time: 0.87 seconds; current allocated memory: 228.709 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.84 seconds; current allocated memory: 228.706 MB.
 INFO: [RTMG 210-282] Generating pipelined core: 'iiccomm2_mul_29s_dEe_MulnS_0'
 INFO: [RTMG 210-282] Generating pipelined core: 'iiccomm2_mul_7ns_eOg_MulnS_1'
 INFO: [RTMG 210-282] Generating pipelined core: 'iiccomm2_mul_16nsfYi_MulnS_2'
@@ -146,9 +146,9 @@ INFO: [RTMG 210-282] Generating pipelined core: 'iiccomm2_mul_14nstde_MulnS_8'
 INFO: [RTMG 210-286] Generating pipelined shifter : 'iiccomm2_lshr_54nudo'
 INFO: [RTMG 210-286] Generating pipelined shifter : 'iiccomm2_shl_137nvdy'
 INFO: [RTMG 210-278] Implementing memory 'iiccomm2_sensorData_ram (RAM)' using block RAMs.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:34 ; elapsed = 00:00:44 . Memory (MB): peak = 554.188 ; gain = 207.625 ; free physical = 110441 ; free virtual = 502998
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:15 ; elapsed = 00:01:23 . Memory (MB): peak = 554.191 ; gain = 207.625 ; free physical = 99697 ; free virtual = 493659
 INFO: [SYSC 207-301] Generating SystemC RTL for iiccomm2.
 INFO: [VHDL 208-304] Generating VHDL RTL for iiccomm2.
 INFO: [VLOG 209-307] Generating Verilog RTL for iiccomm2.
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-INFO: [HLS 200-112] Total elapsed time: 95.95 seconds; peak allocated memory: 228.709 MB.
+INFO: [HLS 200-112] Total elapsed time: 167.88 seconds; peak allocated memory: 228.706 MB.

@@ -1,4 +1,10 @@
 <AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <config>
+        <schedule model="normalizer"/>
+    </config>
+    <ExportDesign askAgain="true" evaluate="false" rtl="verilog" formatName="ip_catalog">
+        <Format formatName="ip_catalog" description="HLS Core: Normalizer Function" vendor="UCSD" library="hlsip" ipname="" version="1.0" driver_input_dir="" display_name="Normalizer" taxonomy=""/>
+    </ExportDesign>
     <name>
         <value string="normalizer"/>
     </name>
@@ -13,7 +19,7 @@
         <library value="xilinx/zynq/zynq_fpv6" name="DefaultPlatform"/>
     </libraryList>
     <clockList>
-        <clock name="default" period="4" default="false"/>
+        <clock name="default" default="false" period="4"/>
     </clockList>
 </AutoPilot:solution>
 

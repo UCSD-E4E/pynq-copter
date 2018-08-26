@@ -213,8 +213,8 @@ set BitWidth17 "32"
 set ArrayOpt17 ""
 set Const17 "0"
 set Volatile17 "0"
-set Pointer17 "0"
-set Reference17 "0"
+set Pointer17 "2"
+set Reference17 "1"
 set Dims17 [list 0]
 set Interface17 "wire"
 set DataType17 "unsigned int"
@@ -241,7 +241,7 @@ set Pointer19 "2"
 set Reference19 "1"
 set Dims19 [list 0]
 set Interface19 "wire"
-set DataType19 "unsigned int"
+set DataType19 "int"
 set Port19 [list $PortName19 $Interface19 $DataType19 $Pointer19 $Dims19 $Const19 $Volatile19 $ArrayOpt19]
 lappend PortList $Port19
 set PortName20 "flag2"
@@ -256,6 +256,54 @@ set Interface20 "wire"
 set DataType20 "int"
 set Port20 [list $PortName20 $Interface20 $DataType20 $Pointer20 $Dims20 $Const20 $Volatile20 $ArrayOpt20]
 lappend PortList $Port20
+set PortName21 "flag3"
+set BitWidth21 "32"
+set ArrayOpt21 ""
+set Const21 "0"
+set Volatile21 "0"
+set Pointer21 "2"
+set Reference21 "1"
+set Dims21 [list 0]
+set Interface21 "wire"
+set DataType21 "int"
+set Port21 [list $PortName21 $Interface21 $DataType21 $Pointer21 $Dims21 $Const21 $Volatile21 $ArrayOpt21]
+lappend PortList $Port21
+set PortName22 "basepointVal"
+set BitWidth22 "32"
+set ArrayOpt22 ""
+set Const22 "0"
+set Volatile22 "0"
+set Pointer22 "2"
+set Reference22 "1"
+set Dims22 [list 0]
+set Interface22 "wire"
+set DataType22 "unsigned int"
+set Port22 [list $PortName22 $Interface22 $DataType22 $Pointer22 $Dims22 $Const22 $Volatile22 $ArrayOpt22]
+lappend PortList $Port22
+set PortName23 "basepoint0"
+set BitWidth23 "32"
+set ArrayOpt23 ""
+set Const23 "0"
+set Volatile23 "0"
+set Pointer23 "2"
+set Reference23 "1"
+set Dims23 [list 0]
+set Interface23 "wire"
+set DataType23 "unsigned int"
+set Port23 [list $PortName23 $Interface23 $DataType23 $Pointer23 $Dims23 $Const23 $Volatile23 $ArrayOpt23]
+lappend PortList $Port23
+set PortName24 "basepoint9"
+set BitWidth24 "32"
+set ArrayOpt24 ""
+set Const24 "0"
+set Volatile24 "0"
+set Pointer24 "2"
+set Reference24 "1"
+set Dims24 [list 0]
+set Interface24 "wire"
+set DataType24 "unsigned int"
+set Port24 [list $PortName24 $Interface24 $DataType24 $Pointer24 $Dims24 $Const24 $Volatile24 $ArrayOpt24]
+lappend PortList $Port24
 set globalAPint "" 
 set returnAPInt "" 
 set hasCPPAPInt 0 

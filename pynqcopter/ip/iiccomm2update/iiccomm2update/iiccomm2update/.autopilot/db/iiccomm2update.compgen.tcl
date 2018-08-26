@@ -1785,8 +1785,93 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipeshift, check yo
 }
 
 
+set id 22
+set name iiccomm2update_muyd2
+set corename simcore_mul
+set op mul
+set stage_num 7
+set max_latency -1
+set registered_input 1
+set clk_width 1
+set clk_signed 0
+set reset_width 1
+set reset_signed 0
+set in0_width 32
+set in0_signed 0
+set in1_width 34
+set in1_signed 0
+set ce_width 1
+set ce_signed 0
+set out_width 65
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {
+eval "ap_gen_simcore_mul { \
+    id ${id} \
+    name ${name} \
+    corename ${corename} \
+    op ${op} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${stage_num} \
+    max_latency ${max_latency} \
+    registered_input ${registered_input} \
+    clk_width ${clk_width} \
+    clk_signed ${clk_signed} \
+    reset_width ${reset_width} \
+    reset_signed ${reset_signed} \
+    in0_width ${in0_width} \
+    in0_signed ${in0_signed} \
+    in1_width ${in1_width} \
+    in1_signed ${in1_signed} \
+    ce_width ${ce_width} \
+    ce_signed ${ce_signed} \
+    out_width ${out_width} \
+}"
+} else {
+puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mul, check your AutoPilot builtin lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler ${name}
+}
+
+
+set op mul
+set corename MulnS
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul] == "::AESL_LIB_VIRTEX::xil_gen_multicycle_mul"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_multicycle_mul { \
+    id ${id} \
+    name ${name} \
+    corename ${corename} \
+    op ${op} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${stage_num} \
+    max_latency ${max_latency} \
+    registered_input ${registered_input} \
+    clk_width ${clk_width} \
+    clk_signed ${clk_signed} \
+    reset_width ${reset_width} \
+    reset_signed ${reset_signed} \
+    in0_width ${in0_width} \
+    in0_signed ${in0_signed} \
+    in1_width ${in1_width} \
+    in1_signed ${in1_signed} \
+    ce_width ${ce_width} \
+    ce_signed ${ce_signed} \
+    out_width ${out_width} \
+}"
+} else {
+puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, check your platform lib"
+}
+}
+
+
 # Memory (RAM/ROM)  definition:
-set ID 43
+set ID 45
 set MemName iiccomm2update_sebkb
 set CoreName ap_simcore_mem
 set PortList { 2 2 }
@@ -1868,10 +1953,10 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 44
+set ID 46
 set MemName iiccomm2update_bacud
 set CoreName ap_simcore_mem
-set PortList { 2 3 }
+set PortList { 2 1 }
 set DataWd 32
 set AddrRange 10
 set AddrWd 4
@@ -2089,7 +2174,7 @@ press_act {
 	offset 136
 	offset_end 143
 }
-basepoint { 
+basepoint_i { 
 	dir I
 	width 32
 	depth 1
@@ -2097,7 +2182,7 @@ basepoint {
 	offset 144
 	offset_end 151
 }
-flag { 
+basepoint_o { 
 	dir O
 	width 32
 	depth 1
@@ -2105,7 +2190,7 @@ flag {
 	offset 152
 	offset_end 159
 }
-pressure_diff { 
+flag { 
 	dir O
 	width 32
 	depth 1
@@ -2113,13 +2198,53 @@ pressure_diff {
 	offset 160
 	offset_end 167
 }
-flag2 { 
+pressure_diff { 
 	dir O
 	width 32
 	depth 1
 	mode ap_vld
 	offset 168
 	offset_end 175
+}
+flag2 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 176
+	offset_end 183
+}
+flag3 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 184
+	offset_end 191
+}
+basepointVal { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 192
+	offset_end 199
+}
+basepoint0 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 200
+	offset_end 207
+}
+basepoint9 { 
+	dir O
+	width 32
+	depth 1
+	mode ap_vld
+	offset 208
+	offset_end 215
 }
 }
 
@@ -2128,7 +2253,7 @@ flag2 {
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 45 \
+			id 47 \
 			corename iiccomm2update_AXILiteS_axilite \
 			name iiccomm2update_AXILiteS_s_axi \
 			ports {$port_AXILiteS} \
@@ -2147,7 +2272,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 46 \
+    id 48 \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 

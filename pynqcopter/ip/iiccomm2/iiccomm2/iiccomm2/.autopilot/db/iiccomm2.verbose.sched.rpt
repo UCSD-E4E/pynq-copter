@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'iiccomm2'
 ================================================================
-* Date:           Wed Aug 22 10:12:20 2018
+* Date:           Sat Aug 25 15:57:25 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        iiccomm2
@@ -1155,7 +1155,7 @@ ST_48 : Operation 585 [4/5] (3.50ns)   --->   "%iic_addr_3_resp19 = call i1 @_ss
 ST_48 : Operation 586 [1/1] (0.00ns)   --->   "%iic_addr_39 = getelementptr i32* %iic, i64 268436546"
 ST_48 : Operation 587 [5/5] (3.50ns)   --->   "%iic_addr_3_resp21 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_39)" [iiccomm2.cpp:129]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_48 : Operation 588 [1/1] (0.00ns)   --->   "%iic_addr_41 = getelementptr i32* %iic, i64 268436546"
-ST_48 : Operation 589 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_41, i32 39, i4 -1)" [iiccomm2.cpp:130]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_48 : Operation 589 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_41, i32 47, i4 -1)" [iiccomm2.cpp:130]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_48 : Operation 590 [1/1] (0.00ns)   --->   "%iic_addr_43 = getelementptr i32* %iic, i64 268436546"
 ST_48 : Operation 591 [1/1] (3.50ns)   --->   "%iic_addr_3_req24 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %iic_addr_43, i32 1)" [iiccomm2.cpp:133]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
@@ -1191,7 +1191,7 @@ ST_51 : Operation 615 [4/5] (3.50ns)   --->   "%iic_addr_3_resp25 = call i1 @_ss
 ST_51 : Operation 616 [1/1] (0.00ns)   --->   "%iic_addr_48 = getelementptr i32* %iic, i64 268436546"
 ST_51 : Operation 617 [5/5] (3.50ns)   --->   "%iic_addr_3_resp27 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_48)" [iiccomm2.cpp:134]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_51 : Operation 618 [1/1] (0.00ns)   --->   "%iic_addr_50 = getelementptr i32* %iic, i64 268436546"
-ST_51 : Operation 619 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_50, i32 64, i4 -1)" [iiccomm2.cpp:135]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_51 : Operation 619 [1/1] (3.50ns)   --->   "call void @_ssdm_op_Write.m_axi.volatile.i32P(i32* %iic_addr_50, i32 16, i4 -1)" [iiccomm2.cpp:135]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 52> : 3.50ns
 ST_52 : Operation 620 [1/5] (3.50ns)   --->   "%iic_addr_3_resp21 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %iic_addr_39)" [iiccomm2.cpp:129]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>

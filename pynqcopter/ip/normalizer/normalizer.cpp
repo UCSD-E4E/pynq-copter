@@ -62,14 +62,15 @@
  *
  */
 
-void normalizer(uint32_t regs_in, uint32_t min_high, uint32_t max_high, F16_t m[4096]) {
+void normalizer(uint32_t regs_in, uint32_t min_high, uint32_t max_high, F16_t& m) {
 #pragma HLS INTERFACE s_axilite port=return bundle=in
 #pragma HLS INTERFACE s_axilite port=regs_in bundle=in
 #pragma HLS INTERFACE s_axilite port=min_high bundle=in
 #pragma HLS INTERFACE s_axilite port=max_high bundle=in
-#pragma HLS ARRAY_PARTITION variable=regs_in complete dim=1
 
-#pragma HLS INTERFACE m_axi port=m offset=off
+//#pragma HLS INTERFACE m_axi port=m
+//for testing with jupyter, "m" will use s_axilite
+#pragma HLS INTERFACE s_axilite port=m bundle=in
 
 #pragma HLS PIPELINE
 
@@ -83,6 +84,6 @@ void normalizer(uint32_t regs_in, uint32_t min_high, uint32_t max_high, F16_t m[
 	}
 
 	if(changed<2) {
-		m[changed]= F16_t(F64_t(regs_in[changed]-min_high)/F64_t(max_high-min_high));
+		m= F16_t(F64_t(regs_in-min_high)/F64_t(max_high-min_high));
 	}
 }
