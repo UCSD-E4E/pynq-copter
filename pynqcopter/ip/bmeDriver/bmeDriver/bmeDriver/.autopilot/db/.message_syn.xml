@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;bmeDriver.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;main.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:01:00 ; elapsed = 00:00:33 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 97515 ; free virtual = 493800" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:01:01 ; elapsed = 00:00:35 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 97510 ; free virtual = 493795" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;delay_until_ms&lt;50ull, 50000000ull&gt;&apos; into &apos;bmeDriver&apos; (bmeDriver.cpp:115)." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;delay_until_ms&lt;10ull, 50000000ull&gt;&apos; into &apos;bmeDriver&apos; (bmeDriver.cpp:146)." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;delay_until_ms&lt;10ull, 50000000ull&gt;&apos; into &apos;bmeDriver&apos; (bmeDriver.cpp:133)." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;ap_fixed_base&lt;137, 84, false, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&lt;&lt;&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330)." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;ap_fixed_base&lt;1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0&gt;::overflow_adjust&apos; into &apos;ap_fixed_base&lt;1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0&gt;::ap_fixed_base&lt;137, 84, false, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&apos; ()." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:01:05 ; elapsed = 00:00:39 . Memory (MB): peak = 490.895 ; gain = 144.328 ; free physical = 97406 ; free virtual = 493691" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;double&gt;::mantissa&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:327) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;double&gt;::expv&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;double&gt;::__signbit&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:350) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;generic_cast_IEEE754&lt;unsigned int, double&gt;&apos; into &apos;__hls_fptoui_double_i32&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:67) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;__hls_fptoui_double_i32&apos; into &apos;bmeDriver&apos; (bmeDriver.cpp:201) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:01:07 ; elapsed = 00:00:41 . Memory (MB): peak = 490.895 ; gain = 144.328 ; free physical = 97406 ; free virtual = 493691" tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;double&gt;::mantissa&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:327) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;fp_struct&lt;double&gt;::expv&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;generic_cast_IEEE754&lt;unsigned int, (ap_q_mode)6, double&gt;&apos; into &apos;generic_cast_IEEE754&lt;unsigned int, double&gt;&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;generic_cast_IEEE754&lt;unsigned int, double&gt;&apos; into &apos;__hls_fptoui_double_i32&apos; (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:67) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;__hls_fptoui_double_i32&apos; into &apos;bmeDriver&apos; (bmeDriver.cpp:201) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:01:09 ; elapsed = 00:00:43 . Memory (MB): peak = 554.363 ; gain = 207.797 ; free physical = 97362 ; free virtual = 493647" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:01:10 ; elapsed = 00:00:45 . Memory (MB): peak = 554.363 ; gain = 207.797 ; free physical = 97358 ; free virtual = 493643" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;bmeDriver&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;bmeDriver&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="86" content="Estimated delay (6.97ns) of &apos;mul&apos; operation (&apos;tmp_54&apos;, bmeDriver.cpp:195) exceeds the target cycle time (target cycle time: 4ns, clock uncertainty: 0.5ns, effective cycle time: 3.5ns)." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="137" content="Estimated clock period (6.973ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns)." tag=""/>
+	<Message prefix="[SCHED 204-21]" severity="WARNING" keynum="135" content="The critical path consists of the following:
+	&apos;phi&apos; operation (&apos;pressure&apos;) with incoming values : (&apos;pressure&apos;, bmeDriver.cpp:193) (&apos;pressure&apos;, bmeDriver.cpp:189) (0 ns)
+	&apos;mul&apos; operation (&apos;tmp_54&apos;, bmeDriver.cpp:195) (6.97 ns)" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 45.62 seconds; current allocated memory: 173.856 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.87 seconds; current allocated memory: 176.809 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;bmeDriver&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmeDriver/iic&apos; to &apos;m_axi&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;bmeDriver/pressure_diff&apos; to &apos;s_axilite &amp; ap_vld&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;bmeDriver&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;count&apos; is power-on initialization." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_basepointData&apos; to &apos;bmeDriver_basepoibkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;basepointSum&apos; is power-on initialization." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="374" content="Register &apos;basepoint&apos; is power-on initialization." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos; to AXI-Lite port AXILiteS." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_sensorData&apos; to &apos;bmeDriver_sensorDcud&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_ddiv_64ns_64ns_64_59_1&apos; to &apos;bmeDriver_ddiv_64dEe&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_uitodp_32ns_64_8_1&apos; to &apos;bmeDriver_uitodp_eOg&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_29s_29s_57_7_1&apos; to &apos;bmeDriver_mul_29sfYi&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_7ns_45s_51_12_1&apos; to &apos;bmeDriver_mul_7nsg8j&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_16ns_29ns_44_7_1&apos; to &apos;bmeDriver_mul_16nhbi&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_52s_52s_64_6_1&apos; to &apos;bmeDriver_mul_52sibs&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_18ns_45s_64_12_1&apos; to &apos;bmeDriver_mul_18njbC&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_17ns_45s_64_12_1&apos; to &apos;bmeDriver_mul_17nkbM&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_17ns_53s_64_6_1&apos; to &apos;bmeDriver_mul_17nlbW&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_13ns_51s_63_6_1&apos; to &apos;bmeDriver_mul_13nmb6&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_add_64ns_64ns_64_2_1&apos; to &apos;bmeDriver_add_64nncg&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_17ns_46s_62_12_1&apos; to &apos;bmeDriver_mul_17nocq&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_13ns_52s_63_6_1&apos; to &apos;bmeDriver_mul_13npcA&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_52s_14ns_64_6_1&apos; to &apos;bmeDriver_mul_52sqcK&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_udiv_63ns_47s_63_67_1&apos; to &apos;bmeDriver_udiv_63rcU&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_udiv_64ns_47s_64_68_1&apos; to &apos;bmeDriver_udiv_64sc4&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_61s_61s_61_7_1&apos; to &apos;bmeDriver_mul_61stde&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_17ns_49s_49_12_1&apos; to &apos;bmeDriver_mul_17nudo&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_14ns_48s_48_12_1&apos; to &apos;bmeDriver_mul_14nvdy&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_lshr_54ns_32ns_54_7_1&apos; to &apos;bmeDriver_lshr_54wdI&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_shl_137ns_32ns_137_7_1&apos; to &apos;bmeDriver_shl_137xdS&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;bmeDriver_mul_32ns_34ns_65_7_1&apos; to &apos;bmeDriver_mul_32nyd2&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_add_64nncg&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_ddiv_64dEe&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_lshr_54wdI&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_13nmb6&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_13npcA&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_14nvdy&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_16nhbi&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_17nkbM&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_17nlbW&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_17nocq&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_17nudo&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_18njbC&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_29sfYi&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_32nyd2&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_52sibs&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_52sqcK&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_61stde&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_mul_7nsg8j&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_shl_137xdS&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_udiv_63rcU&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_udiv_64sc4&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;bmeDriver_uitodp_eOg&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;bmeDriver&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.94 seconds; current allocated memory: 182.375 MB." tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_29sfYi_MulnS_0&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_7nsg8j_MulnS_1&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_16nhbi_MulnS_2&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_52sibs_Mul6S_0&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_18njbC_MulnS_3&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_17nkbM_MulnS_4&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_17nlbW_Mul6S_1&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_13nmb6_Mul6S_2&apos;" tag=""/>
+	<Message prefix="[RTMG 210-283]" severity="INFO" keynum="RTMG_283_1797" content="Generating pipelined adder/subtractor : &apos;bmeDriver_add_64nncg_AddSubnS_0&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_17nocq_MulnS_5&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_13npcA_Mul6S_3&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_52sqcK_Mul6S_4&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_udiv_63rcU_div&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_udiv_64sc4_div&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_61stde_MulnS_6&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_17nudo_MulnS_7&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_14nvdy_MulnS_8&apos;" tag=""/>
+	<Message prefix="[RTMG 210-286]" severity="INFO" keynum="RTMG_286_1800" content="Generating pipelined shifter : &apos;bmeDriver_lshr_54wdI&apos;" tag=""/>
+	<Message prefix="[RTMG 210-286]" severity="INFO" keynum="RTMG_286_1800" content="Generating pipelined shifter : &apos;bmeDriver_shl_137xdS&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;bmeDriver_mul_32nyd2_MulnS_9&apos;" tag=""/>
+	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1792" content="Implementing memory &apos;bmeDriver_basepoibkb_ram (RAM)&apos; using distributed RAMs with power-on initialization." tag=""/>
+	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1790" content="Implementing memory &apos;bmeDriver_sensorDcud_ram (RAM)&apos; using distributed RAMs." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:01:15 ; elapsed = 00:00:51 . Memory (MB): peak = 554.363 ; gain = 207.797 ; free physical = 97390 ; free virtual = 493629" tag=""/>
+	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for bmeDriver." tag=""/>
+	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for bmeDriver." tag=""/>
+	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for bmeDriver." tag=""/>
+</Messages>
