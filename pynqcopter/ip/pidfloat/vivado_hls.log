@@ -1,0 +1,137 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source /data/opt/Xilinx/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/data/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Tue Aug 28 13:07:34 PDT 2018
+INFO: [HLS 200-10] On os Linux Mint 18 Sarah
+INFO: [HLS 200-10] In directory '/home/iavendano/pynq-copter/pynqcopter/ip/pidfloat'
+INFO: [HLS 200-10] Creating and opening project '/home/iavendano/pynq-copter/pynqcopter/ip/pidfloat/pidfloat'.
+INFO: [HLS 200-10] Adding test bench file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'pidfloat.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'pidfloat.cpp' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/iavendano/pynq-copter/pynqcopter/ip/pidfloat/pidfloat/pidfloat'.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+make[1]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/pidfloat/pidfloat/pidfloat/csim/build'
+   Compiling ../../../../pidfloat.cpp in debug mode
+   Compiling ../../../../main.cpp in debug mode
+   Generating csim.exe
+make[1]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/pidfloat/pidfloat/pidfloat/csim/build'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+5.000000
+10.000000
+15.000000
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-10] Analyzing design file 'pidfloat.cpp' ...
+INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:23 ; elapsed = 00:00:34 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 97602 ; free virtual = 495519
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:25 ; elapsed = 00:00:36 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 97993 ; free virtual = 495912
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:26 ; elapsed = 00:00:37 . Memory (MB): peak = 360.152 ; gain = 13.590 ; free physical = 97994 ; free virtual = 495915
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:26 ; elapsed = 00:00:37 . Memory (MB): peak = 360.164 ; gain = 13.602 ; free physical = 97989 ; free virtual = 495910
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:27 ; elapsed = 00:00:38 . Memory (MB): peak = 488.164 ; gain = 141.602 ; free physical = 97954 ; free virtual = 495878
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:27 ; elapsed = 00:00:39 . Memory (MB): peak = 488.164 ; gain = 141.602 ; free physical = 97900 ; free virtual = 495825
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'pidfloat' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pidfloat'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 39.06 seconds; current allocated memory: 77.777 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] After resource sharing, estimated clock period (4.49975ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns).
+INFO: [BIND 205-100] The critical path consists of the following:
+	'fsub' operation ('tmp_s', pidfloat.cpp:84) (4.5 ns)
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.26 seconds; current allocated memory: 78.872 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pidfloat'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/target_roll' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/current_roll' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/Kp_roll' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/Ki_roll' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/Kd_roll' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/target_pitch' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/current_pitch' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/Kp_pitch' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/Ki_pitch' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/Kd_pitch' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/target_yaw' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/current_yaw' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/Kp_yaw' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/Ki_yaw' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/Kd_yaw' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/dt' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/rollX' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/pitchY' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfloat/yawZ' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'pidfloat' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Global scalar 'error_roll' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'proportional_roll' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Register 'integral_roll' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'previous_error_roll' is power-on initialization.
+WARNING: [RTGEN 206-101] Global scalar 'derivative_roll' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'error_pitch' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'proportional_pitch' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Register 'integral_pitch' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'previous_error_pitch' is power-on initialization.
+WARNING: [RTGEN 206-101] Global scalar 'derivative_pitch' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'error_yaw' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'proportional_yaw' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Register 'integral_yaw' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'previous_error_yaw' is power-on initialization.
+WARNING: [RTGEN 206-101] Global scalar 'derivative_yaw' will not be exposed as RTL port.
+INFO: [RTGEN 206-100] Bundling port 'return', 'current_roll', 'Kp_roll', 'Ki_roll', 'Kd_roll', 'target_pitch', 'current_pitch', 'Kp_pitch', 'Ki_pitch', 'Kd_pitch', 'target_yaw', 'current_yaw', 'Kp_yaw', 'Ki_yaw', 'Kd_yaw', 'dt', 'rollX', 'pitchY' and 'yawZ' to AXI-Lite port CTRL.
+INFO: [SYN 201-210] Renamed object name 'pidfloat_faddfsub_32ns_32ns_32_10_full_dsp_1' to 'pidfloat_faddfsubbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pidfloat_fmul_32ns_32ns_32_8_max_dsp_1' to 'pidfloat_fmul_32ncud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pidfloat_fdiv_32ns_32ns_32_30_1' to 'pidfloat_fdiv_32ndEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'pidfloat_faddfsubbkb': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'pidfloat_fdiv_32ndEe': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'pidfloat_fmul_32ncud': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pidfloat'.
+INFO: [HLS 200-111]  Elapsed time: 0.36 seconds; current allocated memory: 80.055 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:29 ; elapsed = 00:00:41 . Memory (MB): peak = 488.164 ; gain = 141.602 ; free physical = 97946 ; free virtual = 495873
+INFO: [SYSC 207-301] Generating SystemC RTL for pidfloat.
+INFO: [VHDL 208-304] Generating VHDL RTL for pidfloat.
+INFO: [VLOG 209-307] Generating Verilog RTL for pidfloat.
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'pidfloat_ap_faddfsub_8_full_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'pidfloat_ap_faddfsub_8_full_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'pidfloat_ap_faddfsub_8_full_dsp_32'...
+WARNING: [IP_Flow 19-4832] The IP name 'pidfloat_ap_fdiv_28_no_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'pidfloat_ap_fdiv_28_no_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'pidfloat_ap_fdiv_28_no_dsp_32'...
+WARNING: [IP_Flow 19-4832] The IP name 'pidfloat_ap_fmul_6_max_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'pidfloat_ap_fmul_6_max_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'pidfloat_ap_fmul_6_max_dsp_32'...
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 28 13:08:42 2018...
+INFO: [HLS 200-112] Total elapsed time: 120.97 seconds; peak allocated memory: 80.055 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Tue Aug 28 13:09:34 2018...
