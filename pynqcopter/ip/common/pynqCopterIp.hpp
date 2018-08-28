@@ -4,9 +4,11 @@
 
 #define MOTOR_COUNT 6
 #define RC_CHANNELS 6
-#define clip(in,low,high) (in<low?low:(in>high?high:in))
+#define clip(in,low,high) ((in)<(low)?(low):((in)>(high)?(high):(in)))
 
 //Constants
+typedef ap_fixed<128,96> F128_t;
+
 typedef ap_fixed<64,32> F64_t;
 typedef ap_fixed<32, 16> F32_t;
 typedef ap_fixed<19, 4> F19_t;

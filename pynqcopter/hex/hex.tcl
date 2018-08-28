@@ -45,8 +45,18 @@ set bCheckIPs 1
 if { $bCheckIPs == 1 } {
    set list_check_ips "\ 
 xilinx.com:ip:axi_iic:2.0\
+UCSD:hlsip:imu_driver:1.0\
+UCSD:hlsip:normalizer:1.0\
+UCSD:hlsip:pid:1.0\
 xilinx.com:ip:processing_system7:5.5\
+UCSD:hlsip:pwm:1.0\
+UCSD:hlsip:rc_receiver:1.0\
 xilinx.com:ip:proc_sys_reset:5.0\
+ucsd.edu:ip:synchronizer:1.0\
+xilinx.com:user:wire_distributor:1.0\
+xilinx.com:ip:xlconcat:2.1\
+xilinx.com:ip:xlconstant:1.1\
+xilinx.com:ip:xlslice:1.0\
 "
 
    set list_ips_missing ""
@@ -123,6 +133,46 @@ proc create_root_design { parentCell } {
 
   # Create instance: axi_iic_0, and set properties
   set axi_iic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_iic:2.0 axi_iic_0 ]
+
+  # Create instance: imu_driver_0, and set properties
+  set imu_driver_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:imu_driver:1.0 imu_driver_0 ]
+  set_property -dict [ list \
+   CONFIG.C_M_AXI_IIC_TARGET_ADDR {0x40010000} \
+   CONFIG.C_M_AXI_SENSOR_MIX_TARGET_ADDR {0x40007020} \
+ ] $imu_driver_0
+
+  set_property -dict [ list \
+   CONFIG.SUPPORTS_NARROW_BURST {0} \
+   CONFIG.NUM_READ_OUTSTANDING {1} \
+   CONFIG.NUM_WRITE_OUTSTANDING {1} \
+   CONFIG.MAX_BURST_LENGTH {1} \
+ ] [get_bd_intf_pins /imu_driver_0/s_axi_CTRL]
+
+  # Create instance: normalizer_0, and set properties
+  set normalizer_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:normalizer:1.0 normalizer_0 ]
+  set_property -dict [ list \
+   CONFIG.C_M_AXI_M_V_TARGET_ADDR {0x40007010} \
+ ] $normalizer_0
+
+  set_property -dict [ list \
+   CONFIG.SUPPORTS_NARROW_BURST {0} \
+   CONFIG.NUM_READ_OUTSTANDING {1} \
+   CONFIG.NUM_WRITE_OUTSTANDING {1} \
+   CONFIG.MAX_BURST_LENGTH {1} \
+ ] [get_bd_intf_pins /normalizer_0/s_axi_in]
+
+  # Create instance: pid_0, and set properties
+  set pid_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:pid:1.0 pid_0 ]
+  set_property -dict [ list \
+   CONFIG.C_M_AXI_OUT_R_TARGET_ADDR {0x40008030} \
+ ] $pid_0
+
+  set_property -dict [ list \
+   CONFIG.SUPPORTS_NARROW_BURST {0} \
+   CONFIG.NUM_READ_OUTSTANDING {1} \
+   CONFIG.NUM_WRITE_OUTSTANDING {1} \
+   CONFIG.MAX_BURST_LENGTH {1} \
+ ] [get_bd_intf_pins /pid_0/s_axi_CTRL]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -996,27 +1046,197 @@ proc create_root_design { parentCell } {
   # Create instance: ps7_0_axi_periph, and set properties
   set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {1} \
+   CONFIG.NUM_MI {6} \
+   CONFIG.NUM_SI {6} \
  ] $ps7_0_axi_periph
+
+  # Create instance: pwm_0, and set properties
+  set pwm_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:pwm:1.0 pwm_0 ]
+
+  set_property -dict [ list \
+   CONFIG.SUPPORTS_NARROW_BURST {0} \
+   CONFIG.NUM_READ_OUTSTANDING {1} \
+   CONFIG.NUM_WRITE_OUTSTANDING {1} \
+   CONFIG.MAX_BURST_LENGTH {1} \
+ ] [get_bd_intf_pins /pwm_0/s_axi_ctrl]
+
+  # Create instance: rc_receiver_0, and set properties
+  set rc_receiver_0 [ create_bd_cell -type ip -vlnv UCSD:hlsip:rc_receiver:1.0 rc_receiver_0 ]
+  set_property -dict [ list \
+   CONFIG.C_M_AXI_NORM_OUT_TARGET_ADDR {0x40004010} \
+ ] $rc_receiver_0
+
+  set_property -dict [ list \
+   CONFIG.SUPPORTS_NARROW_BURST {0} \
+   CONFIG.NUM_READ_OUTSTANDING {1} \
+   CONFIG.NUM_WRITE_OUTSTANDING {1} \
+   CONFIG.MAX_BURST_LENGTH {1} \
+ ] [get_bd_intf_pins /rc_receiver_0/s_axi_in]
 
   # Create instance: rst_ps7_0_100M, and set properties
   set rst_ps7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_100M ]
 
+  # Create instance: synchronizer_0, and set properties
+  set synchronizer_0 [ create_bd_cell -type ip -vlnv ucsd.edu:ip:synchronizer:1.0 synchronizer_0 ]
+  set_property -dict [ list \
+   CONFIG.C_DATA_WIDTH {6} \
+   CONFIG.C_DEPTH {100} \
+   CONFIG.C_RESET_VALUE {0} \
+ ] $synchronizer_0
+
+  # Create instance: wire_distributor_0, and set properties
+  set wire_distributor_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:wire_distributor:1.0 wire_distributor_0 ]
+  set_property -dict [ list \
+   CONFIG.TYPE {1} \
+   CONFIG.WIDTH {20} \
+ ] $wire_distributor_0
+
+  # Create instance: xlconcat_0, and set properties
+  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
+  set_property -dict [ list \
+   CONFIG.IN14_WIDTH {6} \
+   CONFIG.NUM_PORTS {15} \
+ ] $xlconcat_0
+
+  # Create instance: xlconcat_1, and set properties
+  set xlconcat_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1 ]
+  set_property -dict [ list \
+   CONFIG.IN8_WIDTH {6} \
+   CONFIG.NUM_PORTS {15} \
+ ] $xlconcat_1
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0x3F} \
+   CONFIG.CONST_WIDTH {6} \
+ ] $xlconstant_0
+
+  # Create instance: xlslice_0, and set properties
+  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {19} \
+   CONFIG.DIN_TO {14} \
+   CONFIG.DIN_WIDTH {20} \
+   CONFIG.DOUT_WIDTH {6} \
+ ] $xlslice_0
+
+  # Create instance: xlslice_1, and set properties
+  set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
+  set_property -dict [ list \
+   CONFIG.DIN_FROM {605} \
+   CONFIG.DIN_TO {600} \
+   CONFIG.DIN_WIDTH {606} \
+   CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_1
+
   # Create interface connections
   connect_bd_intf_net -intf_net axi_iic_0_IIC [get_bd_intf_ports arduino_iic] [get_bd_intf_pins axi_iic_0/IIC]
+  connect_bd_intf_net -intf_net imu_driver_0_m_axi_sensor_mix [get_bd_intf_pins imu_driver_0/m_axi_sensor_mix] [get_bd_intf_pins ps7_0_axi_periph/S05_AXI]
+  connect_bd_intf_net -intf_net imu_driver_0_m_axi_to_iic [get_bd_intf_pins imu_driver_0/m_axi_iic] [get_bd_intf_pins ps7_0_axi_periph/S04_AXI]
+  connect_bd_intf_net -intf_net normalizer_0_m_axi_m_V [get_bd_intf_pins normalizer_0/m_axi_m_V] [get_bd_intf_pins ps7_0_axi_periph/S03_AXI]
+  connect_bd_intf_net -intf_net pid_0_m_axi_OUT_r [get_bd_intf_pins pid_0/m_axi_OUT_r] [get_bd_intf_pins ps7_0_axi_periph/S01_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins axi_iic_0/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins ps7_0_axi_periph/M01_AXI] [get_bd_intf_pins pwm_0/s_axi_ctrl]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins pid_0/s_axi_CTRL] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M03_AXI [get_bd_intf_pins ps7_0_axi_periph/M03_AXI] [get_bd_intf_pins rc_receiver_0/s_axi_in]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M04_AXI [get_bd_intf_pins normalizer_0/s_axi_in] [get_bd_intf_pins ps7_0_axi_periph/M04_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M05_AXI [get_bd_intf_pins imu_driver_0/s_axi_CTRL] [get_bd_intf_pins ps7_0_axi_periph/M05_AXI]
+  connect_bd_intf_net -intf_net rc_receiver_0_m_axi_norm_out [get_bd_intf_pins ps7_0_axi_periph/S02_AXI] [get_bd_intf_pins rc_receiver_0/m_axi_norm_out]
+  connect_bd_intf_net -intf_net wire_distributor_0_gpio_output [get_bd_intf_ports arduino_gpio] [get_bd_intf_pins wire_distributor_0/gpio_output]
 
   # Create port connections
-  connect_bd_net -net FCLK_CLK0 [get_bd_pins axi_iic_0/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP1_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP2_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net FCLK_CLK0 [get_bd_pins axi_iic_0/s_axi_aclk] [get_bd_pins imu_driver_0/ap_clk] [get_bd_pins normalizer_0/ap_clk] [get_bd_pins pid_0/ap_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP1_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP2_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins ps7_0_axi_periph/S01_ACLK] [get_bd_pins ps7_0_axi_periph/S02_ACLK] [get_bd_pins ps7_0_axi_periph/S03_ACLK] [get_bd_pins ps7_0_axi_periph/S04_ACLK] [get_bd_pins ps7_0_axi_periph/S05_ACLK] [get_bd_pins pwm_0/ap_clk] [get_bd_pins rc_receiver_0/ap_clk] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins synchronizer_0/CLK]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
+  connect_bd_net -net pwm_0_out_V [get_bd_pins pwm_0/out_V] [get_bd_pins xlconcat_1/In8]
   connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_iic_0/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_iic_0/s_axi_aresetn] [get_bd_pins imu_driver_0/ap_rst_n] [get_bd_pins normalizer_0/ap_rst_n] [get_bd_pins pid_0/ap_rst_n] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins ps7_0_axi_periph/S01_ARESETN] [get_bd_pins ps7_0_axi_periph/S02_ARESETN] [get_bd_pins ps7_0_axi_periph/S03_ARESETN] [get_bd_pins ps7_0_axi_periph/S04_ARESETN] [get_bd_pins ps7_0_axi_periph/S05_ARESETN] [get_bd_pins pwm_0/ap_rst_n] [get_bd_pins rc_receiver_0/ap_rst_n] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_reset [get_bd_pins rst_ps7_0_100M/peripheral_reset] [get_bd_pins synchronizer_0/RST_IN]
+  connect_bd_net -net synchronizer_0_RD_DATA [get_bd_pins synchronizer_0/RD_DATA] [get_bd_pins xlslice_1/Din]
+  connect_bd_net -net wire_distributor_0_wire_i_i [get_bd_pins wire_distributor_0/wire_i_i] [get_bd_pins xlslice_0/Din]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins wire_distributor_0/wire_i_t] [get_bd_pins xlconcat_0/dout]
+  connect_bd_net -net xlconcat_1_dout [get_bd_pins wire_distributor_0/wire_i_o] [get_bd_pins xlconcat_1/dout]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins xlconcat_0/In14] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins synchronizer_0/WR_DATA] [get_bd_pins xlslice_0/Dout]
+  connect_bd_net -net xlslice_1_Dout [get_bd_pins rc_receiver_0/channels_V] [get_bd_pins xlslice_1/Dout]
 
   # Create address segments
-  create_bd_addr_seg -range 0x00010000 -offset 0x41600000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40010000 [get_bd_addr_spaces imu_driver_0/Data_m_axi_iic] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40007000 [get_bd_addr_spaces imu_driver_0/Data_m_axi_sensor_mix] [get_bd_addr_segs pid_0/s_axi_CTRL/Reg] SEG_pid_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40007000 [get_bd_addr_spaces normalizer_0/Data_m_axi_m_V] [get_bd_addr_segs pid_0/s_axi_CTRL/Reg] SEG_pid_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40008000 [get_bd_addr_spaces pid_0/Data_m_axi_OUT_r] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40010000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40005000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs imu_driver_0/s_axi_CTRL/Reg] SEG_imu_driver_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40004000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40007000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs pid_0/s_axi_CTRL/Reg] SEG_pid_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40008000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40003000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs rc_receiver_0/s_axi_in/Reg] SEG_rc_receiver_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x40004000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_norm_out] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
+
+  # Exclude Address Segments
+  create_bd_addr_seg -range 0x00001000 -offset 0x40010000 [get_bd_addr_spaces imu_driver_0/Data_m_axi_sensor_mix] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs imu_driver_0/Data_m_axi_sensor_mix/SEG_axi_iic_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40005000 [get_bd_addr_spaces imu_driver_0/Data_m_axi_sensor_mix] [get_bd_addr_segs imu_driver_0/s_axi_CTRL/Reg] SEG_imu_driver_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs imu_driver_0/Data_m_axi_sensor_mix/SEG_imu_driver_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40004000 [get_bd_addr_spaces imu_driver_0/Data_m_axi_sensor_mix] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs imu_driver_0/Data_m_axi_sensor_mix/SEG_normalizer_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40008000 [get_bd_addr_spaces imu_driver_0/Data_m_axi_sensor_mix] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs imu_driver_0/Data_m_axi_sensor_mix/SEG_pwm_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40003000 [get_bd_addr_spaces imu_driver_0/Data_m_axi_sensor_mix] [get_bd_addr_segs rc_receiver_0/s_axi_in/Reg] SEG_rc_receiver_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs imu_driver_0/Data_m_axi_sensor_mix/SEG_rc_receiver_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40010000 [get_bd_addr_spaces normalizer_0/Data_m_axi_m_V] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs normalizer_0/Data_m_axi_m_V/SEG_axi_iic_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40005000 [get_bd_addr_spaces normalizer_0/Data_m_axi_m_V] [get_bd_addr_segs imu_driver_0/s_axi_CTRL/Reg] SEG_imu_driver_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs normalizer_0/Data_m_axi_m_V/SEG_imu_driver_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40004000 [get_bd_addr_spaces normalizer_0/Data_m_axi_m_V] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs normalizer_0/Data_m_axi_m_V/SEG_normalizer_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40008000 [get_bd_addr_spaces normalizer_0/Data_m_axi_m_V] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs normalizer_0/Data_m_axi_m_V/SEG_pwm_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40003000 [get_bd_addr_spaces normalizer_0/Data_m_axi_m_V] [get_bd_addr_segs rc_receiver_0/s_axi_in/Reg] SEG_rc_receiver_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs normalizer_0/Data_m_axi_m_V/SEG_rc_receiver_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40010000 [get_bd_addr_spaces pid_0/Data_m_axi_OUT_r] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs pid_0/Data_m_axi_OUT_r/SEG_axi_iic_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40005000 [get_bd_addr_spaces pid_0/Data_m_axi_OUT_r] [get_bd_addr_segs imu_driver_0/s_axi_CTRL/Reg] SEG_imu_driver_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs pid_0/Data_m_axi_OUT_r/SEG_imu_driver_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40004000 [get_bd_addr_spaces pid_0/Data_m_axi_OUT_r] [get_bd_addr_segs normalizer_0/s_axi_in/Reg] SEG_normalizer_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs pid_0/Data_m_axi_OUT_r/SEG_normalizer_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40007000 [get_bd_addr_spaces pid_0/Data_m_axi_OUT_r] [get_bd_addr_segs pid_0/s_axi_CTRL/Reg] SEG_pid_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs pid_0/Data_m_axi_OUT_r/SEG_pid_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40003000 [get_bd_addr_spaces pid_0/Data_m_axi_OUT_r] [get_bd_addr_segs rc_receiver_0/s_axi_in/Reg] SEG_rc_receiver_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs pid_0/Data_m_axi_OUT_r/SEG_rc_receiver_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40010000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_norm_out] [get_bd_addr_segs axi_iic_0/S_AXI/Reg] SEG_axi_iic_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_norm_out/SEG_axi_iic_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40005000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_norm_out] [get_bd_addr_segs imu_driver_0/s_axi_CTRL/Reg] SEG_imu_driver_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_norm_out/SEG_imu_driver_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40007000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_norm_out] [get_bd_addr_segs pid_0/s_axi_CTRL/Reg] SEG_pid_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_norm_out/SEG_pid_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40008000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_norm_out] [get_bd_addr_segs pwm_0/s_axi_ctrl/Reg] SEG_pwm_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_norm_out/SEG_pwm_0_Reg]
+
+  create_bd_addr_seg -range 0x00001000 -offset 0x40003000 [get_bd_addr_spaces rc_receiver_0/Data_m_axi_norm_out] [get_bd_addr_segs rc_receiver_0/s_axi_in/Reg] SEG_rc_receiver_0_Reg
+  exclude_bd_addr_seg [get_bd_addr_segs rc_receiver_0/Data_m_axi_norm_out/SEG_rc_receiver_0_Reg]
+
 
 
   # Restore current instance

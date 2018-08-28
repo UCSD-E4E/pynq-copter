@@ -74,7 +74,6 @@ void normalizer(uint32_t regs_in[6],uint32_t min_high, uint32_t max_high, F16_t 
 #pragma HLS PIPELINE
 
 	static unsigned int last[6] = {0,0,0,0,0,0};
-
 	int changed=0;
 	for(int i =0; i < 6; ++i) {
 		if(regs_in[i]!=last[i]) {
@@ -83,6 +82,6 @@ void normalizer(uint32_t regs_in[6],uint32_t min_high, uint32_t max_high, F16_t 
 		}
 	}
 	if(changed<5) {
-		m[changed]= F16_t(F64_t(regs_in[changed]-min_high)/F64_t(max_high-min_high));
+		m[changed]= (F16_t(F64_t(regs_in[changed]-min_high)/F64_t(max_high-min_high))-F16_t(.5))*2;
 	}
 }

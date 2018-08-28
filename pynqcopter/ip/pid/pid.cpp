@@ -75,11 +75,11 @@ void pid (F16_t rcCmdIn[5],
 	F16_t  mixer_in[4]={0,0,0,0};
 
 	// rpty pid controllers
-	for(char i =0; i<4;++i)
+	for(char i =0; i<2;++i)
 	{
 		// calculate the error from rc and measured
 		F32_t curr_error = rcCmdIn[i] - measured[i];
-		integral[i] +=  (curr_error);
+		integral[i] =  clip(F32_t(integral[i] + (curr_error*F32_t(.0000001))),F32_t(-.1),F32_t(.1));
 		F32_t deriv = (curr_error-prev_error[i]);
 		F32_t correction = (kp[i] * curr_error) + (ki[i] * integral[i]) + (kd[i] * deriv);
 
@@ -91,10 +91,10 @@ void pid (F16_t rcCmdIn[5],
 	// mixed _in contains noramlized values for each channel
 	// lets convert those to what we want to use
 	// change all to F19_t and make sure thrust is scaled to [0,1)
-	F19_t r_c = rcCmdIn[0]*2-1;
-	F19_t p_c = rcCmdIn[1]*2-1;
-	F19_t t_c = rcCmdIn[2];//move thrust up to [0,2) then [0,1)
-	F19_t y_c = rcCmdIn[3]*2-1;
+	F19_t r_c = mixer_in[0];
+	F19_t p_c = mixer_in[1];
+	F19_t t_c = rcCmdIn[2]*F16_t(.5)+F16_t(.5);//move thrust up to [0,2) then [0,1)
+	F19_t y_c = rcCmdIn[3];
 
 	for(char i=0; i < 6; i++) {
 	#pragma HLS unroll

@@ -34,16 +34,14 @@ void delay_until_ms(){
 }
 
 //sensor/pid ip core
-void imu_driver (volatile int iic[4096], int sensor_mix[4096]) {
+void imu_driver (volatile int iic[4096], int16_t sensor_mix[4096]) {
 	//SETUP PRAGMAS
 	#pragma HLS INTERFACE s_axilite port=return bundle=CTRL /*use ap_ctrl_none for autorestart*/
-	#pragma HLS INTERFACE m_axi port=iic offset=slave bundle=to_iic
-	#pragma HLS INTERFACE m_axi port=sensor_mix offset=slave
-
-
+	#pragma HLS INTERFACE m_axi port=iic offset=off
+	#pragma HLS INTERFACE m_axi port=sensor_mix offset=off
 	//initialize variables
 	bool calibrationSuccess = true;
-	uint8_t rateData[6] = {};
+	static uint8_t rateData[6] = {0,0,0,0,0,0};
 
 	//only undergo 9dof setup on first run
 	static bool firstSample = true;
@@ -164,7 +162,7 @@ void imu_driver (volatile int iic[4096], int sensor_mix[4096]) {
 	if (calibrationSuccess) {
 		//request rpy rate data
 		iic[TX_FIFO] = 0x150;
-		iic[TX_FIFO] = 0x14; //iic[TX_FIFO] = 0x1A; for attitude
+		iic[TX_FIFO] = 0x14; //iic[TX_FIFO] = 0x1A; for attitude, iic[TX_FIFO] = 0x14 for rate
 		iic[TX_FIFO] = 0x151;
 		iic[TX_FIFO] = 0x206;
 
@@ -175,21 +173,11 @@ void imu_driver (volatile int iic[4096], int sensor_mix[4096]) {
 	} else {
 		delay_until_ms<10>(); //sample rate
 
-
-		//SET 0 FOR UNRECEIVED DATA
-		for (int index = 0; index < 6; index++) {
-			rateData[index] = 0;
-		}
 	}
 
-	//format raw values to euler angles
-	//int rx, ry, rz;
 	sensor_mix[0] = ((uint16_t)rateData[0]) | (((uint16_t)rateData[1]) << 8);
 	sensor_mix[1] = ((uint16_t)rateData[2]) | (((uint16_t)rateData[3]) << 8);
 	sensor_mix[3] = ((uint16_t)rateData[4]) | (((uint16_t)rateData[5]) << 8);
+	delay_until_ms<25>();
 
-	// //output data
-	// rateR = int(((double)rz)/16.0);
-	// rateP = int(((double)ry)/16.0);
-	// rateY = int(((double)rx)/16.0);
 }
