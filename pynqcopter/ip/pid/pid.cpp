@@ -51,9 +51,9 @@
 */
 void pid (F16_t rcCmdIn[5],
 		F16_t measured[4],
-		F32_t kp[4],
-		F32_t kd[4],
-		F32_t ki[4],
+		F32_t kp[2],
+		F32_t kd[2],
+		F32_t ki[2],
 		F16_t commandOut[4096]) {
 
 	//SETUP PRAGMAS
@@ -67,38 +67,57 @@ void pid (F16_t rcCmdIn[5],
 
 	#pragma HLS PIPELINE
 
-	static F32_t integral[4] = {0,0,0,0};
-	static F32_t prev_error[4] = {0,0,0,0};
-	#pragma HLS RESET variable=integral
-	#pragma HLS RESET variable=prev_error
 
-	F16_t  mixer_in[4]={0,0,0,0};
 
-	// rpty pid controllers
-	for(char i =0; i<2;++i)
-	{
-		// calculate the error from rc and measured
-		F32_t curr_error = rcCmdIn[i] - measured[i];
-		integral[i] =  clip(F32_t(integral[i] + (curr_error*F32_t(.0000001))),F32_t(-.1),F32_t(.1));
-		F32_t deriv = (curr_error-prev_error[i]);
-		F32_t correction = (kp[i] * curr_error) + (ki[i] * integral[i]) + (kd[i] * deriv);
 
-		//keep each value [-1,1)
-		mixer_in[i] = clip(correction,F32_t(-1),F32_t(.999));
-		prev_error[i] = curr_error;
-	}
+	static F16_t last_cmd_in[2]={0,0};
+	static F16_t last_measured[2]={0,0};
+	static F16_t last_error[2]={0,0};
+	static F32_t integral[2]={0,0};
+	static F32_t acc[2]={0,0};
+	F32_t pid_o[2];
+	F32_t curr_error[2];
+	F32_t deriv[2];
+	F32_t correction[2];
+	/****************************************
+						ROLL PID CONTROLLER
+	*****************************************/
+
+	curr_error[0]= rcCmdIn[0] - measured[0];
+	integral[0] =  clip(F32_t(integral[0] + (curr_error[0])),F32_t(-100),F32_t(100));
+	deriv[0] = (curr_error[0]-last_error[0]);
+	correction[0] = (kp[0] * curr_error[0]) + (ki[0] * integral[0]) + (kd[0] * deriv[0]);
+	pid_o[0] = clip(correction[0],F32_t(-1),F32_t(.999));
+	last_error[0] = curr_error[0];
+	last_cmd_in[0]=rcCmdIn[0];
+	last_measured[0]=measured[0];
+
+	/****************************************
+						pitch PID CONTROLLER
+	*****************************************/
+
+	curr_error[1] = rcCmdIn[1] + measured[1];//sensor mounted facing forward but upside down
+	integral[1] =  clip(F32_t(integral[1] + (curr_error[1]*acc[1])),F32_t(-100),F32_t(100));
+	deriv[1] = (curr_error[1]-last_error[1])/acc[1];
+	correction[1] = (kp[1] * curr_error[1]) + (ki[1] * integral[1]) + (kd[1] * deriv[1]);
+	pid_o[1] = clip(correction[1],F32_t(-1),F32_t(.999));
+	last_error[1] = curr_error[1];
+	last_cmd_in[1]=rcCmdIn[1];
+	last_measured[1]=measured[1];
 
 	// mixed _in contains noramlized values for each channel
 	// lets convert those to what we want to use
 	// change all to F19_t and make sure thrust is scaled to [0,1)
-	F19_t r_c = mixer_in[0];
-	F19_t p_c = mixer_in[1];
-	F19_t t_c = rcCmdIn[2]*F16_t(.5)+F16_t(.5);//move thrust up to [0,2) then [0,1)
+	F19_t r_c = pid_o[0];
+	F19_t p_c = pid_o[1];
+	F19_t t_c = rcCmdIn[2]*F16_t(.5)+F16_t(.5);//move scale to [-.5,.5) then [0,1)
 	F19_t y_c = rcCmdIn[3];
 
 	for(char i=0; i < 6; i++) {
 	#pragma HLS unroll
-		F19_t scaled_power = t_c+(r_c*MIX_C[i][0]+p_c*MIX_C[i][1]+y_c*MIX_C[i][2])*F19_t(.33);
+		F19_t scaled_power = t_c+(r_c*MIX_C[i][0]+\
+															p_c*MIX_C[i][1]+\
+															y_c*MIX_C[i][2])*F19_t(.33);
 		commandOut[i]=F16_t(clip(scaled_power,F19_t(0),F19_t(.999)));
 	}
 	commandOut[6]=rcCmdIn[4];
