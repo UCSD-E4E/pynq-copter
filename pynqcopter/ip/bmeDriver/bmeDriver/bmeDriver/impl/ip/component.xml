@@ -3175,8 +3175,8 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
       </xilinx:taxonomies>
       <xilinx:displayName>BmeDriver</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1808271209</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-08-27T19:10:29Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1808301234</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-08-30T19:34:39Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>

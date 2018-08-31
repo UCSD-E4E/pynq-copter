@@ -14,15 +14,15 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-10] Analyzing design file 'bmeDriver.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:00 ; elapsed = 00:00:33 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 97515 ; free virtual = 493800
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:01 ; elapsed = 00:00:35 . Memory (MB): peak = 359.945 ; gain = 13.379 ; free physical = 97510 ; free virtual = 493795
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:02 ; elapsed = 00:00:35 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 13001 ; free virtual = 463344
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:04 ; elapsed = 00:00:37 . Memory (MB): peak = 359.938 ; gain = 13.379 ; free physical = 12959 ; free virtual = 463301
 INFO: [HLS 200-10] Starting code transformations ...
 INFO: [XFORM 203-603] Inlining function 'delay_until_ms<50ull, 50000000ull>' into 'bmeDriver' (bmeDriver.cpp:115).
 INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 50000000ull>' into 'bmeDriver' (bmeDriver.cpp:146).
 INFO: [XFORM 203-603] Inlining function 'delay_until_ms<10ull, 50000000ull>' into 'bmeDriver' (bmeDriver.cpp:133).
 INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<137, 84, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330).
 INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0>::overflow_adjust' into 'ap_fixed_base<1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0>::ap_fixed_base<137, 84, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:05 ; elapsed = 00:00:39 . Memory (MB): peak = 490.895 ; gain = 144.328 ; free physical = 97406 ; free virtual = 493691
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:08 ; elapsed = 00:00:42 . Memory (MB): peak = 490.887 ; gain = 144.328 ; free physical = 12907 ; free virtual = 463249
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::mantissa' into 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:327) automatically.
 INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330) automatically.
@@ -30,14 +30,14 @@ INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::__signbit' into 'gen
 INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' into 'generic_cast_IEEE754<unsigned int, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically.
 INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned int, double>' into '__hls_fptoui_double_i32' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:67) automatically.
 INFO: [XFORM 203-602] Inlining function '__hls_fptoui_double_i32' into 'bmeDriver' (bmeDriver.cpp:201) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:07 ; elapsed = 00:00:41 . Memory (MB): peak = 490.895 ; gain = 144.328 ; free physical = 97406 ; free virtual = 493691
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:10 ; elapsed = 00:00:43 . Memory (MB): peak = 490.887 ; gain = 144.328 ; free physical = 12866 ; free virtual = 463208
 INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::mantissa' into 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:327) automatically.
 INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:330) automatically.
 INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned int, (ap_q_mode)6, double>' into 'generic_cast_IEEE754<unsigned int, double>' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically.
 INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned int, double>' into '__hls_fptoui_double_i32' (/wrk/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:67) automatically.
 INFO: [XFORM 203-602] Inlining function '__hls_fptoui_double_i32' into 'bmeDriver' (bmeDriver.cpp:201) automatically.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:09 ; elapsed = 00:00:43 . Memory (MB): peak = 554.363 ; gain = 207.797 ; free physical = 97362 ; free virtual = 493647
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:10 ; elapsed = 00:00:45 . Memory (MB): peak = 554.363 ; gain = 207.797 ; free physical = 97358 ; free virtual = 493643
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:12 ; elapsed = 00:00:46 . Memory (MB): peak = 554.355 ; gain = 207.797 ; free physical = 12821 ; free virtual = 463163
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:14 ; elapsed = 00:00:47 . Memory (MB): peak = 554.355 ; gain = 207.797 ; free physical = 12830 ; free virtual = 463172
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'bmeDriver' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -50,13 +50,13 @@ WARNING: [SCHED 204-21] The critical path consists of the following:
 	'phi' operation ('pressure') with incoming values : ('pressure', bmeDriver.cpp:193) ('pressure', bmeDriver.cpp:189) (0 ns)
 	'mul' operation ('tmp_54', bmeDriver.cpp:195) (6.97 ns)
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 45.62 seconds; current allocated memory: 173.856 MB.
+INFO: [HLS 200-111]  Elapsed time: 48.95 seconds; current allocated memory: 173.855 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.87 seconds; current allocated memory: 176.809 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.75 seconds; current allocated memory: 176.808 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'bmeDriver'
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -114,7 +114,7 @@ INFO: [RTGEN 206-100] Generating core module 'bmeDriver_udiv_63rcU': 1 instance(
 INFO: [RTGEN 206-100] Generating core module 'bmeDriver_udiv_64sc4': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'bmeDriver_uitodp_eOg': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'bmeDriver'.
-INFO: [HLS 200-111]  Elapsed time: 0.94 seconds; current allocated memory: 182.375 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.32 seconds; current allocated memory: 182.374 MB.
 INFO: [RTMG 210-282] Generating pipelined core: 'bmeDriver_mul_29sfYi_MulnS_0'
 INFO: [RTMG 210-282] Generating pipelined core: 'bmeDriver_mul_7nsg8j_MulnS_1'
 INFO: [RTMG 210-282] Generating pipelined core: 'bmeDriver_mul_16nhbi_MulnS_2'
@@ -137,9 +137,9 @@ INFO: [RTMG 210-286] Generating pipelined shifter : 'bmeDriver_shl_137xdS'
 INFO: [RTMG 210-282] Generating pipelined core: 'bmeDriver_mul_32nyd2_MulnS_9'
 INFO: [RTMG 210-278] Implementing memory 'bmeDriver_basepoibkb_ram (RAM)' using distributed RAMs with power-on initialization.
 INFO: [RTMG 210-278] Implementing memory 'bmeDriver_sensorDcud_ram (RAM)' using distributed RAMs.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:15 ; elapsed = 00:00:51 . Memory (MB): peak = 554.363 ; gain = 207.797 ; free physical = 97390 ; free virtual = 493629
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:20 ; elapsed = 00:00:55 . Memory (MB): peak = 554.355 ; gain = 207.797 ; free physical = 12842 ; free virtual = 463138
 INFO: [SYSC 207-301] Generating SystemC RTL for bmeDriver.
 INFO: [VHDL 208-304] Generating VHDL RTL for bmeDriver.
 INFO: [VLOG 209-307] Generating Verilog RTL for bmeDriver.
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-INFO: [HLS 200-112] Total elapsed time: 132.13 seconds; peak allocated memory: 182.375 MB.
+INFO: [HLS 200-112] Total elapsed time: 155.18 seconds; peak allocated memory: 182.374 MB.

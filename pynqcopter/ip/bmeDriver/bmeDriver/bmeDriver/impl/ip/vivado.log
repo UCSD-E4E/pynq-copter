@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Mon Aug 27 12:10:01 2018
-# Process ID: 1379
+# Start of session at: Thu Aug 30 12:34:06 2018
+# Process ID: 22615
 # Current directory: /home/iavendano/pynq-copter/pynqcopter/ip/bmeDriver/bmeDriver/bmeDriver/impl/ip
 # Command line: vivado -notrace -mode batch -source run_ippack.tcl
 # Log file: /home/iavendano/pynq-copter/pynqcopter/ip/bmeDriver/bmeDriver/bmeDriver/impl/ip/vivado.log
@@ -22,4 +22,4 @@ INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'bmeDriver_ap_uito
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Mon Aug 27 12:10:29 2018...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 30 12:34:40 2018...
