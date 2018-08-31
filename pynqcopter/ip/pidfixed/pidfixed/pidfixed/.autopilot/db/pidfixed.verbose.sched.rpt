@@ -1,0 +1,686 @@
+
+
+================================================================
+== Vivado HLS Report for 'pidfixed'
+================================================================
+* Date:           Tue Aug 28 13:08:34 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        pidfixed
+* Solution:       pidfixed
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|      4.10|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   34|   34|   34|   34|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 35
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+
+* FSM state operations: 
+
+ <State 1> : 3.08ns
+ST_1 : Operation 36 [1/1] (1.00ns)   --->   "%dt_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %dt_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 37 [1/1] (1.00ns)   --->   "%Kd_yaw_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %Kd_yaw_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 38 [1/1] (1.00ns)   --->   "%Ki_yaw_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %Ki_yaw_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 39 [1/1] (1.00ns)   --->   "%Kp_yaw_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %Kp_yaw_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 40 [1/1] (1.00ns)   --->   "%current_yaw_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %current_yaw_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 41 [1/1] (1.00ns)   --->   "%target_yaw_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %target_yaw_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 42 [1/1] (1.00ns)   --->   "%Kd_pitch_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %Kd_pitch_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 43 [1/1] (1.00ns)   --->   "%Ki_pitch_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %Ki_pitch_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 44 [1/1] (1.00ns)   --->   "%Kp_pitch_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %Kp_pitch_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 45 [1/1] (1.00ns)   --->   "%current_pitch_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %current_pitch_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 46 [1/1] (1.00ns)   --->   "%target_pitch_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %target_pitch_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 47 [1/1] (1.00ns)   --->   "%Kd_roll_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %Kd_roll_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 48 [1/1] (1.00ns)   --->   "%Ki_roll_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %Ki_roll_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 49 [1/1] (1.00ns)   --->   "%Kp_roll_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %Kp_roll_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 50 [1/1] (1.00ns)   --->   "%current_roll_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %current_roll_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 51 [1/1] (1.00ns)   --->   "%target_roll_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %target_roll_V)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 52 [1/1] (2.07ns)   --->   "%p_Val2_2 = sub i16 %target_roll_V_read, %current_roll_V_read" [pidfixed.cpp:88]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "store i16 %p_Val2_2, i16* @error_roll_V, align 2" [pidfixed.cpp:88]
+ST_1 : Operation 54 [1/1] (2.07ns)   --->   "%p_Val2_8 = sub i16 %target_pitch_V_read, %current_pitch_V_read" [pidfixed.cpp:100]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "store i16 %p_Val2_8, i16* @error_pitch_V, align 2" [pidfixed.cpp:100]
+ST_1 : Operation 56 [1/1] (2.07ns)   --->   "%p_Val2_18 = sub i16 %target_yaw_V_read, %current_yaw_V_read" [pidfixed.cpp:112]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "store i16 %p_Val2_18, i16* @error_yaw_V, align 2" [pidfixed.cpp:112]
+
+ <State 2> : 3.89ns
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%OP1_V_cast = sext i16 %Kp_roll_V_read to i23" [pidfixed.cpp:90]
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%OP2_V = sext i16 %p_Val2_2 to i30" [pidfixed.cpp:92]
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%OP2_V_cast = sext i16 %p_Val2_2 to i23" [pidfixed.cpp:90]
+ST_2 : Operation 61 [3/3] (3.89ns)   --->   "%p_Val2_s = mul i23 %OP2_V_cast, %OP1_V_cast" [pidfixed.cpp:90]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%OP1_V_1 = sext i16 %Ki_roll_V_read to i30" [pidfixed.cpp:92]
+ST_2 : Operation 63 [3/3] (3.89ns)   --->   "%r_V = mul i30 %OP2_V, %OP1_V_1" [pidfixed.cpp:92]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_6 = sext i16 %p_Val2_2 to i17" [pidfixed.cpp:94]
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%p_Val2_4 = load i16* @previous_error_roll_s, align 2" [pidfixed.cpp:94]
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_7 = sext i16 %p_Val2_4 to i17" [pidfixed.cpp:94]
+ST_2 : Operation 67 [1/1] (2.07ns)   --->   "%p_Val2_6 = sub i17 %tmp_6, %tmp_7" [pidfixed.cpp:94]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "store i16 %p_Val2_2, i16* @previous_error_roll_s, align 2" [pidfixed.cpp:95]
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%OP1_V_4_cast = sext i16 %Kp_pitch_V_read to i23" [pidfixed.cpp:102]
+ST_2 : Operation 70 [1/1] (0.00ns)   --->   "%OP2_V_3 = sext i16 %p_Val2_8 to i30" [pidfixed.cpp:104]
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%OP2_V_3_cast = sext i16 %p_Val2_8 to i23" [pidfixed.cpp:102]
+ST_2 : Operation 72 [3/3] (3.89ns)   --->   "%p_Val2_10 = mul i23 %OP2_V_3_cast, %OP1_V_4_cast" [pidfixed.cpp:102]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%OP1_V_5 = sext i16 %Ki_pitch_V_read to i30" [pidfixed.cpp:104]
+ST_2 : Operation 74 [3/3] (3.89ns)   --->   "%r_V_2 = mul i30 %OP2_V_3, %OP1_V_5" [pidfixed.cpp:104]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 75 [1/1] (0.00ns)   --->   "%tmp_3 = sext i16 %p_Val2_8 to i17" [pidfixed.cpp:106]
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%p_Val2_15 = load i16* @previous_error_pitch, align 2" [pidfixed.cpp:106]
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_4 = sext i16 %p_Val2_15 to i17" [pidfixed.cpp:106]
+ST_2 : Operation 78 [1/1] (2.07ns)   --->   "%p_Val2_16 = sub i17 %tmp_3, %tmp_4" [pidfixed.cpp:106]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "store i16 %p_Val2_8, i16* @previous_error_pitch, align 2" [pidfixed.cpp:107]
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "%OP1_V_8_cast = sext i16 %Kp_yaw_V_read to i23" [pidfixed.cpp:114]
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "%OP2_V_5 = sext i16 %p_Val2_18 to i30" [pidfixed.cpp:116]
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "%OP2_V_5_cast = sext i16 %p_Val2_18 to i23" [pidfixed.cpp:114]
+ST_2 : Operation 83 [3/3] (3.89ns)   --->   "%p_Val2_19 = mul i23 %OP2_V_5_cast, %OP1_V_8_cast" [pidfixed.cpp:114]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 84 [1/1] (0.00ns)   --->   "%OP1_V_9 = sext i16 %Ki_yaw_V_read to i30" [pidfixed.cpp:116]
+ST_2 : Operation 85 [3/3] (3.89ns)   --->   "%r_V_4 = mul i30 %OP2_V_5, %OP1_V_9" [pidfixed.cpp:116]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_10 = sext i16 %p_Val2_18 to i17" [pidfixed.cpp:118]
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "%p_Val2_23 = load i16* @previous_error_yaw_V, align 2" [pidfixed.cpp:118]
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_11 = sext i16 %p_Val2_23 to i17" [pidfixed.cpp:118]
+ST_2 : Operation 89 [1/1] (2.07ns)   --->   "%p_Val2_24 = sub i17 %tmp_10, %tmp_11" [pidfixed.cpp:118]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 90 [1/1] (0.00ns)   --->   "store i16 %p_Val2_18, i16* @previous_error_yaw_V, align 2" [pidfixed.cpp:119]
+
+ <State 3> : 4.10ns
+ST_3 : Operation 91 [2/3] (3.89ns)   --->   "%p_Val2_s = mul i23 %OP2_V_cast, %OP1_V_cast" [pidfixed.cpp:90]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 92 [2/3] (3.89ns)   --->   "%r_V = mul i30 %OP2_V, %OP1_V_1" [pidfixed.cpp:92]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 93 [1/1] (0.00ns)   --->   "%tmp_9 = call i24 @_ssdm_op_BitConcatenate.i24.i17.i7(i17 %p_Val2_6, i7 0)" [pidfixed.cpp:94]
+ST_3 : Operation 94 [1/1] (0.00ns)   --->   "%tmp_11_tr_cast = sext i16 %dt_V_read to i24" [pidfixed.cpp:94]
+ST_3 : Operation 95 [28/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 96 [2/3] (3.89ns)   --->   "%p_Val2_10 = mul i23 %OP2_V_3_cast, %OP1_V_4_cast" [pidfixed.cpp:102]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 97 [2/3] (3.89ns)   --->   "%r_V_2 = mul i30 %OP2_V_3, %OP1_V_5" [pidfixed.cpp:104]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 98 [1/1] (0.00ns)   --->   "%tmp_5 = call i24 @_ssdm_op_BitConcatenate.i24.i17.i7(i17 %p_Val2_16, i7 0)" [pidfixed.cpp:106]
+ST_3 : Operation 99 [28/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 100 [2/3] (3.89ns)   --->   "%p_Val2_19 = mul i23 %OP2_V_5_cast, %OP1_V_8_cast" [pidfixed.cpp:114]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 101 [2/3] (3.89ns)   --->   "%r_V_4 = mul i30 %OP2_V_5, %OP1_V_9" [pidfixed.cpp:116]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 102 [1/1] (0.00ns)   --->   "%tmp_12 = call i24 @_ssdm_op_BitConcatenate.i24.i17.i7(i17 %p_Val2_24, i7 0)" [pidfixed.cpp:118]
+ST_3 : Operation 103 [28/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 4> : 4.10ns
+ST_4 : Operation 104 [1/3] (0.00ns)   --->   "%p_Val2_s = mul i23 %OP2_V_cast, %OP1_V_cast" [pidfixed.cpp:90]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 105 [1/3] (0.00ns)   --->   "%r_V = mul i30 %OP2_V, %OP1_V_1" [pidfixed.cpp:92]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 106 [27/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 107 [1/3] (0.00ns)   --->   "%p_Val2_10 = mul i23 %OP2_V_3_cast, %OP1_V_4_cast" [pidfixed.cpp:102]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 108 [1/3] (0.00ns)   --->   "%r_V_2 = mul i30 %OP2_V_3, %OP1_V_5" [pidfixed.cpp:104]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 109 [27/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 110 [1/3] (0.00ns)   --->   "%p_Val2_19 = mul i23 %OP2_V_5_cast, %OP1_V_8_cast" [pidfixed.cpp:114]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 111 [1/3] (0.00ns)   --->   "%r_V_4 = mul i30 %OP2_V_5, %OP1_V_9" [pidfixed.cpp:116]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 112 [27/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 5> : 4.10ns
+ST_5 : Operation 113 [1/1] (0.00ns)   --->   "%p_Val2_30 = call i16 @_ssdm_op_PartSelect.i16.i23.i32.i32(i23 %p_Val2_s, i32 7, i32 22)" [pidfixed.cpp:90]
+ST_5 : Operation 114 [1/1] (0.00ns)   --->   "store i16 %p_Val2_30, i16* @proportional_roll_V, align 2" [pidfixed.cpp:90]
+ST_5 : Operation 115 [1/1] (0.00ns)   --->   "%tmp_1 = sext i16 %dt_V_read to i30" [pidfixed.cpp:92]
+ST_5 : Operation 116 [7/7] (2.11ns)   --->   "%tmp_1_cast = mul i30 %tmp_1, %r_V" [pidfixed.cpp:92]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 117 [26/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 118 [1/1] (0.00ns)   --->   "%p_Val2_11 = call i16 @_ssdm_op_PartSelect.i16.i23.i32.i32(i23 %p_Val2_10, i32 7, i32 22)" [pidfixed.cpp:102]
+ST_5 : Operation 119 [1/1] (0.00ns)   --->   "store i16 %p_Val2_11, i16* @proportional_pitch_V, align 2" [pidfixed.cpp:102]
+ST_5 : Operation 120 [7/7] (2.11ns)   --->   "%tmp_13_cast = mul i30 %tmp_1, %r_V_2" [pidfixed.cpp:104]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 121 [26/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 122 [1/1] (0.00ns)   --->   "%p_Val2_26 = call i16 @_ssdm_op_PartSelect.i16.i23.i32.i32(i23 %p_Val2_19, i32 7, i32 22)" [pidfixed.cpp:114]
+ST_5 : Operation 123 [1/1] (0.00ns)   --->   "store i16 %p_Val2_26, i16* @proportional_yaw_V, align 2" [pidfixed.cpp:114]
+ST_5 : Operation 124 [7/7] (2.11ns)   --->   "%tmp_23_cast = mul i30 %tmp_1, %r_V_4" [pidfixed.cpp:116]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 125 [26/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 6> : 4.10ns
+ST_6 : Operation 126 [6/7] (2.11ns)   --->   "%tmp_1_cast = mul i30 %tmp_1, %r_V" [pidfixed.cpp:92]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 127 [25/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 128 [6/7] (2.11ns)   --->   "%tmp_13_cast = mul i30 %tmp_1, %r_V_2" [pidfixed.cpp:104]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 129 [25/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 130 [6/7] (2.11ns)   --->   "%tmp_23_cast = mul i30 %tmp_1, %r_V_4" [pidfixed.cpp:116]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 131 [25/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 7> : 4.10ns
+ST_7 : Operation 132 [5/7] (2.11ns)   --->   "%tmp_1_cast = mul i30 %tmp_1, %r_V" [pidfixed.cpp:92]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 133 [24/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 134 [5/7] (2.11ns)   --->   "%tmp_13_cast = mul i30 %tmp_1, %r_V_2" [pidfixed.cpp:104]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 135 [24/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 136 [5/7] (2.11ns)   --->   "%tmp_23_cast = mul i30 %tmp_1, %r_V_4" [pidfixed.cpp:116]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 137 [24/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 8> : 4.10ns
+ST_8 : Operation 138 [4/7] (2.11ns)   --->   "%tmp_1_cast = mul i30 %tmp_1, %r_V" [pidfixed.cpp:92]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 139 [23/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 140 [4/7] (2.11ns)   --->   "%tmp_13_cast = mul i30 %tmp_1, %r_V_2" [pidfixed.cpp:104]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 141 [23/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 142 [4/7] (2.11ns)   --->   "%tmp_23_cast = mul i30 %tmp_1, %r_V_4" [pidfixed.cpp:116]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 143 [23/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 9> : 4.10ns
+ST_9 : Operation 144 [3/7] (2.11ns)   --->   "%tmp_1_cast = mul i30 %tmp_1, %r_V" [pidfixed.cpp:92]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 145 [22/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 146 [3/7] (2.11ns)   --->   "%tmp_13_cast = mul i30 %tmp_1, %r_V_2" [pidfixed.cpp:104]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 147 [22/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 148 [3/7] (2.11ns)   --->   "%tmp_23_cast = mul i30 %tmp_1, %r_V_4" [pidfixed.cpp:116]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 149 [22/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 10> : 4.10ns
+ST_10 : Operation 150 [2/7] (2.11ns)   --->   "%tmp_1_cast = mul i30 %tmp_1, %r_V" [pidfixed.cpp:92]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 151 [21/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 152 [2/7] (2.11ns)   --->   "%tmp_13_cast = mul i30 %tmp_1, %r_V_2" [pidfixed.cpp:104]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 153 [21/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 154 [2/7] (2.11ns)   --->   "%tmp_23_cast = mul i30 %tmp_1, %r_V_4" [pidfixed.cpp:116]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 155 [21/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 11> : 4.10ns
+ST_11 : Operation 156 [1/7] (2.11ns)   --->   "%tmp_1_cast = mul i30 %tmp_1, %r_V" [pidfixed.cpp:92]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 157 [20/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 158 [1/7] (2.11ns)   --->   "%tmp_13_cast = mul i30 %tmp_1, %r_V_2" [pidfixed.cpp:104]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 159 [20/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 160 [1/7] (2.11ns)   --->   "%tmp_23_cast = mul i30 %tmp_1, %r_V_4" [pidfixed.cpp:116]   --->   Core 17 'MulnS' <Latency = 6> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 161 [20/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 12> : 4.10ns
+ST_12 : Operation 162 [1/1] (0.00ns)   --->   "%p_Val2_1 = load i16* @integral_roll_V, align 2" [pidfixed.cpp:92]
+ST_12 : Operation 163 [1/1] (0.00ns)   --->   "%tmp_2 = call i30 @_ssdm_op_BitConcatenate.i30.i16.i14(i16 %p_Val2_1, i14 0)" [pidfixed.cpp:92]
+ST_12 : Operation 164 [1/1] (2.49ns)   --->   "%p_Val2_3 = add i30 %tmp_1_cast, %tmp_2" [pidfixed.cpp:92]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 165 [1/1] (0.00ns)   --->   "%p_Val2_5 = call i16 @_ssdm_op_PartSelect.i16.i30.i32.i32(i30 %p_Val2_3, i32 14, i32 29)" [pidfixed.cpp:92]
+ST_12 : Operation 166 [1/1] (0.00ns)   --->   "store i16 %p_Val2_5, i16* @integral_roll_V, align 2" [pidfixed.cpp:92]
+ST_12 : Operation 167 [19/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 168 [1/1] (0.00ns)   --->   "%p_Val2_12 = load i16* @integral_pitch_V, align 2" [pidfixed.cpp:104]
+ST_12 : Operation 169 [1/1] (0.00ns)   --->   "%tmp_s = call i30 @_ssdm_op_BitConcatenate.i30.i16.i14(i16 %p_Val2_12, i14 0)" [pidfixed.cpp:104]
+ST_12 : Operation 170 [1/1] (2.49ns)   --->   "%p_Val2_13 = add i30 %tmp_13_cast, %tmp_s" [pidfixed.cpp:104]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 171 [1/1] (0.00ns)   --->   "%p_Val2_14 = call i16 @_ssdm_op_PartSelect.i16.i30.i32.i32(i30 %p_Val2_13, i32 14, i32 29)" [pidfixed.cpp:104]
+ST_12 : Operation 172 [1/1] (0.00ns)   --->   "store i16 %p_Val2_14, i16* @integral_pitch_V, align 2" [pidfixed.cpp:104]
+ST_12 : Operation 173 [19/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 174 [1/1] (0.00ns)   --->   "%p_Val2_21 = load i16* @integral_yaw_V, align 2" [pidfixed.cpp:116]
+ST_12 : Operation 175 [1/1] (0.00ns)   --->   "%tmp_8 = call i30 @_ssdm_op_BitConcatenate.i30.i16.i14(i16 %p_Val2_21, i14 0)" [pidfixed.cpp:116]
+ST_12 : Operation 176 [1/1] (2.49ns)   --->   "%p_Val2_22 = add i30 %tmp_23_cast, %tmp_8" [pidfixed.cpp:116]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 177 [1/1] (0.00ns)   --->   "%p_Val2_28 = call i16 @_ssdm_op_PartSelect.i16.i30.i32.i32(i30 %p_Val2_22, i32 14, i32 29)" [pidfixed.cpp:116]
+ST_12 : Operation 178 [1/1] (0.00ns)   --->   "store i16 %p_Val2_28, i16* @integral_yaw_V, align 2" [pidfixed.cpp:116]
+ST_12 : Operation 179 [19/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 13> : 4.10ns
+ST_13 : Operation 180 [18/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 181 [18/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 182 [18/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 14> : 4.10ns
+ST_14 : Operation 183 [17/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 184 [17/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 185 [17/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 15> : 4.10ns
+ST_15 : Operation 186 [16/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 187 [16/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 188 [16/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 16> : 4.10ns
+ST_16 : Operation 189 [15/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 190 [15/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 191 [15/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 17> : 4.10ns
+ST_17 : Operation 192 [14/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 193 [14/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 194 [14/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 18> : 4.10ns
+ST_18 : Operation 195 [13/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 196 [13/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 197 [13/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 19> : 4.10ns
+ST_19 : Operation 198 [12/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 199 [12/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 200 [12/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 20> : 4.10ns
+ST_20 : Operation 201 [11/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 202 [11/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 203 [11/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 21> : 4.10ns
+ST_21 : Operation 204 [10/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 205 [10/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 206 [10/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 22> : 4.10ns
+ST_22 : Operation 207 [9/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 208 [9/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 209 [9/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 23> : 4.10ns
+ST_23 : Operation 210 [8/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 211 [8/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 212 [8/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 24> : 4.10ns
+ST_24 : Operation 213 [7/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 214 [7/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 215 [7/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 25> : 4.10ns
+ST_25 : Operation 216 [6/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 217 [6/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 218 [6/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 26> : 4.10ns
+ST_26 : Operation 219 [5/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 220 [5/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 221 [5/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 27> : 4.10ns
+ST_27 : Operation 222 [4/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 223 [4/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 224 [4/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 28> : 4.10ns
+ST_28 : Operation 225 [3/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 226 [3/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 227 [3/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 29> : 4.10ns
+ST_29 : Operation 228 [2/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 229 [2/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 230 [2/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 30> : 4.10ns
+ST_30 : Operation 231 [1/28] (4.10ns)   --->   "%r_V_1 = sdiv i24 %tmp_9, %tmp_11_tr_cast" [pidfixed.cpp:94]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 232 [1/28] (4.10ns)   --->   "%r_V_3 = sdiv i24 %tmp_5, %tmp_11_tr_cast" [pidfixed.cpp:106]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 233 [1/28] (4.10ns)   --->   "%r_V_5 = sdiv i24 %tmp_12, %tmp_11_tr_cast" [pidfixed.cpp:118]   --->   Core 23 'DivnS' <Latency = 27> <II = 1> <Delay = 4.10> <FuncUnit> <Opcode : 'sdiv' 'srem' 'udiv' 'urem'> <InPorts = 2> <OutPorts = 1>
+
+ <State 31> : 3.89ns
+ST_31 : Operation 234 [1/1] (0.00ns)   --->   "%OP1_V_3_cast = sext i16 %Kd_roll_V_read to i23" [pidfixed.cpp:94]
+ST_31 : Operation 235 [1/1] (0.00ns)   --->   "%tmp_13 = trunc i24 %r_V_1 to i23" [pidfixed.cpp:94]
+ST_31 : Operation 236 [3/3] (3.89ns)   --->   "%p_Val2_7 = mul i23 %OP1_V_3_cast, %tmp_13" [pidfixed.cpp:94]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_31 : Operation 237 [1/1] (0.00ns)   --->   "%OP1_V_7_cast = sext i16 %Kd_pitch_V_read to i23" [pidfixed.cpp:106]
+ST_31 : Operation 238 [1/1] (0.00ns)   --->   "%tmp_14 = trunc i24 %r_V_3 to i23" [pidfixed.cpp:106]
+ST_31 : Operation 239 [3/3] (3.89ns)   --->   "%p_Val2_17 = mul i23 %OP1_V_7_cast, %tmp_14" [pidfixed.cpp:106]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_31 : Operation 240 [1/1] (0.00ns)   --->   "%OP1_V_11_cast = sext i16 %Kd_yaw_V_read to i23" [pidfixed.cpp:118]
+ST_31 : Operation 241 [1/1] (0.00ns)   --->   "%tmp_15 = trunc i24 %r_V_5 to i23" [pidfixed.cpp:118]
+ST_31 : Operation 242 [3/3] (3.89ns)   --->   "%p_Val2_25 = mul i23 %OP1_V_11_cast, %tmp_15" [pidfixed.cpp:118]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+ <State 32> : 3.89ns
+ST_32 : Operation 243 [2/3] (3.89ns)   --->   "%p_Val2_7 = mul i23 %OP1_V_3_cast, %tmp_13" [pidfixed.cpp:94]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_32 : Operation 244 [2/3] (3.89ns)   --->   "%p_Val2_17 = mul i23 %OP1_V_7_cast, %tmp_14" [pidfixed.cpp:106]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_32 : Operation 245 [2/3] (3.89ns)   --->   "%p_Val2_25 = mul i23 %OP1_V_11_cast, %tmp_15" [pidfixed.cpp:118]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+ <State 33> : 0.00ns
+ST_33 : Operation 246 [1/3] (0.00ns)   --->   "%p_Val2_7 = mul i23 %OP1_V_3_cast, %tmp_13" [pidfixed.cpp:94]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_33 : Operation 247 [1/3] (0.00ns)   --->   "%p_Val2_17 = mul i23 %OP1_V_7_cast, %tmp_14" [pidfixed.cpp:106]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_33 : Operation 248 [1/3] (0.00ns)   --->   "%p_Val2_25 = mul i23 %OP1_V_11_cast, %tmp_15" [pidfixed.cpp:118]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 3.89> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+ <State 34> : 3.90ns
+ST_34 : Operation 249 [1/1] (0.00ns)   --->   "%p_Val2_9 = call i16 @_ssdm_op_PartSelect.i16.i23.i32.i32(i23 %p_Val2_7, i32 7, i32 22)" [pidfixed.cpp:94]
+ST_34 : Operation 250 [1/1] (0.00ns)   --->   "store i16 %p_Val2_9, i16* @derivative_roll_V, align 2" [pidfixed.cpp:94]
+ST_34 : Operation 251 [1/1] (0.00ns)   --->   "%p_Val2_20 = call i16 @_ssdm_op_PartSelect.i16.i23.i32.i32(i23 %p_Val2_17, i32 7, i32 22)" [pidfixed.cpp:106]
+ST_34 : Operation 252 [1/1] (0.00ns)   --->   "store i16 %p_Val2_20, i16* @derivative_pitch_V, align 2" [pidfixed.cpp:106]
+ST_34 : Operation 253 [1/1] (0.00ns)   --->   "%p_Val2_29 = call i16 @_ssdm_op_PartSelect.i16.i23.i32.i32(i23 %p_Val2_25, i32 7, i32 22)" [pidfixed.cpp:118]
+ST_34 : Operation 254 [1/1] (0.00ns)   --->   "store i16 %p_Val2_29, i16* @derivative_yaw_V, align 2" [pidfixed.cpp:118]
+ST_34 : Operation 255 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp = add i16 %p_Val2_9, %p_Val2_30" [pidfixed.cpp:123]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.95> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_34 : Operation 256 [1/1] (3.90ns) (root node of TernaryAdder)   --->   "%p_Val2_27 = add i16 %p_Val2_5, %tmp" [pidfixed.cpp:123]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.95> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_34 : Operation 257 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp1 = add i16 %p_Val2_20, %p_Val2_11" [pidfixed.cpp:124]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.95> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_34 : Operation 258 [1/1] (3.90ns) (root node of TernaryAdder)   --->   "%p_Val2_s_6 = add i16 %p_Val2_14, %tmp1" [pidfixed.cpp:124]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.95> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_34 : Operation 259 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp2 = add i16 %p_Val2_29, %p_Val2_26" [pidfixed.cpp:125]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.95> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_34 : Operation 260 [1/1] (3.90ns) (root node of TernaryAdder)   --->   "%p_Val2_31 = add i16 %p_Val2_28, %tmp2" [pidfixed.cpp:125]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.95> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+
+ <State 35> : 1.00ns
+ST_35 : Operation 261 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %target_roll_V), !map !149"
+ST_35 : Operation 262 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %current_roll_V), !map !155"
+ST_35 : Operation 263 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %Kp_roll_V), !map !159"
+ST_35 : Operation 264 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %Ki_roll_V), !map !163"
+ST_35 : Operation 265 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %Kd_roll_V), !map !167"
+ST_35 : Operation 266 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %target_pitch_V), !map !171"
+ST_35 : Operation 267 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %current_pitch_V), !map !175"
+ST_35 : Operation 268 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %Kp_pitch_V), !map !179"
+ST_35 : Operation 269 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %Ki_pitch_V), !map !183"
+ST_35 : Operation 270 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %Kd_pitch_V), !map !187"
+ST_35 : Operation 271 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %target_yaw_V), !map !191"
+ST_35 : Operation 272 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %current_yaw_V), !map !195"
+ST_35 : Operation 273 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %Kp_yaw_V), !map !199"
+ST_35 : Operation 274 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %Ki_yaw_V), !map !203"
+ST_35 : Operation 275 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %Kd_yaw_V), !map !207"
+ST_35 : Operation 276 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %dt_V), !map !211"
+ST_35 : Operation 277 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %rollX_V), !map !215"
+ST_35 : Operation 278 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %pitchY_V), !map !219"
+ST_35 : Operation 279 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %yawZ_V), !map !223"
+ST_35 : Operation 280 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @pidfixed_str) nounwind"
+ST_35 : Operation 281 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [5 x i8]* @p_str12, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:55]
+ST_35 : Operation 282 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %target_roll_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:56]
+ST_35 : Operation 283 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %current_roll_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:57]
+ST_35 : Operation 284 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %Kp_roll_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:58]
+ST_35 : Operation 285 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %Ki_roll_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:59]
+ST_35 : Operation 286 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %Kd_roll_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:60]
+ST_35 : Operation 287 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %target_pitch_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:63]
+ST_35 : Operation 288 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %current_pitch_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:64]
+ST_35 : Operation 289 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %Kp_pitch_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:65]
+ST_35 : Operation 290 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %Ki_pitch_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:66]
+ST_35 : Operation 291 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %Kd_pitch_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:67]
+ST_35 : Operation 292 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %target_yaw_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:70]
+ST_35 : Operation 293 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %current_yaw_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:71]
+ST_35 : Operation 294 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %Kp_yaw_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:72]
+ST_35 : Operation 295 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %Ki_yaw_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:73]
+ST_35 : Operation 296 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %Kd_yaw_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:74]
+ST_35 : Operation 297 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %dt_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:75]
+ST_35 : Operation 298 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %rollX_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:78]
+ST_35 : Operation 299 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %pitchY_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:79]
+ST_35 : Operation 300 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %yawZ_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11, [1 x i8]* @p_str11, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str11, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:80]
+ST_35 : Operation 301 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecReset(i16* @integral_roll_V, i32 1, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:86]
+ST_35 : Operation 302 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecReset(i16* @previous_error_roll_s, i32 1, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:87]
+ST_35 : Operation 303 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecReset(i16* @integral_pitch_V, i32 1, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:98]
+ST_35 : Operation 304 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecReset(i16* @previous_error_pitch, i32 1, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:99]
+ST_35 : Operation 305 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecReset(i16* @integral_yaw_V, i32 1, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:110]
+ST_35 : Operation 306 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecReset(i16* @previous_error_yaw_V, i32 1, [1 x i8]* @p_str11) nounwind" [pidfixed.cpp:111]
+ST_35 : Operation 307 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i16P(i16* %rollX_V, i16 %p_Val2_27)" [pidfixed.cpp:123]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_35 : Operation 308 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i16P(i16* %pitchY_V, i16 %p_Val2_s_6)" [pidfixed.cpp:124]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_35 : Operation 309 [1/1] (1.00ns)   --->   "call void @_ssdm_op_Write.s_axilite.i16P(i16* %yawZ_V, i16 %p_Val2_31)" [pidfixed.cpp:125]   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_35 : Operation 310 [1/1] (0.00ns)   --->   "ret void" [pidfixed.cpp:128]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 3.08ns
+The critical path consists of the following:
+	s_axi read on port 'current_yaw_V' [59]  (1 ns)
+	'sub' operation ('__Val2__', pidfixed.cpp:112) [155]  (2.08 ns)
+
+ <State 2>: 3.89ns
+The critical path consists of the following:
+	'mul' operation ('__Val2__', pidfixed.cpp:90) [98]  (3.89 ns)
+
+ <State 3>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 4>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 5>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 6>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 7>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 8>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 9>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 10>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 11>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 12>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 13>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 14>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 15>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 16>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 17>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 18>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 19>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 20>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 21>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 22>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 23>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 24>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 25>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 26>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 27>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 28>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 29>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 30>: 4.1ns
+The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) [116]  (4.1 ns)
+
+ <State 31>: 3.89ns
+The critical path consists of the following:
+	'mul' operation ('__Val2__', pidfixed.cpp:94) [119]  (3.89 ns)
+
+ <State 32>: 3.89ns
+The critical path consists of the following:
+	'mul' operation ('__Val2__', pidfixed.cpp:94) [119]  (3.89 ns)
+
+ <State 33>: 0ns
+The critical path consists of the following:
+
+ <State 34>: 3.9ns
+The critical path consists of the following:
+	'add' operation ('tmp', pidfixed.cpp:123) [183]  (0 ns)
+	'add' operation ('p_Val2_27', pidfixed.cpp:123) [184]  (3.9 ns)
+
+ <State 35>: 1ns
+The critical path consists of the following:
+	s_axi write on port 'rollX_V' (pidfixed.cpp:123) [185]  (1 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

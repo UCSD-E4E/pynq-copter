@@ -1,0 +1,1133 @@
+{
+  "Top": "pidfixed",
+  "RtlTop": "pidfixed",
+  "RtlPrefix": "",
+  "SourceLanguage": "cpp",
+  "ResetStyle": "control",
+  "GenerateBdFiles": "0",
+  "HostMachineBits": "64",
+  "Target": {
+    "Family": "zynq",
+    "Device": "xc7z020",
+    "Package": "clg400",
+    "Speed": "-1"
+  },
+  "HlsSolution": {
+    
+  },
+  "ClockInfo": {
+    "ClockName": "ap_clk",
+    "ClockPeriod": "4",
+    "IsCombLogic": "0",
+    "II": "x",
+    "Latency": "34",
+    "Uncertainty": "0.5"
+  },
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
+  "Ipx": {
+    "Vendor": "UCSD",
+    "Library": "hlsip",
+    "Name": "pidfixed",
+    "Version": "1.0",
+    "DisplayName": "Pidfixed",
+    "Description": "HLS Core: Pidfixed Function",
+    "Taxonomy": "\/VIVADO_HLS_IP"
+  },
+  "Files": {
+    "CSource": [
+      "..\/..\/pidfixed.cpp",
+      "..\/..\/main.cpp"
+    ],
+    "Vhdl": [
+      "impl\/vhdl\/pidfixed_CTRL_s_axi.vhd",
+      "impl\/vhdl\/pidfixed_mul_16s_cud.vhd",
+      "impl\/vhdl\/pidfixed_mul_mul_dEe.vhd",
+      "impl\/vhdl\/pidfixed_mul_mul_eOg.vhd",
+      "impl\/vhdl\/pidfixed_mul_mul_fYi.vhd",
+      "impl\/vhdl\/pidfixed_sdiv_24nbkb.vhd",
+      "impl\/vhdl\/pidfixed.vhd"
+    ],
+    "Verilog": [
+      "impl\/verilog\/pidfixed_CTRL_s_axi.v",
+      "impl\/verilog\/pidfixed_mul_16s_cud.v",
+      "impl\/verilog\/pidfixed_mul_mul_dEe.v",
+      "impl\/verilog\/pidfixed_mul_mul_eOg.v",
+      "impl\/verilog\/pidfixed_mul_mul_fYi.v",
+      "impl\/verilog\/pidfixed_sdiv_24nbkb.v",
+      "impl\/verilog\/pidfixed.v"
+    ],
+    "SwDriver": [
+      "impl\/misc\/drivers\/pidfixed_v1_0\/data\/pidfixed.mdd",
+      "impl\/misc\/drivers\/pidfixed_v1_0\/data\/pidfixed.tcl",
+      "impl\/misc\/drivers\/pidfixed_v1_0\/src\/Makefile",
+      "impl\/misc\/drivers\/pidfixed_v1_0\/src\/xpidfixed.c",
+      "impl\/misc\/drivers\/pidfixed_v1_0\/src\/xpidfixed.h",
+      "impl\/misc\/drivers\/pidfixed_v1_0\/src\/xpidfixed_hw.h",
+      "impl\/misc\/drivers\/pidfixed_v1_0\/src\/xpidfixed_linux.c",
+      "impl\/misc\/drivers\/pidfixed_v1_0\/src\/xpidfixed_sinit.c"
+    ],
+    "Misc": ["impl\/misc\/logo.png"]
+  },
+  "SubcoreInfo": {
+    "HasXpmMemory": false,
+    "HasClockedDsp": false,
+    "IP": []
+  },
+  "Interfaces": {
+    "ap_clk": {
+      "type": "clock",
+      "ctype": {"CLK": {"Type": "bool"}},
+      "buses": "s_axi_CTRL",
+      "reset": "ap_rst_n"
+    },
+    "ap_rst_n": {
+      "type": "reset",
+      "polarity": "ACTIVE_LOW",
+      "ctype": {"RST": {"Type": "bool"}}
+    },
+    "interrupt": {
+      "type": "interrupt",
+      "ctype": {"INTERRUPT": {"Type": "bool"}}
+    },
+    "s_axi_CTRL": {
+      "type": "axi4lite",
+      "is_adaptor": "true",
+      "mode": "slave",
+      "port_prefix": "s_axi_CTRL",
+      "param_prefix": "C_S_AXI_CTRL",
+      "addr_bits": "8",
+      "registers": [
+        {
+          "offset": "0x00",
+          "name": "CTRL",
+          "access": "RW",
+          "reset_value": "0x0",
+          "description": "Control signals",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "AP_START",
+              "access": "RW",
+              "reset_value": "0",
+              "description": "Control signal Register for 'ap_start'."
+            },
+            {
+              "offset": "1",
+              "width": "1",
+              "name": "AP_DONE",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal Register for 'ap_done'."
+            },
+            {
+              "offset": "2",
+              "width": "1",
+              "name": "AP_IDLE",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal Register for 'ap_idle'."
+            },
+            {
+              "offset": "3",
+              "width": "1",
+              "name": "AP_READY",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal Register for 'ap_ready'."
+            },
+            {
+              "offset": "4",
+              "width": "3",
+              "name": "RESERVED_1",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            },
+            {
+              "offset": "7",
+              "width": "1",
+              "name": "AUTO_RESTART",
+              "access": "RW",
+              "reset_value": "0",
+              "description": "Control signal Register for 'auto_restart'."
+            },
+            {
+              "offset": "8",
+              "width": "24",
+              "name": "RESERVED_2",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x04",
+          "name": "GIER",
+          "access": "RW",
+          "reset_value": "0x0",
+          "description": "Global Interrupt Enable Register",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "Enable",
+              "access": "RW",
+              "reset_value": "0",
+              "description": "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x08",
+          "name": "IP_IER",
+          "access": "RW",
+          "reset_value": "0x0",
+          "description": "IP Interrupt Enable Register",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "CHAN0_INT_EN",
+              "access": "RW",
+              "reset_value": "0",
+              "description": "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."
+            },
+            {
+              "offset": "1",
+              "width": "1",
+              "name": "CHAN1_INT_EN",
+              "access": "RW",
+              "reset_value": "0",
+              "description": "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."
+            },
+            {
+              "offset": "2",
+              "width": "30",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x0c",
+          "name": "IP_ISR",
+          "access": "RW",
+          "reset_value": "0x0",
+          "description": "IP Interrupt Status Register",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "CHAN0_INT_ST",
+              "access": "RTOW",
+              "reset_value": "0",
+              "description": "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 input interrupt, 1 = Channel 0 input interrup"
+            },
+            {
+              "offset": "1",
+              "width": "1",
+              "name": "CHAN1_INT_ST",
+              "access": "RTOW",
+              "reset_value": "0",
+              "description": "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 input interrupt, 1 = Channel 1 input interrup"
+            },
+            {
+              "offset": "2",
+              "width": "30",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x10",
+          "name": "target_roll_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of target_roll_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "target_roll_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of target_roll_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x18",
+          "name": "current_roll_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of current_roll_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "current_roll_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of current_roll_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x20",
+          "name": "Kp_roll_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of Kp_roll_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "Kp_roll_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of Kp_roll_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x28",
+          "name": "Ki_roll_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of Ki_roll_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "Ki_roll_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of Ki_roll_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x30",
+          "name": "Kd_roll_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of Kd_roll_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "Kd_roll_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of Kd_roll_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x38",
+          "name": "target_pitch_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of target_pitch_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "target_pitch_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of target_pitch_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x40",
+          "name": "current_pitch_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of current_pitch_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "current_pitch_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of current_pitch_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x48",
+          "name": "Kp_pitch_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of Kp_pitch_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "Kp_pitch_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of Kp_pitch_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x50",
+          "name": "Ki_pitch_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of Ki_pitch_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "Ki_pitch_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of Ki_pitch_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x58",
+          "name": "Kd_pitch_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of Kd_pitch_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "Kd_pitch_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of Kd_pitch_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x60",
+          "name": "target_yaw_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of target_yaw_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "target_yaw_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of target_yaw_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x68",
+          "name": "current_yaw_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of current_yaw_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "current_yaw_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of current_yaw_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x70",
+          "name": "Kp_yaw_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of Kp_yaw_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "Kp_yaw_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of Kp_yaw_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x78",
+          "name": "Ki_yaw_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of Ki_yaw_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "Ki_yaw_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of Ki_yaw_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x80",
+          "name": "Kd_yaw_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of Kd_yaw_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "Kd_yaw_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of Kd_yaw_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x88",
+          "name": "dt_V",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of dt_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "dt_V",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of dt_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x90",
+          "name": "rollX_V",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of rollX_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "rollX_V",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of rollX_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x94",
+          "name": "rollX_V_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of rollX_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "rollX_V_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal rollX_V_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x98",
+          "name": "pitchY_V",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of pitchY_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "pitchY_V",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of pitchY_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x9c",
+          "name": "pitchY_V_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of pitchY_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "pitchY_V_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal pitchY_V_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0xa0",
+          "name": "yawZ_V",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Data signal of yawZ_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "yawZ_V",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of yawZ_V"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0xa4",
+          "name": "yawZ_V_ctrl",
+          "access": "R",
+          "reset_value": "0x0",
+          "description": "Control signal of yawZ_V",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "yawZ_V_ap_vld",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Control signal yawZ_V_ap_vld"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        }
+      ],
+      "memories": "",
+      "ctype": {
+        "AWVALID": {"Type": "bool"},
+        "AWREADY": {"Type": "bool"},
+        "WVALID": {"Type": "bool"},
+        "WREADY": {"Type": "bool"},
+        "BVALID": {"Type": "bool"},
+        "BREADY": {"Type": "bool"},
+        "BRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARVALID": {"Type": "bool"},
+        "ARREADY": {"Type": "bool"},
+        "RVALID": {"Type": "bool"},
+        "RREADY": {"Type": "bool"},
+        "RRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWADDR": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "WDATA": {
+          "Type": "real fixed signed 7",
+          "Width": "16"
+        },
+        "WSTRB": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARADDR": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "RDATA": {
+          "Type": "real fixed signed 7",
+          "Width": "16"
+        }
+      },
+      "data_width": "32",
+      "port_width": {
+        "ARADDR": "8",
+        "AWADDR": "8",
+        "RDATA": "32",
+        "WDATA": "32",
+        "WSTRB": "4"
+      }
+    }
+  },
+  "RtlPorts": {
+    "s_axi_CTRL_AWVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_CTRL_AWREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_CTRL_AWADDR": {
+      "dir": "in",
+      "width": "8"
+    },
+    "s_axi_CTRL_WVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_CTRL_WREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_CTRL_WDATA": {
+      "dir": "in",
+      "width": "32"
+    },
+    "s_axi_CTRL_WSTRB": {
+      "dir": "in",
+      "width": "4"
+    },
+    "s_axi_CTRL_ARVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_CTRL_ARREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_CTRL_ARADDR": {
+      "dir": "in",
+      "width": "8"
+    },
+    "s_axi_CTRL_RVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_CTRL_RREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_CTRL_RDATA": {
+      "dir": "out",
+      "width": "32"
+    },
+    "s_axi_CTRL_RRESP": {
+      "dir": "out",
+      "width": "2"
+    },
+    "s_axi_CTRL_BVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_CTRL_BREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_CTRL_BRESP": {
+      "dir": "out",
+      "width": "2"
+    },
+    "ap_clk": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_rst_n": {
+      "dir": "in",
+      "width": "1"
+    },
+    "interrupt": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    }
+  },
+  "CPorts": {
+    "target_roll_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "16",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "current_roll_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "24",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "Kp_roll_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "32",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "Ki_roll_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "40",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "Kd_roll_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "48",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "target_pitch_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "56",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "current_pitch_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "64",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "Kp_pitch_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "72",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "Ki_pitch_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "80",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "Kd_pitch_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "88",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "target_yaw_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "96",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "current_yaw_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "104",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "Kp_yaw_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "112",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "Ki_yaw_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "120",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "Kd_yaw_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "128",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "dt_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "136",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL"
+    },
+    "rollX_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "out",
+      "offset": "144",
+      "statusOffset": "148",
+      "handshakeRef": "ap_vld",
+      "Object": "CTRL",
+      "firstOutLatency": "34"
+    },
+    "pitchY_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "out",
+      "offset": "152",
+      "statusOffset": "156",
+      "handshakeRef": "ap_vld",
+      "Object": "CTRL",
+      "firstOutLatency": "34"
+    },
+    "yawZ_V": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "out",
+      "offset": "160",
+      "statusOffset": "164",
+      "handshakeRef": "ap_vld",
+      "Object": "CTRL",
+      "firstOutLatency": "34"
+    },
+    "ap_ctrl": {
+      "interfaceRef": "s_axi_CTRL",
+      "dir": "in",
+      "offset": "0"
+    }
+  },
+  "ModuleInfo": {
+    "Hierarchy": {"ModuleName": "pidfixed"},
+    "Metrics": {"pidfixed": {
+        "Latency": {
+          "LatencyBest": "34",
+          "LatencyAvg": "34",
+          "LatencyWorst": "34",
+          "PipelineII": "35",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "4.00",
+          "Uncertainty": "0.50",
+          "Estimate": "4.10"
+        },
+        "Area": {
+          "BRAM_18K": "0",
+          "DSP48E": "21",
+          "FF": "6331",
+          "LUT": "4562"
+        }
+      }}
+  },
+  "GenData": {
+    "DataVersion": "0.1",
+    "Time": "2018-08-28 13:08:36 PDT",
+    "ToolName": "vivado_hls",
+    "ToolVersion": "2017.4"
+  }
+}

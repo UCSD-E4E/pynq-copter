@@ -1,0 +1,155 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="target_roll"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="current_roll"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="Kp_roll"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="Ki_roll"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="Kd_roll"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="target_pitch"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="current_pitch"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="Kp_pitch"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="Ki_pitch"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="Kd_pitch"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="target_yaw"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="current_yaw"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="Kp_yaw"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="Ki_yaw"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="Kd_yaw"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="dt"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="rollX"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="pitchY"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="yawZ"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="integral_roll"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="previous_error_roll"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="integral_pitch"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="previous_error_pitch"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="integral_yaw"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pidfixed" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="previous_error_yaw"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

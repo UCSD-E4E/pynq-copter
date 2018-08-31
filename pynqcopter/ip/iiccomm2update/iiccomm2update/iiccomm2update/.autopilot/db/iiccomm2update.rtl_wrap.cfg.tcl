@@ -208,7 +208,7 @@ set Interface16 "wire"
 set DataType16 "unsigned int"
 set Port16 [list $PortName16 $Interface16 $DataType16 $Pointer16 $Dims16 $Const16 $Volatile16 $ArrayOpt16]
 lappend PortList $Port16
-set PortName17 "basepoint"
+set PortName17 "basepointToRead"
 set BitWidth17 "32"
 set ArrayOpt17 ""
 set Const17 "0"

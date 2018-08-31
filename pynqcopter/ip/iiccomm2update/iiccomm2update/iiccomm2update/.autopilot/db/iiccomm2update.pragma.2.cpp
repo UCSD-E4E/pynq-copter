@@ -33376,7 +33376,7 @@ void iiccomm2update(volatile uint32_t iic[4096],
  uint32_t& temp_msb, uint32_t& temp_lsb, uint32_t& temp_xlsb,
  uint32_t& press_raw, uint32_t& temp_raw,
  uint32_t& operation, uint32_t& press_cal, uint32_t& press_act,
- uint32_t& basepoint, int& flag, int32_t& pressure_diff, int& flag2, int& flag3,
+ uint32_t& basepointToRead, int& flag, int32_t& pressure_diff, int& flag2, int& flag3,
  uint32_t& basepointVal, uint32_t& basepoint0, uint32_t& basepoint9)
 {_ssdm_SpecArrayDimSize(iic,4096);
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
@@ -33399,7 +33399,7 @@ _ssdm_op_SpecInterface(press_raw, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0,
 _ssdm_op_SpecInterface(temp_raw, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(press_cal, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(press_act, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(basepoint, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(basepointToRead, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(flag, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(pressure_diff, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(flag2, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
@@ -33430,6 +33430,7 @@ _ssdm_op_SpecInterface(basepoint9, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0
  uint32_t sensorData[6] = {};
  static uint32_t basepointData[10] = {};
  static uint32_t basepointSum;
+ static uint32_t basepoint;
 
 
 
@@ -33568,14 +33569,14 @@ _ssdm_op_SpecInterface(basepoint9, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0
  {
   flag2 = 1;
   basepointData[count] = press_act;
-  count = count + 1;
+
   basepointVal = basepointData[count];
  }
-
+ count = count + 1;
  basepoint0 = basepointData[0];
  basepoint9 = basepointData[9];
 
- if(count >= 10)
+ if(count == 10)
  {
   flag2 = 10;
   for(int i=0; i<10; i++)
@@ -33586,6 +33587,8 @@ _ssdm_op_SpecInterface(basepoint9, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0
 
   basepoint = basepointSum / 10;
  }
+
+ basepointToRead = basepoint;
 
  if(basepoint == 0)
  {

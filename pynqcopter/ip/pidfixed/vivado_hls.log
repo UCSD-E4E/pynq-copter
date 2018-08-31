@@ -1,0 +1,128 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source /data/opt/Xilinx/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/data/opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'iavendano' on host 'fabricant' (Linux_x86_64 version 4.4.0-127-generic) on Tue Aug 28 13:07:53 PDT 2018
+INFO: [HLS 200-10] On os Linux Mint 18 Sarah
+INFO: [HLS 200-10] In directory '/home/iavendano/pynq-copter/pynqcopter/ip/pidfixed'
+INFO: [HLS 200-10] Opening project '/home/iavendano/pynq-copter/pynqcopter/ip/pidfixed/pidfixed'.
+INFO: [HLS 200-10] Adding test bench file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'pidfixed.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'main.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'pidfixed.cpp' to the project
+INFO: [HLS 200-10] Opening solution '/home/iavendano/pynq-copter/pynqcopter/ip/pidfixed/pidfixed/pidfixed'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+make[1]: Entering directory '/home/iavendano/pynq-copter/pynqcopter/ip/pidfixed/pidfixed/pidfixed/csim/build'
+   Compiling ../../../../pidfixed.cpp in debug mode
+   Generating csim.exe
+make[1]: Leaving directory '/home/iavendano/pynq-copter/pynqcopter/ip/pidfixed/pidfixed/pidfixed/csim/build'
+awk: symbol lookup error: awk: undefined symbol: mpfr_z_sub
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-10] Analyzing design file 'pidfixed.cpp' ...
+INFO: [HLS 200-10] Analyzing design file 'main.cpp' ...
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:28 ; elapsed = 00:00:36 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 97881 ; free virtual = 495808
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:30 ; elapsed = 00:00:38 . Memory (MB): peak = 359.941 ; gain = 13.379 ; free physical = 97858 ; free virtual = 495786
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:32 ; elapsed = 00:00:40 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 97783 ; free virtual = 495711
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:32 ; elapsed = 00:00:40 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 97761 ; free virtual = 495689
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:33 ; elapsed = 00:00:41 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 97735 ; free virtual = 495662
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:34 ; elapsed = 00:00:42 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 97736 ; free virtual = 495664
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'pidfixed' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pidfixed'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (4.1ns) of 'sdiv' operation ('r.V', pidfixed.cpp:94) exceeds the target cycle time (target cycle time: 4ns, clock uncertainty: 0.5ns, effective cycle time: 3.5ns).
+WARNING: [SCHED 204-21] Estimated clock period (4.102ns) exceeds the target (target clock period: 4ns, clock uncertainty: 0.5ns, effective delay budget: 3.5ns).
+WARNING: [SCHED 204-21] The critical path consists of the following:
+	'sdiv' operation ('r.V', pidfixed.cpp:94) (4.1 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 41.91 seconds; current allocated memory: 108.239 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 109.116 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pidfixed'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/target_roll_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/current_roll_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/Kp_roll_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/Ki_roll_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/Kd_roll_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/target_pitch_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/current_pitch_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/Kp_pitch_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/Ki_pitch_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/Kd_pitch_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/target_yaw_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/current_yaw_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/Kp_yaw_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/Ki_yaw_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/Kd_yaw_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/dt_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/rollX_V' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/pitchY_V' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pidfixed/yawZ_V' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'pidfixed' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Global scalar 'error_roll_V' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'proportional_roll_V' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Register 'integral_roll_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'previous_error_roll_s' is power-on initialization.
+WARNING: [RTGEN 206-101] Global scalar 'derivative_roll_V' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'error_pitch_V' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'proportional_pitch_V' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Register 'integral_pitch_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'previous_error_pitch' is power-on initialization.
+WARNING: [RTGEN 206-101] Global scalar 'derivative_pitch_V' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'error_yaw_V' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global scalar 'proportional_yaw_V' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Register 'integral_yaw_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'previous_error_yaw_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Global scalar 'derivative_yaw_V' will not be exposed as RTL port.
+INFO: [RTGEN 206-100] Bundling port 'return', 'current_roll_V', 'Kp_roll_V', 'Ki_roll_V', 'Kd_roll_V', 'target_pitch_V', 'current_pitch_V', 'Kp_pitch_V', 'Ki_pitch_V', 'Kd_pitch_V', 'target_yaw_V', 'current_yaw_V', 'Kp_yaw_V', 'Ki_yaw_V', 'Kd_yaw_V', 'dt_V', 'rollX_V', 'pitchY_V' and 'yawZ_V' to AXI-Lite port CTRL.
+INFO: [SYN 201-210] Renamed object name 'pidfixed_sdiv_24ns_16s_23_28_1' to 'pidfixed_sdiv_24nbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pidfixed_mul_16s_30s_30_7_1' to 'pidfixed_mul_16s_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pidfixed_mul_mul_16s_16s_23_3_1' to 'pidfixed_mul_mul_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pidfixed_mul_mul_16s_16s_30_3_1' to 'pidfixed_mul_mul_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pidfixed_mul_mul_16s_23s_23_3_1' to 'pidfixed_mul_mul_fYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'pidfixed_mul_16s_cud': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'pidfixed_mul_mul_dEe': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'pidfixed_mul_mul_eOg': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'pidfixed_mul_mul_fYi': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'pidfixed_sdiv_24nbkb': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pidfixed'.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 110.427 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'pidfixed_sdiv_24nbkb_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'pidfixed_mul_16s_cud_MulnS_0'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:35 ; elapsed = 00:00:43 . Memory (MB): peak = 487.934 ; gain = 141.371 ; free physical = 97713 ; free virtual = 495648
+INFO: [SYSC 207-301] Generating SystemC RTL for pidfixed.
+INFO: [VHDL 208-304] Generating VHDL RTL for pidfixed.
+INFO: [VLOG 209-307] Generating Verilog RTL for pidfixed.
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/data/opt/Xilinx/Vivado/2017.4/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 28 13:08:53 2018...
+INFO: [HLS 200-112] Total elapsed time: 92.07 seconds; peak allocated memory: 110.427 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Tue Aug 28 13:09:24 2018...

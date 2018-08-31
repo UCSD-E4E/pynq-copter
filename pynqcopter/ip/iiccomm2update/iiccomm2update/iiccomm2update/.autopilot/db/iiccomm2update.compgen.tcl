@@ -2175,15 +2175,15 @@ press_act {
 	offset 136
 	offset_end 143
 }
-basepoint_i { 
-	dir I
+basepointToRead { 
+	dir O
 	width 32
 	depth 1
-	mode ap_none
+	mode ap_vld
 	offset 144
 	offset_end 151
 }
-basepoint_o { 
+flag { 
 	dir O
 	width 32
 	depth 1
@@ -2191,7 +2191,7 @@ basepoint_o {
 	offset 152
 	offset_end 159
 }
-flag { 
+pressure_diff { 
 	dir O
 	width 32
 	depth 1
@@ -2199,7 +2199,7 @@ flag {
 	offset 160
 	offset_end 167
 }
-pressure_diff { 
+flag2 { 
 	dir O
 	width 32
 	depth 1
@@ -2207,7 +2207,7 @@ pressure_diff {
 	offset 168
 	offset_end 175
 }
-flag2 { 
+flag3 { 
 	dir O
 	width 32
 	depth 1
@@ -2215,7 +2215,7 @@ flag2 {
 	offset 176
 	offset_end 183
 }
-flag3 { 
+basepointVal { 
 	dir O
 	width 32
 	depth 1
@@ -2223,7 +2223,7 @@ flag3 {
 	offset 184
 	offset_end 191
 }
-basepointVal { 
+basepoint0 { 
 	dir O
 	width 32
 	depth 1
@@ -2231,21 +2231,13 @@ basepointVal {
 	offset 192
 	offset_end 199
 }
-basepoint0 { 
+basepoint9 { 
 	dir O
 	width 32
 	depth 1
 	mode ap_vld
 	offset 200
 	offset_end 207
-}
-basepoint9 { 
-	dir O
-	width 32
-	depth 1
-	mode ap_vld
-	offset 208
-	offset_end 215
 }
 }
 

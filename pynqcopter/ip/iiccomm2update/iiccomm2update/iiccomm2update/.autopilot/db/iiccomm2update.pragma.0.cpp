@@ -33235,7 +33235,7 @@ void iiccomm2update(volatile uint32_t iic[4096],
  uint32_t& temp_msb, uint32_t& temp_lsb, uint32_t& temp_xlsb,
  uint32_t& press_raw, uint32_t& temp_raw,
  uint32_t& operation, uint32_t& press_cal, uint32_t& press_act,
- uint32_t& basepoint, int& flag, int32_t& pressure_diff, int& flag2, int& flag3,
+ uint32_t& basepointToRead, int& flag, int32_t& pressure_diff, int& flag2, int& flag3,
  uint32_t& basepointVal, uint32_t& basepoint0, uint32_t& basepoint9)
 {_ssdm_SpecArrayDimSize(iic,4096);
 #pragma HLS INTERFACE s_axilite port=return
@@ -33258,7 +33258,7 @@ void iiccomm2update(volatile uint32_t iic[4096],
 #pragma HLS INTERFACE s_axilite port=temp_raw
 #pragma HLS INTERFACE s_axilite port=press_cal
 #pragma HLS INTERFACE s_axilite port=press_act
-#pragma HLS INTERFACE s_axilite port=basepoint
+#pragma HLS INTERFACE s_axilite port=basepointToRead
 #pragma HLS INTERFACE s_axilite port=flag
 #pragma HLS INTERFACE s_axilite port=pressure_diff
 #pragma HLS INTERFACE s_axilite port=flag2
@@ -33289,6 +33289,7 @@ void iiccomm2update(volatile uint32_t iic[4096],
  uint32_t sensorData[6] = {};
  static uint32_t basepointData[10] = {};
  static uint32_t basepointSum;
+ static uint32_t basepoint;
 
 
 
@@ -33427,14 +33428,14 @@ void iiccomm2update(volatile uint32_t iic[4096],
  {
   flag2 = 1;
   basepointData[count] = press_act;
-  count = count + 1;
+
   basepointVal = basepointData[count];
  }
-
+ count = count + 1;
  basepoint0 = basepointData[0];
  basepoint9 = basepointData[9];
 
- if(count >= 10)
+ if(count == 10)
  {
   flag2 = 10;
   for(int i=0; i<10; i++)
@@ -33445,6 +33446,8 @@ void iiccomm2update(volatile uint32_t iic[4096],
 
   basepoint = basepointSum / 10;
  }
+
+ basepointToRead = basepoint;
 
  if(basepoint == 0)
  {

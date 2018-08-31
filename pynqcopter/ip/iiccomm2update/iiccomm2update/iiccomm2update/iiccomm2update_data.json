@@ -1130,48 +1130,33 @@
         },
         {
           "offset": "0x90",
-          "name": "basepoint_i",
-          "access": "W",
-          "reset_value": "0x0",
-          "description": "Data signal of basepoint_i",
-          "fields": [{
-              "offset": "0",
-              "width": "32",
-              "name": "basepoint_i",
-              "access": "W",
-              "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of basepoint_i"
-            }]
-        },
-        {
-          "offset": "0x98",
-          "name": "basepoint_o",
+          "name": "basepointToRead",
           "access": "R",
           "reset_value": "0x0",
-          "description": "Data signal of basepoint_o",
+          "description": "Data signal of basepointToRead",
           "fields": [{
               "offset": "0",
               "width": "32",
-              "name": "basepoint_o",
+              "name": "basepointToRead",
               "access": "R",
               "reset_value": "0",
-              "description": "Bit 31 to 0 Data signal of basepoint_o"
+              "description": "Bit 31 to 0 Data signal of basepointToRead"
             }]
         },
         {
-          "offset": "0x9c",
-          "name": "basepoint_o_ctrl",
+          "offset": "0x94",
+          "name": "basepointToRead_ctrl",
           "access": "R",
           "reset_value": "0x0",
-          "description": "Control signal of basepoint_o",
+          "description": "Control signal of basepointToRead",
           "fields": [
             {
               "offset": "0",
               "width": "1",
-              "name": "basepoint_o_ap_vld",
+              "name": "basepointToRead_ap_vld",
               "access": "R",
               "reset_value": "0",
-              "description": "Control signal basepoint_o_ap_vld"
+              "description": "Control signal basepointToRead_ap_vld"
             },
             {
               "offset": "1",
@@ -1184,7 +1169,7 @@
           ]
         },
         {
-          "offset": "0xa0",
+          "offset": "0x98",
           "name": "flag",
           "access": "R",
           "reset_value": "0x0",
@@ -1199,7 +1184,7 @@
             }]
         },
         {
-          "offset": "0xa4",
+          "offset": "0x9c",
           "name": "flag_ctrl",
           "access": "R",
           "reset_value": "0x0",
@@ -1224,7 +1209,7 @@
           ]
         },
         {
-          "offset": "0xa8",
+          "offset": "0xa0",
           "name": "pressure_diff",
           "access": "R",
           "reset_value": "0x0",
@@ -1239,7 +1224,7 @@
             }]
         },
         {
-          "offset": "0xac",
+          "offset": "0xa4",
           "name": "pressure_diff_ctrl",
           "access": "R",
           "reset_value": "0x0",
@@ -1264,7 +1249,7 @@
           ]
         },
         {
-          "offset": "0xb0",
+          "offset": "0xa8",
           "name": "flag2",
           "access": "R",
           "reset_value": "0x0",
@@ -1279,7 +1264,7 @@
             }]
         },
         {
-          "offset": "0xb4",
+          "offset": "0xac",
           "name": "flag2_ctrl",
           "access": "R",
           "reset_value": "0x0",
@@ -1304,7 +1289,7 @@
           ]
         },
         {
-          "offset": "0xb8",
+          "offset": "0xb0",
           "name": "flag3",
           "access": "R",
           "reset_value": "0x0",
@@ -1319,7 +1304,7 @@
             }]
         },
         {
-          "offset": "0xbc",
+          "offset": "0xb4",
           "name": "flag3_ctrl",
           "access": "R",
           "reset_value": "0x0",
@@ -1344,7 +1329,7 @@
           ]
         },
         {
-          "offset": "0xc0",
+          "offset": "0xb8",
           "name": "basepointVal",
           "access": "R",
           "reset_value": "0x0",
@@ -1359,7 +1344,7 @@
             }]
         },
         {
-          "offset": "0xc4",
+          "offset": "0xbc",
           "name": "basepointVal_ctrl",
           "access": "R",
           "reset_value": "0x0",
@@ -1384,7 +1369,7 @@
           ]
         },
         {
-          "offset": "0xc8",
+          "offset": "0xc0",
           "name": "basepoint0",
           "access": "R",
           "reset_value": "0x0",
@@ -1399,7 +1384,7 @@
             }]
         },
         {
-          "offset": "0xcc",
+          "offset": "0xc4",
           "name": "basepoint0_ctrl",
           "access": "R",
           "reset_value": "0x0",
@@ -1424,7 +1409,7 @@
           ]
         },
         {
-          "offset": "0xd0",
+          "offset": "0xc8",
           "name": "basepoint9",
           "access": "R",
           "reset_value": "0x0",
@@ -1439,7 +1424,7 @@
             }]
         },
         {
-          "offset": "0xd4",
+          "offset": "0xcc",
           "name": "basepoint9_ctrl",
           "access": "R",
           "reset_value": "0x0",
@@ -1933,27 +1918,20 @@
       "Object": "AXILiteS",
       "firstOutLatency": "297"
     },
-    "basepoint_i": {
-      "interfaceRef": "s_axi_AXILiteS",
-      "dir": "in",
-      "offset": "144",
-      "statusOffset": "NA",
-      "handshakeRef": "ap_none",
-      "Object": "AXILiteS"
-    },
-    "basepoint_o": {
+    "basepointToRead": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
-      "offset": "152",
-      "statusOffset": "156",
+      "offset": "144",
+      "statusOffset": "148",
       "handshakeRef": "ap_vld",
-      "Object": "AXILiteS"
+      "Object": "AXILiteS",
+      "firstOutLatency": "308"
     },
     "flag": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
-      "offset": "160",
-      "statusOffset": "164",
+      "offset": "152",
+      "statusOffset": "156",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
       "firstOutLatency": "308"
@@ -1961,26 +1939,26 @@
     "pressure_diff": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
-      "offset": "168",
-      "statusOffset": "172",
+      "offset": "160",
+      "statusOffset": "164",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "310"
+      "firstOutLatency": "309"
     },
     "flag2": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
-      "offset": "176",
-      "statusOffset": "180",
+      "offset": "168",
+      "statusOffset": "172",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "299"
+      "firstOutLatency": "298"
     },
     "flag3": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
-      "offset": "184",
-      "statusOffset": "188",
+      "offset": "176",
+      "statusOffset": "180",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
       "firstOutLatency": "303"
@@ -1988,17 +1966,17 @@
     "basepointVal": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
-      "offset": "192",
-      "statusOffset": "196",
+      "offset": "184",
+      "statusOffset": "188",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
-      "firstOutLatency": "299"
+      "firstOutLatency": "298"
     },
     "basepoint0": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
-      "offset": "200",
-      "statusOffset": "204",
+      "offset": "192",
+      "statusOffset": "196",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
       "firstOutLatency": "300"
@@ -2006,8 +1984,8 @@
     "basepoint9": {
       "interfaceRef": "s_axi_AXILiteS",
       "dir": "out",
-      "offset": "208",
-      "statusOffset": "212",
+      "offset": "200",
+      "statusOffset": "204",
       "handshakeRef": "ap_vld",
       "Object": "AXILiteS",
       "firstOutLatency": "300"
@@ -2085,14 +2063,14 @@
         "Area": {
           "BRAM_18K": "4",
           "DSP48E": "126",
-          "FF": "36581",
-          "LUT": "26021"
+          "FF": "36508",
+          "LUT": "25929"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-08-25 21:41:30 PDT",
+    "Time": "2018-08-25 23:14:34 PDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }
