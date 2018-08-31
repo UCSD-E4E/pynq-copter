@@ -1,5 +1,9 @@
 //##############################################################################
-// Copyright (c) 2018, The Regents of the University of California All
+//Author: Indira Avendano 
+//Email: indirajhenny@knights.ucf.edu
+//Last Modified: 27 August 2018
+//
+//Copyright (c) 2018, The Regents of the University of California All
 // rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -41,7 +45,7 @@
 
 void bmeDriver(volatile uint32_t iic[4096], int32_t& pressure_diff)
 {
-    #pragma HLS INTERFACE s_axilite port=return //change to ap_ctrl_none for autorestart
+    #pragma HLS INTERFACE s_axilite port=return
 	
     #pragma HLS INTERFACE m_axi port=iic
 
@@ -217,7 +221,6 @@ void bmeDriver(volatile uint32_t iic[4096], int32_t& pressure_diff)
 
 		basepoint = basepointSum / 10; 
 	}
-	
 
 	if(basepoint == 0)
 	{
