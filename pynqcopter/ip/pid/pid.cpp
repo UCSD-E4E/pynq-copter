@@ -52,8 +52,8 @@
 void pid (F16_t rcCmdIn[5],
 		F16_t measured[4],
 		F32_t kp[3],
-		F32_t kd[3],
-		F32_t ki[3],
+		F32_t kd[2],
+		F32_t ki[2],
 		F16_t commandOut[4096]) {
 
 	//SETUP PRAGMAS
@@ -67,12 +67,12 @@ void pid (F16_t rcCmdIn[5],
 
 	#pragma HLS PIPELINE
 
-	static F16_t last_error[3]={0,0,0};
-	static F32_t integral[3]={0,0,0};
+	static F16_t last_error[2]={0,0};
+	static F32_t integral[2]={0,0};
 	F32_t pid_o[3];
-	F32_t curr_error[3];
-	F32_t deriv[3];
-	F32_t correction[3];
+	F32_t curr_error[2];
+	F32_t deriv[2];
+	F32_t correction[2];
 	/****************************************
 						ROLL PID CONTROLLER
 	*****************************************/
@@ -88,7 +88,7 @@ void pid (F16_t rcCmdIn[5],
 						pitch PID CONTROLLER
 	*****************************************/
 
-	curr_error[1] = rcCmdIn[1] + measured[1]*5;
+	curr_error[1] = rcCmdIn[1] - measured[1]*5;
 	integral[1] =  clip(F32_t(integral[1] + curr_error[1]),F32_t(-100),F32_t(100));
 	deriv[1] = (curr_error[1]-last_error[1]);
 	correction[1] = (kp[1] * curr_error[1]) + (ki[1] * integral[1]) + (kd[1] * deriv[1]);
@@ -99,7 +99,7 @@ void pid (F16_t rcCmdIn[5],
 						yaw P CONTROLLER
 	*****************************************/
 
-	pid_o[2] = kp[2]*(rcCmdIn[3] + measured[3]*10);
+	pid_o[2] = kp[2]*(rcCmdIn[3] - measured[3]);
 
 
 	// mixed _in contains noramlized values for each channel
