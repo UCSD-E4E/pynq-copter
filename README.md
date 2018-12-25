@@ -1,5 +1,14 @@
 # pynq-copter
 
+## Make project
+```./make.sh``` or ```make -C pynqcopter/hex/```
+
+## Clean Project
+```./cleanAll.sh```
+
+## Open in HLx
+```./openProject.sh``` or ```vivado -project pynqcopter/hex/hex/hex.xpr```
+
 ## Installation
 ```python3.6 setup.py install```
 

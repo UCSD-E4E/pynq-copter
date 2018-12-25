@@ -36,6 +36,6 @@ BUILD_PATH=../
 IP_PATH=../ip/
 PART=xc7z020clg400-1
 DESIGN=hex
-IPS=
-
+IPS=imu_driver normalizer pid pwm rc_receiver
+# synchoronizer and wire_distributor_1.0 are also required but not included here
 include $(BUILD_PATH)/include.mk
