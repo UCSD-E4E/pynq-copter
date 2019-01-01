@@ -34,6 +34,8 @@
 ###############################################################################
 from pynq import Register
 from ..UcsdOverlay import UcsdOverlay
+import .ip
+
 class hexOverlay(UcsdOverlay):
     """An Overlay Example for PYNQ 
 
