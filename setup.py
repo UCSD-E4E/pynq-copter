@@ -50,7 +50,7 @@ data_files.append((notebooks_dest, notebooks))
 
 setup(name='pynqcopter',
       version='0.1',
-      description='A PYNQ Package for n-ary copters',
+      description='A PYNQ Package for multicopters',
       author='UC San Diego Engineers for Exploration',
       author_email='eklo@ucsd.edu',
       url='https://github.com/UCSD-E4E/pynq-copter/',
