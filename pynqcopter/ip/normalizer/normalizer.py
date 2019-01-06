@@ -46,7 +46,6 @@ class Normalizer(HlsCore):
 		and the ARM PS.
 
 	"""
-	__IO_REG_LEN = 0x100
 
 	regs = {
 		"control": 0x0,
@@ -54,38 +53,41 @@ class Normalizer(HlsCore):
 		"max_high":0x48,
 		"input_base": 0x10
 	}
-	
+
 	def __init__(self, description):
 		super().__init__(description)
-		self.__hls_reg = MMIO(self.mmio.base_addr, self.__IO_REG_LEN)
+	    rc_min=0x18000
+    	rc_max=0x32000
 
-		bindto = ['UCSD:hlsip:mixer:1.0']
+		self.mmio.write(0x40,rc_min)
+		self.mmio.write(0x48,rc_max)
+		bindto = ['UCSD:hlsip:normalizer:1.0']
 
 	def run(self):
-		self.__hls_reg.write(regs["control"],0x81)
+		self.mmio.write(regs["control"],0x81)
 		return 0
 
 
 	def stop(self):
-		self.__hls_reg.write(regs["control"],0x0)
+		self.mmio.write(regs["control"],0x0)
 		return 0
 
 	def setLow(self,low):
-		self.__hls_reg.write(regs["min_high"],low)
+		self.mmio.write(regs["min_high"],low)
 		return 0
 
 	def getLow(self):
-		return self.__hls_reg.read(regs["min_high"])
+		return self.mmio.read(regs["min_high"])
 
 	def setHigh(self,high):
-		self.__hls_reg.write(regs["max_high"],high)
+		self.mmio.write(regs["max_high"],high)
 		return 0
 
 	def getLow(self):
-		return self.__hls_reg.read(regs["max_high"])
+		return self.mmio.read(regs["max_high"])
 
 	def writeInputs(self,input):
 		assert input==6, "Too many or too few inputs"
 		for i in range(6):
-			self.__hls_reg.write(regs["input_base"]+i*0x8,input[i])
+			self.mmio.write(regs["input_base"]+i*0x8,input[i])
 		return 0

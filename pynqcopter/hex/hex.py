@@ -1,24 +1,24 @@
 ###############################################################################
 # Copyright (c) 2018, The Regents of the University of California All
 # rights reserved.
-# 
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
-# 
+#
 #     * Redistributions of source code must retain the above copyright
 #       notice, this list of conditions and the following disclaimer.
-# 
+#
 #     * Redistributions in binary form must reproduce the above
 #       copyright notice, this list of conditions and the following
 #       disclaimer in the documentation and/or other materials provided
 #       with the distribution.
-# 
+#
 #     * Neither the name of The Regents of the University of California
 #       nor the names of its contributors may be used to endorse or
 #       promote products derived from this software without specific
 #       prior written permission.
-# 
+#
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 # "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
 # LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -34,66 +34,44 @@
 ###############################################################################
 from pynq import Register
 from ..UcsdOverlay import UcsdOverlay
-import .ip
 
 class hexOverlay(UcsdOverlay):
-    """An Overlay Example for PYNQ 
+    """A hardened control system overlay for PYNQ
 
     """
 
-    # For convenince, we define register offsets that are scraped from
-    # the HLS implementation header files.
 
-    #__ARG_IMAGE_ALLOCATED_FLAG_OFF = 0x10
-    #__ARG_IMAGE_ROWS_OFF = 0x18
-    #__ARG_IMAGE_COLS_OFF = 0x20
-    #__ARG_IMAGE_SIZE_OFF = 0x28 # Unused
-    #__ARG_IMAGE_DATA_OFF = 0x30
-
-    def __init__(self, bitfile, **kwargs):
+    def __init__(self,  bitfile, **kwargs):
         """Initializes this Overlay object.
 
         """
         super().__init__("hex", bitfile, **kwargs)
-        # This example is copied from an image processing application that requires
-        # a pointer (data), number of rows (rows), and bumber of colums (columns)
 
-        # self.__image_data = Register(self.addCore.mmio.base_addr +
-        #                                self.__ARG_IMAGE_DATA_OFF, 32)
-        # self.__image_rows = Register(self.addCore.mmio.base_addr +
-        #                                self.__ARG_IMAGE_ROWS_OFF, 32)
-        # self.__image_cols = Register(self.addCore.mmio.base_addr +
-        #                                self.__ARG_IMAGE_COLS_OFF, 32)
 
-    def run(self, image):
-        """ Run a single computation on the Overlay core
+
+
+    def run(self):
+        """ Tell all cores to begin looping
 
         Parameters
         ----------
-    
+
         """
+        self.pwm_0.run()
+        self.rc_receiver_0.run()
+        self.normalizer_0.run()
+        self.pid_0.run()
+        self.imu_driver_0.run()
 
-        # self._validate(image)
-
-        # self.__image_data[31:0] = self._xlnk.cma_get_phy_addr(l.pointer)
-        # self.__image_rows[31:0] = image.shape[0]
-        # self.__image_cols[31:0] = image.shape[1]
-
-        # Do whatever else to run your Overlay
-        # self._run()
-
-    def launch(self):
-        """ Run a looping computation on the Overlay core
+    def stop(self):
+        """ Tell all cores to stop looping
 
         Parameters
         ----------
-    
-        """
 
-    def land(self):
-        """ Terminate a looping computation on the Overlay core
-
-        Parameters
-        ----------
-    
         """
+        self.pwm_0.stop()
+        self.rc_receiver_0.stop()
+        self.normalizer_0.stop()
+        self.pid_0.stop()
+        self.imu_driver_0.stop()

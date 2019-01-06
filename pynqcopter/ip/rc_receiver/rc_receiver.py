@@ -36,18 +36,15 @@ from ..HlsCore import HlsCore
 from pynq import MMIO
 
 class RC_Receiver(HlsCore):
-    __IO_REG_LEN = 0x100
 
     def __init__(self, description):
         super().__init__(description)
-        self.__hls_reg = MMIO(self.mmio.base_addr,self.__IO_REG_LEN)
-
-    bindto = ['UCSD:hlsip:rc_controller:1.0']
+        bindto = ['UCSD:hlsip:rc_receiver:1.0']
 
     def run(self):
-        self.__hls_reg.write(0x0,0x81)
+        self.mmio.write(0x0,0x81)
         return 0
 
     def stop(self):
-        self.__hls_reg.write(0x0,0x0)
+        self.mmio.write(0x0,0x0)
         return 0

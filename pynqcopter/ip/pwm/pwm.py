@@ -41,7 +41,6 @@ from pynq import MMIO
 
 class PWM(HlsCore):
 
-	__IO_REG_LEN = 0x100
 
 	__motors=[0x0,0x0,0x0,0x0,0x0,0x0]
 	__min_duty=0x3f00
@@ -58,7 +57,6 @@ class PWM(HlsCore):
 
 	def __init__(self, description):
 		super().__init__(description)
-		self.__hls_reg = MMIO(self.mmio.base_addr,self.__IO_REG_LEN)
 
 		bindto = ['UCSD:hlsip:pwm:1.0']
 
@@ -68,33 +66,33 @@ class PWM(HlsCore):
 
 
 	def run(self):
-		self.__hls_reg.write(regs["control"],0x81)
+		self.mmio.write(regs["control"],0x81)
 		return 0
 
 	def stop(self):
-		self.__hls_reg.write(regs["control"],0x0)
+		self.mmio.write(regs["control"],0x0)
 		return 0
 
 	def setMinDuty(self,hexValue):
-		self.__hls_reg.write(regs["min_duty"],hexValue)
+		self.mmio.write(regs["min_duty"],hexValue)
 		return 0
 
 	def getMinDuty(self):
-		return self.__hls_reg.read(regs["min_duty"])
+		return self.mmio.read(regs["min_duty"])
 
 	def setMaxDuty(self,hexValue):
-		self.__hls_reg.write(regs["max_duty"],hexValue)
+		self.mmio.write(regs["max_duty"],hexValue)
 		return
 
 	def getMaxDuty(self):
-		return self.__hls_reg.read(regs["max_duty"])
+		return self.mmio.read(regs["max_duty"])
 
 	def setPeriod(self,hexValue):
-		self.__hls_reg.write(regs["period"],hexValue)
+		self.mmio.write(regs["period"],hexValue)
 		return
 
 	def getPeriod(self):
-		return self.__hls_reg.read(regs["period"])
+		return self.mmio.read(regs["period"])
 
 	def setMotor(self,motor,power):
 		assert (-1<motor and motor<len(self.__motors)),"Motor out of bounds"
@@ -103,4 +101,4 @@ class PWM(HlsCore):
 
 	def pubMotors(self):
 		for i in range(3):
-			self.__hls_reg.write(regs["motor_base"]+i*0x4,self.__motors[i*2]+(self.__motors[i*2+1]<<16))
+			self.mmio.write(regs["motor_base"]+i*0x4,self.__motors[i*2]+(self.__motors[i*2+1]<<16))
