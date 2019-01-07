@@ -34,11 +34,8 @@
 ###############################################################################
 from .HlsCore import HlsCore
 
-from . import sensor_confirm
-from . import mixer
 from . import pwm
 from . import normalizer
 from . import pid
-from . import pwm
-from . import pwm
 from . import rc_receiver
+from . import imu_driver
