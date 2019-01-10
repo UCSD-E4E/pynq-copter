@@ -1,0 +1,465 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Jan 10 04:56:42 2019
+# Process ID: 15709
+# Current directory: /home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1
+# Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file: /home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/design_1_wrapper.vds
+# Journal file: /home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/zain/Desktop/MB_GPIO/Vivado_HLS'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+Command: synth_design -top design_1_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 15717 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1317.766 ; gain = 79.914 ; free physical = 2939 ; free virtual = 7428
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_0_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_axi_gpio_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_0_1' (1#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_axi_gpio_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_1_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_clk_wiz_1_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_1_1' (2#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_clk_wiz_1_1_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_hls_gpio_0_0' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_hls_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_hls_gpio_0_0' (3#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_hls_gpio_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'hls_gpio' of module 'design_1_hls_gpio_0_0' requires 58 connections, but only 55 given [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:241]
+INFO: [Synth 8-6157] synthesizing module 'design_1_hls_gpio_axi_periph_0' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:628]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_BN6QZ5' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:2434]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (4#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_auto_pc_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'auto_pc' of module 'design_1_auto_pc_0' requires 56 connections, but only 54 given [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:2657]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_BN6QZ5' (5#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:2434]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_hls_gpio_axi_periph_0' (6#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:628]
+INFO: [Synth 8-6157] synthesizing module 'design_1_mdm_1_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_mdm_1_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_mdm_1_1' (7#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_mdm_1_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'mdm_1' of module 'design_1_mdm_1_1' requires 30 connections, but only 29 given [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:356]
+INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_0_0' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_0_0' (8#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_0_axi_intc_0' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_microblaze_0_axi_intc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_0_axi_intc_0' (9#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_microblaze_0_axi_intc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_0_axi_periph_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:918]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_8RVYHO' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:1658]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_8RVYHO' (10#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:1658]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_1UTB3Y5' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:1790]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_1UTB3Y5' (11#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:1790]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_7ANRHB' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:1922]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_7ANRHB' (12#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:1922]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1RZP34U' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:2288]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1RZP34U' (13#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:2288]
+INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_2REGHR' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:2714]
+INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_2REGHR' (14#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:2714]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_xbar_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_1' (15#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_xbar_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'xbar' of module 'design_1_xbar_1' requires 40 connections, but only 38 given [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:1617]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_0_axi_periph_1' (16#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:918]
+INFO: [Synth 8-6157] synthesizing module 'microblaze_0_local_memory_imp_1K0VQXK' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:2054]
+INFO: [Synth 8-6157] synthesizing module 'design_1_dlmb_bram_if_cntlr_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_dlmb_bram_if_cntlr_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_dlmb_bram_if_cntlr_1' (17#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_dlmb_bram_if_cntlr_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_dlmb_v10_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_dlmb_v10_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_dlmb_v10_1' (18#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_dlmb_v10_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'dlmb_v10' of module 'design_1_dlmb_v10_1' requires 25 connections, but only 24 given [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:2200]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ilmb_bram_if_cntlr_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_ilmb_bram_if_cntlr_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ilmb_bram_if_cntlr_1' (19#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_ilmb_bram_if_cntlr_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ilmb_v10_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_ilmb_v10_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ilmb_v10_1' (20#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_ilmb_v10_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'ilmb_v10' of module 'design_1_ilmb_v10_1' requires 25 connections, but only 24 given [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:2246]
+INFO: [Synth 8-6157] synthesizing module 'design_1_lmb_bram_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_lmb_bram_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_lmb_bram_1' (21#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_lmb_bram_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'lmb_bram' of module 'design_1_lmb_bram_1' requires 16 connections, but only 14 given [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:2271]
+INFO: [Synth 8-6155] done synthesizing module 'microblaze_0_local_memory_imp_1K0VQXK' (22#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:2054]
+INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_0_xlconcat_0' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_microblaze_0_xlconcat_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_0_xlconcat_0' (23#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_microblaze_0_xlconcat_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_clk_wiz_1_100M_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_rst_clk_wiz_1_100M_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_clk_wiz_1_100M_1' (24#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_rst_clk_wiz_1_100M_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'rst_clk_wiz_1_100M' of module 'design_1_rst_clk_wiz_1_100M_1' requires 10 connections, but only 9 given [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:614]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlconstant_0_1' [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_xlconstant_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_0_1' (25#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/.Xil/Vivado-15709-ubuntu/realtime/design_1_xlconstant_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1' (26#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-6157] synthesizing module 'IOBUF' [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (27#1) [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_wrapper' (28#1) [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+WARNING: [Synth 8-3331] design s01_couplers_imp_2REGHR has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s01_couplers_imp_2REGHR has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s01_couplers_imp_2REGHR has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design s01_couplers_imp_2REGHR has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design s00_couplers_imp_1RZP34U has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_1RZP34U has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s00_couplers_imp_1RZP34U has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_1RZP34U has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_7ANRHB has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_7ANRHB has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_7ANRHB has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_7ANRHB has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_1UTB3Y5 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_1UTB3Y5 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_1UTB3Y5 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_1UTB3Y5 has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_8RVYHO has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_8RVYHO has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_8RVYHO has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_8RVYHO has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design s00_couplers_imp_BN6QZ5 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_BN6QZ5 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s00_couplers_imp_BN6QZ5 has unconnected port S_AXI_arlock[1]
+WARNING: [Synth 8-3331] design s00_couplers_imp_BN6QZ5 has unconnected port S_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_hls_gpio_axi_periph_0 has unconnected port ACLK
+WARNING: [Synth 8-3331] design design_1_hls_gpio_axi_periph_0 has unconnected port ARESETN
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1362.391 ; gain = 124.539 ; free physical = 2952 ; free virtual = 7441
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1362.391 ; gain = 124.539 ; free physical = 2952 ; free virtual = 7441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1362.391 ; gain = 124.539 ; free physical = 2952 ; free virtual = 7441
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_in_context.xdc] for cell 'design_1_i/axi_gpio_0'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_in_context.xdc] for cell 'design_1_i/axi_gpio_0'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0/design_1_microblaze_0_0_in_context.xdc] for cell 'design_1_i/microblaze_0'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0/design_1_microblaze_0_0_in_context.xdc] for cell 'design_1_i/microblaze_0'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_axi_intc_0/design_1_microblaze_0_axi_intc_0/design_1_microblaze_0_axi_intc_0_in_context.xdc] for cell 'design_1_i/microblaze_0_axi_intc'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_axi_intc_0/design_1_microblaze_0_axi_intc_0/design_1_microblaze_0_axi_intc_0_in_context.xdc] for cell 'design_1_i/microblaze_0_axi_intc'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_xlconcat_0/design_1_microblaze_0_xlconcat_0/design_1_microblaze_0_xlconcat_0_in_context.xdc] for cell 'design_1_i/microblaze_0_xlconcat'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_xlconcat_0/design_1_microblaze_0_xlconcat_0/design_1_microblaze_0_xlconcat_0_in_context.xdc] for cell 'design_1_i/microblaze_0_xlconcat'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_1/design_1_mdm_1_1/design_1_mdm_1_1_in_context.xdc] for cell 'design_1_i/mdm_1'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_1/design_1_mdm_1_1/design_1_mdm_1_1_in_context.xdc] for cell 'design_1_i/mdm_1'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_1/design_1_clk_wiz_1_1/design_1_clk_wiz_1_1_in_context.xdc] for cell 'design_1_i/clk_wiz_1'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_1/design_1_clk_wiz_1_1/design_1_clk_wiz_1_1_in_context.xdc] for cell 'design_1_i/clk_wiz_1'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_1/design_1_rst_clk_wiz_1_100M_1/design_1_rst_ps7_0_100M_0_in_context.xdc] for cell 'design_1_i/rst_clk_wiz_1_100M'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_1/design_1_rst_clk_wiz_1_100M_1/design_1_rst_ps7_0_100M_0_in_context.xdc] for cell 'design_1_i/rst_clk_wiz_1_100M'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_1/design_1_xlconstant_0_1/design_1_xlconstant_0_0_in_context.xdc] for cell 'design_1_i/xlconstant_0'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_1/design_1_xlconstant_0_1/design_1_xlconstant_0_0_in_context.xdc] for cell 'design_1_i/xlconstant_0'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_hls_gpio_0_0/design_1_hls_gpio_0_0/design_1_hls_gpio_0_1_in_context.xdc] for cell 'design_1_i/hls_gpio'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_hls_gpio_0_0/design_1_hls_gpio_0_0/design_1_hls_gpio_0_1_in_context.xdc] for cell 'design_1_i/hls_gpio'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_xbar_1/design_1_xbar_1/design_1_xbar_1_in_context.xdc] for cell 'design_1_i/microblaze_0_axi_periph/xbar'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_xbar_1/design_1_xbar_1/design_1_xbar_1_in_context.xdc] for cell 'design_1_i/microblaze_0_axi_periph/xbar'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_1/design_1_dlmb_v10_1/design_1_dlmb_v10_1_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_v10'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_1/design_1_dlmb_v10_1/design_1_dlmb_v10_1_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_v10'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_1/design_1_ilmb_v10_1/design_1_dlmb_v10_1_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/ilmb_v10'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_1/design_1_ilmb_v10_1/design_1_dlmb_v10_1_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/ilmb_v10'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_1/design_1_dlmb_bram_if_cntlr_1/design_1_ilmb_bram_if_cntlr_1_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_1/design_1_dlmb_bram_if_cntlr_1/design_1_ilmb_bram_if_cntlr_1_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_1/design_1_ilmb_bram_if_cntlr_1/design_1_ilmb_bram_if_cntlr_1_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_1/design_1_ilmb_bram_if_cntlr_1/design_1_ilmb_bram_if_cntlr_1_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_1/design_1_lmb_bram_1/design_1_lmb_bram_1_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/lmb_bram'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_1/design_1_lmb_bram_1/design_1_lmb_bram_1_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/lmb_bram'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_5_in_context.xdc] for cell 'design_1_i/hls_gpio_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_5_in_context.xdc] for cell 'design_1_i/hls_gpio_axi_periph/s00_couplers/auto_pc'
+Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 14 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 14 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1671.414 ; gain = 0.000 ; free physical = 2674 ; free virtual = 7164
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_1_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2755 ; free virtual = 7245
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2755 ; free virtual = 7245
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clock. (constraint file  /home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_1/design_1_clk_wiz_1_1/design_1_clk_wiz_1_1_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clock. (constraint file  /home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_1/design_1_clk_wiz_1_1/design_1_clk_wiz_1_1_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for design_1_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_gpio_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/microblaze_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/microblaze_0_axi_periph. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/microblaze_0_axi_intc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/microblaze_0_xlconcat. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/mdm_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/clk_wiz_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/rst_clk_wiz_1_100M. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xlconstant_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/hls_gpio. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/hls_gpio_axi_periph. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/microblaze_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/microblaze_0_local_memory/dlmb_v10. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/microblaze_0_local_memory/ilmb_v10. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/microblaze_0_local_memory/lmb_bram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/hls_gpio_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2758 ; free virtual = 7247
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:35 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2758 ; free virtual = 7248
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_1 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_1 has unconnected port M00_ARESETN
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_1 has unconnected port M01_ACLK
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_1 has unconnected port M01_ARESETN
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_1 has unconnected port M02_ACLK
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_1 has unconnected port M02_ARESETN
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_1 has unconnected port S00_ACLK
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_1 has unconnected port S00_ARESETN
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_1 has unconnected port S01_ACLK
+WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_1 has unconnected port S01_ARESETN
+WARNING: [Synth 8-3331] design design_1_hls_gpio_axi_periph_0 has unconnected port ACLK
+WARNING: [Synth 8-3331] design design_1_hls_gpio_axi_periph_0 has unconnected port ARESETN
+WARNING: [Synth 8-3331] design design_1_hls_gpio_axi_periph_0 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design design_1_hls_gpio_axi_periph_0 has unconnected port M00_ARESETN
+WARNING: [Synth 8-3331] design design_1_hls_gpio_axi_periph_0 has unconnected port S00_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_hls_gpio_axi_periph_0 has unconnected port S00_AXI_awlock[1]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:35 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2746 ; free virtual = 7238
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/mdm_1/Dbg_Clk_0' to pin 'design_1_i/mdm_1/bbstub_Dbg_Clk_0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/mdm_1/Dbg_Update_0' to pin 'design_1_i/mdm_1/bbstub_Dbg_Update_0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/clk_wiz_1/clk_out1' to pin 'design_1_i/clk_wiz_1/bbstub_clk_out1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr/BRAM_Clk_A' to pin 'design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr/bbstub_BRAM_Clk_A/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr/BRAM_Clk_A' to pin 'design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr/bbstub_BRAM_Clk_A/O'
+INFO: [Synth 8-5819] Moved 5 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2621 ; free virtual = 7113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2621 ; free virtual = 7113
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2619 ; free virtual = 7111
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:46 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2619 ; free virtual = 7111
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:46 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2619 ; free virtual = 7111
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:46 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2619 ; free virtual = 7111
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:46 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2619 ; free virtual = 7111
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:46 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2619 ; free virtual = 7111
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:46 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2619 ; free virtual = 7111
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+---------------------------------+----------+
+|      |BlackBox name                    |Instances |
++------+---------------------------------+----------+
+|1     |design_1_auto_pc_0               |         1|
+|2     |design_1_xbar_1                  |         1|
+|3     |design_1_axi_gpio_0_1            |         1|
+|4     |design_1_clk_wiz_1_1             |         1|
+|5     |design_1_hls_gpio_0_0            |         1|
+|6     |design_1_mdm_1_1                 |         1|
+|7     |design_1_microblaze_0_0          |         1|
+|8     |design_1_microblaze_0_axi_intc_0 |         1|
+|9     |design_1_microblaze_0_xlconcat_0 |         1|
+|10    |design_1_rst_clk_wiz_1_100M_1    |         1|
+|11    |design_1_xlconstant_0_1          |         1|
+|12    |design_1_dlmb_bram_if_cntlr_1    |         1|
+|13    |design_1_dlmb_v10_1              |         1|
+|14    |design_1_ilmb_bram_if_cntlr_1    |         1|
+|15    |design_1_ilmb_v10_1              |         1|
+|16    |design_1_lmb_bram_1              |         1|
++------+---------------------------------+----------+
+
+Report Cell Usage: 
++------+---------------------------------+------+
+|      |Cell                             |Count |
++------+---------------------------------+------+
+|1     |design_1_auto_pc_0               |     1|
+|2     |design_1_axi_gpio_0_1            |     1|
+|3     |design_1_clk_wiz_1_1             |     1|
+|4     |design_1_dlmb_bram_if_cntlr_1    |     1|
+|5     |design_1_dlmb_v10_1              |     1|
+|6     |design_1_hls_gpio_0_0            |     1|
+|7     |design_1_ilmb_bram_if_cntlr_1    |     1|
+|8     |design_1_ilmb_v10_1              |     1|
+|9     |design_1_lmb_bram_1              |     1|
+|10    |design_1_mdm_1_1                 |     1|
+|11    |design_1_microblaze_0_0          |     1|
+|12    |design_1_microblaze_0_axi_intc_0 |     1|
+|13    |design_1_microblaze_0_xlconcat_0 |     1|
+|14    |design_1_rst_clk_wiz_1_100M_1    |     1|
+|15    |design_1_xbar_1                  |     1|
+|16    |design_1_xlconstant_0_1          |     1|
+|17    |IOBUF                            |    14|
++------+---------------------------------+------+
+
+Report Instance Areas: 
++------+------------------------------+--------------------------------------+------+
+|      |Instance                      |Module                                |Cells |
++------+------------------------------+--------------------------------------+------+
+|1     |top                           |                                      |  1829|
+|2     |  design_1_i                  |design_1                              |  1815|
+|3     |    hls_gpio_axi_periph       |design_1_hls_gpio_axi_periph_0        |   153|
+|4     |      s00_couplers            |s00_couplers_imp_BN6QZ5               |   153|
+|5     |    microblaze_0_axi_periph   |design_1_microblaze_0_axi_periph_1    |   415|
+|6     |    microblaze_0_local_memory |microblaze_0_local_memory_imp_1K0VQXK |   496|
++------+------------------------------+--------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:46 . Memory (MB): peak = 1671.414 ; gain = 433.562 ; free physical = 2619 ; free virtual = 7111
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 1671.414 ; gain = 124.539 ; free physical = 2677 ; free virtual = 7169
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:46 . Memory (MB): peak = 1671.422 ; gain = 433.562 ; free physical = 2684 ; free virtual = 7175
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 14 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 14 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+78 Infos, 51 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:47 . Memory (MB): peak = 1685.414 ; gain = 459.102 ; free physical = 2660 ; free virtual = 7152
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/zain/Desktop/MB_GPIO/Vivado/hls_gpio/hls_gpio.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1685.414 ; gain = 0.000 ; free physical = 2660 ; free virtual = 7152
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 10 04:57:42 2019...

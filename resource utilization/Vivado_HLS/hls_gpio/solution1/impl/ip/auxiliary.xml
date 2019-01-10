@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="hls_gpio" xd:componentRef="hls_gpio" xd:initiationInterval="x" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="dc0" xd:originalName="dc0" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="8"/>
+  <xd:arg xd:name="dc1" xd:originalName="dc1" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x18" xd:handshakeRef="ap_none" xd:dataWidth="8"/>
+  <xd:arg xd:name="dc2" xd:originalName="dc2" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x20" xd:handshakeRef="ap_none" xd:dataWidth="8"/>
+  <xd:arg xd:name="dc3" xd:originalName="dc3" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x28" xd:handshakeRef="ap_none" xd:dataWidth="8"/>
+  <xd:arg xd:name="dc4" xd:originalName="dc4" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x30" xd:handshakeRef="ap_none" xd:dataWidth="8"/>
+  <xd:arg xd:name="dc5" xd:originalName="dc5" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x38" xd:handshakeRef="ap_none" xd:dataWidth="8"/>
+  <xd:arg xd:name="res" xd:originalName="res" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x40" xd:handshakeRef="ap_none" xd:dataWidth="8"/>
+  <xd:arg xd:name="out" xd:originalName="out" xd:direction="inout" xd:interfaceRef="m_axi_out_r" xd:busTypeRef="aximm" xd:dataWidth="8" xd:bufferDirection="inout"/>
+  <xd:latencyEstimates xd:best-case="92" xd:worst-case="110680464832257392" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="3886" xd:FF="3432" xd:BRAM="2" xd:DSP="126"/>
+</xd:acceleratorMap>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="hls_gpio.cpp" path="/home/zain/Desktop/MB_GPIO/Vivado_HLS/hls_gpio.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="testbench.cpp" path="/home/zain/Desktop/MB_GPIO/Vivado_HLS/testbench.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
