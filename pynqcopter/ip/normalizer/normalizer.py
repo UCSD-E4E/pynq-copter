@@ -41,53 +41,53 @@ from pynq import MMIO
 
 class Normalizer(HlsCore):
 
-	"""These define the 'reg' argument to the 'pwm' HLS function.
-		The memory space defined here is shared between the HLS core
-		and the ARM PS.
+    """These define the 'reg' argument to the 'pwm' HLS function.
+        The memory space defined here is shared between the HLS core
+        and the ARM PS.
 
-	"""
+    """
 
-	regs = {
-		"control": 0x0,
-		"min_high":0x40,
-		"max_high":0x48,
-		"input_base": 0x10
-	}
+    regs = {
+        "control": 0x0,
+        "min_high":0x40,
+        "max_high":0x48,
+        "input_base": 0x10
+    }
 
-	def __init__(self, description):
-		super().__init__(description)
-	    rc_min=0x18000
-    	rc_max=0x32000
+    def __init__(self, description):
+        super().__init__(description)
+        rc_min=0x18000
+        rc_max=0x32000
 
-		self.mmio.write(0x40,rc_min)
-		self.mmio.write(0x48,rc_max)
-		bindto = ['UCSD:hlsip:normalizer:1.0']
+        self.mmio.write(0x40,rc_min)
+        self.mmio.write(0x48,rc_max)
+        bindto = ['UCSD:hlsip:normalizer:1.0']
 
-	def run(self):
-		self.mmio.write(regs["control"],0x81)
-		return 0
+    def run(self):
+        self.mmio.write(regs["control"],0x81)
+        return 0
 
 
-	def stop(self):
-		self.mmio.write(regs["control"],0x0)
-		return 0
+    def stop(self):
+        self.mmio.write(regs["control"],0x0)
+        return 0
 
-	def setLow(self,low):
-		self.mmio.write(regs["min_high"],low)
-		return 0
+    def setLow(self,low):
+        self.mmio.write(regs["min_high"],low)
+        return 0
 
-	def getLow(self):
-		return self.mmio.read(regs["min_high"])
+    def getLow(self):
+        return self.mmio.read(regs["min_high"])
 
-	def setHigh(self,high):
-		self.mmio.write(regs["max_high"],high)
-		return 0
+    def setHigh(self,high):
+        self.mmio.write(regs["max_high"],high)
+        return 0
 
-	def getLow(self):
-		return self.mmio.read(regs["max_high"])
+    def getLow(self):
+        return self.mmio.read(regs["max_high"])
 
-	def writeInputs(self,input):
-		assert input==6, "Too many or too few inputs"
-		for i in range(6):
-			self.mmio.write(regs["input_base"]+i*0x8,input[i])
-		return 0
+    def writeInputs(self,input):
+        assert input==6, "Too many or too few inputs"
+        for i in range(6):
+            self.mmio.write(regs["input_base"]+i*0x8,input[i])
+        return 0

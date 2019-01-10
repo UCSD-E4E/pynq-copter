@@ -47,9 +47,9 @@ class IMU_Driver(HlsCore):
 
 
     def run(self):
-		self.mmio.write(0x0,0x81)
-		return 0
+        self.mmio.write(0x0,0x81)
+        return 0
 
-	def stop(self):
-		self.mmio.write(0x0,0x0)
-		return 0
+    def stop(self):
+        self.mmio.write(0x0,0x0)
+        return 0

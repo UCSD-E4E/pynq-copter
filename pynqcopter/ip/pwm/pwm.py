@@ -42,63 +42,63 @@ from pynq import MMIO
 class PWM(HlsCore):
 
 
-	__motors=[0x0,0x0,0x0,0x0,0x0,0x0]
-	__min_duty=0x3f00
-	__max_duty=0x6b20
-	__period=0x8b80
+    __motors=[0x0,0x0,0x0,0x0,0x0,0x0]
+    __min_duty=0x3f00
+    __max_duty=0x6b20
+    __period=0x8b80
+	
+    regs= {
+        "control"	: 0x0,
+        "min_duty"	: 0x10,
+        "max_duty"	: 0x18,
+        "period"	: 0x20,
+        "motor_base": 0x30
+    }
 
-	regs= {
-		"control"	: 0x0,
-		"min_duty"	: 0x10,
-		"max_duty"	: 0x18,
-		"period"	: 0x20,
-		"motor_base": 0x30
-	}
+    def __init__(self, description):
+        super().__init__(description)
 
-	def __init__(self, description):
-		super().__init__(description)
+        bindto = ['UCSD:hlsip:pwm:1.0']
 
-		bindto = ['UCSD:hlsip:pwm:1.0']
-
-		self.setMinDuty(__min_duty)
-		self.setMaxDuty(__max_duty)
-		self.setPeriod(__period)
+        self.setMinDuty(__min_duty)
+        self.setMaxDuty(__max_duty)
+        self.setPeriod(__period)
 
 
-	def run(self):
-		self.mmio.write(regs["control"],0x81)
-		return 0
+    def run(self):
+        self.mmio.write(regs["control"],0x81)
+        return 0
 
-	def stop(self):
-		self.mmio.write(regs["control"],0x0)
-		return 0
+    def stop(self):
+        self.mmio.write(regs["control"],0x0)
+        return 0
 
-	def setMinDuty(self,hexValue):
-		self.mmio.write(regs["min_duty"],hexValue)
-		return 0
+    def setMinDuty(self,hexValue):
+        self.mmio.write(regs["min_duty"],hexValue)
+        return 0
 
-	def getMinDuty(self):
-		return self.mmio.read(regs["min_duty"])
+    def getMinDuty(self):
+        return self.mmio.read(regs["min_duty"])
 
-	def setMaxDuty(self,hexValue):
-		self.mmio.write(regs["max_duty"],hexValue)
-		return
+    def setMaxDuty(self,hexValue):
+        self.mmio.write(regs["max_duty"],hexValue)
+        return
 
-	def getMaxDuty(self):
-		return self.mmio.read(regs["max_duty"])
+    def getMaxDuty(self):
+        return self.mmio.read(regs["max_duty"])
 
-	def setPeriod(self,hexValue):
-		self.mmio.write(regs["period"],hexValue)
-		return
+    def setPeriod(self,hexValue):
+        self.mmio.write(regs["period"],hexValue)
+        return
 
-	def getPeriod(self):
-		return self.mmio.read(regs["period"])
+    def getPeriod(self):
+       return self.mmio.read(regs["period"])
 
-	def setMotor(self,motor,power):
-		assert (-1<motor and motor<len(self.__motors)),"Motor out of bounds"
-		self.__motors[motor]=max(0,min(power,0x7FFF)) #clip power to range
-		self.pubMotors()
+    def setMotor(self,motor,power):
+        assert (-1<motor and motor<len(self.__motors)),"Motor out of bounds"
+        self.__motors[motor]=max(0,min(power,0x7FFF)) #clip power to range
+        self.pubMotors()
 
-	def pubMotors(self):
-		for i in range(3):
-			self.mmio.write(regs["motor_base"]+i*0x4,self.__motors[i*2]+(self.__motors[i*2+1]<<16))
+    def pubMotors(self):
+        for i in range(3):
+            self.mmio.write(regs["motor_base"]+i*0x4,self.__motors[i*2]+(self.__motors[i*2+1]<<16))
