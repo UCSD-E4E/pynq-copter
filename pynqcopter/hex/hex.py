@@ -34,6 +34,11 @@
 ###############################################################################
 from pynq import Register
 from ..UcsdOverlay import UcsdOverlay
+from ..ip.pwm import PWM
+from ..ip.normalizer import Normalizer
+from ..ip.pid import PID
+from ..ip.rc_receiver import RC_Receiver
+from ..ip.imu_driver import IMU_Driver
 
 class hexOverlay(UcsdOverlay):
     """A hardened control system overlay for PYNQ
@@ -47,7 +52,13 @@ class hexOverlay(UcsdOverlay):
         """
         super().__init__("hex", bitfile, **kwargs)
 
-
+        ''' Uncomment for test 2
+        self.pwm = PWM(self.pwm_0)
+        self.rc_receiver = RC_Receiver(self.rc_receiver_0)
+        self.normalizer = Normalizer(self.normalizer_0)
+        self.pid = PID(self.pid_0)
+        self.imu_driver = IMU_Driver(self.imu_driver_0)
+        '''
 
 
     def run(self):
@@ -57,11 +68,22 @@ class hexOverlay(UcsdOverlay):
         ----------
 
         """
+
+        ''' Uncomment for test 2
+        self.pwm.run()
+        self.rc_receiver.run()
+        self.normalizer.run()
+        self.pid.run()
+        self.imu_driver.run()
+        ''' #Delete below
+
         self.pwm_0.run()
         self.rc_receiver_0.run()
         self.normalizer_0.run()
         self.pid_0.run()
         self.imu_driver_0.run()
+
+
 
     def stop(self):
         """ Tell all cores to stop looping
@@ -70,6 +92,14 @@ class hexOverlay(UcsdOverlay):
         ----------
 
         """
+
+        ''' Uncomment for test 2
+        self.pwm.stop()
+        self.rc_receiver.stop()
+        self.normalizer.stop()
+        self.pid.stop()
+        self.imu_driver.stop()
+        ''' #Delete below
         self.pwm_0.stop()
         self.rc_receiver_0.stop()
         self.normalizer_0.stop()
