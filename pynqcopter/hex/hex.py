@@ -34,11 +34,7 @@
 ###############################################################################
 from pynq import Register
 from ..UcsdOverlay import UcsdOverlay
-from ..ip.pwm import PWM
-from ..ip.normalizer import Normalizer
-from ..ip.pid import PID
-from ..ip.rc_receiver import RC_Receiver
-from ..ip.imu_driver import IMU_Driver
+
 
 class hexOverlay(UcsdOverlay):
     """A hardened control system overlay for PYNQ
@@ -52,14 +48,36 @@ class hexOverlay(UcsdOverlay):
         """
         super().__init__("hex", bitfile, **kwargs)
 
-        ''' Uncomment for test 2
-        self.pwm = PWM(self.pwm_0)
-        self.rc_receiver = RC_Receiver(self.rc_receiver_0)
-        self.normalizer = Normalizer(self.normalizer_0)
-        self.pid = PID(self.pid_0)
-        self.imu_driver = IMU_Driver(self.imu_driver_0)
-        '''
+        self.pwm = self.pwm_0
+        self.rc = self.rc_receiver_0
+        self.norm = self.normalizer_0
+        self.pid = self.pid_0
+        self.imu=self.imu_driver_0
 
+        # Setup variables
+        pwm_mind=0x3f00
+        pwm_maxd=0x6b20
+        pwm_per =0x8b80
+        rc_min=0x18000
+        rc_max=0x32000
+
+        kp=[0x8000,0xc000,0x50000]
+        kd=[0,0]
+        ki=[0,0]
+
+        #place setup variables into ip cores
+        for i in range(3):
+            self.pid.mmio.write(0x30+0x4*i,kp[i])
+        for i in range(2):
+            self.pid.mmio.write(0x40+0x4*i,kd[i])
+        for i in range(2):
+            self.pid.mmio.write(0x48+0x4*i,ki[i])
+        self.norm.mmio.write(0x40,rc_min)
+        self.norm.mmio.write(0x48,rc_max)
+
+        self.pwm.mmio.write(0x10,pwm_mind)
+        self.pwm.mmio.write(0x18,pwm_maxd)
+        self.pwm.mmio.write(0x20,pwm_per)
 
     def run(self):
         """ Tell all cores to begin looping
@@ -68,23 +86,12 @@ class hexOverlay(UcsdOverlay):
         ----------
 
         """
-
-        ''' Uncomment for test 2
-        self.pwm.run()
-        self.rc_receiver.run()
-        self.normalizer.run()
-        self.pid.run()
-        self.imu_driver.run()
-        ''' #Delete below
-
-        self.pwm_0.run()
-        self.rc_receiver_0.run()
-        self.normalizer_0.run()
-        self.pid_0.run()
-        self.imu_driver_0.run()
-
-
-
+        self.pid.mmio.write(0x0,0x81)
+        self.pwm.mmio.write(0x0,0x81)
+        self.norm.mmio.write(0x0,0x81)
+        self.rc.mmio.write(0x0,0x81)
+        self.imu.mmio.write(0x0,0x81)
+        
     def stop(self):
         """ Tell all cores to stop looping
 
@@ -92,16 +99,8 @@ class hexOverlay(UcsdOverlay):
         ----------
 
         """
-
-        ''' Uncomment for test 2
-        self.pwm.stop()
-        self.rc_receiver.stop()
-        self.normalizer.stop()
-        self.pid.stop()
-        self.imu_driver.stop()
-        ''' #Delete below
-        self.pwm_0.stop()
-        self.rc_receiver_0.stop()
-        self.normalizer_0.stop()
-        self.pid_0.stop()
-        self.imu_driver_0.stop()
+        self.pid.mmio.write(0x0,0x0)
+        self.pwm.mmio.write(0x0,0x0)
+        self.norm.mmio.write(0x0,0x0)
+        self.rc.mmio.write(0x0,0x0)
+        self.imu.mmio.write(0x0,0x0)
